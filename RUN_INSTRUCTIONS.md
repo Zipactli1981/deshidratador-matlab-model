@@ -200,3 +200,12 @@ disp(report.status)
 Esperado: `COMPARISON_ONLY_NO_GA`.
 
 No correr todavía `run_opt_GA.mlx`.
+
+## Advertencia sobre runners v96m/v96z
+
+Estas instrucciones cubren principalmente la línea de trabajo documentada hasta `v1.3`.
+
+Los runners `v96m/v96z` y la cadena seed-aware están en evaluación documental mediante `ADR-001`. No deben considerarse todavía flujo oficial ni ejecutarse formalmente sin aprobación explícita del usuario y sin cerrar los bloqueos del ADR.
+
+En particular, no debe ejecutarse `gamultiobj` ni una corrida formal asociada a esos runners hasta verificar artefactos externos, entorno MATLAB, control de semillas, factores de CO2 y trazabilidad de resultados.
+
