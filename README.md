@@ -113,3 +113,16 @@ Integra `compare_operation_modes.m` como comparación diagnóstica de modos gasL
 Estado: `COMPARE-OP-MODES-001` validado localmente con `COMPARISON_ONLY_NO_GA`.
 
 No se corrió AG, no se modificó costo y no se declaran resultados finales del artículo.
+
+## Nota sobre fuente de verdad operativa
+
+La documentación principal de este repositorio describe principalmente la línea consolidada hasta `v1.3-HYBRID-IRR_COMPARE_CONSOLIDADA`, que debe conservarse como referencia histórica y metodológica.
+
+Existe una propuesta documental en:
+
+`01_knowledge/ADR_001_fuente_de_verdad_operativa_modelo_deshidratador.md`
+
+Ese ADR identifica una cadena operativa candidata asociada con la evolución `v96m/v96z`, pero dicha cadena permanece en evaluación. No debe considerarse todavía la fuente oficial definitiva del modelo.
+
+No debe ejecutarse una corrida formal ni interpretarse científicamente una salida de esa cadena hasta cerrar los bloqueos documentados en el ADR, incluyendo artefactos `.mat` no versionados, factores de CO2 provisionales, validación de semillas y conciliación documental.
+
