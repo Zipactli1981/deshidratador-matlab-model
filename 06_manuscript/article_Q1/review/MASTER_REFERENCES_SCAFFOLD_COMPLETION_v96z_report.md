@@ -1,0 +1,55 @@
+# MASTER_REFERENCES_SCAFFOLD_COMPLETION_v96z report
+
+## Identifier
+
+`MASTER-REFERENCES-SCAFFOLD-COMPLETION-v96z-001`
+
+## Diagnosis
+
+`MASTER_REFERENCES_SCAFFOLD_COMPLETION_PASS`
+
+## Decision
+
+`MASTER_UPDATED_WITH_REFERENCES_SCAFFOLD_COMPLETION`
+
+## Note
+
+`References scaffold completed with backup and stop guards.`
+
+## Patch mode
+
+`WRITE_WITH_BACKUP_AND_STOP_GUARDS`
+
+## Files
+
+- MASTER: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Backup: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_REFERENCES_SCAFFOLD_COMPLETION_v96z_20260704_142443.md`
+- Checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_REFERENCES_SCAFFOLD_COMPLETION_v96z_Tchecks.csv`
+- Headings after: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_references_scaffold_completion_after.txt`
+
+## Failed checks
+
+None.
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `MRSC-PRE-01` | MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `MRSC-PRE-02` | MASTER readable | 1 | `chars=59614` |
+| `MRSC-PRE-03` | Route-B order valid before References scaffold completion | 1 | `7=22914 | D=42500 | 8=46833 | 9=49854 | 10=52753 | 11=54622 | 12=54885` |
+| `MRSC-PRE-04` | # 11 References exists once | 1 | `line=525 char=54622 level=1 raw=# 11. References` |
+| `MRSC-PRE-05` | # 12 Supplementary material exists once | 1 | `line=539 char=54885 level=1 raw=# 12. Supplementary material` |
+| `MRSC-PRE-06` | References scaffold status informational | 1 | `pending=1 requiredRefs=1` |
+| `MRSC-DRAFT-01` | Draft removes Required references wording | 1 | `present=0` |
+| `MRSC-DRAFT-02` | Draft keeps preliminary reference status honest | 1 | `status=1 disclaimer=1` |
+| `MRSC-DRAFT-03` | Draft contains reference placeholder groups | 1 | `core reference placeholders` |
+| `MRSC-POST-01` | Route-B order valid after References reconstruction | 1 | `7=22914 | D=42500 | 8=46833 | 9=49854 | 10=52753 | 11=54622 | 12=56969` |
+| `MRSC-POST-02` | References status updated | 1 | `present=1` |
+| `MRSC-POST-03` | References PENDING marker removed | 1 | `present=0` |
+| `MRSC-POST-04` | Required references scaffold removed | 1 | `present=0` |
+| `MRSC-POST-05` | Supplementary material preserved exactly | 1 | `beforeSig=2569090 afterSig=2569090` |
+| `MRSC-POST-06` | No GA executed | 1 | `Text-only References scaffold completion` |
+| `MRSC-POST-07` | No drying model executed | 1 | `Text-only References scaffold completion` |
+| `MRSC-WRITE-01` | Backup created before writing | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_REFERENCES_SCAFFOLD_COMPLETION_v96z_20260704_142443.md` |
+| `MRSC-WRITE-02` | MASTER updated | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |

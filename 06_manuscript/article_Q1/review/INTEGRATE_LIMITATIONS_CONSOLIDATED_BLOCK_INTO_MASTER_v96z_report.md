@@ -1,0 +1,68 @@
+# INTEGRATE_LIMITATIONS_CONSOLIDATED_BLOCK_INTO_MASTER_v96z report
+
+## Diagnosis
+
+`INTEGRATE_LIMITATIONS_CONSOLIDATED_BLOCK_PASS`
+
+## Decision
+
+`MASTER_UPDATED_WITH_LIMITATIONS_CONSOLIDATED_BLOCK`
+
+## Next step
+
+`Proceed to manuscript consistency audit or Discussion/Conclusions drafting.`
+
+## Integration action
+
+`MASTER_UPDATED`
+
+## Insertion evidence
+
+`Inserted at end of MASTER after Discussion.`
+
+## Files
+
+- MASTER: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Backup: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_LIMITATIONS_BLOCK_v96z_20260702_154741.md`
+- Source Limitations block: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_LIMITATIONS_CONSOLIDATED_BLOCK_v96z.md`
+- Source report: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEC_LIMITATIONS_CONSOLIDATED_BLOCK_v96z_report.md`
+- Source checks file: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEC_LIMITATIONS_CONSOLIDATED_BLOCK_v96z_Tchecks.csv`
+- Integration checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\INTEGRATE_LIMITATIONS_CONSOLIDATED_BLOCK_INTO_MASTER_v96z_Tchecks.csv`
+- Headings diagnostic report: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_limitations_b.txt`
+- Locked Section 7: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md`
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `LIMINT-01` | MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `LIMINT-02` | Source Limitations block exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_LIMITATIONS_CONSOLIDATED_BLOCK_v96z.md` |
+| `LIMINT-03` | Source Limitations report exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEC_LIMITATIONS_CONSOLIDATED_BLOCK_v96z_report.md` |
+| `LIMINT-04` | Source Limitations checks file exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEC_LIMITATIONS_CONSOLIDATED_BLOCK_v96z_Tchecks.csv` |
+| `LIMINT-05` | Source Limitations PASS verified | 1 | `PASS verified from report and section.` |
+| `LIMINT-06` | Locked Section 7 exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md` |
+| `LIMINT-07` | Cost/CO2 integration report exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\INTEGRATE_COST_CO2_TRACEABILITY_CAVEAT_INTO_MASTER_v96z_report.md` |
+| `LIMINT-08` | Methods GA integration report exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\INTEGRATE_METHODS_GA_REPRODUCIBILITY_PARAGRAPH_INTO_MASTER_v96z_report.md` |
+| `LIMINT-09` | MASTER backup created | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_LIMITATIONS_BLOCK_v96z_20260702_154741.md` |
+| `LIMINT-10` | MASTER headings diagnostic report created | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_limitations_b.txt` |
+| `LIMINT-11` | Integration action valid | 1 | `MASTER_UPDATED` |
+| `LIMINT-12` | Limitations title present | 1 | `Title count = 1.` |
+| `LIMINT-13` | Consolidated limitations text present | 1 | `Consolidated Limitations block key sentence.` |
+| `LIMINT-14` | Section 7 preserved when Section 7 is detectable | 1 | `Section 7 comparison flexible.` |
+| `LIMINT-15` | Single R1 limitation preserved | 1 | `Single R1.` |
+| `LIMINT-16` | No statistical robustness caveat preserved | 1 | `Statistical robustness caveat.` |
+| `LIMINT-17` | Computed nondominated set wording preserved | 1 | `Computed nondominated set.` |
+| `LIMINT-18` | No prohibited global optimum phrase introduced | 1 | `Avoids prohibited global optimum wording.` |
+| `LIMINT-19` | No prohibited global Pareto front phrase introduced | 1 | `Avoids prohibited global Pareto wording.` |
+| `LIMINT-20` | 2-SAH sensitivity limitation preserved | 1 | `2-SAH sensitivity.` |
+| `LIMINT-21` | Fully coupled collector caveat preserved | 1 | `Collector caveat.` |
+| `LIMINT-22` | Fan-power limitation preserved | 1 | `Fan power.` |
+| `LIMINT-23` | Pressure-drop limitation preserved | 1 | `Pressure drop.` |
+| `LIMINT-24` | CO2 provisional factors preserved | 1 | `CO2 factors.` |
+| `LIMINT-25` | Provisional tag preserved | 1 | `Provisional tag.` |
+| `LIMINT-26` | Final source requirement preserved | 1 | `Final source requirement.` |
+| `LIMINT-27` | Energy-demand interpretation preserved | 1 | `Energy-demand interpretation.` |
+| `LIMINT-28` | Solar-only exclusion preserved | 1 | `Solar-only exclusion.` |
+| `LIMINT-29` | H2 historical reference preserved | 1 | `H2 historical reference.` |
+| `LIMINT-30` | No GA executed | 1 | `Text integration only.` |
+| `LIMINT-31` | No model executed | 1 | `Text integration only.` |

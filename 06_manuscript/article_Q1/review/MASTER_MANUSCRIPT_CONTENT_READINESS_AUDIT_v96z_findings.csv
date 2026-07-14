@@ -1,0 +1,5 @@
+id,severity,category,finding,recommendation
+MCRA-F024,MAJOR,References,No citation-like markers were detected in the MASTER.,"Add in-text citations and bibliography entries for model, collector curve, drying kinetics, optimization, and emission/cost factors."
+MCRA-F025,MINOR,Tables,Table tokens/placeholders detected: 24.,"Confirm whether table Markdown is embedded or still only referenced by filename."
+MCRA-F026,MAJOR,Figures,Figure tokens/placeholders detected: 3.,"Replace figure placeholders with final captions and figure-callout strategy."
+MCRA-F030,MINOR,Redundancy,Phrase appears frequently: "computed nondominated set" count=18.,"Review whether repeated cautionary language can be consolidated."

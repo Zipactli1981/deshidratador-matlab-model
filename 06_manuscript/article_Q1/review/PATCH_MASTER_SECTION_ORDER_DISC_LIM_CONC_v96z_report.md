@@ -1,0 +1,56 @@
+# PATCH_MASTER_SECTION_ORDER_DISC_LIM_CONC_v96z report
+
+## Diagnosis
+
+`PATCH_MASTER_SECTION_ORDER_DISC_LIM_CONC_REVIEW_REQUIRED`
+
+## Decision
+
+`INSPECT_FAILED_CHECKS`
+
+## Next step
+
+`Inspect failed checks and headings diagnostic report.`
+
+## Patch action
+
+`NO_WRITE_MISSING_REQUIRED_BLOCK`
+
+## Location evidence
+
+`Could not detect all three blocks: Discussion, Limitations, Conclusions.`
+
+## Files
+
+- MASTER: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Backup: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_SECTION_ORDER_PATCH_v96z_20260703_150652.md`
+- Checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\PATCH_MASTER_SECTION_ORDER_DISC_LIM_CONC_v96z_Tchecks.csv`
+- Headings diagnostic report: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_section_order_patch.txt`
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `SORD-01` | MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `SORD-02` | Locked Section 7 exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md` |
+| `SORD-03` | Backup created | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_SECTION_ORDER_PATCH_v96z_20260703_150652.md` |
+| `SORD-04` | Headings diagnostic report created | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_section_order_patch.txt` |
+| `SORD-05` | Discussion block detected before patch | 0 | `Discussion span.` |
+| `SORD-06` | Limitations block detected before patch | 0 | `Limitations span.` |
+| `SORD-07` | Conclusions block detected before patch | 0 | `Conclusions span.` |
+| `SORD-08` | Patch action valid | 1 | `NO_WRITE_MISSING_REQUIRED_BLOCK` |
+| `SORD-09` | Discussion key present once | 1 | `Discussion key count.` |
+| `SORD-10` | Limitations key present once | 1 | `Limitations key count.` |
+| `SORD-11` | Conclusions key present once | 1 | `Conclusions key count.` |
+| `SORD-12` | Discussion title present once | 1 | `Discussion title count.` |
+| `SORD-13` | Limitations title present once | 1 | `Limitations title count.` |
+| `SORD-14` | Conclusions title present once | 1 | `Conclusions title count.` |
+| `SORD-15` | Minimum section order valid | 1 | `Expected Results -> Discussion -> Limitations -> Conclusions -> References when detectable.` |
+| `SORD-16` | Section 7 preserved when detectable | 1 | `Section 7 comparison flexible.` |
+| `SORD-17` | No prohibited global optimum wording | 1 | `No prohibited wording.` |
+| `SORD-18` | No prohibited global Pareto front wording | 1 | `No prohibited wording.` |
+| `SORD-19` | No statistical robustness claim | 1 | `No robustness overclaim.` |
+| `SORD-20` | No final CO2 claim | 1 | `No final CO2 claim.` |
+| `SORD-21` | No final cost claim | 1 | `No final cost claim.` |
+| `SORD-22` | No GA executed | 1 | `Text reordering only.` |
+| `SORD-23` | No model executed | 1 | `Text reordering only.` |

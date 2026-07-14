@@ -1,0 +1,7 @@
+metric,definition
+MR,"Must satisfy MR < 0.1."
+cost_specific,"Must be lower than gasLP reference, or within accepted trade-off if CO2/MR strongly improve."
+CO2_specific,"Must be lower than gasLP reference while CO2 factors remain fixed."
+dominance_vs_gasLP,"Preferred: simultaneous improvement in MR, cost and CO2 vs gasLP."
+role_in_front,"Compromise solution, not necessarily minMR, minCost or minCO2."
+selection_basis,"Selected from admissible front by normalized balance score or equivalent compromise criterion."

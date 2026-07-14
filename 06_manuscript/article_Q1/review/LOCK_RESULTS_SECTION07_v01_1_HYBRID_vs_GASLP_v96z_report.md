@@ -1,0 +1,103 @@
+# LOCK_RESULTS_SECTION07_v01_1_HYBRID_vs_GASLP_v96z report
+
+## Diagnosis
+
+`RESULTS_SECTION_07_v01_1_LOCK_PASS`
+
+## Decision
+
+`RESULTS_SECTION_07_v01_1_LOCKED`
+
+## Next step
+
+`Proceed to Methods reproducibility table, final cost/CO2 traceability, or manuscript limitations.`
+
+## Lock timestamp
+
+`2026-07-02 12:15:37`
+
+## Locked section
+
+`C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md`
+
+## Required audit status
+
+- Diagnosis: `RESULTS_SECTION_07_v01_1_WITH_HYBRID_vs_GASLP_PASS`
+- Decision: `SECTION_07_v01_1_READY_FOR_LOCK`
+
+## Source files
+
+- Master: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Extracted Section 7 v01.1: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\traceability\RESULTS_SECTION_07_v01_1_EXTRACTED_v96z.md`
+- Audit report: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\AUDIT_RESULTS_SECTION07_v01_1_HYBRID_vs_GASLP_v96z_report.md`
+- Audit checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\AUDIT_RESULTS_SECTION07_v01_1_HYBRID_vs_GASLP_v96z_Tchecks.csv`
+- Section 7.1: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_01_formal_R1_run_v96z.md`
+- Section 7.2: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_05_results_eta_sensitivity_v96z.md`
+- Section 7.2.1: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_02_01_hybrid_vs_gasLP_baseline_v96z.md`
+- Section 7.3: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_03_operational_interpretation_v96z.md`
+- Section 7.4: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_04_methodological_implications_v96z.md`
+- Main table: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.md`
+- Supplementary eta table: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SUPP_TABLE_ETA_SENSITIVITY_v96z.md`
+- Hybrid-vs-gasLP full CSV: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SELECTED_POINTS_HYBRID_vs_GASLP_v96z.csv`
+- Hybrid-vs-gasLP summary CSV: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SELECTED_POINTS_HYBRID_vs_GASLP_v96z_summary.csv`
+- Hybrid-vs-gasLP summary MD: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SELECTED_POINTS_HYBRID_vs_GASLP_v96z_summary.md`
+- Hybrid-vs-gasLP report: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SELECTED_POINTS_HYBRID_vs_GASLP_v96z_report.md`
+- Hybrid-vs-gasLP integration report: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\INTEGRATE_SEC070201_HYBRID_vs_GASLP_v96z_report.md`
+
+## Locked content summary
+
+Results Section 7 v01.1 includes:
+
+1. Formal tri-objective run.
+2. Collector-efficiency sensitivity.
+3. Hybrid versus gas-LPG baseline comparison.
+4. Operational interpretation.
+5. Methodological implications.
+
+## Lock checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `L0711-01` | Master manuscript exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `L0711-02` | Audit report exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\AUDIT_RESULTS_SECTION07_v01_1_HYBRID_vs_GASLP_v96z_report.md` |
+| `L0711-03` | Audit checks CSV exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\AUDIT_RESULTS_SECTION07_v01_1_HYBRID_vs_GASLP_v96z_Tchecks.csv` |
+| `L0711-04` | Extracted Section 7 v01.1 exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\traceability\RESULTS_SECTION_07_v01_1_EXTRACTED_v96z.md` |
+| `L0711-05` | Audit checks all PASS | 1 | `All audit checks are true.` |
+| `L0711-06` | Section 7.1 source exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_01_formal_R1_run_v96z.md` |
+| `L0711-07` | Section 7.2 source exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_05_results_eta_sensitivity_v96z.md` |
+| `L0711-08` | Section 7.2.1 source exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_02_01_hybrid_vs_gasLP_baseline_v96z.md` |
+| `L0711-09` | Section 7.3 source exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_03_operational_interpretation_v96z.md` |
+| `L0711-10` | Section 7.4 source exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_04_methodological_implications_v96z.md` |
+| `L0711-11` | Main manuscript table exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.md` |
+| `L0711-12` | Supplementary eta table exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SUPP_TABLE_ETA_SENSITIVITY_v96z.md` |
+| `L0711-13` | Hybrid-vs-gasLP full CSV exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SELECTED_POINTS_HYBRID_vs_GASLP_v96z.csv` |
+| `L0711-14` | Hybrid-vs-gasLP summary CSV exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SELECTED_POINTS_HYBRID_vs_GASLP_v96z_summary.csv` |
+| `L0711-15` | Hybrid-vs-gasLP summary MD exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SELECTED_POINTS_HYBRID_vs_GASLP_v96z_summary.md` |
+| `L0711-16` | Hybrid-vs-gasLP report exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SELECTED_POINTS_HYBRID_vs_GASLP_v96z_report.md` |
+| `L0711-17` | Hybrid-vs-gasLP integration report exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\INTEGRATE_SEC070201_HYBRID_vs_GASLP_v96z_report.md` |
+| `L0711-18` | Locked file created | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md` |
+| `L0711-19` | Locked Section 7.1 present | 1 | `7.1 heading.` |
+| `L0711-20` | Locked Section 7.2 present | 1 | `7.2 heading.` |
+| `L0711-21` | Locked Section 7.2.1 present | 1 | `7.2.1 heading.` |
+| `L0711-22` | Locked Section 7.3 present | 1 | `7.3 heading.` |
+| `L0711-23` | Locked Section 7.4 present | 1 | `7.4 heading.` |
+| `L0711-24` | Computed nondominated set wording preserved | 1 | `Core wording.` |
+| `L0711-25` | No global optimum claim | 1 | `Avoids global optimum wording.` |
+| `L0711-26` | No global Pareto front claim | 1 | `Avoids global Pareto claim.` |
+| `L0711-27` | Statistical robustness caveat preserved | 1 | `Seed robustness caveat.` |
+| `L0711-28` | R1-7 anchor preserved | 1 | `R1-7 numerical anchor.` |
+| `L0711-29` | R1-3 anchor preserved | 1 | `R1-3 numerical anchor.` |
+| `L0711-30` | H2 anchor preserved | 1 | `H2 numerical anchor.` |
+| `L0711-31` | R1-9 anchor preserved | 1 | `R1-9 numerical anchor.` |
+| `L0711-32` | Hybrid-vs-gasLP reduction range preserved | 1 | `Hybrid-vs-gasLP reduction range.` |
+| `L0711-33` | H2 gasLP/hybrid anchor preserved | 1 | `H2 baseline anchor.` |
+| `L0711-34` | R1-7 gasLP/hybrid anchor preserved | 1 | `R1-7 baseline anchor.` |
+| `L0711-35` | R1-3 gasLP/hybrid anchor preserved | 1 | `R1-3 baseline anchor.` |
+| `L0711-36` | R1-9 gasLP/hybrid anchor preserved | 1 | `R1-9 baseline anchor.` |
+| `L0711-37` | Fully coupled collector caveat preserved | 1 | `Collector model caveat.` |
+| `L0711-38` | Fan-power limitation preserved | 1 | `Fan-power caveat.` |
+| `L0711-39` | Pressure-drop limitation preserved | 1 | `Pressure-drop caveat.` |
+| `L0711-40` | Lock report path defined | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\LOCK_RESULTS_SECTION07_v01_1_HYBRID_vs_GASLP_v96z_report.md` |
+| `L0711-41` | No GA executed | 1 | `Lock only.` |
+| `L0711-42` | No model executed | 1 | `Lock only.` |
+| `L0711-43` | MASTER not modified by lock | 1 | `Read/copy lock operation.` |

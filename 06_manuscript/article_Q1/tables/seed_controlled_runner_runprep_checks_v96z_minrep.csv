@@ -1,0 +1,16 @@
+id,check,pass,evidence
+RP01,Minrep design loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\traceability\MINIMAL_SEED_REPLICATION_DESIGN_v96z_minrep.mat
+RP02,Minrep design PASS,1,MINIMAL_SEED_REPLICATION_DESIGN_PASS
+RP03,Base runner exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_guarded_triobjective_formal_ga_v96m.m
+RP04,Base runner has gamultiobj,1,gamultiobj scan in v96m.
+RP05,Replicates available,1,nReplicates=3
+RP06,Seeds unique,1,Seeds unique.
+RP07,Runner created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_seed_controlled_minrep_formal_ga_v96z_minrep.m
+RP08,Approval script created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\approve_seed_controlled_minrep_execution_v96z_minrep.m
+RP09,Command MD created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\protocols\APPROVED_COMMANDS_MINREP_RUNNER_v96z_minrep_runprep.md
+RP10,Runprep report created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEED_CONTROLLED_REPLICATION_RUNNER_RUNPREP_v96z_minrep.md
+RP11,Audit CSV created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\seed_controlled_runner_audit_v96z_minrep_runprep.csv
+RP12,No GA executed,1,No gamultiobj call from runprep.
+RP13,No model executed,1,No objective/model call from runprep.
+RP14,No 05_runs modified,1,Only production runner and article_Q1 protocol files written.
+RP15,Execution still gated,1,Runner defaults to confirm_execute=false.

@@ -1,0 +1,9 @@
+id,check,pass,evidence
+PXF2_01,Postprocess file exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\postprocess_seed_replications_v96z_minrep_post.m
+PXF2_02,Backup created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\postprocess_seed_replications_v96z_minrep_post_BACKUP_BEFORE_FIX2_20260630_112211.m
+PXF2_03,Tsolutions extractor inserted,1,formal.Tsolutions extractor found.
+PXF2_04,Objective columns inserted,1,Objective columns found.
+PXF2_05,Decision columns inserted,1,Decision columns found.
+PXF2_06,No GA executed,1,No gamultiobj call.
+PXF2_07,No model executed,1,No objective/model call.
+PXF2_08,No 05_runs modified,1,Only postprocess script patched.

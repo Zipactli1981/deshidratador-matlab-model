@@ -1,0 +1,19 @@
+id,check,pass,evidence
+X01,Workspace v96w loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\traceability\MANUSCRIPT_INTEGRATION_WORKSPACE_v96w.mat
+X02,Workspace v96w PASS,1,MANUSCRIPT_INTEGRATION_WORKSPACE_PASS
+X03,Final ES v96v loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\traceability\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES.mat
+X04,Final ES v96v PASS,1,FINAL_SPANISH_THESIS_RESULTS_SECTION_PASS
+X05,Section v1 exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\sections\01_resultados_optimizacion_triobjetivo_v1.md
+X06,Section v2 MD created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\sections\01_resultados_optimizacion_triobjetivo_v2_editado.md
+X07,Section v2 TXT created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\sections\01_resultados_optimizacion_triobjetivo_v2_editado.txt
+X08,Master v2 created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\TESIS_RESULTADOS_MASTER_v2.md
+X09,Editorial notes created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\notes\NOTAS_CAMBIOS_v96x_RESULTADOS.md
+X10,Changes table created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\tables\edicion_resultados_v96x_cambios.csv
+X11,H2 values preserved,1,H2 MR and cost found.
+X12,gas LP prose retained,1,gas LP found.
+X13,CO2 caveat retained,1,CO2 caveat found.
+X14,Solar caveat retained,1,Solar caveat found.
+X15,Figure numbering retained,1,Figures 1-3 found.
+X16,No GA executed,1,No gamultiobj call.
+X17,No mechanistic rerun,1,No objective/model call.
+X18,No 05_runs modified,1,Only 06_manuscript edited.

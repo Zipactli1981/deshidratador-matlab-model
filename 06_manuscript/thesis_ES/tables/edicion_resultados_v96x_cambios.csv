@@ -1,0 +1,11 @@
+item,change_applied,priority
+Estructura,"Se mantuvo una estructura de resultados por alcance, solución, comparación, interpretación, figuras, limitaciones y síntesis.",high
+Tono,"Se ajustó a tono de tesis: técnico, sobrio, sin declarar óptimo universal.",high
+gas LP,"Se conserva gas LP en narrativa y gasLP solo como referencia de código cuando sea necesario.",medium
+H2,"Se presenta H2 como solución de compromiso admisible del frente híbrido.",high
+CO2,"Se mantiene caveat de comparación preliminar por factores de emisión pendientes.",high
+Solar,"Se mantiene exclusión solar como decisión metodológica por necesidad de ventana solar.",high
+Figuras,"Se conserva numeración Figura 1, Figura 2 y Figura 3.",medium
+Tabla comparativa,"Se conserva tabla gas LP vs H2 como síntesis numérica.",medium
+Variables,"Se preservan variables m_max, T_min, r_div2 y t_rec_ini con notación de código.",medium
+Cierre,"Se cierra con lógica de trade-off H1/H4/H9/H2.",high

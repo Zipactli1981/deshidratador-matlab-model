@@ -1,0 +1,8 @@
+id,check,pass,evidence
+D1_01,Build script exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\build_seedaware_minrep_runner_v96z_rngfix_d.m
+D1_02,Backup created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\build_seedaware_minrep_runner_v96z_rngfix_d_BACKUP_BEFORE_D1_20260630_115648.m
+D1_03,Old strict check removed,1,Old RNG_D09 check removed.
+D1_04,New approval text check inserted,1,New RNG_D09 check inserted.
+D1_05,No GA executed,1,No gamultiobj call.
+D1_06,No model executed,1,No objective/model call.
+D1_07,Original v96m not modified,1,Only build checker patched.

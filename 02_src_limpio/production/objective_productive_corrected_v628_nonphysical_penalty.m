@@ -1,0 +1,163 @@
+function [f, detail] = objective_productive_corrected_v628_nonphysical_penalty(x, mode_operation)
+%OBJECTIVE_PRODUCTIVE_CORRECTED_V611 Corrected productive objective.
+%
+% Micropaso 6.11 — OBJECTIVE-PRODUCTIVE-CORRECTED-001
+%
+% Objectives returned to gamultiobj:
+%   f(1) = MR_final
+%   f(2) = cost_specific_USD_per_kgwater
+%
+% Scope:
+%   - Uses corrected wrapper:
+%     opt_tunel_mod2_v16_nonphysical_penalty.m
+%   - Uses audited historical cost functions:
+%     build_cost_params_historical.m
+%     calc_cost_breakdown.m
+%
+% This function does not run GA by itself.
+% This function does not write article figures.
+% This function does not declare final article results.
+%
+% Emissions objective:
+%   Not included in v6.11 because emission factors have not been audited
+%   in the current controlled branch.
+
+    if nargin < 2 || isempty(mode_operation)
+        mode_operation = 'hybrid';
+    end
+
+    rootDir = setup_v05_paths();
+    addpath(genpath(fullfile(rootDir,'02_src_limpio')));
+    rehash;
+
+    %% Default penalty values for gamultiobj robustness
+    penalty_MR = 1e3;
+    penalty_cost = 1e6;
+
+    f = [penalty_MR, penalty_cost];
+
+    detail = struct();
+    detail.created_at = datetime('now');
+    detail.created_by_function = 'objective_productive_corrected_v628_nonphysical_penalty';
+    detail.status = 'NOT_EVALUATED';
+    detail.mode_operation = mode_operation;
+    detail.note = 'Corrected objective for productive GA; no GA execution inside this function.';
+
+    try
+        %% Validate decision vector
+        if ~isnumeric(x)
+            error('Decision vector x must be numeric.');
+        end
+
+        x = double(x(:)');
+
+        if numel(x) ~= 4
+            error('Decision vector x must have four elements: [m_max T_min r_div2 t_rec_ini].');
+        end
+
+        m_max = x(1);
+        T_min = x(2);
+        r_div2 = x(3);
+        t_rec_ini = x(4);
+
+        lb = [0.07 45 0.00 0];
+        ub = [0.20 70 0.99 19];
+
+        if any(x < lb) || any(x > ub)
+            detail.status = 'OUT_OF_BOUNDS';
+            detail.x = x;
+            detail.lb = lb;
+            detail.ub = ub;
+            return
+        end
+
+        %% Product parameters — red chili productive baseline
+        W0 = 200;
+
+        m_i = 0.87;
+        Mi = m_i/(1-m_i);
+        mwi = W0*m_i;
+        md = mwi/Mi;
+
+        m_f = 0.08;
+        m_des = 0.10;
+        Mf = m_f/(1-m_f);
+        M_des = m_des/(1-m_des);
+        mwf = Mf*md;
+
+        %% Corrected model call
+        [Q_aux_tot, dry_time, M, MR, Irradiacion, irr_diag] = ...
+            opt_tunel_mod2_v16_nonphysical_penalty( ...
+                m_max, T_min, r_div2, t_rec_ini, ...
+                W0, m_i, Mi, mwi, md, m_f, Mf, mwf, M_des, mode_operation);
+
+        %% Audited historical cost
+        params_cost = build_cost_params_historical();
+
+        cost = calc_cost_breakdown( ...
+            dry_time, Q_aux_tot, Irradiacion, Mi, M, md, params_cost);
+
+        cost_specific = cost.cost_specific_USD_per_kgwater;
+
+        %% Finite objective protection
+        if isnan(MR) || isinf(MR)
+            detail.status = 'INVALID_MR';
+            return
+        end
+
+        if isnan(cost_specific) || isinf(cost_specific) || cost_specific <= 0
+            detail.status = 'INVALID_COST';
+            return
+        end
+
+        %% Final objective vector
+        f = [MR, cost_specific];
+
+        detail.status = 'OK';
+        detail.x = x;
+
+        detail.inputs.m_max = m_max;
+        detail.inputs.T_min = T_min;
+        detail.inputs.r_div2 = r_div2;
+        detail.inputs.t_rec_ini = t_rec_ini;
+
+        detail.product.W0 = W0;
+        detail.product.m_i = m_i;
+        detail.product.m_f = m_f;
+        detail.product.m_des = m_des;
+        detail.product.Mi = Mi;
+        detail.product.Mf = Mf;
+        detail.product.M_des = M_des;
+        detail.product.md = md;
+        detail.product.mwi = mwi;
+        detail.product.mwf = mwf;
+
+        detail.outputs.Q_aux_tot = Q_aux_tot;
+        detail.outputs.dry_time = dry_time;
+        detail.outputs.M = M;
+        detail.outputs.MR = MR;
+        detail.outputs.Irradiacion = Irradiacion;
+
+        detail.irradiance.rule = irr_diag.rule;
+
+        if isfield(irr_diag,'aux_rule')
+            detail.auxiliary.rule = irr_diag.aux_rule;
+        else
+            detail.auxiliary.rule = 'aux_rule_not_reported';
+        end
+
+        detail.cost = cost;
+        detail.objectives.MR_final = f(1);
+        detail.objectives.cost_specific_USD_per_kgwater = f(2);
+
+        detail.execution.GA_executed = false;
+        detail.execution.article_figures_declared = false;
+
+    catch ME
+        detail.status = 'ERROR_CAUGHT_RETURNING_PENALTY';
+        detail.error.identifier = ME.identifier;
+        detail.error.message = ME.message;
+        detail.error.stack = ME.stack;
+        f = [penalty_MR, penalty_cost];
+    end
+end

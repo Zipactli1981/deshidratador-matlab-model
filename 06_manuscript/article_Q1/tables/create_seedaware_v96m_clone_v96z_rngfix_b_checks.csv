@@ -1,0 +1,13 @@
+id,check,pass,evidence
+RNG_B01,Source v96m exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_guarded_triobjective_formal_ga_v96m.m
+RNG_B02,Clone created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix.m
+RNG_B03,Function renamed,1,seed-aware signature found.
+RNG_B04,External seed branch inserted,1,external seed branch found.
+RNG_B05,Legacy branch preserved,1,legacy branch found.
+RNG_B06,Original fixed rng not unconditional,1,unconditional fixed rng not found.
+RNG_B07,gamultiobj still present,1,gamultiobj call preserved.
+RNG_B08,Tsolutions still present,1,Tsolutions preserved.
+RNG_B09,RNG metadata inserted,1,rng metadata inserted.
+RNG_B10,No GA executed,1,No gamultiobj call; file generation only.
+RNG_B11,No model executed,1,No objective/model call.
+RNG_B12,Original v96m not modified,1,Only clone created.

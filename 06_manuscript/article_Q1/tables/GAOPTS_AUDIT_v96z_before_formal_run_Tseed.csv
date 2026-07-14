@@ -1,0 +1,9 @@
+context,seed,rng_control,valid_for_independent_replication
+original_v96m,614960,INTERNAL_FIXED_SEED,0
+seedaware_formal_clone_with_rngSeed,NaN,EXTERNAL_SEED_APPLIED,1
+seedaware_formal_clone_without_rngSeed,614960,LEGACY_INTERNAL_SEED_614960_APPLIED,0
+seedaware_smoke_S1,61001,EXTERNAL_SEED_APPLIED,1
+seedaware_smoke_S2,61002,EXTERNAL_SEED_APPLIED,1
+planned_formal_R1,61001,EXTERNAL_SEED_APPLIED,1
+planned_formal_R2,61002,EXTERNAL_SEED_APPLIED,1
+planned_formal_R3,61003,EXTERNAL_SEED_APPLIED,1

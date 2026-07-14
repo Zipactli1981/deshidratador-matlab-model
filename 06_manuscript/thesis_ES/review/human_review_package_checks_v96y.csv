@@ -1,0 +1,17 @@
+id,check,pass,evidence
+Y01,v96x edit loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\traceability\EDIT_THESIS_RESULTS_SECTION_WORKSPACE_v96x.mat
+Y02,v96x diagnosis PASS,1,EDIT_THESIS_RESULTS_SECTION_WORKSPACE_PASS
+Y03,Section v2 exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\sections\01_resultados_optimizacion_triobjetivo_v2_editado.md
+Y04,Candidate MD created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\export_candidates\RESULTADOS_OPTIMIZACION_TRIOBJETIVO_CANDIDATE_20260628_015803.md
+Y05,Candidate TXT created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\export_candidates\RESULTADOS_OPTIMIZACION_TRIOBJETIVO_CANDIDATE_20260628_015803.txt
+Y06,Review checklist created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\review\human_review_checklist_v96y.csv
+Y07,Review MD created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\review\HUMAN_REVIEW_RESULTS_SECTION_v96y.md
+Y08,Export decision created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\review\EXPORT_DECISION_v96y.md
+Y09,Figures manifest created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\review\review_figures_manifest_v96y.csv
+Y10,Tables manifest created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\review\review_tables_manifest_v96y.csv
+Y11,Figures available,1,nFigures=6
+Y12,Tables available,1,nTables=8
+Y13,Human review required before export,1,HUMAN_REVIEW_REQUIRED_BEFORE_EXPORT
+Y14,No GA executed,1,No gamultiobj call.
+Y15,No mechanistic rerun,1,No objective/model call.
+Y16,No 05_runs modified,1,Only 06_manuscript review/export candidates written.

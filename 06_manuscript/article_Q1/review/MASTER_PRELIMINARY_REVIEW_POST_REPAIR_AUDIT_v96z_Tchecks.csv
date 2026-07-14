@@ -1,0 +1,25 @@
+id,check,pass,evidence
+MPRA-001,MASTER exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md
+MPRA-002,MASTER readable,1,chars=62198
+MPRA-003,Route-B order valid,1,7=22387 | D=42141 | 8=46461 | 9=49996 | 10=53317 | 11=55158 | 12=57492
+MPRA-004,All main sections detected,1,all detected
+MPRA-010,No duplicate modular subsection headings in 3/5/6,1,duplicates=0 | none
+MPRA-020,#5 contains state vector,1,x(t)=1 | T_a=1 | T_p=1 | MR=1 | T_s=1
+MPRA-021,#5 contains optimization decision-variable traceability,1,m_dot=1 | T_min=1 | r_rec=1 | t_rec_ini=1
+MPRA-022,#5 contains four ODE components,1,air=1 | product=1 | MR=1 | structure=1
+MPRA-023,#5 links model outputs to Q_aux and MR criterion,1,Q_aux=1 | MRcriterion=1
+MPRA-024,#5 no longer appears as bullet-only skeleton,1,equationDelimiters=12 | bullets=0
+MPRA-030,Abstract includes 31--45% hybrid-vs-gas-LPG reduction,1,31to45=1 | gas-LPG baseline=1
+MPRA-031,Conclusions include 31--45% hybrid-vs-gas-LPG reduction,1,31to45=1 | gas-LPG baseline=1
+MPRA-040,Limitations explicitly state GA search-budget limitation,1,seed=1 | pop=1 | gen=1 | exitflag=1 | finiteSearch=1
+MPRA-050,Repetition scan recorded for modular-assembly cleanup,1,computed nondominated set=3 | R1_solution_7=22 | energy-conservative feasible candidate=5 | historical reference=8 | single seed=1 | additional independent seed replications=1 | not newly optimized=0
+MPRA-051,Computed nondominated set repetition below severe threshold,1,count=3 threshold<=10
+MPRA-060,Figure references present for review copy,0,figureRefs=0
+MPRA-061,Table references or markdown tables present for review copy,1,tableRefs=0 | markdownTableLines=1
+MPRA-070,Citation markers present,1,citation_like_hits=8
+MPRA-080,No audit-trigger global Pareto wording,1,count=0
+MPRA-081,No unsupported global optimum claim,1,present=0
+MPRA-090,No GA executed,1,READ_ONLY audit
+MPRA-091,No drying model executed,1,READ_ONLY audit
+MPRA-092,MASTER not modified,1,READ_ONLY audit
+MPRA-999,Audit classification summary,0,hardFailed=0 | majorFindings=1 | moderateFindings=0

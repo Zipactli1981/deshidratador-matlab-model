@@ -1,0 +1,73 @@
+# MASTER_MATHEMATICAL_MODEL_DRAFT_v96z report
+
+## Identifier
+
+`MASTER-MATHEMATICAL-MODEL-DRAFT-v96z-001`
+
+## Diagnosis
+
+`MASTER_MATHEMATICAL_MODEL_DRAFT_PASS`
+
+## Decision
+
+`MASTER_UPDATED_WITH_MATHEMATICAL_MODEL_DRAFT`
+
+## Note
+
+`Mathematical model drafted with backup and stop guards.`
+
+## Patch mode
+
+`WRITE_WITH_BACKUP_AND_STOP_GUARDS`
+
+## Files
+
+- MASTER: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Backup: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_MATHEMATICAL_MODEL_DRAFT_v96z_20260704_134235.md`
+- Checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_MATHEMATICAL_MODEL_DRAFT_v96z_Tchecks.csv`
+- Headings after: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_mathematical_model_draft_after.txt`
+
+## Failed checks
+
+None.
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `MMD-PRE-01` | MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `MMD-PRE-02` | MASTER readable | 1 | `chars=48212` |
+| `MMD-PRE-03` | Route-B order valid before Mathematical model draft | 1 | `7=12969 | D=32555 | 8=36888 | 9=39909 | 10=42808 | 11=43220 | 12=43483` |
+| `MMD-PRE-04` | # 5 Mathematical model exists once | 1 | `line=136 char=11617 level=1 raw=# 5. Mathematical model` |
+| `MMD-PRE-05` | # 6 Optimization methodology exists once | 1 | `line=179 char=12291 level=1 raw=# 6. Optimization methodology` |
+| `MMD-PRE-06` | Mathematical model currently marked PENDING | 1 | `present=1` |
+| `MMD-PRE-07` | Mathematical model scaffold contains Expected content | 1 | `present=1` |
+| `MMD-PRE-08` | Previous sections already draft-ready | 1 | `previousReady=1` |
+| `MMD-PRE-09` | Required pre-existing model anchors acceptable before drafting | 1 | `air temperature=2 | moisture ratio=22 | air mass flow rate=4 | minimum process temperature=8 | recirculation ratio=11 | recirculation start time=7 | Q_aux=15 | MR <= 0.1=4 | product temperature=0 | structure temperature=0 | structural temperature=0 | product-temperature state=0 | structural-temperature state=0` |
+| `MMD-DRAFT-01` | Draft contains lumped-state dynamic model framing | 1 | `present=1` |
+| `MMD-DRAFT-02` | Draft contains four model states | 1 | `air=1 productT=1 MR=1 structure=1` |
+| `MMD-DRAFT-03` | Draft contains decision variables | 1 | `mdot=1 Tmin=1 rrec=1 trec=1` |
+| `MMD-DRAFT-04` | Draft contains Q_aux and LPG interpretation | 1 | `Qaux=1 LPG=1` |
+| `MMD-DRAFT-05` | Draft contains MR feasibility criterion | 1 | `present=1` |
+| `MMD-DRAFT-06` | Draft contains 2-SAH sensitivity statement | 1 | `2SAH=1 sensitivity=1` |
+| `MMD-DRAFT-07` | Draft keeps cost and CO2 conditional | 1 | `sourceLocked=1 CO2=1` |
+| `MMD-DRAFT-08` | Draft avoids equation invention markers | 1 | `No explicit new equations or correlations introduced` |
+| `MMD-DRAFT-09` | Draft avoids citation placeholders | 1 | `No citation placeholders in draft block` |
+| `MMD-DRAFT-10` | Draft does not introduce unsupported global optimality claim | 1 | `present=0` |
+| `MMD-DRAFT-11` | Draft does not introduce unsupported statistical robustness claim | 1 | `present=0` |
+| `MMD-POST-01` | Route-B order valid after Mathematical model reconstruction | 1 | `7=17119 | D=36705 | 8=41038 | 9=44059 | 10=46958 | 11=47370 | 12=47633` |
+| `MMD-POST-02` | Mathematical model status updated | 1 | `present=1` |
+| `MMD-POST-03` | Mathematical model PENDING marker removed | 1 | `present=0` |
+| `MMD-POST-04` | Mathematical model Expected content scaffold removed | 1 | `present=0` |
+| `MMD-POST-05` | Mathematical model contains model states and decision variables | 1 | `statesAndControlsPresent=1` |
+| `MMD-POST-06` | Mathematical model contains Q_aux and MR criterion | 1 | `Qaux=1 MR=1` |
+| `MMD-POST-07` | Earlier drafted sections remain draft-ready | 1 | `ready=1` |
+| `MMD-POST-08` | Other genuine pending sections preserved | 1 | `pendingPreserved=1` |
+| `MMD-POST-09` | Optimization methodology remains PARTIAL | 1 | `partial=1` |
+| `MMD-POST-10` | No unsupported global optimality claim introduced | 1 | `present=0` |
+| `MMD-POST-11` | No unsupported global Pareto-front claim introduced | 1 | `present=0` |
+| `MMD-POST-12` | No unsupported statistical robustness claim introduced | 1 | `present=0` |
+| `MMD-POST-13` | No GA executed | 1 | `Text-only Mathematical model draft` |
+| `MMD-POST-14` | No drying model executed | 1 | `Text-only Mathematical model draft` |
+| `MMD-WRITE-01` | Backup created before writing | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_MATHEMATICAL_MODEL_DRAFT_v96z_20260704_134235.md` |
+| `MMD-WRITE-02` | MASTER updated | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |

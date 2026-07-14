@@ -1,0 +1,20 @@
+id,check,pass,evidence
+MPSL-001,MASTER exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md
+MPSL-002,MASTER readable,1,chars=39298 lines=554
+MPSL-003,Clean headings detected,1,clean_headings=47
+MPSL-004,Located target: STATUS_PENDING,0,count=7
+MPSL-005,Located target: EXPECTED_CONTENT,0,count=4
+MPSL-006,Located target: EXPECTED_FIGURE,0,count=1
+MPSL-007,Located target: CANDIDATE_KEYWORDS,0,count=1
+MPSL-008,Located target: REQUIRED_REFERENCES,0,count=1
+MPSL-009,Located target: AWKWARD_HYBRID_BASELINE,0,count=1
+MPSL-010,Located target: COMPUTED_NONDOMINATED_SET,0,count=10
+MPSL-011,Located target: TABLE_TOKEN,0,count=12
+MPSL-012,Located target: FIGURE_TOKEN,0,count=1
+MPSL-013,Located target: CITATION_PLACEHOLDER,1,count=0
+MPSL-R001,Regexp locator clear: TODO_TBD_MARKERS,0,count=2
+MPSL-R002,Regexp locator clear: EMPTY_SECTION_STATUS_LINES,0,count=10
+MPSL-R003,Regexp locator clear: EXPECTED_STRUCTURE_MARKERS,0,count=7
+MPSL-020,No critical locator findings,1,critical=0
+MPSL-021,No major locator findings,0,major=33
+MPSL-022,No minor locator findings,0,minor=24

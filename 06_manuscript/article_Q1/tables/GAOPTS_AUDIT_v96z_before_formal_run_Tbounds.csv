@@ -1,0 +1,5 @@
+variable,lb,ub,units_or_comment
+m_max,NaN,NaN,Air mass flow or control variable used by model
+T_min,NaN,NaN,Minimum temperature setpoint
+r_div2,NaN,NaN,Recirculation fraction divided/encoded as in model
+t_rec_ini,NaN,NaN,Initial recirculation time

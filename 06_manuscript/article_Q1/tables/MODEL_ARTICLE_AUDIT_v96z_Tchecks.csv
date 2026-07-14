@@ -1,0 +1,14 @@
+id,check,pass,evidence
+MA01,Production directory exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production
+MA02,Article directory exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1
+MA03,Triobjective objective source exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\objective_productive_corrected_v96j_triobjective_CO2_fix1.m
+MA04,Design v96l source exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\design_triobjective_formal_run_v96l.m
+MA05,GAOPTS F4 audit found,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\traceability\GAOPTS_AUDIT_v96z_before_formal_run_f4.mat
+MA06,x_selected extracted,1,[0.0740767982118 62.6832965028 0.672252618341 11.6517528081]
+MA07,Formal bounds finite,1,lb_formal/ub_formal computed.
+MA08,Objective definitions consolidated,1,9
+MA09,Reference preflight table available,1,gasLP/hybrid/solar rows.
+MA10,Available outputs inventoried,1,135
+MA11,Article assets proposed,1,8
+MA12,No GA executed,1,No gamultiobj call.
+MA13,No source modified,1,Read-only audit.

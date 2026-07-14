@@ -1,0 +1,52 @@
+# SEC_METHODS_GA_REPRODUCIBILITY_PARAGRAPH_v96z report
+
+## Diagnosis
+
+`SEC_METHODS_GA_REPRODUCIBILITY_PARAGRAPH_PASS`
+
+## Decision
+
+`READY_FOR_METHODS_INTEGRATION`
+
+## Next step
+
+`Integrate Methods GA reproducibility paragraph into MASTER.`
+
+## Files
+
+- Section draft: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_METHODS_GA_REPRODUCIBILITY_PARAGRAPH_v96z.md`
+- Checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEC_METHODS_GA_REPRODUCIBILITY_PARAGRAPH_v96z_Tchecks.csv`
+- Source table MD: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\R1_REPRODUCIBILITY_CONFIGURATION_TABLE_v96z.md`
+- Locked Section 7: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md`
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `MGA-01` | R1 reproducibility MD table exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\R1_REPRODUCIBILITY_CONFIGURATION_TABLE_v96z.md` |
+| `MGA-02` | R1 reproducibility CSV table exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\R1_REPRODUCIBILITY_CONFIGURATION_TABLE_v96z.csv` |
+| `MGA-03` | R1 reproducibility report exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\R1_REPRODUCIBILITY_CONFIGURATION_TABLE_v96z_report.md` |
+| `MGA-04` | Locked Section 7 exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md` |
+| `MGA-05` | Methods paragraph file created | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_METHODS_GA_REPRODUCIBILITY_PARAGRAPH_v96z.md` |
+| `MGA-06` | English manuscript text present | 1 | `English block.` |
+| `MGA-07` | Spanish control version present | 1 | `Spanish control block.` |
+| `MGA-08` | gamultiobj documented | 1 | `Algorithm.` |
+| `MGA-09` | R1 documented | 1 | `Run identifier.` |
+| `MGA-10` | Seed documented | 1 | `Seed 61001.` |
+| `MGA-11` | Population documented | 1 | `Population 24.` |
+| `MGA-12` | Generations documented | 1 | `Generations 50.` |
+| `MGA-13` | Exitflag documented | 1 | `Exitflag 0.` |
+| `MGA-14` | Runtime documented | 1 | `Runtime.` |
+| `MGA-15` | m_dot documented | 1 | `m_dot.` |
+| `MGA-16` | T_min documented | 1 | `T_min.` |
+| `MGA-17` | r_rec documented | 1 | `r_rec.` |
+| `MGA-18` | t_rec_ini documented | 1 | `t_rec_ini.` |
+| `MGA-19` | MR threshold documented | 1 | `Feasibility threshold.` |
+| `MGA-20` | Computed nondominated set wording present | 1 | `Computed nondominated set.` |
+| `MGA-21` | No global optimality claim | 1 | `No global optimality.` |
+| `MGA-22` | No statistical robustness claim | 1 | `Robustness caveat.` |
+| `MGA-23` | Solar-only exclusion documented | 1 | `Solar-only caveat.` |
+| `MGA-24` | H2 historical reference documented | 1 | `H2 reference.` |
+| `MGA-25` | No GA executed | 1 | `Text generation only.` |
+| `MGA-26` | No model executed | 1 | `Text generation only.` |
+| `MGA-27` | MASTER not modified | 1 | `No master write operation.` |

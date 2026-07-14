@@ -1,0 +1,20 @@
+id,check,pass,evidence
+Z01,Final ES v96v loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\traceability\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES.mat
+Z02,Final ES v96v PASS,1,FINAL_SPANISH_THESIS_RESULTS_SECTION_PASS
+Z03,Edit v96x loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\traceability\EDIT_THESIS_RESULTS_SECTION_WORKSPACE_v96x.mat
+Z04,Edit v96x PASS,1,EDIT_THESIS_RESULTS_SECTION_WORKSPACE_PASS
+Z05,Interpretation MAT found,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\triobjective_formal_results_interpretation_v96p\TRIOBJECTIVE_FORMAL_RESULTS_INTERPRETATION_v96p_20260627_214504\mat\TRIOBJECTIVE_FORMAL_RESULTS_INTERPRETATION_v96p.mat
+Z06,Postrun MAT found,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\triobjective_formal_postrun_consolidation_v96o\TRIOBJECTIVE_FORMAL_POSTRUN_CONSOLIDATION_v96o_20260627_213631\mat\TRIOBJECTIVE_FORMAL_POSTRUN_CONSOLIDATION_v96o.mat
+Z07,Thesis sufficient conditional,1,SUFICIENTE_PARA_TESIS_CON_ALCANCE_CONDICIONADO
+Z08,Article strong not sufficient,1,NO_SUFFICIENTE_PARA_ARTICULO_FUERTE_SIN_VALIDACION_ADICIONAL
+Z09,Global optimality blocked,1,No afirmar que H2 es óptimo global absoluto ni que el AG convergió plenamente.
+Z10,Compromise claim allowed,1,H2 puede reportarse como solución de compromiso admisible dentro del frente formal obtenido para el modo híbrido.
+Z11,Convergence claim blocked,1,exitflag=0; maximum generations reached.
+Z12,Audit report created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\review\GA_SUFFICIENCY_AND_CONVERGENCE_AUDIT_v96z.md
+Z13,Audit table created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\tables\ga_sufficiency_audit_v96z.csv
+Z14,Claims table created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\tables\ga_sufficiency_claims_v96z.csv
+Z15,Thesis sufficiency text created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\sections\02_texto_suficiencia_AG_para_resultados_v96z.md
+Z16,Conclusion scope text created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\sections\03_texto_alcance_conclusiones_AG_v96z.md
+Z17,No GA executed,1,No gamultiobj call.
+Z18,No mechanistic rerun,1,No objective/model call.
+Z19,No 05_runs modified,1,Only 06_manuscript audit files written.

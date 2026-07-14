@@ -1,0 +1,8 @@
+id,check,pass,evidence
+E01,Input CSV exists,1,"C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\ETA_SENSITIVITY_v96z_H2_R1_selected.csv"
+E02,All expected eta modes present,1,"eta_article_2SAH_curve; eta_constant_0p50; eta_historical_code_curve"
+E03,All expected cases present,1,"H2_historical; R1_solution_3; R1_solution_7; R1_solution_9"
+E04,R1 solution 7 feasible under article curve,1,"MR<=0.1 check."
+E05,R1 solution 7 lower Q_aux than H2 under article curve,1,"Q_aux R1-7 vs H2, same eta mode."
+E06,No GA executed,1,"Postprocess only."
+E07,No model executed,1,"Read CSV only."

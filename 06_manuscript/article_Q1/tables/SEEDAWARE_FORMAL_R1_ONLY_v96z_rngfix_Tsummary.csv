@@ -1,0 +1,2 @@
+repID,seed,confirm_execute,run_status,error_message,runtime_s,runtime_h,nSolutions,nFiniteRows,nPenaltyRows,minMR,minCost,minCO2,output_mat,rngControl,rngSeed_v96z
+R1,61001,1,OK,,91458.7284749,25.4052023541389,9,9,0,0.014734459102959,0.246303839698573,0.893115176231881,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\runs\SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix_20260630_172906\R1\SEEDAWARE_FORMAL_R1_ONLY_seed_61001_output.mat,EXTERNAL_SEED_APPLIED,61001

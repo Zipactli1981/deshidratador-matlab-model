@@ -1,0 +1,47 @@
+id,check,pass,evidence
+MCRA-001,MASTER exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md
+MCRA-002,MASTER readable,1,chars=61920
+MCRA-003,Clean headings detected,1,clean_headings=62
+MCRA-004,Route-B order still valid,1,7=22172 | D=41759 | 8=46092 | 9=49640 | 10=52974 | 11=54841 | 12=57188
+MCRA-005,No STATUS: PENDING markers remain,1,pending_markers=0
+MCRA-006,# 1. Abstract exists once,1,line=49 char=832 level=1 raw=# 1. Abstract
+MCRA-007,# 2. Keywords exists once,1,line=61 char=3105 level=1 raw=# 2. Keywords
+MCRA-008,# 3. Introduction exists once,1,line=74 char=3341 level=1 raw=# 3. Introduction
+MCRA-009,# 4. System description exists once,1,line=120 char=8522 level=1 raw=# 4. System description
+MCRA-010,# 5. Mathematical model exists once,1,line=138 char=11867 level=1 raw=# 5. Mathematical model
+MCRA-011,# 6. Optimization methodology exists once,1,line=231 char=15699 level=1 raw=# 6. Optimization methodology
+MCRA-012,# 7. Results and discussion exists once,1,line=307 char=22172 level=1 raw=# 7. Results and discussion
+MCRA-013,# 8. Limitations exists once,1,line=508 char=46092 level=1 raw=# 8. Limitations
+MCRA-014,# 9. Conclusions exists once,1,line=525 char=49640 level=1 raw=# 9. Conclusions
+MCRA-015,# 10. Nomenclature exists once,1,line=542 char=52974 level=1 raw=# 10. Nomenclature
+MCRA-016,# 11. References exists once,1,line=573 char=54841 level=1 raw=# 11. References
+MCRA-017,No Expected content scaffolding remains,1,Expected content count=0
+MCRA-018,No Expected figure scaffolding remains,1,Expected figure count=0
+MCRA-019,No Candidate keywords scaffolding remains,1,Candidate keywords count=0
+MCRA-020,No Required references scaffolding remains,1,Required references count=0
+MCRA-021,Abstract appears drafted,1,abstract_body_chars=2256
+MCRA-022,Keywords appear finalized,1,keyword_list_items=8
+MCRA-023,References appear populated,1,reference_list_items=12
+MCRA-024,At least some citation/reference markers present,0,citation_like_hits=0
+MCRA-025,Table placeholders/tokens detected for follow-up,1,table_token_count=24
+MCRA-026,Figure placeholders/tokens detected for follow-up,1,figure_token_count=3
+MCRA-027,Duplication scan phrase: R1_solution_3 showed a 43.07% reduction,1,count=0
+MCRA-028,Duplication scan phrase: R1_solution_9 showed a lower relative reduction of 31.31%,1,count=0
+MCRA-029,Duplication scan phrase: Final cost or CO2 claims,1,count=1
+MCRA-030,Duplication scan phrase: computed nondominated set,0,count=18
+MCRA-031,Duplication scan phrase: historical reference,1,count=8
+MCRA-032,No known awkward hybrid baseline sentence remains,1,present=0
+MCRA-033,No unsupported global optimality claim,1,present=0
+MCRA-034,No unsupported global Pareto-front claim,1,present=0
+MCRA-035,No unsupported statistical robustness claim,1,present=0
+MCRA-036,Computed nondominated set wording retained,1,count=18
+MCRA-037,H2 historical-reference framing retained,1,H2_count=34 historical_reference_count=8
+MCRA-038,2-SAH sensitivity caveat retained,1,2SAH_count=22 sensitivity_count=53
+MCRA-039,Solar-only exclusion retained,1,solar_only_count=2 excluded_count=1
+MCRA-040,Fan-power/pressure-drop limitation retained,1,fan_power_count=12 pressure_drop_count=10
+MCRA-041,Cost/CO2 provisional traceability retained,1,count=2
+MCRA-042,No critical structural blocker remains,1,criticalFailed=0
+MCRA-043,No major content-readiness blocker remains,0,majorOpen=1
+MCRA-044,No GA executed by this audit,1,READ_ONLY text audit
+MCRA-045,No drying model executed by this audit,1,READ_ONLY text audit
+MCRA-046,MASTER was not modified by this audit,1,READ_ONLY no write to MASTER

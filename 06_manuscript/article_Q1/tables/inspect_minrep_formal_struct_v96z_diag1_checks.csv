@@ -1,0 +1,9 @@
+id,check,pass,evidence
+D1_01,Run MAT loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\runs\MINREP_SEED_CONTROLLED_RUN_v96z_20260628_024351\MINREP_SEED_CONTROLLED_RUN_v96z.mat
+D1_02,R1 output loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\runs\MINREP_SEED_CONTROLLED_RUN_v96z_20260628_024351\R1\MINREP_R1_seed_61001_formal_output.mat
+D1_03,formal variable exists,1,formal present in R1 output.
+D1_04,scan table created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\inspect_minrep_formal_struct_v96z_diag1_scan.csv
+D1_05,report created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\INSPECT_MINREP_FORMAL_STRUCT_v96z_diag1.md
+D1_06,candidate F found,0,candidateF=0
+D1_07,candidate X found,0,candidateX=0
+D1_08,No GA executed,1,No gamultiobj call.

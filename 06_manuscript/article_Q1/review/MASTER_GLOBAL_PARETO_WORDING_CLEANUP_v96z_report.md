@@ -1,0 +1,48 @@
+# MASTER_GLOBAL_PARETO_WORDING_CLEANUP_v96z report
+
+## Identifier
+
+`MASTER-GLOBAL-PARETO-WORDING-CLEANUP-v96z-001`
+
+## Diagnosis
+
+`MASTER_GLOBAL_PARETO_WORDING_CLEANUP_PASS`
+
+## Decision
+
+`MASTER_UPDATED_WITH_GLOBAL_PARETO_WORDING_CLEANUP`
+
+## Note
+
+`Global Pareto wording cleanup completed with backup and stop guards.`
+
+## Patch mode
+
+`WRITE_WITH_BACKUP_AND_STOP_GUARDS`
+
+## Files
+
+- MASTER: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Backup: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_GLOBAL_PARETO_WORDING_CLEANUP_v96z_20260704_144543.md`
+- Checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_GLOBAL_PARETO_WORDING_CLEANUP_v96z_Tchecks.csv`
+- Headings after: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_global_pareto_wording_cleanup_after.txt`
+
+## Failed checks
+
+None.
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `GPWC-PRE-01` | MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `GPWC-PRE-02` | MASTER readable | 1 | `chars=61698` |
+| `GPWC-PRE-03` | Route-B order valid before cleanup | 1 | `7=22914 | D=42500 | 8=46833 | 9=49854 | 10=52753 | 11=54622 | 12=56969` |
+| `GPWC-PRE-04` | Pareto wording occurrences recorded | 1 | `complete global Pareto front=1 | global Pareto front=1 | global Pareto-front=0 | complete Pareto front=0 | complete Pareto-front characterization=1` |
+| `GPWC-POST-01` | Route-B order valid after cleanup reconstruction | 1 | `7=22914 | D=42500 | 8=46833 | 9=49854 | 10=52753 | 11=54620 | 12=56967` |
+| `GPWC-POST-02` | Audit-trigger Pareto wording removed | 1 | `complete global Pareto front=0 | global Pareto front=0 | global Pareto-front=0 | complete Pareto front=0 | complete Pareto-front characterization=0` |
+| `GPWC-POST-03` | Computed nondominated set wording preserved | 1 | `count=18` |
+| `GPWC-POST-04` | No GA executed | 1 | `Text-only wording cleanup` |
+| `GPWC-POST-05` | No drying model executed | 1 | `Text-only wording cleanup` |
+| `GPWC-WRITE-01` | Backup created before writing | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_GLOBAL_PARETO_WORDING_CLEANUP_v96z_20260704_144543.md` |
+| `GPWC-WRITE-02` | MASTER updated | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |

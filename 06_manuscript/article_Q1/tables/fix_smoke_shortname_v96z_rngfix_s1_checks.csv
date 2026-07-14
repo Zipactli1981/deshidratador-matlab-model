@@ -1,0 +1,9 @@
+id,check,pass,evidence
+S1_01,Smoke runner exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_seedaware_smoke_seed_difference_v96z_rngfix.m
+S1_02,Backup created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_seedaware_smoke_seed_difference_v96z_rngfix_BACKUP_BEFORE_SHORTNAME_20260630_123714.m
+S1_03,Long smoke name removed,1,long name removed.
+S1_04,Short smoke name inserted,1,short name inserted.
+S1_05,Short name length OK,1,length=17; max=63
+S1_06,No GA executed,1,No gamultiobj call.
+S1_07,No model executed,1,No objective/model call.
+S1_08,Original v96m not modified,1,Only smoke runner patched.

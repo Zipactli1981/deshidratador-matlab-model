@@ -1,0 +1,9 @@
+claim,allowed,wording
+"Se obtuvo un frente triobjetivo formal para el modo híbrido.",1,Permitido: frente formal obtenido con la configuración computacional adoptada.
+"H2 es solución recomendada dentro del frente obtenido.",1,Permitido: solución de compromiso admisible del frente obtenido.
+"H2 mejora simultáneamente MR, costo y CO2 frente a gas LP.",1,Permitido: comparación interna con referencia gas LP.
+"H2 es el óptimo global del sistema.",0,No permitido: requiere análisis de convergencia/robustez.
+"El AG alcanzó convergencia plena.",0,No permitido: exitflag=0 por máximo de generaciones.
+"Los parámetros del AG están exhaustivamente justificados.",0,No permitido: falta sensibilidad de parámetros AG.
+"Los resultados sustentan conclusiones de tesis.",1,Permitido con alcance condicionado y caveats.
+"Los resultados sustentan publicación fuerte sin más validación.",0,No permitido sin réplicas o sensibilidad adicional.

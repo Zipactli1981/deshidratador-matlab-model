@@ -1,0 +1,22 @@
+id,check,pass,evidence
+VES01,v96u editorial review loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\editorial_results_section_review_v96u\EDITORIAL_RESULTS_SECTION_REVIEW_v96u_20260628_012520\mat\EDITORIAL_RESULTS_SECTION_REVIEW_v96u.mat
+VES02,v96u diagnosis PASS,1,EDITORIAL_RESULTS_SECTION_REVIEW_PASS
+VES03,v96s package loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\final_results_package_with_fig4_v96s\FINAL_RESULTS_PACKAGE_WITH_FIG4_v96s_20260628_004748\mat\FINAL_RESULTS_PACKAGE_WITH_FIG4_v96s.mat
+VES04,v96s package diagnosis PASS,1,FINAL_RESULTS_PACKAGE_WITH_FIG4_PASS
+VES05,Recommended solution is H2,1,recommended=H2
+VES06,H2 admissible by MR,1,MR=0.0473145515233
+VES07,Positive cost reduction,1,costReduction=26.155451487%
+VES08,Positive CO2 reduction,1,CO2Reduction=29.5437037514%
+VES09,Positive MR reduction,1,MRReduction=50.7184488784%
+VES10,Final MD created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\final_spanish_thesis_results_section_v96v_ES\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES_20260628_013217\md\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES.md
+VES11,Final TXT created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\final_spanish_thesis_results_section_v96v_ES\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES_20260628_013217\txt\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES.txt
+VES12,Final values CSV created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\final_spanish_thesis_results_section_v96v_ES\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES_20260628_013217\tables\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES_values.csv
+VES13,Final figures table created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\final_spanish_thesis_results_section_v96v_ES\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES_20260628_013217\tables\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES_figures.csv
+VES14,Key solutions table created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\final_spanish_thesis_results_section_v96v_ES\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES_20260628_013217\tables\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES_key_solutions.csv
+VES15,All final figure PNG/PDF exist,1,Figures 1-3 available as PNG/PDF.
+VES16,Uses gas LP in prose,1,gas LP found in final text.
+VES17,CO2 caveat retained,1,CO2 caveat found.
+VES18,Solar caveat retained,1,Solar caveat found.
+VES19,Figure numbering converted,1,Figures 1-3 found.
+VES20,No GA executed,1,No gamultiobj call.
+VES21,No mechanistic rerun,1,No objective/model call.

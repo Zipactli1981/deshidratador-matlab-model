@@ -1,0 +1,168 @@
+
+R1 = run_seedaware_formal_R1_only_v96z_rngfix(true);
+
+=== STARTING SEEDAWARE FORMAL R1 ONLY | seed=61001 | pop=24 | gen=50 ===
+
+=== EXECUTING TRIOBJECTIVE FORMAL GA v96m ===
+Mode: hybrid
+PopulationSize: 24
+MaxGenerations: 50
+Estimated runtime from v96l: 7.613 h
+
+                              Average            Average
+Generation   Func-count    Pareto distance    Pareto spread
+    1            24                 1                 1
+    2            48         0.0219864          0.185757
+    3            72         0.0150283         0.0730855
+    4            96         0.0160549           0.15459
+    5           120        0.00842611           0.17248
+    6           144        0.00786469         0.0381187
+    7           168         0.0205413          0.103403
+    8           192         0.0187637          0.402116
+    9           216        0.00875474          0.249973
+   10           240         0.0264797          0.237417
+   11           264        0.00676473         0.0379222
+   12           288         0.0276293          0.106775
+   13           312         0.0117645          0.241671
+   14           336          0.020301         0.0848189
+   15           360         0.0242773         0.0613407
+   16           384         0.0158836          0.081624
+   17           408         0.0127555         0.0908536
+   18           432         0.0167336          0.183615
+   19           456         0.0183965         0.0661464
+   20           480        0.00829578         0.0372098
+   21           504         0.0197211           0.34189
+   22           528         0.0110188         0.0398859
+   23           552         0.0274108         0.0967516
+   24           576        0.00640319         0.0196144
+   25           600         0.0229729          0.118334
+   26           624         0.0366824          0.109555
+   27           648         0.0173903         0.0556389
+   28           672         0.0237052         0.0648285
+   29           696         0.0194898          0.114115
+   30           720         0.0189606          0.083374
+
+                              Average            Average
+Generation   Func-count    Pareto distance    Pareto spread
+   31           744         0.0270663         0.0691213
+   32           768         0.0250278         0.0648507
+   33           792         0.0112327         0.0586751
+   34           816         0.0216712         0.0738495
+   35           840         0.0180177         0.0607866
+   36           864         0.0342551          0.124102
+   37           888         0.0127906         0.0655136
+   38           912         0.0145193         0.0621399
+   39           936         0.0341272          0.110944
+   40           960         0.0256008         0.0702781
+   41           984         0.0136603         0.0502259
+   42          1008        0.00860137         0.0236711
+   43          1032        0.00730196         0.0231193
+   44          1056         0.0429743          0.115361
+   45          1080         0.0347816          0.110634
+   46          1104         0.0261367         0.0639649
+   47          1128         0.0237117          0.157576
+   48          1152         0.0307368          0.098088
+   49          1176         0.0263037         0.0882722
+   50          1200         0.0151587         0.0737044
+Optimization terminated: maximum number of generations exceeded.
+=== TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix ===
+TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_COMPLETED
+=== DIAGNOSIS ===
+TRIOBJECTIVE_FORMAL_RUN_EXECUTION_COMPLETED_PASS
+=== FORMAL FLAGS ===
+                  confirm_execute: 1
+                 design_v96l_pass: 1
+         objective_v96j_fix1_used: 1
+                   preflight_pass: 1
+         source_preservation_pass: 1
+                  population_size: 24
+                  max_generations: 50
+                       modeFormal: "hybrid"
+                    referenceMode: "gasLP"
+                       run_status: "OK"
+                       nSolutions: 9
+                      nFiniteRows: 9
+                     nPenaltyRows: 0
+                  F_has_3_columns: 1
+     emission_factors_provisional: 1
+              formal_run_executed: 1
+         formal_run_still_on_hold: 0
+    postrun_consolidation_pending: 1
+
+=== PREFLIGHT ===
+      <strong>mode</strong>      <strong>status</strong>    <strong>error_message</strong>     <strong>m_max</strong>      <strong>T_min</strong>     <strong>r_div2</strong>     <strong>t_rec_ini</strong>    <strong>nobj</strong>       <strong>f1</strong>         <strong>f2</strong>         <strong>f3</strong>      <strong>detail_status</strong>     <strong>Q_aux_tot</strong>    <strong>Irradiacion</strong>    <strong>dry_time</strong>       <strong>M</strong>       <strong>CO2_total_kg</strong>    <strong>CO2_specific</strong>         <strong>emission_factor_status</strong>      
+    <strong>________</strong>    <strong>______</strong>    <strong>_____________</strong>    <strong>________</strong>    <strong>______</strong>    <strong>_______</strong>    <strong>_________</strong>    <strong>____</strong>    <strong>________</strong>    <strong>_______</strong>    <strong>______</strong>    <strong>______________</strong>    <strong>_________</strong>    <strong>___________</strong>    <strong>________</strong>    <strong>_______</strong>    <strong>____________</strong>    <strong>____________</strong>    <strong>_________________________________</strong>
+
+    "gasLP"      "OK"          ""          0.074077    62.683    0.67225     11.652       3      0.096009    0.37788     1.681    "OK"               1185.9             0         19.9      0.72113        288.7           1.681       "PROVISIONAL_FOR_CODE_VALIDATION"
+    "hybrid"     "OK"          ""          0.074077    62.683    0.67225     11.652       3      0.095917    0.26571    1.0584    "OK"               714.84        487.28         19.9      0.72052       181.78          1.0584       "PROVISIONAL_FOR_CODE_VALIDATION"
+    "solar"      "OK"          ""          0.074077    62.683    0.67225     11.652       3          1000      1e+06     1e+06    "INVALID_COST"        NaN           NaN          NaN          NaN          NaN             NaN       "PROVISIONAL_FOR_CODE_VALIDATION"
+
+=== RUN SUMMARY ===
+      <strong>mode</strong>      <strong>run_status</strong>    <strong>run_error</strong>    <strong>confirm_execute</strong>    <strong>runtime_s</strong>    <strong>runtime_h</strong>    <strong>exitflag</strong>    <strong>nSolutions</strong>    <strong>nFiniteRows</strong>    <strong>nPenaltyRows</strong>     <strong>minMR</strong>      <strong>minCost</strong>    <strong>minCO2</strong>     <strong>generations</strong>    <strong>funccount</strong>                              <strong>output_message</strong>                          
+    <strong>________</strong>    <strong>__________</strong>    <strong>_________</strong>    <strong>_______________</strong>    <strong>_________</strong>    <strong>_________</strong>    <strong>________</strong>    <strong>__________</strong>    <strong>___________</strong>    <strong>____________</strong>    <strong>________</strong>    <strong>_______</strong>    <strong>_______</strong>    <strong>___________</strong>    <strong>_________</strong>    <strong>__________________________________________________________________</strong>
+
+    "hybrid"       "OK"          ""             true            91067       25.296         0            9              9              0          0.014734    0.2463     0.89312        50           1200       "Optimization terminated: maximum number of generations exceeded."
+
+=== CHECKS ===
+     <strong>id</strong>                     <strong>check</strong>                    <strong>pass</strong>                                                    <strong>evidence</strong>                                                                                 <strong>criterion</strong>                              
+    <strong>_____</strong>    <strong>____________________________________</strong>    <strong>_____</strong>    <strong>_______________________________________________________________________________________________________</strong>    <strong>____________________________________________________________________</strong>
+
+    "M01"    "Design v96l pass"                      true     "TRIOBJECTIVE_FORMAL_RUN_DESIGN_PASS"                                                                      "Formal design must be PASS."                                       
+    "M02"    "Preflight pass"                        true     "gas f=[0.0960086 0.377878 1.68103]; hybrid f=[0.0959172 0.265706 1.05844]; solar f=[1000 1e+06 1e+06]"    "Preflight must validate gasLP/hybrid and penalize solar."          
+    "M03"    "Source preservation"                   true     "Protected files preserved and objective fix1 available."                                                  "No protected source may be overwritten."                           
+    "M04"    "Execution policy"                      true     "confirm_execute=1; run_status=OK"                                                                         "Script must not run unless confirm_execute=true."                  
+    "M05"    "Formal run completed if requested"     true     "confirm_execute=1; run_status=OK; error="                                                                 "If execution is requested, gamultiobj must complete without error."
+    "M06"    "Formal F has 3 columns if executed"    true     "F columns=3; nFiniteRows=9"                                                                               "Formal output F must have three objectives."                       
+    "M07"    "Not all penalized if executed"         true     "nPenaltyRows=0 of nSolutions=9"                                                                           "Formal run must not collapse entirely to penalty."                 
+    "M08"    "Emission factors provisional flag"     true     "CO2 factors are provisional; manuscript-final CO2 claims blocked."                                        "Factor status must remain explicit."                               
+
+=== OUTPUT FILES ===
+C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\triobjective_formal_ga_v96m\TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_20260630_172916\logs\TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix.md
+C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\triobjective_formal_ga_v96m\TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_20260630_172916\logs\TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix.txt
+C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\triobjective_formal_ga_v96m\TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_20260630_172916\mat\TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix.mat
+=== SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix ===
+SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix_COMPLETED
+=== DIAGNOSIS ===
+SEEDAWARE_FORMAL_R1_ONLY_PASS
+=== DECISION ===
+POSTPROCESS_R1_VS_LEGACY_BEFORE_R2_R3
+=== NEXT STEP ===
+Run postprocess R1-only comparison.
+=== PLAN ===
+    <strong>repID</strong>    <strong>seed</strong>     <strong>populationSize_expected</strong>    <strong>maxGenerations_expected</strong>    <strong>confirm_execute</strong>                                                                                                   <strong>clone</strong>                                                                                                                                                                                                <strong>runDir</strong>                                                                                                                                                                                             <strong>repDir</strong>                                                                                              
+    <strong>_____</strong>    <strong>_____</strong>    <strong>_______________________</strong>    <strong>_______________________</strong>    <strong>_______________</strong>    <strong>____________________________________________________________________________________________________________________________________________________________________________________________________</strong>    <strong>______________________________________________________________________________________________________________________________________________________________________________________________</strong>    <strong>_________________________________________________________________________________________________________________________________________________________________________________________________</strong>
+
+    "R1"     61001              24                         50                    true          "C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix.m"    "C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\runs\SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix_20260630_172906"    "C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\runs\SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix_20260630_172906\R1"
+
+=== SUMMARY ===
+    <strong>repID</strong>    <strong>seed</strong>     <strong>confirm_execute</strong>    <strong>run_status</strong>    <strong>error_message</strong>    <strong>runtime_s</strong>    <strong>runtime_h</strong>    <strong>nSolutions</strong>    <strong>nFiniteRows</strong>    <strong>nPenaltyRows</strong>     <strong>minMR</strong>      <strong>minCost</strong>    <strong>minCO2</strong>                                                                                                                        <strong>output_mat</strong>                                                                                                                             <strong>rngControl</strong>           <strong>rngSeed_v96z</strong>
+    <strong>_____</strong>    <strong>_____</strong>    <strong>_______________</strong>    <strong>__________</strong>    <strong>_____________</strong>    <strong>_________</strong>    <strong>_________</strong>    <strong>__________</strong>    <strong>___________</strong>    <strong>____________</strong>    <strong>________</strong>    <strong>_______</strong>    <strong>_______</strong>    <strong>________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</strong>    <strong>_______________________</strong>    <strong>____________</strong>
+
+    "R1"     61001         true             "OK"            ""            91459       25.405          9              9              0          0.014734    0.2463     0.89312    "C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\runs\SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix_20260630_172906\R1\SEEDAWARE_FORMAL_R1_ONLY_seed_61001_output.mat"    "EXTERNAL_SEED_APPLIED"       61001    
+
+=== CHECKS ===
+      <strong>id</strong>                     <strong>check</strong>                   <strong>pass</strong>                                                                                                   <strong>evidence</strong>                                                                                              
+    <strong>_______</strong>    <strong>__________________________________</strong>    <strong>_____</strong>    <strong>____________________________________________________________________________________________________________________________________________________________________________________________________</strong>
+
+    "R1_01"    "Seed-aware clone exists"             true     "C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix.m"
+    "R1_02"    "External seed branch present"        true     "rngSeed + EXTERNAL_SEED_APPLIED."                                                                                                                                                                  
+    "R1_03"    "Formal PopulationSize remains 24"    true     "popSize = 24."                                                                                                                                                                                     
+    "R1_04"    "Formal MaxGenerations remains 50"    true     "maxGen = 50."                                                                                                                                                                                      
+    "R1_05"    "gamultiobj present"                  true     "gamultiobj found."                                                                                                                                                                                 
+    "R1_06"    "X/F saved by clone"                  true     "save list contains X and F."                                                                                                                                                                       
+    "R1_07"    "opts saved by clone"                 true     "save list contains opts."                                                                                                                                                                          
+    "R1_08"    "lb/ub saved by clone"                true     "save list contains lb and ub."                                                                                                                                                                     
+    "R1_09"    "GAOPTS F4 audit available"           true     "C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\traceability\GAOPTS_AUDIT_v96z_before_formal_run_f4.mat"        
+    "R1_10"    "Runner limited to R1 only"           true     "No loop over R2/R3."                                                                                                                                                                               
+    "R1_11"    "Execution explicitly controlled"     true     "confirm_execute=1"                                                                                                                                                                                 
+    "R1_12"    "Original v96m not modified"          true     "Only calls seed-aware clone."                                                                                                                                                                      
+    "R1_13"    "R1 formal run completed"             true     "OK "                                                                                                                                                                                               
+    "R1_14"    "External seed applied"               true     "EXTERNAL_SEED_APPLIED"                                                                                                                                                                             
+    "R1_15"    "Seed is 61001"                       true     "61001"                                                                                                                                                                                             
+    "R1_16"    "F has finite rows"                   true     "9"                                                                                                                                                                                                 
+    "R1_17"    "Not all penalized"                   true     "nPenaltyRows=0; nSolutions=9"                                                                                                                                                                      
+
+=== REPORT ===
+C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix.md
+
+diary off

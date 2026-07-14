@@ -1,0 +1,12 @@
+id,check,pass,evidence
+FX1_01,Runner exists,1,"C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_seed_controlled_minrep_formal_ga_v96z_minrep.m"
+FX1_02,Backup created,1,"C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_seed_controlled_minrep_formal_ga_v96z_minrep_BACKUP_BEFORE_FIX1_20260628_023736.m"
+FX1_03,Replacements applied,1,"nApplied=13"
+FX1_04,Bad empty repmat removed,1,"No repmat('',height(...),1) remains."
+FX1_05,String run_status initialized,1,"run_status string array."
+FX1_06,String diagnosis initialized,1,"diagnosis string array."
+FX1_07,String output_mat initialized,1,"output_mat string array."
+FX1_08,String error_message initialized,1,"error_message string array."
+FX1_09,No GA executed,1,"No gamultiobj call."
+FX1_10,No model executed,1,"No objective/model call."
+FX1_11,No 05_runs modified,1,"Only production runner patched."

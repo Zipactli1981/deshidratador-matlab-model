@@ -1,0 +1,60 @@
+# SEC_DISCUSSION_CONSOLIDATED_DRAFT_v96z report
+
+## Diagnosis
+
+`SEC_DISCUSSION_CONSOLIDATED_DRAFT_PASS`
+
+## Decision
+
+`READY_FOR_DISCUSSION_INTEGRATION`
+
+## Next step
+
+`Integrate Discussion consolidated draft into MASTER.`
+
+## Files
+
+- Discussion section: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_DISCUSSION_CONSOLIDATED_DRAFT_v96z.md`
+- Checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEC_DISCUSSION_CONSOLIDATED_DRAFT_v96z_Tchecks.csv`
+- Locked Section 7: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md`
+- MASTER audit report: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_MANUSCRIPT_CONSISTENCY_AUDIT_v96z_report.md`
+- Limitations block: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_LIMITATIONS_CONSOLIDATED_BLOCK_v96z.md`
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `DISC-01` | MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `DISC-02` | Locked Section 7 exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md` |
+| `DISC-03` | MASTER audit report exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_MANUSCRIPT_CONSISTENCY_AUDIT_v96z_report.md` |
+| `DISC-04` | R1 reproducibility table exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\R1_REPRODUCIBILITY_CONFIGURATION_TABLE_v96z.md` |
+| `DISC-05` | ETA 2-SAH table exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.md` |
+| `DISC-06` | Hybrid baseline summary exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SELECTED_POINTS_HYBRID_vs_GASLP_v96z_summary.md` |
+| `DISC-07` | Limitations block exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_LIMITATIONS_CONSOLIDATED_BLOCK_v96z.md` |
+| `DISC-08` | Cost/CO2 caveat exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_METHODS_COST_CO2_FACTOR_TRACEABILITY_CAVEAT_v96z.md` |
+| `DISC-09` | Discussion draft file created | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_DISCUSSION_CONSOLIDATED_DRAFT_v96z.md` |
+| `DISC-10` | English manuscript block present | 1 | `English block.` |
+| `DISC-11` | Spanish control block present | 1 | `Spanish block.` |
+| `DISC-12` | R1_solution_7 interpretation present | 1 | `R1_solution_7.` |
+| `DISC-13` | R1_solution_3 interpretation present | 1 | `R1_solution_3.` |
+| `DISC-14` | R1_solution_9 interpretation present | 1 | `R1_solution_9.` |
+| `DISC-15` | H2 historical reference present | 1 | `H2.` |
+| `DISC-16` | H2 not new R1 solution caveat present | 1 | `H2 caveat.` |
+| `DISC-17` | Computed nondominated set wording present | 1 | `Computed nondominated set.` |
+| `DISC-18` | No prohibited global optimum wording | 1 | `No prohibited wording.` |
+| `DISC-19` | No prohibited global Pareto front wording | 1 | `No prohibited wording.` |
+| `DISC-20` | No statistical robustness claim | 1 | `No robustness overclaim.` |
+| `DISC-21` | Statistical robustness caveat present | 1 | `Robustness caveat.` |
+| `DISC-22` | 2-SAH sensitivity discussion present | 1 | `2-SAH.` |
+| `DISC-23` | Not fully coupled collector caveat present | 1 | `Collector caveat.` |
+| `DISC-24` | Hybrid vs gas-LPG discussion present | 1 | `Hybrid baseline.` |
+| `DISC-25` | Solar substitution interpretation present | 1 | `Solar substitution.` |
+| `DISC-26` | Cost/CO2 conditionality present | 1 | `Cost/CO2 conditionality.` |
+| `DISC-27` | Fan-power limitation present | 1 | `Fan-power.` |
+| `DISC-28` | Pressure-drop limitation present | 1 | `Pressure-drop.` |
+| `DISC-29` | No final CO2 claim introduced | 1 | `No final CO2 claim.` |
+| `DISC-30` | No final cost claim introduced | 1 | `No final cost claim.` |
+| `DISC-31` | No excessive numeric repetition | 1 | `Avoids repeating Section 7 numeric table.` |
+| `DISC-32` | No GA executed | 1 | `Text generation only.` |
+| `DISC-33` | No model executed | 1 | `Text generation only.` |
+| `DISC-34` | MASTER not modified | 1 | `No master write operation.` |

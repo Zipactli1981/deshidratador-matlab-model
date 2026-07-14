@@ -1,0 +1,4 @@
+pair,F_identical_12digits,X_identical_12digits,maxAbsFDiff,maxAbsXDiff,same_size_F,same_size_X
+R1_vs_R2,1,1,0,0,1,1
+R1_vs_R3,1,1,0,0,1,1
+R2_vs_R3,1,1,0,0,1,1

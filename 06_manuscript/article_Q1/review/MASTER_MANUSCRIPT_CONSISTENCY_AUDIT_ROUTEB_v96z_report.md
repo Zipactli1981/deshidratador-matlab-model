@@ -1,0 +1,99 @@
+# MASTER_MANUSCRIPT_CONSISTENCY_AUDIT_ROUTEB_v96z report
+
+## Identifier
+
+`MASTER-MANUSCRIPT-CONSISTENCY-AUDIT-ROUTEB-001`
+
+## Mode
+
+`READ_ONLY`
+
+## Diagnosis
+
+`MASTER_MANUSCRIPT_CONSISTENCY_AUDIT_ROUTEB_PASS`
+
+## Decision
+
+`MASTER_READY_FOR_NEXT_MANUSCRIPT_AUDIT_OR_EDITING_STEP`
+
+## Route-B architecture audited
+
+```text
+# 7. Results and discussion
+## 7.5 Discussion
+# 8. Limitations
+# 9. Conclusions
+# 10. Nomenclature
+# 11. References
+# 12. Supplementary material
+```
+
+## Files
+
+- MASTER: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_MANUSCRIPT_CONSISTENCY_AUDIT_ROUTEB_v96z_Tchecks.csv`
+- Headings: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_audit_routeB.txt`
+
+## Key positions
+
+| item | char position | evidence |
+|---|---:|---|
+| # 7 Results and discussion | 4186 | `line=231 char=4186 level=1 raw=# 7. Results and discussion` |
+| ## 7.5 Discussion | 23641 | `line=416 char=23641 level=2 raw=## 7.5 Discussion` |
+| # 8 Limitations | 27974 | `line=431 char=27974 level=1 raw=# 8. Limitations` |
+| # 9 Conclusions | 30995 | `line=446 char=30995 level=1 raw=# 9. Conclusions` |
+| # 10 Nomenclature | 33894 | `line=460 char=33894 level=1 raw=# 10. Nomenclature` |
+| # 11 References | 34306 | `line=479 char=34306 level=1 raw=# 11. References` |
+| # 12 Supplementary material | 34569 | `line=493 char=34569 level=1 raw=# 12. Supplementary material` |
+
+## Failed checks
+
+None.
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `MACCB-001` | MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `MACCB-002` | MASTER read successfully | 1 | `chars=39298` |
+| `MACCB-003` | Clean Markdown headings detected | 1 | `clean_headings=47` |
+| `MACCB-004` | # 7 Results and discussion exists once | 1 | `line=231 char=4186 level=1 raw=# 7. Results and discussion` |
+| `MACCB-005` | ## 7.5 Discussion exists once | 1 | `line=416 char=23641 level=2 raw=## 7.5 Discussion` |
+| `MACCB-006` | # 8 Limitations exists once | 1 | `line=431 char=27974 level=1 raw=# 8. Limitations` |
+| `MACCB-007` | # 9 Conclusions exists once | 1 | `line=446 char=30995 level=1 raw=# 9. Conclusions` |
+| `MACCB-008` | # 10 Nomenclature exists once | 1 | `line=460 char=33894 level=1 raw=# 10. Nomenclature` |
+| `MACCB-009` | # 11 References exists once | 1 | `line=479 char=34306 level=1 raw=# 11. References` |
+| `MACCB-010` | # 12 Supplementary material exists once | 1 | `line=493 char=34569 level=1 raw=# 12. Supplementary material` |
+| `MACCB-011` | Route-B manuscript order valid | 1 | `7=4186 | D=23641 | 8=27974 | 9=30995 | 10=33894 | 11=34306 | 12=34569` |
+| `MACCB-012` | No free-floating ## Discussion heading remains | 1 | `NOT_DETECTED` |
+| `MACCB-013` | No free-floating ## Limitations heading remains | 1 | `NOT_DETECTED` |
+| `MACCB-014` | No free-floating ## Conclusions heading remains | 1 | `NOT_DETECTED` |
+| `MACCB-015` | Discussion internal key count equals one | 1 | `count=1` |
+| `MACCB-016` | Limitations internal key count equals one | 1 | `count=1` |
+| `MACCB-017` | Conclusions internal key count equals one | 1 | `count=1` |
+| `MACCB-018` | Developed block internal key order is Discussion -> Limitations -> Conclusions | 1 | `DiscussionKey=23660 | LimitationsKey=27992 | ConclusionsKey=31013` |
+| `MACCB-019` | Developed blocks occur before References | 1 | `DiscussionKey=23660 | LimitationsKey=27992 | ConclusionsKey=31013 | References=34306` |
+| `MACCB-020` | No pending placeholder remains in # 8 Limitations | 1 | `pending=0` |
+| `MACCB-021` | No pending placeholder remains in # 9 Conclusions | 1 | `pending=0` |
+| `MACCB-022` | No glued critical headings | 1 | `NONE` |
+| `MACCB-023` | No likely glued headings anywhere | 1 | `NONE` |
+| `MACCB-024` | No residual 20# heading prefixes | 1 | `20#_prefix_count=0` |
+| `MACCB-025` | No prohibited global optimum/global optimality claim | 1 | `present=0` |
+| `MACCB-026` | No prohibited global Pareto front claim | 1 | `present=0` |
+| `MACCB-027` | No unsupported statistical robustness claim | 1 | `present=0` |
+| `MACCB-028` | Uses computed nondominated set wording | 1 | `count=11` |
+| `MACCB-029` | H2 retained as historical reference | 1 | `count=5` |
+| `MACCB-030` | R1_solution_7 retained as energy-saving candidate | 1 | `count=16` |
+| `MACCB-031` | 2-SAH retained as sensitivity representation | 1 | `2SAH_count=16 sensitivity_count=41` |
+| `MACCB-032` | Solar-only exclusion retained | 1 | `solar_only_count=2 excluded_count=1` |
+| `MACCB-033` | Cost/CO2 caveat retained | 1 | `provisional_count=2` |
+| `MACCB-034` | No final CO2 claim | 1 | `present=0` |
+| `MACCB-035` | No final cost claim | 1 | `present=0` |
+| `MACCB-036` | Required Section 7 phrase retained: R1_solution_7 was identified as the lowest-auxiliary-energy feasible solution | 1 | `count=1` |
+| `MACCB-037` | Required Section 7 phrase retained: R1_solution_3 represented a more balanced feasible candidate | 1 | `count=1` |
+| `MACCB-038` | Required Section 7 phrase retained: R1_solution_9 illustrated the opposite extreme of the trade-off | 1 | `count=1` |
+| `MACCB-039` | Required Section 7 phrase retained: hybrid operation reduced the auxiliary energy demand relative to the gas-LPG-only case | 1 | `count=1` |
+| `MACCB-040` | Required Section 7 phrase retained: Methodological implications | 1 | `count=2` |
+| `MACCB-041` | No GA executed by this audit | 1 | `READ_ONLY text audit` |
+| `MACCB-042` | No drying model executed by this audit | 1 | `READ_ONLY text audit` |
+| `MACCB-043` | MASTER was not modified by this audit | 1 | `READ_ONLY no write to MASTER` |

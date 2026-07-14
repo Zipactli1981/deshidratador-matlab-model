@@ -1,0 +1,51 @@
+MASTER HEADINGS DETECTED - ROUTE-B AUDIT
+
+MASTER: C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md
+
+0001 | line 00001 | char 00000001 | level 1 | # MASTER_manuscript_v01
+0002 | line 00005 | char 00000029 | level 1 | # Status
+0003 | line 00011 | char 00000069 | level 1 | # Micropaso
+0004 | line 00017 | char 00000109 | level 1 | # Identifier
+0005 | line 00023 | char 00000171 | level 1 | # Working title
+0006 | line 00029 | char 00000336 | level 1 | # Internal control note
+0007 | line 00049 | char 00000832 | level 1 | # 1. Abstract
+0008 | line 00067 | char 00001255 | level 1 | # 2. Keywords
+0009 | line 00084 | char 00001503 | level 1 | # 3. Introduction
+0010 | line 00092 | char 00001565 | level 1 | # 3.1 Context
+0011 | line 00098 | char 00001678 | level 1 | # 3.2 Problem
+0012 | line 00104 | char 00001817 | level 1 | # 3.3 Gap
+0013 | line 00110 | char 00002035 | level 1 | # 3.4 Contribution
+0014 | line 00116 | char 00002251 | level 1 | # 3.5 Scope and limitation
+0015 | line 00122 | char 00002468 | level 1 | # 4. System description
+0016 | line 00142 | char 00002834 | level 1 | # 5. Mathematical model
+0017 | line 00150 | char 00002900 | level 1 | # 5.1 Drying model
+0018 | line 00159 | char 00003007 | level 1 | # 5.2 Thermal model
+0019 | line 00168 | char 00003119 | level 1 | # 5.3 Solar collector representation
+0020 | line 00177 | char 00003346 | level 1 | # 5.4 Operational modes
+0021 | line 00185 | char 00003508 | level 1 | # 6. Optimization methodology
+0022 | line 00193 | char 00003580 | level 1 | # 6.1 Decision variables
+0023 | line 00202 | char 00003714 | level 1 | # 6.2 Objective functions
+0024 | line 00210 | char 00003872 | level 1 | # 6.3 Constraints and feasibility criterion
+0025 | line 00218 | char 00003978 | level 1 | # 6.4 Seed-aware formal run
+0026 | line 00231 | char 00004186 | level 1 | # 7. Results and discussion
+0027 | line 00237 | char 00004237 | level 1 | # 7.1 Formal tri-objective run
+0028 | line 00257 | char 00004611 | level 2 | ## Formal tri-objective run
+0029 | line 00275 | char 00008562 | level 1 | # 7.2 Collector-efficiency sensitivity
+0030 | line 00294 | char 00008900 | level 2 | ## Tri-objective optimization results and collector-efficiency sensitivity
+0031 | line 00308 | char 00012193 | level 2 | ## 7.2.1 Hybrid versus gas-LPG baseline comparison
+0032 | line 00335 | char 00015328 | level 1 | # 7.3 Operational interpretation
+0033 | line 00360 | char 00015828 | level 2 | ## Operational interpretation
+0034 | line 00376 | char 00019533 | level 1 | # 7.4 Methodological implications
+0035 | line 00402 | char 00020085 | level 2 | ## Methodological implications
+0036 | line 00416 | char 00023641 | level 2 | ## 7.5 Discussion
+0037 | line 00431 | char 00027974 | level 1 | # 8. Limitations
+0038 | line 00446 | char 00030995 | level 1 | # 9. Conclusions
+0039 | line 00460 | char 00033894 | level 1 | # 10. Nomenclature
+0040 | line 00479 | char 00034306 | level 1 | # 11. References
+0041 | line 00493 | char 00034569 | level 1 | # 12. Supplementary material
+0042 | line 00507 | char 00034814 | level 1 | # Internal traceability log
+0043 | line 00511 | char 00034846 | level 1 | # Approved sections
+0044 | line 00519 | char 00035037 | level 1 | # Approved tables
+0045 | line 00528 | char 00035265 | level 1 | # Restrictions
+0046 | line 00537 | char 00035711 | level 3 | ### Reproducibility configuration of the formal multiobjective run
+0047 | line 00546 | char 00037631 | level 3 | ### Traceability of economic and CO2 factors

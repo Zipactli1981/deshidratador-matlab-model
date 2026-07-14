@@ -1,0 +1,10 @@
+id,check,pass,evidence
+RNG_A01,v96m file exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_guarded_triobjective_formal_ga_v96m.m
+RNG_A02,v96m read successfully,1,nLines=875
+RNG_A03,rng audit performed,1,rng_hits=1
+RNG_A04,gamultiobj located,1,has_gamultiobj=1
+RNG_A05,optimoptions located,1,has_optimoptions=1
+RNG_A06,Tsolutions located,1,has_Tsolutions=1
+RNG_A07,No GA executed,1,No gamultiobj call; only text scan.
+RNG_A08,No model executed,1,No objective/model call.
+RNG_A09,No source modified,1,Audit only.

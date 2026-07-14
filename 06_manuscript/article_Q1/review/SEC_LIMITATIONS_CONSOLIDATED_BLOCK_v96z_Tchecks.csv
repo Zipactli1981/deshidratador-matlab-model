@@ -1,0 +1,28 @@
+id,check,pass,evidence
+LIM-01,MASTER exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md
+LIM-02,Locked Section 7 exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md
+LIM-03,Methods GA integration report exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\INTEGRATE_METHODS_GA_REPRODUCIBILITY_PARAGRAPH_INTO_MASTER_v96z_report.md
+LIM-04,Cost/CO2 integration report exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\INTEGRATE_COST_CO2_TRACEABILITY_CAVEAT_INTO_MASTER_v96z_report.md
+LIM-05,Cost/CO2 traceability matrix exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\FINAL_COST_CO2_FACTOR_TRACEABILITY_MATRIX_v96z.md
+LIM-06,R1 reproducibility table exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\R1_REPRODUCIBILITY_CONFIGURATION_TABLE_v96z.md
+LIM-07,Limitations section file created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_LIMITATIONS_CONSOLIDATED_BLOCK_v96z.md
+LIM-08,English manuscript block present,1,English block.
+LIM-09,Spanish control block present,1,Spanish block.
+LIM-10,Single R1 limitation present,1,Single-run limitation.
+LIM-11,No statistical robustness caveat present,1,Statistical robustness caveat.
+LIM-12,Computed nondominated set wording present,1,Computed nondominated set.
+LIM-13,No prohibited global optimum phrase,1,Avoids prohibited global optimum wording.
+LIM-14,No prohibited global Pareto front phrase,1,Avoids prohibited global Pareto wording.
+LIM-15,2-SAH sensitivity limitation present,1,2-SAH sensitivity.
+LIM-16,Fully coupled collector caveat present,1,Collector caveat.
+LIM-17,Fan-power limitation present,1,Fan power.
+LIM-18,Pressure-drop limitation present,1,Pressure drop.
+LIM-19,CO2 provisional factors present,1,CO2 factors.
+LIM-20,Provisional tag present,1,Provisional tag.
+LIM-21,Final source requirement present,1,Final source requirement.
+LIM-22,Energy-demand relative interpretation present,1,Energy-demand interpretation.
+LIM-23,Solar-only exclusion present,1,Solar-only exclusion.
+LIM-24,H2 historical reference present,1,H2 historical reference.
+LIM-25,No GA executed,1,Text generation only.
+LIM-26,No model executed,1,Text generation only.
+LIM-27,MASTER not modified,1,No master write operation.

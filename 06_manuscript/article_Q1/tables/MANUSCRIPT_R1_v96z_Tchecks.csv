@@ -1,0 +1,18 @@
+id,check,pass,evidence
+A01,Postprocess MAT exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\traceability\POSTPROCESS_R1_vs_legacy_reference_v96z.mat
+A02,R1 front has rows,1,9
+A03,Selected table has rows,1,8
+A04,At least one MR<=0.1 solution,1,7
+A05,Solution 7 available,1,Candidate lowest cost/CO2 among MR-feasible.
+A06,Solution 3 available,1,Candidate balanced L2 solution.
+A07,Front CSV written,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\MANUSCRIPT_R1_v96z_Table_front_compact.csv
+A08,Selected CSV written,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\MANUSCRIPT_R1_v96z_Table_selected_solutions.csv
+A09,Comparison CSV written,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\MANUSCRIPT_R1_v96z_Table_reference_comparison.csv
+A10,Summary CSV written,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\MANUSCRIPT_R1_v96z_Table_R1_vs_legacy_summary.csv
+A11,Pareto 3D PNG written,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\figures\MANUSCRIPT_R1_v96z_Fig_Pareto3D.png
+A12,MR-cost PNG written,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\figures\MANUSCRIPT_R1_v96z_Fig_MR_vs_cost.png
+A13,MR-CO2 PNG written,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\figures\MANUSCRIPT_R1_v96z_Fig_MR_vs_CO2.png
+A14,Cost-CO2 PNG written,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\figures\MANUSCRIPT_R1_v96z_Fig_cost_vs_CO2.png
+A15,Reference bars PNG written,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\figures\MANUSCRIPT_R1_v96z_Fig_reference_vs_selected_bars.png
+A16,No GA executed,1,Only postprocess and plotting.
+A17,No source modified,1,Read-only with respect to model sources.

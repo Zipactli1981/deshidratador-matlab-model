@@ -1,0 +1,21 @@
+id,check,pass,evidence
+LOCK07-01,Master manuscript exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md
+LOCK07-02,Extracted Section 7 exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\traceability\RESULTS_SECTION_07_EXTRACTED_v96z.md
+LOCK07-03,Audit report exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\AUDIT_RESULTS_SECTION07_CONSISTENCY_v96z_report.md
+LOCK07-04,Audit checks exist,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\AUDIT_RESULTS_SECTION07_CONSISTENCY_v96z_Tchecks.csv
+LOCK07-05,Audit checks all PASS,1,All audit checks are true.
+LOCK07-06,Section 7.1 source exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_01_formal_R1_run_v96z.md
+LOCK07-07,Section 7.2 source exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_05_results_eta_sensitivity_v96z.md
+LOCK07-08,Section 7.3 source exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_03_operational_interpretation_v96z.md
+LOCK07-09,Section 7.4 source exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_04_methodological_implications_v96z.md
+LOCK07-10,Main table exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.md
+LOCK07-11,Supplementary table exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SUPP_TABLE_ETA_SENSITIVITY_v96z.md
+LOCK07-12,Locked section file created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_LOCKED.md
+LOCK07-13,Locked section contains 7.1,1,7.1 heading.
+LOCK07-14,Locked section contains 7.2,1,7.2 heading.
+LOCK07-15,Locked section contains 7.3,1,7.3 heading.
+LOCK07-16,Locked section contains 7.4,1,7.4 heading.
+LOCK07-17,R1-7 anchor preserved,1,R1-7 anchor.
+LOCK07-18,H2 anchor preserved,1,H2 anchor.
+LOCK07-19,No GA executed,1,Lock only.
+LOCK07-20,No model executed,1,Lock only.

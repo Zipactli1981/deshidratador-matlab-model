@@ -1,0 +1,10 @@
+id,check,pass,evidence
+P07-01,Master exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md
+P07-02,Backup created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BACKUP_before_SEC07_v01_1_patch_20260702_105058.md
+P07-03,Master changed,1,Patch modified MASTER text.
+P07-04,Fully coupled collector caveat present,1,S0711-33 patch.
+P07-05,R1-3 baseline anchor present,1,S0711-47 patch.
+P07-06,R1-9 baseline anchor present,1,S0711-48 patch.
+P07-07,No GA executed,1,Text patch only.
+P07-08,No model executed,1,Text patch only.
+P07-09,No numeric results changed intentionally,1,Only explicit anchor/unit text was inserted.

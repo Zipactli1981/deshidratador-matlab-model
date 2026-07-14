@@ -1,0 +1,27 @@
+id,check,pass,evidence
+CBFX1-01,Current MASTER exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md
+CBFX1-02,Pre-fix1 backup exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_SECTION_ORDER_PATCH_FIX1_v96z_20260703_161840.md
+CBFX1-03,Current MASTER read successfully,1,chars=40156
+CBFX1-04,Backup MASTER read successfully,1,chars=40147
+CBFX1-05,Current MASTER contains Section 7 heading,1,charpos=4150
+CBFX1-06,Backup contains Section 7 heading,1,charpos=4150
+CBFX1-07,Current contains Discussion internal key once,1,count=1 charpos=32939
+CBFX1-08,Backup contains Discussion internal key once,1,count=1 charpos=32939
+CBFX1-09,Current contains Limitations internal key once,1,count=1 charpos=29922
+CBFX1-10,Backup contains Limitations internal key once,1,count=1 charpos=29922
+CBFX1-11,Current contains Conclusions internal key once,1,count=1 charpos=37268
+CBFX1-12,Backup contains Conclusions internal key once,1,count=1 charpos=37268
+CBFX1-13,Current References clean heading detected,0,count=0 pos=NaN summary=NOT_DETECTED
+CBFX1-14,Backup References clean heading detected,0,count=0 pos=NaN summary=NOT_DETECTED
+CBFX1-15,Current minimum order valid,0,Results=4150 | Discussion=32924 | Limitations=29906 | Conclusions=37252 | References=NaN
+CBFX1-16,Backup minimum order valid,0,Results=4150 | Discussion=NaN | Limitations=NaN | Conclusions=NaN | References=NaN
+CBFX1-17,Current has no residual 20# prefixes,0,20#_prefix_count=2
+CBFX1-18,Backup has no residual 20# prefixes,0,20#_prefix_count=5
+CBFX1-19,Current developed blocks are before References,0,References not detected as clean heading
+CBFX1-20,Backup developed blocks are before References,0,References not detected as clean heading
+CBFX1-21,Current internal developed block order is Discussion -> Limitations -> Conclusions,0,DiscussionKey=32939 | LimitationsKey=29922 | ConclusionsKey=37268
+CBFX1-22,Backup internal developed block order is Discussion -> Limitations -> Conclusions,0,DiscussionKey=32939 | LimitationsKey=29922 | ConclusionsKey=37268
+CBFX1-23,Current differs from backup,1,char_delta_current_minus_backup=9
+CBFX1-24,Current shows post-fix1 tail-insertion signature,1,LimitationsKey=29922 DiscussionKey=32939 ConclusionsKey=37268
+CBFX1-25,Backup appears technically complete for critical developed blocks,1,Discussion=1 Limitations=1 Conclusions=1
+CBFX1-26,Restore pre-fix1 backup is likely safer than correcting current,1,restoreRecommended=1 correctCurrentRecommended=0

@@ -1,0 +1,22 @@
+id,check,pass,evidence
+DIAFX1-01,MASTER exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md
+DIAFX1-02,MASTER read successfully,1,chars=40156
+DIAFX1-03,Clean Markdown headings detected,1,clean_headings=47
+DIAFX1-04,No glued critical headings,1,
+DIAFX1-05,No glued headings anywhere,0,## Status | ## Micropaso | ## Identifier | ## Working title | ## Internal control note | ## 3.1 Context | ## 3.2 Problem | ## 3.3 Gap | ## 3.4 Contribution | ## 3.5 Scope and limitation | ## 5.1 Drying model | ## 5.2 Thermal model | ## 5.3 Solar collector representation | ## 5.4 Operational modes | ## 6.1 Decision variables | ## 6.2 Objective functions | ## 6.3 Constraints and feasibility criterion | ## 6.4 Seed-aware formal run | ## 7.1 Formal tri-objective run | ### Formal tri-objective run | ## 7.2 Collector-efficiency sensitivity | ### Tri-objective optimization results and collector-efficiency sensitivity | ### 7.2.1 Hybrid versus gas-LPG baseline comparison | ## 7.3 Operational interpretation | ### Operational interpretation | ## 7.4 Methodological implications | ### Methodological implications | ## Approved sections | ## Approved tables | ## Restrictions | 0### Reproducibility configuration of the formal multiobjective run | 0### Traceability of economic and CO2 factors | ## Limitations | ## Discussion | ## Conclusions
+DIAFX1-06,No residual 20# heading prefixes,0,20#_prefix_count=2
+DIAFX1-07,Clean Discussion heading count,1,count=1 | line=491 char=32924 level=2 raw=## Discussion
+DIAFX1-08,Clean Limitations heading count,1,count=1 | line=477 char=29906 level=2 raw=## Limitations
+DIAFX1-09,Clean Conclusions heading count,1,count=1 | line=505 char=37252 level=2 raw=## Conclusions
+DIAFX1-10,Clean References heading count,0,count=0 | NOT_DETECTED
+DIAFX1-11,Discussion heading level is ###,0,level=2
+DIAFX1-12,Limitations heading level is ###,0,level=2
+DIAFX1-13,Conclusions heading level is ###,0,level=2
+DIAFX1-14,Minimum section order valid: Results -> Discussion -> Limitations -> Conclusions -> References,0,Results=4150 | Discussion=32924 | Limitations=29906 | Conclusions=37252 | References=NaN
+DIAFX1-15,Placeholder # 8 Limitations still present,1,charpos=23589
+DIAFX1-16,Placeholder # 9 Conclusions still present,1,charpos=24028
+DIAFX1-17,Discussion internal key count equals one,1,count=1
+DIAFX1-18,Limitations internal key count equals one,1,count=1
+DIAFX1-19,Conclusions internal key count equals one,1,count=1
+DIAFX1-20,Internal key order: Discussion -> Limitations -> Conclusions,0,DiscussionKey=32939 | LimitationsKey=29922 | ConclusionsKey=37268
+DIAFX1-21,Developed Discussion/Limitations/Conclusions headings are before References,0,References not detected as clean heading

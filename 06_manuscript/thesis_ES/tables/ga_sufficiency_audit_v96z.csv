@@ -1,0 +1,13 @@
+criterion,status,evidence,risk,recommendation
+Corrida formal completada,cumple,"La corrida formal híbrida terminó y produjo frente triobjetivo.",bajo,"Usar resultados, conservando trazabilidad."
+Resultados finitos,cumple,"nFiniteRows = 9 y nPenaltyRows = 0.",bajo,"Reportar que no hubo penalizaciones en el frente formal."
+Solución recomendada admisible,cumple,"H2 cumple MR < 0.1.",bajo,"Mantener H2 como solución recomendada."
+Mejora simultánea vs gas LP,cumple,"H2 reduce MR, costo específico y CO2 específico frente a gas LP.",bajo,"Mantener comparación contra gas LP."
+Frente con soluciones representativas,cumple,"H1, H2, H4 y H9 permiten interpretar extremos y compromiso.",medio,"Usar H1/H4/H9 como anclas interpretativas."
+Terminación por convergencia,no cumple,"exitflag = 0; terminó por máximo de generaciones.",alto,"No afirmar convergencia plena."
+Replicación con semillas,no realizado,"No hay corridas formales adicionales con semillas distintas.",alto,"Agregar replicación mínima si se quiere robustecer."
+Sensibilidad de parámetros AG,no realizado,"No hay barrido formal de PopulationSize, MaxGenerations u otros parámetros.",alto,"Agregar sensibilidad si el objetivo es publicación fuerte."
+Tamaño del frente,limitado,"nSolutions = 9; útil para discusión, limitado para robustez algorítmica.",medio,"Evitar conclusiones de optimalidad global."
+Justificación fuerte de parámetros AG,limitado,"La configuración está documentada, pero no optimizada por sensibilidad.",alto,"Declarar parámetros como configuración computacional adoptada."
+Suficiencia para tesis,cumple condicionado,"Defendible si se declara como frente obtenido y solución de compromiso.",medio,"Redactar conclusiones condicionadas."
+Suficiencia para artículo fuerte,no suficiente,"Requiere replicación/sensibilidad adicional antes de afirmaciones fuertes.",alto,"No enviar como artículo fuerte sin validación adicional."

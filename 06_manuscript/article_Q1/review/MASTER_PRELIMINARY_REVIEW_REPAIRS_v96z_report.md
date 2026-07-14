@@ -1,0 +1,56 @@
+# MASTER_PRELIMINARY_REVIEW_REPAIRS_v96z report
+
+## Identifier
+
+`MASTER-PRELIMINARY-REVIEW-REPAIRS-v96z-001`
+
+## Diagnosis
+
+`MASTER_PRELIMINARY_REVIEW_REPAIRS_PASS`
+
+## Decision
+
+`MASTER_UPDATED_WITH_PRELIMINARY_REVIEW_REPAIRS`
+
+## Note
+
+`Preliminary review repairs completed.`
+
+## Patch mode
+
+`WRITE_WITH_BACKUP_AND_STOP_GUARDS`
+
+## Files
+
+- MASTER: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Backup: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_PRELIMINARY_REVIEW_REPAIRS_v96z_20260706_161148.md`
+- Checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_PRELIMINARY_REVIEW_REPAIRS_v96z_Tchecks.csv`
+- Headings after: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_preliminary_review_repairs_after.txt`
+
+## Failed checks
+
+None.
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `PRE-01` | MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `PRE-02` | MASTER readable | 1 | `chars=61699` |
+| `PRE-03` | Route-B order valid before repairs | 1 | `7=22914 | D=42500 | 8=46833 | 9=49854 | 10=52753 | 11=54620 | 12=56967` |
+| `PRE-04` | Required sections detected | 1 | `all detected` |
+| `DRAFT-01` | Duplicate target subsections removed if present | 1 | `removed=0 | none` |
+| `DRAFT-02` | #5 contains four-state equations | 1 | `dT_a/dT_p/dMR/dT_s` |
+| `DRAFT-03` | #5 contains decision-variable traceability | 1 | `m_dot/T_min/r_rec/t_rec_ini/Q_aux` |
+| `DRAFT-04` | Limitations include GA search-budget limitation | 1 | `pop=24/gen=50/exitflag=0` |
+| `DRAFT-05` | Abstract includes 31--45% result | 1 | `31--45 in Abstract` |
+| `DRAFT-06` | Conclusions include 31--45% result | 1 | `31--45 in Conclusions` |
+| `DRAFT-07` | Repeated computed nondominated set wording reduction recorded | 1 | `before=18 after=18 | reduced=0` |
+| `POST-01` | Route-B order valid after repairs | 1 | `7=22172 | D=41759 | 8=46092 | 9=49640 | 10=52974 | 11=54841 | 12=57188` |
+| `POST-02` | Duplicate target subsection heading scan after repairs | 1 | `remaining=0 | none` |
+| `POST-03` | #5 equation/model-content scan after repairs | 1 | `bullets=0 eqDelims=12 hasModelEqs=1` |
+| `POST-04` | No audit-trigger global Pareto wording introduced | 1 | `global Pareto wording absent` |
+| `POST-05` | No GA executed | 1 | `Text-only repair` |
+| `POST-06` | No drying model executed | 1 | `Text-only repair` |
+| `WRITE-01` | Backup created | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_PRELIMINARY_REVIEW_REPAIRS_v96z_20260706_161148.md` |
+| `WRITE-02` | MASTER updated | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |

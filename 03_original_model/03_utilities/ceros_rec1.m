@@ -1,0 +1,57 @@
+function [m_AH8,m_AH7,m_AH6,m_AH5,m_AH4,...
+ m_AH3,m_AH2,m_AH1,w_amb,h_ent,m_M1,h_AH1,h_AH2,h_M1,T_AH1,...
+ T_AH2,T_M1,m_M2,h_AH3,h_M2,T_AH3,T_M2,m_M3,h_AH4,h_M3,T_AH4,...
+ T_M3,m_M4,h_AH5,h_M4,T_AH5,T_M4,m_M5,h_AH6,h_M5,T_AH6,T_M5,...
+ m_M6,h_AH7,h_M6,T_AH7,T_M6,m_M7,h_AH8,h_M7,w_M7,T_AH8,T_M7,...
+ RH_M7]=ceros_rec1(i)
+
+m_AH8(i)=0;
+m_AH7(i)=0;
+m_AH6(i)=0;
+m_AH5(i)=0;
+m_AH4(i)=0;
+m_AH3(i)=0;
+m_AH2(i)=0;
+m_AH1(i)=0;
+w_amb(i)=0;
+h_ent(i)=0;
+m_M1(i)=0;
+h_AH1(i)=0;
+h_AH2(i)=0;
+h_M1(i)=0;
+T_AH1(i)=0;
+T_AH2(i)=0;
+T_M1(i)=0;
+m_M2(i)=0;
+h_AH3(i)=0;
+h_M2(i)=0;
+T_AH3(i)=0;
+T_M2(i)=0;
+m_M3(i)=0;
+h_AH4(i)=0;
+h_M3(i)=0;
+T_AH4(i)=0;
+T_M3(i)=0;
+m_M4(i)=0;
+h_AH5(i)=0;
+h_M4(i)=0;
+T_AH5(i)=0;
+T_M4(i)=0;
+m_M5(i)=0;
+h_AH6(i)=0;
+h_M5(i)=0;
+T_AH6(i)=0;
+T_M5(i)=0;
+m_M6(i)=0;
+h_AH7(i)=0;
+h_M6(i)=0;
+T_AH7(i)=0;
+T_M6(i)=0;
+m_M7(i)=0;
+h_AH8(i)=0;
+h_M7(i)=0;
+T_AH8(i)=0;
+T_M7(i)=0;
+RH_M7(i)=0;
+w_M7(i)=0;
+

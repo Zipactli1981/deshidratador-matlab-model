@@ -1,0 +1,2 @@
+severity,location,finding,evidence
+major,figures,No integrated figure references detected,"At minimum: system schematic, optimization workflow, selected candidates/trade-off plot."

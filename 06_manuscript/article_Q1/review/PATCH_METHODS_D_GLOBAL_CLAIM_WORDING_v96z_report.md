@@ -1,0 +1,37 @@
+# PATCH_METHODS_D_GLOBAL_CLAIM_WORDING_v96z report
+
+## Diagnosis
+
+`PATCH_METHODS_D_GLOBAL_CLAIM_WORDING_PASS`
+
+## Decision
+
+`RERUN_METHODS_D_INTEGRATION_AUDIT`
+
+## Next step
+
+`Re-run integrate_methods_ga_reproducibility_paragraph_into_master_v96z.`
+
+## Changed
+
+`1`
+
+## Files
+
+- MASTER: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Backup: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_PATCH_METHODS_D_GLOBAL_CLAIMS_v96z_20260702_144225.md`
+- Checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\PATCH_METHODS_D_GLOBAL_CLAIM_WORDING_v96z_Tchecks.csv`
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `MGCP-01` | MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `MGCP-02` | Backup created | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_PATCH_METHODS_D_GLOBAL_CLAIMS_v96z_20260702_144225.md` |
+| `MGCP-03` | Patch executed | 1 | `String-level wording patch only.` |
+| `MGCP-04` | No global optimum phrase remains | 1 | `Audit-prohibited phrase removed.` |
+| `MGCP-05` | No globally optimal phrase remains | 1 | `Audit-prohibited phrase removed.` |
+| `MGCP-06` | No global Pareto front phrase remains | 1 | `Audit-prohibited phrase removed.` |
+| `MGCP-07` | Computed nondominated set wording preserved | 1 | `Required cautious wording preserved.` |
+| `MGCP-08` | No GA executed | 1 | `Text patch only.` |
+| `MGCP-09` | No model executed | 1 | `Text patch only.` |

@@ -1,0 +1,75 @@
+# INTEGRATE_DISCUSSION_CONSOLIDATED_DRAFT_INTO_MASTER_v96z report
+
+## Diagnosis
+
+`INTEGRATE_DISCUSSION_CONSOLIDATED_DRAFT_PASS`
+
+## Decision
+
+`MASTER_UPDATED_WITH_DISCUSSION_CONSOLIDATED_DRAFT`
+
+## Next step
+
+`Re-run MASTER manuscript consistency audit or proceed to Conclusions drafting.`
+
+## Integration action
+
+`NO_WRITE_ALREADY_INTEGRATED`
+
+## Insertion evidence
+
+`Detected previous consolidated Discussion block in MASTER; no new write performed.`
+
+## Files
+
+- MASTER: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Backup: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_DISCUSSION_BLOCK_v96z_20260702_172958.md`
+- Source Discussion draft: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_DISCUSSION_CONSOLIDATED_DRAFT_v96z.md`
+- Source report: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEC_DISCUSSION_CONSOLIDATED_DRAFT_v96z_report.md`
+- Source checks file: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEC_DISCUSSION_CONSOLIDATED_DRAFT_v96z_Tchecks.csv`
+- Integration checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\INTEGRATE_DISCUSSION_CONSOLIDATED_DRAFT_INTO_MASTER_v96z_Tchecks.csv`
+- Headings diagnostic report: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_discussion_b.txt`
+- Locked Section 7: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md`
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `DINT-01` | MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `DINT-02` | Source Discussion draft exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_DISCUSSION_CONSOLIDATED_DRAFT_v96z.md` |
+| `DINT-03` | Source Discussion report exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEC_DISCUSSION_CONSOLIDATED_DRAFT_v96z_report.md` |
+| `DINT-04` | Source Discussion checks file exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEC_DISCUSSION_CONSOLIDATED_DRAFT_v96z_Tchecks.csv` |
+| `DINT-05` | Source Discussion PASS verified | 1 | `PASS verified from report and section.` |
+| `DINT-06` | Locked Section 7 exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md` |
+| `DINT-07` | MASTER audit report exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_MANUSCRIPT_CONSISTENCY_AUDIT_v96z_report.md` |
+| `DINT-08` | Limitations integration report exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\INTEGRATE_LIMITATIONS_CONSOLIDATED_BLOCK_INTO_MASTER_v96z_report.md` |
+| `DINT-09` | MASTER backup created | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_DISCUSSION_BLOCK_v96z_20260702_172958.md` |
+| `DINT-10` | MASTER headings diagnostic report created | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_discussion_b.txt` |
+| `DINT-11` | Integration action valid | 1 | `NO_WRITE_ALREADY_INTEGRATED` |
+| `DINT-12` | Discussion block key present once | 1 | `Key count = 1.` |
+| `DINT-13` | Discussion title present | 1 | `Title count = 1.` |
+| `DINT-14` | No excessive Discussion duplication | 1 | `Key count = 1.` |
+| `DINT-15` | Section 7 preserved when Section 7 is detectable | 1 | `Section 7 comparison flexible.` |
+| `DINT-16` | Discussion appears after Results when Results detectable | 1 | `Discussion after Results or no Results heading detected.` |
+| `DINT-17` | Discussion appears before Limitations/Conclusions/References when detectable | 1 | `Discussion before post-Discussion headings or no such heading detected.` |
+| `DINT-18` | R1_solution_7 interpretation preserved | 1 | `R1_solution_7.` |
+| `DINT-19` | R1_solution_3 interpretation preserved | 1 | `R1_solution_3.` |
+| `DINT-20` | R1_solution_9 interpretation preserved | 1 | `R1_solution_9.` |
+| `DINT-21` | H2 historical reference preserved | 1 | `H2.` |
+| `DINT-22` | H2 not-new-R1 caveat preserved | 1 | `H2 caveat.` |
+| `DINT-23` | Computed nondominated set wording preserved | 1 | `Computed nondominated set.` |
+| `DINT-24` | No prohibited global optimum phrase introduced | 1 | `No prohibited wording.` |
+| `DINT-25` | No prohibited global Pareto front phrase introduced | 1 | `No prohibited wording.` |
+| `DINT-26` | No statistical robustness claim introduced | 1 | `No robustness overclaim.` |
+| `DINT-27` | Statistical robustness caveat preserved | 1 | `Robustness caveat.` |
+| `DINT-28` | 2-SAH sensitivity discussion preserved | 1 | `2-SAH.` |
+| `DINT-29` | Collector caveat preserved | 1 | `Collector caveat.` |
+| `DINT-30` | Hybrid vs gas-LPG discussion preserved | 1 | `Hybrid baseline.` |
+| `DINT-31` | Solar substitution interpretation preserved | 1 | `Solar substitution.` |
+| `DINT-32` | Cost/CO2 conditionality preserved | 1 | `Cost/CO2 conditionality.` |
+| `DINT-33` | Fan-power limitation preserved | 1 | `Fan-power.` |
+| `DINT-34` | Pressure-drop limitation preserved | 1 | `Pressure-drop.` |
+| `DINT-35` | No final CO2 claim introduced | 1 | `No final CO2 claim.` |
+| `DINT-36` | No final cost claim introduced | 1 | `No final cost claim.` |
+| `DINT-37` | No GA executed | 1 | `Text integration only.` |
+| `DINT-38` | No model executed | 1 | `Text integration only.` |

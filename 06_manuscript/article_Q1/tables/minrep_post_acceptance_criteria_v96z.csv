@@ -1,0 +1,10 @@
+id,criterion,pass,evidence
+C1,All replicates completed without error,1,"OK=3/3"
+C2,All replicates produced finite rows,1,"min nFiniteRows=9"
+C3,Each replicate has at least one MR-admissible solution,1,"admissible=3/3"
+C4,H2-like solution appears in at least 2 of 3 replicates,1,"H2_like=3/3"
+C5,H2-like solution reduces cost vs gasLP,1,"cost values: 0.29646, 0.29646, 0.29646"
+C6,H2-like solution reduces CO2 vs gasLP,1,"CO2 values: 1.2908, 1.2908, 1.2908"
+C7,H2-like solution satisfies MR < 0.1,1,"MR values: 0.030266, 0.030266, 0.030266"
+C8,Do not claim global optimum,1,"Global optimum claim remains blocked."
+C9,Seed independence not contradicted by identical fronts,0,"Replicate fronts are identical at rounded numerical comparison; base runner likely resets RNG internally."

@@ -1,0 +1,54 @@
+# MASTER_NOMENCLATURE_DRAFT_v96z report
+
+## Identifier
+
+`MASTER-NOMENCLATURE-DRAFT-v96z-001`
+
+## Diagnosis
+
+`MASTER_NOMENCLATURE_DRAFT_PASS`
+
+## Decision
+
+`MASTER_UPDATED_WITH_NOMENCLATURE_DRAFT`
+
+## Note
+
+`Nomenclature drafted with backup and stop guards.`
+
+## Patch mode
+
+`WRITE_WITH_BACKUP_AND_STOP_GUARDS`
+
+## Files
+
+- MASTER: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Backup: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_NOMENCLATURE_DRAFT_v96z_20260704_142210.md`
+- Checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_NOMENCLATURE_DRAFT_v96z_Tchecks.csv`
+- Headings after: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_nomenclature_draft_after.txt`
+
+## Failed checks
+
+None.
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `MND-PRE-01` | MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `MND-PRE-02` | MASTER readable | 1 | `chars=58157` |
+| `MND-PRE-03` | Route-B order valid before Nomenclature draft | 1 | `7=22914 | D=42500 | 8=46833 | 9=49854 | 10=52753 | 11=53165 | 12=53428` |
+| `MND-PRE-04` | # 10 Nomenclature exists once | 1 | `line=494 char=52753 level=1 raw=# 10. Nomenclature` |
+| `MND-PRE-05` | # 11 References exists once | 1 | `line=513 char=53165 level=1 raw=# 11. References` |
+| `MND-PRE-06` | Nomenclature status precheck informational | 1 | `pending=1 draftReady=0` |
+| `MND-DRAFT-01` | Draft contains required symbols | 1 | `m_dot/MR/Q_aux/r_rec/T_min/t_rec_ini` |
+| `MND-DRAFT-02` | Draft contains required abbreviations | 1 | `2-SAH/GA/H2/LPG/R1/SAH` |
+| `MND-DRAFT-03` | Draft avoids unsupported global claims | 1 | `globalOpt=0 globalPareto=0` |
+| `MND-POST-01` | Route-B order valid after Nomenclature reconstruction | 1 | `7=22914 | D=42500 | 8=46833 | 9=49854 | 10=52753 | 11=54622 | 12=54885` |
+| `MND-POST-02` | Nomenclature status updated | 1 | `present=1` |
+| `MND-POST-03` | Nomenclature PENDING marker removed | 1 | `present=0` |
+| `MND-POST-04` | References section preserved exactly | 1 | `beforeSig=3094804 afterSig=3094804` |
+| `MND-POST-05` | No GA executed | 1 | `Text-only Nomenclature draft` |
+| `MND-POST-06` | No drying model executed | 1 | `Text-only Nomenclature draft` |
+| `MND-WRITE-01` | Backup created before writing | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_NOMENCLATURE_DRAFT_v96z_20260704_142210.md` |
+| `MND-WRITE-02` | MASTER updated | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |

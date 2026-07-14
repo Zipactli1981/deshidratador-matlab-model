@@ -1,0 +1,55 @@
+id,check,pass,evidence
+S0711-01,Master manuscript exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md
+S0711-02,Section 7 extracted,1,Section 7 length > 1000 chars.
+S0711-03,Subsection 7.1 present,1,7.1 heading.
+S0711-04,Subsection 7.2 present,1,7.2 heading.
+S0711-05,Subsection 7.2.1 present,1,7.2.1 heading.
+S0711-06,Subsection 7.3 present,1,7.3 heading.
+S0711-07,Subsection 7.4 present,1,7.4 heading.
+S0711-08,SEC 7.1 source file exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_01_formal_R1_run_v96z.md
+S0711-09,SEC 7.2 source file exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_05_results_eta_sensitivity_v96z.md
+S0711-10,SEC 7.2.1 source file exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_02_01_hybrid_vs_gasLP_baseline_v96z.md
+S0711-11,SEC 7.3 source file exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_03_operational_interpretation_v96z.md
+S0711-12,SEC 7.4 source file exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_04_methodological_implications_v96z.md
+S0711-13,Main manuscript table exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.md
+S0711-14,Supplementary eta sensitivity table exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SUPP_TABLE_ETA_SENSITIVITY_v96z.md
+S0711-15,Hybrid-vs-gasLP full CSV exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SELECTED_POINTS_HYBRID_vs_GASLP_v96z.csv
+S0711-16,Hybrid-vs-gasLP summary CSV exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SELECTED_POINTS_HYBRID_vs_GASLP_v96z_summary.csv
+S0711-17,Hybrid-vs-gasLP summary MD exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SELECTED_POINTS_HYBRID_vs_GASLP_v96z_summary.md
+S0711-18,Hybrid-vs-gasLP report exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SELECTED_POINTS_HYBRID_vs_GASLP_v96z_report.md
+S0711-19,Integration report exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\INTEGRATE_SEC070201_HYBRID_vs_GASLP_v96z_report.md
+S0711-20,Computed nondominated set wording present,1,Required wording.
+S0711-21,No global optimum claim,1,Avoids global optimum wording.
+S0711-22,No global Pareto front claim,1,Avoids global Pareto claim.
+S0711-23,Statistical robustness caveat present,1,Seed robustness caveat.
+S0711-24,Additional seed replication caveat present,1,Replication caveat.
+S0711-25,R1-7 anchor present,1,R1-7 numerical anchor.
+S0711-26,R1-3 anchor present,1,R1-3 numerical anchor.
+S0711-27,H2 anchor present,1,H2 numerical anchor.
+S0711-28,R1-9 anchor present,1,R1-9 numerical anchor.
+S0711-29,MR feasibility criterion present,1,Feasibility criterion.
+S0711-30,2-SAH curve present,1,Collector-efficiency sensitivity.
+S0711-31,5-8 percent sensitivity magnitude present,1,Sensitivity magnitude.
+S0711-32,Ranking-stable wording present,1,Ranking preservation.
+S0711-33,Fully coupled collector model caveat present,1,Collector model caveat.
+S0711-34,Fan-power limitation present,1,Fan-power caveat.
+S0711-35,Pressure-drop limitation present,1,Pressure-drop caveat.
+S0711-36,Process/equipment distinction present,1,Process vs equipment distinction.
+S0711-37,Recirculation timing implication present,1,Recirculation timing.
+S0711-38,H2 treated as historical reference,1,H2 role.
+S0711-39,R1-7 treated as energy-saving candidate,1,R1-7 role.
+S0711-40,R1-3 treated as balanced candidate,1,R1-3 role.
+S0711-41,R1-9 treated as aggressive drying case,1,R1-9 role.
+S0711-42,Hybrid-vs-gasLP caveat: not new optimization,1,Baseline comparison caveat.
+S0711-43,Hybrid-vs-gasLP pointwise comparison wording present,1,Pointwise baseline wording.
+S0711-44,Hybrid-vs-gasLP reduction range present,1,Reduction range.
+S0711-45,H2 gasLP/hybrid baseline anchor present,1,H2 baseline anchor.
+S0711-46,R1-7 gasLP/hybrid baseline anchor present,1,R1-7 baseline anchor.
+S0711-47,R1-3 gasLP/hybrid baseline anchor present,1,R1-3 baseline anchor.
+S0711-48,R1-9 gasLP/hybrid baseline anchor present,1,R1-9 baseline anchor.
+S0711-49,Solar substitution interpretation present,1,Solar substitution interpretation.
+S0711-50,No drying-performance relaxation claim present,1,No drying-performance relaxation.
+S0711-51,R1-7 lowest hybrid Q_aux statement present,1,R1-7 lowest hybrid energy statement.
+S0711-52,No GA executed,1,Audit only.
+S0711-53,No model executed,1,Audit only.
+S0711-54,Master not modified by audit,1,Read-only audit.

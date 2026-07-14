@@ -1,0 +1,63 @@
+id,heading,level,line,charpos,bodyChars,hasPending
+H001,# MASTER_manuscript_v01,1,1,1,4,0
+H002,# Status,1,5,29,31,0
+H003,# Micropaso,1,11,69,28,0
+H004,# Identifier,1,17,109,49,0
+H005,# Working title,1,23,171,149,0
+H006,# Internal control note,1,29,336,472,0
+H007,# 1. Abstract,1,49,832,2259,0
+H008,# 2. Keywords,1,61,3105,222,0
+H009,# 3. Introduction,1,74,3341,4260,0
+H010,# 3.1 Context,1,90,7619,99,0
+H011,# 3.2 Problem,1,96,7732,125,0
+H012,# 3.3 Gap,1,102,7871,208,0
+H013,# 3.4 Contribution,1,108,8089,197,0
+H014,# 3.5 Scope and limitation,1,114,8305,190,0
+H015,# 4. System description,1,120,8522,3321,0
+H016,# 5. Mathematical model,1,138,11867,3200,0
+H017,## 5.1 State vector and decision-variable coupling,2,144,12462,617,0
+H018,## 5.2 Air-side energy balance,2,160,13130,729,0
+H019,## 5.3 Product thermal and drying submodel,2,170,13890,501,0
+H020,## 5.4 Structural thermal response and numerical integration,2,186,14434,596,0
+H021,# 5.1 Drying model,1,196,15091,88,0
+H022,# 5.2 Thermal model,1,205,15198,92,0
+H023,# 5.3 Solar collector representation,1,214,15310,190,0
+H024,# 5.4 Operational modes,1,223,15537,138,0
+H025,# 6. Optimization methodology,1,231,15699,5837,0
+H026,## 6.1 Decision variables and operating bounds,2,237,16332,535,0
+H027,## 6.2 Objective functions and feasibility criterion,2,241,16914,1163,0
+H028,## 6.3 Genetic-algorithm configuration and run interpretation,2,247,18130,755,0
+H029,## 6.4 Candidate selection and reference points,2,253,18947,925,0
+H030,## 6.5 Collector-efficiency sensitivity and baseline comparison,2,259,19920,842,0
+H031,## 6.6 Reproducibility and interpretation limits,2,265,20826,691,0
+H032,# 6.1 Decision variables,1,269,21566,109,0
+H033,# 6.2 Objective functions,1,278,21700,132,0
+H034,# 6.3 Constraints and feasibility criterion,1,286,21858,62,0
+H035,# 6.4 Seed-aware formal run,1,294,21964,180,0
+H036,# 7. Results and discussion,1,307,22172,63,0
+H037,# 7.1 Formal tri-objective run,1,314,22263,4294,0
+H038,## Formal tri-objective run,2,334,22637,3923,0
+H039,# 7.2 Collector-efficiency sensitivity,1,352,26588,6819,0
+H040,## Tri-objective optimization results and collector-efficiency sensitivity,2,371,26926,3218,0
+H041,## 7.2.1 Hybrid versus gas-LPG baseline comparison,2,385,30219,3176,0
+H042,# 7.3 Operational interpretation,1,412,33446,4172,0
+H043,## Operational interpretation,2,437,33946,3675,0
+H044,# 7.4 Methodological implications,1,453,37651,8407,0
+H045,## Methodological implications,2,479,38203,3525,0
+H046,## 7.5 Discussion,2,493,41759,4315,0
+H047,# 8. Limitations,1,508,46092,3531,0
+H048,# 9. Conclusions,1,525,49640,3317,0
+H049,# 10. Nomenclature,1,542,52974,1848,0
+H050,## Symbols,2,546,53028,650,0
+H051,## Abbreviations and labels,2,556,53689,673,0
+H052,## Interpretation notes,2,568,54390,427,0
+H053,# 11. References,1,573,54841,2330,0
+H054,## Reference groups to verify before submission,2,579,55310,1336,0
+H055,## Verification requirements,2,590,56694,465,0
+H056,# 12. Supplementary material,1,597,57188,216,0
+H057,# Internal traceability log,1,611,57433,4,0
+H058,# Approved sections,1,615,57465,171,0
+H059,# Approved tables,1,623,57656,210,0
+H060,# Restrictions,1,632,57884,4022,0
+H061,### Reproducibility configuration of the formal multiobjective run,3,641,58333,1853,0
+H062,### Traceability of economic and CO2 factors,3,650,60253,1623,0

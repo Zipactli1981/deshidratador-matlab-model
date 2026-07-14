@@ -1,0 +1,5 @@
+Case,Eta_assumption,m_dot_kg_s,T_min_C,r_rec,t_rec_ini_h,Q_aux_kWh,MR_final,Solar_energy_kWh,Interpretation
+H2_historical,2-SAH efficiency curve,0.07355,65.879,0.61205,12.385,746.998692636637,0.0444828358007776,357.848012894498,"Historical deeper-drying reference"
+R1_solution_7,2-SAH efficiency curve,0.070502,64.429,0.74259,13.255,656.225753298297,0.0705698097386457,357.848012894498,"Lowest auxiliary-energy feasible candidate"
+R1_solution_3,2-SAH efficiency curve,0.075518,65.054,0.78863,12.874,723.360410178502,0.0549302023474136,357.848012894498,"Balanced feasible candidate"
+R1_solution_9,2-SAH efficiency curve,0.092264,67.675,0.43299,13.829,1218.4069486839,0.013876256374361,357.848012894498,"Aggressive drying, high auxiliary demand"

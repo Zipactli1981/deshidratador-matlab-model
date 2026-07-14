@@ -1,0 +1,18 @@
+id,check,pass,evidence
+W01,v96v_ES loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\05_runs\final_spanish_thesis_results_section_v96v_ES\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES_20260628_013217\mat\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES.mat
+W02,v96v_ES diagnosis PASS,1,FINAL_SPANISH_THESIS_RESULTS_SECTION_PASS
+W03,Manuscript root created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript
+W04,Thesis workspace created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES
+W05,Editable MD copied,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\sections\01_resultados_optimizacion_triobjetivo_v1.md
+W06,Editable TXT copied,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\sections\01_resultados_optimizacion_triobjetivo_v1.txt
+W07,All PNG figures copied,1,nPNG=3
+W08,All PDF figures copied,1,nPDF=3
+W09,Required tables copied,1,nTables=4
+W10,Traceability MAT copied,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\traceability\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES.mat
+W11,Traceability close report copied,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\traceability\FINAL_SPANISH_THESIS_RESULTS_SECTION_v96v_ES_CLOSE_REPORT.md
+W12,README created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\README_THESIS_ES_WORKSPACE.md
+W13,Editing notes created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\notes\NOTAS_EDICION_RESULTADOS.md
+W14,Master MD created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\TESIS_RESULTADOS_MASTER.md
+W15,No GA executed,1,No gamultiobj call.
+W16,No mechanistic rerun,1,No objective/model call.
+W17,No source files modified,1,Only 06_manuscript written.

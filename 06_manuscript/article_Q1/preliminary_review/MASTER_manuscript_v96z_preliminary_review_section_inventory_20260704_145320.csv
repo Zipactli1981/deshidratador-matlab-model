@@ -1,0 +1,59 @@
+line,charpos,level,heading,status,word_count,char_count
+1,1,1,# MASTER_manuscript_v01,,3,28
+5,29,1,# Status,,4,40
+11,69,1,# Micropaso,,4,40
+17,109,1,# Identifier,,4,62
+23,171,1,# Working title,,19,165
+29,336,1,# Internal control note,,52,496
+49,832,1,# 1. Abstract,DRAFT_READY_FOR_REVIEW,262,2023
+59,2855,1,# 2. Keywords,DRAFT_READY_FOR_REVIEW,32,236
+72,3091,1,# 3. Introduction,DRAFT_READY_FOR_REVIEW,553,4278
+88,7369,1,# 3.1 Context,,18,113
+94,7482,1,# 3.2 Problem,,20,139
+100,7621,1,# 3.3 Gap,,28,218
+106,7839,1,# 3.4 Contribution,,27,216
+112,8055,1,# 3.5 Scope and limitation,,32,217
+118,8272,1,# 4. System description,DRAFT_READY_FOR_REVIEW,454,3345
+136,11617,1,# 5. Mathematical model,DRAFT_READY_FOR_REVIEW,546,4216
+154,15833,1,# 5.1 Drying model,,19,107
+163,15940,1,# 5.2 Thermal model,,17,112
+172,16052,1,# 5.3 Solar collector representation,,32,227
+181,16279,1,# 5.4 Operational modes,,24,162
+189,16441,1,# 6. Optimization methodology,DRAFT_READY_FOR_REVIEW,753,5867
+195,17074,2,## 6.1 Decision variables and operating bounds,,71,582
+199,17656,2,## 6.2 Objective functions and feasibility criterion,,153,1216
+205,18872,2,## 6.3 Genetic-algorithm configuration and run interpretation,,116,817
+211,19689,2,## 6.4 Candidate selection and reference points,,137,973
+217,20662,2,## 6.5 Collector-efficiency sensitivity and baseline comparison,,113,906
+223,21568,2,## 6.6 Reproducibility and interpretation limits,,89,740
+227,22308,1,# 6.1 Decision variables,,21,134
+236,22442,1,# 6.2 Objective functions,,20,158
+244,22600,1,# 6.3 Constraints and feasibility criterion,,17,106
+252,22706,1,# 6.4 Seed-aware formal run,,27,208
+265,22914,1,# 7. Results and discussion,STRUCTURALLY_INTEGRATED_CONTENT_REVIEW_PENDING,8,90
+271,23004,1,# 7.1 Formal tri-objective run,INTEGRATED_FROM_APPROVED_SECTION,585,4325
+291,23378,2,## Formal tri-objective run,,562,3951
+309,27329,1,# 7.2 Collector-efficiency sensitivity,INTEGRATED_FROM_APPROVED_SECTION,895,6858
+328,27667,2,## Tri-objective optimization results and collector-efficiency sensitivity,,459,3293
+342,30960,2,## 7.2.1 Hybrid versus gas-LPG baseline comparison,INTEGRATED_FROM_APPROVED_SECTION_v01_1,416,3227
+369,34187,1,# 7.3 Operational interpretation,INTEGRATED_FROM_APPROVED_SECTION,536,4205
+394,34687,2,## Operational interpretation,,508,3705
+410,38392,1,# 7.4 Methodological implications,INTEGRATED_FROM_APPROVED_SECTION,1067,8441
+436,38944,2,## Methodological implications,,458,3556
+450,42500,2,## 7.5 Discussion,,579,4333
+465,46833,1,# 8. Limitations,,397,3021
+480,49854,1,# 9. Conclusions,,369,2899
+494,52753,1,# 10. Nomenclature,DRAFT_READY_FOR_REVIEW,253,1867
+498,52807,2,## Symbols,,92,661
+508,53468,2,## Abbreviations and labels,,93,701
+520,54169,2,## Interpretation notes,,63,451
+525,54620,1,# 11. References,PRELIMINARY_REFERENCE_SCAFFOLD_READY_FOR_REVIEW,277,2347
+531,55089,2,## Reference groups to verify before submission,,157,1384
+542,56473,2,## Verification requirements,,64,494
+549,56967,1,# 12. Supplementary material,PARTIAL,29,245
+563,57212,1,# Internal traceability log,,5,32
+567,57244,1,# Approved sections,,25,191
+575,57435,1,# Approved tables,,31,228
+584,57663,1,# Restrictions,,556,4037
+593,58112,3,### Reproducibility configuration of the formal multiobjective run,,271,1920
+602,60032,3,### Traceability of economic and CO2 factors,,217,1668

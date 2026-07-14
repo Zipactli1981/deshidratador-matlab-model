@@ -1,0 +1,35 @@
+# MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z report
+
+## Diagnosis
+
+`MANUSCRIPT_TABLE_R1_ETA_2SAH_PASS`
+
+## Decision
+
+`USE_TABLES_IN_RESULTS_AND_SUPPLEMENTARY_MATERIAL`
+
+## Next step
+
+`Save approved Results/Discussion subsection as SEC_05_results_eta_sensitivity_v96z.md.`
+
+## Generated files
+
+- `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.csv`
+- `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.md`
+- `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SUPP_TABLE_ETA_SENSITIVITY_v96z.csv`
+- `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\SUPP_TABLE_ETA_SENSITIVITY_v96z.md`
+- `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z_Tchecks.csv`
+- `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\traceability\MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.mat`
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `M01` | Input consolidated CSV exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\ETA_SENSITIVITY_v96z_H2_R1_selected_consolidated.csv` |
+| `M02` | Main table has four rows | 1 | `4` |
+| `M03` | Supplementary table has four rows | 1 | `4` |
+| `M04` | Main table uses only 2-SAH curve | 1 | `Eta assumption checked.` |
+| `M05` | R1-7 Q_aux lower than H2 in main table | 1 | `R1-7 vs H2 under 2-SAH.` |
+| `M06` | R1-7 feasible under MR<=0.1 | 1 | `MR_final <= 0.1.` |
+| `M07` | No GA executed | 1 | `Table generation only.` |
+| `M08` | No model executed | 1 | `Read consolidated CSV only.` |

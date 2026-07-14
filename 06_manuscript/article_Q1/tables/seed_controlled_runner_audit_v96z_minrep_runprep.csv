@@ -1,0 +1,11 @@
+item,value
+base_runner_exists,true
+base_runner_has_rng_call,true
+base_runner_has_gamultiobj,true
+base_runner_has_confirm_execute,true
+base_runner_has_hybrid_mode,true
+seed_controlled_runner_created,true
+approval_script_created,true
+manual_command_file_created,true
+replicates_designed,3
+estimated_total_runtime_h,21.3903

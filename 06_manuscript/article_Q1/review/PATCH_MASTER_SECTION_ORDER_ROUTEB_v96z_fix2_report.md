@@ -1,0 +1,104 @@
+# PATCH_MASTER_SECTION_ORDER_ROUTEB_v96z_fix2 report
+
+## Identifier
+
+`RESTORE-PREFIX1-BACKUP-THEN-CONSERVATIVE-ORDER-FIX2-ROUTEB-001`
+
+## Diagnosis
+
+`PATCH_MASTER_SECTION_ORDER_ROUTEB_FIX2_PASS`
+
+## Decision
+
+`MASTER_UPDATED_WITH_ROUTEB_SECTION_ORDER`
+
+## Patch mode
+
+`WRITE_WITH_BACKUP_AND_STOP_GUARDS`
+
+## Route-B target architecture
+
+```text
+# 7. Results and discussion
+## 7.5 Discussion
+# 8. Limitations
+# 9. Conclusions
+# 10. Nomenclature
+# 11. References
+# 12. Supplementary material
+```
+
+## Files
+
+- MASTER: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Current MASTER backup before fix2: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_FIX2_ROUTEB_v96z_20260704_123342.md`
+- Pre-fix1 source backup: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_SECTION_ORDER_PATCH_FIX1_v96z_20260703_161840.md`
+- Headings after: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_routeB_fix2_after.txt`
+
+## Failed checks
+
+None.
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `FX2B-PRE-01` | MASTER actual exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `FX2B-PRE-02` | Pre-fix1 backup exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_SECTION_ORDER_PATCH_FIX1_v96z_20260703_161840.md` |
+| `FX2B-PRE-03` | MASTER actual readable | 1 | `chars=39298` |
+| `FX2B-PRE-04` | Pre-fix1 backup readable | 1 | `chars=40147` |
+| `FX2B-PRE-05` | Discussion key exists exactly once in source | 1 | `count=1` |
+| `FX2B-PRE-06` | Limitations key exists exactly once in source | 1 | `count=1` |
+| `FX2B-PRE-07` | Conclusions key exists exactly once in source | 1 | `count=1` |
+| `FX2B-PRE-08` | # 7 Results and discussion exists in source | 1 | `line=231 char=4186 level=1 raw=# 7. Results and discussion` |
+| `FX2B-PRE-09` | # 8 Limitations exists in source | 1 | `line=416 char=23641 level=1 raw=# 8. Limitations` |
+| `FX2B-PRE-10` | # 9 Conclusions exists in source | 1 | `line=431 char=24080 level=1 raw=# 9. Conclusions` |
+| `FX2B-PRE-11` | # 10 Nomenclature exists in source | 1 | `line=445 char=24563 level=1 raw=# 10. Nomenclature` |
+| `FX2B-PRE-12` | # 11 References exists in source after normalization | 1 | `line=464 char=24975 level=1 raw=# 11. References` |
+| `FX2B-PRE-13` | # 12 Supplementary material exists in source | 1 | `line=478 char=25238 level=1 raw=# 12. Supplementary material` |
+| `FX2B-PRE-14` | Discussion developed block extracted | 1 | `start_line=555 start_char=32989 end_char=37318 heading=### Discussion` |
+| `FX2B-PRE-15` | Limitations developed block extracted | 1 | `start_line=540 start_char=29969 end_char=32988 heading=### Limitations` |
+| `FX2B-PRE-16` | Conclusions developed block extracted | 1 | `start_line=570 start_char=37319 end_char=40215 heading=### Conclusions` |
+| `FX2B-PRE-17` | After extraction, canonical anchor headings remain unique | 1 | `7=1 8=1 9=1 10=1 11=1 12=1` |
+| `FX2B-PRE-18` | Canonical anchors are in increasing order before reconstruction | 1 | `7=4186 8=23641 9=24080 10=24563 11=24975 12=25238` |
+| `FX2B-PRE-19` | Section 8 segment starts with # 8. Limitations | 1 | `# 8. Limitations` |
+| `FX2B-PRE-20` | Section 9 segment starts with # 9. Conclusions | 1 | `# 9. Conclusions` |
+| `FX2B-PRE-21` | Reconstruction contains Discussion key once | 1 | `count=1` |
+| `FX2B-PRE-22` | Reconstruction contains Limitations key once | 1 | `count=1` |
+| `FX2B-PRE-23` | Reconstruction contains Conclusions key once | 1 | `count=1` |
+| `FX2B-PRE-24` | Reconstruction has ## 7.5 Discussion once | 1 | `line=416 char=23641 level=2 raw=## 7.5 Discussion` |
+| `FX2B-PRE-25` | Reconstruction has # 8 Limitations once | 1 | `line=431 char=27974 level=1 raw=# 8. Limitations` |
+| `FX2B-PRE-26` | Reconstruction has # 9 Conclusions once | 1 | `line=446 char=30995 level=1 raw=# 9. Conclusions` |
+| `FX2B-PRE-27` | Reconstruction has # 11 References once | 1 | `line=479 char=34306 level=1 raw=# 11. References` |
+| `FX2B-PRE-28` | Route-B order valid in reconstruction | 1 | `7=4186 | D=23641 | 8=27974 | 9=30995 | 10=33894 | 11=34306 | 12=34569` |
+| `FX2B-PRE-29` | Reconstruction has no glued headings | 1 | `glued_heading_count=0` |
+| `FX2B-PRE-30` | Reconstruction has no 20# heading prefixes | 1 | `20#_prefix_count=0` |
+| `FX2B-PRE-31` | No pending placeholder remains in #8 or #9 | 1 | `pendingLimitations=0 pendingConclusions=0` |
+| `FX2B-PRE-32` | No prohibited global optimum wording in reconstruction | 1 | `present=0` |
+| `FX2B-PRE-33` | No prohibited global Pareto front wording in reconstruction | 1 | `present=0` |
+| `FX2B-PRE-34` | No unsupported statistical robustness claim in reconstruction | 1 | `present=0` |
+| `FX2B-PRE-35` | No final CO2 claim in reconstruction | 1 | `present=0` |
+| `FX2B-PRE-36` | No final cost claim in reconstruction | 1 | `present=0` |
+| `FX2B-WRITE-01` | Current MASTER backup created before write | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_FIX2_ROUTEB_v96z_20260704_123342.md` |
+| `FX2B-WRITE-02` | MASTER written with Route-B reconstruction | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `FX2B-POST-01` | MASTER updated | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `FX2B-POST-02` | Backup of current MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_FIX2_ROUTEB_v96z_20260704_123342.md` |
+| `FX2B-POST-03` | No glued headings remain | 1 | `count=0` |
+| `FX2B-POST-04` | No 20# heading prefixes remain | 1 | `count=0` |
+| `FX2B-POST-05` | Discussion key count equals one | 1 | `count=1` |
+| `FX2B-POST-06` | Limitations key count equals one | 1 | `count=1` |
+| `FX2B-POST-07` | Conclusions key count equals one | 1 | `count=1` |
+| `FX2B-POST-08` | ## 7.5 Discussion exists once | 1 | `line=416 char=23641 level=2 raw=## 7.5 Discussion` |
+| `FX2B-POST-09` | # 8 Limitations exists once | 1 | `line=431 char=27974 level=1 raw=# 8. Limitations` |
+| `FX2B-POST-10` | # 9 Conclusions exists once | 1 | `line=446 char=30995 level=1 raw=# 9. Conclusions` |
+| `FX2B-POST-11` | # 10 Nomenclature exists once | 1 | `line=460 char=33894 level=1 raw=# 10. Nomenclature` |
+| `FX2B-POST-12` | # 11 References exists once | 1 | `line=479 char=34306 level=1 raw=# 11. References` |
+| `FX2B-POST-13` | Route-B order valid after write | 1 | `7=4186 | D=23641 | 8=27974 | 9=30995 | 10=33894 | 11=34306 | 12=34569` |
+| `FX2B-POST-14` | No STATUS PENDING remains in #8 or #9 | 1 | `Route-B #8/#9 replacement` |
+| `FX2B-POST-15` | No prohibited global optimum wording | 1 | `No prohibited wording introduced` |
+| `FX2B-POST-16` | No prohibited global Pareto front wording | 1 | `No prohibited wording introduced` |
+| `FX2B-POST-17` | No unsupported statistical robustness claim | 1 | `No overclaim introduced` |
+| `FX2B-POST-18` | No final CO2 claim | 1 | `No final CO2 claim introduced` |
+| `FX2B-POST-19` | No final cost claim | 1 | `No final cost claim introduced` |
+| `FX2B-POST-20` | No GA executed | 1 | `Text reconstruction only` |
+| `FX2B-POST-21` | No model executed | 1 | `Text reconstruction only` |

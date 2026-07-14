@@ -1,0 +1,46 @@
+﻿# =========================
+# MATLAB / Windows / local
+# =========================
+*.asv
+*.m~
+*.autosave
+*.tmp
+*.bak
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# MATLAB generated/cache
+# =========================
+slprj/
+codegen/
+*.mex*
+*.pdb
+*.obj
+*.o
+
+# =========================
+# Corridas y salidas generadas
+# =========================
+05_runs/
+06_outputs/
+
+# =========================
+# Archivos binarios / empaquetados
+# Revisar manualmente si alguno debe entrar
+# =========================
+*.mat
+*.fig
+*.zip
+*.7z
+*.rar
+
+# =========================
+# Documentos generados
+# Se pueden conservar localmente, pero no ensucian Git
+# =========================
+*.pdf
+*.png
+*.html

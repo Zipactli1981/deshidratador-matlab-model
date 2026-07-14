@@ -1,0 +1,10 @@
+id,name,definition,direction,article_role
+f1,MR,Final moisture ratio / drying target objective.,Minimize,Primary quality/drying endpoint metric.
+f2,cost_specific_USD_per_kgwater,Specific drying cost per kg water removed.,Minimize,Economic objective.
+f3,CO2_specific_kgCO2_per_kgwater,Specific CO2 emissions per kg water removed.,Minimize,Environmental objective; factors provisional.
+detail,Q_aux_tot,Auxiliary energy requirement.,Interpret,Energy-basis variable for hybrid/gasLP comparison.
+detail,Irradiacion,Solar irradiation contribution recorded by model.,Interpret,Used to distinguish hybrid/solar contribution.
+detail,dry_time,Drying time reported by model.,Interpret,Operational performance variable.
+detail,M,Water removed / mass basis used for specific indicators.,Interpret,Denominator for specific cost and emissions.
+detail,CO2_total_kg,Total CO2 emissions.,Interpret,Environmental total before specific normalization.
+status,solar_INVALID_COST,Solar pure is penalized in this formal comparison.,Exclude from formal GA comparison,Avoids non-equivalent continuous-time comparison.

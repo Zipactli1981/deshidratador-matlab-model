@@ -1,0 +1,71 @@
+# MASTER_INTRODUCTION_DRAFT_v96z report
+
+## Identifier
+
+`MASTER-INTRODUCTION-DRAFT-v96z-001`
+
+## Diagnosis
+
+`MASTER_INTRODUCTION_DRAFT_PASS`
+
+## Decision
+
+`MASTER_UPDATED_WITH_INTRODUCTION_DRAFT`
+
+## Note
+
+`Introduction drafted with backup and stop guards.`
+
+## Patch mode
+
+`WRITE_WITH_BACKUP_AND_STOP_GUARDS`
+
+## Files
+
+- MASTER: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Backup: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_INTRODUCTION_DRAFT_v96z_20260704_133102.md`
+- Checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_INTRODUCTION_DRAFT_v96z_Tchecks.csv`
+- Headings after: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_introduction_draft_after.txt`
+
+## Failed checks
+
+None.
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `MID-PRE-01` | MASTER exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `MID-PRE-02` | MASTER readable | 1 | `chars=41017` |
+| `MID-PRE-03` | Route-B order valid before Introduction draft | 1 | `7=5774 | D=25360 | 8=29693 | 9=32714 | 10=35613 | 11=36025 | 12=36288` |
+| `MID-PRE-04` | # 3 Introduction exists once | 1 | `line=72 char=3091 level=1 raw=# 3. Introduction` |
+| `MID-PRE-05` | # 4 System description exists once | 1 | `line=110 char=4056 level=1 raw=# 4. System description` |
+| `MID-PRE-06` | Introduction currently marked PENDING | 1 | `present=1` |
+| `MID-PRE-07` | Introduction scaffold contains Expected structure | 1 | `present=1` |
+| `MID-PRE-08` | Introduction scaffold boundary acceptable | 1 | `## 3.1 Context=0 | ## 3.2 Problem=0 | ## 3.3 Gap=0 | ## 3.4 Contribution=0 | ## 3.5 Scope and limitation=0` |
+| `MID-PRE-09` | Required manuscript anchors exist before drafting | 1 | `hybrid solar--LPG tunnel dryer=1 | controlled recirculation=1 | collector-efficiency sensitivity=10 | computed nondominated set=11 | R1_solution_7=17 | H2=24 | 2-SAH=17 | MR <= 0.1=2` |
+| `MID-PRE-10` | Abstract and Keywords already draft-ready before Introduction draft | 1 | `abstract=1 keywords=1` |
+| `MID-DRAFT-01` | Draft Introduction contains hybrid solar--LPG framing | 1 | `present=1` |
+| `MID-DRAFT-02` | Draft Introduction contains feasibility criterion | 1 | `present=1` |
+| `MID-DRAFT-03` | Draft Introduction contains 2-SAH sensitivity framing | 1 | `2SAH=1 sensitivity=1` |
+| `MID-DRAFT-04` | Draft Introduction contains candidate roles | 1 | `R1_7=1 R1_3=1 R1_9=1 H2=1` |
+| `MID-DRAFT-05` | Draft Introduction preserves computed nondominated set wording | 1 | `present=1` |
+| `MID-DRAFT-06` | Draft Introduction has no unsupported global optimality claim | 1 | `present=0` |
+| `MID-DRAFT-07` | Draft Introduction has no unsupported statistical robustness claim | 1 | `present=0` |
+| `MID-DRAFT-08` | Draft Introduction avoids citation placeholders | 1 | `No citation placeholders in draft block` |
+| `MID-POST-01` | Route-B order valid after Introduction reconstruction | 1 | `7=9990 | D=29576 | 8=33909 | 9=36930 | 10=39829 | 11=40241 | 12=40504` |
+| `MID-POST-02` | Introduction status updated | 1 | `present=1` |
+| `MID-POST-03` | Introduction PENDING marker removed | 1 | `present=0` |
+| `MID-POST-04` | Introduction Expected structure scaffold removed | 1 | `present=0` |
+| `MID-POST-05` | Old Introduction scaffold subheadings removed | 1 | `## 3.1 Context=0 | ## 3.2 Problem=0 | ## 3.3 Gap=0 | ## 3.4 Contribution=0 | ## 3.5 Scope and limitation=0` |
+| `MID-POST-06` | Introduction contains contribution paragraph | 1 | `present=1` |
+| `MID-POST-07` | Introduction contains scope limitation paragraph | 1 | `present=1` |
+| `MID-POST-08` | Abstract and Keywords remain draft-ready | 1 | `ready=1` |
+| `MID-POST-09` | Other genuine pending sections preserved | 1 | `pendingPreserved=1` |
+| `MID-POST-10` | No unsupported global optimality claim introduced | 1 | `present=0` |
+| `MID-POST-11` | No unsupported global Pareto-front claim introduced | 1 | `present=0` |
+| `MID-POST-12` | No unsupported statistical robustness claim introduced | 1 | `present=0` |
+| `MID-POST-13` | No GA executed | 1 | `Text-only Introduction draft` |
+| `MID-POST-14` | No drying model executed | 1 | `Text-only Introduction draft` |
+| `MID-WRITE-01` | Backup created before writing | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_INTRODUCTION_DRAFT_v96z_20260704_133102.md` |
+| `MID-WRITE-02` | MASTER updated | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |

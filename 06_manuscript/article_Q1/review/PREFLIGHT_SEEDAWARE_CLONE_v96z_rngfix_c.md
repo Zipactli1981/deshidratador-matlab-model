@@ -1,0 +1,47 @@
+# PREFLIGHT_SEEDAWARE_CLONE_v96z_rngfix_c
+
+## Diagnosis
+
+`SEEDAWARE_CLONE_PREFLIGHT_PASS`
+
+## Decision
+
+`READY_TO_BUILD_SEEDAWARE_MINREP_RUNNER`
+
+## Next step
+
+`9.6z-rngfix-d — BUILD-SEEDAWARE-MINREP-RUNNER-001`
+
+## Clone
+
+`C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix.m`
+
+## Safe-call diagnosis
+
+`TRIOBJECTIVE_FORMAL_RUN_SCRIPT_READY_NO_EXECUTION`
+
+## RNG control
+
+- rngControl: `EXTERNAL_SEED_APPLIED`
+- rngSeed: `61001`
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `RNG_C01` | Clone exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix.m` |
+| `RNG_C02` | Original v96m exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\run_guarded_triobjective_formal_ga_v96m.m` |
+| `RNG_C03` | Seed-aware signature present | 1 | `Signature includes rngSeed.` |
+| `RNG_C04` | External seed branch present | 1 | `External seed branch found.` |
+| `RNG_C05` | Legacy branch present | 1 | `Legacy branch found.` |
+| `RNG_C06` | Safe call returned struct | 1 | `class=struct` |
+| `RNG_C07` | Safe call did not execute formal GA | 1 | `formal_run_executed=0` |
+| `RNG_C08` | Formal run still on hold | 1 | `formal_run_still_on_hold=1` |
+| `RNG_C09` | Preflight table exists | 1 | `hasTpreflight=1` |
+| `RNG_C10` | RNG metadata exists | 1 | `rngControl=EXTERNAL_SEED_APPLIED; rngSeed=61001` |
+| `RNG_C11` | External seed applied in safe call | 1 | `rngControl=EXTERNAL_SEED_APPLIED` |
+| `RNG_C12` | Test seed recorded | 1 | `rngSeed=61001` |
+| `RNG_C13` | gamultiobj code preserved | 1 | `gamultiobj call exists in clone.` |
+| `RNG_C14` | Tsolutions code preserved | 1 | `Tsolutions code exists in clone.` |
+| `RNG_C15` | No GA executed by this preflight | 1 | `confirm_execute=false.` |
+| `RNG_C16` | No original source modified | 1 | `Preflight only.` |

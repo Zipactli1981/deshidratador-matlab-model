@@ -1,0 +1,7 @@
+id,check,pass,evidence
+PXF1_01,Postprocess file exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\postprocess_seed_replications_v96z_minrep_post.m
+PXF1_02,Backup created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\postprocess_seed_replications_v96z_minrep_post_BACKUP_BEFORE_FIX1_20260630_110738.m
+PXF1_03,Recursive extractor inserted,1,recursive extractor found.
+PXF1_04,No GA executed,1,No gamultiobj call.
+PXF1_05,No model executed,1,No objective/model call.
+PXF1_06,No 05_runs modified,1,Only postprocess script patched.

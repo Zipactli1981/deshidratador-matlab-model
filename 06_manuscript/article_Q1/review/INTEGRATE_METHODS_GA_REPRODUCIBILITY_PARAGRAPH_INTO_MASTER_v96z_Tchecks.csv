@@ -1,0 +1,32 @@
+id,check,pass,evidence
+MINT-01,MASTER exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md
+MINT-02,Source Methods paragraph exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_METHODS_GA_REPRODUCIBILITY_PARAGRAPH_v96z.md
+MINT-03,Source Methods paragraph audit report exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEC_METHODS_GA_REPRODUCIBILITY_PARAGRAPH_v96z_report.md
+MINT-04,Source Methods paragraph audit checks file exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\SEC_METHODS_GA_REPRODUCIBILITY_PARAGRAPH_v96z_Tchecks.csv
+MINT-05,Source Methods paragraph PASS verified from report/section,1,PASS verified without relying on malformed CSV pass column.
+MINT-06,Locked Section 7 exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\locked_sections\RESULTS_SECTION_07_v01_1_LOCKED.md
+MINT-07,MASTER backup created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BEFORE_METHODS_GA_REPRO_v96z_FIX3_20260702_144725.md
+MINT-08,Integration action valid,1,NO_WRITE_ALREADY_INTEGRATED
+MINT-09,MASTER headings diagnostic report created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MASTER_HEADINGS_DETECTED_v96z_methods_d_FIX3.txt
+MINT-10,Methods GA reproducibility title present once,1,Title count = 1.
+MINT-11,Inserted text appears before Results when Results heading exists,1,Text before Results or no Results heading detected.
+MINT-12,Section 7 preserved when Section 7 is detectable,1,Section 7 comparison flexible.
+MINT-13,gamultiobj preserved,1,Algorithm.
+MINT-14,Seed 61001 preserved,1,Seed.
+MINT-15,Population 24 preserved,1,Population.
+MINT-16,Generation limit 50 preserved,1,Generations.
+MINT-17,Exitflag 0 preserved,1,Exitflag.
+MINT-18,Runtime 25.4 h preserved,1,Runtime.
+MINT-19,MR threshold preserved,1,MR threshold.
+MINT-20,Decision variable m_dot preserved,1,m_dot.
+MINT-21,Decision variable T_min preserved,1,T_min.
+MINT-22,Decision variable r_rec preserved,1,r_rec.
+MINT-23,Decision variable t_rec_ini preserved,1,t_rec_ini.
+MINT-24,Computed nondominated set wording present,1,Computed nondominated set.
+MINT-25,No global optimum claim,1,Avoids global optimum wording.
+MINT-26,No global Pareto front claim,1,Avoids global Pareto front wording.
+MINT-27,No statistical robustness claim,1,Robustness caveat.
+MINT-28,Solar-only exclusion preserved,1,Solar-only caveat.
+MINT-29,H2 historical reference preserved,1,H2 reference.
+MINT-30,No GA executed,1,Text integration only.
+MINT-31,No model executed,1,Text integration only.

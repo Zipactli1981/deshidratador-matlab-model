@@ -1,0 +1,13 @@
+id,check,pass,evidence
+POST01,Minrep execution loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\runs\MINREP_SEED_CONTROLLED_RUN_v96z_20260628_024351\MINREP_SEED_CONTROLLED_RUN_v96z.mat
+POST02,Minrep execution PASS,1,SEED_CONTROLLED_MINREP_EXECUTION_PASS
+POST03,Three outputs loaded,1,nRep=3
+POST04,All replicates OK,1,OK=3/3
+POST05,All finite fronts,1,minFinite=9
+POST06,At least 2 H2-like,1,H2_like=3/3
+POST07,Pairwise comparison created,1,pairs=3
+POST08,Independence warning assessed,1,at_least_some_variation=0
+POST09,Report created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MINREP_POSTPROCESS_SEED_REPLICATIONS_v96z.md
+POST10,Article text created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\sections\01_seed_replication_robustness_statement_v96z.md
+POST11,No GA executed,1,No gamultiobj call.
+POST12,No model executed,1,No objective/model call.

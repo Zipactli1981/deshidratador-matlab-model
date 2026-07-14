@@ -1,0 +1,30 @@
+PROJECT:
+modelo_deshidratador_GA_chile_red_controlado
+
+VERSION:
+v1.3-HYBRID-IRR_COMPARE_CONSOLIDADA
+
+STATUS:
+Versión consolidada con compare_operation_modes.m validado localmente.
+
+SOURCE:
+Construida desde v1.2-HYBRID-IRR_CONSOLIDADA.
+
+CLOSED:
+- HYBRID-IRR-001: Tipo D, cerrado.
+- MODE-ENERGY-001: Tipo D, cerrado.
+- AUD-HYBRID-B-002: Tipo B, cerrado.
+- COMPARE-OP-MODES-001: comparación diagnóstica validada localmente.
+
+RULE:
+gasLP  -> I_effective = 0,      calor_aux = true
+hybrid -> I_effective = I_busc, calor_aux = true
+solar  -> I_effective = I_busc, calor_aux = false
+
+USER-VALIDATED:
+compare_operation_modes(): COMPARISON_ONLY_NO_GA
+
+NOT DONE:
+- No se corrió AG.
+- No se modificó costo.
+- No se declaran Fig. 20 ni Fig. 21 como resultados finales.

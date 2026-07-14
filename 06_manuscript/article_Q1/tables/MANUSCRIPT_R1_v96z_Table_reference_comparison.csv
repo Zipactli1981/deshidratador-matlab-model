@@ -1,0 +1,6 @@
+case_name,solution_index,MR,cost,CO2,cost_reduction_vs_gasLP_pct,CO2_reduction_vs_gasLP_pct,interpretation
+"gasLP reference",NaN,0.0960086491729676,0.377877584709771,1.68102998335545,0,0,Reference fossil-only operating mode.
+"R1 solution 7: lowest cost/CO2 with MR<=0.1",7,0.0761725501036987,0.258768636265087,1.05272232979027,31.5205117382567,37.3763502011451,Operationally attractive feasible solution.
+"R1 solution 3: balanced L2 feasible solution",3,0.0582807544013254,0.277021807638618,1.1599939785415,26.6900660828072,30.9950452979983,Balanced Pareto compromise.
+"R1 solution 1: cost/CO2 extreme, not MR-feasible",1,0.161225992904947,0.246303839698573,0.893115176231881,34.8191452298643,46.8709550052665,Pareto extreme; not recommended as final drying point.
+"R1 solution 9: minimum MR extreme",9,0.014734459102959,0.400134038181544,1.81565093840689,-5.88985808429636,-8.00824235048567,Shows cost/CO2 penalty of aggressive drying.

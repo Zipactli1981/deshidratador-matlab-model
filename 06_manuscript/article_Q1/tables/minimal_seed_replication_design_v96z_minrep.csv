@@ -1,0 +1,4 @@
+replicate_id,seed,modeFormal,referenceMode,populationSize,maxGenerations,expected_funccount,expected_runtime_h,execution_status,purpose
+R1,61001,hybrid,gasLP,24,50,1200,7.1301,DESIGNED_NOT_EXECUTED,Seed robustness of formal hybrid triobjective GA
+R2,61002,hybrid,gasLP,24,50,1200,7.1301,DESIGNED_NOT_EXECUTED,Seed robustness of formal hybrid triobjective GA
+R3,61003,hybrid,gasLP,24,50,1200,7.1301,DESIGNED_NOT_EXECUTED,Seed robustness of formal hybrid triobjective GA

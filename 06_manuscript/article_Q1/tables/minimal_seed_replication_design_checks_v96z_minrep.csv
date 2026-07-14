@@ -1,0 +1,16 @@
+id,check,pass,evidence
+MR01,GA audit v96z loaded,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\thesis_ES\traceability\GA_SUFFICIENCY_AND_CONVERGENCE_AUDIT_v96z.mat
+MR02,GA audit v96z PASS,1,GA_SUFFICIENCY_AND_CONVERGENCE_AUDIT_PASS
+MR03,Article Q1 workspace created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1
+MR04,Three seed replicates designed,1,nReplicates=3
+MR05,Seeds unique,1,Seeds are unique.
+MR06,Same GA configuration preserved,1,Same pop/gen in all replicates.
+MR07,Acceptance criteria created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\minimal_seed_replication_acceptance_criteria_v96z_minrep.csv
+MR08,H2-equivalent definition created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\tables\h2_equivalent_solution_definition_v96z_minrep.csv
+MR09,Design report created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\MINIMAL_SEED_REPLICATION_DESIGN_v96z_minrep.md
+MR10,Protocol created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\protocols\MINIMAL_SEED_REPLICATION_PROTOCOL_v96z_minrep.md
+MR11,Run stub created but not executed,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\protocols\RUN_COMMANDS_MINREP_v96z_minrep_DO_NOT_RUN_YET.md
+MR12,No GA executed,1,No gamultiobj call.
+MR13,No model executed,1,No objective/model call.
+MR14,No 05_runs modified,1,Only 06_manuscript/article_Q1 files written.
+MR15,Q1 need acknowledged,1,Replication treated as minimum necessary for strong Q1 article.

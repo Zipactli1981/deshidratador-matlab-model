@@ -1,0 +1,10 @@
+id,check,pass,evidence
+PXF3_01,Postprocess file exists,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\postprocess_seed_replications_v96z_minrep_post.m
+PXF3_02,Backup created,1,C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\02_src_limpio\production\postprocess_seed_replications_v96z_minrep_post_BACKUP_BEFORE_FIX3_20260630_112617.m
+PXF3_03,select_H2_like_solution present,1,Function found.
+PXF3_04,gasLP cost threshold present,1,gasLP cost threshold found.
+PXF3_05,gasLP CO2 threshold present,1,gasLP CO2 threshold found.
+PXF3_06,MR threshold present,1,MR threshold found.
+PXF3_07,No GA executed,1,No gamultiobj call.
+PXF3_08,No model executed,1,No objective/model call.
+PXF3_09,No 05_runs modified,1,Only postprocess script patched.

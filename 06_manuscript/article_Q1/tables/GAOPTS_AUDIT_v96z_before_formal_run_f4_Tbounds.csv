@@ -1,0 +1,5 @@
+variable,x_selected,lb_global,ub_global,delta_formal,lb_formal,ub_formal,bound_formula
+m_max,0.0740767982118,0.05,0.12,0.02,0.0540767982118,0.0940767982118,"lb=max(lb_global,x_selected-delta); ub=min(ub_global,x_selected+delta)"
+T_min,62.6832965028,55,70,5,57.6832965028,67.6832965028,"lb=max(lb_global,x_selected-delta); ub=min(ub_global,x_selected+delta)"
+r_div2,0.672252618341,0,0.95,0.25,0.422252618341,0.922252618341,"lb=max(lb_global,x_selected-delta); ub=min(ub_global,x_selected+delta)"
+t_rec_ini,11.6517528081,8,14,3,8.6517528081,14,"lb=max(lb_global,x_selected-delta); ub=min(ub_global,x_selected+delta)"

@@ -1,0 +1,37 @@
+# INTEGRATE_SEC070201_HYBRID_vs_GASLP_v96z report
+
+## Diagnosis
+
+`INTEGRATE_SEC070201_HYBRID_vs_GASLP_PASS`
+
+## Decision
+
+`MASTER_v01_UPDATED_TO_SECTION7_v01_1_CANDIDATE`
+
+## Next step
+
+`Audit Results Section 7 again and lock as v01.1.`
+
+## Files
+
+- Master: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md`
+- Section: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_02_01_hybrid_vs_gasLP_baseline_v96z.md`
+- Backup: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BACKUP_before_SEC070201_20260702_102815.md`
+- Checks: `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\review\INTEGRATE_SEC070201_HYBRID_vs_GASLP_v96z_Tchecks.csv`
+
+## Checks
+
+| id | check | pass | evidence |
+|---|---|---:|---|
+| `B01` | Master file exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01.md` |
+| `B02` | SEC 7.2.1 source file exists | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\SEC_07_02_01_hybrid_vs_gasLP_baseline_v96z.md` |
+| `B03` | Backup created | 1 | `C:\Users\PC\MATLAB Drive\modelo_deshidratador_GA_chile_red_controlado_v1_3_HYBRID_IRR_COMPARE_CONSOLIDADA\06_manuscript\article_Q1\draft_sections\MASTER_manuscript_v01_BACKUP_before_SEC070201_20260702_102815.md` |
+| `B04` | Section 7.2.1 heading present | 1 | `7.2.1 heading.` |
+| `B05` | Integration status present | 1 | `v01.1 status marker.` |
+| `B06` | Hybrid-vs-gasLP comparison wording present | 1 | `Baseline comparison wording.` |
+| `B07` | H2 baseline anchor present | 1 | `H2 hybrid/gasLP anchor.` |
+| `B08` | R1-7 baseline anchor present | 1 | `R1-7 hybrid/gasLP anchor.` |
+| `B09` | Reduction range present | 1 | `Reduction range.` |
+| `B10` | Not-new-optimization caveat present | 1 | `No optimization caveat.` |
+| `B11` | No GA executed | 1 | `Text integration only.` |
+| `B12` | No model executed | 1 | `Text integration only.` |

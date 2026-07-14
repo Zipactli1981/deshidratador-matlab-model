@@ -1,0 +1,9 @@
+item,title,data_source,status,manuscript_section
+Table 1,Decision variables and bounds,Use Tmodel_parameters / Tbounds,Ready,Methods.
+Table 2,GA configuration and seed control,Use Tgaopts / Tseed,Ready,Methods / reproducibility.
+Table 3,Reference mode evaluation,Use Treference_preflight,Ready with provisional CO2 caveat,Results baseline.
+Figure 1,Model/workflow schematic,Use source audit + narrative,Requires drawing,Methods.
+Figure 2,Pareto front projections,Requires formal R1 or full R1/R2/R3,Pending formal run,Results.
+Figure 3,Hybrid vs gasLP reductions,Use reference + formal selected solution,Partly ready,Results/discussion.
+Figure 4,Seed sensitivity / robustness,Requires R1/R2/R3 or at least R1 vs legacy,Pending formal run,Robustness.
+Supplementary Table S1,Available MAT files and variables,Use Tavailable_outputs,Ready,Reproducibility supplement.

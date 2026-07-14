@@ -1,0 +1,10 @@
+id,check,pass,evidence
+L01,MATLAB source files found,1,163
+L02,Efficiency-pattern hits found,1,134
+L03,Solar-energy-pattern hits found,1,2547
+L04,Temperature-pattern hits found,1,953
+L05,Flow/Cp-pattern hits found,1,930
+L06,Ranked candidate files available,1,152
+L07,Top context extracted,1,1200
+L08,No GA executed,1,Static code inspection only.
+L09,No source modified,1,Read-only audit.

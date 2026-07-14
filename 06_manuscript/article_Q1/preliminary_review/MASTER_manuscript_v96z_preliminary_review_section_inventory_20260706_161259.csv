@@ -1,0 +1,63 @@
+line,charpos,level,heading,status,word_count,char_count
+1,1,1,# MASTER_manuscript_v01,,3,28
+5,29,1,# Status,,4,40
+11,69,1,# Micropaso,,4,40
+17,109,1,# Identifier,,4,62
+23,171,1,# Working title,,19,165
+29,336,1,# Internal control note,,52,496
+49,832,1,# 1. Abstract,DRAFT_READY_FOR_REVIEW,291,2273
+61,3105,1,# 2. Keywords,DRAFT_READY_FOR_REVIEW,32,236
+74,3341,1,# 3. Introduction,DRAFT_READY_FOR_REVIEW,553,4278
+90,7619,1,# 3.1 Context,,18,113
+96,7732,1,# 3.2 Problem,,20,139
+102,7871,1,# 3.3 Gap,,28,218
+108,8089,1,# 3.4 Contribution,,27,216
+114,8305,1,# 3.5 Scope and limitation,,32,217
+120,8522,1,# 4. System description,DRAFT_READY_FOR_REVIEW,454,3345
+138,11867,1,# 5. Mathematical model,DRAFT_READY_FOR_REVIEW,386,3224
+144,12462,2,## 5.1 State vector and decision-variable coupling,,77,668
+160,13130,2,## 5.2 Air-side energy balance,,86,760
+170,13890,2,## 5.3 Product thermal and drying submodel,,63,544
+186,14434,2,## 5.4 Structural thermal response and numerical integration,,76,657
+196,15091,1,# 5.1 Drying model,,19,107
+205,15198,1,# 5.2 Thermal model,,17,112
+214,15310,1,# 5.3 Solar collector representation,,32,227
+223,15537,1,# 5.4 Operational modes,,24,162
+231,15699,1,# 6. Optimization methodology,DRAFT_READY_FOR_REVIEW,753,5867
+237,16332,2,## 6.1 Decision variables and operating bounds,,71,582
+241,16914,2,## 6.2 Objective functions and feasibility criterion,,153,1216
+247,18130,2,## 6.3 Genetic-algorithm configuration and run interpretation,,116,817
+253,18947,2,## 6.4 Candidate selection and reference points,,137,973
+259,19920,2,## 6.5 Collector-efficiency sensitivity and baseline comparison,,113,906
+265,20826,2,## 6.6 Reproducibility and interpretation limits,,89,740
+269,21566,1,# 6.1 Decision variables,,21,134
+278,21700,1,# 6.2 Objective functions,,20,158
+286,21858,1,# 6.3 Constraints and feasibility criterion,,17,106
+294,21964,1,# 6.4 Seed-aware formal run,,27,208
+307,22172,1,# 7. Results and discussion,STRUCTURALLY_INTEGRATED_CONTENT_REVIEW_PENDING,8,91
+314,22263,1,# 7.1 Formal tri-objective run,INTEGRATED_FROM_APPROVED_SECTION,585,4325
+334,22637,2,## Formal tri-objective run,,562,3951
+352,26588,1,# 7.2 Collector-efficiency sensitivity,INTEGRATED_FROM_APPROVED_SECTION,895,6858
+371,26926,2,## Tri-objective optimization results and collector-efficiency sensitivity,,459,3293
+385,30219,2,## 7.2.1 Hybrid versus gas-LPG baseline comparison,INTEGRATED_FROM_APPROVED_SECTION_v01_1,416,3227
+412,33446,1,# 7.3 Operational interpretation,INTEGRATED_FROM_APPROVED_SECTION,536,4205
+437,33946,2,## Operational interpretation,,508,3705
+453,37651,1,# 7.4 Methodological implications,INTEGRATED_FROM_APPROVED_SECTION,1067,8441
+479,38203,2,## Methodological implications,,458,3556
+493,41759,2,## 7.5 Discussion,,579,4333
+508,46092,1,# 8. Limitations,,472,3548
+525,49640,1,# 9. Conclusions,,424,3334
+542,52974,1,# 10. Nomenclature,DRAFT_READY_FOR_REVIEW,253,1867
+546,53028,2,## Symbols,,92,661
+556,53689,2,## Abbreviations and labels,,93,701
+568,54390,2,## Interpretation notes,,63,451
+573,54841,1,# 11. References,PRELIMINARY_REFERENCE_SCAFFOLD_READY_FOR_REVIEW,277,2347
+579,55310,2,## Reference groups to verify before submission,,157,1384
+590,56694,2,## Verification requirements,,64,494
+597,57188,1,# 12. Supplementary material,PARTIAL,29,245
+611,57433,1,# Internal traceability log,,5,32
+615,57465,1,# Approved sections,,25,191
+623,57656,1,# Approved tables,,31,228
+632,57884,1,# Restrictions,,556,4037
+641,58333,3,### Reproducibility configuration of the formal multiobjective run,,271,1920
+650,60253,3,### Traceability of economic and CO2 factors,,217,1668

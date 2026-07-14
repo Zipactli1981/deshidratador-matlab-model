@@ -1,0 +1,16 @@
+﻿# Normalize text files
+* text=auto
+
+# MATLAB and documentation: keep as text
+*.m text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.csv text eol=lf
+
+# Binary files
+*.mat binary
+*.fig binary
+*.png binary
+*.pdf binary
+*.zip binary
+*.mlx binary

@@ -1,0 +1,9 @@
+item,value
+Current Q1 readiness,Current results are a valid base but not sufficient for a strong Q1 article.
+Minimum required action,Run three additional seed replicates with same GA configuration.
+Execution cost,Expected total additional runtime: 21.39 h
+Main risk,Equivalent compromise solution may shift due to stochastic GA behavior.
+Recommended claim after successful replication,H2-like compromise behavior is robust across independent seeds.
+Still forbidden after successful replication,Do not claim global optimum or full convergence proof.
+If replication fails,Report current result as preliminary and redesign GA parameter sensitivity.
+CO2 dependency,CO2 claims remain dependent on definitive emission factors.
