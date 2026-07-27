@@ -38,7 +38,7 @@ function formal = run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix(
 %   formal = run_guarded_triobjective_formal_ga_v96m(false);
 %
 % Uso para ejecutar corrida formal:
-%   formal = run_guarded_triobjective_formal_ga_v96m(true);
+%   formal = run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix(true, rngSeed);
 %
 % Este script:
 %   - NO modifica v10/v17/v628b/v18/v95j.
@@ -264,9 +264,9 @@ rngStateAfterSeed_v96z = rng;
             scores = NaN(0,3);
         end
     else
-        fprintf('\n=== PRELIGHT ONLY: FORMAL GA NOT EXECUTED ===\n');
+        fprintf('\n=== PREFLIGHT ONLY: FORMAL GA NOT EXECUTED ===\n');
         fprintf('To execute later, run:\n');
-        fprintf('formal = run_guarded_triobjective_formal_ga_v96m(true);\n');
+        fprintf('formal = run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix(true, rngSeed);\n');
     end
 
     % ---------------------------------------------------------------------
@@ -601,7 +601,7 @@ rngStateAfterSeed_v96z = rng;
 
     if ~confirm_execute
         fprintf(fid,'- La corrida formal NO fue ejecutada.\n');
-        fprintf(fid,'- Para ejecutar: `formal = run_guarded_triobjective_formal_ga_v96m(true);`\n');
+        fprintf(fid,'- Para ejecutar: `formal = run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix(true, rngSeed);`\n');
     else
         fprintf(fid,'- La corrida formal fue solicitada con `confirm_execute=true`.\n');
         fprintf(fid,'- Si el diagnóstico es PASS, continuar con consolidación postrun.\n');
