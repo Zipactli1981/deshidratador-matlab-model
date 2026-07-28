@@ -1,0 +1,29 @@
+id,check,pass,severity,evidence,criterion
+A01,Formal MAT SHA-256,1,REQUIRED,E550F09ED17030F1318ADEC6A4F5F5FA97194E147BAC31132B8123AC6A488170,Matches supplied hash
+A02,Wrapper R1 MAT SHA-256,1,REQUIRED,A04D1ADCD769CE9D8ED858FA321D7AF6A22E42D1F8A954094084B4B5A2A2ECD0,Matches supplied hash
+A03,Formal MAT contains X and F,1,REQUIRED,X=present; F=present,X and F must exist
+A04,Raw MAT contains opts,1,REQUIRED,opts class=optim.options.GamultiobjOptions,opts must exist in raw MAT
+A05,Formal MAT contains population and scores,1,REQUIRED,population=present; scores=present,population and scores must exist
+A06,Formal X/F dimensions,1,REQUIRED,X=9x4; F=9x3,X=9x4 and F=9x3
+A07,Wrapper R1 X/F dimensions,1,REQUIRED,X=9x4; F=9x3,X=9x4 and F=9x3
+A08,Formal and wrapper X/F are identical,1,REQUIRED,maxAbsDiffX=0; maxAbsDiffF=0,Exact equality expected
+A09,F has three objectives,1,REQUIRED,F columns=3,F columns=3
+A10,Nine solutions are present,1,REQUIRED,nSolutions=9,nSolutions=9
+A11,Nine finite solution rows,1,REQUIRED,nFiniteRows=9,nFiniteRows=9
+A12,No penalized solution rows,1,REQUIRED,nPenaltyRows=0,nPenaltyRows=0
+A13,Final population dimensions,1,REQUIRED,population=24x4,population=24x4
+A14,Final scores dimensions and finiteness,1,REQUIRED,scores=24x3; finite=72/72,scores=24x3 and finite
+A15,PopulationSize preserved,1,REQUIRED,popSize=24,PopulationSize=24
+A16,MaxGenerations preserved,1,REQUIRED,maxGen=50,MaxGenerations=50
+A17,Saved opts object present and configuration corroborated,1,REQUIRED,opts serialized; popSize=24; maxGen=50; formal report agrees,Recheck exact opts properties before future interpretation
+A18,External seed value applied,1,REQUIRED,rngSeed_v96z=61001,rngSeed_v96z=61001
+A19,External seed control marker,1,REQUIRED,rngControl=EXTERNAL_SEED_APPLIED; seed provided=1,External seed marker and provided flag required
+A20,Formal and reference modes,1,REQUIRED,modeFormal=hybrid; referenceMode=gasLP,hybrid and gasLP
+A21,Solver output counters,1,REQUIRED,generations=50; funccount=1200,generations=50; funccount=1200
+A22,Exitflag interpretation,1,WARNING,exitflag=0; stopped after exceeding MaxGenerations,Internally consistent but not proof of convergence
+A23,Traceability tables available in MAT,1,REQUIRED,Tsummary=present; Tchecks=present; Tplan=present,All three tables must exist
+A24,Traceability MAT points to current R1,1,REQUIRED,run timestamp=20260727_185454; repDir=R1,Must reference current D-drive R1
+A25,No R2/R3 evidence in current R1 run,1,REQUIRED,R2dir=0; R3dir=0; seeds61002_61003=0,Current R1 run only
+A26,Historical R2/R3 outside current run segregated,1,INFORMATION,Historical seed-controlled R2/R3 exist outside current run,Do not associate them with current R1
+A27,CO2 remains explicitly provisional,1,REQUIRED,formal flag=1; source marker PROVISIONAL_FOR_CODE_VALIDATION=present,Final manuscript CO2 claims remain blocked
+A28,Global R1 summary not used as current evidence,1,WARNING,Old C:\Users\PC path and 25.4 h runtime detected,Audit anchored to exact MAT paths and hashes
