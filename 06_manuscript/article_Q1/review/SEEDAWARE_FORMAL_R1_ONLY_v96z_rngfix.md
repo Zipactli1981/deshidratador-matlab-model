@@ -1,5 +1,18 @@
 # SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix
 
+> [!WARNING]
+> **Historical/stale evidence — do not use for the current R1.**
+>
+> This file and the associated `SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix_Tplan.csv`,
+> `SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix_Tsummary.csv`, and
+> `SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix_Tchecks.csv` preserve evidence from the
+> earlier `20260630_172906` run. Their `C:\Users\PC\...` paths and 25.4 h runtime
+> do not describe the current R1 executed on 2026-07-27.
+>
+> For the current hash-anchored R1 evidence, use
+> [`POSTRUN_AUDIT_R1_SEEDAWARE_v96z.md`](POSTRUN_AUDIT_R1_SEEDAWARE_v96z.md).
+> The historical content below is retained unchanged for traceability.
+
 ## Diagnosis
 
 `SEEDAWARE_FORMAL_R1_ONLY_PASS`
