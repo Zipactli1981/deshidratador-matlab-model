@@ -13,8 +13,12 @@ conclusiones científicas finales.
 
 Con la evidencia actual:
 
+- no se autoriza ejecutar MATLAB ni `gamultiobj`;
 - no se autoriza ejecutar R2 ni R3;
+- no se autoriza una minrep de 50 generaciones;
 - no se autoriza una corrida formal de 400 generaciones;
+- no se autoriza una selección triobjetivo final;
+- no se autoriza una comparación ambiental final;
 - no se autorizan claims finales de convergencia, reproducibilidad,
   comparación entre `hybrid` y `gasLP`, ni CO2.
 
@@ -24,7 +28,7 @@ límites, semillas, costos, factores CO2, datos o configuración del solver.
 
 ## Decisión Gate B vigente
 
-Tras la integración del PR #13, Gate B registra:
+Tras la integración de los PR #13 y #15, Gate B registra:
 
 `HOLD_FOR_CO2_FACTOR_VALIDATION`
 
@@ -41,31 +45,36 @@ Este cambio levanta exclusivamente el bloqueo documental por ausencia de
 protocolo. No significa que existan resultados pareados, que la comparación
 haya pasado, que un modo sea superior ni que una ejecución esté autorizada.
 
-`HOLD_FOR_OBJECTIVE_SELECTION_PROTOCOL`
+`HOLD_FOR_OBJECTIVE_SELECTION_PROTOCOL -> PROTOCOL_DEFINED`
 
-Aplica porque no se ha aprobado una regla determinista y reproducible para
-seleccionar el punto representativo, incluidas las anclas de normalización,
-pesos, criterio de desempate y trazabilidad completa de la selección. Por
-tanto, ningún punto puede presentarse como óptimo o representativo final.
+El protocolo de selección quedó definido mediante
+[`GATE_B_OBJECTIVE_SELECTION_PROTOCOL_v96z.md`](GATE_B_OBJECTIVE_SELECTION_PROTOCOL_v96z.md).
+Este cambio levanta exclusivamente el bloqueo documental por ausencia de una
+regla reproducible. No significa que las anclas numéricas estén validadas, que
+se haya seleccionado un punto, que la selección sea final ni que una ejecución
+esté autorizada.
 
-Los dos HOLD activos tienen precedencia sobre cualquier ruta de PASS mientras
-sus condiciones permanezcan abiertas. El estado `PROTOCOL_DEFINED` de la
-comparación `hybrid`/`gasLP` no altera esa precedencia ni autoriza ejecución.
+El único HOLD activo es `HOLD_FOR_CO2_FACTOR_VALIDATION` y tiene precedencia
+sobre cualquier ruta de PASS mientras su condición permanezca abierta. Los
+estados `PROTOCOL_DEFINED` de la comparación `hybrid`/`gasLP` y de la selección
+del punto representativo no alteran esa precedencia ni autorizan ejecución.
 
 ## Siguientes acciones documentales
 
-Antes de reconsiderar Gate B deben elaborarse y aprobarse:
+Antes de reconsiderar Gate B debe elaborarse y aprobarse:
 
-1. un protocolo de selección reproducible del punto representativo;
-2. una validación documentada de factores, unidades y fuentes de CO2.
+1. una validación documentada de factores, unidades y fuentes de CO2.
 
-El protocolo pareado `hybrid`/`gasLP` ya está definido documentalmente. Su
-eventual aplicación requerirá una autorización explícita e independiente y
-deberá respetar íntegramente el diseño aprobado.
+Los protocolos pareado `hybrid`/`gasLP` y de selección del punto representativo
+ya están definidos documentalmente. Su eventual aplicación requerirá una
+autorización explícita e independiente y deberá respetar íntegramente los
+diseños aprobados.
 
-Completar estas acciones documentales no autoriza por sí mismo ninguna
-ejecución. Cualquier R2/R3 o corrida formal de 400 generaciones requerirá una
-decisión Gate B posterior y una autorización explícita de ejecución.
+Completar la acción documental pendiente no autoriza por sí mismo ninguna
+ejecución. MATLAB, R2/R3, una minrep de 50 generaciones o una corrida formal de
+400 generaciones requerirán una decisión Gate B posterior y una autorización
+explícita de ejecución. Tampoco se autorizan una selección triobjetivo final,
+una comparación ambiental final ni claims finales.
 
 ## Referencias
 
@@ -73,3 +82,4 @@ decisión Gate B posterior y una autorización explícita de ejecución.
 - [`GATE_A_TO_FORMAL_RUN_RECONCILIATION_v96z.md`](GATE_A_TO_FORMAL_RUN_RECONCILIATION_v96z.md)
 - [`GATE_B_ACCEPTANCE_CRITERIA_FORMAL_GA_v96z.md`](GATE_B_ACCEPTANCE_CRITERIA_FORMAL_GA_v96z.md)
 - [`GATE_B_HYBRID_GASLP_PAIRED_PROTOCOL_v96z.md`](GATE_B_HYBRID_GASLP_PAIRED_PROTOCOL_v96z.md)
+- [`GATE_B_OBJECTIVE_SELECTION_PROTOCOL_v96z.md`](GATE_B_OBJECTIVE_SELECTION_PROTOCOL_v96z.md)
