@@ -8,7 +8,8 @@ function [f, detail] = objective_productive_corrected_v96j_triobjective_CO2_fix1
 %
 % Factores de emisión provisionales para validación computacional:
 %   EF_LPG_kgCO2_per_kWh  = 0.2270
-%   EF_grid_kgCO2_per_kWh = 0.4380
+%   EF_grid_kgCO2_per_kWh = 0.4440
+% SEMARNAT/RENE FESEN 2024: 0.444 tCO2e/MWh = 0.444 kgCO2e/kWh
 %
 % No usar estos factores como definitivos para manuscrito sin referencia.
 
@@ -21,7 +22,7 @@ function [f, detail] = objective_productive_corrected_v96j_triobjective_CO2_fix1
     detail.base_objective = "objective_productive_corrected_v95j_endpoint_TMAX_corrected";
 
     EF_LPG_kgCO2_per_kWh = 0.2270;
-    EF_grid_kgCO2_per_kWh = 0.4380;
+    EF_grid_kgCO2_per_kWh = 0.4440;
     emission_factor_status = "PROVISIONAL_FOR_CODE_VALIDATION";
 
     try

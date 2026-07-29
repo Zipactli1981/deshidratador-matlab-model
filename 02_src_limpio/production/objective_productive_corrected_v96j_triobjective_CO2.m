@@ -155,7 +155,8 @@ function [f, detail] = objective_productive_corrected_v96j_triobjective_CO2(x, m
     % Provisional emission factors for computational validation only.
     % Must be replaced/confirmed before manuscript use.
     EF_LPG_kgCO2_per_kWh = 0.2270;
-    EF_grid_kgCO2_per_kWh = 0.4380;
+    % SEMARNAT/RENE FESEN 2024: 0.444 tCO2e/MWh = 0.444 kgCO2e/kWh
+    EF_grid_kgCO2_per_kWh = 0.4440;
     emission_factor_status = "PROVISIONAL_FOR_CODE_VALIDATION";
     
     water_removed_kg = NaN;
