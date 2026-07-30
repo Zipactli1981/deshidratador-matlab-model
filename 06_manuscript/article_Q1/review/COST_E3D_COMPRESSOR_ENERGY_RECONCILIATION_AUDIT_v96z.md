@@ -382,6 +382,45 @@ The cost objective is partial rather than complete because all arithmetic
 links to f(2) are visible, but `Q_aux_tot`, solar monetization, compressor
 identity, and equipment completeness are not publication-ready.
 
+## R1 operational-validity boundary
+
+R1 remains valid as an operational test of the seed-aware runner and the
+`gamultiobj` execution chain.
+
+The COST-E3D findings do not invalidate:
+
+- the fact that the runner executed;
+- the external seed was applied;
+- the recorded population and generation settings;
+- the returned `X`, `F`, `population`, `scores`, `exitflag`, and `output`;
+- the artifact hashes and operational audit trail;
+- the use of R1 as a Gate A operational test.
+
+However, the COST-E3D findings limit the scientific interpretation of the
+economic and environmental objectives produced by R1.
+
+Until the energy, cost, and CO2 boundaries are reconciled:
+
+- `f(2)` remains methodologically provisional;
+- `f(3)` remains methodologically provisional;
+- R1 economic and environmental values must not be presented as final
+  scientific results;
+- R1 must not be used to claim final `hybrid`/`gasLP` superiority;
+- R1 must not be used to claim a final representative solution;
+- R1 must not be used as evidence of global Pareto-front validity;
+- R1 must not be used as evidence of convergence or reproducibility beyond
+  its documented operational scope.
+
+R1_OPERATIONAL_STATUS = VALID_AS_GATE_A_OPERATIONAL_TEST
+
+R1_ECONOMIC_OBJECTIVE_STATUS = METHODOLOGICALLY_PROVISIONAL
+
+R1_ENVIRONMENTAL_OBJECTIVE_STATUS = METHODOLOGICALLY_PROVISIONAL
+
+R1_SCIENTIFIC_RESULT_STATUS = NOT_FINAL
+
+COST_E3D_FINDINGS_DO_NOT_INVALIDATE_R1_OPERATIONAL_RECORD
+
 ## 13. Current COST-E3D state
 
 COST-E3D = COMPRESSOR_POWER_AND_ENERGY_RECONCILIATION_AUDITED_NO_CODE_CHANGE
