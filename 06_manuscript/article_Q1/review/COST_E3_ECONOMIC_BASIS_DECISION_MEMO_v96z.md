@@ -173,26 +173,23 @@ A single daily value must not replace the monthly average.
 
 ## 7. Decision 3: Electricity-cost basis
 
-User-confirmed tariff designation:
+Selected tariff class:
 
-PDMTO.
+Gran Demanda en Media Tensión Ordinaria (GDMTO).
 
 Official sources:
 
 - [DOF tariffs applicable from 1 June 2026](https://sidof.segob.gob.mx/notas/docFuente/5791865)
 - [CFE current industrial-tariff portal](https://app.cfe.mx/Aplicaciones/CCFE/Tarifas/TarifasCREIndustria/Tarifas/GranDemandaMTO.aspx)
 
-The user clarified that the applicable tariff is PDMTO. The official sources
-consulted for June 2026 did not expose an unambiguous PDMTO category,
-definition, geographic mapping, or charge table. In particular, the available
-CFE page identifies GDMTO, not PDMTO. This memo therefore does not substitute
-GDMTO for PDMTO and does not transfer GDMTO charges to the PDMTO basis.
+The applicable tariff class for the article basis is GDMTO. The official CFE
+candidate source identifies this class as Gran Demanda en Media Tensión
+Ordinaria. The final electricity cost remains pending until the applicable
+June 2026 region or division, rate components, and model scope are confirmed.
 
-ELECTRICITY_TARIFF_CLASS = PDMTO
+ELECTRICITY_TARIFF_CLASS = GDMTO
 
-ELECTRICITY_TARIFF_CLASS_PROVENANCE = USER_CONFIRMED
-
-ELECTRICITY_TARIFF_OFFICIAL_MAPPING = PENDING_OFFICIAL_EXTRACTION
+ELECTRICITY_TARIFF_CLASS_DECISION = USE_GDMTO_FOR_ARTICLE_BASIS
 
 ELECTRICITY_TARIFF_PERIOD = JUNE_2026
 
@@ -209,10 +206,10 @@ ELECTRICITY_COST_MODEL_SCOPE = ENERGY_ONLY_VARIABLE_CHARGE
 
 | Element | Value/status |
 |---|---|
-| Tariff class | PDMTO, user confirmed |
-| Official category definition | PENDING_OFFICIAL_EXTRACTION |
+| Tariff class | GDMTO, selected for the article basis |
+| Official category definition | Gran Demanda en Media Tensión Ordinaria |
 | Previous-category equivalence | PENDING_OFFICIAL_EXTRACTION |
-| CFE region/division | PENDING_OFFICIAL_EXTRACTION for the PDMTO basis |
+| CFE region/division | PENDING_OFFICIAL_EXTRACTION for Xochitepec, Morelos |
 | Month | June 2026 |
 | Energy-only variable charge | PENDING_OFFICIAL_EXTRACTION |
 | Demand charge | PENDING_OFFICIAL_EXTRACTION; not represented in current model |
@@ -220,14 +217,13 @@ ELECTRICITY_COST_MODEL_SCOPE = ENERGY_ONLY_VARIABLE_CHARGE
 | Exchange rate | 17.3819136364 MXN/USD, June 2026 Banxico FIX mean |
 | Resulting USD/kWh | PENDING_OFFICIAL_EXTRACTION; not implemented |
 
-The current model scope is known, but the official PDMTO tariff mapping,
-applicable June 2026 charges, geographic basis, and the article's acceptance
-of an energy-only representation are not yet confirmed. Therefore:
+The tariff class is decided, but the applicable June 2026 GDMTO rate,
+geographic basis, and the article's acceptance of an energy-only
+representation are not yet confirmed. Therefore:
 
-ELECTRICITY_COST_DECISION = HOLD_FOR_PDMTO_OFFICIAL_TARIFF_AND_MODEL_SCOPE_CONFIRMATION
+ELECTRICITY_COST_DECISION = HOLD_FOR_GDMTO_JUNE_2026_RATE_AND_MODEL_SCOPE_CONFIRMATION
 
-No GDMTO value, arbitrary full-bill average, or undocumented PDMTO value may
-be substituted.
+No arbitrary full-bill average or undocumented GDMTO value may be substituted.
 
 ## 8. Decision 4: LPG-cost basis
 
@@ -372,7 +368,7 @@ Formal execution remains blocked.
 |---|---|---|---|
 | Reference period | thesis-era | June 2026 | use June 2026 |
 | Exchange rate | 16.85 MXN/USD | June 2026 Banxico FIX monthly mean: 17.3819136364 MXN/USD | update later with verified value |
-| Electricity | 0.0878338 USD/kWh | PDMTO; June 2026 official mapping and charges pending | hold for PDMTO official tariff and model-scope confirmation |
+| Electricity | 0.0878338 USD/kWh historical thesis value | June 2026 GDMTO applicable energy basis | tariff class selected; final rate and model scope pending |
 | LPG | 0.0461721 USD/MJ | CNE Xochitepec/Morelos monthly price: 19.46 MXN/kg; compatible heating value pending | hold for heating value and model-unit reconciliation |
 | Solar/other | historical COST-E1 values | source-based decision required | retain historically; hold article basis according to evidence |
 
@@ -412,7 +408,7 @@ ECONOMIC_BASIS_COMPLETENESS = PARTIAL_HOLD
 
 `READY_FOR_CONTROLLED_CODE_UPDATE` is not declared because the solar factor,
 the compatible LPG heating-value basis, the LPG model energy unit, and the
-official PDMTO mapping and applicable charges remain unresolved.
+applicable June 2026 GDMTO rate and model scope remain unresolved.
 
 ## 14. Next steps
 
