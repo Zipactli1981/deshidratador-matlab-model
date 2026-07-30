@@ -29,6 +29,7 @@ This is a documentation-only decision. It:
 | `COST_E3D_COMPRESSOR_ENERGY_RECONCILIATION_AUDIT_v96z.md` | Reviewed | Preserves the energy/cost reconciliation hold and the R1 operational-validity boundary | Energy reconciliation remains incomplete |
 | `EVIDENCE_E1_GA_VARIABLE_OUTPUT_DICTIONARY_v96z.md` | Reviewed | Provides the meanings and units of objective outputs and associated detail fields | Static dictionary, not a new run |
 | Active objective, wrapper, parameter, cost-breakdown, and runner chain | Statically reviewed | Confirms the active formulas, endpoint return, normal 10 percent target, TMAX path, and selection of the `fix1` triobjective function | Static inspection only; MATLAB was not executed |
+| Express model-owner decisions for COST-E3D-R2D | Confirmed | Select actual terminal-state water removal as the common future denominator for `f(2)` and `f(3)`; preserve the active 10 percent wet-basis and TMAX termination rules; retain the fixed 8 percent wet-basis target as a legacy reference only | Documentary decision only; no code implementation or execution |
 
 ## 4. Prior audit finding
 
@@ -157,6 +158,8 @@ At an exact 10 percent terminal state, the fixed 8 percent denominator therefore
 ## 10. Treatment of TMAX termination
 
 TMAX termination is preserved. When TMAX determines the endpoint, the canonical denominator must use the terminal moisture returned for that same endpoint. It must not substitute either the 10 percent normal target or the legacy 8 percent target.
+
+For every simulation trajectory, including a trajectory terminated by TMAX, `M_terminal`, `mw_terminal_kg`, `water_removed_kg`, and `dry_time` shall be obtained from the same terminal simulation index or endpoint. Therefore, the canonical denominator and the duration used by the economic and environmental numerators share the same temporal boundary.
 
 `TERMINATION_CRITERION_DECISION = UNCHANGED`
 
