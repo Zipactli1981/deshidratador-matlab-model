@@ -87,6 +87,35 @@ Implications for COST-E3:
    Existing economic constants remain unchanged in COST-E2.
    Any update must occur only in a later COST-E4 code PR after COST-E3.
 
+## Historical thesis economic-basis preservation note
+
+The user clarified that the current economic constants may correspond to the
+thesis-era calculations. Therefore, even though Route C was selected as the
+preferred article-year economic basis, the current economic constants should
+be preserved as the historical thesis economic basis for traceability and
+reproducibility.
+
+This historical basis should not be treated as the main article-year basis
+unless COST-E3 explicitly changes the route. Instead, it should be preserved to
+explain and reproduce thesis-era economic results.
+
+Historical values to preserve if confirmed in COST-E1:
+
+| Item | Historical value | Unit/status | Preservation role |
+|---|---:|---|---|
+| Exchange rate | 16.85 | MXN/USD, thesis-era candidate | preserve for thesis traceability |
+| Electricity cost | 0.0878338 | USD/kWh, thesis-era candidate | preserve for thesis traceability |
+| LPG cost | 0.0461721 | USD/MJ, thesis-era candidate | preserve for thesis traceability |
+
+The updated article-year basis and the historical thesis basis should be kept
+distinct.
+
+- Historical thesis basis: preserved for traceability and reproducibility of
+  previous thesis-era calculations.
+- Updated article-year basis: selected as the main route for future
+  article-oriented economic factors.
+- Sensitivity or comparison: may later compare both bases if needed.
+
 ## 4. Economic constants from COST-E1
 
 | Cost item | Current code/documented value | Unit | Location from COST-E1 | Source status before COST-E2 |
@@ -300,6 +329,12 @@ ECONOMIC_ROUTE_SELECTED_FOR_COST_E3 = ROUTE_C_UPDATED_ARTICLE_YEAR_BASIS
 ECONOMIC_CUTOFF_DATE_CANDIDATE = 2026-07-29
 
 HISTORICAL_2022_BASIS = NOT_PRIMARY_ROUTE_UNLESS_USED_FOR_SENSITIVITY
+
+HISTORICAL_THESIS_ECONOMIC_BASIS = PRESERVED_FOR_TRACEABILITY
+
+ARTICLE_ECONOMIC_BASIS = ROUTE_C_UPDATED_ARTICLE_YEAR_BASIS
+
+HISTORICAL_VALUES_NOT_SELECTED_AS_MAIN_ARTICLE_BASIS
 
 ECONOMIC_FACTOR_UPDATE = PENDING_COST_E3_DECISION_MEMO
 
