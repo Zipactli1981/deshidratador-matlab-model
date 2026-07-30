@@ -38,6 +38,55 @@ applicable date, tariff, region, or sale modality.
 | Economic factors | unchanged and not externally validated |
 | MATLAB execution | blocked |
 
+## User-selected economic-basis route for COST-E3
+
+The user selected Route C as the preferred economic-basis route for the article.
+
+ROUTE_C = UPDATED_ARTICLE_YEAR_ECONOMIC_BASIS
+
+This means that the project should not preserve the June 2022 economic basis as
+the main route unless later required for sensitivity or historical comparison.
+
+Under Route C, the economic constants should be updated together using a single
+documented article-year cut-off date.
+
+Preliminary cut-off date:
+2026-07-29
+
+This cut-off date is provisional and must be confirmed in COST-E3 before any
+code update.
+
+Implications for COST-E3:
+
+1. Exchange rate:
+   Use Banco de México / Banxico FIX for the selected cut-off date or a
+   documented averaging period around that date.
+   For 2026-07-29, the Banxico FIX candidate value identified is 17.5133
+   MXN/USD.
+   This value must be confirmed in COST-E3 before implementation.
+
+2. Electricity cost:
+   Use the current CFE tariff basis corresponding to the former OM tariff,
+   preferably the current GDMTO structure if applicable.
+   COST-E3 must select month, region/division, tariff class and whether a simple
+   energy charge or an averaged operational cost is used.
+
+3. LPG cost:
+   Use official Government of Mexico / CNE maximum LPG prices for Morelos,
+   preferably Xochitepec or the applicable LPG region, for the period closest
+   to the selected cut-off date.
+   COST-E3 must select whether the model uses MXN/kg or MXN/L as source basis,
+   then convert to USD/MJ.
+
+4. Historical 2022 basis:
+   Values close to June 2022, OM electricity tariff and Morelos LPG prices may
+   be preserved only as historical context or sensitivity, not as the primary
+   article-basis route.
+
+5. Current code values:
+   Existing economic constants remain unchanged in COST-E2.
+   Any update must occur only in a later COST-E4 code PR after COST-E3.
+
 ## 4. Economic constants from COST-E1
 
 | Cost item | Current code/documented value | Unit | Location from COST-E1 | Source status before COST-E2 |
@@ -246,7 +295,13 @@ Do not update code.
 
 COST-E2 = ECONOMIC_SOURCES_INVENTORIED_NOT_FINAL_VALIDATED
 
-ECONOMIC_FACTOR_UPDATE = PENDING_ECONOMIC_BASIS_DECISION_MEMO
+ECONOMIC_ROUTE_SELECTED_FOR_COST_E3 = ROUTE_C_UPDATED_ARTICLE_YEAR_BASIS
+
+ECONOMIC_CUTOFF_DATE_CANDIDATE = 2026-07-29
+
+HISTORICAL_2022_BASIS = NOT_PRIMARY_ROUTE_UNLESS_USED_FOR_SENSITIVITY
+
+ECONOMIC_FACTOR_UPDATE = PENDING_COST_E3_DECISION_MEMO
 
 FORMAL_EXECUTION = STILL_BLOCKED_PENDING_REVIEW_AND_EXPLICIT_RUN_AUTHORIZATION
 
