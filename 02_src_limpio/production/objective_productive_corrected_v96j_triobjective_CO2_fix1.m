@@ -6,12 +6,12 @@ function [f, detail] = objective_productive_corrected_v96j_triobjective_CO2_fix1
 %   f(2) = cost_specific_USD_per_kgwater
 %   f(3) = CO2_specific_kgCO2_per_kgwater
 %
-% Factores de emisión provisionales para validación computacional:
-%   EF_LPG_kgCO2_per_kWh  = 0.2270
+% Factores documentados para la implementación estática coordinada:
+%   EF_LPG_kgCO2_per_kg   = 3.00
 %   EF_grid_kgCO2_per_kWh = 0.4440
 % SEMARNAT/RENE FESEN 2024: 0.444 tCO2e/MWh = 0.444 kgCO2e/kWh
 %
-% No usar estos factores como definitivos para manuscrito sin referencia.
+% No se autorizan resultados finales antes de validación dinámica separada.
 
     penalty = [1000, 1e6, 1e6];
     f = penalty;
@@ -21,9 +21,10 @@ function [f, detail] = objective_productive_corrected_v96j_triobjective_CO2_fix1
     detail.objective_version = "v96j_triobjective_CO2_fix1";
     detail.base_objective = "objective_productive_corrected_v95j_endpoint_TMAX_corrected";
 
-    EF_LPG_kgCO2_per_kWh = 0.2270;
+    EF_LPG_kgCO2_per_kg = 3.00;
     EF_grid_kgCO2_per_kWh = 0.4440;
-    emission_factor_status = "PROVISIONAL_FOR_CODE_VALIDATION";
+    EF_LPG_check_kgCO2_per_MJ_fuel = 0.06508290;
+    emission_factor_status = "IMPLEMENTED_PENDING_DYNAMIC_VALIDATION";
 
     try
         [f_base, d_base] = objective_productive_corrected_v95j_endpoint_TMAX_corrected(x, mode_operation);
@@ -55,35 +56,19 @@ function [f, detail] = objective_productive_corrected_v96j_triobjective_CO2_fix1
         detail.status = base_status;
         detail.execution_status = "PENALIZED_BASE_OBJECTIVE";
         detail.objectives = local_objectives_struct_v96j_fix1(f);
-        detail.CO2 = local_empty_CO2_v96j_fix1(EF_LPG_kgCO2_per_kWh, EF_grid_kgCO2_per_kWh, emission_factor_status, "BASE_PENALIZED");
+        detail.CO2 = local_empty_CO2_v96j_fix1(EF_LPG_kgCO2_per_kg, EF_grid_kgCO2_per_kWh, emission_factor_status, "BASE_PENALIZED");
         return
     end
 
-    Q_aux_tot = local_get_numeric_v96j_fix1(detail, {"outputs.Q_aux_tot","Q_aux_tot"}, NaN);
-    if ~isfinite(Q_aux_tot)
-        Q_aux_tot = NaN;
-    end
+    % Reuse the exact activities and denominator that produced f(2).
+    water_removed_kg = local_get_numeric_v96j_fix1(detail, {"cost.water_removed_kg"}, NaN);
+    LPG_mass_kg = local_get_numeric_v96j_fix1(detail, {"cost.LPG_mass_kg"}, NaN);
+    LPG_fuel_input_MJ = local_get_numeric_v96j_fix1(detail, {"cost.LPG_fuel_input_MJ"}, NaN);
+    E_electricity_kWh = local_get_numeric_v96j_fix1(detail, {"cost.electric_energy_kWh"}, NaN);
+    electricity_data_status = "SHARED_WITH_DETAIL_COST";
 
-    water_removed_kg = NaN;
-    mwi = local_get_numeric_v96j_fix1(detail, {"product.mwi","mwi"}, NaN);
-    mwf = local_get_numeric_v96j_fix1(detail, {"product.mwf","mwf"}, NaN);
-    if isfinite(mwi) && isfinite(mwf)
-        water_removed_kg = mwi - mwf;
-    end
-
-    if ~isfinite(water_removed_kg) || water_removed_kg <= 0
-        water_removed_kg = local_get_numeric_v96j_fix1(detail, {"product.water_removed_kg","water_removed_kg"}, NaN);
-    end
-
-    E_electricity_kWh = local_get_numeric_v96j_fix1(detail, {"cost.electricity_kWh","cost.electric_energy_kWh","electricity_kWh","electric_energy_kWh"}, NaN);
-    if ~isfinite(E_electricity_kWh)
-        E_electricity_kWh = 0;
-        electricity_data_status = "NOT_EXPOSED_ASSUMED_ZERO_FOR_VALIDATION";
-    else
-        electricity_data_status = "EXTRACTED_FROM_DETAIL";
-    end
-
-    CO2_LPG_kg = Q_aux_tot * EF_LPG_kgCO2_per_kWh;
+    CO2_LPG_kg = LPG_mass_kg * EF_LPG_kgCO2_per_kg;
+    CO2_LPG_kg_check = LPG_fuel_input_MJ * EF_LPG_check_kgCO2_per_MJ_fuel;
     CO2_electricity_kg = E_electricity_kWh * EF_grid_kgCO2_per_kWh;
     CO2_total_kg = CO2_LPG_kg + CO2_electricity_kg;
     CO2_specific_kgCO2_per_kgwater = CO2_total_kg / water_removed_kg;
@@ -101,17 +86,23 @@ function [f, detail] = objective_productive_corrected_v96j_triobjective_CO2_fix1
     end
 
     detail.CO2 = struct();
-    detail.CO2.EF_LPG_kgCO2_per_kWh = EF_LPG_kgCO2_per_kWh;
+    detail.CO2.EF_LPG_kgCO2_per_kWh = NaN;
+    detail.CO2.EF_LPG_kgCO2_per_kg = EF_LPG_kgCO2_per_kg;
+    detail.CO2.EF_LPG_check_kgCO2_per_MJ_fuel = EF_LPG_check_kgCO2_per_MJ_fuel;
     detail.CO2.EF_grid_kgCO2_per_kWh = EF_grid_kgCO2_per_kWh;
     detail.CO2.emission_factor_status = emission_factor_status;
     detail.CO2.electricity_data_status = electricity_data_status;
     detail.CO2.water_removed_kg = water_removed_kg;
+    detail.CO2.LPG_mass_kg = LPG_mass_kg;
+    detail.CO2.LPG_fuel_input_MJ = LPG_fuel_input_MJ;
     detail.CO2.E_electricity_kWh = E_electricity_kWh;
     detail.CO2.CO2_LPG_kg = CO2_LPG_kg;
+    detail.CO2.CO2_LPG_kg_check = CO2_LPG_kg_check;
     detail.CO2.CO2_electricity_kg = CO2_electricity_kg;
     detail.CO2.CO2_total_kg = CO2_total_kg;
     detail.CO2.CO2_specific_kgCO2_per_kgwater = CO2_specific_kgCO2_per_kgwater;
-    detail.CO2.scope = "TRIOBJECTIVE_COMPUTATIONAL_VALIDATION_FACTORS_PROVISIONAL";
+    detail.CO2.scope = "LPG_AND_AIR_IMPELLER_OPERATIONAL_EMISSIONS_STATIC_IMPLEMENTATION";
+    detail.CO2.legacy_EF_LPG_energy_field_status = "RETAINED_AS_NAN_INTERFACE_PLACEHOLDER_NOT_ACTIVE";
 
 end
 
@@ -124,17 +115,23 @@ end
 
 function CO2 = local_empty_CO2_v96j_fix1(EF_LPG, EF_grid, factor_status, status)
     CO2 = struct();
-    CO2.EF_LPG_kgCO2_per_kWh = EF_LPG;
+    CO2.EF_LPG_kgCO2_per_kWh = NaN;
+    CO2.EF_LPG_kgCO2_per_kg = EF_LPG;
+    CO2.EF_LPG_check_kgCO2_per_MJ_fuel = 0.06508290;
     CO2.EF_grid_kgCO2_per_kWh = EF_grid;
     CO2.emission_factor_status = factor_status;
     CO2.electricity_data_status = string(status);
     CO2.water_removed_kg = NaN;
+    CO2.LPG_mass_kg = NaN;
+    CO2.LPG_fuel_input_MJ = NaN;
     CO2.E_electricity_kWh = NaN;
     CO2.CO2_LPG_kg = NaN;
+    CO2.CO2_LPG_kg_check = NaN;
     CO2.CO2_electricity_kg = NaN;
     CO2.CO2_total_kg = NaN;
     CO2.CO2_specific_kgCO2_per_kgwater = NaN;
     CO2.scope = "PENALIZED_NO_CO2_CLAIM";
+    CO2.legacy_EF_LPG_energy_field_status = "RETAINED_AS_NAN_INTERFACE_PLACEHOLDER_NOT_ACTIVE";
 end
 
 function val = local_get_numeric_v96j_fix1(S, paths, defaultVal)
