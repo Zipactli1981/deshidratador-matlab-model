@@ -79,6 +79,8 @@ The report does not assign one explicit original price month to the general `130
 
 The statement “the solar cost is a May 2018 price” is therefore not adopted.
 
+`THE_SOLAR_COST_IS_A_MAY_2018_MARKET_PRICE = PROHIBITED`
+
 ## 6. INPC base-period decision
 
 May 2018 is selected as a transparent and reproducible publication-month proxy because:
@@ -312,6 +314,10 @@ In the current chain, the candidate `Q_solar_MJ` maps to `Irradiacion`/`solar_en
 `SOLAR_COST_FACTOR_IMPLEMENTATION = PENDING_COORDINATED_CODE_PR`
 
 `F2_SOLAR_ACTIVITY_MULTIPLICATION = CONDITIONAL_PENDING_ACTIVITY_BOUNDARY_REVIEW`
+
+`SOLAR_COST_FACTOR = RESOLVED`
+
+`SOLAR_ACTIVITY_BOUNDARY = PARTIALLY_RECONCILED`
 
 No current `f(2)` value is final or recalculated by COST-E3D-R2A.
 
