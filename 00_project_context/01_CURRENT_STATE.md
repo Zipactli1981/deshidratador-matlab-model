@@ -1,17 +1,19 @@
 # CURRENT STATE — Deshidratador MATLAB / Q1
 
-## Git canónico
+## Baseline científico Git
 
 ```text
 Repository = D:\CODE\deshidratador
 Branch = main
-HEAD = 8a794c389edd10f9750e10a27eca0ec58c14da2d
+CORRECTED_R1_POSTRUN_BASELINE_HEAD = 8a794c389edd10f9750e10a27eca0ec58c14da2d
 Worktree = clean
 git diff --check = PASS
-origin/main divergence = 0 behind / 2 ahead
+origin/main divergence at CORRECTED_R1 postrun freeze = 0 behind / 2 ahead
 ```
 
-Los dos commits locales de CORRECTED_R1 no han sido publicados remotamente.
+Los dos commits locales que cerraron CORRECTED_R1 no habían sido publicados remotamente al cierre de esa fase.
+
+El HEAD vivo, el estado del worktree y la divergencia con `origin/main` son datos dinámicos y deben consultarse directamente con Git al inicio de cada sesión. Este archivo conserva baselines científicos y documentales; no pretende fijar el HEAD vivo del repositorio.
 
 ## Commits de cierre
 

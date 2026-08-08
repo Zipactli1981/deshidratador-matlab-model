@@ -15,7 +15,9 @@ Before starting any substantive task:
 
 3. Treat these files as the current canonical project state unless direct Git evidence proves they are stale.
 
-4. If repository state conflicts with `01_CURRENT_STATE.md`, STOP and report the discrepancy before modifying or executing anything.
+4. Baseline HEAD values recorded in project-context files identify validated scientific/documentary states; they are not requirements that the live repository HEAD remain equal to those values.
+
+5. Query live Git state directly at task start when relevant. If live repository evidence conflicts with a substantive project-state claim, STOP and report the discrepancy before modifying or executing anything.
 
 ## Execution safety
 

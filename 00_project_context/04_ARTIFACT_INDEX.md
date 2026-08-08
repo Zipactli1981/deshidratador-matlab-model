@@ -1,6 +1,6 @@
 # ARTIFACT INDEX — Deshidratador MATLAB / Q1
 
-Current canonical HEAD:
+CORRECTED_R1 validated postrun baseline HEAD:
 ```text
 8a794c389edd10f9750e10a27eca0ec58c14da2d
 ```
