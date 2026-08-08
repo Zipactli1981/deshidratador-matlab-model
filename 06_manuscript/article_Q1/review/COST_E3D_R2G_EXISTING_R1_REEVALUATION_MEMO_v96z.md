@@ -78,6 +78,10 @@ NUMERICAL_COMPARISON_CRITERION = ABS_A_MINUS_B_LE_ABS_TOL_PLUS_REL_TOL_TIMES_MAX
 
 Historical equality was expected only for `f(1)`, because its physical definition was not changed. Historical equality was not expected for corrected `f(2)` or `f(3)`.
 
+F1_HISTORICAL_EQUALITY_EXPECTATION = EXPECTED
+
+This expectation applies within the documented numerical tolerance because `f(1)` was not reformulated and the physical model was not modified by COST-E3D for the same vectors and operating mode.
+
 F2_HISTORICAL_EQUALITY_EXPECTATION = NOT_EXPECTED
 
 F3_HISTORICAL_EQUALITY_EXPECTATION = NOT_EXPECTED
@@ -218,6 +222,10 @@ R1_REEVALUATED_NORMAL_TERMINATIONS = 0
 
 R1_REEVALUATED_TMAX_TERMINATIONS = 9
 
+R1_REEVALUATED_TERMINATIONS_TOTAL = 9
+
+Zero normal terminations plus nine TMAX terminations equals nine reevaluated solutions.
+
 All nine fixed points exercised the TMAX branch. This does not validate every possible TMAX trajectory or any point outside the nine reevaluated samples.
 
 ## 18. Descriptive statistics
@@ -237,9 +245,11 @@ These are descriptive summaries of fixed samples only. They are not sensitivity,
 
 REPOSITORY_SIDE_EFFECT = NONE
 
+PRODUCTIVE_CODE_MODIFIED = NO
+
 WORKING_TREE_AFTER_REEVALUATION = CLEAN
 
-The MATLAB session closed without creating or modifying any repository file. No MAT, CSV, XLSX, figure, PNG, PDF, result package, or checkpoint was generated in the repository.
+The reevaluation used the already-fused productive code and introduced no productive-code changes. The MATLAB session closed without creating or modifying any repository file. No MAT, CSV, XLSX, figure, PNG, PDF, result package, or checkpoint was generated in the repository.
 
 ## 20. Limitations
 
@@ -259,7 +269,11 @@ MINREP_EXECUTED = NO
 
 PARETO_REANALYSIS = NOT_PERFORMED
 
+NONDOMINATED_SORTING_PERFORMED = NO
+
 PARETO_REANALYSIS_REASON = THE_9_POINTS_WERE_GENERATED_UNDER_HISTORICAL_F2_F3_AND_DO_NOT_CONSTITUTE_THE_REOPTIMIZED_FRONT
+
+No nondominated sorting, Pareto ranking, crowding-distance analysis, hypervolume analysis, or Pareto-front reconstruction was performed.
 
 CONVERGENCE_VALIDATION = NOT_PERFORMED
 
