@@ -94,3 +94,53 @@ La búsqueda exhaustiva determinó que no se persistió un MAT con los `double` 
 No se autoriza replay ni nueva evaluación del objective. No cambia la definición exacta de dominancia ni ninguna otra regla del protocolo comparativo v1.0.
 
 **Estado:** VIGENTE.
+
+## D013 — Convenciones numéricas descriptivas CR1-COMP-03/04
+
+**Decisión:** adoptar las siguientes convenciones deterministas para las estadísticas descriptivas requeridas por CR1-COMP-03 y CR1-COMP-04:
+
+```text
+STD_CONVENTION = POPULATION
+STD_DDOF = 0
+```
+
+La desviación estándar se define como:
+
+```text
+std = sqrt(sum((x_i - mean(x))^2) / n)
+```
+
+H y C se tratan en CR1-COMP como conjuntos finitos específicos de soluciones, no como muestras aleatorias para inferencia poblacional o variabilidad entre corridas. La desviación estándar tiene una función exclusivamente descriptiva.
+
+```text
+IQR_CONVENTION = HYNDMAN_FAN_TYPE_7
+h = 1 + (n - 1)p
+Q1 = quantile(p=0.25, Type 7)
+Q3 = quantile(p=0.75, Type 7)
+IQR = Q3 - Q1
+```
+
+Cuando `h` no sea entero se usará interpolación lineal entre las observaciones ordenadas adyacentes. Type 7 se adopta como convención determinista y reproducible; no se afirma que sea la única convención válida posible.
+
+Para la relación con los bounds:
+
+```text
+BOUND_PROXIMITY_RULE = DISTANCES_ONLY_NO_THRESHOLD
+distance_to_lb = x - lb
+distance_to_ub = ub - x
+normalized_distance_to_lb = (x - lb)/(ub - lb)
+normalized_distance_to_ub = (ub - x)/(ub - lb)
+```
+
+No se define ningún umbral de “near bound” ni se permite clasificar soluciones como próximas a límites mediante thresholds no congelados.
+
+```text
+APPLIES_TO = CR1-COMP-03, CR1-COMP-04
+PROTOCOL_V1_MODIFIED = NO
+RESULTS_OBSERVED_BEFORE_DECISION = NO
+DESCRIPTIVE_RESULTS_COMPUTED_BEFORE_DECISION = NO
+```
+
+D013 define sólo convenciones de implementación descriptiva. No modifica H, C, el dataset, objetivos, bounds, dominancia, near-tie, coverage, Pareto rank, hypervolume, selección de soluciones ni interpretación física, económica o ambiental. La decisión se congeló después de detectar la omisión y antes de calcular resultados dependientes de `std` o IQR.
+
+**Estado:** VIGENTE.

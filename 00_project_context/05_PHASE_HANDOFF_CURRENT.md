@@ -115,10 +115,31 @@ Los 72 pares internos fueron incomparables; no hubo dominancias ni igualdades ex
 
 No se ejecutaron MATLAB, objective/model, replay, `gamultiobj`, optimización ni ninguna fase CR1-COMP posterior.
 
+## CR1-COMP-03 detenido / D013 vigente
+
+CR1-COMP-03 se detuvo antes de cualquier cálculo descriptivo porque el protocolo no especificaba población vs. muestra para `std` ni el algoritmo de cuartiles/IQR.
+
+D013 resolvió metodológicamente esas convenciones antes de observar resultados:
+
+```text
+CR1_COMP_03_STATUS = BLOCKED_PENDING_RESUMPTION_AFTER_D013
+CR1_COMP_03_INITIAL_GATE = BLOCKED_DESCRIPTIVE_CONVENTION_UNSPECIFIED
+D013_STATUS = VIGENTE
+STD_CONVENTION = POPULATION_DDOF_0
+IQR_CONVENTION = HYNDMAN_FAN_TYPE_7
+BOUND_PROXIMITY_RULE = DISTANCES_ONLY_NO_THRESHOLD
+RESULTS_OBSERVED_BEFORE_DECISION = NO
+DESCRIPTIVE_RESULTS_COMPUTED = NO
+CR1_COMP_03_RESUMPTION_AUTHORIZED = NO
+PROTOCOL_V1_MODIFIED = NO
+```
+
+CR1-COMP-01 y CR1-COMP-02 permanecen `CLOSED_PASS`. No se calcularon resultados de CR1-COMP-03. Su reanudación con D013 requiere autorización separada.
+
 ## Próxima fase
 
 ```text
 NEXT_PHASE = CR1-COMP-03_DECISION_SPACE_DESCRIPTIVE_ANALYSIS
 ```
 
-CR1-COMP-03 requiere autorización separada.
+La reanudación de CR1-COMP-03 requiere autorización separada. CR1-COMP-04 no está autorizada.
