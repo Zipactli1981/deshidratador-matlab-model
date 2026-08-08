@@ -1,5 +1,5 @@
 # PHASE HANDOFF CURRENT
-## Comparative Protocol v1.0 → CR1-COMP-01 Dataset Freeze
+## CR1-COMP-01 Dataset Freeze → CR1-COMP-02 Within-set Exact Pareto Audit
 
 ## Fases cerradas
 
@@ -54,11 +54,36 @@ No constituyen un frente Pareto corregido.
 ## Estado comparativo
 
 ```text
-COMPARATIVE_DATASET = NOT_BUILT
+COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
 COMPARATIVE_RESULTS = NOT_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 ```
+
+## Estado de CR1-COMP-01
+
+```text
+CR1_COMP_01_PROVENANCE_SEARCH = CLOSED_PASS
+H_X_PROVENANCE = RESOLVED
+H_F_CORRECTED_PROVENANCE = RESOLVED
+H_F_CORRECTED_FULL_PRECISION_ARTIFACT_FOUND = NO
+H_F_CORRECTED_DECIMAL_VALIDATED_SOURCE_FOUND = YES
+H_F2_F3_DOCUMENTARY_RECOVERY_DECISION = APPROVED_CR1_COMP_01_D1
+CR1_COMP_01_E1_SOURCE_VALUE_RECOVERY = PASS
+SOURCE_VALUE_RECOVERY_ARTIFACT = 06_manuscript/article_Q1/review/CR1_COMP_01_E1_SOURCE_VALUE_RECOVERY_v96z.csv
+SOURCE_VALUE_RECOVERY_ARTIFACT_SHA256 = 869A070F972319ABC0AC0BCD44EF6699E5C3BC92BAB53EB5328AEFB1275F7D2D
+CR1_COMP_01_STATUS = CLOSED_PASS
+CR1_COMP_01_DATASET_FREEZE = PASS
+COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
+CANONICAL_COMPARATIVE_DATASET = 06_manuscript/article_Q1/review/CR1_COMP_01_CANONICAL_DATASET_v96z.csv
+CANONICAL_COMPARATIVE_DATASET_SHA256 = B17B461FB04C9693FC9DA0C3450703C34E4538894AD232EF7138AE5E9882CD62
+```
+
+La excepción D1 acepta como recuperación documental la serialización decimal validada de 17 dígitos de `H.f2/f3`, porque los `double` binary64 originales corregidos no fueron persistidos. La limitación permanece explícita: la identidad binary64 original no fue verificada independientemente. `H.X` y `H.f1` proceden del MAT histórico.
+
+E1 recuperó y auditó los valores fuente en orden original, con 9 registros H y 9 registros C. El CSV/JSON E1 permanecen como artefactos derivados de recuperación.
+
+CR1-COMP-01-F1 construyó y congeló el dataset canónico de 18 filas en orden H01…H09, C01…C09. D1 permanece como limitación explícita. No se ejecutó replay, dominancia, sorting Pareto, coverage, hypervolume ni otra comparación científica.
 
 ## Autorización operativa
 
@@ -75,12 +100,12 @@ Los scripts postrun, cuando se autoricen, sólo podrán leer artefactos existent
 ## Próxima fase
 
 ```text
-NEXT_PHASE = CR1-COMP-01_DATASET_FREEZE
+NEXT_PHASE = CR1-COMP-02_WITHIN_SET_EXACT_PARETO_AUDIT
 ```
 
-### Objetivo de CR1-COMP-01
+### Estado del dataset canónico
 
-Construir una tabla canónica de exactamente 18 registros:
+La tabla canónica congelada contiene exactamente 18 registros:
 
 ```text
 H01...H09
@@ -99,15 +124,17 @@ Requisitos:
 
 ```text
 ALL_PRIMARY_VALUES_FROM_CANONICAL_VALIDATED_ARTIFACTS = YES
-FULL_PRECISION_PRIMARY_VALUES_USED = YES
+FULL_PRECISION_PRIMARY_VALUES_USED = PASS_WITH_DOCUMENTARY_RECOVERY_DEVIATION_CR1_COMP_01_D1
 DATASET_ROWS = 18
 HISTORICAL_ROWS = 9
 CORRECTED_R1_ROWS = 9
 ```
 
-Fuente numérica preferida: valores `double` de MAT canónicos.
+Fuente inmediata: `CR1_COMP_01_E1_SOURCE_VALUE_RECOVERY_v96z.json`, con preservación decimal y binary64 reproducible en el JSON canónico.
 
 No existe emparejamiento implícito H01↔C01 por índice.
+
+CR1-COMP-02 — Within-set exact Pareto audit — requiere autorización separada.
 
 ## Lo que todavía NO debe ejecutarse sin autorización separada
 
@@ -118,4 +145,4 @@ GAMULTIOBJ = NO
 NEW_OPTIMIZATION = NO
 ```
 
-Después del dataset freeze se continuará con la secuencia CR1-COMP congelada en el protocolo v1.0.
+La continuación con CR1-COMP-02 debe respetar la secuencia congelada en el protocolo v1.0 y requiere autorización separada.

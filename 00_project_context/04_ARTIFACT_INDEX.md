@@ -78,6 +78,102 @@ Siguiente bloque definido:
 CR1-COMP-01_DATASET_FREEZE
 ```
 
+## CR1-COMP-01 — Procedencia de H corregido
+
+Fuente documental validada de objetivos corregidos de H:
+
+```text
+06_manuscript/article_Q1/review/COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md
+```
+
+SHA-256:
+
+```text
+7C025689D5832CBA9ECB8D90E9A4A5D5E911A46B0109C6D1C270E19E7E8EBFB2
+```
+
+Role:
+
+```text
+validated corrected-H objective documentary source
+```
+
+Decisión de recuperación documental D1:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_01_D1_H_CORRECTED_F_DOCUMENTARY_RECOVERY_DECISION_v96z.md
+```
+
+SHA-256:
+
+```text
+01F3232ED40303C29F64C1970BE1EF0FAD11394609C6D489FA9D97E1474DBA0F
+```
+
+## CR1-COMP-01-E1 — Source Value Recovery
+
+CSV de recuperación fuente (`SOURCE_VALUE_RECOVERY_ARTIFACT`, no dataset comparativo):
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_01_E1_SOURCE_VALUE_RECOVERY_v96z.csv
+SHA-256 = 869A070F972319ABC0AC0BCD44EF6699E5C3BC92BAB53EB5328AEFB1275F7D2D
+```
+
+JSON de preservación decimal/binary64:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_01_E1_SOURCE_VALUE_RECOVERY_v96z.json
+SHA-256 = E3F591E154E686BB81D28EF8D02A0A13C3DD300C8A2E36181E2B765FCCC2DAAF
+```
+
+Audit E1:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_01_E1_SOURCE_VALUE_RECOVERY_AUDIT_v96z.md
+SHA-256 = FB7716B3ED45E8A7C297FF01EEB67D128A1D836E46F4B0F8DB9AA33534BEA852
+```
+
+Estado:
+
+```text
+CR1_COMP_01_E1_SOURCE_VALUE_RECOVERY = PASS
+COMPARATIVE_DATASET_AT_E1 = NOT_BUILT
+```
+
+## CR1-COMP-01-F1 — Canonical Dataset Freeze
+
+CSV dataset canónico primario:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_01_CANONICAL_DATASET_v96z.csv
+SHA-256 = B17B461FB04C9693FC9DA0C3450703C34E4538894AD232EF7138AE5E9882CD62
+Role = canonical 18-row comparative dataset / primary tabular serialization
+```
+
+JSON dataset canónico reproducible:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_01_CANONICAL_DATASET_v96z.json
+SHA-256 = 4DE32D3292001FC87E7435995E3D9ACC31D51800BA05E2A88BA3B379A95D0164
+Role = canonical 18-row comparative dataset / provenance and decimal-binary64 preservation
+```
+
+Audit de congelamiento:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_01_DATASET_FREEZE_AUDIT_v96z.md
+SHA-256 = 52F7E2E6DCEC6A6F6DD65D8BB21BF0B336DBF3981E78F239C6686EDF07254976
+Role = canonical dataset construction and freeze audit
+```
+
+Estado:
+
+```text
+CR1_COMP_01_STATUS = CLOSED_PASS
+CR1_COMP_01_DATASET_FREEZE = PASS
+COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c
