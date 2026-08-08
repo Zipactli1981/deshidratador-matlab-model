@@ -1,0 +1,289 @@
+--- a/02_src_limpio/production/run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix.m
++++ b/02_src_limpio/production/run_corrected_r1_cost_e3d_v96z.m
+@@ -1,4 +1,4 @@
+-function formal = run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix(confirm_execute, rngSeed)
++function formal = run_corrected_r1_cost_e3d_v96z(confirm_execute, rngSeed)
+
+     if nargin < 1 || isempty(confirm_execute)
+         confirm_execute = false;
+@@ -11,8 +11,17 @@
+     rngSeedWasProvided_v96z = ~isempty(rngSeed);
+     rngStateBefore_v96z = rng;
+
+-% RUN_GUARDED_TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix
+-% 9.6m — CREATE-TRIOBJECTIVE-FORMAL-RUN-SCRIPT-001
++% CORRECTED_R1_FREEZE_BEGIN
++% Exact seed guard for historical-comparison interpretability.
++% This block does not change the algorithmic path when rngSeed=61001.
++    if ~rngSeedWasProvided_v96z || ~isscalar(rngSeed) || double(rngSeed) ~= 61001
++        error('CORRECTED_R1:SEED_FREEZE', ...
++            'Corrected R1 requires explicit rngSeed=61001. No fallback seed is allowed.');
++    end
++% CORRECTED_R1_FREEZE_END
++
++% RUN_GUARDED_CORRECTED_R1_COST_E3D_v96z
++% 9.6m — CORRECTED-R1-COST-E3D-RUNNER-CLONE
+ %
+ % Objetivo:
+ %   Crear y ejecutar, solo con confirmación explícita, la corrida formal
+@@ -35,10 +44,10 @@
+ %   confirm_execute = false por defecto.
+ %
+ % Uso preflight solamente:
+-%   formal = run_guarded_triobjective_formal_ga_v96m(false);
++%   formal = run_corrected_r1_cost_e3d_v96z(false, 61001);
+ %
+ % Uso para ejecutar corrida formal:
+-%   formal = run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix(true, rngSeed);
++%   formal = run_corrected_r1_cost_e3d_v96z(true, rngSeed);
+ %
+ % Este script:
+ %   - NO modifica v10/v17/v628b/v18/v95j.
+@@ -47,7 +56,7 @@
+ %   - Ejecuta gamultiobj solo si confirm_execute=true.
+ %   - Guarda MAT/CSV/MD/TXT.
+ %   - Mantiene solar excluido.
+-%   - Marca CO2 con factores provisionales.
++%   - Registra provenance COST-E3D/R2F/R2G sin modificar código productivo.
+
+     if nargin < 1
+         confirm_execute = false;
+@@ -114,7 +123,7 @@
+     timestamp = datestr(now,'yyyymmdd_HHMMSS');
+
+     formalBaseDir = fullfile(rootDir,'05_runs','triobjective_formal_ga_v96m');
+-    formalDir = fullfile(formalBaseDir,['TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_' timestamp]);
++    formalDir = fullfile(formalBaseDir,['CORRECTED_R1_COST_E3D_v96z_' timestamp]);
+
+     logsDir = fullfile(formalDir,'logs');
+     tablesDir = fullfile(formalDir,'tables');
+@@ -139,6 +148,24 @@
+
+     popSize = 24;
+     maxGen = 50;
++
++% CORRECTED_R1_CONFIG_GUARD_BEGIN
++% Values are the exact formal v96l window used by historical R1.
++    expected_x_selected_v96z = [0.0740767982118, 62.6832965028, 0.672252618341, 11.6517528081];
++    expected_lb_v96z = [0.0540767982118, 57.6832965028, 0.422252618341, 8.6517528081];
++    expected_ub_v96z = [0.0940767982118, 67.6832965028, 0.922252618341, 14.0];
++    freeze_tol_v96z = 1e-12;
++
++    if nvars ~= 4 || ...
++            max(abs(double(x_selected(:)') - expected_x_selected_v96z)) > freeze_tol_v96z || ...
++            max(abs(double(lb(:)') - expected_lb_v96z)) > freeze_tol_v96z || ...
++            max(abs(double(ub(:)') - expected_ub_v96z)) > freeze_tol_v96z || ...
++            popSize ~= 24 || maxGen ~= 50 || ...
++            string(modeFormal) ~= "hybrid" || string(referenceMode) ~= "gasLP"
++        error('CORRECTED_R1:CONFIG_FREEZE', ...
++            'Corrected R1 configuration differs from the frozen historical-comparison configuration.');
++    end
++% CORRECTED_R1_CONFIG_GUARD_END
+
+     if rngSeedWasProvided_v96z
+     rng(rngSeed,'twister');
+@@ -163,7 +190,7 @@
+
+     Tpreflight = struct2table(vertcat(preRows{:}));
+
+-    outPreflightCsv = fullfile(tablesDir,'TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_preflight.csv');
++    outPreflightCsv = fullfile(tablesDir,'CORRECTED_R1_COST_E3D_v96z_preflight.csv');
+     writetable(Tpreflight,outPreflightCsv);
+
+     gasPre = Tpreflight(strcmp(string(Tpreflight.mode),"gasLP"),:);
+@@ -194,11 +221,11 @@
+     sourceRows{end+1,1} = local_source_contains_v96m("fix1_calls_v95j", objective_v96j_fix1, "objective_productive_corrected_v95j_endpoint_TMAX_corrected", "fix1 calls validated v95j.");
+     sourceRows{end+1,1} = local_source_contains_v96m("fix1_has_1x3_valid_f", objective_v96j_fix1, "f = [f_base(1), f_base(2), CO2_specific_kgCO2_per_kgwater];", "fix1 builds 1x3 objective.");
+     sourceRows{end+1,1} = local_source_contains_v96m("fix1_has_1x3_penalty", objective_v96j_fix1, "penalty = [1000, 1e6, 1e6];", "fix1 has 1x3 penalty.");
+-    sourceRows{end+1,1} = local_source_contains_v96m("fix1_has_provisional_factors", objective_v96j_fix1, "PROVISIONAL_FOR_CODE_VALIDATION", "fix1 marks provisional factors.");
++    sourceRows{end+1,1} = local_source_contains_v96m("fix1_has_cost_e3d_chain", objective_v96j_fix1, "cost.water_removed_kg", "fix1 exposes the corrected COST-E3D shared-denominator chain.");
+
+     Tsource = struct2table(vertcat(sourceRows{:}));
+
+-    outSourceCsv = fullfile(tablesDir,'TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_source_scan.csv');
++    outSourceCsv = fullfile(tablesDir,'CORRECTED_R1_COST_E3D_v96z_source_scan.csv');
+     writetable(Tsource,outSourceCsv);
+
+     source_preservation_pass = all(Tsource.pass);
+@@ -266,7 +293,7 @@
+     else
+         fprintf('\n=== PREFLIGHT ONLY: FORMAL GA NOT EXECUTED ===\n');
+         fprintf('To execute later, run:\n');
+-        fprintf('formal = run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix(true, rngSeed);\n');
++        fprintf('formal = run_corrected_r1_cost_e3d_v96z(true, rngSeed);\n');
+     end
+
+     % ---------------------------------------------------------------------
+@@ -302,7 +329,7 @@
+     minCost = local_min_or_nan_v96m(F,2);
+     minCO2 = local_min_or_nan_v96m(F,3);
+
+-    outRawMat = fullfile(matDir,'TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_raw.mat');
++    outRawMat = fullfile(matDir,'CORRECTED_R1_COST_E3D_v96z_raw.mat');
+     save(outRawMat,'X','F','exitflag','output','population','scores','runtime_s','run_status','run_error','lb','ub','opts','modeFormal','popSize','maxGen');
+
+     % ---------------------------------------------------------------------
+@@ -335,7 +362,7 @@
+         Tsolutions = struct2table(vertcat(solutionRows{:}));
+     end
+
+-    outSolutionsCsv = fullfile(tablesDir,'TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_solutions.csv');
++    outSolutionsCsv = fullfile(tablesDir,'CORRECTED_R1_COST_E3D_v96z_solutions.csv');
+     writetable(Tsolutions,outSolutionsCsv);
+
+     % ---------------------------------------------------------------------
+@@ -344,7 +371,7 @@
+     [f_ref, d_ref, ref_status, ref_err] = local_eval_triobjective_v96m(x_selected, referenceMode);
+     Treference = struct2table(local_reference_row_v96m(referenceMode, x_selected, f_ref, d_ref, ref_status, ref_err));
+
+-    outReferenceCsv = fullfile(tablesDir,'TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_gasLP_reference.csv');
++    outReferenceCsv = fullfile(tablesDir,'CORRECTED_R1_COST_E3D_v96z_gasLP_reference.csv');
+     writetable(Treference,outReferenceCsv);
+
+     % ---------------------------------------------------------------------
+@@ -385,7 +412,7 @@
+
+     Trun = struct2table(runRow);
+
+-    outRunCsv = fullfile(tablesDir,'TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_run_summary.csv');
++    outRunCsv = fullfile(tablesDir,'CORRECTED_R1_COST_E3D_v96z_run_summary.csv');
+     writetable(Trun,outRunCsv);
+
+     % ---------------------------------------------------------------------
+@@ -447,14 +474,14 @@
+
+     checks{end+1,1} = local_check_row_v96m( ...
+         "M08", ...
+-        "Emission factors provisional flag", ...
++        "Canonical COST-E3D provenance", ...
+         true, ...
+-        "CO2 factors are provisional; manuscript-final CO2 claims blocked.", ...
+-        "Factor status must remain explicit.");
++        "COST-E3D objective traceability was dynamically checked in R2F/R2G; productive code remains frozen.", ...
++        "Corrected-R1 orchestration must record canonical validation state without changing the objective.");
+
+     Tchecks = struct2table(vertcat(checks{:}));
+
+-    outChecksCsv = fullfile(tablesDir,'TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_checks.csv');
++    outChecksCsv = fullfile(tablesDir,'CORRECTED_R1_COST_E3D_v96z_checks.csv');
+     writetable(Tchecks,outChecksCsv);
+
+     % ---------------------------------------------------------------------
+@@ -463,13 +490,13 @@
+     script_ready = preflight_pass && source_preservation_pass;
+
+     if ~confirm_execute && script_ready
+-        diagnosis = "TRIOBJECTIVE_FORMAL_RUN_SCRIPT_READY_NO_EXECUTION";
++        diagnosis = "CORRECTED_R1_SCRIPT_READY_NO_EXECUTION";
+     elseif confirm_execute && all(Tchecks.pass)
+-        diagnosis = "TRIOBJECTIVE_FORMAL_RUN_EXECUTION_COMPLETED_PASS";
++        diagnosis = "CORRECTED_R1_EXECUTION_COMPLETED_PASS";
+     elseif confirm_execute && ~all(Tchecks.pass)
+-        diagnosis = "TRIOBJECTIVE_FORMAL_RUN_EXECUTION_REQUIRES_REVIEW";
++        diagnosis = "CORRECTED_R1_EXECUTION_REQUIRES_REVIEW";
+     else
+-        diagnosis = "TRIOBJECTIVE_FORMAL_RUN_SCRIPT_REQUIRES_REVIEW";
++        diagnosis = "CORRECTED_R1_SCRIPT_REQUIRES_REVIEW";
+     end
+
+     formalFlags = struct();
+@@ -487,7 +514,19 @@
+     formalFlags.nFiniteRows = nFiniteRows;
+     formalFlags.nPenaltyRows = nPenaltyRows;
+     formalFlags.F_has_3_columns = size(F,2)==3;
+-    formalFlags.emission_factors_provisional = true;
++    formalFlags.emission_factors_provisional = true; % legacy field retained; see canonical status below
++    formalFlags.corrected_r1_configuration_frozen = true;
++    formalFlags.corrected_r1_seed = 61001;
++    formalFlags.canonical_baseline_head = "e74e70ff7e87c9d9f19955b341ce152b11418f92";
++    formalFlags.historical_r1_artifact_sha256 = "A04D1ADCD769CE9D8ED858FA321D7AF6A22E42D1F8A954094084B4B5A2A2ECD0";
++    formalFlags.historical_runner_blob_sha = "243554b3df9644a74c54d45472068557204d650c";
++    formalFlags.corrected_objective_blob_sha = "d7fdcb88f94ef8a766af438ad7bb40f28bcda2bc";
++    formalFlags.design_blob_sha = "2006fe8da06740c9bcf0bc1b1c7bdd7b85df0268";
++    formalFlags.wrapper_v18_blob_sha = "b825a513c95f50ac105d16346650cfe48f7d0096";
++    formalFlags.cost_params_blob_sha = "4b1fbfb8554ba59a79ed7908f62b83b38e8947c8";
++    formalFlags.cost_breakdown_blob_sha = "e1c9a29df585c4f2016b07d5d1f28b71eb917f52";
++    formalFlags.cost_e3d_traceability_state = "R2F_R2G_DYNAMIC_VALIDATION_PASS";
++    formalFlags.legacy_emission_status_note = "Legacy runner/objective labels predate R2F/R2G; canonical handoff governs interpretation.";
+     formalFlags.formal_run_executed = logical(confirm_execute) && strcmp(run_status,"OK");
+     formalFlags.formal_run_still_on_hold = ~logical(confirm_execute);
+     formalFlags.postrun_consolidation_pending = logical(confirm_execute) && strcmp(run_status,"OK");
+@@ -495,9 +534,9 @@
+     % ---------------------------------------------------------------------
+     % Salidas MAT
+     % ---------------------------------------------------------------------
+-    outMd = fullfile(logsDir,'TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix.md');
+-    outTxt = fullfile(logsDir,'TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix.txt');
+-    outMat = fullfile(matDir,'TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix.mat');
++    outMd = fullfile(logsDir,'CORRECTED_R1_COST_E3D_v96z.md');
++    outTxt = fullfile(logsDir,'CORRECTED_R1_COST_E3D_v96z.txt');
++    outMat = fullfile(matDir,'CORRECTED_R1_COST_E3D_v96z.mat');
+
+     save(outMat, ...
+         'diagnosis','formalFlags', ...
+@@ -517,7 +556,7 @@
+         error('No se pudo crear MD: %s', outMd);
+     end
+
+-    fprintf(fid,'# TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix\n\n');
++    fprintf(fid,'# CORRECTED_R1_COST_E3D_v96z\n\n');
+     fprintf(fid,'## Estado\n\n');
+     fprintf(fid,'Diagnóstico: `%s`\n\n', diagnosis);
+     fprintf(fid,'confirm_execute: `%d`\n\n', confirm_execute);
+@@ -595,13 +634,13 @@
+     end
+
+     fprintf(fid,'\n## Restricciones activas\n\n');
+-    fprintf(fid,'- Factores de emisión provisionales.\n');
++    fprintf(fid,'- Nota de provenance: el runner conserva un campo legacy de factores; la trazabilidad canónica COST-E3D fue validada en R2F/R2G.\n');
+     fprintf(fid,'- No usar resultados directamente en manuscrito sin consolidación postrun.\n');
+     fprintf(fid,'- Solar puro sigue excluido.\n');
+
+     if ~confirm_execute
+         fprintf(fid,'- La corrida formal NO fue ejecutada.\n');
+-        fprintf(fid,'- Para ejecutar: `formal = run_guarded_triobjective_formal_ga_v96m_seedaware_v96z_rngfix(true, rngSeed);`\n');
++        fprintf(fid,'- Para ejecutar: `formal = run_corrected_r1_cost_e3d_v96z(true, rngSeed);`\n');
+     else
+         fprintf(fid,'- La corrida formal fue solicitada con `confirm_execute=true`.\n');
+         fprintf(fid,'- Si el diagnóstico es PASS, continuar con consolidación postrun.\n');
+@@ -609,9 +648,9 @@
+
+     fprintf(fid,'\n## Siguiente paso\n\n');
+     if ~confirm_execute
+-        fprintf(fid,'`9.6n — TRIOBJECTIVE-FORMAL-RUN-EXECUTION-APPROVAL-001`\n');
++        fprintf(fid,'`CORRECTED-R1 — EXECUTION-APPROVAL-REQUIRED`\n');
+     else
+-        fprintf(fid,'`9.6o — TRIOBJECTIVE-FORMAL-POSTRUN-CONSOLIDATION-001`\n');
++        fprintf(fid,'`CORRECTED-R1 — POSTRUN-CONSOLIDATION`\n');
+     end
+
+     fclose(fid);
+@@ -624,8 +663,8 @@
+         error('No se pudo crear TXT: %s', outTxt);
+     end
+
+-    fprintf(fid,'CREATE-TRIOBJECTIVE-FORMAL-RUN-SCRIPT-001\n');
+-    fprintf(fid,'status: TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_COMPLETED\n');
++    fprintf(fid,'CORRECTED-R1-COST-E3D-RUNNER-CLONE\n');
++    fprintf(fid,'status: CORRECTED_R1_COST_E3D_v96z_COMPLETED\n');
+     fprintf(fid,'diagnosis: %s\n', diagnosis);
+     fprintf(fid,'confirm_execute: %d\n', confirm_execute);
+     fprintf(fid,'design_v96l_pass: %d\n', formalFlags.design_v96l_pass);
+@@ -654,7 +693,7 @@
+     % Salida consola
+     % ---------------------------------------------------------------------
+     formal = struct();
+-    formal.status = 'TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_COMPLETED';
++    formal.status = 'CORRECTED_R1_COST_E3D_v96z_COMPLETED';
+     formal.diagnosis = diagnosis;
+     formal.formalFlags = formalFlags;
+     formal.Tpreflight = Tpreflight;
+@@ -673,7 +712,7 @@
+ formal.rngStateBefore_v96z = rngStateBefore_v96z;
+ formal.rngStateAfterSeed_v96z = rngStateAfterSeed_v96z;
+
+-    disp('=== TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix ===')
++    disp('=== CORRECTED_R1_COST_E3D_v96z ===')
+     disp(formal.status)
+     disp('=== DIAGNOSIS ===')
+     disp(formal.diagnosis)

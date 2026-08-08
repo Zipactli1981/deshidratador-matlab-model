@@ -1,0 +1,319 @@
+PRE_MATLAB_CHECKPOINT = EVIDENCE_FILE_CREATED
+MATLAB_PROCESS_COUNT_BEFORE = 0
+MATLAB_RETRY_NUMBER = 1
+AUTHORIZED_SCOPE = METADATA_AND_OPTIONS_ONLY
+GAMULTIOBJ_EXECUTION_AUTHORIZED = NO
+MODEL_OR_OBJECTIVE_EVALUATION_AUTHORIZED = NO
+
+
+CHECKPOINT = MATLAB_DIARY_ACTIVE
+INSPECTION_STARTED_UTC = 2026-08-08T06:33:19.338Z
+CHECKPOINT = METADATA_BEGIN
+VERSION = 26.1.0.3312084 (R2026a) Update 4
+RELEASE = 2026a
+COMPUTER = PCWIN64
+GLOBAL_OPTIM_COUNT = 1
+       Name: 'Global Optimization Toolbox'
+    Version: '26.1'
+    Release: '(R2026a)'
+       Date: '20-Nov-2025'
+
+CHECKPOINT = METADATA_COMPLETE
+HISTORICAL_MAT = D:\CODE\deshidratador\05_runs\triobjective_formal_ga_v96m\TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_20260727_185506\mat\TRIOBJECTIVE_FORMAL_GA_v96m_seedaware_v96z_rngfix_raw.mat
+CHECKPOINT = WHOS_HISTORICAL_MAT_BEGIN
+  15×1 struct array with fields:
+
+    name
+    size
+    bytes
+    class
+    global
+    sparse
+    complex
+    nesting
+    persistent
+
+WHOS_HAS_OPTS = 1
+CHECKPOINT = WHOS_HISTORICAL_MAT_COMPLETE
+CHECKPOINT = LOAD_OPTS_ONLY_BEGIN
+HISTORICAL_OPTS_CLASS = optim.options.GamultiobjOptions
+HISTORICAL_OPTS_DISPLAY_BEGIN
+  gamultiobj options:
+
+   Set properties:
+        ConstraintTolerance: 1.0000e-06
+                    Display: 'iter'
+          FunctionTolerance: 1.0000e-05
+             MaxGenerations: 50
+                    PlotFcn: []
+             PopulationSize: 24
+                UseParallel: 0
+
+   Default properties:
+                CreationFcn: []
+               CrossoverFcn: []
+          CrossoverFraction: 0.8000
+         DistanceMeasureFcn: {[@distancecrowding]  'phenotype'}
+                  HybridFcn: []
+    InitialPopulationMatrix: []
+     InitialPopulationRange: [2×1 double]
+        InitialScoresMatrix: []
+        MaxStallGenerations: 100
+                    MaxTime: Inf
+                MutationFcn: []
+                  OutputFcn: []
+             ParetoFraction: 0.3500
+             PopulationType: 'doubleVector'
+               SelectionFcn: {[@selectiontournament]  [2]}
+              UseVectorized: 0
+
+HISTORICAL_OPTS_DISPLAY_END
+HISTORICAL_PROPERTIES_BEGIN
+    {'DistanceMeasureFcn'     }
+    {'HybridFcn'              }
+    {'ParetoFraction'         }
+    {'PlotFcn'                }
+    {'SelectionFcn'           }
+    {'ConstraintTolerance'    }
+    {'CreationFcn'            }
+    {'CrossoverFcn'           }
+    {'CrossoverFraction'      }
+    {'Display'                }
+    {'FunctionTolerance'      }
+    {'InitialPopulationMatrix'}
+    {'InitialPopulationRange' }
+    {'InitialScoresMatrix'    }
+    {'MaxGenerations'         }
+    {'MaxStallGenerations'    }
+    {'MaxTime'                }
+    {'MutationFcn'            }
+    {'OutputFcn'              }
+    {'PopulationSize'         }
+    {'PopulationType'         }
+    {'UseParallel'            }
+    {'UseVectorized'          }
+
+HISTORICAL_PROPERTIES_END
+CHECKPOINT = LOAD_OPTS_ONLY_COMPLETE
+CHECKPOINT = CURRENT_DEFAULT_OPTIONS_BEGIN
+CURRENT_DEFAULT_OPTS_CLASS = optim.options.GamultiobjOptions
+CURRENT_DEFAULT_OPTS_DISPLAY_BEGIN
+  gamultiobj options:
+
+   Set properties:
+    No properties.
+
+   Default properties:
+        ConstraintTolerance: 1.0000e-03
+                CreationFcn: []
+               CrossoverFcn: []
+          CrossoverFraction: 0.8000
+                    Display: 'final'
+         DistanceMeasureFcn: {[@distancecrowding]  'phenotype'}
+          FunctionTolerance: 1.0000e-04
+                  HybridFcn: []
+    InitialPopulationMatrix: []
+     InitialPopulationRange: [2×1 double]
+        InitialScoresMatrix: []
+             MaxGenerations: '200*numberOfVariables'
+        MaxStallGenerations: 100
+                    MaxTime: Inf
+                MutationFcn: []
+                  OutputFcn: []
+             ParetoFraction: 0.3500
+                    PlotFcn: []
+             PopulationSize: 'auto'
+             PopulationType: 'doubleVector'
+               SelectionFcn: {[@selectiontournament]  [2]}
+                UseParallel: 0
+              UseVectorized: 0
+
+CURRENT_DEFAULT_OPTS_DISPLAY_END
+CURRENT_DEFAULT_PROPERTIES_BEGIN
+    {'DistanceMeasureFcn'     }
+    {'HybridFcn'              }
+    {'ParetoFraction'         }
+    {'PlotFcn'                }
+    {'SelectionFcn'           }
+    {'ConstraintTolerance'    }
+    {'CreationFcn'            }
+    {'CrossoverFcn'           }
+    {'CrossoverFraction'      }
+    {'Display'                }
+    {'FunctionTolerance'      }
+    {'InitialPopulationMatrix'}
+    {'InitialPopulationRange' }
+    {'InitialScoresMatrix'    }
+    {'MaxGenerations'         }
+    {'MaxStallGenerations'    }
+    {'MaxTime'                }
+    {'MutationFcn'            }
+    {'OutputFcn'              }
+    {'PopulationSize'         }
+    {'PopulationType'         }
+    {'UseParallel'            }
+    {'UseVectorized'          }
+
+CURRENT_DEFAULT_PROPERTIES_END
+CHECKPOINT = CURRENT_DEFAULT_OPTIONS_COMPLETE
+CHECKPOINT = PROPERTY_COMPARISON_BEGIN
+COMPARE|ParetoFraction|historical_property=ParetoFraction|current_property=ParetoFraction|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|ParetoFraction
+    0.3500
+
+CURRENT_DEFAULT_VALUE|ParetoFraction
+    0.3500
+
+COMPARE|DistanceMeasureFcn|historical_property=DistanceMeasureFcn|current_property=DistanceMeasureFcn|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|DistanceMeasureFcn
+    {@distancecrowding}    {'phenotype'}
+
+CURRENT_DEFAULT_VALUE|DistanceMeasureFcn
+    {@distancecrowding}    {'phenotype'}
+
+COMPARE|SelectionFcn|historical_property=SelectionFcn|current_property=SelectionFcn|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|SelectionFcn
+    {@selectiontournament}    {[2]}
+
+CURRENT_DEFAULT_VALUE|SelectionFcn
+    {@selectiontournament}    {[2]}
+
+COMPARE|CreationFcn|historical_property=CreationFcn|current_property=CreationFcn|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|CreationFcn
+CURRENT_DEFAULT_VALUE|CreationFcn
+COMPARE|CrossoverFcn|historical_property=CrossoverFcn|current_property=CrossoverFcn|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|CrossoverFcn
+CURRENT_DEFAULT_VALUE|CrossoverFcn
+COMPARE|MutationFcn|historical_property=MutationFcn|current_property=MutationFcn|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|MutationFcn
+CURRENT_DEFAULT_VALUE|MutationFcn
+COMPARE|CrossoverFraction|historical_property=CrossoverFraction|current_property=CrossoverFraction|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|CrossoverFraction
+    0.8000
+
+CURRENT_DEFAULT_VALUE|CrossoverFraction
+    0.8000
+
+COMPARE|MaxStallGenerations|historical_property=MaxStallGenerations|current_property=MaxStallGenerations|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|MaxStallGenerations
+   100
+
+CURRENT_DEFAULT_VALUE|MaxStallGenerations
+   100
+
+COMPARE|PopulationSize|historical_property=PopulationSize|current_property=PopulationSize|historical_found=1|current_found=1|equal=0
+HISTORICAL_VALUE|PopulationSize
+    24
+
+CURRENT_DEFAULT_VALUE|PopulationSize
+auto
+COMPARE|MaxGenerations|historical_property=MaxGenerations|current_property=MaxGenerations|historical_found=1|current_found=1|equal=0
+HISTORICAL_VALUE|MaxGenerations
+    50
+
+CURRENT_DEFAULT_VALUE|MaxGenerations
+200*numberOfVariables
+COMPARE|FunctionTolerance|historical_property=FunctionTolerance|current_property=FunctionTolerance|historical_found=1|current_found=1|equal=0
+HISTORICAL_VALUE|FunctionTolerance
+   1.0000e-05
+
+CURRENT_DEFAULT_VALUE|FunctionTolerance
+   1.0000e-04
+
+COMPARE|ConstraintTolerance|historical_property=ConstraintTolerance|current_property=ConstraintTolerance|historical_found=1|current_found=1|equal=0
+HISTORICAL_VALUE|ConstraintTolerance
+   1.0000e-06
+
+CURRENT_DEFAULT_VALUE|ConstraintTolerance
+   1.0000e-03
+
+COMPARE|UseParallel|historical_property=UseParallel|current_property=UseParallel|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|UseParallel
+   0
+
+CURRENT_DEFAULT_VALUE|UseParallel
+   0
+
+COMPARE|PlotFcn|historical_property=PlotFcn|current_property=PlotFcn|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|PlotFcn
+CURRENT_DEFAULT_VALUE|PlotFcn
+COMPARE|InitialPopulationMatrix|historical_property=InitialPopulationMatrix|current_property=InitialPopulationMatrix|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|InitialPopulationMatrix
+CURRENT_DEFAULT_VALUE|InitialPopulationMatrix
+COMPARE|InitialScores|historical_property=InitialScoresMatrix|current_property=InitialScoresMatrix|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|InitialScores
+CURRENT_DEFAULT_VALUE|InitialScores
+COMPARE|InitialPopulationRange|historical_property=InitialPopulationRange|current_property=InitialPopulationRange|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|InitialPopulationRange
+   -10
+    10
+
+CURRENT_DEFAULT_VALUE|InitialPopulationRange
+   -10
+    10
+
+COMPARE|PopulationType|historical_property=PopulationType|current_property=PopulationType|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|PopulationType
+doubleVector
+CURRENT_DEFAULT_VALUE|PopulationType
+doubleVector
+COMPARE|MigrationDirection|historical_property=<missing>|current_property=<missing>|historical_found=0|current_found=0|equal=0
+HISTORICAL_VALUE|MigrationDirection
+CURRENT_DEFAULT_VALUE|MigrationDirection
+COMPARE|MigrationFraction|historical_property=<missing>|current_property=<missing>|historical_found=0|current_found=0|equal=0
+HISTORICAL_VALUE|MigrationFraction
+CURRENT_DEFAULT_VALUE|MigrationFraction
+COMPARE|MigrationInterval|historical_property=<missing>|current_property=<missing>|historical_found=0|current_found=0|equal=0
+HISTORICAL_VALUE|MigrationInterval
+CURRENT_DEFAULT_VALUE|MigrationInterval
+COMPARE|HybridFcn|historical_property=HybridFcn|current_property=HybridFcn|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|HybridFcn
+CURRENT_DEFAULT_VALUE|HybridFcn
+COMPARE|OutputFcn|historical_property=OutputFcn|current_property=OutputFcn|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|OutputFcn
+CURRENT_DEFAULT_VALUE|OutputFcn
+COMPARE|PlotInterval|historical_property=<missing>|current_property=<missing>|historical_found=0|current_found=0|equal=0
+HISTORICAL_VALUE|PlotInterval
+CURRENT_DEFAULT_VALUE|PlotInterval
+COMPARE|MaxTime|historical_property=MaxTime|current_property=MaxTime|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|MaxTime
+   Inf
+
+CURRENT_DEFAULT_VALUE|MaxTime
+   Inf
+
+COMPARE|UseVectorized|historical_property=UseVectorized|current_property=UseVectorized|historical_found=1|current_found=1|equal=1
+HISTORICAL_VALUE|UseVectorized
+   0
+
+CURRENT_DEFAULT_VALUE|UseVectorized
+   0
+
+COMPARE|IntegerTolerance|historical_property=<missing>|current_property=<missing>|historical_found=0|current_found=0|equal=0
+HISTORICAL_VALUE|IntegerTolerance
+CURRENT_DEFAULT_VALUE|IntegerTolerance
+COMPARE|Display|historical_property=Display|current_property=Display|historical_found=1|current_found=1|equal=0
+HISTORICAL_VALUE|Display
+iter
+CURRENT_DEFAULT_VALUE|Display
+final
+ALL_INSPECTED_PROPERTIES_EQUAL = 0
+CHECKPOINT = PROPERTY_COMPARISON_COMPLETE
+GAMULTIOBJ_EXECUTED = NO
+MODEL_EVALUATED = NO
+OBJECTIVE_EVALUATED = NO
+CORRECTED_R1_EXECUTED = NO
+MATLAB_INSPECTION_COMPLETED = YES
+INSPECTION_STATUS = COMPLETE
+INSPECTION_FINISHED_UTC = 2026-08-08T06:33:21.836Z
+CHECKPOINT = MATLAB_DIARY_CLOSING
+
+POST_MATLAB_CHECKPOINT = PROCESS_CHECK_COMPLETE
+MATLAB_PROCESS_COUNT_AFTER = 0
+MATLAB_PROCESS_REMAINING = NO
+CURRENT_ENVIRONMENT_COMPATIBILITY = PASS
+HISTORICAL_BUILD_UNCERTAINTY = DOCUMENTARY_NON_MATERIAL
+FULL_SOLVER_DEFAULTS_AUDIT = PASS_WITH_DOCUMENTARY_BUILD_LIMITATION
+HISTORICAL_BUILD_EXACT = UNKNOWN
+TECHNICAL_COMPATIBILITY_BLOCKER_BEFORE_CORRECTED_R1_AUTHORIZATION = NO
+REMAINING_BLOCKER = SEPARATE_EXPLICIT_AUTHORIZATION_TO_EXECUTE_CORRECTED_R1
