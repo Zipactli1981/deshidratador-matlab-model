@@ -1,5 +1,5 @@
 # PHASE HANDOFF CURRENT
-## CR1-COMP-01 Dataset Freeze → CR1-COMP-02 Within-set Exact Pareto Audit
+## CR1-COMP-02 Within-set Exact Pareto Audit → CR1-COMP-03 Decision-space Descriptive Analysis
 
 ## Fases cerradas
 
@@ -85,64 +85,40 @@ E1 recuperó y auditó los valores fuente en orden original, con 9 registros H y
 
 CR1-COMP-01-F1 construyó y congeló el dataset canónico de 18 filas en orden H01…H09, C01…C09. D1 permanece como limitación explícita. No se ejecutó replay, dominancia, sorting Pareto, coverage, hypervolume ni otra comparación científica.
 
-## Autorización operativa
+## CR1-COMP-02 cerrado
 
-El protocolo está aprobado metodológicamente, pero la ejecución sigue bloqueada hasta autorización explícita:
+Baseline operativo:
 
 ```text
-MATLAB_EXECUTION_AUTHORIZED = NO
-CODEX_EXECUTION_AUTHORIZED = NO
-GAMULTIOBJ_EXECUTION_AUTHORIZED = NO
+407e9589245e6a2bc7a167b150e7fa233df64201
+chore: freeze CR1-COMP-01 comparative dataset
 ```
 
-Los scripts postrun, cuando se autoricen, sólo podrán leer artefactos existentes y realizar análisis comparativo; no podrán evaluar nuevamente el modelo ni llamar a `gamultiobj`.
+Resultado exacto dentro de cada conjunto:
+
+```text
+CR1_COMP_02_STATUS = CLOSED_PASS
+H_INTERNAL_PAIR_COUNT = 36
+H_INTERNAL_NONDOMINATED_COUNT = 9
+H_INTERNAL_DOMINATED_COUNT = 0
+HISTORICAL_NONDOMINATED_CORE = H01,H02,H03,H04,H05,H06,H07,H08,H09
+C_INTERNAL_PAIR_COUNT = 36
+C_INTERNAL_NONDOMINATED_COUNT = 9
+C_INTERNAL_DOMINATED_COUNT = 0
+CORRECTED_R1_NONDOMINATED_CORE = C01,C02,C03,C04,C05,C06,C07,C08,C09
+INDEPENDENT_QC = PASS
+CROSS_DOMINANCE_COMPUTED = NO
+NEAR_TIE_DIAGNOSTIC_COMPUTED = NO
+```
+
+Los 72 pares internos fueron incomparables; no hubo dominancias ni igualdades exactas. `CORRECTED_R1` puede denominarse aproximación no dominada, no frente Pareto verdadero, exacto o global. H continúa siendo un conjunto histórico reevaluado.
+
+No se ejecutaron MATLAB, objective/model, replay, `gamultiobj`, optimización ni ninguna fase CR1-COMP posterior.
 
 ## Próxima fase
 
 ```text
-NEXT_PHASE = CR1-COMP-02_WITHIN_SET_EXACT_PARETO_AUDIT
+NEXT_PHASE = CR1-COMP-03_DECISION_SPACE_DESCRIPTIVE_ANALYSIS
 ```
 
-### Estado del dataset canónico
-
-La tabla canónica congelada contiene exactamente 18 registros:
-
-```text
-H01...H09
-C01...C09
-```
-
-con:
-- 4 variables de decisión;
-- 3 objetivos;
-- fuente;
-- hash;
-- fila/índice de origen;
-- indicadores `finite` y `penalized`.
-
-Requisitos:
-
-```text
-ALL_PRIMARY_VALUES_FROM_CANONICAL_VALIDATED_ARTIFACTS = YES
-FULL_PRECISION_PRIMARY_VALUES_USED = PASS_WITH_DOCUMENTARY_RECOVERY_DEVIATION_CR1_COMP_01_D1
-DATASET_ROWS = 18
-HISTORICAL_ROWS = 9
-CORRECTED_R1_ROWS = 9
-```
-
-Fuente inmediata: `CR1_COMP_01_E1_SOURCE_VALUE_RECOVERY_v96z.json`, con preservación decimal y binary64 reproducible en el JSON canónico.
-
-No existe emparejamiento implícito H01↔C01 por índice.
-
-CR1-COMP-02 — Within-set exact Pareto audit — requiere autorización separada.
-
-## Lo que todavía NO debe ejecutarse sin autorización separada
-
-```text
-NEW_MODEL_EVALUATION = NO
-NEW_OBJECTIVE_REPLAY = NO
-GAMULTIOBJ = NO
-NEW_OPTIMIZATION = NO
-```
-
-La continuación con CR1-COMP-02 debe respetar la secuencia congelada en el protocolo v1.0 y requiere autorización separada.
+CR1-COMP-03 requiere autorización separada.

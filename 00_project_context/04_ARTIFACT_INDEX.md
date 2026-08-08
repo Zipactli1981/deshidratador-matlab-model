@@ -174,6 +174,57 @@ CR1_COMP_01_DATASET_FREEZE = PASS
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
 ```
 
+## CR1-COMP-02 — Within-set Exact Pareto Audit
+
+Script postrun reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_02_within_set_exact_pareto_audit_v96z.py
+SHA-256 = 52F4847FAC6E7496BB9A5375B1E2D516AAEFA1FB95832FCDE949B38B1F88E392
+Role = exact within-set Pareto audit implementation and independent sign-pattern QC
+```
+
+Auditoría de 72 pares internos:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_02_WITHIN_SET_EXACT_PARETO_AUDIT_v96z.csv
+SHA-256 = DFB1166421020DAFAEBCBC4117B9CC203BCB4F98154A367AA11D6D2C7762B51E
+Role = one-row-per-unordered-pair exact classification (36 H + 36 C)
+```
+
+Estado por solución:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_02_WITHIN_SET_SOLUTION_STATUS_v96z.csv
+SHA-256 = 74C33FA77D543FAADA6B9819AF88C133E23D5E283148999849ECF83998D1E5C2
+Role = internal dominators, dominated status, equality links, and nondominated membership
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_02_WITHIN_SET_EXACT_PARETO_AUDIT_v96z.json
+SHA-256 = 6E5391E6D8C65AD04C91EB1A00EE16360D5EE189AF77B67B911CA5B31281CCED
+Role = complete CR1-COMP-02 pair, solution, aggregate, method, input, and QC record
+```
+
+Audit documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_02_WITHIN_SET_EXACT_PARETO_AUDIT_v96z.md
+SHA-256 = BF3B37883D848D144ADBB9B2AB88314503999BC7611028B3565DC6C6B6B4B0A7
+Role = canonical documentary audit and scope/limitations record
+```
+
+Estado:
+
+```text
+CR1_COMP_02_STATUS = CLOSED_PASS
+HISTORICAL_NONDOMINATED_CORE = H01,H02,H03,H04,H05,H06,H07,H08,H09
+CORRECTED_R1_NONDOMINATED_CORE = C01,C02,C03,C04,C05,C06,C07,C08,C09
+NEXT_COMPARATIVE_PHASE = CR1-COMP-03_DECISION_SPACE_DESCRIPTIVE_ANALYSIS
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c

@@ -198,7 +198,7 @@ Estado de implementación:
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = NOT_COMPUTED
+COMPARATIVE_RESULTS = CR1_COMP_02_WITHIN_SET_ONLY_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 MATLAB_EXECUTION_AUTHORIZED = NO
@@ -223,15 +223,33 @@ CR1_COMP_01_DATASET_FREEZE = PASS
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
 CANONICAL_COMPARATIVE_DATASET = 06_manuscript/article_Q1/review/CR1_COMP_01_CANONICAL_DATASET_v96z.csv
 CANONICAL_COMPARATIVE_DATASET_SHA256 = B17B461FB04C9693FC9DA0C3450703C34E4538894AD232EF7138AE5E9882CD62
-NEXT_COMPARATIVE_PHASE = CR1-COMP-02 — Within-set exact Pareto audit
+NEXT_COMPARATIVE_PHASE = CR1-COMP-03 — Decision-space descriptive analysis
 ```
 
-El dataset canónico conserva 18 filas en orden H01…H09, C01…C09. La desviación documental D1 para H.f2/f3 permanece explícita. No se realizó comparación Pareto.
+El dataset canónico conserva 18 filas en orden H01…H09, C01…C09. La desviación documental D1 para H.f2/f3 permanece explícita.
+
+Estado vigente de `CR1-COMP-02`:
+
+```text
+CR1_COMP_02_STATUS = CLOSED_PASS
+PARETO_DEFINITION = EXACT
+DOMINANCE_TOLERANCE = NONE
+H_INTERNAL_NONDOMINATED_COUNT = 9
+H_INTERNAL_DOMINATED_COUNT = 0
+C_INTERNAL_NONDOMINATED_COUNT = 9
+C_INTERNAL_DOMINATED_COUNT = 0
+HISTORICAL_NONDOMINATED_CORE = H01,H02,H03,H04,H05,H06,H07,H08,H09
+CORRECTED_R1_NONDOMINATED_CORE = C01,C02,C03,C04,C05,C06,C07,C08,C09
+CROSS_DOMINANCE_COMPUTED = NO
+NEAR_TIE_DIAGNOSTIC_COMPUTED = NO
+```
+
+Los 36 pares internos de H y los 36 pares internos de C resultaron incomparables. No hubo relaciones de dominancia ni igualdades exactas. Esto permite denominar C como aproximación no dominada, pero no como frente Pareto verdadero, exacto o global. H permanece como conjunto histórico reevaluado, no como frente Pareto corregido.
 
 ## Siguiente fase
 
 ```text
-NEXT_PHASE = CR1-COMP-02_WITHIN_SET_EXACT_PARETO_AUDIT
+NEXT_PHASE = CR1-COMP-03_DECISION_SPACE_DESCRIPTIVE_ANALYSIS
 ```
 
-CR1-COMP-02 requiere autorización separada.
+CR1-COMP-03 requiere autorización separada.
