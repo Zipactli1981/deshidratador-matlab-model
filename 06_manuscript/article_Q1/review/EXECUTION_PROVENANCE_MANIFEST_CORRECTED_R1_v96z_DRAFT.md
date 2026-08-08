@@ -1,6 +1,6 @@
-# EXECUTION_PROVENANCE_MANIFEST — CORRECTED_R1 v96z — PRE-EXECUTION
+# EXECUTION_PROVENANCE_MANIFEST — CORRECTED_R1 v96z — POSTRUN UPDATED
 
-`STATUS = PRE_EXECUTION_FROZEN_NOT_EXECUTED`
+`STATUS = POSTRUN_INTERNAL_AUDIT_PASS_NOT_COMMITTED`
 
 ## Identidad Git
 
@@ -9,7 +9,7 @@
 | Repository | `D:\CODE\deshidratador` |
 | Branch | `main` |
 | HEAD base anterior | `e74e70ff7e87c9d9f19955b341ce152b11418f92` |
-| Commit que congela CORRECTED_R1 | `THIS_COMMIT` — el commit que contiene este manifest; resolver con `git rev-parse HEAD` |
+| Commit que congela CORRECTED_R1 | `3aacb69ec5972aeb5d155c78462715bb3f1f981c` |
 | Commit message | `chore: freeze CORRECTED_R1 pre-execution baseline` |
 | `git status --short` después del commit | Vacío; `WORKTREE_CLEAN = YES`, verificado inmediatamente después del commit |
 | Divergence `origin/main...HEAD` antes del freeze | `0 0` |
@@ -96,7 +96,7 @@ IntegerTolerance = 1e-5
 
 ## Entorno actual verificado
 
-| Campo | Valor PRE-EXECUTION |
+| Campo | Valor observado |
 |---|---|
 | MATLAB version | `26.1.0.3312084 (R2026a) Update 4` |
 | MATLAB release | `R2026a` |
@@ -106,37 +106,62 @@ IntegerTolerance = 1e-5
 | `FULL_SOLVER_DEFAULTS_AUDIT` | `PASS_WITH_DOCUMENTARY_BUILD_LIMITATION` |
 | `HISTORICAL_BUILD_EXACT` | `UNKNOWN` |
 | `HISTORICAL_BUILD_UNCERTAINTY` | `DOCUMENTARY_NON_MATERIAL` |
-| Execution start timestamp | `PENDING_EXECUTION` |
-| Execution end timestamp | `PENDING_EXECUTION` |
-| Runtime | `PENDING_EXECUTION` |
-| Final output directory | `PENDING_EXECUTION` |
-| RNG state before seeding | `PENDING_EXECUTION` |
-| RNG state immediately after `rng(61001,'twister')` | `PENDING_EXECUTION` |
-| Serialized complete `opts` | `PENDING_EXECUTION` |
+| Execution start timestamp | `2026-08-08T06:57:19.365Z` |
+| Execution end timestamp | `2026-08-08T10:23:29.629Z` |
+| Solver runtime | `12302.9888139 s` = `3.41749689275 h` |
+| Final output directory | `D:\CODE\deshidratador\05_runs\triobjective_formal_ga_v96m\CORRECTED_R1_COST_E3D_v96z_20260808_005736` |
+| RNG state before seeding | `NOT_PERSISTED_BY_RUNNER` |
+| RNG state immediately after `rng(61001,'twister')` | `NOT_PERSISTED_BY_RUNNER`; seed y llamada `twister` verificados |
+| Serialized complete `opts` | `PRESERVED` en `CORRECTED_R1_COST_E3D_v96z_raw.mat` |
 
-## Resultado y alcance — completar después de una ejecución autorizada
+## Resultado y alcance observado
 
 ```text
 MATLAB_EXECUTED_AS_OF_FREEZE = NO
 GAMULTIOBJ_EXECUTED_AS_OF_FREEZE = NO
 CORRECTED_R1_EXECUTED_AS_OF_FREEZE = NO
-CORRECTED_R1_EXECUTED = PENDING_EXECUTION
-GAMULTIOBJ_EXECUTED = PENDING_EXECUTION
+CORRECTED_R1_EXECUTED = YES_COUNT_1
+GAMULTIOBJ_EXECUTED = YES_COUNT_1
+GAMULTIOBJ_EXECUTIONS_ADDITIONAL_DURING_POSTRUN_AUDIT = 0
 R2_EXECUTED = NO
 R3_EXECUTED = NO
 MINREP_EXECUTED = NO
 400GEN_EXECUTED = NO
-execution_timestamp = PENDING_EXECUTION
-runtime = PENDING_EXECUTION
-exitflag = PENDING_EXECUTION
-generations = PENDING_EXECUTION
-funccount = PENDING_EXECUTION
-number_of_solutions = PENDING_EXECUTION
-finite_solutions = PENDING_EXECUTION
-penalty_solutions = PENDING_EXECUTION
-results_F = PENDING_EXECUTION
-final_output_directory = PENDING_EXECUTION
-output_artifact_sha256 = PENDING_EXECUTION
+execution_start_utc = 2026-08-08T06:57:19.365Z
+execution_end_utc = 2026-08-08T10:23:29.629Z
+runtime_s = 12302.9888139
+runtime_h = 3.41749689275
+matlab_error = none
+exitflag = 0
+exitflag_basis = MaxGenerations_50_reached
+generations = 50
+funccount = 1200
+number_of_solutions = 9
+finite_solutions = 9
+penalty_solutions = 0
+results_F = PRESERVED_9x3
+results_X = PRESERVED_9x4
+final_output_directory = D:\CODE\deshidratador\05_runs\triobjective_formal_ga_v96m\CORRECTED_R1_COST_E3D_v96z_20260808_005736
+canonical_mat_sha256 = 0AE9D8C90EEE645EC5BAB843A18F59CC1E68E2D84B31CBFD7ADD498C81EBDB3B
+raw_mat_sha256 = C059CFED461E2F1C87149B96725BF0E510A3A3D324539A533FFC1EFC5D2D4293
+CORRECTED_R1_POSTRUN_INTERNAL_AUDIT = PASS
+CORRECTED_R1_RESULTS_INTERNALLY_VALIDATED = YES
+CORRECTED_R1_PARETO_FRONT_STATUS = INTERNAL_RUN_VALIDATED_COMPARATIVE_REVIEW_PENDING
+SCIENTIFIC_INTERPRETATION = BLOCKED_PENDING_COMPARATIVE_REVIEW
 ```
 
-Este manifest PRE-EXECUTION no autoriza ni inicia ninguna ejecución.
+## Auditoría detail replay
+
+- Evaluaciones directas autorizadas y realizadas: `9`.
+- `f1`, `f2` y `f3`: identidad exacta en las 9 filas; máximas diferencias
+  absolutas y relativas `0`.
+- Tolerancias declaradas: `absTol=1e-12`, `relTol=1e-10`.
+- MAT↔CSV: máxima diferencia absoluta en `X`, `4.263256414560601e-14`;
+  máxima diferencia absoluta en `F`, `4.996003610813204e-16`.
+- Todas las filas dentro de bounds, finitas, únicas y no penalizadas.
+- Terminación: las 9 filas se clasifican `TMAX_REACHED` por `dry_time=19.9 h`.
+  El objective detail no propaga directamente `termination_status`; la etiqueta
+  se infiere explícitamente del endpoint devuelto y queda documentada.
+
+Este manifest actualizado no autoriza una nueva ejecución, no fue committed y
+no eleva las nueve soluciones a frente Pareto corregido definitivo.
