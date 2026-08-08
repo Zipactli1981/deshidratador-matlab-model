@@ -40,10 +40,41 @@ Son muestras históricas reevaluadas bajo COST-E3D, no un frente Pareto corregid
 ## D008 — CORRECTED_R1 postrun
 La corrida está internamente validada, pero la interpretación científica queda pendiente de revisión comparativa.
 
-## D009 — Próxima fase
-Diseñar primero el protocolo comparativo:
-1. descriptivo;
-2. dominancia;
-3. métricas de frente sólo si aportan;
-4. interpretación física/económica/ambiental;
-5. implicaciones para manuscrito.
+## D009 — Diseño del protocolo comparativo
+
+**Estado:** SUPERSEDED_BY_D010.
+
+La decisión original era diseñar primero el protocolo comparativo antes de ejecutar cálculos.
+
+## D010 — Protocolo comparativo v1.0 congelado
+
+**Decisión:** adoptar `CORRECTED_R1 COMPARATIVE PROTOCOL v96z`, versión `v1.0`, con estado:
+
+```text
+FROZEN_APPROVED_FOR_POSTRUN_COMPARATIVE_IMPLEMENTATION
+```
+
+La arquitectura congelada incluye:
+1. dataset de 18 soluciones;
+2. auditoría interna exacta de H y C;
+3. análisis descriptivo;
+4. matriz cruzada 9x9;
+5. diagnóstico near-tie separado;
+6. set coverage completo y de núcleos;
+7. nondominated sorting conjunto;
+8. geometría del espacio objetivo;
+9. gate condicional de hypervolume;
+10. régimen terminal;
+11. descomposición de f2/f3;
+12. interpretación física/económica/ambiental;
+13. implicaciones posteriores para manuscrito.
+
+**Estado:** vigente.
+
+## D011 — Metodología aprobada ≠ ejecución autorizada
+
+**Decisión:** el congelamiento del protocolo no autoriza por sí mismo ejecutar MATLAB, Codex, `gamultiobj` ni scripts comparativos.
+
+Cada implementación operativa CR1-COMP requiere autorización separada.
+
+**Estado:** vigente.

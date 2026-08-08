@@ -171,8 +171,45 @@ SCIENTIFIC_INTERPRETATION =
 BLOCKED_PENDING_COMPARATIVE_REVIEW
 ```
 
+## Protocolo comparativo congelado
+
+```text
+COMPARATIVE_PROTOCOL_VERSION = v1.0
+PROTOCOL_STATUS = FROZEN_APPROVED_FOR_POSTRUN_COMPARATIVE_IMPLEMENTATION
+SCIENTIFIC_ARCHITECTURE = PASS
+OPEN_ESSENTIAL_METHODOLOGICAL_DECISIONS = 0
+```
+
+Artefacto canónico previsto en el repositorio:
+
+```text
+06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md
+```
+
+SHA-256 del contenido congelado:
+
+```text
+8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3
+```
+
+El protocolo aprueba la arquitectura metodológica, pero no constituye autorización operativa automática para ejecutar scripts.
+
+Estado de implementación:
+
+```text
+COMPARATIVE_DATASET = NOT_BUILT
+COMPARATIVE_RESULTS = NOT_COMPUTED
+SCIENTIFIC_INTERPRETATION = NOT_STARTED
+MANUSCRIPT_CHANGES = NOT_STARTED
+MATLAB_EXECUTION_AUTHORIZED = NO
+CODEX_EXECUTION_AUTHORIZED = NO
+GAMULTIOBJ_EXECUTION_AUTHORIZED = NO
+```
+
 ## Siguiente fase
 
-Diseñar primero el protocolo de comparación científica entre:
-1. las 9 soluciones nuevas `CORRECTED_R1`;
-2. los mismos 9 vectores históricos reevaluados bajo COST-E3D.
+```text
+NEXT_PHASE = CR1-COMP-01_DATASET_FREEZE
+```
+
+Objetivo inmediato: construir y verificar el dataset canónico de exactamente 18 registros (H01...H09 y C01...C09) usando valores primarios de precisión completa provenientes de artefactos validados, sin evaluar nuevamente el modelo.

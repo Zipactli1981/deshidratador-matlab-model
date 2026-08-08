@@ -68,3 +68,23 @@ No incorporar resultados como definitivos hasta completar:
 ## Contexto
 
 No reconstruir fases cerradas salvo que una decisión nueva dependa de evidencia específica. Mantener handoffs compactos.
+
+## Implementación comparativa postrun
+
+El protocolo comparativo v1.0 está metodológicamente congelado y aprobado para implementación postrun.
+
+Esto NO implica autorización automática de ejecución.
+
+Los scripts comparativos postrun podrán autorizarse de forma separada únicamente para:
+- leer artefactos existentes;
+- construir el dataset de 18 soluciones;
+- calcular dominancia, cobertura, Pareto rank y métricas aprobadas;
+- generar tablas y figuras.
+
+No podrán:
+- evaluar nuevamente el modelo u objective;
+- llamar a `gamultiobj`;
+- iniciar nuevas optimizaciones;
+- modificar código productivo.
+
+El inicio de cada bloque operativo CR1-COMP requiere autorización explícita en la conversación vigente.

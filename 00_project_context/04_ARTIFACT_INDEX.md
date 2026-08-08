@@ -50,6 +50,34 @@ Artefacto:
 SHA-256:
 `A04D1ADCD769CE9D8ED858FA321D7AF6A22E42D1F8A954094084B4B5A2A2ECD0`
 
+
+## Protocolo comparativo CORRECTED_R1
+
+Artefacto canónico:
+
+```text
+06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md
+```
+
+Versión / estado:
+
+```text
+v1.0
+FROZEN_APPROVED_FOR_POSTRUN_COMPARATIVE_IMPLEMENTATION
+```
+
+SHA-256:
+
+```text
+8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3
+```
+
+Siguiente bloque definido:
+
+```text
+CR1-COMP-01_DATASET_FREEZE
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c
