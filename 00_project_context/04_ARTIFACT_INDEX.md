@@ -487,6 +487,63 @@ FULL_CORE_COVERAGE_EQUALITY_CHECK = PASS
 NEXT_COMPARATIVE_PHASE = CR1-COMP-08_JOINT_EXACT_NONDOMINATED_SORTING
 ```
 
+## CR1-COMP-08 — Joint Exact Nondominated Sorting
+
+Sorting por solución:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_v96z.csv
+SHA-256 = 0E9AE69495E79648056143E2723B1C985380E3E11350EB6A58D1FCD0422C92A9
+Role = 18 exact Pareto-rank assignments with full-U dominance and residual-layer metadata
+```
+
+Resumen por rank:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_SUMMARY_v96z.csv
+SHA-256 = 8ABADBC9DDEE9D00D6718FE778A0E3675386CBBB19ED2A922D75E765ED9D3FFD
+Role = complete H/C membership and counts for every joint Pareto rank
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_v96z.json
+SHA-256 = 59E39670F2E3627A752FE5017394D215C13F5D89770C2BE17924A01268317E54
+Role = frozen inputs, exact dominance relations, two sorting routes, ranks, QC, limitations, and exclusions
+```
+
+Audit documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_AUDIT_v96z.md
+SHA-256 = 89B09DC99CBFEB80DBB106275AE05C7579879089E1D34A9F4872D7562E60AA28
+Role = baseline, exact sorting method, complete rank composition, independent QC, nomenclature, and scope record
+```
+
+Script postrun reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_08_joint_exact_nondominated_sorting_v96z.py
+SHA-256 = 45F70AC56A627ECBD546A07E17799069ABF430A4CA3DD6B358F2002D49439F33
+Role = frozen-input hash gates, exact full-U dominance, simultaneous layered sorting, and graph-based independent QC
+```
+
+Estado:
+
+```text
+CR1_COMP_08_STATUS = CLOSED_PASS
+JOINT_RANK_COUNT = 2
+JOINT_RANK1_COUNT = 15
+JOINT_RANK1_H = 8
+JOINT_RANK1_C = 7
+JOINT_RANK2_COUNT = 3
+JOINT_RANK2_H = 1
+JOINT_RANK2_C = 2
+INDEPENDENT_QC = PASS
+NEXT_COMPARATIVE_PHASE = CR1-COMP-09_OBJECTIVE_SPACE_GEOMETRY
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c

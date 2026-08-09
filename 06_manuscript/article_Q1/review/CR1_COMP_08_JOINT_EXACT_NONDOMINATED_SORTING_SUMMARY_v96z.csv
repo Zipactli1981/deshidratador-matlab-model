@@ -1,0 +1,3 @@
+pareto_rank,solution_count,H_count,C_count,H_solution_ids,C_solution_ids,all_solution_ids
+1,15,8,7,H01;H02;H03;H04;H06;H07;H08;H09,C01;C02;C03;C04;C05;C07;C09,H01;H02;H03;H04;H06;H07;H08;H09;C01;C02;C03;C04;C05;C07;C09
+2,3,1,2,H05,C06;C08,H05;C06;C08

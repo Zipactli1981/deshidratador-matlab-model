@@ -1,0 +1,407 @@
+{
+  "artifact_role": "CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING",
+  "cr1_comp_08_status": "CLOSED_PASS",
+  "baseline": {
+    "head": "03bf1eb491627407191e9f6f610af5f794a8dd58",
+    "input_baseline_check": "PASS"
+  },
+  "inputs": {
+    "dataset": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_01_CANONICAL_DATASET_v96z.json",
+      "sha256": "4DE32D3292001FC87E7435995E3D9ACC31D51800BA05E2A88BA3B379A95D0164",
+      "check": "PASS"
+    },
+    "status": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_02_WITHIN_SET_SOLUTION_STATUS_v96z.csv",
+      "sha256": "74C33FA77D543FAADA6B9819AF88C133E23D5E283148999849ECF83998D1E5C2",
+      "check": "PASS"
+    },
+    "cross_matrix": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_MATRIX_v96z.csv",
+      "sha256": "C783CDD1214598643F1A46F6A6E1EC144220D2BFB2FC8D67F53293A3B7ACC329",
+      "check": "PASS"
+    },
+    "near_tie": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_06_NUMERICAL_NEAR_TIE_SENSITIVITY_v96z.json",
+      "sha256": "227F88AB15A30A812F222E3608BF9512401A8775AA1CFE9886E6288326F6E3FA",
+      "check": "PASS"
+    },
+    "coverage": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_v96z.json",
+      "sha256": "8FA73A67DB5C510F3B0B0E4AEFD31570DC012D807A51608A58A6EE231B401D83",
+      "check": "PASS"
+    }
+  },
+  "dataset_qc": {
+    "dataset_rows": 18,
+    "H_rows": 9,
+    "C_rows": 9,
+    "objectives_per_row": 3,
+    "all_f_values_finite": true,
+    "penalty_rows_included": false,
+    "gasLP_included_in_comparative_sort": false
+  },
+  "method": {
+    "all_objectives": "MINIMIZATION",
+    "pareto_definition": "EXACT_FULL_PRECISION",
+    "dominance_tolerance": "NONE",
+    "solver_tolerances_used_for_dominance": false,
+    "numerical_near_tie_used_for_rank": false,
+    "primary_route": "simultaneous residual nondominated layers from direct exact comparisons",
+    "independent_route": "18x18 directed dominance graph with simultaneous zero-indegree removal"
+  },
+  "solution_ranks": [
+    {
+      "solution_id": "H01",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.1612259929049299,
+      "f2": 0.18030701050054604,
+      "f3": 0.4043097419600721,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "H02",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.01972677872136952,
+      "f2": 0.23841950853573274,
+      "f3": 0.5714115538663084,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 1,
+      "dominates_solution_ids_full_U": "C06",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "H03",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.05828075440129852,
+      "f2": 0.19941617063833772,
+      "f3": 0.46413468947681863,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "H04",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.02457691936192455,
+      "f2": 0.22430412334234848,
+      "f3": 0.5332519764143472,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "H05",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.04364029326634516,
+      "f2": 0.21059554013040163,
+      "f3": 0.49516643659138637,
+      "ParetoRank": 2,
+      "is_joint_rank1": false,
+      "dominated_by_count_full_U": 1,
+      "dominated_by_solution_ids_full_U": "C04",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "H06",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.1276954984367705,
+      "f2": 0.1833217803871849,
+      "f3": 0.41541905443579263,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "H07",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.07617255010363969,
+      "f2": 0.18737255918970133,
+      "f3": 0.43050206568236915,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "H08",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.017309193030289972,
+      "f2": 0.25205272041996435,
+      "f3": 0.6081095946589916,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 1,
+      "dominates_solution_ids_full_U": "C08",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "H09",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.01473445910295798,
+      "f2": 0.2817578635269986,
+      "f3": 0.6878844743274163,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "C01",
+      "source": "CORRECTED_R1",
+      "f1": 0.015163555853391462,
+      "f2": 0.2712071587404825,
+      "f3": 0.6595831664180842,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "C02",
+      "source": "CORRECTED_R1",
+      "f1": 0.0955252717045421,
+      "f2": 0.18471976529485853,
+      "f3": 0.4218617884956555,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "C03",
+      "source": "CORRECTED_R1",
+      "f1": 0.0976824159460894,
+      "f2": 0.18475249104828215,
+      "f3": 0.42177467537964236,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "C04",
+      "source": "CORRECTED_R1",
+      "f1": 0.035509414628851016,
+      "f2": 0.19958292469520714,
+      "f3": 0.4662395996524617,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 1,
+      "dominates_solution_ids_full_U": "H05",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "C05",
+      "source": "CORRECTED_R1",
+      "f1": 0.028886799370315748,
+      "f2": 0.21733365919792744,
+      "f3": 0.5142727514952378,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "C06",
+      "source": "CORRECTED_R1",
+      "f1": 0.02239970549598287,
+      "f2": 0.2413384494217395,
+      "f3": 0.5790487923268146,
+      "ParetoRank": 2,
+      "is_joint_rank1": false,
+      "dominated_by_count_full_U": 1,
+      "dominated_by_solution_ids_full_U": "H02",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "C07",
+      "source": "CORRECTED_R1",
+      "f1": 0.026511805459522943,
+      "f2": 0.22338322638493963,
+      "f3": 0.5306495452737388,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "C08",
+      "source": "CORRECTED_R1",
+      "f1": 0.018219453240328243,
+      "f2": 0.2547257477103099,
+      "f3": 0.6152099405567468,
+      "ParetoRank": 2,
+      "is_joint_rank1": false,
+      "dominated_by_count_full_U": 1,
+      "dominated_by_solution_ids_full_U": "H08",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    },
+    {
+      "solution_id": "C09",
+      "source": "CORRECTED_R1",
+      "f1": 0.06592893450793702,
+      "f2": 0.1898535301772997,
+      "f3": 0.43793525200889427,
+      "ParetoRank": 1,
+      "is_joint_rank1": true,
+      "dominated_by_count_full_U": 0,
+      "dominated_by_solution_ids_full_U": "",
+      "dominates_count_full_U": 0,
+      "dominates_solution_ids_full_U": "",
+      "rank_layer_dominator_count": 0,
+      "rank_layer_dominator_ids": ""
+    }
+  ],
+  "rank_summary": [
+    {
+      "pareto_rank": 1,
+      "solution_count": 15,
+      "H_count": 8,
+      "C_count": 7,
+      "H_solution_ids": "H01;H02;H03;H04;H06;H07;H08;H09",
+      "C_solution_ids": "C01;C02;C03;C04;C05;C07;C09",
+      "all_solution_ids": "H01;H02;H03;H04;H06;H07;H08;H09;C01;C02;C03;C04;C05;C07;C09"
+    },
+    {
+      "pareto_rank": 2,
+      "solution_count": 3,
+      "H_count": 1,
+      "C_count": 2,
+      "H_solution_ids": "H05",
+      "C_solution_ids": "C06;C08",
+      "all_solution_ids": "H05;C06;C08"
+    }
+  ],
+  "full_U_dominance_relations": [
+    {
+      "dominant_solution_id": "C04",
+      "dominated_solution_id": "H05"
+    },
+    {
+      "dominant_solution_id": "H02",
+      "dominated_solution_id": "C06"
+    },
+    {
+      "dominant_solution_id": "H08",
+      "dominated_solution_id": "C08"
+    }
+  ],
+  "initial_dominated_ids": [
+    "H05",
+    "C06",
+    "C08"
+  ],
+  "initial_nondominated_count": 15,
+  "upstream_consistency": {
+    "check": "PASS",
+    "cr1_comp_02_internal_dominance_relation_count": 0,
+    "cr1_comp_05_relation_identity": "PASS",
+    "cr1_comp_06_exact_classifications_changed": false,
+    "cr1_comp_06_numerically_fragile_dominance_count": 0,
+    "cr1_comp_07_exclusion_identity": "PASS"
+  },
+  "qc": {
+    "independent_qc": "PASS",
+    "rank_identity_18": "PASS",
+    "rank_layer_membership_identity": "PASS",
+    "unique_complete_assignment": "PASS",
+    "rank_count_sum": "PASS",
+    "rank_integer_domain": "PASS",
+    "rank1_indegree_zero_full_U": "PASS",
+    "later_rank_earlier_dominator": "PASS",
+    "dominance_rank_monotonicity": "PASS",
+    "simultaneous_layer_removal": "PASS",
+    "sorting_csv_sha256": "0E9AE69495E79648056143E2723B1C985380E3E11350EB6A58D1FCD0422C92A9",
+    "summary_csv_sha256": "8ABADBC9DDEE9D00D6718FE778A0E3675386CBBB19ED2A922D75E765ED9D3FFD"
+  },
+  "nomenclature": "JOINT_NONDOMINATED_SET_OF_18_EVALUATED_SOLUTIONS",
+  "limitations": [
+    "Rank 1 is the joint nondominated set of the 18 evaluated solutions, not a true, exact, global, or corrected Pareto front.",
+    "The result does not establish global or statistical superiority, convergence, robustness, expected gamultiobj performance, or a physical mechanism."
+  ],
+  "not_computed": {
+    "cr1_comp_09": true,
+    "objective_geometry": true,
+    "hypervolume_gate": true,
+    "hypervolume": true,
+    "terminal_regime_comparison": true,
+    "objective_decomposition": true,
+    "physical_interpretation": true
+  },
+  "execution": {
+    "MATLAB_executed": false,
+    "objective_evaluations": 0,
+    "replays": 0,
+    "gamultiobj_executions": 0
+  }
+}

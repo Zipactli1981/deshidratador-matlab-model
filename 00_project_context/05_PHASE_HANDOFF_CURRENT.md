@@ -1,5 +1,5 @@
 # PHASE HANDOFF CURRENT
-## CR1-COMP-07 Set Coverage → CR1-COMP-08 Joint Exact Nondominated Sorting
+## CR1-COMP-08 Joint Exact Nondominated Sorting → CR1-COMP-09 Objective-space Geometry
 
 ## Fases cerradas
 
@@ -55,7 +55,7 @@ No constituyen un frente Pareto corregido.
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_07_SET_COVERAGE_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 ```
@@ -220,10 +220,35 @@ HYPERVOLUME_COMPUTED = NO
 
 CR1-COMP-07 calculó coverage exacto full/core sobre soluciones objetivo distintas. La igualdad full/core se debe a que `N_H=H` y `N_C=C`; coverage sigue siendo asimétrico y no determina la composición del Rank 1 conjunto. No se ejecutó joint sorting ni ninguna fase posterior.
 
+## CR1-COMP-08 cerrado
+
+```text
+CR1_COMP_08_STATUS = CLOSED_PASS
+JOINT_SORTING_COMPUTED = YES
+JOINT_RANK_COUNT = 2
+JOINT_RANK1_COUNT = 15
+JOINT_RANK1_H = 8
+JOINT_RANK1_C = 7
+JOINT_RANK1_H_IDS = H01,H02,H03,H04,H06,H07,H08,H09
+JOINT_RANK1_C_IDS = C01,C02,C03,C04,C05,C07,C09
+JOINT_RANK2_COUNT = 3
+JOINT_RANK2_H = 1
+JOINT_RANK2_C = 2
+JOINT_RANK2_H_IDS = H05
+JOINT_RANK2_C_IDS = C06,C08
+INDEPENDENT_QC = PASS
+CR1_COMP_09_COMPUTED = NO
+OBJECTIVE_GEOMETRY_COMPUTED = NO
+HYPERVOLUME_GATE_COMPUTED = NO
+HYPERVOLUME_COMPUTED = NO
+```
+
+El Rank 1 es el conjunto no dominado conjunto de las 18 soluciones evaluadas. Ocho soluciones históricas y siete CORRECTED_R1 permanecen en Rank 1; H05, C06 y C08 forman Rank 2. Este resultado no establece un frente Pareto verdadero, exacto, global o corregido. No se ejecutó geometría objetivo, hypervolume ni ninguna fase posterior.
+
 ## Próxima fase
 
 ```text
-NEXT_PHASE = CR1-COMP-08_JOINT_EXACT_NONDOMINATED_SORTING
+NEXT_PHASE = CR1-COMP-09_OBJECTIVE_SPACE_GEOMETRY
 ```
 
-CR1-COMP-08 no está autorizada y requiere autorización separada.
+CR1-COMP-09 no está autorizada y requiere autorización separada.

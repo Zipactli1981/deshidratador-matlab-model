@@ -198,7 +198,7 @@ Estado de implementación:
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_07_SET_COVERAGE_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 MATLAB_EXECUTION_AUTHORIZED = NO
@@ -358,10 +358,38 @@ NEXT_COMPARATIVE_PHASE = CR1-COMP-08 — Joint exact nondominated sorting
 
 Coverage se calculó sobre IDs objetivo distintos y es asimétrico. La igualdad full/core es específica de este dataset porque `N_H=H` y `N_C=C`. Los resultados no establecen superioridad global ni composición del Rank 1 conjunto. No se calculó CR1-COMP-08 ni ninguna fase posterior.
 
+Estado cerrado de `CR1-COMP-08`:
+
+```text
+CR1_COMP_08_STATUS = CLOSED_PASS
+JOINT_SORTING_COMPUTED = YES
+JOINT_SOLUTION_COUNT = 18
+JOINT_RANK_COUNT = 2
+JOINT_RANK1_COUNT = 15
+JOINT_RANK1_H = 8
+JOINT_RANK1_C = 7
+JOINT_RANK1_H_IDS = H01,H02,H03,H04,H06,H07,H08,H09
+JOINT_RANK1_C_IDS = C01,C02,C03,C04,C05,C07,C09
+JOINT_RANK2_COUNT = 3
+JOINT_RANK2_H = 1
+JOINT_RANK2_C = 2
+JOINT_RANK2_H_IDS = H05
+JOINT_RANK2_C_IDS = C06,C08
+JOINT_NONDOMINATED_SET_NAME = JOINT_NONDOMINATED_SET_OF_18_EVALUATED_SOLUTIONS
+INDEPENDENT_QC = PASS
+CR1_COMP_09_COMPUTED = NO
+OBJECTIVE_GEOMETRY_COMPUTED = NO
+HYPERVOLUME_GATE_COMPUTED = NO
+HYPERVOLUME_COMPUTED = NO
+NEXT_COMPARATIVE_PHASE = CR1-COMP-09 — Objective-space geometry
+```
+
+El Rank 1 es el conjunto no dominado conjunto de las 18 soluciones evaluadas, no un frente Pareto verdadero, exacto, global o corregido. El sorting exacto produjo dos capas y fue coherente con las dominancias congeladas de CR1-COMP-02/05/06/07. No se calculó CR1-COMP-09 ni ninguna fase posterior.
+
 ## Siguiente fase
 
 ```text
-NEXT_PHASE = CR1-COMP-08_JOINT_EXACT_NONDOMINATED_SORTING
+NEXT_PHASE = CR1-COMP-09_OBJECTIVE_SPACE_GEOMETRY
 ```
 
-CR1-COMP-08 requiere autorización separada.
+CR1-COMP-09 requiere autorización separada.
