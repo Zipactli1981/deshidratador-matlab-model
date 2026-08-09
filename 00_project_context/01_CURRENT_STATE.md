@@ -503,10 +503,30 @@ NEXT_COMPARATIVE_PHASE = CR1-COMP-13 — Objective decomposition
 
 D014 preserva ambos valores raw y reconoce que documentan el mismo horizonte máximo nominal bajo el régimen terminal común `TMAX`; no declara igualdad floating-point ni introduce tolerancia numérica. Los 18 puntos comparten el régimen `TMAX` al horizonte nominal fijo de `19.9 h`. Esto no implica igualdad de trayectorias, energía, GLP, aporte solar, agua removida, costo o emisiones, ni convergencia del algoritmo.
 
-## Siguiente fase
+## CR1-COMP-13 cerrado
 
 ```text
-NEXT_PHASE = CR1-COMP-13_OBJECTIVE_DECOMPOSITION
+CR1_COMP_13_STATUS = CLOSED_PASS
+OBJECTIVE_DECOMPOSITION_COMPUTED = YES
+F2_F3_DECOMPOSITION_COMPLETED = YES
+MANDATORY_DECOMPOSITION_COMPLETE_H = YES
+MANDATORY_DECOMPOSITION_COMPLETE_C = YES
+
+Q_AUX_TOT_AVAILABILITY = COMPLETE_18
+Q_LPG_INPUT_AVAILABILITY = COMPLETE_18
+LPG_MASS_AVAILABILITY = COMPLETE_18
+LPG_COST_AVAILABILITY = COMPLETE_18
+IRRADIACION_AVAILABILITY = NOT_AVAILABLE
+SOLAR_COST_AVAILABILITY = COMPLETE_18
+E_AIR_IMPELLER_AVAILABILITY = COMPLETE_18
+ELECTRICITY_COST_AVAILABILITY = COMPLETE_18
+CO2_LPG_AVAILABILITY = COMPLETE_H_ONLY
+CO2_ELECTRICITY_AVAILABILITY = COMPLETE_H_ONLY
+
+REPRESENTATIVE_SOLUTION_SELECTION = DEFERRED_TO_CR1_COMP_14
+CR1_COMP_14_COMPUTED = NO
+SCIENTIFIC_INTERPRETATION = NOT_YET_COMPLETED
+NEXT_COMPARATIVE_PHASE = CR1-COMP-14 — Physical, economic and environmental interpretation
 ```
 
-CR1-COMP-13 no fue ejecutado y requiere autorización separada.
+La descomposición obligatoria de `f2` y `f3` quedó trazada para H01...H09 y C01...C09 mediante numeradores totales y el denominador común persistido. No se realizó pairing H↔C, selección representativa ni interpretación causal. CR1-COMP-14 requiere autorización separada.

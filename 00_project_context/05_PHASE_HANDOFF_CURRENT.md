@@ -356,10 +356,30 @@ NEXT = CR1-COMP-13 — Objective decomposition, requiring separate authorization
 
 D014 preserva las representaciones raw, no introduce tolerancia numérica y no modifica el protocolo v1.0. CR1-COMP-12 verificó que los 18 puntos comparten el régimen físico `TMAX` al horizonte nominal fijo de `19.9 h`. La terminación del optimizador CORRECTED_R1 por `MaxGenerations` es un concepto separado y no forma parte de este gate.
 
-## Próxima fase
+## CR1-COMP-13 cerrado
 
 ```text
-NEXT_PHASE = CR1-COMP-13_OBJECTIVE_DECOMPOSITION
+CR1-COMP-13 = CLOSED_PASS
+OBJECTIVE_DECOMPOSITION_COMPUTED = YES
+F2_F3_DECOMPOSITION_COMPLETED = YES
+MANDATORY_DECOMPOSITION_COMPLETE_H = YES
+MANDATORY_DECOMPOSITION_COMPLETE_C = YES
+
+Q_AUX_TOT_AVAILABILITY = COMPLETE_18
+Q_LPG_INPUT_AVAILABILITY = COMPLETE_18
+LPG_MASS_AVAILABILITY = COMPLETE_18
+LPG_COST_AVAILABILITY = COMPLETE_18
+IRRADIACION_AVAILABILITY = NOT_AVAILABLE
+SOLAR_COST_AVAILABILITY = COMPLETE_18
+E_AIR_IMPELLER_AVAILABILITY = COMPLETE_18
+ELECTRICITY_COST_AVAILABILITY = COMPLETE_18
+CO2_LPG_AVAILABILITY = COMPLETE_H_ONLY
+CO2_ELECTRICITY_AVAILABILITY = COMPLETE_H_ONLY
+
+REPRESENTATIVE_SOLUTION_SELECTION = DEFERRED_TO_CR1_COMP_14
+CR1_COMP_14_COMPUTED = NO
+SCIENTIFIC_INTERPRETATION = NOT_YET_COMPLETED
+NEXT = CR1-COMP-14 — Physical, economic and environmental interpretation, requiring separate authorization
 ```
 
-CR1-COMP-13 no fue ejecutado y requiere autorización separada.
+CR1-COMP-13 construyó una capa documental completa para los numeradores de costo y CO2 y el denominador común de agua removida de las 18 soluciones. `Irradiacion` no se reconstruyó desde energía solar; los componentes desagregados de CO2 sólo están persistidos para H. No hubo pairing H↔C, selección representativa ni interpretación causal.

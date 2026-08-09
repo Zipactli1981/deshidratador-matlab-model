@@ -817,3 +817,61 @@ wrapper v18 = b825a513c95f50ac105d16346650cfe48f7d0096
 cost params = 4b1fbfb8554ba59a79ed7908f62b83b38e8947c8
 cost breakdown = e1c9a29df585c4f2016b07d5d1f28b71eb917f52
 ```
+
+## CR1-COMP-13 — Objective decomposition
+
+Dataset de descomposición de 18 filas:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_13_OBJECTIVE_DECOMPOSITION_v96z.csv
+SHA-256 = 7FA06B8925F69772AA5D8D93979A8F176964FD9BAF0621018409FD7C974B8237
+Role = mandatory f2/f3 numerator-denominator decomposition, optional persisted components, raw provenance, rank context, and identity diagnostics
+Upstream = canonical comparative dataset; historical COST-E3D reevaluation memo; CORRECTED_R1 validated postrun JSON; frozen joint-rank table; CR1-COMP-12
+```
+
+Disponibilidad de componentes:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_13_OBJECTIVE_DECOMPOSITION_COMPONENT_AVAILABILITY_v96z.csv
+SHA-256 = 9943DBE84543B875AA1FDE366060D23B6EDC3341032EF6DE490BC4DDF559EEA3
+Role = H/C availability counts, source basis, units, and limitations for ten optional components
+Upstream = CR1_COMP_13_OBJECTIVE_DECOMPOSITION_v96z.csv and registered H/C decomposition sources
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_13_OBJECTIVE_DECOMPOSITION_v96z.json
+SHA-256 = 4B8D9B30B237E2BA65DD5F71ECB218C995BEC1646943F50F68ECB1E08DCE0B52
+Role = baseline, protocol/hash gates, upstream hashes, D004, 18 records, provenance, units, diagnostics, deterministic min/max summaries, limitations, and exclusions
+Upstream = frozen protocol v1.0; canonical comparative dataset; historical COST-E3D reevaluation memo; CORRECTED_R1 validated postrun JSON; frozen joint-rank table; CR1-COMP-12
+```
+
+Auditoría documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_13_OBJECTIVE_DECOMPOSITION_AUDIT_v96z.md
+SHA-256 = 2D297CCF3FDDA45816ABBC20CE9A685C6C4E8E7090B9EBCADCB47787E7B72DDE
+Role = scope, provenance, denominator/numerators, component availability, raw identities, QC, limitations, and excluded actions
+Upstream = CR1_COMP_13_OBJECTIVE_DECOMPOSITION_v96z.csv/json; component availability table; protocol v1.0; registered H/C sources
+```
+
+Script documental reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_13_objective_decomposition_v96z.py
+SHA-256 = 12180176F897BBB8C6F4FEFEE7163F2445366220CD6BF487EDD3B09F650A17FB
+Role = baseline/hash gates, frozen-source extraction, provenance preservation, algebraic postrun diagnostics, deterministic outputs, and independent consistency checks
+Upstream = frozen protocol v1.0; CURRENT_STATE; PHASE_HANDOFF; registered H/C, dataset, rank, and CR1-COMP-12 sources
+```
+
+Estado:
+
+```text
+CR1_COMP_13_STATUS = CLOSED_PASS
+OBJECTIVE_DECOMPOSITION_COMPUTED = YES
+F2_F3_DECOMPOSITION_COMPLETED = YES
+INDEPENDENT_QC = PASS
+CR1_COMP_14_COMPUTED = NO
+NEXT_COMPARATIVE_PHASE = CR1-COMP-14_PHYSICAL_ECONOMIC_ENVIRONMENTAL_INTERPRETATION
+```
