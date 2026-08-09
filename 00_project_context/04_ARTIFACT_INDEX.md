@@ -875,3 +875,61 @@ INDEPENDENT_QC = PASS
 CR1_COMP_14_COMPUTED = NO
 NEXT_COMPARATIVE_PHASE = CR1-COMP-14_PHYSICAL_ECONOMIC_ENVIRONMENTAL_INTERPRETATION
 ```
+
+## CR1-COMP-14 — Physical, economic and environmental interpretation
+
+Registro de soluciones representativas:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_14_REPRESENTATIVE_SOLUTION_INTERPRETATION_v96z.csv
+SHA-256 = 11B34DB0D9C1A2ED11E79A36BF2379FAD18BAB2123CE83772876AF08A1C9FE67
+Role = 18-row union of frozen representative categories, rank/cross-dominance context, X, objectives, and mandatory decomposition fields
+Upstream = CR1-COMP-03/04/05/06/08/13 structured artifacts
+```
+
+Registro de afirmaciones interpretativas:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_14_INTERPRETIVE_CLAIMS_v96z.csv
+SHA-256 = C8C0BC2323E8D782227123027EF1B375DD5B07A3B9EFCAED531DFBACAE604400
+Role = claim-level classification, support status, evidence traceability, limitations, and manuscript-candidate flag
+Upstream = frozen CR1-COMP-03 through CR1-COMP-13 evidence
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_14_PHYSICAL_ECONOMIC_ENVIRONMENTAL_INTERPRETATION_v96z.json
+SHA-256 = 59B9E07FC5420C923F15873C7E01A549092A92EFAC9D2DF4AB46FA7B8E952A9F
+Role = protocol/hash gates, representative registry, exact-pair decompositions, set medians, four-level claims, scientific synthesis, limitations, exclusions, and QC
+Upstream = frozen protocol v1.0 and registered CR1-COMP-03/04/05/06/07/08/09/11/12/13 JSON artifacts
+```
+
+Auditoría documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_14_PHYSICAL_ECONOMIC_ENVIRONMENTAL_INTERPRETATION_AUDIT_v96z.md
+SHA-256 = B2E5D5BD965859F8A485EB8DDF68315C91A094BCE5B5A9AEE108EDB6F220B525
+Role = observed evidence, calculated descriptive result, mechanistic interpretation, limited inference, manuscript-candidate claims, limitations, exclusions, and independent QC
+Upstream = CR1_COMP_14 structured JSON, representative registry, claims registry, and frozen comparative artifacts
+```
+
+Script documental reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_14_physical_economic_environmental_interpretation_v96z.py
+SHA-256 = 7E6273DFDF618214077AA2709B532F5A1B8F41E299F091F89952B5B7065B31A1
+Role = baseline/hash gates, frozen-source interpretation, exact-pair descriptive differences, deterministic registries, claim validation, and independent checks
+Upstream = frozen protocol v1.0; CURRENT_STATE; PHASE_HANDOFF; registered CR1-COMP-03 through CR1-COMP-13 sources
+```
+
+Estado:
+
+```text
+CR1_COMP_14_STATUS = CLOSED_PASS
+SCIENTIFIC_INTERPRETATION = COMPLETED_FOR_CR1_COMP_14_WITH_EXPLICIT_LIMITATIONS
+C_REGION_CONCENTRATION_HYPOTHESIS = PARTIALLY_SUPPORTED
+INDEPENDENT_QC = PASS
+CR1_COMP_15_COMPUTED = NO
+NEXT_COMPARATIVE_PHASE = CR1-COMP-15_QUANTITATIVE_COMPARATIVE_VERDICT
+```

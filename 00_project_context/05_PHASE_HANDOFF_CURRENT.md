@@ -383,3 +383,37 @@ NEXT = CR1-COMP-14 — Physical, economic and environmental interpretation, requ
 ```
 
 CR1-COMP-13 construyó una capa documental completa para los numeradores de costo y CO2 y el denominador común de agua removida de las 18 soluciones. `Irradiacion` no se reconstruyó desde energía solar; los componentes desagregados de CO2 sólo están persistidos para H. No hubo pairing H↔C, selección representativa ni interpretación causal.
+
+## CR1-COMP-14 cerrado
+
+```text
+CR1-COMP-14 = CLOSED_PASS
+SCIENTIFIC_INTERPRETATION_COMPLETED = YES
+PHYSICAL_INTERPRETATION_COMPUTED = YES_WITH_PERSISTED_DATA_LIMITATIONS
+ECONOMIC_INTERPRETATION_COMPUTED = YES
+ENVIRONMENTAL_INTERPRETATION_COMPUTED = YES_WITH_C_COMPONENT_LIMITATION
+MULTIOBJECTIVE_INTERPRETATION_COMPUTED = YES
+
+REPRESENTATIVE_REGISTRY_ROWS = 18
+CROSS_DOMINANCE_PAIR_DECOMPOSITIONS = 3
+CLAIM_COUNTS = SUPPORTED_11;PARTIALLY_SUPPORTED_1;NOT_SUPPORTED_0
+
+C_REGION_CONCENTRATION_HYPOTHESIS = PARTIALLY_SUPPORTED
+C_REGION_CONCENTRATION_INTERPRETATION = MULTIPLE_TRADEOFF_MECHANISMS
+MULTIPLE_MECHANISMS_OBSERVED = YES_OPERATIONAL_X_PATHWAYS_WITH_SHARED_DECOMPOSITION_SIGNATURE
+CROSS_SET_INTERPRETIVE_PATTERN = PREDOMINANTLY_INCOMPARABLE_WITH_BIDIRECTIONAL_LOCAL_DOMINANCE_AND_SUBSTANTIAL_RANK1_CONTRIBUTIONS_FROM_BOTH_SETS
+
+BOUND_PROXIMITY_SELECTION = NOT_PERFORMED_NO_THRESHOLD
+COMPROMISE_SELECTION = NOT_PERFORMED_NO_FROZEN_SELECTION_CRITERION
+GASLP_CONTEXT_AVAILABLE = NO
+IRRADIACION_LIMITATION_PRESERVED = YES
+C_CO2_COMPONENT_LIMITATION_PRESERVED = YES
+INDEPENDENT_QC = PASS
+
+FINAL_COMPARATIVE_VERDICT = NOT_PERFORMED
+MANUSCRIPT_CHANGES = NOT_STARTED
+CR1_COMP_15_COMPUTED = NO
+NEXT = CR1-COMP-15 — Quantitative comparative verdict, requiring separate authorization
+```
+
+CR1-COMP-14 integró la evidencia congelada sin nuevas evaluaciones. C ocupa una región marginal más estrecha y presenta mayor hypervolume anclado en r5/r10/r20, pero ambos conjuntos aportan soluciones Rank 1 y la estructura cruzada sigue siendo predominantemente incomparable. La hipótesis de concentración de C queda sólo parcialmente respaldada: los pares dominantes comparten una firma de descomposición favorable, pero muestran rutas operativas `X` diferentes. Se preservan `IRRADIACION_NOT_AVAILABLE`, `C_CO2_COMPONENTS_NOT_PERSISTED`, el horizonte fijo común y las limitaciones de conjunto finito/sin robustez entre semillas. No hay solución única recomendada, criterio de compromiso ni veredicto final.
