@@ -686,6 +686,69 @@ INDEPENDENT_QC = PASS
 NEXT_COMPARATIVE_PHASE = CR1-COMP-11_HYPERVOLUME_AND_SENSITIVITY
 ```
 
+## CR1-COMP-11 — Hypervolume and sensitivity
+
+Resultados por conjunto y reference point:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_11_HYPERVOLUME_SENSITIVITY_v96z.csv
+SHA-256 = 39AC5AE204E1B142FD9F79976F85A7053ABC453BED9C8D323F87E30F363C3761
+Role = six source-by-reference hypervolume results, raw/normalized references, directions, and primary-reference flag
+```
+
+Anclajes comunes:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_11_HYPERVOLUME_ANCHORS_v96z.csv
+SHA-256 = 05F72F2B653CFABE8E36887199B53CA38F0FDBC630A4EE552B1689BB8F326F27
+Role = three objective-wise common minima, maxima, solution IDs, ranges, zero-range gates, and shared-normalization flags
+```
+
+Puntos normalizados:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_11_HYPERVOLUME_NORMALIZED_POINTS_v96z.csv
+SHA-256 = 46373E2A481CF765BFACCD55B4BF157A295844DBA5B9E539074EC1A5D5BB4843
+Role = traceable raw and common-normalized coordinates for all 18 members of P=N_H union N_C
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_11_HYPERVOLUME_SENSITIVITY_v96z.json
+SHA-256 = 233918EF96B1597260854CDDFCB7DDBA041A14BE7C06323BBB1DE8F02D244EC7
+Role = frozen inputs, N_H/N_C/P, anchors, normalized coordinates, references, dual-method HV, directions, sensitivity, QC, interpretation, and exclusions
+```
+
+Audit documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_11_HYPERVOLUME_SENSITIVITY_AUDIT_v96z.md
+SHA-256 = EFF8DFFD79838CC891CAC9BF18E35F5BE015B71DF4AFCDF5738AC68282BC2DCB
+Role = common-anchor derivation, predefined references, exact inclusion-exclusion, grid-cell QC, results, sensitivity, limitations, and scope record
+```
+
+Script reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_11_hypervolume_sensitivity_v96z.py
+SHA-256 = 1E2CC8D2D3298B96F087926F64AFCD2D673BF8012C8CAF323FFCDDCBB7E6DEE9
+Role = upstream gates, P-derived normalization, exact 3D inclusion-exclusion, independent grid-cell union QC, and deterministic artifact generation
+```
+
+Estado:
+
+```text
+CR1_COMP_11_STATUS = CLOSED_PASS
+HYPERVOLUME_COMPUTED = YES
+HV_ANCHORS_FROZEN = YES
+HV_DIRECTION = C_GT_H
+HV_SENSITIVITY_STATUS = ROBUST_DIRECTION
+INDEPENDENT_QC = PASS
+CR1_COMP_12_COMPUTED = NO
+NEXT_COMPARATIVE_PHASE = CR1-COMP-12_COMMON_TERMINAL_REGIME_ANALYSIS
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c

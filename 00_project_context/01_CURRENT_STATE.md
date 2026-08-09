@@ -198,7 +198,7 @@ Estado de implementación:
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_09_OBJECTIVE_SPACE_GEOMETRY_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_11_HYPERVOLUME_SENSITIVITY_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 MATLAB_EXECUTION_AUTHORIZED = NO
@@ -440,10 +440,40 @@ NEXT_COMPARATIVE_PHASE = CR1-COMP-11 — Hypervolume and sensitivity
 
 La cobertura no proporciona una sustitución completa y unidireccional de H por C bajo la condición congelada. El protocolo recomienda hypervolume como métrica secundaria adicional; el gate no establece superioridad de ningún conjunto ni anticipa el resultado de hypervolume. No se calculó hypervolume, normalización, anclajes, reference points o sensibilidad.
 
+Estado cerrado de `CR1-COMP-11`:
+
+```text
+CR1_COMP_11_STATUS = CLOSED_PASS
+HYPERVOLUME_COMPUTED = YES
+HV_ANCHORS_FROZEN = YES
+HV_SCALE_MIN = [0.01473445910295798,0.18030701050054604,0.4043097419600721]
+HV_SCALE_MAX = [0.1612259929049299,0.2817578635269986,0.6878844743274163]
+HV_SCALE_RANGE = [0.1464915338019719,0.10145085302645257,0.2835747323673442]
+HV_H_R5 = 0.8214144073536221
+HV_C_R5 = 0.8596538595095115
+HV_DIRECTION_R5 = C_GT_H
+HV_H_R10 = 0.9749820881940048
+HV_C_R10 = 1.0099628901072748
+HV_DIRECTION_R10 = C_GT_H
+HV_H_R20 = 1.3323674498747686
+HV_C_R20 = 1.3592107397484303
+HV_DIRECTION_R20 = C_GT_H
+HV_H = 0.9749820881940048
+HV_C = 1.0099628901072748
+HV_DIRECTION = C_GT_H
+HV_SENSITIVITY_STATUS = ROBUST_DIRECTION
+COMMON_NORMALIZATION_USED = YES
+INDEPENDENT_QC = PASS
+CR1_COMP_12_COMPUTED = NO
+NEXT_COMPARATIVE_PHASE = CR1-COMP-12 — Common terminal-regime analysis
+```
+
+Con anclajes comunes derivados de `P=N_H∪N_C`, C presenta mayor cobertura del espacio objetivo anclado que H para los tres reference points preespecificados. La dirección `C_GT_H` es robusta dentro de esa rejilla de sensibilidad. Este resultado no demuestra proximidad al frente Pareto verdadero, convergencia, superioridad estadística, robustez frente a semillas ni superioridad física integral.
+
 ## Siguiente fase
 
 ```text
-NEXT_PHASE = CR1-COMP-11_HYPERVOLUME_AND_SENSITIVITY
+NEXT_PHASE = CR1-COMP-12_COMMON_TERMINAL_REGIME_ANALYSIS
 ```
 
-CR1-COMP-11 requiere autorización separada.
+CR1-COMP-12 requiere autorización separada.

@@ -1,5 +1,5 @@
 # PHASE HANDOFF CURRENT
-## CR1-COMP-09 Objective-space Geometry → CR1-COMP-10 Hypervolume Decision Gate
+## CR1-COMP-11 Hypervolume and Sensitivity → CR1-COMP-12 Common Terminal-regime Analysis
 
 ## Fases cerradas
 
@@ -55,7 +55,7 @@ No constituyen un frente Pareto corregido.
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_09_OBJECTIVE_SPACE_GEOMETRY_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_11_HYPERVOLUME_SENSITIVITY_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 ```
@@ -299,10 +299,35 @@ INDEPENDENT_QC = PASS
 
 CR1-COMP-10 aplicó exclusivamente el gate congelado a los valores full coverage de CR1-COMP-07. La condición de sustitución completa y unidireccional resultó falsa, por lo que hypervolume queda recomendado como métrica secundaria adicional. No se calculó hypervolume ni se ejecutó CR1-COMP-11.
 
+## CR1-COMP-11 cerrado
+
+```text
+CR1_COMP_11_STATUS = CLOSED_PASS
+HYPERVOLUME_COMPUTED = YES
+HV_ANCHORS_FROZEN = YES
+HV_SCALE_MIN = [0.01473445910295798,0.18030701050054604,0.4043097419600721]
+HV_SCALE_MAX = [0.1612259929049299,0.2817578635269986,0.6878844743274163]
+HV_H_R5 = 0.8214144073536221
+HV_C_R5 = 0.8596538595095115
+HV_DIRECTION_R5 = C_GT_H
+HV_H_R10 = 0.9749820881940048
+HV_C_R10 = 1.0099628901072748
+HV_DIRECTION_R10 = C_GT_H
+HV_H_R20 = 1.3323674498747686
+HV_C_R20 = 1.3592107397484303
+HV_DIRECTION_R20 = C_GT_H
+HV_DIRECTION = C_GT_H
+HV_SENSITIVITY_STATUS = ROBUST_DIRECTION
+INDEPENDENT_QC = PASS
+CR1_COMP_12_COMPUTED = NO
+```
+
+CR1-COMP-11 calculó `HV(N_H)` y `HV(N_C)` con una normalización común derivada de `P=N_H∪N_C`. Inclusión–exclusión 3D y la descomposición independiente por celdas coincidieron dentro del criterio QC. C obtuvo mayor hypervolume en r5, r10 y r20; esta dirección es robusta únicamente dentro de los tres reference points preespecificados y representa cobertura del espacio objetivo anclado, no proximidad al frente verdadero ni superioridad estadística o física integral.
+
 ## Próxima fase
 
 ```text
-NEXT_PHASE = CR1-COMP-11_HYPERVOLUME_AND_SENSITIVITY
+NEXT_PHASE = CR1-COMP-12_COMMON_TERMINAL_REGIME_ANALYSIS
 ```
 
-CR1-COMP-11 no está autorizada y requiere autorización separada.
+CR1-COMP-12 no está autorizada y requiere autorización separada.
