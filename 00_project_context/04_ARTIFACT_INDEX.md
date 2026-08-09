@@ -993,3 +993,59 @@ INDEPENDENT_QC = PASS
 CR1_COMP_16_COMPUTED = NO
 NEXT_COMPARATIVE_PHASE = CR1-COMP-16_MANUSCRIPT_IMPLICATIONS
 ```
+
+## CR1-COMP-16 — Manuscript implications
+
+Claim registry:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_16_MANUSCRIPT_CLAIM_REGISTRY_v96z.csv
+SHA-256 = 2A987D8AA751C7BB975210CB504EBA3FA54E5A0BE8215B3B74160A81972ED989
+Role = 40 traceable candidate claims for Results, Discussion, Limitations and Conclusions, not yet inserted
+Upstream = frozen CR1-COMP-15 full verdict; CR1-COMP-04/09/12/13/14 evidence
+```
+
+Section implications:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_16_MANUSCRIPT_SECTION_IMPLICATIONS_v96z.csv
+SHA-256 = 9D17BCC2F2010141BFB8167522E47C615BA5C5DF61535002F539EA66DFF84D96
+Role = section-specific implication mapping with evidence level, qualifiers and limitation links
+Upstream = CR1-COMP-16 claim registry and frozen comparative evidence
+```
+
+Structured result:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_16_MANUSCRIPT_IMPLICATIONS_v96z.json
+SHA-256 = 63507FBE2E6DBA778D01BECBDAAAECC580F5B668FBC40879D7E4BCB9575EA7A2
+Role = D015 baseline, full verdict, upstream provenance, four-section implications, registry, result-to-section mapping, prohibited claims, pending editorial items and QC
+Upstream = frozen protocol v1.0; D015; CR1-COMP-15 JSON/audit; registered CR1-COMP-04/09/12/13/14 artifacts
+```
+
+Documentary audit:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_16_MANUSCRIPT_IMPLICATIONS_AUDIT_v96z.md
+SHA-256 = FFEF22B7D2CECD3A4B610B6FBC1AB06254603552E11D840EAEE687F8A1F0B833
+Role = evidence/implication/interpretation/limitation/conclusion/overclaim separation and independent QC
+Upstream = CR1-COMP-16 CSV/JSON artifacts and frozen CR1-COMP-15 JSON/audit
+```
+
+Documentary script:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_16_manuscript_implications_v96z.py
+SHA-256 = 0AFB9210D1B59C211894F8A52992C387708082E3DBF8470B012A16AB2BDFD3F8
+Role = frozen-source/hash gates, full-verdict identity, deterministic registries and independent documentary checks
+Upstream = frozen protocol v1.0; D015 baseline; registered CR1-COMP-04/09/12/13/14/15 sources
+```
+
+```text
+CR1_COMP_16_STATUS = CLOSED_PASS
+CR1_COMP_01_TO_16_STATUS = CLOSED_PASS
+COMPARATIVE_PROTOCOL_IMPLEMENTATION = COMPLETED
+COMPARATIVE_SCIENTIFIC_REVIEW = CLOSED_PASS
+FINAL_MANUSCRIPT_EDITED = NO
+SCIENTIFIC_SUFFICIENCY_GATE = NOT_EXECUTED_SEPARATE_POST_CR1_COMP_16_GATE
+```

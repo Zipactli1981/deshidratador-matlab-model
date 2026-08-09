@@ -469,3 +469,19 @@ FULL_VERDICT_SOURCE = CR1_COMP_15_QUANTITATIVE_COMPARATIVE_VERDICT_v96z.json
 HANDOFF_VERDICT_ROLE = CONDENSED_HANDOFF_SUMMARY
 NEXT = freeze D015, then resume CR1-COMP-16 under D015
 ```
+
+## Cierre de CR1-COMP-16 y de la revisión comparativa
+
+```text
+D015 = FROZEN_PASS
+CR1-COMP-01...16 = CLOSED_PASS
+CR1-COMP-16 = CLOSED_PASS
+COMPARATIVE_PROTOCOL_IMPLEMENTATION = COMPLETED
+COMPARATIVE_SCIENTIFIC_REVIEW = CLOSED_PASS
+MANUSCRIPT_IMPLICATIONS = PREPARED_NOT_INSERTED
+FINAL_MANUSCRIPT_EDITED = NO
+SCIENTIFIC_SUFFICIENCY_GATE = NOT_EXECUTED_SEPARATE_POST_CR1_COMP_16_GATE
+NEXT = POST-COMPARATIVE SCIENTIFIC SUFFICIENCY GATE, requiring separate authorization
+```
+
+CR1-COMP-16 tradujo la evidencia congelada a un registro de claims candidatos y a implicaciones separadas para Results, Discussion, Limitations y Conclusions. No recalculó resultados, no editó el manuscrito y no decidió suficiencia científica, campaña multisemilla ni convergencia.
