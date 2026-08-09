@@ -470,10 +470,33 @@ NEXT_COMPARATIVE_PHASE = CR1-COMP-12 — Common terminal-regime analysis
 
 Con anclajes comunes derivados de `P=N_H∪N_C`, C presenta mayor cobertura del espacio objetivo anclado que H para los tres reference points preespecificados. La dirección `C_GT_H` es robusta dentro de esa rejilla de sensibilidad. Este resultado no demuestra proximidad al frente Pareto verdadero, convergencia, superioridad estadística, robustez frente a semillas ni superioridad física integral.
 
+## D014 — Convención documental del horizonte terminal
+
+```text
+CR1_COMP_11_STATUS = CLOSED_PASS
+CR1_COMP_11_FREEZE_STATUS = FROZEN
+CR1_COMP_12_STATUS = BLOCKED_PENDING_D014_FREEZE
+
+D014_STATUS = APPROVED_DOCUMENTED_PENDING_GIT_FREEZE
+TERMINAL_RAW_REPRESENTATION_MISMATCH = H_19P900000000000006_VS_C_19P9
+SCIENTIFIC_TERMINAL_REGIME_DISCREPANCY = NO
+D014_PROTOCOL_V1_MODIFIED = NO
+
+H_DRY_TIME_RAW = 19.900000000000006 h
+C_DRY_TIME_RAW = 19.9 h
+H_TMAX_COUNT = 9
+C_TMAX_COUNT = 9
+
+CR1_COMP_12_RESUMED = NO
+NEXT_STEP = FREEZE_D014_BEFORE_RESUMING_CR1_COMP_12
+```
+
+D014 preserva ambos valores raw y reconoce que documentan el mismo horizonte máximo nominal bajo el régimen terminal común `TMAX`; no declara igualdad floating-point ni introduce tolerancia numérica. CR1-COMP-12 permanece bloqueado y todavía no se registra su conclusión operativa.
+
 ## Siguiente fase
 
 ```text
-NEXT_PHASE = CR1-COMP-12_COMMON_TERMINAL_REGIME_ANALYSIS
+NEXT_PHASE = FREEZE_D014_BEFORE_RESUMING_CR1_COMP_12
 ```
 
-CR1-COMP-12 requiere autorización separada.
+Después del freeze de D014, la reanudación de CR1-COMP-12 requerirá autorización separada.

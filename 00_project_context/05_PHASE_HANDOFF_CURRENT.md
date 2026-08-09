@@ -324,10 +324,32 @@ CR1_COMP_12_COMPUTED = NO
 
 CR1-COMP-11 calculó `HV(N_H)` y `HV(N_C)` con una normalización común derivada de `P=N_H∪N_C`. Inclusión–exclusión 3D y la descomposición independiente por celdas coincidieron dentro del criterio QC. C obtuvo mayor hypervolume en r5, r10 y r20; esta dirección es robusta únicamente dentro de los tres reference points preespecificados y representa cobertura del espacio objetivo anclado, no proximidad al frente verdadero ni superioridad estadística o física integral.
 
+## D014 — Estado documental previo a CR1-COMP-12
+
+```text
+CR1-COMP-11 = CLOSED_PASS / FROZEN
+CR1-COMP-12 = BLOCKED_PENDING_D014_FREEZE
+D014 = APPROVED_DOCUMENTED_PENDING_GIT_FREEZE
+
+BLOCKER_TYPE = DOCUMENTARY_FLOAT_REPRESENTATION_IMPLEMENTATION_ISSUE
+SCIENTIFIC_DISCREPANCY = NO
+
+RAW_H_DRY_TIME = 19.900000000000006 h
+RAW_C_DRY_TIME = 19.9 h
+
+TERMINAL_REGIME_UPSTREAM =
+H: 9/9 TMAX
+C: 9/9 TMAX
+
+NEXT = freeze D014 in Git, then separately authorize resumption of CR1-COMP-12
+```
+
+D014 preserva las representaciones raw, no introduce tolerancia numérica y no modifica el protocolo v1.0. CR1-COMP-12 no fue reanudado y permanece bloqueado hasta el freeze documental de D014.
+
 ## Próxima fase
 
 ```text
-NEXT_PHASE = CR1-COMP-12_COMMON_TERMINAL_REGIME_ANALYSIS
+NEXT_PHASE = FREEZE_D014_BEFORE_RESUMING_CR1_COMP_12
 ```
 
-CR1-COMP-12 no está autorizada y requiere autorización separada.
+Después del freeze de D014, CR1-COMP-12 requerirá autorización separada para reanudarse.

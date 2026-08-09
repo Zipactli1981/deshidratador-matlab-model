@@ -144,3 +144,53 @@ DESCRIPTIVE_RESULTS_COMPUTED_BEFORE_DECISION = NO
 D013 define sólo convenciones de implementación descriptiva. No modifica H, C, el dataset, objetivos, bounds, dominancia, near-tie, coverage, Pareto rank, hypervolume, selección de soluciones ni interpretación física, económica o ambiental. La decisión se congeló después de detectar la omisión y antes de calcular resultados dependientes de `std` o IQR.
 
 **Estado:** VIGENTE.
+
+## D014 — Terminal-horizon documentary representation convention
+
+```text
+DECISION_STATUS = VIGENTE
+CONTEXT = CR1-COMP-12
+
+RAW_VALUES_PRESERVED = YES
+H_DRY_TIME_RAW = 19.900000000000006
+C_DRY_TIME_RAW = 19.9
+RAW_FLOAT_EQUALITY = FALSE
+ABS_RAW_DIFFERENCE_H = 7.105427357601002e-15
+
+TERMINAL_HORIZON_EQUIVALENCE_BASIS =
+COMMON_TMAX_TERMINAL_REGIME_AND_SHARED_NOMINAL_HORIZON
+
+FLOAT_EQUALITY_REQUIRED_FOR_COMMON_HORIZON = NO
+NUMERICAL_TOLERANCE_INTRODUCED = NO
+ROUNDING_APPLIED_TO_RAW_VALUES = NO
+RAW_VALUES_REWRITTEN = NO
+
+NOMINAL_TERMINAL_HORIZON = 19.9 h
+H_TMAX_COUNT = 9
+C_TMAX_COUNT = 9
+
+PROTOCOL_V1_MODIFIED = NO
+PROTOCOL_DEVIATION = NO
+IMPLEMENTATION_CONVENTION = YES
+```
+
+**Fundamento:** el protocolo congelado requiere verificar un horizonte terminal común, no identidad binaria de representaciones floating-point procedentes de serializaciones documentales distintas.
+
+La equivalencia de horizonte se establece por:
+
+1. clasificación terminal común `TMAX`;
+2. mismo horizonte máximo nominal documentado de `19.9 h`;
+3. preservación íntegra de los valores raw de cada fuente.
+
+D014 no declara que `19.900000000000006 == 19.9` como valores floating-point. Declara que ambas representaciones documentan el mismo horizonte terminal nominal bajo el régimen `TMAX` común.
+
+**Alcance científico:** D014 sólo permite concluir, si CR1-COMP-12 verifica posteriormente el resto de condiciones:
+
+```text
+COMPARATIVE_TERMINAL_REGIME = COMMON_TMAX_19P9H
+TEMPORAL_COMPARABILITY = COMMON_FIXED_HORIZON
+```
+
+No permite concluir igualdad de trayectorias térmicas, energía, consumo de GLP, irradiación, agua removida, costo o CO2, ni convergencia del optimizador. No introduce `1e-12`, `eps`, `isclose`, redondeo ni ningún umbral decimal como criterio de equivalencia.
+
+**Estado:** VIGENTE.
