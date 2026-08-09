@@ -544,6 +544,101 @@ INDEPENDENT_QC = PASS
 NEXT_COMPARATIVE_PHASE = CR1-COMP-09_OBJECTIVE_SPACE_GEOMETRY
 ```
 
+## CR1-COMP-09 — Objective-space Geometry
+
+Coordenadas geométricas y ranks:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_09_OBJECTIVE_SPACE_GEOMETRY_v96z.csv
+SHA-256 = AA23DE51FA5F042E65531AFA7F1FE788AC3CC6C233014C8A93E8586D8946D3D6
+Role = 18 native-unit f1/f2/f3 coordinates with frozen joint Pareto ranks
+```
+
+Resumen geométrico:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_09_OBJECTIVE_SPACE_GEOMETRY_SUMMARY_v96z.csv
+SHA-256 = 1B56D53CADFEE52C4FC4180202D9D2933213767546C010DB0145131617D71459
+Role = objective intervals, extrema, ranges, interval-extension flags, projection observations, and evidence classes
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_09_OBJECTIVE_SPACE_GEOMETRY_v96z.json
+SHA-256 = BD23627AAF81BD4231A3D84D819422D3CE93F84EDF0F33995A238DE3CE5651F9
+Role = frozen inputs, native coordinates, ranges, extrema, rank/dominance context, qualitative observations, QC, and exclusions
+```
+
+Audit documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_09_OBJECTIVE_SPACE_GEOMETRY_AUDIT_v96z.md
+SHA-256 = 4FE8033C258BBF27A954296E9632A8CE0E5A63EA957A583C331A268D6F413131
+Role = descriptive finite-set geometry, evidence classes, four-view interpretation, independent QC, limitations, and scope record
+```
+
+Script postrun reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_09_objective_space_geometry_v96z.py
+SHA-256 = B78E1E4FB49148859B64C0AAE65172566549AFA400BA736F456278D38645C70B
+Role = frozen-input gates, CR1-COMP-04 interval identity QC, native-unit geometry tables, and deterministic Pillow figures
+```
+
+Figura f1-f2:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_09_F1_F2_v96z.png
+SHA-256 = 55B2907831EA866125E96E3D497F298F6A91CD85239EFB8C53C72898BFB3EAC2
+Role = all 18 solutions in native f1-f2 coordinates, distinguished by source and Pareto rank
+```
+
+Figura f1-f3:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_09_F1_F3_v96z.png
+SHA-256 = 05EE6663A057F67A381485E549156CB1A0768AD928AC52CFC42C5C5B04EF63AB
+Role = all 18 solutions in native f1-f3 coordinates, distinguished by source and Pareto rank
+```
+
+Figura f2-f3:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_09_F2_F3_v96z.png
+SHA-256 = 572D5126ED046FF3F35B5DC771C20B8D5B814B06A0AA56864231DC0A29F04223
+Role = all 18 solutions in native f2-f3 coordinates, distinguished by source and Pareto rank
+```
+
+Figura 3D f1-f2-f3:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_09_F1_F2_F3_3D_v96z.png
+SHA-256 = 7F58A45414766818E42948B52EECCD98B18EE327BE7C6F3378234B9A176E73AF
+Role = orthographic display of all 18 native objective vectors with source and rank encoding
+```
+
+Nota Git:
+
+```text
+PNG_FILES_MATCH_GLOBAL_GITIGNORE_RULE = YES (*.png)
+FREEZE_REQUIREMENT = EXPLICIT_SELECTIVE_FORCE_ADD_FOR_THE_FOUR_REGISTERED_PNG_FILES
+```
+
+Estado:
+
+```text
+CR1_COMP_09_STATUS = CLOSED_PASS
+OBJECTIVE_GEOMETRY_COMPUTED = YES
+ANALYSIS_DESIGNATION = DESCRIPTIVE_GEOMETRY_OF_FINITE_EVALUATED_SETS
+NEW_EXTREMES_C = NONE
+CROSS_SET_STRUCTURE = PREDOMINANTLY_INCOMPARABLE
+TRADEOFF_RESTRUCTURING_OBSERVED = YES_DESCRIPTIVE_SYNTHESIS
+GEOMETRY_METRIC_NOT_IN_PROTOCOL_INTRODUCED = NO
+INDEPENDENT_QC = PASS
+NEXT_COMPARATIVE_PHASE = CR1-COMP-10_HYPERVOLUME_DECISION_GATE
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c

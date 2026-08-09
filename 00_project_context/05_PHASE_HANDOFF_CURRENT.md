@@ -1,5 +1,5 @@
 # PHASE HANDOFF CURRENT
-## CR1-COMP-08 Joint Exact Nondominated Sorting → CR1-COMP-09 Objective-space Geometry
+## CR1-COMP-09 Objective-space Geometry → CR1-COMP-10 Hypervolume Decision Gate
 
 ## Fases cerradas
 
@@ -55,7 +55,7 @@ No constituyen un frente Pareto corregido.
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_09_OBJECTIVE_SPACE_GEOMETRY_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 ```
@@ -245,10 +245,44 @@ HYPERVOLUME_COMPUTED = NO
 
 El Rank 1 es el conjunto no dominado conjunto de las 18 soluciones evaluadas. Ocho soluciones históricas y siete CORRECTED_R1 permanecen en Rank 1; H05, C06 y C08 forman Rank 2. Este resultado no establece un frente Pareto verdadero, exacto, global o corregido. No se ejecutó geometría objetivo, hypervolume ni ninguna fase posterior.
 
+## CR1-COMP-09 cerrado
+
+```text
+CR1_COMP_09_STATUS = CLOSED_PASS
+OBJECTIVE_GEOMETRY_COMPUTED = YES
+ANALYSIS_DESIGNATION = DESCRIPTIVE_GEOMETRY_OF_FINITE_EVALUATED_SETS
+F1_RANGE_H = 0.1464915338019719
+F1_RANGE_C = 0.08251886009269793
+F1_DELTA_RANGE_C_MINUS_H = -0.06397267370927398
+F2_RANGE_H = 0.10145085302645257
+F2_RANGE_C = 0.08648739344562398
+F2_DELTA_RANGE_C_MINUS_H = -0.014963459580828592
+F3_RANGE_H = 0.2835747323673442
+F3_RANGE_C = 0.23780849103844187
+F3_DELTA_RANGE_C_MINUS_H = -0.045766241328902335
+NEW_EXTREMES_C = NONE
+HISTORICAL_EXTREMES_NOT_REPRODUCED_BY_C = F1_MIN_H09,F1_MAX_H01,F2_MIN_H01,F2_MAX_H09,F3_MIN_H01,F3_MAX_H09
+JOINT_RANK1_H = 8
+JOINT_RANK1_C = 7
+JOINT_RANK2_IDS = H05,C06,C08
+CROSS_SET_STRUCTURE = PREDOMINANTLY_INCOMPARABLE
+TRADEOFF_RESTRUCTURING_OBSERVED = YES_DESCRIPTIVE_SYNTHESIS
+GEOMETRY_METRIC_NOT_IN_PROTOCOL_INTRODUCED = NO
+INDEPENDENT_QC = PASS
+GLOBAL_MINIMUM_VISUALIZATION_SUITE_COMPLETE = NO
+CR1_COMP_10_COMPUTED = NO
+HYPERVOLUME_GATE_COMPUTED = NO
+HYPERVOLUME_COMPUTED = NO
+```
+
+Los intervalos observados de C están contenidos dentro de los intervalos marginales de H y son más estrechos en f1, f2 y f3. La geometría conserva contribuciones Rank 1 de ambos conjuntos y es coherente con una estructura cruzada predominantemente incomparable. `TRADEOFF_RESTRUCTURING_OBSERVED` es una síntesis descriptiva, no una métrica nueva. No se ejecutó el gate formal de hypervolume ni ninguna fase posterior.
+
+Las cuatro figuras PNG están registradas por hash, pero coinciden con la regla global `*.png` de `.gitignore`; cualquier freeze local deberá incorporarlas mediante staging forzado explícito y selectivo.
+
 ## Próxima fase
 
 ```text
-NEXT_PHASE = CR1-COMP-09_OBJECTIVE_SPACE_GEOMETRY
+NEXT_PHASE = CR1-COMP-10_HYPERVOLUME_DECISION_GATE
 ```
 
-CR1-COMP-09 no está autorizada y requiere autorización separada.
+CR1-COMP-10 no está autorizada y requiere autorización separada.

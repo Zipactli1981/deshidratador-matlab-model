@@ -198,7 +198,7 @@ Estado de implementación:
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_09_OBJECTIVE_SPACE_GEOMETRY_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 MATLAB_EXECUTION_AUTHORIZED = NO
@@ -386,10 +386,43 @@ NEXT_COMPARATIVE_PHASE = CR1-COMP-09 — Objective-space geometry
 
 El Rank 1 es el conjunto no dominado conjunto de las 18 soluciones evaluadas, no un frente Pareto verdadero, exacto, global o corregido. El sorting exacto produjo dos capas y fue coherente con las dominancias congeladas de CR1-COMP-02/05/06/07. No se calculó CR1-COMP-09 ni ninguna fase posterior.
 
+Estado cerrado de `CR1-COMP-09`:
+
+```text
+CR1_COMP_09_STATUS = CLOSED_PASS
+OBJECTIVE_GEOMETRY_COMPUTED = YES
+ANALYSIS_DESIGNATION = DESCRIPTIVE_GEOMETRY_OF_FINITE_EVALUATED_SETS
+F1_RANGE_H = 0.1464915338019719
+F1_RANGE_C = 0.08251886009269793
+F1_DELTA_RANGE_C_MINUS_H = -0.06397267370927398
+F2_RANGE_H = 0.10145085302645257
+F2_RANGE_C = 0.08648739344562398
+F2_DELTA_RANGE_C_MINUS_H = -0.014963459580828592
+F3_RANGE_H = 0.2835747323673442
+F3_RANGE_C = 0.23780849103844187
+F3_DELTA_RANGE_C_MINUS_H = -0.045766241328902335
+NEW_EXTREMES_C = NONE
+HISTORICAL_EXTREMES_NOT_REPRODUCED_BY_C = F1_MIN_H09,F1_MAX_H01,F2_MIN_H01,F2_MAX_H09,F3_MIN_H01,F3_MAX_H09
+JOINT_RANK1_H = 8
+JOINT_RANK1_C = 7
+CROSS_SET_STRUCTURE = PREDOMINANTLY_INCOMPARABLE
+TRADEOFF_RESTRUCTURING_OBSERVED = YES_DESCRIPTIVE_SYNTHESIS
+GEOMETRY_METRIC_NOT_IN_PROTOCOL_INTRODUCED = NO
+OBJECTIVE_NORMALIZATION_USED = NO
+GLOBAL_MINIMUM_VISUALIZATION_SUITE_COMPLETE = NO
+INDEPENDENT_QC = PASS
+CR1_COMP_10_COMPUTED = NO
+HYPERVOLUME_GATE_COMPUTED = NO
+HYPERVOLUME_COMPUTED = NO
+NEXT_COMPARATIVE_PHASE = CR1-COMP-10 — Hypervolume decision gate
+```
+
+Los intervalos observados de C son más estrechos y están contenidos dentro de los intervalos marginales de H en los tres objetivos. Esta descripción no se denomina contracción de un frente Pareto. La síntesis de reestructuración del trade-off combina rangos/extremos, desplazamientos de mediana ya congelados, contribuciones Rank 1 de ambos conjuntos y estructura cruzada predominantemente incomparable; no es una nueva métrica geométrica.
+
 ## Siguiente fase
 
 ```text
-NEXT_PHASE = CR1-COMP-09_OBJECTIVE_SPACE_GEOMETRY
+NEXT_PHASE = CR1-COMP-10_HYPERVOLUME_DECISION_GATE
 ```
 
-CR1-COMP-09 requiere autorización separada.
+CR1-COMP-10 requiere autorización separada.

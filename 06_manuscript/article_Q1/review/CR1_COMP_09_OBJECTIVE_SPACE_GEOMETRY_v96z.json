@@ -1,0 +1,544 @@
+{
+  "artifact_role": "CR1_COMP_09_OBJECTIVE_SPACE_GEOMETRY",
+  "cr1_comp_09_status": "CLOSED_PASS",
+  "analysis_designation": "DESCRIPTIVE_GEOMETRY_OF_FINITE_EVALUATED_SETS",
+  "baseline": {
+    "head": "52cefdf4b1656a9f22903124ec4147b6ad671160",
+    "input_baseline_check": "PASS"
+  },
+  "inputs": {
+    "protocol": {
+      "path": "06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md",
+      "sha256": "8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3",
+      "check": "PASS"
+    },
+    "dataset": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_01_CANONICAL_DATASET_v96z.json",
+      "sha256": "4DE32D3292001FC87E7435995E3D9ACC31D51800BA05E2A88BA3B379A95D0164",
+      "check": "PASS"
+    },
+    "objective_descriptive": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_04_OBJECTIVE_SPACE_DESCRIPTIVE_v96z.json",
+      "sha256": "CCA35B4E8983D075E9D3E4834949B2A2F330C5A8C0C5B4D1EA05E935AEE1D75D",
+      "check": "PASS"
+    },
+    "cross_dominance": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_MATRIX_v96z.csv",
+      "sha256": "C783CDD1214598643F1A46F6A6E1EC144220D2BFB2FC8D67F53293A3B7ACC329",
+      "check": "PASS"
+    },
+    "near_tie": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_06_NUMERICAL_NEAR_TIE_SENSITIVITY_v96z.json",
+      "sha256": "227F88AB15A30A812F222E3608BF9512401A8775AA1CFE9886E6288326F6E3FA",
+      "check": "PASS"
+    },
+    "coverage": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_v96z.json",
+      "sha256": "8FA73A67DB5C510F3B0B0E4AEFD31570DC012D807A51608A58A6EE231B401D83",
+      "check": "PASS"
+    },
+    "sorting_csv": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_v96z.csv",
+      "sha256": "0E9AE69495E79648056143E2723B1C985380E3E11350EB6A58D1FCD0422C92A9",
+      "check": "PASS"
+    },
+    "sorting_json": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_v96z.json",
+      "sha256": "59E39670F2E3627A752FE5017394D215C13F5D89770C2BE17924A01268317E54",
+      "check": "PASS"
+    }
+  },
+  "method": {
+    "objective_normalization": "NONE",
+    "new_geometry_metric_introduced": false,
+    "new_threshold_introduced": false,
+    "authorized_numeric_geometry": "MIN_MAX_RANGE_INTERVAL_FLAGS_AND_FROZEN_MEDIAN_SHIFTS_ONLY",
+    "figure_axis_transform": "DISPLAY_COORDINATE_MAPPING_ONLY_NOT_ANALYTICAL_NORMALIZATION"
+  },
+  "coordinates": [
+    {
+      "solution_id": "H01",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.1612259929049299,
+      "f2": 0.18030701050054604,
+      "f3": 0.4043097419600721,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "H02",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.01972677872136952,
+      "f2": 0.23841950853573274,
+      "f3": 0.5714115538663084,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "H03",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.05828075440129852,
+      "f2": 0.19941617063833772,
+      "f3": 0.46413468947681863,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "H04",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.02457691936192455,
+      "f2": 0.22430412334234848,
+      "f3": 0.5332519764143472,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "H05",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.04364029326634516,
+      "f2": 0.21059554013040163,
+      "f3": 0.49516643659138637,
+      "ParetoRank": 2,
+      "is_joint_rank1": false
+    },
+    {
+      "solution_id": "H06",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.1276954984367705,
+      "f2": 0.1833217803871849,
+      "f3": 0.41541905443579263,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "H07",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.07617255010363969,
+      "f2": 0.18737255918970133,
+      "f3": 0.43050206568236915,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "H08",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.017309193030289972,
+      "f2": 0.25205272041996435,
+      "f3": 0.6081095946589916,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "H09",
+      "source": "HIST_R1_REEVAL",
+      "f1": 0.01473445910295798,
+      "f2": 0.2817578635269986,
+      "f3": 0.6878844743274163,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "C01",
+      "source": "CORRECTED_R1",
+      "f1": 0.015163555853391462,
+      "f2": 0.2712071587404825,
+      "f3": 0.6595831664180842,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "C02",
+      "source": "CORRECTED_R1",
+      "f1": 0.0955252717045421,
+      "f2": 0.18471976529485853,
+      "f3": 0.4218617884956555,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "C03",
+      "source": "CORRECTED_R1",
+      "f1": 0.0976824159460894,
+      "f2": 0.18475249104828215,
+      "f3": 0.42177467537964236,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "C04",
+      "source": "CORRECTED_R1",
+      "f1": 0.035509414628851016,
+      "f2": 0.19958292469520714,
+      "f3": 0.4662395996524617,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "C05",
+      "source": "CORRECTED_R1",
+      "f1": 0.028886799370315748,
+      "f2": 0.21733365919792744,
+      "f3": 0.5142727514952378,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "C06",
+      "source": "CORRECTED_R1",
+      "f1": 0.02239970549598287,
+      "f2": 0.2413384494217395,
+      "f3": 0.5790487923268146,
+      "ParetoRank": 2,
+      "is_joint_rank1": false
+    },
+    {
+      "solution_id": "C07",
+      "source": "CORRECTED_R1",
+      "f1": 0.026511805459522943,
+      "f2": 0.22338322638493963,
+      "f3": 0.5306495452737388,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    },
+    {
+      "solution_id": "C08",
+      "source": "CORRECTED_R1",
+      "f1": 0.018219453240328243,
+      "f2": 0.2547257477103099,
+      "f3": 0.6152099405567468,
+      "ParetoRank": 2,
+      "is_joint_rank1": false
+    },
+    {
+      "solution_id": "C09",
+      "source": "CORRECTED_R1",
+      "f1": 0.06592893450793702,
+      "f2": 0.1898535301772997,
+      "f3": 0.43793525200889427,
+      "ParetoRank": 1,
+      "is_joint_rank1": true
+    }
+  ],
+  "objective_intervals": {
+    "f1": {
+      "objective_field": "MR_final",
+      "unit_label": "MR_final (dimensionless)",
+      "H": {
+        "min": 0.01473445910295798,
+        "min_ids": [
+          "H09"
+        ],
+        "max": 0.1612259929049299,
+        "max_ids": [
+          "H01"
+        ],
+        "range": 0.1464915338019719
+      },
+      "C": {
+        "min": 0.015163555853391462,
+        "min_ids": [
+          "C01"
+        ],
+        "max": 0.0976824159460894,
+        "max_ids": [
+          "C03"
+        ],
+        "range": 0.08251886009269793
+      },
+      "delta_range_C_minus_H": -0.06397267370927398,
+      "median_H": 0.04364029326634516,
+      "median_C": 0.028886799370315748,
+      "delta_median_C_minus_H": -0.01475349389602941,
+      "delta_median_percent_C_minus_H": -33.807045718015644,
+      "flags": {
+        "C_EXTENDS_BELOW_H": "NO",
+        "C_EXTENDS_ABOVE_H": "NO",
+        "H_EXTENDS_BELOW_C": "YES",
+        "H_EXTENDS_ABOVE_C": "YES",
+        "C_MIN_LT_H_MIN": "NO",
+        "C_MAX_GT_H_MAX": "NO",
+        "H_MIN_LT_C_MIN": "YES",
+        "H_MAX_GT_C_MAX": "YES"
+      },
+      "range_description": "C_OBSERVED_RANGE_NARROWER",
+      "geometry_consistent_with_descriptive_median_shift": "YES"
+    },
+    "f2": {
+      "objective_field": "cost_specific_USD_per_kgwater",
+      "unit_label": "Specific cost (USD/kg water removed)",
+      "H": {
+        "min": 0.18030701050054604,
+        "min_ids": [
+          "H01"
+        ],
+        "max": 0.2817578635269986,
+        "max_ids": [
+          "H09"
+        ],
+        "range": 0.10145085302645257
+      },
+      "C": {
+        "min": 0.18471976529485853,
+        "min_ids": [
+          "C02"
+        ],
+        "max": 0.2712071587404825,
+        "max_ids": [
+          "C01"
+        ],
+        "range": 0.08648739344562398
+      },
+      "delta_range_C_minus_H": -0.014963459580828592,
+      "median_H": 0.21059554013040163,
+      "median_C": 0.21733365919792744,
+      "delta_median_C_minus_H": 0.006738119067525805,
+      "delta_median_percent_C_minus_H": 3.1995544935821214,
+      "flags": {
+        "C_EXTENDS_BELOW_H": "NO",
+        "C_EXTENDS_ABOVE_H": "NO",
+        "H_EXTENDS_BELOW_C": "YES",
+        "H_EXTENDS_ABOVE_C": "YES",
+        "C_MIN_LT_H_MIN": "NO",
+        "C_MAX_GT_H_MAX": "NO",
+        "H_MIN_LT_C_MIN": "YES",
+        "H_MAX_GT_C_MAX": "YES"
+      },
+      "range_description": "C_OBSERVED_RANGE_NARROWER",
+      "geometry_consistent_with_descriptive_median_shift": "YES"
+    },
+    "f3": {
+      "objective_field": "CO2_specific_kgCO2_per_kgwater",
+      "unit_label": "Specific CO2 (kgCO2/kg water removed; canonical label)",
+      "H": {
+        "min": 0.4043097419600721,
+        "min_ids": [
+          "H01"
+        ],
+        "max": 0.6878844743274163,
+        "max_ids": [
+          "H09"
+        ],
+        "range": 0.2835747323673442
+      },
+      "C": {
+        "min": 0.42177467537964236,
+        "min_ids": [
+          "C03"
+        ],
+        "max": 0.6595831664180842,
+        "max_ids": [
+          "C01"
+        ],
+        "range": 0.23780849103844187
+      },
+      "delta_range_C_minus_H": -0.045766241328902335,
+      "median_H": 0.49516643659138637,
+      "median_C": 0.5142727514952378,
+      "delta_median_C_minus_H": 0.019106314903851396,
+      "delta_median_percent_C_minus_H": 3.8585642103238946,
+      "flags": {
+        "C_EXTENDS_BELOW_H": "NO",
+        "C_EXTENDS_ABOVE_H": "NO",
+        "H_EXTENDS_BELOW_C": "YES",
+        "H_EXTENDS_ABOVE_C": "YES",
+        "C_MIN_LT_H_MIN": "NO",
+        "C_MAX_GT_H_MAX": "NO",
+        "H_MIN_LT_C_MIN": "YES",
+        "H_MAX_GT_C_MAX": "YES"
+      },
+      "range_description": "C_OBSERVED_RANGE_NARROWER",
+      "geometry_consistent_with_descriptive_median_shift": "YES"
+    }
+  },
+  "global_extrema": {
+    "f1": {
+      "min": 0.01473445910295798,
+      "min_ids": [
+        "H09"
+      ],
+      "max": 0.1612259929049299,
+      "max_ids": [
+        "H01"
+      ]
+    },
+    "f2": {
+      "min": 0.18030701050054604,
+      "min_ids": [
+        "H01"
+      ],
+      "max": 0.2817578635269986,
+      "max_ids": [
+        "H09"
+      ]
+    },
+    "f3": {
+      "min": 0.4043097419600721,
+      "min_ids": [
+        "H01"
+      ],
+      "max": 0.6878844743274163,
+      "max_ids": [
+        "H09"
+      ]
+    }
+  },
+  "new_extremes_C": [],
+  "historical_extremes_not_reproduced_by_C": {
+    "f1": {
+      "below_C_interval_ids": [
+        "H09"
+      ],
+      "above_C_interval_ids": [
+        "H01"
+      ]
+    },
+    "f2": {
+      "below_C_interval_ids": [
+        "H01"
+      ],
+      "above_C_interval_ids": [
+        "H09"
+      ]
+    },
+    "f3": {
+      "below_C_interval_ids": [
+        "H01"
+      ],
+      "above_C_interval_ids": [
+        "H09"
+      ]
+    }
+  },
+  "rank_context": {
+    "joint_rank1_H": 8,
+    "joint_rank1_C": 7,
+    "joint_rank2_ids": [
+      "H05",
+      "C06",
+      "C08"
+    ],
+    "C_rank1_contributions": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C07",
+      "C09"
+    ],
+    "H_rank1_contributions_retained": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H06",
+      "H07",
+      "H08",
+      "H09"
+    ],
+    "cross_set_exact_equal_count": 0
+  },
+  "projection_observations": [
+    {
+      "projection": "f1-f2",
+      "evidence_class": "QUALITATIVE_GEOMETRIC_OBSERVATION",
+      "statement": "C occupies narrower marginal intervals nested within H on both axes; frozen medians shift toward lower f1 and higher f2."
+    },
+    {
+      "projection": "f1-f3",
+      "evidence_class": "QUALITATIVE_GEOMETRIC_OBSERVATION",
+      "statement": "C occupies narrower marginal intervals nested within H on both axes; frozen medians shift toward lower f1 and higher f3."
+    },
+    {
+      "projection": "f2-f3",
+      "evidence_class": "QUALITATIVE_GEOMETRIC_OBSERVATION",
+      "statement": "C occupies narrower marginal intervals nested within H on both axes; frozen medians are higher for both f2 and f3."
+    },
+    {
+      "projection": "f1-f2-f3",
+      "evidence_class": "QUALITATIVE_GEOMETRIC_OBSERVATION",
+      "statement": "The clouds are visually interleaved inside shared marginal ranges, while H retains observed low and high marginal extremes in all three objectives."
+    }
+  ],
+  "dominance_and_coverage_context": {
+    "cross_set_structure": "PREDOMINANTLY_INCOMPARABLE",
+    "C_dominates_H_count": 1,
+    "H_dominates_C_count": 2,
+    "incomparable_count": 78,
+    "coverage": {
+      "FULL_COVERAGE_C_OVER_H": 0.1111111111111111,
+      "FULL_COVERAGE_H_OVER_C": 0.2222222222222222,
+      "CORE_COVERAGE_NC_OVER_NH": 0.1111111111111111,
+      "CORE_COVERAGE_NH_OVER_NC": 0.2222222222222222
+    }
+  },
+  "tradeoff_restructuring": {
+    "observed": true,
+    "evidence_class": "DESCRIPTIVE_SYNTHESIS"
+  },
+  "figures": {
+    "f1_f2": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_09_F1_F2_v96z.png",
+      "H_rows": 9,
+      "C_rows": 9,
+      "total_points": 18,
+      "rank2_points": 3,
+      "all_points_included": true
+    },
+    "f1_f3": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_09_F1_F3_v96z.png",
+      "H_rows": 9,
+      "C_rows": 9,
+      "total_points": 18,
+      "rank2_points": 3,
+      "all_points_included": true
+    },
+    "f2_f3": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_09_F2_F3_v96z.png",
+      "H_rows": 9,
+      "C_rows": 9,
+      "total_points": 18,
+      "rank2_points": 3,
+      "all_points_included": true
+    },
+    "f1_f2_f3": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_09_F1_F2_F3_3D_v96z.png",
+      "H_rows": 9,
+      "C_rows": 9,
+      "total_points": 18,
+      "rank2_points": 3,
+      "all_points_included": true
+    }
+  },
+  "global_minimum_visualization_suite_complete": false,
+  "qc": {
+    "independent_qc": "PASS",
+    "coordinate_identity_18": "PASS",
+    "rank_identity_18": "PASS",
+    "cr1_comp_04_interval_identity": "PASS",
+    "rank2_identity": "PASS",
+    "figure_point_counts": "PASS",
+    "no_objective_normalization": "PASS",
+    "upstream_immutability_scope": "PASS",
+    "geometry_csv_sha256": "AA23DE51FA5F042E65531AFA7F1FE788AC3CC6C233014C8A93E8586D8946D3D6",
+    "summary_csv_sha256": "1B56D53CADFEE52C4FC4180202D9D2933213767546C010DB0145131617D71459"
+  },
+  "limitations": [
+    "Finite evaluated-set geometry only; no hull, density, clustering, distance, overlap, interpolation, or threshold metric was introduced.",
+    "Qualitative visual observations are not quantitative metrics and do not establish global superiority, convergence, robustness, causality, or a true Pareto front."
+  ],
+  "not_computed": {
+    "cr1_comp_10": true,
+    "hypervolume_gate": true,
+    "hypervolume": true,
+    "terminal_regime_comparison": true,
+    "objective_decomposition": true,
+    "physical_interpretation": true
+  },
+  "execution": {
+    "MATLAB_executed": false,
+    "objective_evaluations": 0,
+    "replays": 0,
+    "gamultiobj_executions": 0
+  }
+}
