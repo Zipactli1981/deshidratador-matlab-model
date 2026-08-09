@@ -198,7 +198,7 @@ Estado de implementación:
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_03_DECISION_SPACE_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_04_OBJECTIVE_SPACE_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 MATLAB_EXECUTION_AUTHORIZED = NO
@@ -267,12 +267,33 @@ INDEPENDENT_QC = PASS
 NEXT_COMPARATIVE_PHASE = CR1-COMP-04 — Objective-space descriptive analysis
 ```
 
-D013 resolvió las convenciones antes del cálculo. Los resultados son resúmenes descriptivos de conjuntos finitos, no inferencia poblacional, evidencia entre corridas ni conclusión de superioridad multiobjetivo. No se calculó CR1-COMP-04 ni ninguna fase posterior.
+D013 resolvió las convenciones antes del cálculo. Los resultados son resúmenes descriptivos de conjuntos finitos, no inferencia poblacional, evidencia entre corridas ni conclusión de superioridad multiobjetivo.
+
+Estado cerrado de `CR1-COMP-04`:
+
+```text
+CR1_COMP_04_STATUS = CLOSED_PASS
+OBJECTIVE_SPACE_DESCRIPTIVE_ANALYSIS = PASS
+ANALYSIS_DESIGNATION = DESCRIPTIVE_SUMMARIES_OF_FINITE_SOLUTION_SETS
+STD_CONVENTION = POPULATION_DDOF_0
+IQR_CONVENTION = HYNDMAN_FAN_TYPE_7
+F1_DELTA_MEDIAN_C_MINUS_H = -0.01475349389602941
+F1_DELTA_MEDIAN_PERCENT_C_MINUS_H = -33.807045718015644
+F2_DELTA_MEDIAN_C_MINUS_H = 0.006738119067525805
+F2_DELTA_MEDIAN_PERCENT_C_MINUS_H = 3.1995544935821214
+F3_DELTA_MEDIAN_C_MINUS_H = 0.019106314903851396
+F3_DELTA_MEDIAN_PERCENT_C_MINUS_H = 3.8585642103238946
+INDEPENDENT_QC = PASS
+CROSS_DOMINANCE_COMPUTED = NO
+NEXT_COMPARATIVE_PHASE = CR1-COMP-05 — Exact cross-dominance matrix
+```
+
+Los desplazamientos son diferencias numéricas de medianas de dos conjuntos finitos. No constituyen superioridad multiobjetivo, significancia, robustez ni interpretación física, económica o ambiental. No se calculó CR1-COMP-05 ni ninguna fase posterior.
 
 ## Siguiente fase
 
 ```text
-NEXT_PHASE = CR1-COMP-04_OBJECTIVE_SPACE_DESCRIPTIVE_ANALYSIS
+NEXT_PHASE = CR1-COMP-05_EXACT_CROSS_DOMINANCE_MATRIX
 ```
 
-CR1-COMP-04 requiere autorización separada.
+CR1-COMP-05 requiere autorización separada.

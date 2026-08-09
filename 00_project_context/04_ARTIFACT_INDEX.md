@@ -275,6 +275,56 @@ DECISION_SPACE_DESCRIPTIVE_ANALYSIS = PASS
 NEXT_COMPARATIVE_PHASE = CR1-COMP-04_OBJECTIVE_SPACE_DESCRIPTIVE_ANALYSIS
 ```
 
+## CR1-COMP-04 — Objective-space Descriptive Analysis
+
+Script postrun reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_04_objective_space_descriptive_v96z.py
+SHA-256 = 3B0BBA29CE6A3E74D42F08933BF3C6EA60BA94D69C4E182D7649EDA831C22214
+Role = D013-compliant objective-space descriptive analysis and independent QC
+```
+
+Estadísticas por fuente y objetivo:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_04_OBJECTIVE_SPACE_DESCRIPTIVE_v96z.csv
+SHA-256 = 7137EFA8D7A391E4B9615E1CA92717B57D15ADF3792E1AE3C59A85AB908741B5
+Role = six-row complete descriptive summaries and extrema IDs
+```
+
+Comparación descriptiva H/C:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_04_OBJECTIVE_SPACE_COMPARISON_v96z.csv
+SHA-256 = E0CCDEA0FF89B99701B0F15DD8B66193EC5654ED2FE1D11DEC68C99A32B7E21B
+Role = objective median shifts, percent shifts, ranges, population std, and IQR
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_04_OBJECTIVE_SPACE_DESCRIPTIVE_v96z.json
+SHA-256 = CCA35B4E8983D075E9D3E4834949B2A2F330C5A8C0C5B4D1EA05E935AEE1D75D
+Role = baseline, input, D013, summaries, comparison, extrema, limitations, exclusions, and QC
+```
+
+Audit documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_04_OBJECTIVE_SPACE_DESCRIPTIVE_AUDIT_v96z.md
+SHA-256 = 93ADA26DF210E0DC8CF4CD2E85EB6CF1A13D537F4973EF62AD6C68AA2957AAB2
+Role = canonical CR1-COMP-04 methodology, results, limitations, hashes, and scope record
+```
+
+Estado:
+
+```text
+CR1_COMP_04_STATUS = CLOSED_PASS
+OBJECTIVE_SPACE_DESCRIPTIVE_ANALYSIS = PASS
+NEXT_COMPARATIVE_PHASE = CR1-COMP-05_EXACT_CROSS_DOMINANCE_MATRIX
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c

@@ -1,5 +1,5 @@
 # PHASE HANDOFF CURRENT
-## CR1-COMP-03 Decision-space Descriptive Analysis → CR1-COMP-04 Objective-space Descriptive Analysis
+## CR1-COMP-04 Objective-space Descriptive Analysis → CR1-COMP-05 Exact Cross-dominance Matrix
 
 ## Fases cerradas
 
@@ -55,7 +55,7 @@ No constituyen un frente Pareto corregido.
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_03_DECISION_SPACE_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_04_OBJECTIVE_SPACE_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 ```
@@ -141,12 +141,30 @@ PROTOCOL_V1_MODIFIED = NO
 CR1_COMP_04_COMPUTED = NO
 ```
 
-CR1-COMP-01 y CR1-COMP-02 permanecen `CLOSED_PASS`. CR1-COMP-03 produjo únicamente resúmenes descriptivos del espacio de decisión de los conjuntos finitos H y C. No se analizaron objetivos ni se ejecutó ninguna fase posterior.
+CR1-COMP-01 y CR1-COMP-02 permanecen `CLOSED_PASS`. CR1-COMP-03 produjo únicamente resúmenes descriptivos del espacio de decisión de los conjuntos finitos H y C.
+
+## CR1-COMP-04 cerrado
+
+```text
+CR1_COMP_04_STATUS = CLOSED_PASS
+OBJECTIVE_SPACE_DESCRIPTIVE_ANALYSIS = PASS
+ANALYSIS_DESIGNATION = DESCRIPTIVE_SUMMARIES_OF_FINITE_SOLUTION_SETS
+H_ROWS = 9
+C_ROWS = 9
+OBJECTIVE_COUNT = 3
+ALL_F_VALUES_FINITE = YES
+PENALTY_ROWS_INCLUDED = NO
+INDEPENDENT_QC = PASS
+CROSS_DOMINANCE_COMPUTED = NO
+CR1_COMP_05_COMPUTED = NO
+```
+
+CR1-COMP-04 realizó únicamente caracterización descriptiva del espacio de objetivos bajo D013. Los desplazamientos de medianas no son afirmaciones de superioridad multiobjetivo. No se realizó dominancia cruzada ni ninguna fase posterior.
 
 ## Próxima fase
 
 ```text
-NEXT_PHASE = CR1-COMP-04_OBJECTIVE_SPACE_DESCRIPTIVE_ANALYSIS
+NEXT_PHASE = CR1-COMP-05_EXACT_CROSS_DOMINANCE_MATRIX
 ```
 
-CR1-COMP-04 no está autorizada y requiere autorización separada.
+CR1-COMP-05 no está autorizada y requiere autorización separada.

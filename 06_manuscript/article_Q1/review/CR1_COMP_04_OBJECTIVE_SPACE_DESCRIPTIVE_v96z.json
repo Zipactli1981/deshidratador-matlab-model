@@ -1,0 +1,276 @@
+{
+  "artifact_role": "CR1_COMP_04_OBJECTIVE_SPACE_DESCRIPTIVE_ANALYSIS",
+  "cr1_comp_04_status": "CLOSED_PASS",
+  "analysis_designation": "DESCRIPTIVE_SUMMARIES_OF_FINITE_SOLUTION_SETS",
+  "baseline": {
+    "head": "354a9d40dc9803761e26910d306d14574dfa4f98",
+    "input_baseline_check": "PASS"
+  },
+  "input": {
+    "path": "06_manuscript/article_Q1/review/CR1_COMP_01_CANONICAL_DATASET_v96z.json",
+    "sha256": "4DE32D3292001FC87E7435995E3D9ACC31D51800BA05E2A88BA3B379A95D0164",
+    "sha256_check": "PASS",
+    "D1_H_f2_f3_limitation": "VIGENTE"
+  },
+  "conventions": {
+    "decision": "D013",
+    "std": "POPULATION_DDOF_0",
+    "std_formula": "sqrt(sum((x_i-mean(x))^2)/n)",
+    "IQR": "HYNDMAN_FAN_TYPE_7",
+    "quantile_formula": "h=1+(n-1)p; linear interpolation",
+    "delta_median": "median_C-median_H",
+    "delta_median_percent": "100*(median_C-median_H)/median_H",
+    "percent_sign": "negative=C lower median; positive=C higher median",
+    "objective_direction": "MINIMIZE_ALL_THREE",
+    "objective_normalization": "NONE"
+  },
+  "summaries": [
+    {
+      "source": "HIST_R1_REEVAL",
+      "objective": "MR_final",
+      "unit": "dimensionless",
+      "direction": "minimize",
+      "n": 9,
+      "min": 0.01473445910295798,
+      "min_solution_id": "H09",
+      "max": 0.1612259929049299,
+      "max_solution_id": "H01",
+      "mean": 0.060373604369947306,
+      "median": 0.04364029326634516,
+      "std": 0.04956306229815267,
+      "std_convention": "POPULATION_DDOF_0",
+      "q1": 0.01972677872136952,
+      "q3": 0.07617255010363969,
+      "IQR": 0.056445771382270166,
+      "quartile_convention": "HYNDMAN_FAN_TYPE_7",
+      "range": 0.1464915338019719
+    },
+    {
+      "source": "HIST_R1_REEVAL",
+      "objective": "cost_specific_USD_per_kgwater",
+      "unit": "USD/kgwater",
+      "direction": "minimize",
+      "n": 9,
+      "min": 0.18030701050054604,
+      "min_solution_id": "H01",
+      "max": 0.2817578635269986,
+      "max_solution_id": "H09",
+      "mean": 0.21750525296346843,
+      "median": 0.21059554013040163,
+      "std": 0.03272904503652415,
+      "std_convention": "POPULATION_DDOF_0",
+      "q1": 0.18737255918970133,
+      "q3": 0.23841950853573274,
+      "IQR": 0.051046949346031406,
+      "quartile_convention": "HYNDMAN_FAN_TYPE_7",
+      "range": 0.10145085302645257
+    },
+    {
+      "source": "HIST_R1_REEVAL",
+      "objective": "CO2_specific_kgCO2_per_kgwater",
+      "unit": "kgCO2/kgwater",
+      "direction": "minimize",
+      "n": 9,
+      "min": 0.4043097419600721,
+      "min_solution_id": "H01",
+      "max": 0.6878844743274163,
+      "max_solution_id": "H09",
+      "mean": 0.512243287490389,
+      "median": 0.49516643659138637,
+      "std": 0.09085684090882361,
+      "std_convention": "POPULATION_DDOF_0",
+      "q1": 0.43050206568236915,
+      "q3": 0.5714115538663084,
+      "IQR": 0.14090948818393922,
+      "quartile_convention": "HYNDMAN_FAN_TYPE_7",
+      "range": 0.2835747323673442
+    },
+    {
+      "source": "CORRECTED_R1",
+      "objective": "MR_final",
+      "unit": "dimensionless",
+      "direction": "minimize",
+      "n": 9,
+      "min": 0.015163555853391462,
+      "min_solution_id": "C01",
+      "max": 0.0976824159460894,
+      "max_solution_id": "C03",
+      "mean": 0.04509192846744009,
+      "median": 0.028886799370315748,
+      "std": 0.03086869764934298,
+      "std_convention": "POPULATION_DDOF_0",
+      "q1": 0.02239970549598287,
+      "q3": 0.06592893450793702,
+      "IQR": 0.04352922901195415,
+      "quartile_convention": "HYNDMAN_FAN_TYPE_7",
+      "range": 0.08251886009269793
+    },
+    {
+      "source": "CORRECTED_R1",
+      "objective": "cost_specific_USD_per_kgwater",
+      "unit": "USD/kgwater",
+      "direction": "minimize",
+      "n": 9,
+      "min": 0.18471976529485853,
+      "min_solution_id": "C02",
+      "max": 0.2712071587404825,
+      "max_solution_id": "C01",
+      "mean": 0.2185441058523385,
+      "median": 0.21733365919792744,
+      "std": 0.02999186460633553,
+      "std_convention": "POPULATION_DDOF_0",
+      "q1": 0.1898535301772997,
+      "q3": 0.2413384494217395,
+      "IQR": 0.05148491924443979,
+      "quartile_convention": "HYNDMAN_FAN_TYPE_7",
+      "range": 0.08648739344562398
+    },
+    {
+      "source": "CORRECTED_R1",
+      "objective": "CO2_specific_kgCO2_per_kgwater",
+      "unit": "kgCO2/kgwater",
+      "direction": "minimize",
+      "n": 9,
+      "min": 0.42177467537964236,
+      "min_solution_id": "C03",
+      "max": 0.6595831664180842,
+      "max_solution_id": "C01",
+      "mean": 0.516286167956364,
+      "median": 0.5142727514952378,
+      "std": 0.08230118179233056,
+      "std_convention": "POPULATION_DDOF_0",
+      "q1": 0.43793525200889427,
+      "q3": 0.5790487923268146,
+      "IQR": 0.14111354031792034,
+      "quartile_convention": "HYNDMAN_FAN_TYPE_7",
+      "range": 0.23780849103844187
+    }
+  ],
+  "comparison": [
+    {
+      "objective": "MR_final",
+      "unit": "dimensionless",
+      "median_H": 0.04364029326634516,
+      "median_C": 0.028886799370315748,
+      "delta_median_C_minus_H": -0.01475349389602941,
+      "delta_median_percent_C_minus_H": -33.807045718015644,
+      "min_H": 0.01473445910295798,
+      "min_C": 0.015163555853391462,
+      "range_H": 0.1464915338019719,
+      "range_C": 0.08251886009269793,
+      "std_H": 0.04956306229815267,
+      "std_C": 0.03086869764934298,
+      "IQR_H": 0.056445771382270166,
+      "IQR_C": 0.04352922901195415
+    },
+    {
+      "objective": "cost_specific_USD_per_kgwater",
+      "unit": "USD/kgwater",
+      "median_H": 0.21059554013040163,
+      "median_C": 0.21733365919792744,
+      "delta_median_C_minus_H": 0.006738119067525805,
+      "delta_median_percent_C_minus_H": 3.1995544935821214,
+      "min_H": 0.18030701050054604,
+      "min_C": 0.18471976529485853,
+      "range_H": 0.10145085302645257,
+      "range_C": 0.08648739344562398,
+      "std_H": 0.03272904503652415,
+      "std_C": 0.02999186460633553,
+      "IQR_H": 0.051046949346031406,
+      "IQR_C": 0.05148491924443979
+    },
+    {
+      "objective": "CO2_specific_kgCO2_per_kgwater",
+      "unit": "kgCO2/kgwater",
+      "median_H": 0.49516643659138637,
+      "median_C": 0.5142727514952378,
+      "delta_median_C_minus_H": 0.019106314903851396,
+      "delta_median_percent_C_minus_H": 3.8585642103238946,
+      "min_H": 0.4043097419600721,
+      "min_C": 0.42177467537964236,
+      "range_H": 0.2835747323673442,
+      "range_C": 0.23780849103844187,
+      "std_H": 0.09085684090882361,
+      "std_C": 0.08230118179233056,
+      "IQR_H": 0.14090948818393922,
+      "IQR_C": 0.14111354031792034
+    }
+  ],
+  "extrema": {
+    "HIST_R1_REEVAL": {
+      "MR_final": {
+        "min_solution_ids": [
+          "H09"
+        ],
+        "min_value": 0.01473445910295798
+      },
+      "cost_specific_USD_per_kgwater": {
+        "min_solution_ids": [
+          "H01"
+        ],
+        "min_value": 0.18030701050054604
+      },
+      "CO2_specific_kgCO2_per_kgwater": {
+        "min_solution_ids": [
+          "H01"
+        ],
+        "min_value": 0.4043097419600721
+      }
+    },
+    "CORRECTED_R1": {
+      "MR_final": {
+        "min_solution_ids": [
+          "C01"
+        ],
+        "min_value": 0.015163555853391462
+      },
+      "cost_specific_USD_per_kgwater": {
+        "min_solution_ids": [
+          "C02"
+        ],
+        "min_value": 0.18471976529485853
+      },
+      "CO2_specific_kgCO2_per_kgwater": {
+        "min_solution_ids": [
+          "C03"
+        ],
+        "min_value": 0.42177467537964236
+      }
+    }
+  },
+  "qc": {
+    "H_rows": 9,
+    "C_rows": 9,
+    "objective_count": 3,
+    "all_F_values_finite": true,
+    "penalty_rows_included": false,
+    "independent_qc": "PASS",
+    "range_identity": "PASS",
+    "IQR_identity": "PASS",
+    "delta_percent_sign_identity": "PASS",
+    "descriptive_csv_sha256": "7137EFA8D7A391E4B9615E1CA92717B57D15ADF3792E1AE3C59A85AB908741B5",
+    "comparison_csv_sha256": "E0CCDEA0FF89B99701B0F15DD8B66193EC5654ED2FE1D11DEC68C99A32B7E21B"
+  },
+  "limitations": [
+    "Finite solution-set summaries only; points are not independent replicates.",
+    "No superiority, Pareto improvement, significance, robustness, convergence, stochastic-performance, or causal claim.",
+    "D1 documentary-recovery limitation remains applicable to H.f2/f3."
+  ],
+  "not_computed": {
+    "cr1_comp_05": true,
+    "cross_dominance": true,
+    "near_tie": true,
+    "numeric_fragility": true,
+    "coverage": true,
+    "joint_sorting": true,
+    "hypervolume": true,
+    "figures": true,
+    "hypothesis_tests": true
+  },
+  "execution": {
+    "MATLAB_executed": false,
+    "objective_evaluations": 0,
+    "replays": 0,
+    "gamultiobj_executions": 0
+  }
+}
