@@ -456,3 +456,16 @@ NEXT = CR1-COMP-16 — Manuscript implications, requiring separate authorization
 ```
 
 CR1-COMP-15 congeló un vector de 25 campos y un veredicto narrativo integrado. No usa clasificación A/B/C/D, score compuesto ni una métrica decisiva única. CR1-COMP-16 permanece sin ejecutar y requiere autorización separada.
+
+## D015 — Fuente canónica del veredicto completo
+
+```text
+CR1-COMP-15 = CLOSED_PASS / FROZEN
+D015 = APPROVED_DOCUMENTED_PENDING_GIT_FREEZE
+CR1-COMP-16 = BLOCKED_PENDING_D015_FREEZE
+BLOCKER_TYPE = DOCUMENTARY_VERDICT_SOURCE_IDENTITY
+CR1_COMP_15_SCIENTIFIC_DISCREPANCY = NO
+FULL_VERDICT_SOURCE = CR1_COMP_15_QUANTITATIVE_COMPARATIVE_VERDICT_v96z.json
+HANDOFF_VERDICT_ROLE = CONDENSED_HANDOFF_SUMMARY
+NEXT = freeze D015, then resume CR1-COMP-16 under D015
+```

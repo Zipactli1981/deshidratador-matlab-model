@@ -608,3 +608,15 @@ NEXT_COMPARATIVE_PHASE = CR1-COMP-16 — Manuscript implications, requiring sepa
 ```
 
 El veredicto es una síntesis cuantitativa narrativa, no una clase formal ni una puntuación global. La mayor cobertura H-sobre-C, el mayor hypervolume anclado de C, la supervivencia Rank 1 de ambos conjuntos, la ausencia de nuevos extremos C y la predominancia de incomparabilidad se conservan simultáneamente; ninguna métrica se adopta como decisiva por sí sola.
+
+## D015 — Fuente canónica del veredicto completo CR1-COMP-15
+
+```text
+D015_STATUS = APPROVED_DOCUMENTED_PENDING_GIT_FREEZE
+CR1_COMP_15_FULL_VERDICT_SOURCE = CR1_COMP_15_QUANTITATIVE_COMPARATIVE_VERDICT_v96z.json
+CR1_COMP_15_JSON_AUDIT_VERDICT_IDENTITY = PASS
+CURRENT_STATE_VERDICT_ROLE = CONDENSED_STATE_SUMMARY
+CR1_COMP_16_STATUS = BLOCKED_PENDING_D015_FREEZE
+CR1_COMP_16_RESUMED = NO
+NEXT_STEP = FREEZE_D015_THEN_RESUME_CR1_COMP_16
+```
