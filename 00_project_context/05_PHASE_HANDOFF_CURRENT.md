@@ -541,3 +541,31 @@ NONBLOCKING_HOUSEKEEPING = PROJECT_CHARTER historical status paragraph
 
 NEXT = MANUSCRIPT_READY_GATE, requiring separate authorization
 ```
+
+## D018 — Handoff de readiness condicional del manuscrito
+
+```text
+D017 = FROZEN_PASS
+D018 = VIGENTE
+D018_FREEZE_ROLE = FROZEN_BY_THIS_CANONICAL_COMMIT
+MANUSCRIPT_READY_GATE = PASS
+MANUSCRIPT_READY = CONDITIONAL
+INTERNAL_MANUSCRIPT_SCIENTIFIC_READINESS = CONDITIONAL_PASS_FOR_CONTROLLED_EDITORIAL_PHASE
+CANONICAL_MANUSCRIPT_SOURCE_STATUS = UNAMBIGUOUS
+CANONICAL_MANUSCRIPT_SOURCE = 06_manuscript/article_Q1/draft_sections/MASTER_manuscript_v01.md
+SCIENTIFIC_BLOCKERS = NONE_WITHIN_FROZEN_LIMITED_SCOPE
+EDITORIAL_CONDITIONS = 10
+CLAIMS_MAPPED = 40
+QUALIFIERS_MAPPED = 16
+MAIN_TABLES_SELECTED = 2
+SUPPLEMENT_TABLES_SELECTED = 4
+MAIN_FIGURES_SELECTED = 1
+SUPPLEMENT_FIGURES_SELECTED = 3
+SCIENTIFIC_SOURCE_MISSING_COUNT = 0
+FINAL_MANUSCRIPT_EDITED = NO
+CONTROLLED_MANUSCRIPT_EDITORIAL_INSERTION_EXECUTED = NO
+NEXT = CONTROLLED_MANUSCRIPT_EDITORIAL_INSERTION, requiring separate authorization
+FUTURE_SEPARATE_GATES = literature positioning; novelty positioning; submission readiness
+```
+
+D018 freezes the conditional-readiness decision and its controlled editorial blueprint. It does not authorize or execute manuscript insertion, table or figure conversion, literature/novelty assessment, submission preparation, scientific recomputation, or remote Git operations.
