@@ -1,0 +1,353 @@
+{
+  "artifact_role": "CR1_COMP_12_COMMON_TERMINAL_REGIME",
+  "cr1_comp_12_status": "CLOSED_PASS",
+  "baseline": {
+    "head": "d3f202db57e98c848b942a8a50fc020a37caaf59",
+    "input_baseline_check": "PASS"
+  },
+  "protocol": {
+    "path": "06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md",
+    "version": "v1.0",
+    "sha256": "8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3",
+    "sha256_check": "PASS",
+    "modified": false
+  },
+  "D014": {
+    "status": "FROZEN_PASS",
+    "decision_status": "VIGENTE",
+    "commit": "d3f202db57e98c848b942a8a50fc020a37caaf59",
+    "commit_check": "PASS",
+    "implementation_convention": true,
+    "protocol_deviation": false,
+    "application_check": "PASS",
+    "terminal_horizon_equivalence_basis": "COMMON_TMAX_TERMINAL_REGIME_AND_SHARED_NOMINAL_HORIZON",
+    "float_equality_required_for_common_horizon": false,
+    "numerical_tolerance_introduced": false,
+    "rounding_applied_to_raw_values": false,
+    "raw_values_rewritten": false
+  },
+  "upstream_sources": {
+    "historical_terminal_source": {
+      "path": "06_manuscript/article_Q1/review/COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md",
+      "sha256": "7C025689D5832CBA9ECB8D90E9A4A5D5E911A46B0109C6D1C270E19E7E8EBFB2",
+      "sha256_check": "PASS"
+    },
+    "corrected_terminal_source": {
+      "path": "06_manuscript/article_Q1/review/CORRECTED_R1_POSTRUN_INTERNAL_AUDIT_v96z.md",
+      "sha256": "40C2F40B2FFE9DEB3B3318453DA0DDE3AD37358101DFB3CAA1C322EB0A8DE3F4",
+      "sha256_check": "PASS"
+    }
+  },
+  "records": [
+    {
+      "solution_id": "H01",
+      "source": "HIST_R1_REEVAL",
+      "dry_time_h_raw": "19.900000000000006",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "RECORDED_TMAX_AND_DRY_TIME_IN_HISTORICAL_REEVALUATION_MEMO",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "H02",
+      "source": "HIST_R1_REEVAL",
+      "dry_time_h_raw": "19.900000000000006",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "RECORDED_TMAX_AND_DRY_TIME_IN_HISTORICAL_REEVALUATION_MEMO",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "H03",
+      "source": "HIST_R1_REEVAL",
+      "dry_time_h_raw": "19.900000000000006",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "RECORDED_TMAX_AND_DRY_TIME_IN_HISTORICAL_REEVALUATION_MEMO",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "H04",
+      "source": "HIST_R1_REEVAL",
+      "dry_time_h_raw": "19.900000000000006",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "RECORDED_TMAX_AND_DRY_TIME_IN_HISTORICAL_REEVALUATION_MEMO",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "H05",
+      "source": "HIST_R1_REEVAL",
+      "dry_time_h_raw": "19.900000000000006",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "RECORDED_TMAX_AND_DRY_TIME_IN_HISTORICAL_REEVALUATION_MEMO",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "H06",
+      "source": "HIST_R1_REEVAL",
+      "dry_time_h_raw": "19.900000000000006",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "RECORDED_TMAX_AND_DRY_TIME_IN_HISTORICAL_REEVALUATION_MEMO",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "H07",
+      "source": "HIST_R1_REEVAL",
+      "dry_time_h_raw": "19.900000000000006",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "RECORDED_TMAX_AND_DRY_TIME_IN_HISTORICAL_REEVALUATION_MEMO",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "H08",
+      "source": "HIST_R1_REEVAL",
+      "dry_time_h_raw": "19.900000000000006",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "RECORDED_TMAX_AND_DRY_TIME_IN_HISTORICAL_REEVALUATION_MEMO",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "H09",
+      "source": "HIST_R1_REEVAL",
+      "dry_time_h_raw": "19.900000000000006",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "RECORDED_TMAX_AND_DRY_TIME_IN_HISTORICAL_REEVALUATION_MEMO",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "C01",
+      "source": "CORRECTED_R1",
+      "dry_time_h_raw": "19.9",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "TMAX_INFERRED_FROM_DRY_TIME_BECAUSE_OBJECTIVE_DETAIL_DOES_NOT_PROPAGATE_STATUS",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/CORRECTED_R1_POSTRUN_INTERNAL_AUDIT_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "C02",
+      "source": "CORRECTED_R1",
+      "dry_time_h_raw": "19.9",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "TMAX_INFERRED_FROM_DRY_TIME_BECAUSE_OBJECTIVE_DETAIL_DOES_NOT_PROPAGATE_STATUS",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/CORRECTED_R1_POSTRUN_INTERNAL_AUDIT_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "C03",
+      "source": "CORRECTED_R1",
+      "dry_time_h_raw": "19.9",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "TMAX_INFERRED_FROM_DRY_TIME_BECAUSE_OBJECTIVE_DETAIL_DOES_NOT_PROPAGATE_STATUS",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/CORRECTED_R1_POSTRUN_INTERNAL_AUDIT_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "C04",
+      "source": "CORRECTED_R1",
+      "dry_time_h_raw": "19.9",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "TMAX_INFERRED_FROM_DRY_TIME_BECAUSE_OBJECTIVE_DETAIL_DOES_NOT_PROPAGATE_STATUS",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/CORRECTED_R1_POSTRUN_INTERNAL_AUDIT_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "C05",
+      "source": "CORRECTED_R1",
+      "dry_time_h_raw": "19.9",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "TMAX_INFERRED_FROM_DRY_TIME_BECAUSE_OBJECTIVE_DETAIL_DOES_NOT_PROPAGATE_STATUS",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/CORRECTED_R1_POSTRUN_INTERNAL_AUDIT_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "C06",
+      "source": "CORRECTED_R1",
+      "dry_time_h_raw": "19.9",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "TMAX_INFERRED_FROM_DRY_TIME_BECAUSE_OBJECTIVE_DETAIL_DOES_NOT_PROPAGATE_STATUS",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/CORRECTED_R1_POSTRUN_INTERNAL_AUDIT_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "C07",
+      "source": "CORRECTED_R1",
+      "dry_time_h_raw": "19.9",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "TMAX_INFERRED_FROM_DRY_TIME_BECAUSE_OBJECTIVE_DETAIL_DOES_NOT_PROPAGATE_STATUS",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/CORRECTED_R1_POSTRUN_INTERNAL_AUDIT_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "C08",
+      "source": "CORRECTED_R1",
+      "dry_time_h_raw": "19.9",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "TMAX_INFERRED_FROM_DRY_TIME_BECAUSE_OBJECTIVE_DETAIL_DOES_NOT_PROPAGATE_STATUS",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/CORRECTED_R1_POSTRUN_INTERNAL_AUDIT_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "solution_id": "C09",
+      "source": "CORRECTED_R1",
+      "dry_time_h_raw": "19.9",
+      "nominal_terminal_horizon_h": "19.9",
+      "termination_class": "TMAX",
+      "termination_evidence_basis": "TMAX_INFERRED_FROM_DRY_TIME_BECAUSE_OBJECTIVE_DETAIL_DOES_NOT_PROPAGATE_STATUS",
+      "termination_source_artifact": "06_manuscript/article_Q1/review/CORRECTED_R1_POSTRUN_INTERNAL_AUDIT_v96z.md",
+      "is_tmax": "YES",
+      "is_normal_termination": "NO",
+      "common_nominal_horizon_under_D014": "YES"
+    }
+  ],
+  "summaries": [
+    {
+      "source": "H",
+      "solution_count": "9",
+      "tmax_count": "9",
+      "normal_termination_count": "0",
+      "dry_time_raw_min_h": "19.900000000000006",
+      "dry_time_raw_max_h": "19.900000000000006",
+      "dry_time_raw_unique_count": "1",
+      "nominal_terminal_horizon_h": "19.9",
+      "all_tmax": "YES",
+      "common_nominal_horizon_under_D014": "YES"
+    },
+    {
+      "source": "C",
+      "solution_count": "9",
+      "tmax_count": "9",
+      "normal_termination_count": "0",
+      "dry_time_raw_min_h": "19.9",
+      "dry_time_raw_max_h": "19.9",
+      "dry_time_raw_unique_count": "1",
+      "nominal_terminal_horizon_h": "19.9",
+      "all_tmax": "YES",
+      "common_nominal_horizon_under_D014": "YES"
+    }
+  ],
+  "metrics": {
+    "H_ROWS": 9,
+    "C_ROWS": 9,
+    "TOTAL_POINTS": 18,
+    "H_TMAX_COUNT": 9,
+    "C_TMAX_COUNT": 9,
+    "H_NORMAL_TERMINATION_COUNT": 0,
+    "C_NORMAL_TERMINATION_COUNT": 0,
+    "H_DRY_TIME_RAW_MIN": "19.900000000000006",
+    "H_DRY_TIME_RAW_MAX": "19.900000000000006",
+    "H_DRY_TIME_RAW_UNIQUE_COUNT": 1,
+    "C_DRY_TIME_RAW_MIN": "19.9",
+    "C_DRY_TIME_RAW_MAX": "19.9",
+    "C_DRY_TIME_RAW_UNIQUE_COUNT": 1,
+    "RAW_DRY_TIME_VALUES_IDENTICAL": "NO",
+    "DOCUMENTARY_FLOAT_REPRESENTATION_MISMATCH": "YES",
+    "SCIENTIFIC_TERMINAL_REGIME_DISCREPANCY": "NO",
+    "NOMINAL_TERMINAL_HORIZON": "19.9 h",
+    "H_COMMON_NOMINAL_19P9H_UNDER_D014": "YES",
+    "C_COMMON_NOMINAL_19P9H_UNDER_D014": "YES"
+  },
+  "gate_evaluation": {
+    "A_H_TMAX_COUNT_EQUALS_9": true,
+    "B_C_TMAX_COUNT_EQUALS_9": true,
+    "C_H_COMMON_NOMINAL_19P9H_UNDER_D014": true,
+    "D_C_COMMON_NOMINAL_19P9H_UNDER_D014": true,
+    "raw_float_equality_required": false,
+    "all_gate_terms_pass": true
+  },
+  "COMPARATIVE_TERMINAL_REGIME": "COMMON_TMAX_19P9H",
+  "TEMPORAL_COMPARABILITY": "COMMON_FIXED_HORIZON",
+  "TERMINAL_REGIME_LIMITATION": "FIXED_HORIZON_NOT_FREE_NORMAL_TERMINATION",
+  "C_TERMINATION_EVIDENCE_LIMITATION": "TMAX_INFERRED_FROM_DRY_TIME_BECAUSE_OBJECTIVE_DETAIL_DOES_NOT_PROPAGATE_STATUS",
+  "interpretation": [
+    "Los 18 puntos evaluados comparten un régimen terminal TMAX bajo el horizonte nominal fijo de 19.9 h.",
+    "Las diferencias H-vs-C en f1/f2/f3 no se explican por una diferencia trivial del horizonte terminal nominal entre conjuntos."
+  ],
+  "qc": {
+    "upstream_hash_checks": "PASS",
+    "upstream_consistency_check": "PASS",
+    "H_terminal_upstream_consistency": "PASS",
+    "C_terminal_upstream_consistency": "PASS",
+    "H_dry_time_upstream_consistency": "PASS",
+    "C_dry_time_upstream_consistency": "PASS",
+    "D014_application_check": "PASS",
+    "raw_values_preserved_check": "PASS",
+    "no_numerical_tolerance_check": "PASS",
+    "independent_qc": "PASS"
+  },
+  "termination_concept_separation": {
+    "optimizer_termination": "CORRECTED_R1_MAXGENERATIONS_NOT_PART_OF_PHYSICAL_GATE",
+    "physical_simulation_termination": "H_AND_C_TMAX_AT_NOMINAL_19P9H"
+  },
+  "not_executed": {
+    "CR1_COMP_13_computed": false,
+    "objective_decomposition_computed": false,
+    "MATLAB_executed": false,
+    "objective_evaluations": 0,
+    "replays": 0,
+    "gamultiobj_executions": 0,
+    "new_optimization_runs": 0
+  },
+  "scope_integrity": {
+    "protocol_v1_file_modified": false,
+    "productive_code_modified": false,
+    "decision_log_modified": false
+  },
+  "next_recommended_step": "CR1-COMP-13 — Objective decomposition; separate authorization required"
+}

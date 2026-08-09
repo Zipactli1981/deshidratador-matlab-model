@@ -470,33 +470,43 @@ NEXT_COMPARATIVE_PHASE = CR1-COMP-12 — Common terminal-regime analysis
 
 Con anclajes comunes derivados de `P=N_H∪N_C`, C presenta mayor cobertura del espacio objetivo anclado que H para los tres reference points preespecificados. La dirección `C_GT_H` es robusta dentro de esa rejilla de sensibilidad. Este resultado no demuestra proximidad al frente Pareto verdadero, convergencia, superioridad estadística, robustez frente a semillas ni superioridad física integral.
 
-## D014 — Convención documental del horizonte terminal
+## CR1-COMP-12 cerrado bajo D014 congelada
 
 ```text
 CR1_COMP_11_STATUS = CLOSED_PASS
 CR1_COMP_11_FREEZE_STATUS = FROZEN
-CR1_COMP_12_STATUS = BLOCKED_PENDING_D014_FREEZE
+CR1_COMP_12_STATUS = CLOSED_PASS
 
-D014_STATUS = APPROVED_DOCUMENTED_PENDING_GIT_FREEZE
+D014_STATUS = FROZEN_PASS
+TERMINAL_REGIME_BOTH_SETS_CHECKED = YES
 TERMINAL_RAW_REPRESENTATION_MISMATCH = H_19P900000000000006_VS_C_19P9
 SCIENTIFIC_TERMINAL_REGIME_DISCREPANCY = NO
 D014_PROTOCOL_V1_MODIFIED = NO
 
-H_DRY_TIME_RAW = 19.900000000000006 h
-C_DRY_TIME_RAW = 19.9 h
 H_TMAX_COUNT = 9
 C_TMAX_COUNT = 9
+H_NORMAL_TERMINATION_COUNT = 0
+C_NORMAL_TERMINATION_COUNT = 0
 
-CR1_COMP_12_RESUMED = NO
-NEXT_STEP = FREEZE_D014_BEFORE_RESUMING_CR1_COMP_12
+RAW_H_DRY_TIME = 19.900000000000006 h
+RAW_C_DRY_TIME = 19.9 h
+NOMINAL_TERMINAL_HORIZON = 19.9 h
+RAW_DRY_TIME_VALUES_IDENTICAL = NO
+
+COMPARATIVE_TERMINAL_REGIME = COMMON_TMAX_19P9H
+TEMPORAL_COMPARABILITY = COMMON_FIXED_HORIZON
+TERMINAL_REGIME_LIMITATION = FIXED_HORIZON_NOT_FREE_NORMAL_TERMINATION
+
+INDEPENDENT_QC = PASS
+NEXT_COMPARATIVE_PHASE = CR1-COMP-13 — Objective decomposition
 ```
 
-D014 preserva ambos valores raw y reconoce que documentan el mismo horizonte máximo nominal bajo el régimen terminal común `TMAX`; no declara igualdad floating-point ni introduce tolerancia numérica. CR1-COMP-12 permanece bloqueado y todavía no se registra su conclusión operativa.
+D014 preserva ambos valores raw y reconoce que documentan el mismo horizonte máximo nominal bajo el régimen terminal común `TMAX`; no declara igualdad floating-point ni introduce tolerancia numérica. Los 18 puntos comparten el régimen `TMAX` al horizonte nominal fijo de `19.9 h`. Esto no implica igualdad de trayectorias, energía, GLP, aporte solar, agua removida, costo o emisiones, ni convergencia del algoritmo.
 
 ## Siguiente fase
 
 ```text
-NEXT_PHASE = FREEZE_D014_BEFORE_RESUMING_CR1_COMP_12
+NEXT_PHASE = CR1-COMP-13_OBJECTIVE_DECOMPOSITION
 ```
 
-Después del freeze de D014, la reanudación de CR1-COMP-12 requerirá autorización separada.
+CR1-COMP-13 no fue ejecutado y requiere autorización separada.

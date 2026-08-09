@@ -1,0 +1,3 @@
+source,solution_count,tmax_count,normal_termination_count,dry_time_raw_min_h,dry_time_raw_max_h,dry_time_raw_unique_count,nominal_terminal_horizon_h,all_tmax,common_nominal_horizon_under_D014
+H,9,9,0,19.900000000000006,19.900000000000006,1,19.9,YES,YES
+C,9,9,0,19.9,19.9,1,19.9,YES,YES

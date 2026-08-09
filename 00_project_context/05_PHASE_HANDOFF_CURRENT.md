@@ -324,32 +324,42 @@ CR1_COMP_12_COMPUTED = NO
 
 CR1-COMP-11 calculó `HV(N_H)` y `HV(N_C)` con una normalización común derivada de `P=N_H∪N_C`. Inclusión–exclusión 3D y la descomposición independiente por celdas coincidieron dentro del criterio QC. C obtuvo mayor hypervolume en r5, r10 y r20; esta dirección es robusta únicamente dentro de los tres reference points preespecificados y representa cobertura del espacio objetivo anclado, no proximidad al frente verdadero ni superioridad estadística o física integral.
 
-## D014 — Estado documental previo a CR1-COMP-12
+## CR1-COMP-12 cerrado bajo D014
 
 ```text
 CR1-COMP-11 = CLOSED_PASS / FROZEN
-CR1-COMP-12 = BLOCKED_PENDING_D014_FREEZE
-D014 = APPROVED_DOCUMENTED_PENDING_GIT_FREEZE
+CR1-COMP-12 = CLOSED_PASS
+D014 = FROZEN_PASS
 
-BLOCKER_TYPE = DOCUMENTARY_FLOAT_REPRESENTATION_IMPLEMENTATION_ISSUE
+INITIAL_BLOCKER_TYPE = DOCUMENTARY_FLOAT_REPRESENTATION_IMPLEMENTATION_ISSUE
+INITIAL_BLOCK_RESOLUTION = D014_FROZEN_IMPLEMENTATION_CONVENTION
 SCIENTIFIC_DISCREPANCY = NO
 
 RAW_H_DRY_TIME = 19.900000000000006 h
 RAW_C_DRY_TIME = 19.9 h
+RAW_DRY_TIME_VALUES_IDENTICAL = NO
+NOMINAL_TERMINAL_HORIZON = 19.9 h
 
 TERMINAL_REGIME_UPSTREAM =
 H: 9/9 TMAX
 C: 9/9 TMAX
 
-NEXT = freeze D014 in Git, then separately authorize resumption of CR1-COMP-12
+COMPARATIVE_TERMINAL_REGIME = COMMON_TMAX_19P9H
+TEMPORAL_COMPARABILITY = COMMON_FIXED_HORIZON
+TERMINAL_REGIME_LIMITATION = FIXED_HORIZON_NOT_FREE_NORMAL_TERMINATION
+INDEPENDENT_QC = PASS
+
+CR1_COMP_13_COMPUTED = NO
+OBJECTIVE_DECOMPOSITION_COMPUTED = NO
+NEXT = CR1-COMP-13 — Objective decomposition, requiring separate authorization
 ```
 
-D014 preserva las representaciones raw, no introduce tolerancia numérica y no modifica el protocolo v1.0. CR1-COMP-12 no fue reanudado y permanece bloqueado hasta el freeze documental de D014.
+D014 preserva las representaciones raw, no introduce tolerancia numérica y no modifica el protocolo v1.0. CR1-COMP-12 verificó que los 18 puntos comparten el régimen físico `TMAX` al horizonte nominal fijo de `19.9 h`. La terminación del optimizador CORRECTED_R1 por `MaxGenerations` es un concepto separado y no forma parte de este gate.
 
 ## Próxima fase
 
 ```text
-NEXT_PHASE = FREEZE_D014_BEFORE_RESUMING_CR1_COMP_12
+NEXT_PHASE = CR1-COMP-13_OBJECTIVE_DECOMPOSITION
 ```
 
-Después del freeze de D014, CR1-COMP-12 requerirá autorización separada para reanudarse.
+CR1-COMP-13 no fue ejecutado y requiere autorización separada.

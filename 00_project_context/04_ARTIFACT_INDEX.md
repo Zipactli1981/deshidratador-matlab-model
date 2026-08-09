@@ -749,6 +749,64 @@ CR1_COMP_12_COMPUTED = NO
 NEXT_COMPARATIVE_PHASE = CR1-COMP-12_COMMON_TERMINAL_REGIME_ANALYSIS
 ```
 
+## CR1-COMP-12 — Common terminal-regime analysis
+
+Tabla terminal de las 18 soluciones:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_12_COMMON_TERMINAL_REGIME_v96z.csv
+SHA-256 = 8FE648938A89C74DC28CEC50E904750D5821EBC3D392B85259E836477A5F5A87
+Role = 18-row H01...H09/C01...C09 terminal classification with preserved raw dry_time and D014 nominal-horizon fields
+Upstream = COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md; CORRECTED_R1_POSTRUN_INTERNAL_AUDIT_v96z.md; D014
+```
+
+Resumen H/C:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_12_COMMON_TERMINAL_REGIME_SUMMARY_v96z.csv
+SHA-256 = 7EE2164E9CE313A3138A4CB184BB8B31B731129A848819A78DAFAA595B67CA7D
+Role = two-row H/C counts, raw extrema, unique counts, TMAX status, and D014 common-horizon flags
+Upstream = CR1_COMP_12_COMMON_TERMINAL_REGIME_v96z.csv; registered H/C terminal sources
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_12_COMMON_TERMINAL_REGIME_v96z.json
+SHA-256 = 8D0646DF4EA5CDFBB458C6E4C0E58A85D5A1D7C49351731DC283126374147994
+Role = baseline, protocol, D014, upstream hashes, 18 records, gate, comparative regime, limitations, QC, and excluded actions
+Upstream = frozen protocol v1.0; D014 commit d3f202db57e98c848b942a8a50fc020a37caaf59; registered H/C terminal sources
+```
+
+Audit documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_12_COMMON_TERMINAL_REGIME_AUDIT_v96z.md
+SHA-256 = C616797F7A2937C4613823D0AA35461679788CBFE28D2893A2BCDE80A2D9C94E
+Role = initial-block history, D014 resolution, terminal gate, permitted interpretation, limitations, concept separation, and independent QC
+Upstream = CR1_COMP_12_COMMON_TERMINAL_REGIME_v96z.csv/json; protocol v1.0; D014; registered H/C terminal sources
+```
+
+Script reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_12_common_terminal_regime_v96z.py
+SHA-256 = B8FCBB568063F6AF079717567EF9B97281DFD00A06FCB6D02823306E91A24BE9
+Role = documentary source/hash gates, exact raw-value preservation, D014 gate application, deterministic outputs, and independent consistency checks
+Upstream = frozen protocol v1.0; D014; CURRENT_STATE; PHASE_HANDOFF; registered H/C terminal sources
+```
+
+Estado:
+
+```text
+CR1_COMP_12_STATUS = CLOSED_PASS
+COMPARATIVE_TERMINAL_REGIME = COMMON_TMAX_19P9H
+TEMPORAL_COMPARABILITY = COMMON_FIXED_HORIZON
+INDEPENDENT_QC = PASS
+CR1_COMP_13_COMPUTED = NO
+NEXT_COMPARATIVE_PHASE = CR1-COMP-13_OBJECTIVE_DECOMPOSITION
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c
