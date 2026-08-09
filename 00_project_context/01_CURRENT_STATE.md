@@ -198,7 +198,7 @@ Estado de implementación:
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_04_OBJECTIVE_SPACE_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_05_EXACT_CROSS_DOMINANCE_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 MATLAB_EXECUTION_AUTHORIZED = NO
@@ -288,12 +288,32 @@ CROSS_DOMINANCE_COMPUTED = NO
 NEXT_COMPARATIVE_PHASE = CR1-COMP-05 — Exact cross-dominance matrix
 ```
 
-Los desplazamientos son diferencias numéricas de medianas de dos conjuntos finitos. No constituyen superioridad multiobjetivo, significancia, robustez ni interpretación física, económica o ambiental. No se calculó CR1-COMP-05 ni ninguna fase posterior.
+Los desplazamientos son diferencias numéricas de medianas de dos conjuntos finitos. No constituyen superioridad multiobjetivo, significancia, robustez ni interpretación física, económica o ambiental.
+
+Estado cerrado de `CR1-COMP-05`:
+
+```text
+CR1_COMP_05_STATUS = CLOSED_PASS
+PARETO_DEFINITION = EXACT_FULL_PRECISION
+DOMINANCE_TOLERANCE = NONE
+CROSS_PAIR_COUNT = 81
+C_DOMINATES_H_COUNT = 1
+H_DOMINATES_C_COUNT = 2
+INCOMPARABLE_COUNT = 78
+EXACT_EQUAL_COUNT = 0
+INDEPENDENT_QC = PASS
+NEAR_TIE_COMPUTED = NO
+COVERAGE_COMPUTED = NO
+JOINT_SORTING_COMPUTED = NO
+NEXT_COMPARATIVE_PHASE = CR1-COMP-06 — Numerical near-tie sensitivity audit
+```
+
+Los conteos son relaciones exactas entre las 81 parejas cartesianas H×C. No constituyen coverage, Rank 1 conjunto ni superioridad global. No se calculó CR1-COMP-06 ni ninguna fase posterior.
 
 ## Siguiente fase
 
 ```text
-NEXT_PHASE = CR1-COMP-05_EXACT_CROSS_DOMINANCE_MATRIX
+NEXT_PHASE = CR1-COMP-06_NUMERICAL_NEAR_TIE_SENSITIVITY_AUDIT
 ```
 
-CR1-COMP-05 requiere autorización separada.
+CR1-COMP-06 requiere autorización separada.

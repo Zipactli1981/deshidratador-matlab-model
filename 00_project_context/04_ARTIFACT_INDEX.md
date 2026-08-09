@@ -325,6 +325,60 @@ OBJECTIVE_SPACE_DESCRIPTIVE_ANALYSIS = PASS
 NEXT_COMPARATIVE_PHASE = CR1-COMP-05_EXACT_CROSS_DOMINANCE_MATRIX
 ```
 
+## CR1-COMP-05 — Exact Cross-dominance Matrix
+
+Matriz cartesiana exacta H×C:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_MATRIX_v96z.csv
+SHA-256 = C783CDD1214598643F1A46F6A6E1EC144220D2BFB2FC8D67F53293A3B7ACC329
+Role = 81 exact H×C classifications with objective values, deltas, and boolean traces
+```
+
+Resumen global y por solución:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_SUMMARY_v96z.csv
+SHA-256 = AA879302D099C4510FD99B1751E59A3C45B9C2FDA28F69439F66DF7E20F7D18F
+Role = global category counts and direct per-H/per-C matrix marginals
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_v96z.json
+SHA-256 = 88EE7D86AFEE3A1C5E33D3BD2629995277481A2B65FDF03C83594888402D701A
+Role = baseline, input, exact method, 81 classifications, counts, QC, limitations, and exclusions
+```
+
+Audit documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_AUDIT_v96z.md
+SHA-256 = B9B913CE6AEE457FB2C9E3FFB87599B9DFD3D3898571DB08A44EF5D2020AAFC9
+Role = canonical exact cross-dominance methodology, counts, limitations, hashes, and scope record
+```
+
+Script postrun reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_05_exact_cross_dominance_v96z.py
+SHA-256 = A36FFE36EABEDB04DD595FE541C25277DC0732616ADA5A6802CEFCBBFEF64D18
+Role = exact componentwise classifier, independent boolean-vector QC, and deterministic outputs
+```
+
+Estado:
+
+```text
+CR1_COMP_05_STATUS = CLOSED_PASS
+CROSS_PAIR_COUNT = 81
+C_DOMINATES_H_COUNT = 1
+H_DOMINATES_C_COUNT = 2
+INCOMPARABLE_COUNT = 78
+EXACT_EQUAL_COUNT = 0
+NEXT_COMPARATIVE_PHASE = CR1-COMP-06_NUMERICAL_NEAR_TIE_SENSITIVITY_AUDIT
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c

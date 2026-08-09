@@ -1,5 +1,5 @@
 # PHASE HANDOFF CURRENT
-## CR1-COMP-04 Objective-space Descriptive Analysis → CR1-COMP-05 Exact Cross-dominance Matrix
+## CR1-COMP-05 Exact Cross-dominance Matrix → CR1-COMP-06 Numerical Near-tie Sensitivity Audit
 
 ## Fases cerradas
 
@@ -55,7 +55,7 @@ No constituyen un frente Pareto corregido.
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_04_OBJECTIVE_SPACE_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_05_EXACT_CROSS_DOMINANCE_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 ```
@@ -159,12 +159,31 @@ CROSS_DOMINANCE_COMPUTED = NO
 CR1_COMP_05_COMPUTED = NO
 ```
 
-CR1-COMP-04 realizó únicamente caracterización descriptiva del espacio de objetivos bajo D013. Los desplazamientos de medianas no son afirmaciones de superioridad multiobjetivo. No se realizó dominancia cruzada ni ninguna fase posterior.
+CR1-COMP-04 realizó únicamente caracterización descriptiva del espacio de objetivos bajo D013. Los desplazamientos de medianas no son afirmaciones de superioridad multiobjetivo.
+
+## CR1-COMP-05 cerrado
+
+```text
+CR1_COMP_05_STATUS = CLOSED_PASS
+PARETO_DEFINITION = EXACT_FULL_PRECISION
+DOMINANCE_TOLERANCE = NONE
+CROSS_PAIR_COUNT = 81
+C_DOMINATES_H_COUNT = 1
+H_DOMINATES_C_COUNT = 2
+INCOMPARABLE_COUNT = 78
+EXACT_EQUAL_COUNT = 0
+INDEPENDENT_QC = PASS
+NEAR_TIE_COMPUTED = NO
+COVERAGE_COMPUTED = NO
+JOINT_SORTING_COMPUTED = NO
+```
+
+CR1-COMP-05 clasificó exclusivamente las 81 parejas cartesianas H×C mediante dominancia exacta sin tolerancia. Los conteos no son métricas de coverage ni establecen Rank 1 conjunto o superioridad global. No se ejecutó análisis near-tie ni ninguna fase posterior.
 
 ## Próxima fase
 
 ```text
-NEXT_PHASE = CR1-COMP-05_EXACT_CROSS_DOMINANCE_MATRIX
+NEXT_PHASE = CR1-COMP-06_NUMERICAL_NEAR_TIE_SENSITIVITY_AUDIT
 ```
 
-CR1-COMP-05 no está autorizada y requiere autorización separada.
+CR1-COMP-06 no está autorizada y requiere autorización separada.
