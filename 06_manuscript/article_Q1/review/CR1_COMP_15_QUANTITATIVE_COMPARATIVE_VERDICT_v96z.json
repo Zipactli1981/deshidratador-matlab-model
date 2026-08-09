@@ -1,0 +1,687 @@
+{
+  "artifact_role": "CR1_COMP_15_QUANTITATIVE_COMPARATIVE_VERDICT",
+  "cr1_comp_15_status": "CLOSED_PASS",
+  "baseline": {
+    "branch": "main",
+    "head": "2ac82115e1e0d39616c0476ea2f8ab08c322f07e",
+    "input_baseline_check": "PASS"
+  },
+  "protocol": {
+    "version": "v1.0",
+    "sha256": "8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3",
+    "sha256_check": "PASS",
+    "COMPARATIVE_VERDICT_FORMAT": "QUANTITATIVE_VECTOR_PLUS_NARRATIVE",
+    "FORMAL_A_B_C_D_CLASSIFICATION": "NOT_USED",
+    "HYPERVOLUME_ROLE": "SECONDARY_CONDITIONAL_METRIC"
+  },
+  "upstream_artifacts": [
+    {
+      "phase": "CR1-COMP-02",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_02_WITHIN_SET_EXACT_PARETO_AUDIT_v96z.json",
+      "sha256": "6E5391E6D8C65AD04C91EB1A00EE16360D5EE189AF77B67B911CA5B31281CCED",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-03",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_03_DECISION_SPACE_DESCRIPTIVE_v96z.json",
+      "sha256": "7C0EC833A5BE05148C4B08793A382B7F069B36267C77B97A52959659DBE2A8E8",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-04",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_04_OBJECTIVE_SPACE_DESCRIPTIVE_v96z.json",
+      "sha256": "CCA35B4E8983D075E9D3E4834949B2A2F330C5A8C0C5B4D1EA05E935AEE1D75D",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-05",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_v96z.json",
+      "sha256": "88EE7D86AFEE3A1C5E33D3BD2629995277481A2B65FDF03C83594888402D701A",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-06",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_06_NUMERICAL_NEAR_TIE_SENSITIVITY_v96z.json",
+      "sha256": "227F88AB15A30A812F222E3608BF9512401A8775AA1CFE9886E6288326F6E3FA",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-07",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_v96z.json",
+      "sha256": "8FA73A67DB5C510F3B0B0E4AEFD31570DC012D807A51608A58A6EE231B401D83",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-08",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_v96z.json",
+      "sha256": "59E39670F2E3627A752FE5017394D215C13F5D89770C2BE17924A01268317E54",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-09",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_09_OBJECTIVE_SPACE_GEOMETRY_v96z.json",
+      "sha256": "BD23627AAF81BD4231A3D84D819422D3CE93F84EDF0F33995A238DE3CE5651F9",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-10",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_10_HYPERVOLUME_DECISION_GATE_v96z.json",
+      "sha256": "52A7AA4735B59C01EF57F27841A3DEE8B1EC0AA1F23B4653049EBA20E40352DE",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-11",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_11_HYPERVOLUME_SENSITIVITY_v96z.json",
+      "sha256": "233918EF96B1597260854CDDFCB7DDBA041A14BE7C06323BBB1DE8F02D244EC7",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-12",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_12_COMMON_TERMINAL_REGIME_v96z.json",
+      "sha256": "8D0646DF4EA5CDFBB458C6E4C0E58A85D5A1D7C49351731DC283126374147994",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-13",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_13_OBJECTIVE_DECOMPOSITION_v96z.json",
+      "sha256": "4B8D9B30B237E2BA65DD5F71ECB218C995BEC1646943F50F68ECB1E08DCE0B52",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-14",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_14_PHYSICAL_ECONOMIC_ENVIRONMENTAL_INTERPRETATION_v96z.json",
+      "sha256": "59B9E07FC5420C923F15873C7E01A549092A92EFAC9D2DF4AB46FA7B8E952A9F",
+      "hash_check": "PASS"
+    },
+    {
+      "phase": "CR1-COMP-14-CLAIMS",
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_14_INTERPRETIVE_CLAIMS_v96z.csv",
+      "sha256": "C8C0BC2323E8D782227123027EF1B375DD5B07A3B9EFCAED531DFBACAE604400",
+      "hash_check": "PASS"
+    }
+  ],
+  "upstream_consistency_check": "PASS",
+  "quantitative_vector": [
+    {
+      "metric": "H_INTERNAL_NONDOMINATED_COUNT",
+      "value": "9",
+      "unit_or_scale": "count",
+      "source_phase": "CR1-COMP-02",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_02_WITHIN_SET_EXACT_PARETO_AUDIT_v96z.json",
+      "source_hash": "6E5391E6D8C65AD04C91EB1A00EE16360D5EE189AF77B67B911CA5B31281CCED",
+      "source_field": "aggregates.H.nondominated_count",
+      "interpretive_role": "within-set exact nondominance"
+    },
+    {
+      "metric": "C_INTERNAL_NONDOMINATED_COUNT",
+      "value": "9",
+      "unit_or_scale": "count",
+      "source_phase": "CR1-COMP-02",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_02_WITHIN_SET_EXACT_PARETO_AUDIT_v96z.json",
+      "source_hash": "6E5391E6D8C65AD04C91EB1A00EE16360D5EE189AF77B67B911CA5B31281CCED",
+      "source_field": "aggregates.C.nondominated_count",
+      "interpretive_role": "within-set exact nondominance"
+    },
+    {
+      "metric": "H_INTERNAL_DOMINATED_COUNT",
+      "value": "0",
+      "unit_or_scale": "count",
+      "source_phase": "CR1-COMP-02",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_02_WITHIN_SET_EXACT_PARETO_AUDIT_v96z.json",
+      "source_hash": "6E5391E6D8C65AD04C91EB1A00EE16360D5EE189AF77B67B911CA5B31281CCED",
+      "source_field": "aggregates.H.dominated_count",
+      "interpretive_role": "within-set exact dominance"
+    },
+    {
+      "metric": "C_INTERNAL_DOMINATED_COUNT",
+      "value": "0",
+      "unit_or_scale": "count",
+      "source_phase": "CR1-COMP-02",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_02_WITHIN_SET_EXACT_PARETO_AUDIT_v96z.json",
+      "source_hash": "6E5391E6D8C65AD04C91EB1A00EE16360D5EE189AF77B67B911CA5B31281CCED",
+      "source_field": "aggregates.C.dominated_count",
+      "interpretive_role": "within-set exact dominance"
+    },
+    {
+      "metric": "FULL_COVERAGE_C_OVER_H",
+      "value": "0.1111111111111111",
+      "unit_or_scale": "fraction=1/9",
+      "source_phase": "CR1-COMP-07",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_v96z.json",
+      "source_hash": "8FA73A67DB5C510F3B0B0E4AEFD31570DC012D807A51608A58A6EE231B401D83",
+      "source_field": "coverage[FULL_COVERAGE_C_OVER_H].coverage",
+      "interpretive_role": "asymmetric exact set coverage"
+    },
+    {
+      "metric": "FULL_COVERAGE_H_OVER_C",
+      "value": "0.2222222222222222",
+      "unit_or_scale": "fraction=2/9",
+      "source_phase": "CR1-COMP-07",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_v96z.json",
+      "source_hash": "8FA73A67DB5C510F3B0B0E4AEFD31570DC012D807A51608A58A6EE231B401D83",
+      "source_field": "coverage[FULL_COVERAGE_H_OVER_C].coverage",
+      "interpretive_role": "asymmetric exact set coverage"
+    },
+    {
+      "metric": "CORE_COVERAGE_NC_OVER_NH",
+      "value": "0.1111111111111111",
+      "unit_or_scale": "fraction=1/9",
+      "source_phase": "CR1-COMP-07",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_v96z.json",
+      "source_hash": "8FA73A67DB5C510F3B0B0E4AEFD31570DC012D807A51608A58A6EE231B401D83",
+      "source_field": "coverage[CORE_COVERAGE_NC_OVER_NH].coverage",
+      "interpretive_role": "asymmetric exact set coverage"
+    },
+    {
+      "metric": "CORE_COVERAGE_NH_OVER_NC",
+      "value": "0.2222222222222222",
+      "unit_or_scale": "fraction=2/9",
+      "source_phase": "CR1-COMP-07",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_v96z.json",
+      "source_hash": "8FA73A67DB5C510F3B0B0E4AEFD31570DC012D807A51608A58A6EE231B401D83",
+      "source_field": "coverage[CORE_COVERAGE_NH_OVER_NC].coverage",
+      "interpretive_role": "asymmetric exact set coverage"
+    },
+    {
+      "metric": "JOINT_RANK1_H",
+      "value": "8",
+      "unit_or_scale": "count",
+      "source_phase": "CR1-COMP-08",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_v96z.json",
+      "source_hash": "59E39670F2E3627A752FE5017394D215C13F5D89770C2BE17924A01268317E54",
+      "source_field": "rank_summary[pareto_rank=1].H_count",
+      "interpretive_role": "joint nondominated contribution"
+    },
+    {
+      "metric": "JOINT_RANK1_C",
+      "value": "7",
+      "unit_or_scale": "count",
+      "source_phase": "CR1-COMP-08",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_08_JOINT_EXACT_NONDOMINATED_SORTING_v96z.json",
+      "source_hash": "59E39670F2E3627A752FE5017394D215C13F5D89770C2BE17924A01268317E54",
+      "source_field": "rank_summary[pareto_rank=1].C_count",
+      "interpretive_role": "joint nondominated contribution"
+    },
+    {
+      "metric": "C_DOMINATES_H_PAIR_COUNT",
+      "value": "1",
+      "unit_or_scale": "count_of_81",
+      "source_phase": "CR1-COMP-05",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_v96z.json",
+      "source_hash": "88EE7D86AFEE3A1C5E33D3BD2629995277481A2B65FDF03C83594888402D701A",
+      "source_field": "global_counts.C_DOMINATES_H",
+      "interpretive_role": "exact cross-set dominance"
+    },
+    {
+      "metric": "H_DOMINATES_C_PAIR_COUNT",
+      "value": "2",
+      "unit_or_scale": "count_of_81",
+      "source_phase": "CR1-COMP-05",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_v96z.json",
+      "source_hash": "88EE7D86AFEE3A1C5E33D3BD2629995277481A2B65FDF03C83594888402D701A",
+      "source_field": "global_counts.H_DOMINATES_C",
+      "interpretive_role": "exact cross-set dominance"
+    },
+    {
+      "metric": "INCOMPARABLE_PAIR_COUNT",
+      "value": "78",
+      "unit_or_scale": "count_of_81",
+      "source_phase": "CR1-COMP-05",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_v96z.json",
+      "source_hash": "88EE7D86AFEE3A1C5E33D3BD2629995277481A2B65FDF03C83594888402D701A",
+      "source_field": "global_counts.INCOMPARABLE",
+      "interpretive_role": "exact cross-set incomparability"
+    },
+    {
+      "metric": "EXACT_EQUAL_PAIR_COUNT",
+      "value": "0",
+      "unit_or_scale": "count_of_81",
+      "source_phase": "CR1-COMP-05",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_v96z.json",
+      "source_hash": "88EE7D86AFEE3A1C5E33D3BD2629995277481A2B65FDF03C83594888402D701A",
+      "source_field": "global_counts.EXACT_EQUAL",
+      "interpretive_role": "exact cross-set equality"
+    },
+    {
+      "metric": "NEAR_TIE_OBJECTIVE_COUNT",
+      "value": "0",
+      "unit_or_scale": "count_of_243",
+      "source_phase": "CR1-COMP-06",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_06_NUMERICAL_NEAR_TIE_SENSITIVITY_v96z.json",
+      "source_hash": "227F88AB15A30A812F222E3608BF9512401A8775AA1CFE9886E6288326F6E3FA",
+      "source_field": "aggregates.near_tie_objective_count",
+      "interpretive_role": "diagnostic numerical sensitivity"
+    },
+    {
+      "metric": "NUMERICALLY_FRAGILE_DOMINANCE_COUNT",
+      "value": "0",
+      "unit_or_scale": "count",
+      "source_phase": "CR1-COMP-06",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_06_NUMERICAL_NEAR_TIE_SENSITIVITY_v96z.json",
+      "source_hash": "227F88AB15A30A812F222E3608BF9512401A8775AA1CFE9886E6288326F6E3FA",
+      "source_field": "aggregates.numerically_fragile_dominance_count",
+      "interpretive_role": "diagnostic numerical sensitivity"
+    },
+    {
+      "metric": "DOMINANCE_NUMERIC_SENSITIVITY",
+      "value": "PASS_NO_FRAGILE_DOMINANCE",
+      "unit_or_scale": "categorical",
+      "source_phase": "CR1-COMP-06",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_06_NUMERICAL_NEAR_TIE_SENSITIVITY_v96z.json",
+      "source_hash": "227F88AB15A30A812F222E3608BF9512401A8775AA1CFE9886E6288326F6E3FA",
+      "source_field": "aggregates.dominance_numeric_sensitivity",
+      "interpretive_role": "diagnostic numerical sensitivity"
+    },
+    {
+      "metric": "HV_STATUS",
+      "value": "COMPUTED",
+      "unit_or_scale": "categorical",
+      "source_phase": "CR1-COMP-11",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_11_HYPERVOLUME_SENSITIVITY_v96z.json",
+      "source_hash": "233918EF96B1597260854CDDFCB7DDBA041A14BE7C06323BBB1DE8F02D244EC7",
+      "source_field": "completion.hypervolume_computed=true",
+      "interpretive_role": "secondary conditional metric status"
+    },
+    {
+      "metric": "HV_H",
+      "value": "0.9749820881940048",
+      "unit_or_scale": "normalized_anchored_volume_r10",
+      "source_phase": "CR1-COMP-11",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_11_HYPERVOLUME_SENSITIVITY_v96z.json",
+      "source_hash": "233918EF96B1597260854CDDFCB7DDBA041A14BE7C06323BBB1DE8F02D244EC7",
+      "source_field": "primary_result.HV_H",
+      "interpretive_role": "secondary conditional metric"
+    },
+    {
+      "metric": "HV_C",
+      "value": "1.0099628901072748",
+      "unit_or_scale": "normalized_anchored_volume_r10",
+      "source_phase": "CR1-COMP-11",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_11_HYPERVOLUME_SENSITIVITY_v96z.json",
+      "source_hash": "233918EF96B1597260854CDDFCB7DDBA041A14BE7C06323BBB1DE8F02D244EC7",
+      "source_field": "primary_result.HV_C",
+      "interpretive_role": "secondary conditional metric"
+    },
+    {
+      "metric": "HV_DIRECTION",
+      "value": "C_GT_H",
+      "unit_or_scale": "categorical",
+      "source_phase": "CR1-COMP-11",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_11_HYPERVOLUME_SENSITIVITY_v96z.json",
+      "source_hash": "233918EF96B1597260854CDDFCB7DDBA041A14BE7C06323BBB1DE8F02D244EC7",
+      "source_field": "primary_result.HV_DIRECTION",
+      "interpretive_role": "secondary conditional metric"
+    },
+    {
+      "metric": "HV_REFERENCE_SENSITIVITY",
+      "value": "ROBUST_DIRECTION",
+      "unit_or_scale": "r5_r10_r20",
+      "source_phase": "CR1-COMP-11",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_11_HYPERVOLUME_SENSITIVITY_v96z.json",
+      "source_hash": "233918EF96B1597260854CDDFCB7DDBA041A14BE7C06323BBB1DE8F02D244EC7",
+      "source_field": "HV_SENSITIVITY_STATUS",
+      "interpretive_role": "secondary conditional metric sensitivity"
+    },
+    {
+      "metric": "H_TMAX_COUNT",
+      "value": "9",
+      "unit_or_scale": "count_of_9",
+      "source_phase": "CR1-COMP-12",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_12_COMMON_TERMINAL_REGIME_v96z.json",
+      "source_hash": "8D0646DF4EA5CDFBB458C6E4C0E58A85D5A1D7C49351731DC283126374147994",
+      "source_field": "metrics.H_TMAX_COUNT",
+      "interpretive_role": "common terminal-regime evidence"
+    },
+    {
+      "metric": "C_TMAX_COUNT",
+      "value": "9",
+      "unit_or_scale": "count_of_9",
+      "source_phase": "CR1-COMP-12",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_12_COMMON_TERMINAL_REGIME_v96z.json",
+      "source_hash": "8D0646DF4EA5CDFBB458C6E4C0E58A85D5A1D7C49351731DC283126374147994",
+      "source_field": "metrics.C_TMAX_COUNT",
+      "interpretive_role": "common terminal-regime evidence"
+    },
+    {
+      "metric": "COMPARATIVE_TERMINAL_REGIME",
+      "value": "COMMON_TMAX_19P9H",
+      "unit_or_scale": "categorical",
+      "source_phase": "CR1-COMP-12",
+      "source_artifact": "06_manuscript/article_Q1/review/CR1_COMP_12_COMMON_TERMINAL_REGIME_v96z.json",
+      "source_hash": "8D0646DF4EA5CDFBB458C6E4C0E58A85D5A1D7C49351731DC283126374147994",
+      "source_field": "COMPARATIVE_TERMINAL_REGIME",
+      "interpretive_role": "temporal comparability"
+    }
+  ],
+  "quantitative_vector_map": {
+    "H_INTERNAL_NONDOMINATED_COUNT": "9",
+    "C_INTERNAL_NONDOMINATED_COUNT": "9",
+    "H_INTERNAL_DOMINATED_COUNT": "0",
+    "C_INTERNAL_DOMINATED_COUNT": "0",
+    "FULL_COVERAGE_C_OVER_H": "0.1111111111111111",
+    "FULL_COVERAGE_H_OVER_C": "0.2222222222222222",
+    "CORE_COVERAGE_NC_OVER_NH": "0.1111111111111111",
+    "CORE_COVERAGE_NH_OVER_NC": "0.2222222222222222",
+    "JOINT_RANK1_H": "8",
+    "JOINT_RANK1_C": "7",
+    "C_DOMINATES_H_PAIR_COUNT": "1",
+    "H_DOMINATES_C_PAIR_COUNT": "2",
+    "INCOMPARABLE_PAIR_COUNT": "78",
+    "EXACT_EQUAL_PAIR_COUNT": "0",
+    "NEAR_TIE_OBJECTIVE_COUNT": "0",
+    "NUMERICALLY_FRAGILE_DOMINANCE_COUNT": "0",
+    "DOMINANCE_NUMERIC_SENSITIVITY": "PASS_NO_FRAGILE_DOMINANCE",
+    "HV_STATUS": "COMPUTED",
+    "HV_H": "0.9749820881940048",
+    "HV_C": "1.0099628901072748",
+    "HV_DIRECTION": "C_GT_H",
+    "HV_REFERENCE_SENSITIVITY": "ROBUST_DIRECTION",
+    "H_TMAX_COUNT": "9",
+    "C_TMAX_COUNT": "9",
+    "COMPARATIVE_TERMINAL_REGIME": "COMMON_TMAX_19P9H"
+  },
+  "coverage_exact_representations": {
+    "FULL_COVERAGE_C_OVER_H": {
+      "fraction": "1/9",
+      "serialized_value": 0.1111111111111111
+    },
+    "FULL_COVERAGE_H_OVER_C": {
+      "fraction": "2/9",
+      "serialized_value": 0.2222222222222222
+    },
+    "CORE_COVERAGE_NC_OVER_NH": {
+      "fraction": "1/9",
+      "serialized_value": 0.1111111111111111
+    },
+    "CORE_COVERAGE_NH_OVER_NC": {
+      "fraction": "2/9",
+      "serialized_value": 0.2222222222222222
+    }
+  },
+  "structural_consistency_checks": {
+    "H_COUNT_SUM": "PASS",
+    "C_COUNT_SUM": "PASS",
+    "CROSS_PAIR_PARTITION": "PASS",
+    "JOINT_RANK1_SUM": "PASS",
+    "FULL_C_OVER_H_FRACTION": "PASS",
+    "FULL_H_OVER_C_FRACTION": "PASS",
+    "FULL_CORE_C_OVER_H_IDENTITY": "PASS",
+    "FULL_CORE_H_OVER_C_IDENTITY": "PASS",
+    "HV_PRIMARY_DIRECTION": "PASS",
+    "HV_R5_R10_R20_DIRECTION": "PASS",
+    "TERMINAL_COUNTS": "PASS"
+  },
+  "derived_simple_ratios": {
+    "CROSS_SET_INCOMPARABLE_FRACTION": {
+      "fraction": "78/81",
+      "serialized_value": 0.9629629629629629
+    },
+    "CROSS_SET_INCOMPARABLE_PERCENT": 96.29629629629629,
+    "JOINT_RANK1_TOTAL": {
+      "fraction": "15/18",
+      "serialized_value": 0.8333333333333334
+    },
+    "H_JOINT_RANK1_RETENTION": {
+      "fraction": "8/9",
+      "serialized_value": 0.8888888888888888
+    },
+    "C_JOINT_RANK1_RETENTION": {
+      "fraction": "7/9",
+      "serialized_value": 0.7777777777777778
+    }
+  },
+  "hypervolume_reference_sensitivity": {
+    "r5": {
+      "HV_H": 0.8214144073536221,
+      "HV_C": 0.8596538595095115,
+      "direction": "C_GT_H"
+    },
+    "r10": {
+      "HV_H": 0.9749820881940048,
+      "HV_C": 1.0099628901072748,
+      "direction": "C_GT_H"
+    },
+    "r20": {
+      "HV_H": 1.3323674498747686,
+      "HV_C": 1.3592107397484303,
+      "direction": "C_GT_H"
+    }
+  },
+  "cr1_comp_14_claims_status": {
+    "SUPPORTED": 11,
+    "PARTIALLY_SUPPORTED": 1,
+    "NOT_SUPPORTED": 0
+  },
+  "preserved_cr1_comp_14_interpretation": {
+    "C_REGION_CONCENTRATION_HYPOTHESIS": "PARTIALLY_SUPPORTED",
+    "C_REGION_CONCENTRATION_INTERPRETATION": "MULTIPLE_TRADEOFF_MECHANISMS",
+    "CROSS_SET_INTERPRETIVE_PATTERN": "PREDOMINANTLY_INCOMPARABLE_WITH_BIDIRECTIONAL_LOCAL_DOMINANCE_AND_SUBSTANTIAL_RANK1_CONTRIBUTIONS_FROM_BOTH_SETS"
+  },
+  "evidence": [
+    {
+      "evidence_id": "E15-01",
+      "domain": "C_EVIDENCE",
+      "statement": "C has greater anchored hypervolume for r5, r10 and r20.",
+      "evidence_type": "LEVEL_2_MULTIOBJECTIVE_STRUCTURE",
+      "support_status": "SUPPORTED",
+      "source_metrics": "HV_H;HV_C;HV_DIRECTION;HV_REFERENCE_SENSITIVITY",
+      "source_phases": "CR1-COMP-11",
+      "limitation": "Anchored finite-set coverage only; not convergence or true-front proximity.",
+      "verdict_role": "C_EVIDENCE_HV"
+    },
+    {
+      "evidence_id": "E15-02",
+      "domain": "C_EVIDENCE",
+      "statement": "Seven of nine C solutions remain in joint Rank 1.",
+      "evidence_type": "LEVEL_2_MULTIOBJECTIVE_STRUCTURE",
+      "support_status": "SUPPORTED",
+      "source_metrics": "JOINT_RANK1_C",
+      "source_phases": "CR1-COMP-08",
+      "limitation": "Joint nondominated set of 18 evaluated solutions.",
+      "verdict_role": "C_EVIDENCE_JOINT_RANK"
+    },
+    {
+      "evidence_id": "E15-03",
+      "domain": "C_EVIDENCE",
+      "statement": "C04 exactly dominates H05.",
+      "evidence_type": "LEVEL_2_MULTIOBJECTIVE_STRUCTURE",
+      "support_status": "SUPPORTED",
+      "source_metrics": "C_DOMINATES_H_PAIR_COUNT",
+      "source_phases": "CR1-COMP-05;CR1-COMP-14",
+      "limitation": "One local relation; not broad replacement.",
+      "verdict_role": "C_EVIDENCE_LOCAL_DOMINANCE"
+    },
+    {
+      "evidence_id": "E15-04",
+      "domain": "C_EVIDENCE",
+      "statement": "C has substantially lower median f1 with modestly higher median f2 and f3.",
+      "evidence_type": "LEVEL_1_DIRECT_OBSERVATION",
+      "support_status": "SUPPORTED",
+      "source_metrics": "F1/F2/F3 median shifts",
+      "source_phases": "CR1-COMP-04;CR1-COMP-14",
+      "limitation": "Finite-set central tendency; not statistical inference.",
+      "verdict_role": "C_EVIDENCE_OBJECTIVE_CENTRAL_TENDENCY"
+    },
+    {
+      "evidence_id": "E15-05",
+      "domain": "HISTORICAL_SURVIVAL",
+      "statement": "Eight of nine H solutions remain in joint Rank 1.",
+      "evidence_type": "LEVEL_2_MULTIOBJECTIVE_STRUCTURE",
+      "support_status": "SUPPORTED",
+      "source_metrics": "JOINT_RANK1_H",
+      "source_phases": "CR1-COMP-08",
+      "limitation": "Joint nondominated set of 18 evaluated solutions.",
+      "verdict_role": "H_EVIDENCE_JOINT_RANK"
+    },
+    {
+      "evidence_id": "E15-06",
+      "domain": "HISTORICAL_SURVIVAL",
+      "statement": "H02 exactly dominates C06 and H08 exactly dominates C08.",
+      "evidence_type": "LEVEL_2_MULTIOBJECTIVE_STRUCTURE",
+      "support_status": "SUPPORTED",
+      "source_metrics": "H_DOMINATES_C_PAIR_COUNT",
+      "source_phases": "CR1-COMP-05;CR1-COMP-14",
+      "limitation": "Two local relations; not global H superiority.",
+      "verdict_role": "H_EVIDENCE_LOCAL_DOMINANCE"
+    },
+    {
+      "evidence_id": "E15-07",
+      "domain": "HISTORICAL_SURVIVAL",
+      "statement": "Full and core H-over-C coverage exceed the reciprocal C-over-H values.",
+      "evidence_type": "LEVEL_2_MULTIOBJECTIVE_STRUCTURE",
+      "support_status": "SUPPORTED",
+      "source_metrics": "FULL_COVERAGE_C_OVER_H;FULL_COVERAGE_H_OVER_C;CORE_COVERAGE_NC_OVER_NH;CORE_COVERAGE_NH_OVER_NC",
+      "source_phases": "CR1-COMP-07",
+      "limitation": "Coverage is asymmetric and neither direction indicates broad replacement.",
+      "verdict_role": "H_EVIDENCE_COVERAGE"
+    },
+    {
+      "evidence_id": "E15-08",
+      "domain": "HISTORICAL_SURVIVAL",
+      "statement": "All observed global marginal objective extremes remain in H; C adds none.",
+      "evidence_type": "LEVEL_2_MULTIOBJECTIVE_STRUCTURE",
+      "support_status": "SUPPORTED",
+      "source_metrics": "NEW_EXTREMES_C;HISTORICAL_EXTREMES_NOT_REPRODUCED_BY_C",
+      "source_phases": "CR1-COMP-09",
+      "limitation": "Marginal extrema do not determine multivariate dominance.",
+      "verdict_role": "H_EVIDENCE_EXTREMES"
+    },
+    {
+      "evidence_id": "E15-09",
+      "domain": "TRADEOFF_RESTRUCTURING",
+      "statement": "Seventy-eight of 81 cross-set pairs are incomparable while dominance is sparse and bidirectional.",
+      "evidence_type": "DERIVED_SIMPLE_RATIO_FROM_FROZEN_COUNTS",
+      "support_status": "SUPPORTED",
+      "source_metrics": "C_DOMINATES_H_PAIR_COUNT;H_DOMINATES_C_PAIR_COUNT;INCOMPARABLE_PAIR_COUNT",
+      "source_phases": "CR1-COMP-05",
+      "limitation": "Finite evaluated sets; no population inference.",
+      "verdict_role": "PREDOMINANT_INCOMPARABILITY"
+    },
+    {
+      "evidence_id": "E15-10",
+      "domain": "TERMINAL_COMPARABILITY",
+      "statement": "Both sets contain nine TMAX points under COMMON_TMAX_19P9H.",
+      "evidence_type": "LEVEL_1_DIRECT_OBSERVATION",
+      "support_status": "SUPPORTED",
+      "source_metrics": "H_TMAX_COUNT;C_TMAX_COUNT;COMPARATIVE_TERMINAL_REGIME",
+      "source_phases": "CR1-COMP-12",
+      "limitation": "Fixed horizon, not free normal termination; trajectories need not be equal.",
+      "verdict_role": "COMMON_NOMINAL_HORIZON"
+    },
+    {
+      "evidence_id": "E15-11",
+      "domain": "INTERPRETIVE_SYNTHESIS",
+      "statement": "Direct corrected optimization restructures the evaluated trade-offs rather than uniformly replacing H.",
+      "evidence_type": "LEVEL_4_LIMITED_INFERENCE",
+      "support_status": "SUPPORTED",
+      "source_metrics": "full quantitative vector",
+      "source_phases": "CR1-COMP-02...14",
+      "limitation": "Descriptive synthesis, not a formal class or algorithm-superiority claim.",
+      "verdict_role": "QUANTITATIVE_VERDICT_PATTERN"
+    },
+    {
+      "evidence_id": "E15-12",
+      "domain": "INTERPRETIVE_SYNTHESIS",
+      "statement": "C concentration is partially consistent with multiple operational trade-off mechanisms.",
+      "evidence_type": "LEVEL_3_MECHANISTIC_INTERPRETATION",
+      "support_status": "PARTIALLY_SUPPORTED",
+      "source_metrics": "C_REGION_CONCENTRATION_HYPOTHESIS;C_REGION_CONCENTRATION_INTERPRETATION",
+      "source_phases": "CR1-COMP-14",
+      "limitation": "Irradiacion unavailable; C CO2 components not persisted; no unique causal mechanism.",
+      "verdict_role": "PRESERVED_CR1_COMP_14_INTERPRETATION"
+    },
+    {
+      "evidence_id": "E15-13",
+      "domain": "INFERENTIAL_LIMITATION",
+      "statement": "One corrected run does not establish convergence, between-seed variability, expected performance or statistical configuration superiority.",
+      "evidence_type": "LEVEL_4_LIMITED_INFERENCE",
+      "support_status": "SUPPORTED",
+      "source_metrics": "seed;PopulationSize;MaxGenerations;stop reason",
+      "source_phases": "CORRECTED_R1 validated run;CR1-COMP-14",
+      "limitation": "Seed 61001, PopulationSize 24, MaxGenerations 50; MAXGENERATIONS_REACHED does not imply convergence.",
+      "verdict_role": "WHAT_IS_NOT_ESTABLISHED"
+    }
+  ],
+  "WHAT_IS_ESTABLISHED": [
+    "Both H and C are internally nondominated 9/9.",
+    "Cross-set incomparability predominates (78/81) with sparse bidirectional dominance.",
+    "Both sets contribute substantially to joint Rank 1 (H=8, C=7).",
+    "C has greater anchored hypervolume under r5, r10 and r20.",
+    "H retains all observed global marginal objective extremes.",
+    "Both sets use the common nominal terminal regime COMMON_TMAX_19P9H."
+  ],
+  "WHAT_IS_SUGGESTED": [
+    "Direct corrected optimization restructures the finite trade-offs rather than uniformly replacing H.",
+    "C concentration is partially consistent with multiple trade-off mechanisms, preserving CR1-COMP-14."
+  ],
+  "WHAT_IS_NOT_ESTABLISHED": [
+    "Optimizer convergence or convergence probability.",
+    "Between-seed variability, expected performance or mean performance.",
+    "Global optimality or proximity to a true/global Pareto front.",
+    "Statistical robustness or statistical configuration superiority.",
+    "General sufficiency of 50 generations.",
+    "A unique causal mechanism for C concentration."
+  ],
+  "QUANTITATIVE_VERDICT_PATTERN": "TRADEOFF_RESTRUCTURING_WITH_PARTIAL_CORRECTED_R1_ADVANTAGE_AND_HISTORICAL_SURVIVAL",
+  "QUANTITATIVE_VERDICT_PATTERN_ROLE": "DESCRIPTIVE_SYNTHESIS_NOT_FORMAL_CLASSIFICATION",
+  "quantitative_narrative": "Across the 18 evaluated solutions, direct optimization under corrected COST-E3D restructures rather than uniformly replaces the historical reevaluated set: both sets are internally nondominated (9/9), 78/81 cross-set pairs are incomparable, dominance is sparse and bidirectional (C-to-H 1; H-to-C 2), and joint Rank 1 retains 8 H and 7 C solutions. C has greater anchored hypervolume at r5, r10 and r20 and a substantially lower median f1 with modestly higher median f2/f3, while H retains all observed marginal objective extremes and has greater reciprocal coverage. This establishes finite-set trade-off restructuring under a common nominal TMAX horizon, not convergence, global optimality, between-seed robustness or statistical superiority of the algorithm.",
+  "FINAL_COMPARATIVE_VERDICT": "Across the 18 evaluated solutions, direct optimization under corrected COST-E3D restructures rather than uniformly replaces the historical reevaluated set: both sets are internally nondominated (9/9), 78/81 cross-set pairs are incomparable, dominance is sparse and bidirectional (C-to-H 1; H-to-C 2), and joint Rank 1 retains 8 H and 7 C solutions. C has greater anchored hypervolume at r5, r10 and r20 and a substantially lower median f1 with modestly higher median f2/f3, while H retains all observed marginal objective extremes and has greater reciprocal coverage. This establishes finite-set trade-off restructuring under a common nominal TMAX horizon, not convergence, global optimality, between-seed robustness or statistical superiority of the algorithm.",
+  "limitations": {
+    "ONE_CORRECTED_R1_RUN": "YES",
+    "seed": 61001,
+    "PopulationSize": 24,
+    "MaxGenerations": 50,
+    "CORRECTED_R1_STOP_REASON": "MAXGENERATIONS_REACHED",
+    "MAXGENERATIONS_REACHED_DOES_NOT_IMPLY": "CONVERGENCE",
+    "EXPECTED_GAMULTIOBJ_PERFORMANCE": "NOT_ESTABLISHED",
+    "BETWEEN_SEED_VARIABILITY": "NOT_ESTABLISHED",
+    "STATISTICAL_ROBUSTNESS": "NOT_ESTABLISHED",
+    "CONVERGENCE_PROBABILITY": "NOT_ESTABLISHED",
+    "MEAN_PERFORMANCE": "NOT_ESTABLISHED",
+    "STATISTICAL_CONFIGURATION_SUPERIORITY": "NOT_ESTABLISHED",
+    "GENERAL_SUFFICIENCY_OF_50_GENERATIONS": "NOT_ESTABLISHED",
+    "TERMINAL_REGIME_LIMITATION": "FIXED_HORIZON_NOT_FREE_NORMAL_TERMINATION",
+    "IRRADIACION_NOT_AVAILABLE": true,
+    "C_CO2_COMPONENTS_NOT_PERSISTED": true
+  },
+  "closure_gate": {
+    "QUANTITATIVE_VECTOR_COMPLETE": "YES",
+    "NARRATIVE_TRACEABLE_TO_VECTOR": "YES",
+    "INFERENTIAL_LIMITATIONS_COMPLETE": "YES",
+    "CR1_COMP_14_INTERPRETATION_PRESERVED": "YES"
+  },
+  "qc": {
+    "VECTOR_FIELD_COUNT_CHECK": "PASS",
+    "VECTOR_SOURCE_TRACEABILITY": "PASS",
+    "VECTOR_VALUE_UPSTREAM_IDENTITY": "PASS",
+    "STRUCTURAL_COUNT_CHECKS": "PASS",
+    "COVERAGE_CONSISTENCY_CHECK": "PASS",
+    "HV_UPSTREAM_IDENTITY_CHECK": "PASS",
+    "TERMINAL_UPSTREAM_IDENTITY_CHECK": "PASS",
+    "CR1_COMP_14_CLAIMS_CONSISTENCY": "PASS",
+    "NARRATIVE_TRACEABILITY_CHECK": "PASS",
+    "INFERENTIAL_SCOPE_CHECK": "PASS",
+    "INDEPENDENT_QC": "PASS"
+  },
+  "actions_not_executed": {
+    "CR1_COMP_16_COMPUTED": false,
+    "MANUSCRIPT_IMPLICATIONS_COMPUTED": false,
+    "MANUSCRIPT_EDITING": false,
+    "MANUSCRIPT_READY_GATE": false,
+    "SCIENTIFIC_SUFFICIENCY_GATE": false,
+    "MULTISEED_CAMPAIGN_DECISION": false,
+    "MATLAB_EXECUTED": false,
+    "OBJECTIVE_EVALUATIONS": 0,
+    "REPLAYS": 0,
+    "GAMULTIOBJ_EXECUTIONS": 0,
+    "NEW_OPTIMIZATION_RUNS": 0,
+    "DOMINANCE_RECALCULATED": false,
+    "COVERAGE_RECALCULATED": false,
+    "SORTING_RECALCULATED": false,
+    "HYPERVOLUME_RECALCULATED": false,
+    "NEW_COMPOSITE_METRIC": false,
+    "NEW_STATISTICAL_TEST": false,
+    "NEW_COMPROMISE_METRIC": false
+  },
+  "next_recommended_step": "CR1-COMP-16 - Manuscript implications; separate authorization required"
+}

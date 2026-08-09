@@ -933,3 +933,63 @@ INDEPENDENT_QC = PASS
 CR1_COMP_15_COMPUTED = NO
 NEXT_COMPARATIVE_PHASE = CR1-COMP-15_QUANTITATIVE_COMPARATIVE_VERDICT
 ```
+
+## CR1-COMP-15 — Quantitative comparative verdict
+
+Vector cuantitativo obligatorio:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_15_QUANTITATIVE_COMPARATIVE_VERDICT_v96z.csv
+SHA-256 = 01FC5BCD7E73D21DC9A409DED470CCDFF2664338ACFF9C873CA2616A5EE01354
+Role = 25-field protocol-required vector with values, units/scales, source phase, artifact, hash, source field, and interpretive role
+Upstream = frozen CR1-COMP-02/05/06/07/08/11/12 structured artifacts
+```
+
+Registro de evidencia sintética:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_15_QUANTITATIVE_COMPARATIVE_VERDICT_EVIDENCE_v96z.csv
+SHA-256 = ACE76EE983B8388D94CD88C2AACFD56097E893965A0F8D9CA44FDB85C55619E6
+Role = C evidence, historical survival, trade-off restructuring, terminal comparability, preserved CR1-COMP-14 interpretation, and inferential limitations
+Upstream = frozen CR1-COMP-02 through CR1-COMP-14 evidence
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_15_QUANTITATIVE_COMPARATIVE_VERDICT_v96z.json
+SHA-256 = DDE3376323AC91066857B59C6794C296F06D9389EB36B29D5F50270AF98A5251
+Role = baseline/protocol gates, all CR1-COMP-02...14 hashes, full vector, algebraic checks, simple ratios, r5/r10/r20 sensitivity, claims status, established/suggested/not-established findings, narrative verdict, limitations, exclusions, and QC
+Upstream = frozen protocol v1.0; registered CR1-COMP-02 through CR1-COMP-14 JSON artifacts; CR1-COMP-14 claims registry
+```
+
+Auditoría documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_15_QUANTITATIVE_COMPARATIVE_VERDICT_AUDIT_v96z.md
+SHA-256 = 9E575B25F077B4DB54C8099E3ADB2AD806C22047B2284B87D47BB2522894B5B5
+Role = protocol vector, direct upstream values, derived simple ratios, multiobjective and interpretive synthesis, inferential limitations, final verdict, and independent QC
+Upstream = CR1-COMP-15 vector/evidence/JSON and frozen CR1-COMP-02 through CR1-COMP-14 artifacts
+```
+
+Script documental reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_15_quantitative_comparative_verdict_v96z.py
+SHA-256 = 92A664D2928C642B731C8089401EF2EC794D657322611114772FF07FC726E9BE
+Role = baseline/hash gates, upstream-only vector assembly, structural checks, simple count-derived ratios, deterministic artifacts, and independent validation
+Upstream = frozen protocol v1.0; registered CR1-COMP-02 through CR1-COMP-14 sources
+```
+
+Estado:
+
+```text
+CR1_COMP_15_STATUS = CLOSED_PASS
+QUANTITATIVE_COMPARATIVE_VERDICT_COMPUTED = YES
+COMPARATIVE_VERDICT_FORMAT = QUANTITATIVE_VECTOR_PLUS_NARRATIVE
+FORMAL_A_B_C_D_CLASSIFICATION = NOT_USED
+QUANTITATIVE_VERDICT_PATTERN_ROLE = DESCRIPTIVE_SYNTHESIS_NOT_FORMAL_CLASSIFICATION
+INDEPENDENT_QC = PASS
+CR1_COMP_16_COMPUTED = NO
+NEXT_COMPARATIVE_PHASE = CR1-COMP-16_MANUSCRIPT_IMPLICATIONS
+```

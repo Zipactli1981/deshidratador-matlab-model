@@ -568,3 +568,43 @@ NEXT_COMPARATIVE_PHASE = CR1-COMP-15 — Quantitative comparative verdict, requi
 ```
 
 La síntesis conserva contribuciones Rank 1 sustanciales de H y C, dominancia local bidireccional y 78/81 parejas incomparables. Los tres dominadores exactos combinan mayor agua removida con menor costo, CO2 y demanda auxiliar/GLP que su punto dominado, pero lo hacen mediante direcciones diferentes en `X`; por ello no se afirma un mecanismo monotónico único. El horizonte nominal `TMAX=19.9 h` es común, sin implicar trayectorias, energía, GLP, aporte solar, agua removida, costo o emisiones iguales. No se seleccionó una solución óptima o de compromiso y no se emitió veredicto comparativo final.
+
+## CR1-COMP-15 cerrado
+
+```text
+CR1_COMP_15_STATUS = CLOSED_PASS
+QUANTITATIVE_COMPARATIVE_VERDICT_COMPUTED = YES
+COMPARATIVE_VERDICT_FORMAT = QUANTITATIVE_VECTOR_PLUS_NARRATIVE
+FORMAL_A_B_C_D_CLASSIFICATION = NOT_USED
+QUANTITATIVE_VECTOR_FIELD_COUNT = 25
+
+QUANTITATIVE_VERDICT_PATTERN = TRADEOFF_RESTRUCTURING_WITH_PARTIAL_CORRECTED_R1_ADVANTAGE_AND_HISTORICAL_SURVIVAL
+QUANTITATIVE_VERDICT_PATTERN_ROLE = DESCRIPTIVE_SYNTHESIS_NOT_FORMAL_CLASSIFICATION
+
+FINAL_COMPARATIVE_VERDICT =
+Across the 18 evaluated solutions, direct optimization under corrected COST-E3D restructures rather than uniformly replaces the historical reevaluated set. Both sets are internally nondominated 9/9; 78/81 cross-set pairs are incomparable; dominance is sparse and bidirectional; joint Rank 1 retains 8 H and 7 C solutions. C has greater anchored hypervolume at r5/r10/r20, while H retains all observed marginal objective extremes and has greater reciprocal coverage. This establishes finite-set trade-off restructuring under a common nominal TMAX horizon, not convergence, global optimality, between-seed robustness or statistical superiority of the algorithm.
+
+C_REGION_CONCENTRATION_HYPOTHESIS = PARTIALLY_SUPPORTED
+C_REGION_CONCENTRATION_INTERPRETATION = MULTIPLE_TRADEOFF_MECHANISMS
+CROSS_SET_INTERPRETIVE_PATTERN = PREDOMINANTLY_INCOMPARABLE_WITH_BIDIRECTIONAL_LOCAL_DOMINANCE_AND_SUBSTANTIAL_RANK1_CONTRIBUTIONS_FROM_BOTH_SETS
+
+INFERENTIAL_LIMITATIONS = PRESERVED
+ONE_CORRECTED_R1_RUN = YES
+EXPECTED_GAMULTIOBJ_PERFORMANCE = NOT_ESTABLISHED
+BETWEEN_SEED_VARIABILITY = NOT_ESTABLISHED
+STATISTICAL_ROBUSTNESS = NOT_ESTABLISHED
+CONVERGENCE_PROBABILITY = NOT_ESTABLISHED
+GENERAL_SUFFICIENCY_OF_50_GENERATIONS = NOT_ESTABLISHED
+
+QUANTITATIVE_VECTOR_COMPLETE = YES
+NARRATIVE_TRACEABLE_TO_VECTOR = YES
+INFERENTIAL_LIMITATIONS_COMPLETE = YES
+CR1_COMP_14_INTERPRETATION_PRESERVED = YES
+INDEPENDENT_QC = PASS
+
+CR1_COMP_16_COMPUTED = NO
+MANUSCRIPT_IMPLICATIONS = NOT_YET_COMPUTED
+NEXT_COMPARATIVE_PHASE = CR1-COMP-16 — Manuscript implications, requiring separate authorization
+```
+
+El veredicto es una síntesis cuantitativa narrativa, no una clase formal ni una puntuación global. La mayor cobertura H-sobre-C, el mayor hypervolume anclado de C, la supervivencia Rank 1 de ambos conjuntos, la ausencia de nuevos extremos C y la predominancia de incomparabilidad se conservan simultáneamente; ninguna métrica se adopta como decisiva por sí sola.

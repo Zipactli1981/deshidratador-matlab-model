@@ -417,3 +417,42 @@ NEXT = CR1-COMP-15 — Quantitative comparative verdict, requiring separate auth
 ```
 
 CR1-COMP-14 integró la evidencia congelada sin nuevas evaluaciones. C ocupa una región marginal más estrecha y presenta mayor hypervolume anclado en r5/r10/r20, pero ambos conjuntos aportan soluciones Rank 1 y la estructura cruzada sigue siendo predominantemente incomparable. La hipótesis de concentración de C queda sólo parcialmente respaldada: los pares dominantes comparten una firma de descomposición favorable, pero muestran rutas operativas `X` diferentes. Se preservan `IRRADIACION_NOT_AVAILABLE`, `C_CO2_COMPONENTS_NOT_PERSISTED`, el horizonte fijo común y las limitaciones de conjunto finito/sin robustez entre semillas. No hay solución única recomendada, criterio de compromiso ni veredicto final.
+
+## CR1-COMP-15 cerrado
+
+```text
+CR1-COMP-15 = CLOSED_PASS
+QUANTITATIVE_COMPARATIVE_VERDICT_COMPUTED = YES
+COMPARATIVE_VERDICT_FORMAT = QUANTITATIVE_VECTOR_PLUS_NARRATIVE
+FORMAL_A_B_C_D_CLASSIFICATION = NOT_USED
+QUANTITATIVE_VECTOR_COMPLETE = YES
+VECTOR_FIELD_COUNT = 25
+
+QUANTITATIVE_VERDICT_PATTERN = TRADEOFF_RESTRUCTURING_WITH_PARTIAL_CORRECTED_R1_ADVANTAGE_AND_HISTORICAL_SURVIVAL
+QUANTITATIVE_VERDICT_PATTERN_ROLE = DESCRIPTIVE_SYNTHESIS_NOT_FORMAL_CLASSIFICATION
+
+FINAL_COMPARATIVE_VERDICT =
+Direct optimization under corrected COST-E3D restructures rather than uniformly replaces the finite historical reevaluated trade-off set. Both sets remain internally nondominated; 78/81 cross comparisons are incomparable; dominance is sparse and bidirectional; H and C both contribute substantially to joint Rank 1. C has greater anchored HV under r5/r10/r20, while H retains the observed marginal extremes and greater reciprocal coverage.
+
+WHAT_IS_ESTABLISHED = FINITE_SET_STRUCTURE_HV_DIRECTION_HISTORICAL_SURVIVAL_COMMON_TMAX
+WHAT_IS_SUGGESTED = TRADEOFF_RESTRUCTURING_AND_PARTIALLY_SUPPORTED_MULTIPLE_MECHANISMS
+WHAT_IS_NOT_ESTABLISHED = CONVERGENCE_GLOBAL_OPTIMALITY_BETWEEN_SEED_ROBUSTNESS_STATISTICAL_SUPERIORITY_50GEN_GENERAL_SUFFICIENCY_UNIQUE_CAUSAL_MECHANISM
+
+ONE_CORRECTED_R1_RUN = YES
+CORRECTED_R1_STOP_REASON = MAXGENERATIONS_REACHED
+MAXGENERATIONS_REACHED_DOES_NOT_IMPLY = CONVERGENCE
+IRRADIACION_NOT_AVAILABLE = PRESERVED
+C_CO2_COMPONENTS_NOT_PERSISTED = PRESERVED
+TERMINAL_REGIME_LIMITATION = FIXED_HORIZON_NOT_FREE_NORMAL_TERMINATION
+
+VECTOR_SOURCE_TRACEABILITY = PASS
+NARRATIVE_TRACEABILITY_CHECK = PASS
+INFERENTIAL_SCOPE_CHECK = PASS
+INDEPENDENT_QC = PASS
+
+CR1_COMP_16_COMPUTED = NO
+MANUSCRIPT_IMPLICATIONS_COMPUTED = NO
+NEXT = CR1-COMP-16 — Manuscript implications, requiring separate authorization
+```
+
+CR1-COMP-15 congeló un vector de 25 campos y un veredicto narrativo integrado. No usa clasificación A/B/C/D, score compuesto ni una métrica decisiva única. CR1-COMP-16 permanece sin ejecutar y requiere autorización separada.
