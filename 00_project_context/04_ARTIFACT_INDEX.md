@@ -225,6 +225,56 @@ CORRECTED_R1_NONDOMINATED_CORE = C01,C02,C03,C04,C05,C06,C07,C08,C09
 NEXT_COMPARATIVE_PHASE = CR1-COMP-03_DECISION_SPACE_DESCRIPTIVE_ANALYSIS
 ```
 
+## CR1-COMP-03 — Decision-space Descriptive Analysis
+
+Script postrun reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_03_decision_space_descriptive_v96z.py
+SHA-256 = B9FED1F0579001302F8B7F56DA012407B4E377255E5FD5569759BEC6A39DEC11
+Role = D013-compliant decision-space descriptive analysis and independent QC
+```
+
+Estadísticas por fuente y variable:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_03_DECISION_SPACE_DESCRIPTIVE_v96z.csv
+SHA-256 = 46A979A07467D09B7106F887095D3B083165D86681E915F99F77FA98E2995464
+Role = complete descriptive summaries, bounds distances, and occupied ranges
+```
+
+Comparación descriptiva H/C:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_03_DECISION_SPACE_COMPARISON_v96z.csv
+SHA-256 = 07605047C3C5B469A747652BC04FDF82BB2275B6C03842C2765E2C183ACB2CC0
+Role = median shifts and occupied-range comparison normalized by frozen bounds
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_03_DECISION_SPACE_DESCRIPTIVE_v96z.json
+SHA-256 = 7C0EC833A5BE05148C4B08793A382B7F069B36267C77B97A52959659DBE2A8E8
+Role = input, D013 conventions, summaries, comparison, exclusions, and QC
+```
+
+Audit documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_03_DECISION_SPACE_DESCRIPTIVE_AUDIT_v96z.md
+SHA-256 = 4BEA8A1E570AE9FCA1FA6B49D51100CD4335C35AF6E78445888DA9FB255267D2
+Role = canonical CR1-COMP-03 methodology, results, limitations, and scope record
+```
+
+Estado:
+
+```text
+CR1_COMP_03_STATUS = CLOSED_PASS
+DECISION_SPACE_DESCRIPTIVE_ANALYSIS = PASS
+NEXT_COMPARATIVE_PHASE = CR1-COMP-04_OBJECTIVE_SPACE_DESCRIPTIVE_ANALYSIS
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c

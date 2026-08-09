@@ -1,5 +1,5 @@
 # PHASE HANDOFF CURRENT
-## CR1-COMP-02 Within-set Exact Pareto Audit → CR1-COMP-03 Decision-space Descriptive Analysis
+## CR1-COMP-03 Decision-space Descriptive Analysis → CR1-COMP-04 Objective-space Descriptive Analysis
 
 ## Fases cerradas
 
@@ -55,7 +55,7 @@ No constituyen un frente Pareto corregido.
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = NOT_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_03_DECISION_SPACE_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 ```
@@ -115,31 +115,38 @@ Los 72 pares internos fueron incomparables; no hubo dominancias ni igualdades ex
 
 No se ejecutaron MATLAB, objective/model, replay, `gamultiobj`, optimización ni ninguna fase CR1-COMP posterior.
 
-## CR1-COMP-03 detenido / D013 vigente
+## CR1-COMP-03 cerrado / D013 vigente
 
-CR1-COMP-03 se detuvo antes de cualquier cálculo descriptivo porque el protocolo no especificaba población vs. muestra para `std` ni el algoritmo de cuartiles/IQR.
+CR1-COMP-03 se detuvo inicialmente antes de cualquier cálculo descriptivo porque el protocolo no especificaba población vs. muestra para `std` ni el algoritmo de cuartiles/IQR.
 
 D013 resolvió metodológicamente esas convenciones antes de observar resultados:
 
 ```text
-CR1_COMP_03_STATUS = BLOCKED_PENDING_RESUMPTION_AFTER_D013
+CR1_COMP_03_STATUS = CLOSED_PASS
 CR1_COMP_03_INITIAL_GATE = BLOCKED_DESCRIPTIVE_CONVENTION_UNSPECIFIED
 D013_STATUS = VIGENTE
 STD_CONVENTION = POPULATION_DDOF_0
 IQR_CONVENTION = HYNDMAN_FAN_TYPE_7
 BOUND_PROXIMITY_RULE = DISTANCES_ONLY_NO_THRESHOLD
 RESULTS_OBSERVED_BEFORE_DECISION = NO
-DESCRIPTIVE_RESULTS_COMPUTED = NO
-CR1_COMP_03_RESUMPTION_AUTHORIZED = NO
+DESCRIPTIVE_RESULTS_COMPUTED = YES_AFTER_D013_FREEZE
+DECISION_SPACE_DESCRIPTIVE_ANALYSIS = PASS
+H_ROWS = 9
+C_ROWS = 9
+VARIABLE_COUNT = 4
+ALL_X_FINITE = YES
+BOUNDS_CHECK = PASS
+INDEPENDENT_QC = PASS
 PROTOCOL_V1_MODIFIED = NO
+CR1_COMP_04_COMPUTED = NO
 ```
 
-CR1-COMP-01 y CR1-COMP-02 permanecen `CLOSED_PASS`. No se calcularon resultados de CR1-COMP-03. Su reanudación con D013 requiere autorización separada.
+CR1-COMP-01 y CR1-COMP-02 permanecen `CLOSED_PASS`. CR1-COMP-03 produjo únicamente resúmenes descriptivos del espacio de decisión de los conjuntos finitos H y C. No se analizaron objetivos ni se ejecutó ninguna fase posterior.
 
 ## Próxima fase
 
 ```text
-NEXT_PHASE = CR1-COMP-03_DECISION_SPACE_DESCRIPTIVE_ANALYSIS
+NEXT_PHASE = CR1-COMP-04_OBJECTIVE_SPACE_DESCRIPTIVE_ANALYSIS
 ```
 
-La reanudación de CR1-COMP-03 requiere autorización separada. CR1-COMP-04 no está autorizada.
+CR1-COMP-04 no está autorizada y requiere autorización separada.

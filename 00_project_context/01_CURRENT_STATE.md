@@ -198,7 +198,7 @@ Estado de implementación:
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = CR1_COMP_02_WITHIN_SET_ONLY_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_03_DECISION_SPACE_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 MATLAB_EXECUTION_AUTHORIZED = NO
@@ -223,7 +223,7 @@ CR1_COMP_01_DATASET_FREEZE = PASS
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
 CANONICAL_COMPARATIVE_DATASET = 06_manuscript/article_Q1/review/CR1_COMP_01_CANONICAL_DATASET_v96z.csv
 CANONICAL_COMPARATIVE_DATASET_SHA256 = B17B461FB04C9693FC9DA0C3450703C34E4538894AD232EF7138AE5E9882CD62
-NEXT_COMPARATIVE_PHASE = CR1-COMP-03 — Decision-space descriptive analysis
+NEXT_COMPARATIVE_PHASE = CR1-COMP-04 — Objective-space descriptive analysis
 ```
 
 El dataset canónico conserva 18 filas en orden H01…H09, C01…C09. La desviación documental D1 para H.f2/f3 permanece explícita.
@@ -246,27 +246,33 @@ NEAR_TIE_DIAGNOSTIC_COMPUTED = NO
 
 Los 36 pares internos de H y los 36 pares internos de C resultaron incomparables. No hubo relaciones de dominancia ni igualdades exactas. Esto permite denominar C como aproximación no dominada, pero no como frente Pareto verdadero, exacto o global. H permanece como conjunto histórico reevaluado, no como frente Pareto corregido.
 
-Estado de entrada de `CR1-COMP-03` y resolución metodológica D013:
+Estado cerrado de `CR1-COMP-03`:
 
 ```text
-CR1_COMP_03_STATUS = BLOCKED_PENDING_RESUMPTION_AFTER_D013
+CR1_COMP_03_STATUS = CLOSED_PASS
 CR1_COMP_03_INITIAL_GATE = BLOCKED_DESCRIPTIVE_CONVENTION_UNSPECIFIED
 D013_STATUS = VIGENTE
 STD_CONVENTION = POPULATION_DDOF_0
 IQR_CONVENTION = HYNDMAN_FAN_TYPE_7
 BOUND_PROXIMITY_RULE = DISTANCES_ONLY_NO_THRESHOLD
 RESULTS_OBSERVED_BEFORE_DECISION = NO
-DESCRIPTIVE_RESULTS_COMPUTED = NO
-CR1_COMP_03_RESUMPTION_AUTHORIZED = NO
-NEXT_ACTION = RESUME_CR1_COMP_03_WITH_D013_CONVENTIONS_REQUIRING_SEPARATE_AUTHORIZATION
+DESCRIPTIVE_RESULTS_COMPUTED = YES_AFTER_D013_FREEZE
+DECISION_SPACE_DESCRIPTIVE_ANALYSIS = PASS
+H_ROWS = 9
+C_ROWS = 9
+VARIABLE_COUNT = 4
+ALL_X_FINITE = YES
+BOUNDS_CHECK = PASS
+INDEPENDENT_QC = PASS
+NEXT_COMPARATIVE_PHASE = CR1-COMP-04 — Objective-space descriptive analysis
 ```
 
-D013 resuelve las convenciones de implementación para CR1-COMP-03/04 sin modificar el protocolo v1.0. CR1-COMP-03 no se ha reanudado y no está cerrado.
+D013 resolvió las convenciones antes del cálculo. Los resultados son resúmenes descriptivos de conjuntos finitos, no inferencia poblacional, evidencia entre corridas ni conclusión de superioridad multiobjetivo. No se calculó CR1-COMP-04 ni ninguna fase posterior.
 
 ## Siguiente fase
 
 ```text
-NEXT_PHASE = CR1-COMP-03_DECISION_SPACE_DESCRIPTIVE_ANALYSIS
+NEXT_PHASE = CR1-COMP-04_OBJECTIVE_SPACE_DESCRIPTIVE_ANALYSIS
 ```
 
-La reanudación de CR1-COMP-03 con D013 requiere autorización separada.
+CR1-COMP-04 requiere autorización separada.
