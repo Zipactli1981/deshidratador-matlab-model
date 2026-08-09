@@ -198,7 +198,7 @@ Estado de implementación:
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_06_NUMERICAL_NEAR_TIE_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_07_SET_COVERAGE_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 MATLAB_EXECUTION_AUTHORIZED = NO
@@ -331,12 +331,37 @@ HYPERVOLUME_COMPUTED = NO
 NEXT_COMPARATIVE_PHASE = CR1-COMP-07 — Set coverage
 ```
 
-El umbral fue exclusivamente diagnóstico. No se transformaron desigualdades en igualdades ni se modificó clasificación exacta, Pareto rank o coverage futuro. No se calculó CR1-COMP-07 ni ninguna fase posterior.
+El umbral fue exclusivamente diagnóstico. No se transformaron desigualdades en igualdades ni se modificó clasificación exacta, Pareto rank o coverage futuro.
+
+Estado cerrado de `CR1-COMP-07`:
+
+```text
+CR1_COMP_07_STATUS = CLOSED_PASS
+N_H_COUNT = 9
+N_C_COUNT = 9
+N_H_DOMINATED_BY_C = 1
+H_DOMINATED_BY_C_IDS = H05
+N_C_DOMINATED_BY_H = 2
+C_DOMINATED_BY_H_IDS = C06,C08
+FULL_COVERAGE_C_OVER_H = 0.1111111111111111
+FULL_COVERAGE_H_OVER_C = 0.2222222222222222
+CORE_COVERAGE_NC_OVER_NH = 0.1111111111111111
+CORE_COVERAGE_NH_OVER_NC = 0.2222222222222222
+FULL_CORE_COVERAGE_EQUALITY_CHECK = PASS
+INDEPENDENT_QC = PASS
+COVERAGE_COMPUTED = YES
+JOINT_SORTING_COMPUTED = NO
+HYPERVOLUME_GATE_COMPUTED = NO
+HYPERVOLUME_COMPUTED = NO
+NEXT_COMPARATIVE_PHASE = CR1-COMP-08 — Joint exact nondominated sorting
+```
+
+Coverage se calculó sobre IDs objetivo distintos y es asimétrico. La igualdad full/core es específica de este dataset porque `N_H=H` y `N_C=C`. Los resultados no establecen superioridad global ni composición del Rank 1 conjunto. No se calculó CR1-COMP-08 ni ninguna fase posterior.
 
 ## Siguiente fase
 
 ```text
-NEXT_PHASE = CR1-COMP-07_SET_COVERAGE
+NEXT_PHASE = CR1-COMP-08_JOINT_EXACT_NONDOMINATED_SORTING
 ```
 
-CR1-COMP-07 requiere autorización separada.
+CR1-COMP-08 requiere autorización separada.

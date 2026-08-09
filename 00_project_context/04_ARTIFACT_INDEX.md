@@ -433,6 +433,60 @@ CR1_COMP_05_EXACT_DOMINANCE_PRESERVED = YES
 NEXT_COMPARATIVE_PHASE = CR1-COMP-07_SET_COVERAGE
 ```
 
+## CR1-COMP-07 — Set Coverage
+
+Métricas full/core:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_v96z.csv
+SHA-256 = 006DE140768490BF4903F266C2D205AAC8B2F1BF4A44E8F836179842825206FF
+Role = four exact asymmetric coverage metrics with fractions, decimals, and percentages
+```
+
+Membresía por solución:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_MEMBERSHIP_v96z.csv
+SHA-256 = 66A04A61A1D4854267A17C92F7CC3F5E7050C85AF896B75BB038171E32920500
+Role = 18 solution core-membership, cross-set domination flags, and exact dominator IDs
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_v96z.json
+SHA-256 = 8FA73A67DB5C510F3B0B0E4AEFD31570DC012D807A51608A58A6EE231B401D83
+Role = inputs, definitions, N_H/N_C, memberships, four coverages, QC, limitations, and exclusions
+```
+
+Audit documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_AUDIT_v96z.md
+SHA-256 = 170462AABB29D30B6AC7DD1EA98C0FC3B3E575F1268440E6A1BB516B0C54671E
+Role = canonical formulas, pair-count distinction, memberships, full/core results, limitations, hashes, and scope record
+```
+
+Script postrun reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_07_set_coverage_v96z.py
+SHA-256 = 1509A7DBF0EC40672002A80136CAFB18735C60A790C5949ED43B1D3E9A993DAB
+Role = input-hash gates, dual membership routes, full/core structural QC, and deterministic outputs
+```
+
+Estado:
+
+```text
+CR1_COMP_07_STATUS = CLOSED_PASS
+FULL_COVERAGE_C_OVER_H = 0.1111111111111111
+FULL_COVERAGE_H_OVER_C = 0.2222222222222222
+CORE_COVERAGE_NC_OVER_NH = 0.1111111111111111
+CORE_COVERAGE_NH_OVER_NC = 0.2222222222222222
+FULL_CORE_COVERAGE_EQUALITY_CHECK = PASS
+NEXT_COMPARATIVE_PHASE = CR1-COMP-08_JOINT_EXACT_NONDOMINATED_SORTING
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c

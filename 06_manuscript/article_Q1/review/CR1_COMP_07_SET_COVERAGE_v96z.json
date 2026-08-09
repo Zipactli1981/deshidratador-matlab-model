@@ -1,0 +1,296 @@
+{
+  "artifact_role": "CR1_COMP_07_SET_COVERAGE",
+  "cr1_comp_07_status": "CLOSED_PASS",
+  "baseline": {
+    "head": "2b22bf342c3ec0e2d5c22ab4da33c566f6521c93",
+    "input_baseline_check": "PASS"
+  },
+  "inputs": {
+    "cr1_comp_05_matrix": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_MATRIX_v96z.csv",
+      "sha256": "C783CDD1214598643F1A46F6A6E1EC144220D2BFB2FC8D67F53293A3B7ACC329",
+      "check": "PASS"
+    },
+    "cr1_comp_05_result": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_05_EXACT_CROSS_DOMINANCE_v96z.json",
+      "sha256": "88EE7D86AFEE3A1C5E33D3BD2629995277481A2B65FDF03C83594888402D701A",
+      "check": "PASS"
+    },
+    "cr1_comp_02_solution_status": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_02_WITHIN_SET_SOLUTION_STATUS_v96z.csv",
+      "sha256": "74C33FA77D543FAADA6B9819AF88C133E23D5E283148999849ECF83998D1E5C2",
+      "check": "PASS"
+    }
+  },
+  "definitions": {
+    "dominance": "EXACT_FULL_PRECISION_NO_TOLERANCE",
+    "full_coverage": "distinct target solutions dominated by at least one source / full target size",
+    "core_coverage": "distinct target-core solutions dominated by at least one source-core solution / target-core size",
+    "near_tie_used": false,
+    "asymmetric": true
+  },
+  "sets": {
+    "H": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "H09"
+    ],
+    "C": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09"
+    ],
+    "N_H": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "H09"
+    ],
+    "N_C": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09"
+    ]
+  },
+  "memberships": [
+    {
+      "solution_id": "H01",
+      "source": "HIST_R1_REEVAL",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "H02",
+      "source": "HIST_R1_REEVAL",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "H03",
+      "source": "HIST_R1_REEVAL",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "H04",
+      "source": "HIST_R1_REEVAL",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "H05",
+      "source": "HIST_R1_REEVAL",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": true,
+      "dominating_other_set_solution_ids": "C04"
+    },
+    {
+      "solution_id": "H06",
+      "source": "HIST_R1_REEVAL",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "H07",
+      "source": "HIST_R1_REEVAL",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "H08",
+      "source": "HIST_R1_REEVAL",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "H09",
+      "source": "HIST_R1_REEVAL",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "C01",
+      "source": "CORRECTED_R1",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "C02",
+      "source": "CORRECTED_R1",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "C03",
+      "source": "CORRECTED_R1",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "C04",
+      "source": "CORRECTED_R1",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "C05",
+      "source": "CORRECTED_R1",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "C06",
+      "source": "CORRECTED_R1",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": true,
+      "dominating_other_set_solution_ids": "H02"
+    },
+    {
+      "solution_id": "C07",
+      "source": "CORRECTED_R1",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    },
+    {
+      "solution_id": "C08",
+      "source": "CORRECTED_R1",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": true,
+      "dominating_other_set_solution_ids": "H08"
+    },
+    {
+      "solution_id": "C09",
+      "source": "CORRECTED_R1",
+      "in_nondominated_core": true,
+      "dominated_by_any_other_set_exact": false,
+      "dominating_other_set_solution_ids": ""
+    }
+  ],
+  "dominated_target_ids": {
+    "H_dominated_by_C": [
+      "H05"
+    ],
+    "C_dominated_by_H": [
+      "C06",
+      "C08"
+    ],
+    "N_H_dominated_by_N_C": [
+      "H05"
+    ],
+    "N_C_dominated_by_N_H": [
+      "C06",
+      "C08"
+    ]
+  },
+  "coverage": [
+    {
+      "metric": "FULL_COVERAGE_C_OVER_H",
+      "numerator": 1,
+      "denominator": 9,
+      "fraction": "1/9",
+      "coverage": 0.1111111111111111,
+      "coverage_percent": 11.11111111111111,
+      "source_set": "C",
+      "target_set": "H",
+      "dominance_definition": "EXACT_FULL_PRECISION_NO_TOLERANCE"
+    },
+    {
+      "metric": "FULL_COVERAGE_H_OVER_C",
+      "numerator": 2,
+      "denominator": 9,
+      "fraction": "2/9",
+      "coverage": 0.2222222222222222,
+      "coverage_percent": 22.22222222222222,
+      "source_set": "H",
+      "target_set": "C",
+      "dominance_definition": "EXACT_FULL_PRECISION_NO_TOLERANCE"
+    },
+    {
+      "metric": "CORE_COVERAGE_NC_OVER_NH",
+      "numerator": 1,
+      "denominator": 9,
+      "fraction": "1/9",
+      "coverage": 0.1111111111111111,
+      "coverage_percent": 11.11111111111111,
+      "source_set": "N_C",
+      "target_set": "N_H",
+      "dominance_definition": "EXACT_FULL_PRECISION_NO_TOLERANCE"
+    },
+    {
+      "metric": "CORE_COVERAGE_NH_OVER_NC",
+      "numerator": 2,
+      "denominator": 9,
+      "fraction": "2/9",
+      "coverage": 0.2222222222222222,
+      "coverage_percent": 22.22222222222222,
+      "source_set": "N_H",
+      "target_set": "N_C",
+      "dominance_definition": "EXACT_FULL_PRECISION_NO_TOLERANCE"
+    }
+  ],
+  "qc": {
+    "independent_qc": "PASS",
+    "membership_routes_identity": "PASS",
+    "N_H_count": 9,
+    "N_C_count": 9,
+    "numerator_unique_target_identity": "PASS",
+    "denominators": "PASS",
+    "coverage_bounds": "PASS",
+    "full_core_coverage_equality_check": "PASS",
+    "coverage_csv_sha256": "006DE140768490BF4903F266C2D205AAC8B2F1BF4A44E8F836179842825206FF",
+    "membership_csv_sha256": "66A04A61A1D4854267A17C92F7CC3F5E7050C85AF896B75BB038171E32920500"
+  },
+  "limitations": [
+    "Coverage is asymmetric and is not a probability.",
+    "Coverage does not establish joint Rank 1, a true Pareto front, convergence, or global superiority."
+  ],
+  "not_computed": {
+    "cr1_comp_08": true,
+    "joint_sorting": true,
+    "hypervolume_gate": true,
+    "hypervolume": true
+  },
+  "execution": {
+    "MATLAB_executed": false,
+    "objective_evaluations": 0,
+    "replays": 0,
+    "gamultiobj_executions": 0
+  }
+}

@@ -1,5 +1,5 @@
 # PHASE HANDOFF CURRENT
-## CR1-COMP-06 Numerical Near-tie Sensitivity Audit → CR1-COMP-07 Set Coverage
+## CR1-COMP-07 Set Coverage → CR1-COMP-08 Joint Exact Nondominated Sorting
 
 ## Fases cerradas
 
@@ -55,7 +55,7 @@ No constituyen un frente Pareto corregido.
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_06_NUMERICAL_NEAR_TIE_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_07_SET_COVERAGE_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 ```
@@ -198,12 +198,32 @@ JOINT_SORTING_COMPUTED = NO
 HYPERVOLUME_COMPUTED = NO
 ```
 
-CR1-COMP-06 auditó únicamente sensibilidad numérica diagnóstica. No encontró near-ties ni dominancias exactas frágiles, y preservó las 81 clasificaciones CR1-COMP-05. No se calculó coverage ni ninguna fase posterior.
+CR1-COMP-06 auditó únicamente sensibilidad numérica diagnóstica. No encontró near-ties ni dominancias exactas frágiles, y preservó las 81 clasificaciones CR1-COMP-05.
+
+## CR1-COMP-07 cerrado
+
+```text
+CR1_COMP_07_STATUS = CLOSED_PASS
+H_DOMINATED_BY_C_IDS = H05
+C_DOMINATED_BY_H_IDS = C06,C08
+FULL_COVERAGE_C_OVER_H = 0.1111111111111111
+FULL_COVERAGE_H_OVER_C = 0.2222222222222222
+CORE_COVERAGE_NC_OVER_NH = 0.1111111111111111
+CORE_COVERAGE_NH_OVER_NC = 0.2222222222222222
+FULL_CORE_COVERAGE_EQUALITY_CHECK = PASS
+INDEPENDENT_QC = PASS
+COVERAGE_COMPUTED = YES
+JOINT_SORTING_COMPUTED = NO
+HYPERVOLUME_GATE_COMPUTED = NO
+HYPERVOLUME_COMPUTED = NO
+```
+
+CR1-COMP-07 calculó coverage exacto full/core sobre soluciones objetivo distintas. La igualdad full/core se debe a que `N_H=H` y `N_C=C`; coverage sigue siendo asimétrico y no determina la composición del Rank 1 conjunto. No se ejecutó joint sorting ni ninguna fase posterior.
 
 ## Próxima fase
 
 ```text
-NEXT_PHASE = CR1-COMP-07_SET_COVERAGE
+NEXT_PHASE = CR1-COMP-08_JOINT_EXACT_NONDOMINATED_SORTING
 ```
 
-CR1-COMP-07 no está autorizada y requiere autorización separada.
+CR1-COMP-08 no está autorizada y requiere autorización separada.
