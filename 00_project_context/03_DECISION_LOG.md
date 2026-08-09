@@ -231,3 +231,61 @@ NEW_SCIENTIFIC_RESULT = NO
 CR1-COMP-15 congela un vector cuantitativo más una narrativa. CR1-COMP-16 debe traducir esa evidencia congelada a implicaciones para el manuscrito. Una paráfrasis operativa posterior no puede reemplazar el veredicto upstream congelado. `CURRENT_STATE` y `PHASE_HANDOFF_CURRENT` pueden conservar resúmenes compactos para gestión de estado siempre que no contradigan el veredicto completo.
 
 **Estado:** VIGENTE.
+
+## D016 — Scientific sufficiency of current limited manuscript claim package
+
+```text
+D016_STATUS = VIGENTE
+DECISION_SCOPE = POST_COMPARATIVE_SCIENTIFIC_SUFFICIENCY
+SOURCE_GATE = POST_COMPARATIVE_SCIENTIFIC_SUFFICIENCY_GATE
+SOURCE_GATE_MODE = READ_ONLY_ANALYTICAL_GATE
+
+SCIENTIFIC_SUFFICIENCY_GATE = PASS_FOR_CURRENT_LIMITED_CLAIMS
+CURRENT_MANUSCRIPT_CLAIM_PACKAGE = SCIENTIFICALLY_SUFFICIENT_WITH_FROZEN_SCOPE_AND_MANDATORY_QUALIFIERS
+BLOCKING_CORE_CLAIMS = NONE
+
+TOTAL_MANUSCRIPT_CANDIDATE_CLAIMS = 40
+SUFFICIENT_AS_WRITTEN_COUNT = 24
+SUFFICIENT_WITH_MANDATORY_QUALIFIER_COUNT = 16
+CLAIMS_REQUIRING_REMOVAL = 0
+CLAIMS_REQUIRING_ADDITIONAL_EVIDENCE = 0
+ADDITIONAL_EVIDENCE_REQUIRED_FOR_CURRENT_MANUSCRIPT = NO
+
+MULTISEED_REQUIRED_FOR_CURRENT_FINITE_SET_CLAIMS = NO
+MULTISEED_REQUIRED_FOR_OPTIMIZER_ROBUSTNESS_CLAIMS = YES
+MULTISEED_CAMPAIGN_STATUS = USEFUL_BUT_NOT_REQUIRED
+CONVERGENCE_EVIDENCE_REQUIRED_FOR_CURRENT_CORE_CLAIMS = NO
+CURRENT_EVIDENCE_SUFFICIENT_FOR_REPRODUCIBLE_C_REGION_ACROSS_SEEDS = NO
+CURRENT_EVIDENCE_SUFFICIENT_FOR_HV_BASED_GLOBAL_SUPERIORITY = NO
+
+FINITE_SET_SCOPE = MANDATORY
+HYPERVOLUME_SCOPE = FINITE_SETS_COMMON_FROZEN_NORMALIZATION_R5_R10_R20
+HV_TRUE_FRONT_INFERENCE = PROHIBITED
+MEDIAN_STATISTICAL_INFERENCE = PROHIBITED
+H_PROVENANCE = REEVALUATED_NOT_REOPTIMIZED_UNDER_CORRECTED_COST_E3D
+C_REGION_CLAIM = PARTIALLY_SUPPORTED_MULTIPLE_TRADEOFF_MECHANISMS
+CONVERGENCE_CLAIM = NOT_SUPPORTED
+BETWEEN_SEED_ROBUSTNESS_CLAIM = NOT_SUPPORTED
+GLOBAL_OPTIMALITY_CLAIM = NOT_SUPPORTED
+STATISTICAL_GAMULTIOBJ_SUPERIORITY_CLAIM = NOT_SUPPORTED
+
+IRRADIACION_NOT_AVAILABLE = PRESERVED
+C_CO2_COMPONENTS_NOT_PERSISTED = PRESERVED
+CO2_CO2E_EDITORIAL_RECONCILIATION = PENDING
+COMMON_TMAX_19P9H = FIXED_HORIZON_LIMITATION
+ONE_CORRECTED_R1_RUN = YES
+MAXGENERATIONS_REACHED = YES
+
+PROJECT_CHARTER_STATUS_PARAGRAPH = HISTORICALLY_STALE_NONBLOCKING
+MANUSCRIPT_READY = NOT_EVALUATED
+FINAL_MANUSCRIPT_EDITED = NO
+NEW_SCIENTIFIC_RESULT = NO
+PROTOCOL_V1_MODIFIED = NO
+CR1_COMP_01_TO_16_REOPENED = NO
+```
+
+The current manuscript thesis is limited to a traceable comparison of finite evaluated sets under corrected COST-E3D. The frozen evidence is sufficient for that limited claim package when the mandatory qualifiers established by CR1-COMP-16 and the scientific-sufficiency gate are preserved.
+
+Claims regarding optimizer convergence, between-seed robustness, expected `gamultiobj` behavior, global optimality, statistical configuration superiority, reproducibility of the C concentration across seeds, total economic cost, life-cycle environmental impact, direct quantitative `Irradiacion` attribution, and C component-level CO2 attribution remain outside the supported claim package. A multiseed campaign would be scientifically useful for optimizer-level robustness and reproducibility claims, but it is not required for the currently limited finite-set manuscript thesis.
+
+**Estado:** VIGENTE.
