@@ -569,3 +569,29 @@ FUTURE_SEPARATE_GATES = literature positioning; novelty positioning; submission 
 ```
 
 D018 freezes the conditional-readiness decision and its controlled editorial blueprint. It does not authorize or execute manuscript insertion, table or figure conversion, literature/novelty assessment, submission preparation, scientific recomputation, or remote Git operations.
+
+## D019 — Handoff de arquitectura narrativa científica
+
+```text
+D018 = FROZEN_PASS
+D019 = VIGENTE
+D019_FREEZE_ROLE = FROZEN_BY_THIS_CANONICAL_COMMIT
+SCIENTIFIC_NARRATIVE_GATE = PASS
+MANUSCRIPT_ARCHITECTURE = SYSTEM_FIRST
+PRIMARY_SCIENTIFIC_OBJECT = HYBRID_SOLAR_LPG_DRYER_OPERATIONAL_TRADEOFFS
+ROLE_OF_GAMULTIOBJ = SEARCH_INSTRUMENT
+PRIMARY_RESEARCH_QUESTION = SUPPORTED
+SECONDARY_RESEARCH_QUESTION = SUPPORTED
+PRIMARY_HYPOTHESIS = SUPPORTED
+MANUSCRIPT_THESIS = SUPPORTED
+PRIMARY_CONTRIBUTION = FINITE_SET_PHYSICAL_AND_MULTIOBJECTIVE_CHARACTERIZATION
+MULTISEED_REQUIRED_FOR_PRIMARY_THESIS = NO
+PAPER_B = NOT_CURRENTLY_JUSTIFIED
+KNOWLEDGE_GAP_STATUS = CANDIDATE_PENDING_EXTERNAL_VERIFICATION
+NOVELTY_ESTABLISHED = NO
+READY_FOR_LITERATURE_POSITIONING_GATE = YES
+FINAL_MANUSCRIPT_EDITED = NO
+NEXT = LITERATURE_POSITIONING_GATE, requiring separate authorization
+```
+
+D019 preserves the system-first narrative and its finite-set boundaries. It does not perform literature or novelty verification, edit the manuscript, execute new science, or authorize a second algorithm-performance paper.
