@@ -279,10 +279,30 @@ Los intervalos observados de C están contenidos dentro de los intervalos margin
 
 Las cuatro figuras PNG están registradas por hash, pero coinciden con la regla global `*.png` de `.gitignore`; cualquier freeze local deberá incorporarlas mediante staging forzado explícito y selectivo.
 
+## CR1-COMP-10 cerrado
+
+```text
+CR1_COMP_10_STATUS = CLOSED_PASS
+HYPERVOLUME_GATE_COMPUTED = YES
+FULL_COVERAGE_C_OVER_H = 0.1111111111111111
+FULL_COVERAGE_H_OVER_C = 0.2222222222222222
+GATE_TEST_C_OVER_H_EQUALS_1 = FALSE
+GATE_TEST_H_OVER_C_EQUALS_0 = FALSE
+GATE_FULL_DOMINANCE_CONDITION = FALSE
+HYPERVOLUME_ANALYSIS = RECOMMENDED
+HYPERVOLUME_COMPUTED = NO
+CR1_COMP_11_COMPUTED = NO
+JSON_CSV_COVERAGE_CONSISTENCY = PASS
+GATE_IMPLEMENTATIONS_AGREE = PASS
+INDEPENDENT_QC = PASS
+```
+
+CR1-COMP-10 aplicó exclusivamente el gate congelado a los valores full coverage de CR1-COMP-07. La condición de sustitución completa y unidireccional resultó falsa, por lo que hypervolume queda recomendado como métrica secundaria adicional. No se calculó hypervolume ni se ejecutó CR1-COMP-11.
+
 ## Próxima fase
 
 ```text
-NEXT_PHASE = CR1-COMP-10_HYPERVOLUME_DECISION_GATE
+NEXT_PHASE = CR1-COMP-11_HYPERVOLUME_AND_SENSITIVITY
 ```
 
-CR1-COMP-10 no está autorizada y requiere autorización separada.
+CR1-COMP-11 no está autorizada y requiere autorización separada.

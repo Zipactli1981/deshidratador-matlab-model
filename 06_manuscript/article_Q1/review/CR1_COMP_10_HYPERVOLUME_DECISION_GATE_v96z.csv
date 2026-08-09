@@ -1,0 +1,2 @@
+full_coverage_c_over_h,full_coverage_h_over_c,gate_test_c_over_h_equals_1,gate_test_h_over_c_equals_0,gate_full_dominance_condition,hypervolume_gate_outcome,hypervolume_computed
+0.1111111111111111,0.2222222222222222,FALSE,FALSE,FALSE,RECOMMENDED,NO

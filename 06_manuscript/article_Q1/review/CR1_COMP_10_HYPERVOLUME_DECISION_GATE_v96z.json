@@ -1,0 +1,91 @@
+{
+  "artifact_role": "CR1_COMP_10_HYPERVOLUME_DECISION_GATE",
+  "cr1_comp_10_status": "CLOSED_PASS",
+  "baseline": {
+    "head": "c9e7b4d16d492fd06e7e2a600208d3d522f6225b",
+    "input_baseline_check": "PASS"
+  },
+  "protocol": {
+    "path": "06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md",
+    "version": "v1.0",
+    "status": "FROZEN_APPROVED_FOR_POSTRUN_COMPARATIVE_IMPLEMENTATION",
+    "sha256": "8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3",
+    "sha256_check": "PASS"
+  },
+  "inputs": {
+    "coverage_json": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_v96z.json",
+      "sha256": "8FA73A67DB5C510F3B0B0E4AEFD31570DC012D807A51608A58A6EE231B401D83",
+      "sha256_check": "PASS"
+    },
+    "coverage_csv": {
+      "path": "06_manuscript/article_Q1/review/CR1_COMP_07_SET_COVERAGE_v96z.csv",
+      "sha256": "006DE140768490BF4903F266C2D205AAC8B2F1BF4A44E8F836179842825206FF",
+      "sha256_check": "PASS"
+    },
+    "cr1_comp_07_status": "CLOSED_PASS",
+    "cr1_comp_07_independent_qc": "PASS",
+    "H_rows": 9,
+    "C_rows": 9,
+    "N_H_dominated_by_C": 1,
+    "N_C_dominated_by_H": 2,
+    "H_dominated_by_C_ids": [
+      "H05"
+    ],
+    "C_dominated_by_H_ids": [
+      "C06",
+      "C08"
+    ],
+    "full_coverage_c_over_h": 0.1111111111111111,
+    "full_coverage_c_over_h_percent": 11.11111111111111,
+    "full_coverage_h_over_c": 0.2222222222222222,
+    "full_coverage_h_over_c_percent": 22.22222222222222
+  },
+  "frozen_rule": {
+    "if": "FULL_COVERAGE_C_OVER_H == 1 AND FULL_COVERAGE_H_OVER_C == 0",
+    "then": "HYPERVOLUME_MAIN_ANALYSIS = NOT_REQUIRED",
+    "else": "HYPERVOLUME_ANALYSIS = RECOMMENDED",
+    "tolerance_used": false,
+    "core_coverage_used": false
+  },
+  "gate_evaluation": {
+    "gate_test_c_over_h_equals_1": false,
+    "gate_test_h_over_c_equals_0": false,
+    "gate_full_dominance_condition": false,
+    "selected_branch": "ELSE",
+    "hypervolume_gate_outcome": "RECOMMENDED"
+  },
+  "hypervolume_gate_computed": true,
+  "hypervolume_computed": false,
+  "cr1_comp_11_computed": false,
+  "interpretation_limited": "La dominancia/cobertura no proporciona una sustitución completa y unidireccional de H por C bajo la condición congelada; por tanto, el protocolo recomienda utilizar hypervolume como métrica secundaria adicional.",
+  "qc": {
+    "json_csv_coverage_consistency": "PASS",
+    "gate_implementations_agree": "PASS",
+    "upstream_documentary_consistency": "PASS",
+    "independent_qc": "PASS"
+  },
+  "excluded_computations": {
+    "coverage_recalculated_from_dominance_matrix": false,
+    "HV_H_computed": false,
+    "HV_C_computed": false,
+    "HV_anchors_computed": false,
+    "HV_normalization_computed": false,
+    "HV_reference_points_computed": false,
+    "HV_sensitivity_computed": false,
+    "terminal_regime_comparison_computed": false,
+    "objective_decomposition_computed": false
+  },
+  "execution": {
+    "MATLAB_executed": false,
+    "objective_evaluations": 0,
+    "replays": 0,
+    "gamultiobj_executions": 0
+  },
+  "scope_integrity": {
+    "protocol_v1_file_modified": false,
+    "productive_code_modified": false,
+    "decision_log_modified": false
+  },
+  "next_recommended_step": "CR1-COMP-11 — Hypervolume and sensitivity; separate authorization required"
+}

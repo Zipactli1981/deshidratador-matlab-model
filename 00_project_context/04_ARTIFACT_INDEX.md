@@ -639,6 +639,53 @@ INDEPENDENT_QC = PASS
 NEXT_COMPARATIVE_PHASE = CR1-COMP-10_HYPERVOLUME_DECISION_GATE
 ```
 
+## CR1-COMP-10 — Hypervolume decision gate
+
+Gate de una fila:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_10_HYPERVOLUME_DECISION_GATE_v96z.csv
+SHA-256 = BDF683037D5CE35AB07B0E607FA59C55ACB8A43867B49811A8D121952F17B21B
+Role = extracted full-coverage inputs, exact Boolean gate terms, selected outcome, and explicit no-HV flag
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_10_HYPERVOLUME_DECISION_GATE_v96z.json
+SHA-256 = 52A7AA4735B59C01EF57F27841A3DEE8B1EC0AA1F23B4653049EBA20E40352DE
+Role = baseline, frozen protocol and inputs, exact gate evaluation, limited interpretation, independent QC, and exclusions
+```
+
+Audit documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_10_HYPERVOLUME_DECISION_GATE_AUDIT_v96z.md
+SHA-256 = E79193F13C95A8157AC3DD48F71BC69F8B37973D6CF0ED38F7D55BC58828C65D
+Role = exact frozen rule, upstream hashes and values, Boolean evaluation, methodological meaning, limitations, and CR1-COMP-11 separation
+```
+
+Script reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_10_hypervolume_decision_gate_v96z.py
+SHA-256 = 643C8848228E334D3FF0D745DF9ADD46AD64CD1BC220BDE8FFF2F194326326F9
+Role = independent JSON/CSV coverage reads, exact gate application without tolerance, documentary QC, and deterministic artifact generation
+```
+
+Estado:
+
+```text
+CR1_COMP_10_STATUS = CLOSED_PASS
+HYPERVOLUME_GATE_COMPUTED = YES
+GATE_FULL_DOMINANCE_CONDITION = FALSE
+HYPERVOLUME_ANALYSIS = RECOMMENDED
+HYPERVOLUME_COMPUTED = NO
+CR1_COMP_11_COMPUTED = NO
+INDEPENDENT_QC = PASS
+NEXT_COMPARATIVE_PHASE = CR1-COMP-11_HYPERVOLUME_AND_SENSITIVITY
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c
