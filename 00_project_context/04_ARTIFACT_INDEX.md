@@ -379,6 +379,60 @@ EXACT_EQUAL_COUNT = 0
 NEXT_COMPARATIVE_PHASE = CR1-COMP-06_NUMERICAL_NEAR_TIE_SENSITIVITY_AUDIT
 ```
 
+## CR1-COMP-06 — Numerical Near-tie Sensitivity Audit
+
+Matriz diagnóstica por pareja:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_06_NUMERICAL_NEAR_TIE_MATRIX_v96z.csv
+SHA-256 = 7C3BABCBCFF4BD431FBA0AE13713D7CF6A73F5B8F11EC1A0F67F57D80ECD456E
+Role = 81-pair exact-classification-preserving near-tie and fragility trace
+```
+
+Resumen global, por solución y por dominancia exacta:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_06_NUMERICAL_NEAR_TIE_SUMMARY_v96z.csv
+SHA-256 = 0798A891A2E58350D036E297FBB8D7B7A85B669C41166CCBE15BA83580FE1D8C
+Role = global aggregates, 18 solution summaries, and three exact-dominance diagnostics
+```
+
+Resultado estructurado:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_06_NUMERICAL_NEAR_TIE_SENSITIVITY_v96z.json
+SHA-256 = 227F88AB15A30A812F222E3608BF9512401A8775AA1CFE9886E6288326F6E3FA
+Role = inputs, frozen rule, CR1-COMP-05 integrity, 243 flags, aggregates, QC, limitations, and exclusions
+```
+
+Audit documental:
+
+```text
+06_manuscript/article_Q1/review/CR1_COMP_06_NUMERICAL_NEAR_TIE_SENSITIVITY_AUDIT_v96z.md
+SHA-256 = DFFA2204454AF10ED527A118D6C6682428E13EE80D826928A39870E85D8E7F9D
+Role = canonical diagnostic method, exact-dominance results, integrity, limitations, hashes, and scope record
+```
+
+Script postrun reproducible:
+
+```text
+06_manuscript/article_Q1/review/cr1_comp_06_numerical_near_tie_sensitivity_v96z.py
+SHA-256 = F2E30CE9C8224E2DDC223871B6D2729A4438B1F91E583A3FA1361C9B730B2CB4
+Role = input-hash gates, exact-integrity recomputation, dual near-tie routes, and deterministic outputs
+```
+
+Estado:
+
+```text
+CR1_COMP_06_STATUS = CLOSED_PASS
+NEAR_TIE_OBJECTIVE_COUNT = 0
+PAIR_WITH_NEAR_TIE_COUNT = 0
+NUMERICALLY_FRAGILE_DOMINANCE_COUNT = 0
+DOMINANCE_NUMERIC_SENSITIVITY = PASS_NO_FRAGILE_DOMINANCE
+CR1_COMP_05_EXACT_DOMINANCE_PRESERVED = YES
+NEXT_COMPARATIVE_PHASE = CR1-COMP-07_SET_COVERAGE
+```
+
 ## Productive fingerprints
 ```text
 historical runner = 243554b3df9644a74c54d45472068557204d650c

@@ -198,7 +198,7 @@ Estado de implementación:
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_05_EXACT_CROSS_DOMINANCE_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_06_NUMERICAL_NEAR_TIE_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 MATLAB_EXECUTION_AUTHORIZED = NO
@@ -308,12 +308,35 @@ JOINT_SORTING_COMPUTED = NO
 NEXT_COMPARATIVE_PHASE = CR1-COMP-06 — Numerical near-tie sensitivity audit
 ```
 
-Los conteos son relaciones exactas entre las 81 parejas cartesianas H×C. No constituyen coverage, Rank 1 conjunto ni superioridad global. No se calculó CR1-COMP-06 ni ninguna fase posterior.
+Los conteos son relaciones exactas entre las 81 parejas cartesianas H×C. No constituyen coverage, Rank 1 conjunto ni superioridad global.
+
+Estado cerrado de `CR1-COMP-06`:
+
+```text
+CR1_COMP_06_STATUS = CLOSED_PASS
+NUMERICAL_NEAR_TIE_THRESHOLD = 1e-12 * max(1,abs(a),abs(b))
+NUMERICAL_THRESHOLD_ROLE = DIAGNOSTIC_ONLY
+CROSS_PAIR_COUNT = 81
+OBJECTIVE_COMPARISON_COUNT = 243
+NEAR_TIE_OBJECTIVE_COUNT = 0
+PAIR_WITH_NEAR_TIE_COUNT = 0
+NUMERICALLY_FRAGILE_DOMINANCE_COUNT = 0
+DOMINANCE_NUMERIC_SENSITIVITY = PASS_NO_FRAGILE_DOMINANCE
+CR1_COMP_05_EXACT_DOMINANCE_PRESERVED = YES
+EXACT_DOMINANCE_CLASSIFICATIONS_CHANGED = NO
+INDEPENDENT_QC = PASS
+COVERAGE_COMPUTED = NO
+JOINT_SORTING_COMPUTED = NO
+HYPERVOLUME_COMPUTED = NO
+NEXT_COMPARATIVE_PHASE = CR1-COMP-07 — Set coverage
+```
+
+El umbral fue exclusivamente diagnóstico. No se transformaron desigualdades en igualdades ni se modificó clasificación exacta, Pareto rank o coverage futuro. No se calculó CR1-COMP-07 ni ninguna fase posterior.
 
 ## Siguiente fase
 
 ```text
-NEXT_PHASE = CR1-COMP-06_NUMERICAL_NEAR_TIE_SENSITIVITY_AUDIT
+NEXT_PHASE = CR1-COMP-07_SET_COVERAGE
 ```
 
-CR1-COMP-06 requiere autorización separada.
+CR1-COMP-07 requiere autorización separada.

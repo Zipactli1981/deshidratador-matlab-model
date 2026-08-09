@@ -1,5 +1,5 @@
 # PHASE HANDOFF CURRENT
-## CR1-COMP-05 Exact Cross-dominance Matrix → CR1-COMP-06 Numerical Near-tie Sensitivity Audit
+## CR1-COMP-06 Numerical Near-tie Sensitivity Audit → CR1-COMP-07 Set Coverage
 
 ## Fases cerradas
 
@@ -55,7 +55,7 @@ No constituyen un frente Pareto corregido.
 
 ```text
 COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_05_EXACT_CROSS_DOMINANCE_COMPUTED
+COMPARATIVE_RESULTS = THROUGH_CR1_COMP_06_NUMERICAL_NEAR_TIE_COMPUTED
 SCIENTIFIC_INTERPRETATION = NOT_STARTED
 MANUSCRIPT_CHANGES = NOT_STARTED
 ```
@@ -178,12 +178,32 @@ COVERAGE_COMPUTED = NO
 JOINT_SORTING_COMPUTED = NO
 ```
 
-CR1-COMP-05 clasificó exclusivamente las 81 parejas cartesianas H×C mediante dominancia exacta sin tolerancia. Los conteos no son métricas de coverage ni establecen Rank 1 conjunto o superioridad global. No se ejecutó análisis near-tie ni ninguna fase posterior.
+CR1-COMP-05 clasificó exclusivamente las 81 parejas cartesianas H×C mediante dominancia exacta sin tolerancia. Los conteos no son métricas de coverage ni establecen Rank 1 conjunto o superioridad global.
+
+## CR1-COMP-06 cerrado
+
+```text
+CR1_COMP_06_STATUS = CLOSED_PASS
+NUMERICAL_NEAR_TIE_THRESHOLD = 1e-12 * max(1,abs(a),abs(b))
+NUMERICAL_THRESHOLD_ROLE = DIAGNOSTIC_ONLY
+NEAR_TIE_OBJECTIVE_COUNT = 0
+PAIR_WITH_NEAR_TIE_COUNT = 0
+NUMERICALLY_FRAGILE_DOMINANCE_COUNT = 0
+DOMINANCE_NUMERIC_SENSITIVITY = PASS_NO_FRAGILE_DOMINANCE
+CR1_COMP_05_EXACT_DOMINANCE_PRESERVED = YES
+EXACT_DOMINANCE_CLASSIFICATIONS_CHANGED = NO
+INDEPENDENT_QC = PASS
+COVERAGE_COMPUTED = NO
+JOINT_SORTING_COMPUTED = NO
+HYPERVOLUME_COMPUTED = NO
+```
+
+CR1-COMP-06 auditó únicamente sensibilidad numérica diagnóstica. No encontró near-ties ni dominancias exactas frágiles, y preservó las 81 clasificaciones CR1-COMP-05. No se calculó coverage ni ninguna fase posterior.
 
 ## Próxima fase
 
 ```text
-NEXT_PHASE = CR1-COMP-06_NUMERICAL_NEAR_TIE_SENSITIVITY_AUDIT
+NEXT_PHASE = CR1-COMP-07_SET_COVERAGE
 ```
 
-CR1-COMP-06 no está autorizada y requiere autorización separada.
+CR1-COMP-07 no está autorizada y requiere autorización separada.
