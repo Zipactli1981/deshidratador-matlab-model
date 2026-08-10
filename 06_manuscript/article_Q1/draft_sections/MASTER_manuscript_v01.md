@@ -1,660 +1,306 @@
-# MASTER_manuscript_v01
+# Finite-set characterization of operational trade-offs in hybrid solar–LPG drying of red chilli under corrected cost–emissions objectives
 
-#
+## Abstract
 
-# Status
+Hybrid solar–LPG drying couples thermal supply with airflow and recirculation decisions, creating operational conflicts that cannot be represented by moisture removal alone. This computational study characterizes the finite-set trade-offs among final moisture ratio (`f1`), modeled specific operating-energy cost (`f2`, USD/kg water removed), and modeled specific operational greenhouse-gas emissions (`f3`, kg CO2e/kg water removed) for red chilli in a forced-convection dryer. Four operating variables were considered: the base air mass-flow parameter, minimum process-air temperature, recirculation fraction, and recirculation start time. Two nine-solution sets were evaluated under the same corrected COST-E3D formulation: historical R1 decision vectors reevaluated under the corrected formulation (H) and solutions generated directly under it (C).
 
-`MASTER_SKELETON_CREATED`
+All nine members of each set were internally nondominated. Of the 81 cross-set comparisons, 78 were incomparable, C dominated H in one pair, H dominated C in two pairs, and no objective vectors were exactly equal. Set coverage was 1/9 for C over H and 2/9 for H over C. Joint nondominated sorting retained eight H and seven C solutions in Rank 1. Relative to H, C had a 33.807% lower median `f1`, accompanied by 3.200% and 3.859% higher median `f2` and `f3`, respectively. C occupied narrower observed marginal intervals and introduced no new marginal extrema, whereas H retained all observed marginal extrema. At the primary normalized reference point, anchored hypervolume was 0.974982 for H and 1.009963 for C; the direction C > H was unchanged at the two additional prespecified reference points.
 
-#
+The results indicate trade-off restructuring rather than uniform replacement of the historical set. Lower final moisture in C was descriptively associated with a higher thermal setpoint and different airflow and recirculation management, with moderate penalties in modeled specific operating-energy cost and operational greenhouse-gas emissions. These conclusions apply only to the 18 evaluated solutions from one corrected run and a historical reevaluated set at a common fixed 19.9 h horizon. The emissions indicator includes direct LPG-combustion CO2 and indirect grid-electricity CO2e normalized by water removed; it is not a life-cycle carbon footprint, a complete greenhouse-gas inventory, or total environmental impact.
 
-# Micropaso
+**Keywords:** hybrid solar–LPG dryer; operational trade-offs; finite solution sets; multiobjective optimization; air recirculation; operating-energy cost; operational greenhouse-gas emissions; historical-solution reevaluation
 
-`9.6z-results-draft-d`
+## 1. Introduction
 
-#
+Drying performance in hybrid solar–fuel systems depends on the interaction among solar availability, auxiliary heat, airflow, temperature control, and exhaust-air management. Hybridization can reduce reliance on auxiliary fuel, but the resulting operating problem is not resolved by maximizing solar input or minimizing final moisture in isolation. Temperature and airflow affect drying kinetics and energy demand, while recirculation changes the balance between heat recovery, moisture removal, and fresh-air heating. Recent reviews therefore emphasize integrated evaluation of energy, cost, product, and emissions indicators, together with explicit functional units and system boundaries (Pereira et al., 2026).
 
-# Identifier
+Solar–LPG drying is established in the literature. Experimental and industrial studies have reported solar–LPG or thermosolar–LPG dryers, their energy performance, and their economic context (Murali et al., 2020; Ortiz-Rodríguez et al., 2020; César-Munguía et al., 2023). Controlled air circulation and the combined effects of temperature and air-change rate have also been examined in solar–LPG equipment (Khater et al., 2024). Accordingly, neither the hybrid solar–LPG platform nor the study of temperature and airflow is treated here as a standalone novelty claim.
 
-`CREATE-MASTER-MANUSCRIPT-SKELETON-v01-001`
+Multiobjective optimization is likewise established in drying. Previous work has combined drying temperature and air velocity with genetic or nondominated-sorting methods (Winiczenko et al., 2018), applied genetic algorithms to hybrid solar–gas–electric drying (El Ferouali et al., 2018), and considered three-objective dryer formulations involving moisture, operating cost, released heat, environmental impact, or product quality (Oviedo et al., 2021; Zhang et al., 2022). The contribution of the present study is therefore narrower: a system-level, finite-set characterization of the operational conflict among drying performance, modeled specific operating-energy cost, and modeled specific operational greenhouse-gas emissions under coupled thermal and air-management decisions.
 
-#
+A second, more distinctive question arises from correction of an objective formulation after historical candidates have already been generated. Within the drying literature identified by the targeted positioning search, no direct precedent was located for preserving historical decision vectors, reevaluating those same vectors under a corrected cost–emissions formulation, generating candidates directly under that corrected formulation, and quantifying the survival and restructuring of the historical trade-offs. This is a bounded literature finding, not proof that no precedent exists outside the targeted search.
 
-# Working title
+The study addresses two questions:
 
-Multi-objective operational optimization of a hybrid solar–LPG tunnel dryer under controlled recirculation and collector-efficiency sensitivity
+1. How are drying performance, modeled specific operating-energy cost, and modeled specific operational greenhouse-gas emissions traded off across the evaluated combinations of thermal and air-management decisions in the hybrid solar–LPG dryer?
+2. How does the observed finite-set trade-off structure change when historical solutions are reevaluated under corrected COST-E3D and compared with solutions obtained directly under that corrected formulation?
 
-#
+The working hypothesis is that stronger drying within the evaluated solutions is associated with moderately higher modeled specific operating-energy cost and operational greenhouse-gas emissions, and that direct corrected optimization restructures rather than uniformly replaces the historical reevaluated trade-offs. The finite-set scope is constitutive: the manuscript characterizes 18 evaluated solutions and does not generalize their geometry to the full decision space.
 
-# Internal control note
+## 2. System description and model basis
 
-This master manuscript is a controlled assembly file. Approved sections are integrated progressively from individual Markdown section files located in:
+### 2.1 Hybrid dryer architecture
 
-`06_manuscript/article_Q1/draft_sections`
+The modeled equipment is a forced-convection tunnel dryer with direct air heating. The process-air circuit combines a solar air-heating field, an LPG auxiliary heater, a drying chamber, an exhaust path, and a controlled recirculation branch. The water circuit and pumps are outside the modeled boundary. The electrical scope is limited to the air impeller, represented by an active power of 1.03 kW throughout the drying period. The LPG burner efficiency is 0.78 (César-Munguía et al., 2023); therefore, `Q_aux_tot` denotes useful supplementary heat and the corresponding LPG fuel input is `Q_aux_tot/0.78`.
 
-Numerical tables are generated from MATLAB postprocessing scripts and stored in:
+The four-state lumped tunnel model represents process-air temperature, product temperature, product moisture ratio, and an equivalent structural temperature. The plant architecture, component mass and energy balances, and four-equation tunnel formulation follow the integral model of González-Bravo et al. (2024), which was validated against pineapple experiments at the Xochitepec plant with reported average relative errors below 5% and a maximum relative error of 7%. The present red-chilli application replaces the product kinetics with literature-based single-layer drying kinetics (Hossain et al., 2007). It preserves the coupled heat- and mass-transfer structure required to compare operating policies under a common model, but it does not resolve local spatial gradients within the tunnel. The cited validation applies to the pineapple model antecedent; no experimental validation of the present red-chilli simulations is claimed. The corrected objectives and current comparative results are governed by COST-E3D and the frozen D016–D020 evidence.
 
-`06_manuscript/article_Q1/tables`
+### 2.2 Decision variables and bounds
 
-Review reports and checks are stored in:
-
-`06_manuscript/article_Q1/review`
-
-Traceability files are stored in:
-
-`06_manuscript/article_Q1/traceability`
-
----
-
-# 1. Abstract
-
-`STATUS: DRAFT_READY_FOR_REVIEW`
-
-This study evaluates the operational optimization of a hybrid solar--LPG tunnel dryer with controlled air recirculation and collector-efficiency sensitivity. A multiobjective genetic-algorithm workflow was applied to a drying model of the hybrid system, using air mass flow rate, minimum process temperature, recirculation ratio, and recirculation start time as decision variables. The formal R1 run was treated as a controlled seed-aware numerical realization and its output is therefore reported as a computed nondominated set, not as evidence of global optimality or statistical robustness across independent seeds. Feasibility was assessed using a final moisture-ratio criterion of MR <= 0.1.
-
-Among the selected operating points, R1_solution_7 was identified as the main energy-conservative feasible candidate, reaching MR = 0.07057 with Q_aux = 656.23 kWh under the 2-SAH collector-efficiency assumption. R1_solution_3 provided a balanced alternative with deeper drying and higher auxiliary-energy demand, whereas R1_solution_9 represented an aggressive drying case with a substantial energy penalty. The historical H2 point was retained only as a reference condition for comparison and was not treated as a newly optimized R1 solution.
-
-The collector-efficiency sensitivity analysis showed that replacing the constant-efficiency assumption with the 2-SAH curve changed the absolute auxiliary-energy values but preserved the qualitative ranking of the selected operating points. A pointwise hybrid versus gas-LPG-only baseline comparison further indicated that hybrid operation reduced auxiliary-energy demand while maintaining feasible final moisture-ratio behavior. These results support the hybrid solar--LPG configuration as a promising energy-saving operating strategy under the modeled conditions. Final economic and CO2 claims remain conditional on definitive fuel-price, tariff, emission-factor, source-year, regional, unit-basis, and conversion assumptions.
-
-Relative to the gas-LPG baseline, the hybrid operating modes reduced auxiliary-energy demand by approximately 31--45%, with the energy-conservative R1_solution_7 reaching the largest reduction while satisfying the terminal moisture-ratio criterion.
-
-# 2. Keywords
-
-`STATUS: DRAFT_READY_FOR_REVIEW`
-
-- Hybrid solar dryer
-- LPG auxiliary heating
-- Tunnel drying
-- Multiobjective optimization
-- Moisture ratio
-- Solar air heater
-- Collector-efficiency sensitivity
-- Recirculation control
-
-# 3. Introduction
-
-`STATUS: DRAFT_READY_FOR_REVIEW`
-
-Hybrid solar drying is a relevant route for reducing fossil auxiliary-energy demand in thermal processing of agricultural products, particularly when drying must be maintained under controlled temperature and airflow conditions. In tunnel dryers, the useful contribution of the solar field depends not only on the available solar resource, but also on how the process air is heated, mixed, recirculated, and supplemented by an auxiliary fuel system. For hybrid solar--LPG operation, the resulting control problem is therefore not a single-variable temperature-setting problem; it involves simultaneous decisions on airflow, minimum process temperature, recirculation ratio, and recirculation start time.
-
-The operational challenge is that drying performance, auxiliary energy demand, economic indicators, and CO2-related indicators do not improve simultaneously. Deeper drying generally requires larger thermal input, while lower-energy operation may be acceptable only if the final moisture-ratio criterion remains satisfied. A useful optimization framework must therefore distinguish between excessive drying and sufficient drying, and it must identify feasible candidates that satisfy the selected moisture criterion without unnecessarily increasing auxiliary energy use. In this manuscript, feasibility is interpreted through the final moisture-ratio condition MR <= 0.1.
-
-Solar air heater representation is another source of uncertainty in the interpretation of hybrid dryer performance. A constant collector-efficiency assumption can simplify the energy balance, but it may distort the estimated auxiliary-energy demand. Conversely, a more physically consistent efficiency representation can change the absolute magnitude of the solar contribution. For the present system, the solar field is represented by batteries with two solar air heaters in series, which motivates a collector-efficiency sensitivity analysis based on the 2-SAH curve. This sensitivity is used to assess whether the selected operating-point ranking is preserved when the collector-efficiency assumption is changed.
-
-The present work addresses these issues by assembling a controlled multiobjective optimization and post-processing workflow for a hybrid solar--LPG tunnel dryer with explicit recirculation timing and collector-efficiency sensitivity. The optimization problem evaluates the trade-off among final moisture ratio, auxiliary-energy-related economic performance, and CO2-related environmental indicators. The formal R1 run is interpreted as a controlled seed-aware numerical realization, and its output is reported as a computed nondominated set rather than as proof of global optimality or statistical robustness. The selected R1 candidates are compared against the historical H2 reference point and against a pointwise gas-LPG-only baseline to separate optimization behavior from fuel-substitution effects.
-
-The contribution of this manuscript is fourfold. First, it formalizes the operational selection of feasible hybrid dryer candidates using air mass flow rate, minimum process temperature, recirculation ratio, and recirculation start time as decision variables. Second, it identifies R1_solution_7 as the main energy-conservative feasible candidate and R1_solution_3 as a balanced alternative, while retaining R1_solution_9 as an aggressive drying boundary case and H2 as a historical reference. Third, it evaluates whether the 2-SAH collector-efficiency assumption changes the qualitative ranking of the selected points. Fourth, it compares the selected hybrid operating points against gas-LPG-only operation to quantify auxiliary-energy reduction under equivalent decision-variable settings.
-
-The scope of the study is limited to the implemented drying model, the specified operational bounds, and one formal seed-aware R1 run. The analysis does not claim complete search-space convergence, statistical robustness across independent random seeds, or complete equipment-level optimality. Fan-power consumption, pressure-drop coupling, fully coupled dynamic collector modeling, and final source-locked cost and CO2 factors remain necessary extensions before publication-level techno-economic and environmental claims are made.
-
-# 3.1 Context
-
-Hybrid solar drying as an option to reduce fossil auxiliary energy in agro-industrial drying.
-
-#
-
-# 3.2 Problem
-
-Operational control of tunnel dryers involves trade-offs between final moisture ratio, energy use, cost, and emissions.
-
-#
-
-# 3.3 Gap
-
-Most optimization studies either simplify recirculation timing, assume fixed solar collector efficiency, or do not evaluate whether the collector-efficiency assumption changes the operational selection.
-
-#
-
-# 3.4 Contribution
-
-This work evaluates a hybrid solar–LPG tunnel dryer using a tri-objective optimization framework with explicit recirculation timing and a controlled collector-efficiency sensitivity analysis.
-
-#
-
-# 3.5 Scope and limitation
-
-The work reports a computed nondominated set from a controlled seed-aware formal run. It does not claim global optimality or statistical robustness across multiple independent seeds.
-
----
-
-# 4. System description
-
-`STATUS: DRAFT_READY_FOR_REVIEW`
-
-The analyzed equipment is a hybrid solar--LPG tunnel dryer configured for forced-convection drying under controlled airflow, auxiliary heating, and air-recirculation conditions. The system combines a solar air-heating field with an LPG auxiliary heater so that the process-air temperature can be maintained when the instantaneous solar contribution is insufficient. The dryer is represented at the operational level by the main airflow path, the solar air-heater contribution, the auxiliary LPG heating stage, the drying chamber, and the recirculation branch.
-
-The drying-air stream is driven by a forced-flow system and is heated before entering the tunnel chamber. Under hybrid operation, part of the required sensible heat is supplied by the solar air-heater field and the remaining demand is supplied by the LPG auxiliary heater whenever the process-air temperature must be lifted to the selected minimum operating level. The auxiliary-energy variable Q_aux is therefore interpreted as the thermal demand assigned to the LPG system after accounting for the modeled solar contribution.
-
-The solar subsystem is represented through collector-efficiency assumptions rather than through a fully coupled dynamic collector model. In the baseline formulation, the solar contribution can be estimated with a simplified efficiency representation. In the sensitivity analysis, the solar field is represented using the 2-SAH collector-efficiency curve, consistent with batteries composed of two solar air heaters in series. This sensitivity is used to evaluate whether the selected operating-point ranking remains consistent when the solar-air-heater efficiency representation is changed.
-
-The recirculation subsystem allows a fraction of the outlet air to be returned to the process stream after a specified recirculation start time. In the optimization workflow, the relevant operational decision variables are the air mass flow rate, minimum process temperature, recirculation ratio, and recirculation start time. These variables jointly define the thermal severity, residence-time effect, and energy-reuse behavior of each simulated operating condition. The recirculation start time is treated explicitly because early and delayed recirculation can affect both moisture removal and auxiliary-energy demand.
-
-The drying chamber contains the agricultural product and is modeled through lumped dynamic states that represent the interaction between drying air, product moisture removal, and thermal response of the system. The final drying performance is evaluated using the final moisture ratio, with feasible operation defined in this manuscript by MR <= 0.1. The comparison between hybrid operation and gas-LPG-only operation is performed pointwise at selected operating conditions, so the difference in Q_aux reflects the modeled solar contribution under the same decision-variable settings.
-
-Figure 1 should present a schematic of the hybrid solar--LPG dryer, including the solar air-heater field, auxiliary LPG heater, drying chamber, exhaust path, recirculation branch, controlled recirculation ratio, recirculation start-time logic, and main measured or simulated variables.
-
-`FIG_01_system_schematic`: pending figure callout; schematic to be inserted during figure-preparation stage.
-
-# 5. Mathematical model
-
-`STATUS: DRAFT_READY_FOR_REVIEW`
-
-The dryer is represented as a lumped dynamic system with four state variables: process-air temperature `T_a`, product temperature `T_p`, product moisture ratio `MR`, and an equivalent structural temperature `T_s`. The model is used as the simulation core for all operating policies evaluated by the optimization routine. Its purpose is not to resolve local spatial gradients inside the tunnel, but to retain the dominant thermal and drying couplings needed to compare feasible operating decisions under the same numerical assumptions.
-
-## 5.1 State vector and decision-variable coupling
-
-The state vector is
+The canonical decision vector is
 
 $$
-x(t)=\left[T_a(t),\,T_p(t),\,MR(t),\,T_s(t)\right]^T.
+\mathbf{x}=[m_{\max},T_{\min},r_{\mathrm{div2}},t_{\mathrm{rec,ini}}].
 $$
 
-The operational decision vector used later in the optimization is
+Here, `m_max` is the base air mass-flow parameter (kg/s), `T_min` is the minimum process-air temperature before the final operating stage (°C), `r_div2` is the recirculated fraction of the outlet stream, and `t_rec_ini` is the recirculation start time (h). Because recirculation changes flows within the circuit, `m_max` is not interpreted as a constant effective flow everywhere in the simulation.
+
+The frozen lower and upper bounds were
 
 $$
-u=\left[\dot{m},\,T_{min},\,r_{rec},\,t_{rec,ini}\right]^T.
+\mathbf{l}=[0.0540767982118,57.6832965028,0.422252618341,8.6517528081]
 $$
 
-Here, `m_dot` controls process-air mass flow rate, `T_min` defines the minimum admissible process-air temperature, `r_rec` defines the recirculated-air fraction after recirculation starts, and `t_rec_ini` defines the activation time of recirculation. These four variables affect the air-side energy balance, the auxiliary-energy requirement, and the drying trajectory used to compute terminal `MR`.
-
-## 5.2 Air-side energy balance
-
-The process-air temperature is modeled through a lumped energy balance:
+and
 
 $$
-C_a\frac{dT_a}{dt}=\dot{Q}_{sol}(t)+\dot{Q}_{aux}(t)-\dot{m}c_{p,a}\left[T_a(t)-T_{in}(t)\right]-h_{ap}A_p\left[T_a(t)-T_p(t)\right]-h_{as}A_s\left[T_a(t)-T_s(t)\right].
+\mathbf{u}=[0.0940767982118,67.6832965028,0.922252618341,14].
 $$
 
-`Q_sol` is the useful solar-air-heater contribution, `Q_aux` is the auxiliary LPG heat supplied when the hybrid controller cannot maintain the imposed temperature policy, and the final two terms represent heat exchange with the product and dryer structure. Recirculation modifies the effective inlet condition `T_in(t)` after `t_rec_ini`, with the mixing level controlled by `r_rec`. The auxiliary term is accumulated over time to obtain the reported `Q_aux` objective in kWh.
+## 3. Methods
 
-## 5.3 Product thermal and drying submodel
+### 3.1 Corrected COST-E3D objective formulation
 
-The product temperature follows a lumped balance:
-
-$$
-C_p\frac{dT_p}{dt}=h_{ap}A_p\left[T_a(t)-T_p(t)\right]-\dot{Q}_{evap}(t).
-$$
-
-The moisture-ratio dynamics are represented as
+All objectives were minimized:
 
 $$
-\frac{dMR}{dt}=-k_d\left(T_a,T_p,\dot{m}\right)MR(t),
+f_1=MR_{\mathrm{final}},
 $$
 
-where `k_d` is an effective drying coefficient evaluated from the operating condition. This links terminal `MR` directly to air temperature, product temperature, and flow-rate policy. The feasibility criterion used in the manuscript is terminal `MR <= 0.1`.
-
-## 5.4 Structural thermal response and numerical integration
-
-The equivalent dryer-structure temperature is represented by
-
 $$
-C_s\frac{dT_s}{dt}=h_{as}A_s\left[T_a(t)-T_s(t)\right]-U_sA_s\left[T_s(t)-T_{amb}(t)\right].
+f_2=\frac{\mathrm{total\_cost\_USD}}{\mathrm{water\_removed\_kg}},
 $$
 
-The four coupled ordinary differential equations are integrated with the same time base used in the optimization evaluations. For each candidate decision vector, the model returns terminal moisture ratio, accumulated auxiliary-energy demand, and the derived conditional cost or emissions indicators used in post-processing. Economic and CO2-related outputs are downstream indicators; they do not alter the physical state equations.
+and
 
-# 5.1 Drying model
+$$
+f_3=\frac{\mathrm{total\_CO2\_kg}}{\mathrm{water\_removed\_kg}}.
+$$
 
-- Product mass balance.
-- Moisture ratio.
-- Final moisture criterion.
-- Time step.
+The common functional denominator was the water actually removed,
 
-#
+$$
+\mathrm{water\_removed\_kg}=(M_i-M_{\mathrm{terminal}})m_d.
+$$
 
-# 5.2 Thermal model
+In manuscript terminology, `f2` is the **modeled specific operating-energy cost** in USD/kg water removed. It includes the modeled operating-energy components and excludes capital investment, maintenance, labor, fixed charges, total cost of ownership, and comprehensive commercial process cost.
 
-- Air temperature.
-- Product temperature.
-- Structure temperature.
-- Auxiliary energy.
+The computational name of `f3` is `CO2_specific_kgCO2_per_kgwater`. In manuscript terminology it is the **modeled specific operational greenhouse-gas emissions**, reported in kg CO2e/kg water removed. Its boundary comprises direct LPG-combustion CO2 plus indirect grid-electricity CO2e, normalized by water removed. It is not a life-cycle carbon footprint, a complete greenhouse-gas inventory, or total environmental impact. No embodied solar-equipment emissions are included.
 
-#
+The implemented emissions factors are 3.00 kg CO2/kg LPG for direct combustion, based on the Mexican fuel-factor study of INECC and IMP (2014), and 0.444 kg CO2e/kWh for grid electricity, corresponding to the official 2024 National Electric System factor (SEMARNAT, 2025). The June 2026 economic basis comprises 19.46 MXN/kg LPG for Xochitepec, 46.16 MJ/kg LPG lower heating value, 0.0717182253966247 USD/kWh for the GDMTO energy-only variable charge in CFE Division Centro Sur, 0.0126515761642454 USD/MJ for the INPC-restated solar-thermal proxy, and a Banco de México FIX mean of 17.3819136364 MXN/USD. The official bases are the June 2026 LPG-price series of the Comisión Nacional de Energía (CNE), the June 2026 CFE/CNE tariff annex, the Banco de México FIX series, the 2018 CONUEE/ANES/GIZ solar-thermal report, and the June 2026 INPC (CNE, 2026; Comisión Federal de Electricidad & Comisión Nacional de Energía, 2026; Banco de México, 2026; Ortega, 2018; INEGI, 2026). These are controlled model inputs, not a complete plant bill, commercial quotation, or life-cycle costing exercise.
 
-# 5.3 Solar collector representation
+Table 1 summarizes the objective definitions and interpretation boundaries.
 
-- Original constant efficiency.
-- Historical embedded efficiency expression.
-- 2-SAH curve used for sensitivity.
-- Clarify that fully coupled dynamic collector modeling is future work.
+### 3.2 Construction of the finite comparison sets
 
-#
+The historical set
 
-# 5.4 Operational modes
+$$
+H=\{(\mathbf{x}_i^H,\mathbf{F}_i^H)\}_{i=1}^{9}
+$$
 
-- Hybrid.
-- Gas-LPG reference.
-- Solar endpoint treated separately, not as equivalent formal GA comparison if numerically invalid.
+contains the nine historical R1 decision vectors reevaluated under corrected COST-E3D. These vectors were not generated by direct optimization of the corrected formulation. The corrected set
 
----
+$$
+C=\{(\mathbf{x}_j^C,\mathbf{F}_j^C)\}_{j=1}^{9}
+$$
 
-# 6. Optimization methodology
+contains nine solutions generated directly under corrected COST-E3D. The combined dataset `U=H∪C` therefore contains 18 evaluated solutions. Index equality does not imply pairing between `H_i` and `C_i`.
 
-`STATUS: DRAFT_READY_FOR_REVIEW`
+The corrected run used MATLAB `gamultiobj` as a search instrument with seed 61001 (`twister`), population size 24, maximum generations 50, four decision variables, `UseParallel=false`, function tolerance `1e-5`, and constraint tolerance `1e-6`. It stopped after reaching the specified generation limit (`exitflag=0`) after 50 generations and 1200 function evaluations; solver runtime was 3.4175 h. The run yielded nine finite, unpenalized solutions. Reaching the generation limit is not evidence of convergence.
 
-The optimization workflow couples the drying model described above with a multiobjective genetic-algorithm search and a controlled post-processing stage for candidate interpretation. The method is designed to identify feasible operating points for the hybrid solar--LPG dryer under simultaneous drying-performance, auxiliary-energy, economic, and CO2-related considerations. The optimization section reports the numerical procedure and its interpretation limits; the quantitative operating-point results are reported separately in the Results and discussion section.
+### 3.3 Descriptive finite-set analysis
 
-## 6.1 Decision variables and operating bounds
+Decision and objective spaces were summarized separately for H and C using minima, maxima, means, medians, population standard deviations (`ddof=0`), ranges, and Hyndman–Fan type-7 quartiles. Differences between medians describe these two finite sets only. The nine members of each set are not independent optimizer or experimental replicates; consequently, no significance tests or confidence intervals were applied.
 
-The optimization problem uses four operational decision variables: air mass flow rate, minimum process temperature, recirculation ratio, and recirculation start time. These variables determine the airflow intensity, auxiliary-heating threshold, degree of outlet-air reuse, and timing of recirculation activation. The same decision-variable definitions are used for the R1 candidate evaluation, the historical H2 reference comparison, the collector-efficiency sensitivity analysis, and the pointwise gas-LPG-only baseline comparison.
+### 3.4 Dominance, coverage, and joint sorting
 
-## 6.2 Objective functions and feasibility criterion
+For minimization, solution `a` dominated solution `b` when `a` was no worse in all three objectives and strictly better in at least one. Dominance was evaluated at full stored precision without tolerance. A separate numerical diagnostic used
 
-The search evaluates competing objectives associated with terminal moisture ratio, auxiliary-energy-related economic performance, and CO2-related environmental indicators. The terminal moisture ratio is used to distinguish feasible from infeasible drying outcomes. In this manuscript, a candidate is treated as feasible when the terminal condition satisfies MR <= 0.1. The post-processing interpretation therefore separates sufficient drying from excessive drying: a lower moisture ratio is not automatically preferred if it is obtained with a disproportionate auxiliary-energy penalty.
+$$
+\tau_k(a,b)=10^{-12}\max(1,|f_k(a)|,|f_k(b)|)
+$$
 
-Economic and CO2-related indicators are retained as conditional post-processing quantities. They are useful for ranking and interpretation within the controlled workflow, but final publication-level claims require source-locked assumptions for LPG price, electricity tariff if applicable, emission factors, regional scope, source year, unit basis, and conversion factors. For this reason, the manuscript emphasizes operational and auxiliary-energy behavior, while treating definitive economic and environmental claims as conditional until the final reference set is fixed.
+to identify near ties and potentially fragile strict inequalities; it did not alter dominance or rank.
 
-## 6.3 Genetic-algorithm configuration and run interpretation
+Internal dominance was evaluated independently within H and C. Cross-set analysis classified all 81 H×C pairs as C-dominates-H, H-dominates-C, incomparable, or exactly equal. Directional set coverage was computed as the fraction of a target set dominated by at least one member of the source set, following the asymmetric coverage concept of Zitzler and Thiele (1999). Exact nondominated sorting was then applied to the 18-member union to identify joint Rank 1 and subsequent layers (Deb et al., 2002). These citations define the analysis concepts; they do not identify MATLAB `gamultiobj` as a literal implementation of NSGA-II.
 
-The formal R1 optimization run was executed using seed = 61001, population = 24, and generations = 50. The resulting exitflag = 0 is interpreted as termination by the prescribed generation limit, not as a failure of the simulation and not as proof of convergence to a global optimum. The R1 output is therefore described as a computed set obtained under the specified configuration, random seed, decision-variable bounds, and model assumptions.
+### 3.5 Objective-space geometry and anchored hypervolume
 
-`TABLE_01_GA_configuration`: pending table callout; the table should summarize the genetic-algorithm configuration, including seed = 61001, population = 24, generations = 50, termination criterion, decision variables, feasibility criterion MR <= 0.1, and interpretation notes for exitflag = 0.
+Observed marginal intervals and extrema were compared for all three objectives. Hypervolume was used only as a secondary metric because neither directional coverage equaled complete one-way replacement. H and C were normalized with common objective anchors derived from the union of their internally nondominated members. Hypervolume was evaluated at the prespecified normalized reference points `r5=(1.05,1.05,1.05)`, `r10=(1.10,1.10,1.10)`, and `r20=(1.20,1.20,1.20)`, with `r10` designated as primary. Hypervolume here measures anchored coverage of the normalized objective region (Zitzler and Thiele, 1999). Because hypervolume values depend on the reference point, the common anchors and three prespecified references were applied identically to H and C, and the directional result was checked across all three (Ishibuchi et al., 2018). The metric does not measure distance to an independently established reference front and does not demonstrate convergence.
 
-## 6.4 Candidate selection and reference points
+### 3.6 Common terminal regime and decomposition evidence
 
-Candidate interpretation is performed after the R1 search by selecting representative feasible points from the computed set. R1_solution_7 is treated as the main energy-conservative feasible candidate, R1_solution_3 as a balanced alternative, and R1_solution_9 as an aggressive drying case with higher auxiliary-energy demand. These labels are used only for structured interpretation of the computed set and do not imply unique global optimality.
+All 18 evaluations reached the common nominal maximum horizon of 19.9 h. Historical files serialize this as `19.900000000000006 h`, whereas corrected files serialize it as `19.9 h`; the frozen D014 convention treats both as the same nominal TMAX regime without introducing a numerical tolerance into dominance. This establishes a common fixed horizon, not identical temporal trajectories or free normal termination.
 
-The H2 operating point is retained as a historical reference condition rather than as a newly optimized R1 solution. This distinction is important because H2 provides continuity with previous simulation and thesis-stage analysis, whereas the R1 candidates originate from the formal R1 search. Comparisons involving H2 are therefore interpreted as reference comparisons, not as evidence that H2 belongs to the same computed set as the R1 candidates.
+Validated decomposition evidence was available for all 18 solutions for useful auxiliary heat, LPG input energy and mass, LPG cost, solar cost, air-impeller electricity, electricity cost, water removed, total modeled cost, and total modeled emissions. Physical irradiance was not unambiguously persisted. Separate LPG and electricity emissions components were persisted for H but not for C; environmental comparison of C is therefore limited to total modeled operational emissions and the persisted energy inputs.
 
-## 6.5 Collector-efficiency sensitivity and baseline comparison
+## 4. Results
 
-The collector-efficiency sensitivity evaluates whether the qualitative interpretation of selected candidates is preserved when the simplified solar-air-heater efficiency assumption is replaced by the 2-SAH efficiency representation. This step is not a new coupled dynamic collector model; it is a physically motivated sensitivity using the same selected operating points and the same drying-model framework.
+### 4.1 Decision-space shifts
 
-The gas-LPG-only baseline comparison is performed pointwise at selected operating conditions. For each selected case, the decision-variable settings are preserved while the solar contribution is suppressed. The resulting difference in Q_aux between hybrid operation and gas-LPG-only operation is interpreted as the modeled auxiliary-energy reduction associated with hybrid solar contribution under equivalent operating conditions.
+The finite C set shifted toward lower median `m_max`, higher median `T_min`, lower median `r_div2`, and earlier median recirculation start relative to H. Median `m_max` decreased from 0.0790661 to 0.0745256 kg/s, median `T_min` increased from 65.6963 to 67.3130 °C, median `r_div2` decreased from 0.768305 to 0.638580, and median `t_rec_ini` decreased from 13.2180 to 12.6029 h. These shifts correspond to `C−H` differences of −0.00454057 kg/s, +1.61673 °C, −0.129725, and −0.615121 h, respectively.
 
-## 6.6 Reproducibility and interpretation limits
+These medians characterize the two evaluated sets; they do not isolate the effect of any one decision variable. The decision-space values and objective shifts are provided together in Supplementary Table S1.
 
-The methodology is intentionally reported with seed, population, generation count, termination flag, and candidate-selection rules to support traceability. However, the use of one formal R1 seed-aware run does not establish statistical robustness across independent seeds. Additional independent runs, convergence diagnostics, and equipment-level uncertainty analyses would be required before making stronger claims about global search-space coverage or robustness. Within the present scope, the appropriate interpretation is a controlled optimization realization and post-processing workflow that identifies and compares feasible operating candidates under explicitly stated assumptions.
+### 4.2 Objective-space shifts
 
-Figure 2 should summarize the optimization workflow, including the four decision variables, the simulation model, the feasibility check based on terminal MR, and the post-processing of auxiliary energy, conditional cost, and conditional CO2 indicators.
+Median `f1` decreased from 0.0436403 in H to 0.0288868 in C, a difference of −0.0147535 or −33.807%. This stronger median drying outcome was accompanied by moderate increases in the other two minimized objectives. Median `f2` increased from 0.210596 to 0.217334 USD/kg water removed (+3.200%), and median `f3` increased from 0.495166 to 0.514273 kg CO2e/kg water removed (+3.859%). Thus, the median shifts do not establish uniform improvement: they describe a movement toward lower final moisture with higher modeled specific operating-energy cost and operational greenhouse-gas emissions.
 
-# 6.1 Decision variables
+### 4.3 Internal and cross-set dominance
 
-- Air mass flow rate.
-- Minimum process temperature.
-- Recirculation ratio.
-- Recirculation start time.
+All nine H solutions and all nine C solutions were internally nondominated within their respective finite sets. Cross-set dominance was sparse and bidirectional. Of 81 comparisons, 78 (96.296%) were incomparable, C04 dominated H05, H02 dominated C06, and H08 dominated C08; no exact objective-vector equalities occurred. The numerical near-tie diagnostic found no near-tie objective comparisons among the 243 objectivewise comparisons and no fragile dominance relations.
 
-#
+Directional coverage reflected the same sparse structure. C covered 1/9 of H (11.111%), whereas H covered 2/9 of C (22.222%). Because each complete set was internally nondominated, the corresponding core-coverage values were numerically identical. Coverage is asymmetric and applies only to the evaluated solutions; neither direction indicates broad replacement.
 
-# 6.2 Objective functions
+Joint sorting of all 18 solutions produced two layers. Rank 1 contained 15 solutions: H01, H02, H03, H04, H06, H07, H08, H09, C01, C02, C03, C04, C05, C07, and C09. Rank 2 contained H05, C06, and C08. The contributions of eight H and seven C solutions to joint Rank 1 show that direct corrected optimization preserved substantial nondominated information from both sources.
 
-- Final moisture ratio.
-- Specific cost or auxiliary-energy-related economic indicator.
-- CO2-related environmental indicator.
+### 4.4 Objective-space geometry
 
-#
+C occupied narrower observed marginal intervals than H in every objective. The observed ranges were 0.146492 (H) and 0.0825189 (C) for `f1`, 0.101451 and 0.0864874 for `f2`, and 0.283575 and 0.237808 for `f3`. C neither extended below nor above the H marginal interval in any objective. H retained the observed low and high extrema of `f1`, `f2`, and `f3`, while C introduced no new marginal extrema.
 
-# 6.3 Constraints and feasibility criterion
+The objective clouds were therefore interleaved within shared marginal bounds rather than separated into uniformly superior and inferior regions. Figure 1 presents the three-objective geometry, and Figures S1–S3 show the pairwise projections.
 
-- MR ≤ 0.1.
-- Operational bounds.
-- Simulation validity.
+### 4.5 Anchored hypervolume
 
-#
+At the primary `r10` reference, anchored hypervolume was 0.9749820881940048 for H and 1.0099628901072748 for C. The same direction occurred at `r5` (H=0.8214144073536221; C=0.8596538595095115) and `r20` (H=1.3323674498747686; C=1.3592107397484303). C consequently covered more of the particular normalized objective region defined by the common anchors and each of the three prespecified references.
 
-# 6.4 Seed-aware formal run
+This metric does not overturn the dominance and coverage findings. It neither removes the 78 incomparable cross-set pairs nor the greater reciprocal H-over-C coverage, and it does not imply algorithmic superiority, convergence, or global optimality.
 
-- Seed-aware replication.
-- Controlled GA configuration.
-- Exitflag interpretation.
-- Do not claim proof of global optimality.
+### 4.6 Common horizon and objective decomposition
 
-Expected table:
+All nine H and all nine C solutions reached the common nominal TMAX horizon of 19.9 h. The lower median `f1` in C therefore cannot be attributed simply to a longer nominal simulation horizon, although the thermal, moisture, and energy trajectories need not be identical.
 
-`TABLE_01_GA_configuration`
+For both sets, `f2` and `f3` share water removed as their denominator. Interpretation of their differences must consequently account for both numerator and denominator. The frozen decomposition confirms complete availability of total modeled cost, total modeled operational emissions, water removed, LPG input, solar-cost, and impeller-electricity information for all 18 solutions. It does not support direct attribution to physical irradiance, and it does not support a separate LPG-versus-electricity emissions attribution within C.
 
----
+Table 2 consolidates the principal H-vs-C results.
 
-# 7. Results and discussion
+## 5. Physical, economic, and environmental interpretation
 
-`STATUS: STRUCTURALLY_INTEGRATED_CONTENT_REVIEW_PENDING`
+### 5.1 Physical interpretation
 
-#
+The C median pattern combines a higher minimum thermal setpoint with lower `m_max`, lower recirculation fraction, and earlier recirculation onset. Together with the 33.807% lower median final moisture ratio, this pattern is physically compatible with a coordinated heat-and-mass-transfer trade-off. Literature on solar–LPG drying supports the relevance of temperature and air-change rate (Khater et al., 2024), while recirculation studies show that air reuse can interact non-monotonically with temperature, drying time, and energy performance (Afzali et al., 2019; Zohrabi et al., 2020).
 
-Figure 3 should display the selected candidates within the computed set or an equivalent trade-off summary, highlighting H2, R1_solution_7, R1_solution_3, and R1_solution_9 with their corresponding MR and Q_aux values.
+The present evidence supports association and physical plausibility, not isolated causality. Median changes cannot identify the independent contribution of `T_min`, `m_max`, `r_div2`, or `t_rec_ini`, and the three observed cross-dominance relations follow different decision-variable pathways. No unique mechanism is established.
 
-# 7.1 Formal tri-objective run
+### 5.2 Economic interpretation
 
-`STATUS: INTEGRATED_FROM_APPROVED_SECTION`
+The 3.200% increase in median `f2` for C is a moderate penalty accompanying the lower median final moisture ratio. Because `f2` divides total modeled operating-energy cost by actual water removed, it reflects both the modeled energy-cost numerator and the achieved moisture-removal denominator. It is not an equipment purchase metric, profitability analysis, total process cost, or total cost of ownership.
 
-Source section:
+### 5.3 Environmental interpretation
 
-`SEC_07_01_formal_R1_run_v96z.md`
+The 3.859% increase in median `f3` for C is likewise a moderate operational-emissions penalty accompanying lower median final moisture. The indicator combines direct LPG-combustion CO2 and indirect grid-electricity CO2e under the implemented boundary and normalizes the total by water removed. It is not a life-cycle carbon footprint, a complete greenhouse-gas inventory, or total environmental impact. Because separate LPG and electricity emissions components were not persisted for C, the C–H difference cannot be assigned quantitatively to one emissions component.
 
-Source tables:
+## 6. Discussion
 
-- `MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.md`
-- `SUPP_TABLE_ETA_SENSITIVITY_v96z.md`
-- `ETA_SENSITIVITY_v96z_H2_R1_selected_consolidated.csv`
+The primary result is a restructuring of the observed operational trade-offs rather than uniform replacement of the historical reevaluated set. C contributes useful new compromise information: seven of its nine solutions remain in joint Rank 1, C04 dominates H05, and C has greater anchored hypervolume at all three prespecified reference points. At the same time, H retains substantial scientific and design value: eight of its nine solutions remain in joint Rank 1, H02 and H08 locally dominate C solutions, H-over-C coverage is greater than the reciprocal value, and H retains all observed marginal extrema.
 
-Approved internal verdict:
+The predominance of incomparability is central. With 78 of 81 cross-set pairs incomparable, neither set can be summarized by a single directional ranking. The lower median `f1` in C comes with higher median `f2` and `f3`; the larger C hypervolume concerns coverage relative to frozen anchors, while the historical set preserves wider marginal reach and more reciprocal coverage. These findings jointly explain why no single metric supports a global superiority statement.
 
-`SEC_07_01_FORMAL_R1_RUN_v96z_READY_FOR_MASTER_INTEGRATION`
+The system-first interpretation is consistent with the literature positioning. Solar–LPG drying, airflow control, recirculation, and multiobjective dryer optimization have direct precedents (Murali et al., 2020; Ortiz-Rodríguez et al., 2020; César-Munguía et al., 2023; Khater et al., 2024; Winiczenko et al., 2018; El Ferouali et al., 2018; Oviedo et al., 2021; Zhang et al., 2022). The incremental contribution lies in integrating the three corrected operational objectives with coupled thermal and air-management decisions for this system. The narrower distinctive contribution is the traceable survival analysis of historical candidates after reevaluation under a corrected cost–emissions formulation. The targeted search found no direct drying precedent for that complete workflow, but universal priority is not claimed.
 
-#
+The common TMAX regime strengthens comparability by removing unequal nominal horizon as a trivial explanation. It also narrows interpretation: the study characterizes fixed-horizon operating outcomes rather than free normal termination. Similarly, the single corrected run provides a reproducible candidate set but no evidence about the distribution of outcomes over random seeds or the expected performance of `gamultiobj`.
 
-## Formal tri-objective run
+## 7. Limitations
 
-The formal seed-aware tri-objective run generated a computed set that represents the trade-off between final moisture ratio, auxiliary energy demand, and the economic/environmental indicators associated with the hybrid solar–LPG tunnel dryer operation. The term computed set is used deliberately, since the run corresponds to a controlled numerical realization of the multi-objective genetic algorithm and should not be interpreted as a proof of global optimality or statistical robustness over multiple independent seeds.
+The conclusions are subject to the following constitutive limitations:
 
-The evaluated solutions showed the expected conflict between deeper drying and lower auxiliary energy use. Solutions with lower final moisture ratio generally required higher thermal input, whereas energy-saving candidates accepted a higher final moisture ratio while remaining below the feasibility threshold. For this study, the operational feasibility criterion was defined as MR ≤ 0.1, which allows the analysis to distinguish between solutions that achieve sufficient drying and those that remain outside the acceptable final moisture range.
+1. H and C are finite evaluated sets. Their geometry does not establish global optimality or an independently verified reference trade-off surface.
+2. Only one corrected run was performed, using seed 61001. Between-seed variability, expected solver performance, statistical robustness, and configuration superiority are not established.
+3. The corrected run stopped at `MaxGenerations=50`; this stop condition does not establish convergence or the general sufficiency of 50 generations.
+4. The nine H and nine C points are not independent experimental or optimizer replicates. Descriptive medians, ranges, and percentages do not support population inference or significance testing.
+5. All 18 solutions share a fixed nominal TMAX horizon of 19.9 h. The result does not characterize free normal termination or identical temporal trajectories.
+6. H contains historical solutions generated under an earlier formulation and later reevaluated, not reoptimized, under corrected COST-E3D.
+7. `f2` is limited to modeled operating-energy cost and excludes capital, maintenance, labor, fixed charges, total ownership cost, and comprehensive commercial cost.
+8. `f3` is limited to modeled operational emissions under the LPG/grid boundary. It excludes life-cycle, infrastructure, manufacturing, transport, maintenance, and total-impact terms.
+9. Physical irradiance was not unambiguously available in the persisted comparative evidence, preventing direct irradiance attribution.
+10. Separate LPG and electricity emissions components were not persisted for C, preventing component-level emissions attribution for that set.
+11. The lumped model does not resolve all spatial gradients, and the electrical scope is limited to the implemented air-impeller representation. The upstream model validation used pineapple data; the present red-chilli application uses literature kinetics and has not been experimentally validated as an integrated plant simulation. Equipment-level extrapolation requires product-specific physical validation and uncertainty analysis.
 
-Among the evaluated candidates, R1_solution_7 was identified as the lowest-auxiliary-energy feasible solution. Under the 2-SAH collector-efficiency assumption used in the sensitivity evaluation, this solution reached MR = 0.07057 with Q_aux = 656.23 kWh. Its operating variables were m_dot = 0.070502 kg/s, T_min = 64.429 °C, r_rec = 0.74259, and t_rec_ini = 13.255 h. This combination indicates an energy-saving operating tendency characterized by relatively low airflow, a process temperature close to 65 °C, high recirculation, and recirculation activation during the intermediate-late drying stage.
+## 8. Conclusions
 
-R1_solution_3 represented a more balanced feasible candidate. It achieved MR = 0.05493 with Q_aux = 723.36 kWh under the same 2-SAH collector-efficiency assumption. Its operating variables were m_dot = 0.075518 kg/s, T_min = 65.054 °C, r_rec = 0.78863, and t_rec_ini = 12.874 h. Compared with R1_solution_7, this point provided deeper drying at the cost of higher auxiliary energy demand, making it useful as a compromise solution when a lower final moisture ratio is preferred.
+The evaluated hybrid solar–LPG dryer solutions exhibit a three-objective operational conflict. Direct optimization under corrected COST-E3D produced a C set with substantially lower median final moisture, but this shift was accompanied by moderately higher median modeled specific operating-energy cost and modeled specific operational greenhouse-gas emissions. The corresponding decision medians indicate coordinated changes in thermal setpoint, airflow, recirculation fraction, and recirculation timing; they do not establish an isolated causal mechanism.
 
-The historical H2 solution was retained as a reference point because it achieved a lower final moisture ratio than both R1_solution_7 and R1_solution_3. Under the 2-SAH collector-efficiency assumption, H2 reached MR = 0.044483 with Q_aux = 747.00 kWh, using m_dot = 0.07355 kg/s, T_min = 65.879 °C, r_rec = 0.61205, and t_rec_ini = 12.385 h. Although H2 produced deeper drying, it did not correspond to the minimum auxiliary-energy candidate among the feasible solutions. Therefore, H2 should be interpreted as a historical comparison point rather than as the preferred energy-saving operating condition.
+Direct corrected optimization restructured rather than uniformly replaced the historical reevaluated set. Both H and C were internally nondominated, 78 of 81 cross-set pairs were incomparable, dominance was sparse and bidirectional, and both sources contributed substantially to joint Rank 1. C had greater anchored hypervolume at all three frozen reference points, whereas H retained all observed marginal extrema and greater reciprocal coverage.
 
-R1_solution_9 illustrated the opposite extreme of the trade-off. It achieved the lowest final moisture ratio among the selected points, MR = 0.013876, but required Q_aux = 1218.4 kWh under the 2-SAH collector-efficiency assumption. Its operating variables were m_dot = 0.092264 kg/s, T_min = 67.675 °C, r_rec = 0.43299, and t_rec_ini = 13.829 h. This point confirms that aggressive drying can be achieved, but only with a substantial auxiliary-energy penalty. Consequently, R1_solution_9 was not selected as a recommended operating point.
+The scientific contribution is therefore a finite-set physical and multiobjective characterization of operational trade-offs in the dryer, together with a traceable assessment of which historical trade-offs survive corrected reformulation. The evidence supports incremental system-specific novelty and a strong narrow historical-survival contribution, not universal priority. These conclusions do not establish convergence, between-seed robustness, statistical superiority, or global optimality, and they do not identify a unique recommended operating solution.
 
-Overall, the formal R1 run indicates that the preferred operating region is not the deepest-drying condition, but rather a feasible compromise that satisfies MR ≤ 0.1 while reducing auxiliary energy demand. The selected candidates suggest a recurrent operating tendency around low-to-moderate airflow, minimum process temperatures near 64–66 °C, and recirculation activation after the initial drying period. However, this tendency should be interpreted as a result of the present model structure, operational bounds, and seed-aware computed run, not as a universal equipment-level optimum.
+## 9. Nomenclature
 
-#
-
-# 7.2 Collector-efficiency sensitivity
-
-`STATUS: INTEGRATED_FROM_APPROVED_SECTION`
-
-Source section:
-
-`SEC_05_results_eta_sensitivity_v96z.md`
-
-Source tables:
-
-- `MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.md`
-- `SUPP_TABLE_ETA_SENSITIVITY_v96z.md`
-
-Approved internal verdict:
-
-`SEC_05_RESULTS_ETA_SENSITIVITY_v96z_READY_FOR_MASTER_MANUSCRIPT`
-
-#
-
-## Tri-objective optimization results and collector-efficiency sensitivity
-
-The seed-aware formal tri-objective run produced a computed set that captured the expected trade-off between final moisture ratio, auxiliary energy demand, and the associated economic/environmental indicators. Among the evaluated candidates, solution R1-7 was identified as the most attractive feasible operating point from an energy-saving perspective, whereas solution R1-3 represented a more balanced compromise between deeper drying and auxiliary energy demand. The historical H2 solution remained useful as a comparison point because it achieved a lower final moisture ratio, but it did not correspond to the lowest auxiliary energy requirement among the feasible candidates.
-
-Under the selected feasibility criterion, MR ≤ 0.1, solution R1-7 achieved MR = 0.07057 with an auxiliary energy requirement of 656.23 kWh when the 2-SAH collector-efficiency curve was used. In contrast, the historical H2 point reached a lower MR = 0.04448 but required 747.00 kWh under the same collector-efficiency assumption. Solution R1-3 provided an intermediate behavior, with MR = 0.05493 and Q_aux = 723.36 kWh. These results indicate that the seed-aware run did not merely reproduce the historical H2 operating condition; rather, it identified feasible alternatives that reduce auxiliary energy demand while maintaining the final moisture ratio below the selected acceptability threshold.
-
-A collector-efficiency sensitivity analysis was then performed to evaluate whether the use of a constant solar air heater efficiency could bias the operational selection. Three assumptions were compared: the original constant efficiency η = 0.50, the historical variable-efficiency expression embedded in the code, and the experimentally based 2-SAH efficiency curve, which is the configuration most consistent with the physical arrangement of the solar field batteries. The 2-SAH curve reduced the auxiliary energy demand by approximately 5–8% relative to the constant-efficiency case for the evaluated candidates. For example, Q_aux decreased from 807.02 to 747.00 kWh for H2, from 707.17 to 656.23 kWh for R1-7, from 787.59 to 723.36 kWh for R1-3, and from 1286.6 to 1218.4 kWh for R1-9.
-
-Although the absolute auxiliary energy values were affected by the collector-efficiency assumption, the operational ranking was preserved. R1-7 remained the lowest-auxiliary-energy feasible candidate under MR ≤ 0.1, R1-3 remained the balanced feasible candidate, H2 remained a deeper-drying historical reference, and R1-9 remained an aggressive drying solution with high auxiliary demand. This result suggests that the main operational conclusion is not an artifact of the fixed-efficiency assumption. However, the analysis also shows that the collector model has a non-negligible effect on the energy balance; therefore, a fully coupled solar collector model remains a relevant improvement for future work.
-
-This collector-efficiency analysis is a sensitivity test applied to the selected operating points. It should not be interpreted as a fully coupled collector model, because the collector subsystem, airflow-dependent heat-transfer coefficients, fan power, and pressure-drop effects were not re-optimized simultaneously.
-
-#
-
-## 7.2.1 Hybrid versus gas-LPG baseline comparison
-
-`STATUS: INTEGRATED_FROM_APPROVED_SECTION_v01_1`
-
-Source section:
-
-`SEC_07_02_01_hybrid_vs_gasLP_baseline_v96z.md`
-
-Source analysis:
-
-- `SELECTED_POINTS_HYBRID_vs_GASLP_v96z_summary.md`
-- `SELECTED_POINTS_HYBRID_vs_GASLP_v96z_report.md`
-
-Approved internal verdict:
-
-`SEC_07_02_01_HYBRID_vs_GASLP_BASELINE_v96z_READY_FOR_MASTER_OR_SUPPLEMENTARY_INTEGRATION`
-
-A pointwise baseline comparison was performed to quantify the auxiliary-energy reduction obtained by operating the selected candidates in hybrid mode instead of gas-LPG-only mode. This comparison was not a new optimization run. The same selected operating points were evaluated under both operation modes using the 2-SAH collector-efficiency curve for the hybrid case. The purpose was to isolate the contribution of the solar field to the auxiliary-energy balance while preserving the selected decision-variable combinations.
-
-For all selected candidates, hybrid operation reduced the auxiliary energy demand relative to the gas-LPG-only case while maintaining the final moisture ratio below the feasibility threshold. The reduction in auxiliary energy ranged from 31.31% to 45.05%. For the historical H2 point, Q_aux decreased from 1292.6 kWh in gas-LPG-only mode to 747.00 kWh in hybrid mode, corresponding to a 42.21% reduction. For R1_solution_7, the energy-saving feasible candidate, Q_aux decreased from 1194.1 kWh to 656.23 kWh, corresponding to the largest relative reduction among the selected points, 45.05%. For R1_solution_3, Q_aux decreased from 1270.6 kWh in gas-LPG-only mode to 723.36 kWh in hybrid mode, corresponding to a 43.07% reduction. For R1_solution_3, Q_aux decreased from 1270.6 kWh in gas-LPG-only mode to 723.36 kWh in hybrid mode, corresponding to a 43.07% reduction. For R1_solution_9, Q_aux decreased from 1773.9 kWh in gas-LPG-only mode to 1218.4 kWh in hybrid mode, corresponding to a 31.31% reduction. The lower relative reduction observed for R1_solution_9 is consistent with its more aggressive drying condition and higher auxiliary-energy demand.
-
-The final moisture ratios remained very similar between the hybrid and gas-LPG-only evaluations. This indicates that the hybrid configuration reduced auxiliary energy demand mainly by replacing part of the thermal requirement with solar contribution, rather than by relaxing the drying performance. In particular, R1_solution_7 remained feasible under both operation modes, with MR = 0.07057 in hybrid mode and MR = 0.071992 in gas-LPG-only mode. Therefore, the hybrid mode improved the energy balance of the selected operating points without compromising the moisture-ratio feasibility criterion.
-
-These results provide a direct baseline interpretation of the selected candidates. They support the use of R1_solution_7 as the primary energy-saving operating point, since it combined the lowest hybrid auxiliary-energy demand with the largest relative reduction compared with the gas-LPG-only baseline. The comparison also reinforces the role of R1_solution_3 as a balanced feasible alternative and confirms that R1_solution_9, although technically feasible in terms of final moisture ratio, remains energetically unattractive.
-
-#
-
-# 7.3 Operational interpretation
-
-`STATUS: INTEGRATED_FROM_APPROVED_SECTION`
-
-Source section:
-
-`SEC_07_03_operational_interpretation_v96z.md`
-
-Source sections:
-
-- `SEC_07_01_formal_R1_run_v96z.md`
-- `SEC_05_results_eta_sensitivity_v96z.md`
-
-Source tables:
-
-- `MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.md`
-- `SUPP_TABLE_ETA_SENSITIVITY_v96z.md`
-- `ETA_SENSITIVITY_v96z_H2_R1_selected_consolidated.csv`
-
-Approved internal verdict:
-
-`SEC_07_03_OPERATIONAL_INTERPRETATION_v96z_READY_FOR_MASTER_INTEGRATION`
-
-#
-
-## Operational interpretation
-
-The selected operating points suggest a consistent operational tendency for the hybrid solar–LPG tunnel dryer. The recommended feasible candidates are not located at the highest airflow or highest process temperature bounds. Instead, the most attractive solutions combine low-to-moderate airflow, minimum process temperatures close to 65 °C, high recirculation ratios, and recirculation activation after the initial drying period. This behavior is physically consistent with a drying process in which auxiliary energy demand can be reduced by avoiding excessive fresh-air heating while still maintaining enough thermal driving force for moisture removal.
-
-R1_solution_7 is the clearest energy-saving candidate. Its airflow was the lowest among the selected feasible points, m_dot = 0.070502 kg/s, while its minimum process temperature remained close to 65 °C. The high recirculation ratio, r_rec = 0.74259, indicates that a large fraction of the process air was reused once recirculation was activated. Its recirculation start time, t_rec_ini = 13.255 h, suggests that the model favors allowing the early drying stage to proceed with lower recirculation influence and then increasing air reuse during a later stage, when the marginal benefit of heating fresh air becomes less favorable.
-
-R1_solution_3 followed a similar operating pattern but shifted toward deeper drying. It used a slightly higher airflow, m_dot = 0.075518 kg/s, and a similar minimum process temperature, T_min = 65.054 °C, with an even higher recirculation ratio, r_rec = 0.78863. This combination produced a lower final moisture ratio than R1_solution_7, but required additional auxiliary energy. Therefore, R1_solution_3 can be interpreted as a balanced candidate when deeper drying is preferred over maximum auxiliary-energy reduction.
-
-The historical H2 point occupied an intermediate position in terms of airflow and temperature, but it used a lower recirculation ratio than the R1 energy-saving candidates. Although H2 achieved a lower final moisture ratio, its auxiliary energy demand was higher than that of R1_solution_7. This suggests that the formal run did not simply reproduce the historical operating condition; rather, it identified operating combinations with greater air reuse that reduced auxiliary energy while maintaining acceptable final moisture.
-
-R1_solution_9 represents a different regime. Its higher airflow and higher minimum temperature produced the deepest drying among the selected candidates, but this came with a substantial auxiliary-energy penalty. This point illustrates that increasing the thermal and airflow intensity can reduce the final moisture ratio, but the resulting operating condition may be unattractive from an energy-saving perspective. Therefore, R1_solution_9 is useful for understanding the trade-off boundary but should not be interpreted as a recommended operating condition.
-
-Overall, the selected candidates indicate that the relevant operational trade-off is not simply between drying and no drying, but between sufficient drying and excessive thermal expenditure. Within the present model and operating bounds, the preferred region is characterized by maintaining the final moisture ratio below the feasibility threshold while avoiding unnecessarily aggressive drying. The resulting tendency toward low-to-moderate airflow, process temperatures near 64–66 °C, high recirculation, and delayed recirculation activation should be interpreted as a model-based operating recommendation. It should not be generalized without additional experimental validation, fan-power coupling, pressure-drop modeling, and independent optimization replications.
-
-#
-
-# 7.4 Methodological implications
-
-`STATUS: INTEGRATED_FROM_APPROVED_SECTION`
-
-Source section:
-
-`SEC_07_04_methodological_implications_v96z.md`
-
-Source sections:
-
-- `SEC_07_01_formal_R1_run_v96z.md`
-- `SEC_05_results_eta_sensitivity_v96z.md`
-- `SEC_07_03_operational_interpretation_v96z.md`
-
-Source tables:
-
-- `MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.md`
-- `SUPP_TABLE_ETA_SENSITIVITY_v96z.md`
-- `ETA_SENSITIVITY_v96z_H2_R1_selected_consolidated.csv`
-
-Approved internal verdict:
-
-`SEC_07_04_METHODOLOGICAL_IMPLICATIONS_v96z_READY_FOR_MASTER_INTEGRATION`
-
-#
-
-## Methodological implications
-
-The results have several methodological implications for the interpretation of the optimization framework. First, the selected operating condition should be understood as a model-based recommendation derived from a controlled computed set, not as a universal or experimentally proven optimum. The formal seed-aware run provided a structured comparison among feasible candidates and helped identify R1_solution_7 as the lowest-auxiliary-energy feasible point among the selected solutions. However, additional independent seed replications would be required before making claims about statistical robustness of the computed front.
-
-Second, the collector-efficiency sensitivity analysis showed that the solar air heater representation has a measurable effect on the absolute auxiliary-energy balance. Replacing the constant efficiency assumption with the 2-SAH collector-efficiency curve reduced the auxiliary energy demand by approximately 5–8% for the evaluated candidates. Therefore, the fixed-efficiency assumption should not be treated as physically neutral. It affects the magnitude of the solar contribution and the auxiliary-energy requirement.
-
-Nevertheless, the same sensitivity analysis also showed that the operational ranking was preserved. R1_solution_7 remained the lowest-auxiliary-energy feasible candidate, R1_solution_3 remained a balanced feasible alternative, H2 remained a deeper-drying historical reference, and R1_solution_9 remained an aggressive drying case with high auxiliary-energy demand. This indicates that the main operating conclusion is not merely an artifact of using a fixed collector efficiency. The conclusion is more appropriately stated as ranking-stable under the tested collector-efficiency assumptions, rather than universally robust.
-
-Third, the results highlight the importance of distinguishing between process-level and equipment-level optimization. In the present model, the mass flow rate influences drying and thermal behavior, but fan power and pressure drop are not fully coupled to airflow. Consequently, the preference for low-to-moderate airflow should be interpreted as a process-model tendency, not as a complete equipment-level optimum. A more complete formulation should include fan performance, pressure losses, duct characteristics, and the electrical consumption associated with air movement.
-
-Fourth, the recirculation strategy appears to be a relevant operational degree of freedom. The selected feasible candidates favored high recirculation ratios with activation after the initial drying period. This suggests that recirculation timing is not merely a secondary parameter, but an important mechanism for reducing auxiliary energy while maintaining sufficient drying. Future optimization studies should therefore avoid treating recirculation only as a fixed operating condition and should consider both its magnitude and activation time as decision variables.
-
-Finally, the present results support using the R1 candidates as structured operating references for future experimental or simulation campaigns. R1_solution_7 is the primary energy-saving candidate, R1_solution_3 is the balanced feasible alternative, H2 is the historical comparison point, and R1_solution_9 is useful as an aggressive-drying boundary case. These candidates provide a compact experimental matrix for future validation, provided that the collector model, fan-power model, and cost/emissions factors are updated and fully traced before publication-level claims are made.
-
-## 7.5 Discussion
-
-The formal R1 optimization and the subsequent sensitivity and baseline analyses indicate that the most relevant operating region is not defined by a single extreme drying condition, but by a trade-off between final moisture reduction, auxiliary energy demand, and the imposed process constraints. Within the computed set, R1_solution_7 represents the most energy-conservative feasible candidate among the selected R1 points, whereas R1_solution_3 provides a more balanced compromise between drying intensity and energy use. By contrast, R1_solution_9 illustrates the expected penalty of pursuing deeper drying through a more aggressive thermal strategy. This separation is useful because it avoids treating all feasible low-moisture solutions as operationally equivalent.
-
-The comparison with the historical H2 operating point also clarifies the interpretation of the optimization results. H2 remains a useful reference because it reflects a previously identified low-moisture operating condition and provides continuity with earlier analysis. However, it should not be interpreted as a newly optimized R1 solution. The R1 candidates instead show that comparable feasibility can be reached with operating strategies that shift the balance toward lower auxiliary energy demand. This is particularly relevant for process operation, where the preferred condition is not necessarily the one producing the lowest final moisture ratio, but the one satisfying the drying target with the lowest practical energy penalty.
-
-The collector-efficiency sensitivity analysis supports the qualitative stability of this interpretation. Using the 2-SAH efficiency curve, which is consistent with the physical arrangement of two solar air heaters in series per battery, changed the magnitude of the auxiliary-energy requirement but did not overturn the selected-point ranking. This suggests that the main operational conclusion is not solely an artifact of assuming a fixed collector efficiency. Nevertheless, the collector treatment remains a sensitivity model rather than a fully coupled dynamic collector simulation. The result should therefore be read as evidence of ranking stability under a more physically consistent efficiency assumption, not as complete collector-level validation.
-
-The hybrid versus gas-LPG baseline comparison further shows that the hybrid configuration reduces the auxiliary-energy requirement for the selected feasible operating points. The reduction is mainly attributable to solar substitution rather than to a relaxation of the drying requirement, because the compared cases preserve feasible final moisture-ratio behavior. This reinforces the practical value of the hybrid system: the solar contribution can reduce fuel demand while maintaining drying feasibility. At the same time, the magnitude of any final economic or CO2 benefit remains conditional on the final fuel-price, electricity-tariff, emission-factor, date, region, unit-basis, and conversion assumptions.
-
-From an operational standpoint, the results favor a moderate-to-low airflow range combined with high recirculation and an intermediate-late onset of recirculation for the feasible energy-saving candidates. This trend is physically plausible because recirculation can retain useful thermal energy in the drying loop while avoiding excessive fresh-air heating demand. However, this interpretation is bounded by the implemented model structure and by the absence of a fully coupled fan-power and pressure-drop formulation. Future optimization should therefore include airflow-distribution, fan-power, and pressure-drop penalties before making equipment-level design recommendations.
-
-Overall, the computed results support the hybrid dryer as an energy-saving operating strategy under the modeled conditions, with R1_solution_7 as the main energy-conservative candidate and R1_solution_3 as a balanced alternative. The discussion should not be interpreted as evidence of statistical robustness across independent seeds, proof of complete convergence of the search space, or complete equipment-level optimality. Rather, it establishes a controlled, reproducible, and traceable basis for selecting candidate operating points for further validation and for future coupled techno-economic and environmental assessment.
-20
-
-# 8. Limitations
-
-Several limitations must be considered when interpreting the optimization and baseline-comparison results. First, the formal multiobjective analysis was based on a single controlled seed-aware R1 execution of MATLAB's `gamultiobj` algorithm. Although this run produced a computed set under the specified configuration, it does not establish statistical robustness across independent random seeds, nor does it constitute proof of complete convergence of the search space. Additional independent seed replications would be required to quantify the sensitivity of the selected candidates to stochastic initialization and evolutionary-search variability.
-
-Second, the collector-efficiency analysis was implemented as a sensitivity assessment rather than as a fully coupled dynamic collector model. The 2-SAH efficiency curve was used because it is consistent with the physical arrangement of two solar air heaters in series per battery; however, this treatment does not replace a fully coupled collector, airflow, pressure-drop, and thermal-network simulation. Consequently, the observed stability of the selected operating-point ranking across collector-efficiency assumptions should be interpreted as sensitivity evidence, not as complete equipment-level validation.
-
-Third, fan-power consumption and pressure-drop effects were not fully coupled as optimization objectives. The current optimization therefore focuses on process-level drying performance, auxiliary energy demand, cost, and CO2 indicators as represented in the implemented model, but it should not be interpreted as a complete equipment-level optimum. A future coupled formulation should include fan power, pressure drop, and airflow-distribution effects to refine the techno-economic and environmental assessment.
-
-Fourth, economic and CO2 indicators depend on external factors such as fuel price, electricity tariff, emission factor, source year, region, unit basis, and conversion assumptions. The provisional CO2 factors `EF_LPG_kgCO2_per_kWh = 0.2270` and `EF_grid_kgCO2_per_kWh = 0.4380` were retained only for code validation and internal traceability under the tag `PROVISIONAL_FOR_CODE_VALIDATION`. Final cost or CO2 claims require definitive cited sources and locked conversion bases before submission. Until those factors are finalized, the most robust interpretation is based on energy-demand trends and relative comparisons.
-
-Finally, solar-only operation was excluded from the formal multiobjective comparison because it represents a non-equivalent operating mode relative to the hybrid and gas-LPG baseline cases. Likewise, the H2 point was retained as a historical reference and not treated as a newly optimized R1 solution. These distinctions were maintained to avoid mixing non-equivalent operating modes or historical references with the formal R1 candidate set.
-
-The R1 run terminated with `exitflag 0`, corresponding to the prescribed generation limit rather than a convergence-failure interpretation.
-20
-
-Additional search-budget limitation. The formal R1 run used a single seed, `seed = 61001`, a population size of 24, and 50 generations. Together with `exitflag = 0`, this configuration should be interpreted as a finite computational search that reached the prescribed generation limit rather than a convergence-certified exploration of the full trade-off space. The reported candidates are therefore operationally useful members of the computed set under the specified settings, not evidence of exhaustive search convergence.
-
-# 9. Conclusions
-
-This study developed a controlled multiobjective optimization and post-processing workflow for a hybrid solar--gas-LPG tunnel dryer, with explicit traceability between the formal R1 optimization, collector-efficiency sensitivity, and hybrid versus gas-LPG baseline comparison. Under the modeled conditions, the hybrid configuration showed a consistent ability to reduce auxiliary-energy demand while preserving feasible drying performance for the selected operating points.
-
-Within the computed set, R1_solution_7 emerged as the main energy-conservative feasible candidate, whereas R1_solution_3 provided a balanced alternative between drying intensity and energy use. R1_solution_9 represented a more aggressive drying strategy with a larger energy penalty, and H2 was retained only as a historical reference rather than as a newly optimized R1 solution. This distinction supports an operational interpretation based on feasible trade-offs instead of selecting the deepest-drying point by default.
-
-The collector-efficiency sensitivity analysis, particularly the 2-SAH curve consistent with the physical series arrangement of the solar air heaters, did not alter the qualitative ranking of the selected candidates. This supports the stability of the main operational interpretation under a more physically consistent collector-efficiency assumption. However, the collector treatment remains a sensitivity representation and not a fully coupled dynamic collector model.
-
-The hybrid versus gas-LPG comparison indicated that the solar contribution can reduce auxiliary-energy demand mainly through fuel substitution, not by relaxing the drying requirement. Consequently, the hybrid system should be interpreted as a promising energy-saving operating strategy under the current model assumptions. Final economic or CO2 claims should remain conditional until fuel-price, electricity-tariff, emission-factor, date, region, unit-basis, and conversion assumptions are definitively sourced and locked.
-
-The main methodological limitations are associated with the use of a single formal R1 seed-aware run, the absence of independent seed replications, the sensitivity-level collector treatment, and the lack of fully coupled fan-power and pressure-drop objectives. Future work should therefore evaluate additional random seeds, implement a coupled collector and airflow-network formulation, include fan-power and pressure-drop penalties, and finalize the economic and emission factors before making publication-grade cost or CO2 claims.
-
-Overall, the results provide a reproducible and traceable basis for selecting candidate operating points for subsequent experimental or high-fidelity numerical validation. The conclusions should not be interpreted as proof of complete search-space convergence, statistical robustness across seeds, or complete equipment-level optimality.
-
-The strongest quantitative outcome of the comparison is the auxiliary-energy reduction achieved by hybrid operation: across the selected feasible cases, the hybrid configurations reduced auxiliary-energy demand by approximately 31--45% relative to the gas-LPG baseline. This range is the principal energy-performance result, while the individual candidates retain different trade-offs between final moisture ratio and energy demand.
-
-
-# 10. Nomenclature
-
-`STATUS: DRAFT_READY_FOR_REVIEW`
-
-## Symbols
-
-- `m_dot`: air mass flow rate used as an operational decision variable, kg/s.
-- `MR`: moisture ratio; terminal drying-performance indicator used for feasibility assessment.
-- `Q_aux`: auxiliary thermal energy demand assigned to the LPG heating system, kWh.
-- `r_rec`: air recirculation ratio; fraction of outlet air returned to the process stream after recirculation starts.
-- `T_min`: minimum process-air temperature imposed by the operating policy, °C.
-- `t_rec_ini`: recirculation start time; time at which the recirculation branch is activated, h.
-- `CO2`: carbon dioxide equivalent indicator used in conditional environmental post-processing.
-
-## Abbreviations and labels
-
-- `2-SAH`: two solar air heaters in series; collector-efficiency representation used in the sensitivity analysis.
-- `GA`: genetic algorithm.
-- `H2`: historical reference operating point retained for comparison; not a newly optimized R1 solution.
-- `LPG`: liquefied petroleum gas used by the auxiliary heating system.
-- `R1`: formal controlled optimization run used to generate the reported computed set.
-- `R1_solution_3`: selected balanced feasible R1 candidate.
-- `R1_solution_7`: selected energy-conservative feasible R1 candidate.
-- `R1_solution_9`: selected aggressive drying R1 candidate with higher auxiliary-energy demand.
-- `SAH`: solar air heater.
-
-## Interpretation notes
-
-- The notation `computed set` refers to the numerical set obtained under the specified GA configuration, seed, decision-variable bounds, and model assumptions; it is not used as a claim of a complete trade-off surface.
-- Economic and CO2-related quantities remain conditional until final source-locked prices, tariffs, emission factors, regional scope, unit basis, source year, and conversion factors are fixed.
-
-# 11. References
-
-`STATUS: PRELIMINARY_REFERENCE_SCAFFOLD_READY_FOR_REVIEW`
-
-This section is a preliminary reference scaffold for internal manuscript review. The entries below are intentionally not formatted as final bibliographic records because source verification, DOI/URL retrieval, edition checking, and journal-style formatting have not yet been completed. No bibliographic metadata should be treated as final until the reference-verification step is performed.
-
-## Reference groups to verify before submission
-
-- `[REF-DRYING-MODEL-01]` Foundational or project-specific source for the lumped dynamic drying model, including air temperature, product temperature, moisture-ratio evolution, and structural thermal response.
-- `[REF-SOLAR-AIR-HEATER-01]` Source for solar air-heater thermal-efficiency modeling and the collector-efficiency representation used in the baseline and sensitivity analyses.
-- `[REF-2SAH-01]` Source or internal derivation record supporting the two-solar-air-heaters-in-series, 2-SAH, efficiency curve used in the collector-efficiency sensitivity.
-- `[REF-MULTIOBJECTIVE-GA-01]` Source for the multiobjective genetic-algorithm method and interpretation of computed sets.
-- `[REF-DRYING-QUALITY-01]` Source supporting the final moisture-ratio feasibility threshold, MR <= 0.1, or its product-specific interpretation.
-- `[REF-LPG-ENERGY-01]` Source for LPG lower heating value, unit conversion, fuel-price basis, or auxiliary-energy cost conversion used in post-processing.
-- `[REF-EMISSIONS-CO2-01]` Source for CO2 emission factors and unit-basis assumptions used in conditional environmental post-processing.
-- `[REF-THESIS-H2-01]` Historical thesis or internal project document supporting the H2 reference operating point and its interpretation as a historical baseline rather than an R1-optimized solution.
-
-## Verification requirements
-
-- Replace each placeholder with a complete, verified bibliographic record before submission.
-- Insert corresponding in-text citations only after each reference has been verified.
-- Confirm consistency between citation style, reference style, DOI/URL availability, and journal requirements.
-- Do not treat cost or CO2 claims as final until fuel price, tariff, emission-factor, source-year, regional scope, unit-basis, and conversion assumptions are source-locked.
-
-# 12. Supplementary material
-
-`STATUS: PARTIAL`
-
-Expected files:
-
-- `SUPP_TABLE_ETA_SENSITIVITY_v96z.md`
-- Seed-aware GA configuration.
-- Traceability reports.
-- Sensitivity checks.
-- Selected MATLAB scripts, if publication policy allows.
-
----
-
-# Internal traceability log
-
-#
-
-# Approved sections
-
-| Section file | Status | Notes |
+| Symbol or label | Definition | Unit or scope |
 |---|---|---|
-| `SEC_05_results_eta_sensitivity_v96z.md` | Approved | Collector-efficiency sensitivity and R1 selected candidates |
+| `C` | Nine solutions generated directly under corrected COST-E3D | finite evaluated set |
+| `f1` | Final moisture ratio, `MR_final` | dimensionless |
+| `f2` | Modeled specific operating-energy cost | USD/kg water removed |
+| `f3` | Modeled specific operational greenhouse-gas emissions | kg CO2e/kg water removed |
+| `H` | Nine historical R1 solutions reevaluated under corrected COST-E3D | finite evaluated set |
+| `m_max` | Base air mass-flow parameter | kg/s |
+| `MR` | Moisture ratio | dimensionless |
+| `Q_aux_tot` | Useful supplementary heat assigned to LPG heating | MJ |
+| `r_div2` | Fraction of outlet flow recirculated through branch D2 | dimensionless |
+| `T_min` | Minimum process-air temperature before the final operating stage | °C |
+| `t_rec_ini` | Recirculation start time | h |
+| `TMAX` | Fixed nominal maximum simulation horizon | 19.9 h |
+| `C(A,B)` | Fraction of set B dominated by at least one member of set A | dimensionless |
+| `HV` | Commonly normalized, reference-point-anchored hypervolume | normalized volume |
+| Rank 1 | Joint nondominated set of the 18 evaluated solutions | finite-set rank |
 
-#
+## 10. Tables and figures
 
-# Approved tables
+- **Table 1.** Corrected COST-E3D objectives and interpretation boundaries.
+- **Table 2.** Principal quantitative comparison of H and C.
+- **Table S1.** Decision- and objective-space descriptive summaries.
+- **Figure 1.** Three-objective geometry of H and C.
+- **Figures S1–S3.** Pairwise `f1–f2`, `f1–f3`, and `f2–f3` projections.
 
-| Table file | Status | Use |
-|---|---|---|
-| `MANUSCRIPT_TABLE_R1_ETA_2SAH_v96z.md` | Approved | Main Results table |
-| `SUPP_TABLE_ETA_SENSITIVITY_v96z.md` | Approved | Supplementary sensitivity table |
+## 11. References
 
-#
+Afzali, F., Darvishi, H., & Behroozi-Khazaei, N. (2019). Optimizing exergetic performance of a continuous conveyor infrared-hot air dryer with air recycling system. *Applied Thermal Engineering, 154*, 358–367. https://doi.org/10.1016/j.applthermaleng.2019.03.096
 
-# Restrictions
+Banco de México. (2026). *Tipo de cambio para solventar obligaciones denominadas en moneda extranjera: fecha de determinación (FIX)* [SIE exchange-rate series]. https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?accion=consultarCuadro&idCuadro=CF102&locale=es&sector=7
 
-- Do not claim proof of global optimality.
-- Do not claim statistical robustness from one seed-aware formal run.
-- Use “computed set” instead of “complete trade-off-front characterization”.
-- Keep H2 as historical comparison, not as final optimum.
-- Treat 2-SAH collector curve as sensitivity, not as fully coupled collector model.
-- Keep cost and CO2 provisional until factors and calculation path are fully traced.20
+César-Munguía, A. L., García-Valladares, O., Pérez-Espinosa, R., & Domínguez-Niño, A. (2023). Hybrid thermosolar-LPG dehydrating plant installed in Xochitepec, México. Case study: Pineapple. *Applied Thermal Engineering, 225*, 120171. https://doi.org/10.1016/j.applthermaleng.2023.120171
 
-### Reproducibility configuration of the formal multiobjective run
+Comisión Federal de Electricidad, & Comisión Nacional de Energía. (2026). *Tarifas finales del suministro básico aplicables a partir del 1 de junio de 2026* [Official tariff annex]. https://sidof.segob.gob.mx/notas/docFuente/5791865
 
-The formal multiobjective optimization run used to generate the selected candidate solutions was configured as a controlled seed-aware execution of MATLAB's `gamultiobj` algorithm. The run, identified as R1, used a fixed random seed of 61001, a population size of 24 individuals, and a maximum generation limit of 50 generations. The algorithm terminated with `exitflag = 0`, corresponding to termination by the prescribed generation limit. Therefore, the resulting solution set is interpreted as a computed set obtained under the specified configuration, not as proof of global convergence or global optimality.
+Comisión Nacional de Energía. (2026). *Precios máximos de gas LP* [Weekly June 2026 publications for Xochitepec, Morelos]. https://www.gob.mx/cne/articulos/precios-maximos-de-gas-lp-399035
 
-The optimization problem was formulated with three objectives: final moisture ratio, economic performance, and CO2 emissions. The decision variables were the air mass flow rate `m_dot`, the minimum control temperature `T_min`, the recirculation ratio `r_rec`, and the recirculation onset time `t_rec_ini`. Candidate feasibility was evaluated using the final moisture-ratio threshold MR <= 0.1. The formal run was performed for hybrid solar--gas-LPG operation; solar-only operation was not included in the formal multiobjective comparison because it represents a non-equivalent operating mode.
+Deb, K., Pratap, A., Agarwal, S., & Meyarivan, T. (2002). A fast and elitist multiobjective genetic algorithm: NSGA-II. *IEEE Transactions on Evolutionary Computation, 6*(2), 182–197. https://doi.org/10.1109/4235.996017
 
-The R1 run required approximately 25.4 h of wall-clock computation. The selected operating points discussed in the Results section include R1_solution_7 as the energy-saving feasible candidate, R1_solution_3 as a balanced feasible candidate, and R1_solution_9 as an aggressive drying boundary case. The historical H2 point was retained only as a reference case and was not treated as a newly optimized R1 solution. Since the present manuscript is based on a single controlled seed-aware formal run, no claim of statistical robustness is made. Additional independent seed replications would be required to support such a claim.
-20
+El Ferouali, H., Gharafi, M., Zoukit, A., Doubabi, S., & Abdenouri, N. (2018). Hybrid solar-gas-electric dryer optimization with genetic algorithms. In *21st International Drying Symposium Proceedings* (pp. 363–370). https://doi.org/10.4995/IDS2018.2018.7521
 
-### Traceability of economic and CO2 factors
+González-Bravo, H. E., Romero-Campos, H. E., López-Yáñez, A., García-Valladares, O., & Ramírez-Muñoz, J. (2024). Modeling a hybrid solar-gas dehydrating plant for agro-industrial products. *Applied Thermal Engineering, 253*, 123725. https://doi.org/10.1016/j.applthermaleng.2024.123725
 
-Economic and environmental indicators were handled through a separate factor-traceability matrix in order to distinguish computed model outputs from source-dependent conversion factors. The auxiliary energy values reported for the selected operating points are treated as computed outputs of the drying model and post-processing workflow. In contrast, cost and CO2 indicators depend on external factors such as fuel price, electricity tariff, emission factor, source year, region, unit basis, and conversion assumptions.
+Hossain, M. A., Woods, J. L., & Bala, B. K. (2007). Single-layer drying characteristics and colour kinetics of red chilli. *International Journal of Food Science & Technology, 42*(11), 1367–1375. https://doi.org/10.1111/j.1365-2621.2006.01414.x
 
-For code validation and internal traceability control, the provisional CO2 factors `EF_LPG_kgCO2_per_kWh = 0.2270` and `EF_grid_kgCO2_per_kWh = 0.4380` were retained under the tag `PROVISIONAL_FOR_CODE_VALIDATION`. These factors are not treated as final manuscript-grade emission factors. Before submission, each final cost or CO2 claim must be linked to a definitive source, date, unit basis, and conversion procedure. Therefore, the present results should be interpreted primarily through the reported energy demand and relative comparisons unless the corresponding final economic and emission factors are explicitly cited and locked.
+Instituto Nacional de Ecología y Cambio Climático, & Instituto Mexicano del Petróleo. (2014). *Factores de emisión para los diferentes tipos de combustibles fósiles y alternativos que se consumen en México*. https://www.gob.mx/inecc/documentos/factores-de-emision-para-los-diferentes-tipos-de-combustible-fosiles-que-se-consumen-en-mexico
 
-The same traceability control applies to equipment-level effects. Fan-power consumption and pressure-drop coupling were not fully included as optimization objectives; consequently, the present economic and environmental indicators should not be interpreted as complete equipment-level optimality claims. These effects are retained as methodological limitations and as future-work requirements for a fully coupled techno-economic and environmental assessment.
-20
+Instituto Nacional de Estadística y Geografía. (2026). *Índice nacional de precios al consumidor: junio de 2026* (Comunicado de prensa 417/26). https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/inpc/inpc_2q2026_07.pdf
+
+Ishibuchi, H., Imada, R., Setoguchi, Y., & Nojima, Y. (2018). How to specify a reference point in hypervolume calculation for fair performance comparison. *Evolutionary Computation, 26*(3), 411–440. https://doi.org/10.1162/evco_a_00226
+
+Khater, E.-S. G., Bahnasawy, A. H., Oraiath, A. A. T., Alhag, S. K., Al-Shuraym, L. A., Moustapha, M. E., Elwakeel, A. E., Elbeltagi, A., Salem, A., Metwally, K. A., Abdalla, M. A. I., Hussein, M. M., & Abdeen, M. A. (2024). Assessment of a LPG hybrid solar dryer assisted with smart air circulation system for drying basil leaves. *Scientific Reports, 14*, 23922. https://doi.org/10.1038/s41598-024-74751-4
+
+Murali, S., Amulya, P. R., Alfiya, P. V., Delfiya, D. S. A., & Samuel, M. P. (2020). Design and performance evaluation of solar-LPG hybrid dryer for drying of shrimps. *Renewable Energy, 147*, 2417–2428. https://doi.org/10.1016/j.renene.2019.10.002
+
+Ortiz-Rodríguez, N. M., García-Valladares, O., Pilatowsky-Figueroa, I., & Menchaca-Valdez, A. C. (2020). Solar-LP gas hybrid plant for dehydration of food. *Applied Thermal Engineering, 177*, 115496. https://doi.org/10.1016/j.applthermaleng.2020.115496
+
+Ortega, H. (2018). *Energía solar térmica para procesos industriales en México: Estudio base de mercado*. CONUEE, ANES, & GIZ. https://www.giz.de/de/downloads/EnergiaSolarTermica_02_LOWRES.pdf
+
+Oviedo, C., Barán, B., & Galeano, M. (2021). Multi-objective optimization of a steady-state rotary dryer. *CLEI Electronic Journal, 24*(2). https://doi.org/10.19153/cleiej.24.2.1
+
+Pereira, N. B., Joardder, M. U. H., & Karim, A. (2026). Optimization strategies for hybrid drying systems: Enhancing energy efficiency, cost, and quality in food processing. *Food Engineering Reviews, 18*, 19. https://doi.org/10.1007/s12393-026-09446-9
+
+Secretaría de Medio Ambiente y Recursos Naturales. (2025). *Aviso: Factor de emisión del Sistema Eléctrico Nacional 2024*. https://www.gob.mx/cms/uploads/attachment/file/980977/AvisoFESEN_2024.pdf
+
+Winiczenko, R., Górnicki, K., Kaleta, A., Martynenko, A., Janaszek-Mańkowska, M., & Trajer, J. (2018). Multi-objective optimization of convective drying of apple cubes. *Computers and Electronics in Agriculture, 145*, 341–348. https://doi.org/10.1016/j.compag.2018.01.006
+
+Zhang, Z., Zhang, J., Tian, W., Li, Y., Song, Y., & Zhang, P. (2022). Multi-objective optimization of milk powder spray drying system considering environmental impact, economy and product quality. *Journal of Cleaner Production, 369*, 133353. https://doi.org/10.1016/j.jclepro.2022.133353
+
+Zohrabi, S., Aghbashlo, M., Seiiedlou, S. S., Scaar, H., & Mellmann, J. (2020). Energy saving in a convective dryer by using novel real-time exergy-based control schemes adjusting exhaust air recirculation. *Journal of Cleaner Production, 257*, 120394. https://doi.org/10.1016/j.jclepro.2020.120394
+
+Zitzler, E., & Thiele, L. (1999). Multiobjective evolutionary algorithms: A comparative case study and the strength Pareto approach. *IEEE Transactions on Evolutionary Computation, 3*(4), 257–271. https://doi.org/10.1109/4235.797969
+
+## 12. Supplementary material
+
+The supplementary material contains the canonical 18-row dataset; full decision- and objective-space summaries; the 81-pair cross-dominance matrix; numerical near-tie audit; coverage membership; joint sorting; objective-space geometry; hypervolume anchors, normalized points, and reference sensitivity; terminal-regime evidence; objective decomposition; and the claim-to-evidence registry. These materials document the finite-set analysis and do not represent independent experimental replicates or additional optimization runs.

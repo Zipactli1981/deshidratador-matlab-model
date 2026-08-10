@@ -1,597 +1,215 @@
 # PHASE HANDOFF CURRENT
-## CR1-COMP-11 Hypervolume and Sensitivity → CR1-COMP-12 Common Terminal-regime Analysis
+## Editorial Freeze Pre-commit Block C → Version Control Freeze Gate
 
-## Fases cerradas
+## Current handoff
 
 ```text
-CORRECTED_R1_PHASE = CLOSED_PASS
-CORRECTED_R1_EXECUTION = PASS
-CORRECTED_R1_POSTRUN_INTERNAL_AUDIT = PASS
-CORRECTED_R1_RESULTS_INTERNALLY_VALIDATED = YES
+BLOCK_A = PASS
+BLOCK_B = PASS
+EDITORIAL_FREEZE_PRECOMMIT_BLOCK_C = PASS
+MANUSCRIPT_SCIENTIFIC_REVIEW = PASS
+SOURCE_CHECK_ITEMS = 0
+FIGURE_REGENERATION_STATUS = PASS_LABEL_ONLY
+MANUSCRIPT_FREEZE_CANDIDATE = YES
+NEXT_GATE = VERSION_CONTROL_FREEZE
+NEXT_GATE_AUTHORIZED = NO
 ```
 
-CORRECTED_R1 validated postrun baseline HEAD:
+The complete pre-commit candidate is registered in `06_manuscript/article_Q1/review/MANUSCRIPT_FREEZE_MANIFEST_BLOCK_C_v01.md`. The four CR1-COMP-09 figures were changed only in label margins; point, membership, rank, and geometry pixels were preserved and verified. No staging, commit, push, PR, merge, or remote mutation has occurred.
+
+## Fase cerrada
 
 ```text
-8a794c389edd10f9750e10a27eca0ec58c14da2d
+CLOSED_PHASE = INTERNAL_SCIENTIFIC_NARRATIVE_DEFINITION
+D019 = FROZEN_PASS
+SCIENTIFIC_NARRATIVE_GATE_STATUS = PASS
 ```
 
-El HEAD vivo del repositorio debe consultarse directamente con Git.
-
-## Protocolo comparativo
+Estado científico previo preservado:
 
 ```text
-COMPARATIVE_PROTOCOL_VERSION = v1.0
-PROTOCOL_STATUS = FROZEN_APPROVED_FOR_POSTRUN_COMPARATIVE_IMPLEMENTATION
-SCIENTIFIC_ARCHITECTURE = PASS
-OPEN_ESSENTIAL_METHODOLOGICAL_DECISIONS = 0
-```
-
-Artefacto:
-
-```text
-06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md
-```
-
-SHA-256:
-
-```text
-8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3
-```
-
-## Conjuntos que se compararán
-
-### H — Historical R1 reevaluated
-
-9 vectores históricos generados bajo la formulación anterior y reevaluados con COST-E3D corregido.
-
-No constituyen un frente Pareto corregido.
-
-### C — CORRECTED_R1
-
-9 soluciones producidas directamente por `gamultiobj` bajo COST-E3D corregido y validadas internamente.
-
-## Estado comparativo
-
-```text
-COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-COMPARATIVE_RESULTS = THROUGH_CR1_COMP_11_HYPERVOLUME_SENSITIVITY_COMPUTED
-SCIENTIFIC_INTERPRETATION = NOT_STARTED
-MANUSCRIPT_CHANGES = NOT_STARTED
-```
-
-## Estado de CR1-COMP-01
-
-```text
-CR1_COMP_01_PROVENANCE_SEARCH = CLOSED_PASS
-H_X_PROVENANCE = RESOLVED
-H_F_CORRECTED_PROVENANCE = RESOLVED
-H_F_CORRECTED_FULL_PRECISION_ARTIFACT_FOUND = NO
-H_F_CORRECTED_DECIMAL_VALIDATED_SOURCE_FOUND = YES
-H_F2_F3_DOCUMENTARY_RECOVERY_DECISION = APPROVED_CR1_COMP_01_D1
-CR1_COMP_01_E1_SOURCE_VALUE_RECOVERY = PASS
-SOURCE_VALUE_RECOVERY_ARTIFACT = 06_manuscript/article_Q1/review/CR1_COMP_01_E1_SOURCE_VALUE_RECOVERY_v96z.csv
-SOURCE_VALUE_RECOVERY_ARTIFACT_SHA256 = 869A070F972319ABC0AC0BCD44EF6699E5C3BC92BAB53EB5328AEFB1275F7D2D
-CR1_COMP_01_STATUS = CLOSED_PASS
-CR1_COMP_01_DATASET_FREEZE = PASS
-COMPARATIVE_DATASET = BUILT_FROZEN_VALIDATED
-CANONICAL_COMPARATIVE_DATASET = 06_manuscript/article_Q1/review/CR1_COMP_01_CANONICAL_DATASET_v96z.csv
-CANONICAL_COMPARATIVE_DATASET_SHA256 = B17B461FB04C9693FC9DA0C3450703C34E4538894AD232EF7138AE5E9882CD62
-```
-
-La excepción D1 acepta como recuperación documental la serialización decimal validada de 17 dígitos de `H.f2/f3`, porque los `double` binary64 originales corregidos no fueron persistidos. La limitación permanece explícita: la identidad binary64 original no fue verificada independientemente. `H.X` y `H.f1` proceden del MAT histórico.
-
-E1 recuperó y auditó los valores fuente en orden original, con 9 registros H y 9 registros C. El CSV/JSON E1 permanecen como artefactos derivados de recuperación.
-
-CR1-COMP-01-F1 construyó y congeló el dataset canónico de 18 filas en orden H01…H09, C01…C09. D1 permanece como limitación explícita. No se ejecutó replay, dominancia, sorting Pareto, coverage, hypervolume ni otra comparación científica.
-
-## CR1-COMP-02 cerrado
-
-Baseline operativo:
-
-```text
-407e9589245e6a2bc7a167b150e7fa233df64201
-chore: freeze CR1-COMP-01 comparative dataset
-```
-
-Resultado exacto dentro de cada conjunto:
-
-```text
-CR1_COMP_02_STATUS = CLOSED_PASS
-H_INTERNAL_PAIR_COUNT = 36
-H_INTERNAL_NONDOMINATED_COUNT = 9
-H_INTERNAL_DOMINATED_COUNT = 0
-HISTORICAL_NONDOMINATED_CORE = H01,H02,H03,H04,H05,H06,H07,H08,H09
-C_INTERNAL_PAIR_COUNT = 36
-C_INTERNAL_NONDOMINATED_COUNT = 9
-C_INTERNAL_DOMINATED_COUNT = 0
-CORRECTED_R1_NONDOMINATED_CORE = C01,C02,C03,C04,C05,C06,C07,C08,C09
-INDEPENDENT_QC = PASS
-CROSS_DOMINANCE_COMPUTED = NO
-NEAR_TIE_DIAGNOSTIC_COMPUTED = NO
-```
-
-Los 72 pares internos fueron incomparables; no hubo dominancias ni igualdades exactas. `CORRECTED_R1` puede denominarse aproximación no dominada, no frente Pareto verdadero, exacto o global. H continúa siendo un conjunto histórico reevaluado.
-
-No se ejecutaron MATLAB, objective/model, replay, `gamultiobj`, optimización ni ninguna fase CR1-COMP posterior.
-
-## CR1-COMP-03 cerrado / D013 vigente
-
-CR1-COMP-03 se detuvo inicialmente antes de cualquier cálculo descriptivo porque el protocolo no especificaba población vs. muestra para `std` ni el algoritmo de cuartiles/IQR.
-
-D013 resolvió metodológicamente esas convenciones antes de observar resultados:
-
-```text
-CR1_COMP_03_STATUS = CLOSED_PASS
-CR1_COMP_03_INITIAL_GATE = BLOCKED_DESCRIPTIVE_CONVENTION_UNSPECIFIED
-D013_STATUS = VIGENTE
-STD_CONVENTION = POPULATION_DDOF_0
-IQR_CONVENTION = HYNDMAN_FAN_TYPE_7
-BOUND_PROXIMITY_RULE = DISTANCES_ONLY_NO_THRESHOLD
-RESULTS_OBSERVED_BEFORE_DECISION = NO
-DESCRIPTIVE_RESULTS_COMPUTED = YES_AFTER_D013_FREEZE
-DECISION_SPACE_DESCRIPTIVE_ANALYSIS = PASS
-H_ROWS = 9
-C_ROWS = 9
-VARIABLE_COUNT = 4
-ALL_X_FINITE = YES
-BOUNDS_CHECK = PASS
-INDEPENDENT_QC = PASS
-PROTOCOL_V1_MODIFIED = NO
-CR1_COMP_04_COMPUTED = NO
-```
-
-CR1-COMP-01 y CR1-COMP-02 permanecen `CLOSED_PASS`. CR1-COMP-03 produjo únicamente resúmenes descriptivos del espacio de decisión de los conjuntos finitos H y C.
-
-## CR1-COMP-04 cerrado
-
-```text
-CR1_COMP_04_STATUS = CLOSED_PASS
-OBJECTIVE_SPACE_DESCRIPTIVE_ANALYSIS = PASS
-ANALYSIS_DESIGNATION = DESCRIPTIVE_SUMMARIES_OF_FINITE_SOLUTION_SETS
-H_ROWS = 9
-C_ROWS = 9
-OBJECTIVE_COUNT = 3
-ALL_F_VALUES_FINITE = YES
-PENALTY_ROWS_INCLUDED = NO
-INDEPENDENT_QC = PASS
-CROSS_DOMINANCE_COMPUTED = NO
-CR1_COMP_05_COMPUTED = NO
-```
-
-CR1-COMP-04 realizó únicamente caracterización descriptiva del espacio de objetivos bajo D013. Los desplazamientos de medianas no son afirmaciones de superioridad multiobjetivo.
-
-## CR1-COMP-05 cerrado
-
-```text
-CR1_COMP_05_STATUS = CLOSED_PASS
-PARETO_DEFINITION = EXACT_FULL_PRECISION
-DOMINANCE_TOLERANCE = NONE
-CROSS_PAIR_COUNT = 81
-C_DOMINATES_H_COUNT = 1
-H_DOMINATES_C_COUNT = 2
-INCOMPARABLE_COUNT = 78
-EXACT_EQUAL_COUNT = 0
-INDEPENDENT_QC = PASS
-NEAR_TIE_COMPUTED = NO
-COVERAGE_COMPUTED = NO
-JOINT_SORTING_COMPUTED = NO
-```
-
-CR1-COMP-05 clasificó exclusivamente las 81 parejas cartesianas H×C mediante dominancia exacta sin tolerancia. Los conteos no son métricas de coverage ni establecen Rank 1 conjunto o superioridad global.
-
-## CR1-COMP-06 cerrado
-
-```text
-CR1_COMP_06_STATUS = CLOSED_PASS
-NUMERICAL_NEAR_TIE_THRESHOLD = 1e-12 * max(1,abs(a),abs(b))
-NUMERICAL_THRESHOLD_ROLE = DIAGNOSTIC_ONLY
-NEAR_TIE_OBJECTIVE_COUNT = 0
-PAIR_WITH_NEAR_TIE_COUNT = 0
-NUMERICALLY_FRAGILE_DOMINANCE_COUNT = 0
-DOMINANCE_NUMERIC_SENSITIVITY = PASS_NO_FRAGILE_DOMINANCE
-CR1_COMP_05_EXACT_DOMINANCE_PRESERVED = YES
-EXACT_DOMINANCE_CLASSIFICATIONS_CHANGED = NO
-INDEPENDENT_QC = PASS
-COVERAGE_COMPUTED = NO
-JOINT_SORTING_COMPUTED = NO
-HYPERVOLUME_COMPUTED = NO
-```
-
-CR1-COMP-06 auditó únicamente sensibilidad numérica diagnóstica. No encontró near-ties ni dominancias exactas frágiles, y preservó las 81 clasificaciones CR1-COMP-05.
-
-## CR1-COMP-07 cerrado
-
-```text
-CR1_COMP_07_STATUS = CLOSED_PASS
-H_DOMINATED_BY_C_IDS = H05
-C_DOMINATED_BY_H_IDS = C06,C08
-FULL_COVERAGE_C_OVER_H = 0.1111111111111111
-FULL_COVERAGE_H_OVER_C = 0.2222222222222222
-CORE_COVERAGE_NC_OVER_NH = 0.1111111111111111
-CORE_COVERAGE_NH_OVER_NC = 0.2222222222222222
-FULL_CORE_COVERAGE_EQUALITY_CHECK = PASS
-INDEPENDENT_QC = PASS
-COVERAGE_COMPUTED = YES
-JOINT_SORTING_COMPUTED = NO
-HYPERVOLUME_GATE_COMPUTED = NO
-HYPERVOLUME_COMPUTED = NO
-```
-
-CR1-COMP-07 calculó coverage exacto full/core sobre soluciones objetivo distintas. La igualdad full/core se debe a que `N_H=H` y `N_C=C`; coverage sigue siendo asimétrico y no determina la composición del Rank 1 conjunto. No se ejecutó joint sorting ni ninguna fase posterior.
-
-## CR1-COMP-08 cerrado
-
-```text
-CR1_COMP_08_STATUS = CLOSED_PASS
-JOINT_SORTING_COMPUTED = YES
-JOINT_RANK_COUNT = 2
-JOINT_RANK1_COUNT = 15
-JOINT_RANK1_H = 8
-JOINT_RANK1_C = 7
-JOINT_RANK1_H_IDS = H01,H02,H03,H04,H06,H07,H08,H09
-JOINT_RANK1_C_IDS = C01,C02,C03,C04,C05,C07,C09
-JOINT_RANK2_COUNT = 3
-JOINT_RANK2_H = 1
-JOINT_RANK2_C = 2
-JOINT_RANK2_H_IDS = H05
-JOINT_RANK2_C_IDS = C06,C08
-INDEPENDENT_QC = PASS
-CR1_COMP_09_COMPUTED = NO
-OBJECTIVE_GEOMETRY_COMPUTED = NO
-HYPERVOLUME_GATE_COMPUTED = NO
-HYPERVOLUME_COMPUTED = NO
-```
-
-El Rank 1 es el conjunto no dominado conjunto de las 18 soluciones evaluadas. Ocho soluciones históricas y siete CORRECTED_R1 permanecen en Rank 1; H05, C06 y C08 forman Rank 2. Este resultado no establece un frente Pareto verdadero, exacto, global o corregido. No se ejecutó geometría objetivo, hypervolume ni ninguna fase posterior.
-
-## CR1-COMP-09 cerrado
-
-```text
-CR1_COMP_09_STATUS = CLOSED_PASS
-OBJECTIVE_GEOMETRY_COMPUTED = YES
-ANALYSIS_DESIGNATION = DESCRIPTIVE_GEOMETRY_OF_FINITE_EVALUATED_SETS
-F1_RANGE_H = 0.1464915338019719
-F1_RANGE_C = 0.08251886009269793
-F1_DELTA_RANGE_C_MINUS_H = -0.06397267370927398
-F2_RANGE_H = 0.10145085302645257
-F2_RANGE_C = 0.08648739344562398
-F2_DELTA_RANGE_C_MINUS_H = -0.014963459580828592
-F3_RANGE_H = 0.2835747323673442
-F3_RANGE_C = 0.23780849103844187
-F3_DELTA_RANGE_C_MINUS_H = -0.045766241328902335
-NEW_EXTREMES_C = NONE
-HISTORICAL_EXTREMES_NOT_REPRODUCED_BY_C = F1_MIN_H09,F1_MAX_H01,F2_MIN_H01,F2_MAX_H09,F3_MIN_H01,F3_MAX_H09
-JOINT_RANK1_H = 8
-JOINT_RANK1_C = 7
-JOINT_RANK2_IDS = H05,C06,C08
-CROSS_SET_STRUCTURE = PREDOMINANTLY_INCOMPARABLE
-TRADEOFF_RESTRUCTURING_OBSERVED = YES_DESCRIPTIVE_SYNTHESIS
-GEOMETRY_METRIC_NOT_IN_PROTOCOL_INTRODUCED = NO
-INDEPENDENT_QC = PASS
-GLOBAL_MINIMUM_VISUALIZATION_SUITE_COMPLETE = NO
-CR1_COMP_10_COMPUTED = NO
-HYPERVOLUME_GATE_COMPUTED = NO
-HYPERVOLUME_COMPUTED = NO
-```
-
-Los intervalos observados de C están contenidos dentro de los intervalos marginales de H y son más estrechos en f1, f2 y f3. La geometría conserva contribuciones Rank 1 de ambos conjuntos y es coherente con una estructura cruzada predominantemente incomparable. `TRADEOFF_RESTRUCTURING_OBSERVED` es una síntesis descriptiva, no una métrica nueva. No se ejecutó el gate formal de hypervolume ni ninguna fase posterior.
-
-Las cuatro figuras PNG están registradas por hash, pero coinciden con la regla global `*.png` de `.gitignore`; cualquier freeze local deberá incorporarlas mediante staging forzado explícito y selectivo.
-
-## CR1-COMP-10 cerrado
-
-```text
-CR1_COMP_10_STATUS = CLOSED_PASS
-HYPERVOLUME_GATE_COMPUTED = YES
-FULL_COVERAGE_C_OVER_H = 0.1111111111111111
-FULL_COVERAGE_H_OVER_C = 0.2222222222222222
-GATE_TEST_C_OVER_H_EQUALS_1 = FALSE
-GATE_TEST_H_OVER_C_EQUALS_0 = FALSE
-GATE_FULL_DOMINANCE_CONDITION = FALSE
-HYPERVOLUME_ANALYSIS = RECOMMENDED
-HYPERVOLUME_COMPUTED = NO
-CR1_COMP_11_COMPUTED = NO
-JSON_CSV_COVERAGE_CONSISTENCY = PASS
-GATE_IMPLEMENTATIONS_AGREE = PASS
-INDEPENDENT_QC = PASS
-```
-
-CR1-COMP-10 aplicó exclusivamente el gate congelado a los valores full coverage de CR1-COMP-07. La condición de sustitución completa y unidireccional resultó falsa, por lo que hypervolume queda recomendado como métrica secundaria adicional. No se calculó hypervolume ni se ejecutó CR1-COMP-11.
-
-## CR1-COMP-11 cerrado
-
-```text
-CR1_COMP_11_STATUS = CLOSED_PASS
-HYPERVOLUME_COMPUTED = YES
-HV_ANCHORS_FROZEN = YES
-HV_SCALE_MIN = [0.01473445910295798,0.18030701050054604,0.4043097419600721]
-HV_SCALE_MAX = [0.1612259929049299,0.2817578635269986,0.6878844743274163]
-HV_H_R5 = 0.8214144073536221
-HV_C_R5 = 0.8596538595095115
-HV_DIRECTION_R5 = C_GT_H
-HV_H_R10 = 0.9749820881940048
-HV_C_R10 = 1.0099628901072748
-HV_DIRECTION_R10 = C_GT_H
-HV_H_R20 = 1.3323674498747686
-HV_C_R20 = 1.3592107397484303
-HV_DIRECTION_R20 = C_GT_H
-HV_DIRECTION = C_GT_H
-HV_SENSITIVITY_STATUS = ROBUST_DIRECTION
-INDEPENDENT_QC = PASS
-CR1_COMP_12_COMPUTED = NO
-```
-
-CR1-COMP-11 calculó `HV(N_H)` y `HV(N_C)` con una normalización común derivada de `P=N_H∪N_C`. Inclusión–exclusión 3D y la descomposición independiente por celdas coincidieron dentro del criterio QC. C obtuvo mayor hypervolume en r5, r10 y r20; esta dirección es robusta únicamente dentro de los tres reference points preespecificados y representa cobertura del espacio objetivo anclado, no proximidad al frente verdadero ni superioridad estadística o física integral.
-
-## CR1-COMP-12 cerrado bajo D014
-
-```text
-CR1-COMP-11 = CLOSED_PASS / FROZEN
-CR1-COMP-12 = CLOSED_PASS
-D014 = FROZEN_PASS
-
-INITIAL_BLOCKER_TYPE = DOCUMENTARY_FLOAT_REPRESENTATION_IMPLEMENTATION_ISSUE
-INITIAL_BLOCK_RESOLUTION = D014_FROZEN_IMPLEMENTATION_CONVENTION
-SCIENTIFIC_DISCREPANCY = NO
-
-RAW_H_DRY_TIME = 19.900000000000006 h
-RAW_C_DRY_TIME = 19.9 h
-RAW_DRY_TIME_VALUES_IDENTICAL = NO
-NOMINAL_TERMINAL_HORIZON = 19.9 h
-
-TERMINAL_REGIME_UPSTREAM =
-H: 9/9 TMAX
-C: 9/9 TMAX
-
-COMPARATIVE_TERMINAL_REGIME = COMMON_TMAX_19P9H
-TEMPORAL_COMPARABILITY = COMMON_FIXED_HORIZON
-TERMINAL_REGIME_LIMITATION = FIXED_HORIZON_NOT_FREE_NORMAL_TERMINATION
-INDEPENDENT_QC = PASS
-
-CR1_COMP_13_COMPUTED = NO
-OBJECTIVE_DECOMPOSITION_COMPUTED = NO
-NEXT = CR1-COMP-13 — Objective decomposition, requiring separate authorization
-```
-
-D014 preserva las representaciones raw, no introduce tolerancia numérica y no modifica el protocolo v1.0. CR1-COMP-12 verificó que los 18 puntos comparten el régimen físico `TMAX` al horizonte nominal fijo de `19.9 h`. La terminación del optimizador CORRECTED_R1 por `MaxGenerations` es un concepto separado y no forma parte de este gate.
-
-## CR1-COMP-13 cerrado
-
-```text
-CR1-COMP-13 = CLOSED_PASS
-OBJECTIVE_DECOMPOSITION_COMPUTED = YES
-F2_F3_DECOMPOSITION_COMPLETED = YES
-MANDATORY_DECOMPOSITION_COMPLETE_H = YES
-MANDATORY_DECOMPOSITION_COMPLETE_C = YES
-
-Q_AUX_TOT_AVAILABILITY = COMPLETE_18
-Q_LPG_INPUT_AVAILABILITY = COMPLETE_18
-LPG_MASS_AVAILABILITY = COMPLETE_18
-LPG_COST_AVAILABILITY = COMPLETE_18
-IRRADIACION_AVAILABILITY = NOT_AVAILABLE
-SOLAR_COST_AVAILABILITY = COMPLETE_18
-E_AIR_IMPELLER_AVAILABILITY = COMPLETE_18
-ELECTRICITY_COST_AVAILABILITY = COMPLETE_18
-CO2_LPG_AVAILABILITY = COMPLETE_H_ONLY
-CO2_ELECTRICITY_AVAILABILITY = COMPLETE_H_ONLY
-
-REPRESENTATIVE_SOLUTION_SELECTION = DEFERRED_TO_CR1_COMP_14
-CR1_COMP_14_COMPUTED = NO
-SCIENTIFIC_INTERPRETATION = NOT_YET_COMPLETED
-NEXT = CR1-COMP-14 — Physical, economic and environmental interpretation, requiring separate authorization
-```
-
-CR1-COMP-13 construyó una capa documental completa para los numeradores de costo y CO2 y el denominador común de agua removida de las 18 soluciones. `Irradiacion` no se reconstruyó desde energía solar; los componentes desagregados de CO2 sólo están persistidos para H. No hubo pairing H↔C, selección representativa ni interpretación causal.
-
-## CR1-COMP-14 cerrado
-
-```text
-CR1-COMP-14 = CLOSED_PASS
-SCIENTIFIC_INTERPRETATION_COMPLETED = YES
-PHYSICAL_INTERPRETATION_COMPUTED = YES_WITH_PERSISTED_DATA_LIMITATIONS
-ECONOMIC_INTERPRETATION_COMPUTED = YES
-ENVIRONMENTAL_INTERPRETATION_COMPUTED = YES_WITH_C_COMPONENT_LIMITATION
-MULTIOBJECTIVE_INTERPRETATION_COMPUTED = YES
-
-REPRESENTATIVE_REGISTRY_ROWS = 18
-CROSS_DOMINANCE_PAIR_DECOMPOSITIONS = 3
-CLAIM_COUNTS = SUPPORTED_11;PARTIALLY_SUPPORTED_1;NOT_SUPPORTED_0
-
-C_REGION_CONCENTRATION_HYPOTHESIS = PARTIALLY_SUPPORTED
-C_REGION_CONCENTRATION_INTERPRETATION = MULTIPLE_TRADEOFF_MECHANISMS
-MULTIPLE_MECHANISMS_OBSERVED = YES_OPERATIONAL_X_PATHWAYS_WITH_SHARED_DECOMPOSITION_SIGNATURE
-CROSS_SET_INTERPRETIVE_PATTERN = PREDOMINANTLY_INCOMPARABLE_WITH_BIDIRECTIONAL_LOCAL_DOMINANCE_AND_SUBSTANTIAL_RANK1_CONTRIBUTIONS_FROM_BOTH_SETS
-
-BOUND_PROXIMITY_SELECTION = NOT_PERFORMED_NO_THRESHOLD
-COMPROMISE_SELECTION = NOT_PERFORMED_NO_FROZEN_SELECTION_CRITERION
-GASLP_CONTEXT_AVAILABLE = NO
-IRRADIACION_LIMITATION_PRESERVED = YES
-C_CO2_COMPONENT_LIMITATION_PRESERVED = YES
-INDEPENDENT_QC = PASS
-
-FINAL_COMPARATIVE_VERDICT = NOT_PERFORMED
-MANUSCRIPT_CHANGES = NOT_STARTED
-CR1_COMP_15_COMPUTED = NO
-NEXT = CR1-COMP-15 — Quantitative comparative verdict, requiring separate authorization
-```
-
-CR1-COMP-14 integró la evidencia congelada sin nuevas evaluaciones. C ocupa una región marginal más estrecha y presenta mayor hypervolume anclado en r5/r10/r20, pero ambos conjuntos aportan soluciones Rank 1 y la estructura cruzada sigue siendo predominantemente incomparable. La hipótesis de concentración de C queda sólo parcialmente respaldada: los pares dominantes comparten una firma de descomposición favorable, pero muestran rutas operativas `X` diferentes. Se preservan `IRRADIACION_NOT_AVAILABLE`, `C_CO2_COMPONENTS_NOT_PERSISTED`, el horizonte fijo común y las limitaciones de conjunto finito/sin robustez entre semillas. No hay solución única recomendada, criterio de compromiso ni veredicto final.
-
-## CR1-COMP-15 cerrado
-
-```text
-CR1-COMP-15 = CLOSED_PASS
-QUANTITATIVE_COMPARATIVE_VERDICT_COMPUTED = YES
-COMPARATIVE_VERDICT_FORMAT = QUANTITATIVE_VECTOR_PLUS_NARRATIVE
-FORMAL_A_B_C_D_CLASSIFICATION = NOT_USED
-QUANTITATIVE_VECTOR_COMPLETE = YES
-VECTOR_FIELD_COUNT = 25
-
-QUANTITATIVE_VERDICT_PATTERN = TRADEOFF_RESTRUCTURING_WITH_PARTIAL_CORRECTED_R1_ADVANTAGE_AND_HISTORICAL_SURVIVAL
-QUANTITATIVE_VERDICT_PATTERN_ROLE = DESCRIPTIVE_SYNTHESIS_NOT_FORMAL_CLASSIFICATION
-
-FINAL_COMPARATIVE_VERDICT =
-Direct optimization under corrected COST-E3D restructures rather than uniformly replaces the finite historical reevaluated trade-off set. Both sets remain internally nondominated; 78/81 cross comparisons are incomparable; dominance is sparse and bidirectional; H and C both contribute substantially to joint Rank 1. C has greater anchored HV under r5/r10/r20, while H retains the observed marginal extremes and greater reciprocal coverage.
-
-WHAT_IS_ESTABLISHED = FINITE_SET_STRUCTURE_HV_DIRECTION_HISTORICAL_SURVIVAL_COMMON_TMAX
-WHAT_IS_SUGGESTED = TRADEOFF_RESTRUCTURING_AND_PARTIALLY_SUPPORTED_MULTIPLE_MECHANISMS
-WHAT_IS_NOT_ESTABLISHED = CONVERGENCE_GLOBAL_OPTIMALITY_BETWEEN_SEED_ROBUSTNESS_STATISTICAL_SUPERIORITY_50GEN_GENERAL_SUFFICIENCY_UNIQUE_CAUSAL_MECHANISM
-
-ONE_CORRECTED_R1_RUN = YES
-CORRECTED_R1_STOP_REASON = MAXGENERATIONS_REACHED
-MAXGENERATIONS_REACHED_DOES_NOT_IMPLY = CONVERGENCE
-IRRADIACION_NOT_AVAILABLE = PRESERVED
-C_CO2_COMPONENTS_NOT_PERSISTED = PRESERVED
-TERMINAL_REGIME_LIMITATION = FIXED_HORIZON_NOT_FREE_NORMAL_TERMINATION
-
-VECTOR_SOURCE_TRACEABILITY = PASS
-NARRATIVE_TRACEABILITY_CHECK = PASS
-INFERENTIAL_SCOPE_CHECK = PASS
-INDEPENDENT_QC = PASS
-
-CR1_COMP_16_COMPUTED = NO
-MANUSCRIPT_IMPLICATIONS_COMPUTED = NO
-NEXT = CR1-COMP-16 — Manuscript implications, requiring separate authorization
-```
-
-CR1-COMP-15 congeló un vector de 25 campos y un veredicto narrativo integrado. No usa clasificación A/B/C/D, score compuesto ni una métrica decisiva única. CR1-COMP-16 permanece sin ejecutar y requiere autorización separada.
-
-## D015 — Fuente canónica del veredicto completo
-
-```text
-CR1-COMP-15 = CLOSED_PASS / FROZEN
-D015 = APPROVED_DOCUMENTED_PENDING_GIT_FREEZE
-CR1-COMP-16 = BLOCKED_PENDING_D015_FREEZE
-BLOCKER_TYPE = DOCUMENTARY_VERDICT_SOURCE_IDENTITY
-CR1_COMP_15_SCIENTIFIC_DISCREPANCY = NO
-FULL_VERDICT_SOURCE = CR1_COMP_15_QUANTITATIVE_COMPARATIVE_VERDICT_v96z.json
-HANDOFF_VERDICT_ROLE = CONDENSED_HANDOFF_SUMMARY
-NEXT = freeze D015, then resume CR1-COMP-16 under D015
-```
-
-## Cierre de CR1-COMP-16 y de la revisión comparativa
-
-```text
-D015 = FROZEN_PASS
+CORRECTED_R1 = CLOSED_PASS
 CR1-COMP-01...16 = CLOSED_PASS
-CR1-COMP-16 = CLOSED_PASS
 COMPARATIVE_PROTOCOL_IMPLEMENTATION = COMPLETED
 COMPARATIVE_SCIENTIFIC_REVIEW = CLOSED_PASS
-MANUSCRIPT_IMPLICATIONS = PREPARED_NOT_INSERTED
-FINAL_MANUSCRIPT_EDITED = NO
-SCIENTIFIC_SUFFICIENCY_GATE = NOT_EXECUTED_SEPARATE_POST_CR1_COMP_16_GATE
-NEXT = POST-COMPARATIVE SCIENTIFIC SUFFICIENCY GATE, requiring separate authorization
-```
-
-CR1-COMP-16 tradujo la evidencia congelada a un registro de claims candidatos y a implicaciones separadas para Results, Discussion, Limitations y Conclusions. No recalculó resultados, no editó el manuscrito y no decidió suficiencia científica, campaña multisemilla ni convergencia.
-
-## D016 — Handoff de suficiencia científica
-
-```text
-CR1-COMP-01...16 = CLOSED_PASS
-POST_COMPARATIVE_SCIENTIFIC_SUFFICIENCY_GATE = PASS_FOR_CURRENT_LIMITED_CLAIMS
-D016 = FROZEN_PASS
-D016_DECISION_STATUS = VIGENTE
-BLOCKING_CORE_CLAIMS = NONE
-CURRENT_MANUSCRIPT_CLAIM_PACKAGE = SCIENTIFICALLY_SUFFICIENT_WITH_FROZEN_SCOPE_AND_MANDATORY_QUALIFIERS
-ADDITIONAL_EVIDENCE_REQUIRED_FOR_CURRENT_MANUSCRIPT = NO
-MULTISEED_CAMPAIGN_STATUS = USEFUL_BUT_NOT_REQUIRED
-MANUSCRIPT_READY = NOT_EVALUATED
-FINAL_MANUSCRIPT_EDITED = NO
-PROJECT_CHARTER_STATUS_PARAGRAPH = HISTORICALLY_STALE_NONBLOCKING
-OPEN_EDITORIAL_ITEM = CO2_CO2E_RECONCILIATION
-NEXT = POST-SUFFICIENCY EDITORIAL PREPARATION GATE, requiring separate authorization
-```
-
-## D017 — Handoff editorial congelado
-
-```text
-CR1-COMP-01...16 = CLOSED_PASS
-D016 = FROZEN_PASS
-D016_DECISION_STATUS = VIGENTE
-D016_STALE_FREEZE_LABEL_CORRECTED = YES
-
-D017 = VIGENTE
-D017_FREEZE_ROLE = FROZEN_BY_THIS_CANONICAL_COMMIT
 SCIENTIFIC_SUFFICIENCY_GATE = PASS_FOR_CURRENT_LIMITED_CLAIMS
-POST_SUFFICIENCY_EDITORIAL_PREPARATION_GATE = PASS
-
-CO2_CO2E_RECONCILIATION = PASS_OPTION_B
-MANUSCRIPT_F3_NAME = modeled specific operational greenhouse-gas emissions
-MANUSCRIPT_F3_UNIT = kg CO2e/kg water removed
-NOMENCLATURE_UNIT_AUDIT = PASS
-
-CLAIM_PACKAGE = 40_TOTAL_24_AS_WRITTEN_16_QUALIFIED
-QUALIFIER_LOCK = PASS_LOCKED_16
-CLAIM_TO_SECTION_MAP_STATUS = PASS_COMPLETE_40
-CLAIM_TO_EVIDENCE_MAP_STATUS = PASS_COMPLETE_40
-TABLE_FIGURE_EVIDENCE_MAP_STATUS = PASS_COMPLETE
-MINIMUM_MANUSCRIPT_EVIDENCE_PACKAGE_STATUS = PASS_DEFINED
-PROHIBITED_CLAIM_REGISTRY_STATUS = PASS_COMPLETE_14
-
-READY_FOR_MANUSCRIPT_READY_GATE = YES
-MANUSCRIPT_READY = NOT_EVALUATED
-MANUSCRIPT_READY_GATE_EXECUTED = NO
-FINAL_MANUSCRIPT_EDITED = NO
-
-OPEN_EDITORIAL_ITEMS = table selection/conversion; figure selection/relabeling; Methods alignment; Results insertion; Discussion insertion; Limitations insertion; Conclusions insertion
-FUTURE_SEPARATE_GATES = literature positioning; novelty positioning
-NONBLOCKING_HOUSEKEEPING = PROJECT_CHARTER historical status paragraph
-
-NEXT = MANUSCRIPT_READY_GATE, requiring separate authorization
+ADDITIONAL_EVIDENCE_REQUIRED_FOR_CURRENT_MANUSCRIPT = NO
 ```
 
-## D018 — Handoff de readiness condicional del manuscrito
+## Baseline Git documentado por D019
 
 ```text
-D017 = FROZEN_PASS
-D018 = VIGENTE
-D018_FREEZE_ROLE = FROZEN_BY_THIS_CANONICAL_COMMIT
-MANUSCRIPT_READY_GATE = PASS
-MANUSCRIPT_READY = CONDITIONAL
-INTERNAL_MANUSCRIPT_SCIENTIFIC_READINESS = CONDITIONAL_PASS_FOR_CONTROLLED_EDITORIAL_PHASE
-CANONICAL_MANUSCRIPT_SOURCE_STATUS = UNAMBIGUOUS
-CANONICAL_MANUSCRIPT_SOURCE = 06_manuscript/article_Q1/draft_sections/MASTER_manuscript_v01.md
-SCIENTIFIC_BLOCKERS = NONE_WITHIN_FROZEN_LIMITED_SCOPE
-EDITORIAL_CONDITIONS = 10
-CLAIMS_MAPPED = 40
-QUALIFIERS_MAPPED = 16
-MAIN_TABLES_SELECTED = 2
-SUPPLEMENT_TABLES_SELECTED = 4
-MAIN_FIGURES_SELECTED = 1
-SUPPLEMENT_FIGURES_SELECTED = 3
-SCIENTIFIC_SOURCE_MISSING_COUNT = 0
-FINAL_MANUSCRIPT_EDITED = NO
-CONTROLLED_MANUSCRIPT_EDITORIAL_INSERTION_EXECUTED = NO
-NEXT = CONTROLLED_MANUSCRIPT_EDITORIAL_INSERTION, requiring separate authorization
-FUTURE_SEPARATE_GATES = literature positioning; novelty positioning; submission readiness
+EXPECTED_BRANCH = main
+EXPECTED_HEAD = 22ea73a7bf3dbfa4f594097d4612b58b5c384682
+EXPECTED_COMMIT = docs: freeze D019 scientific narrative architecture
+EXPECTED_WORKTREE = CLEAN
+LIVE_GIT_STATUS = NOT_VERIFIED_IN_THIS_MICROSTEP
 ```
 
-D018 freezes the conditional-readiness decision and its controlled editorial blueprint. It does not authorize or execute manuscript insertion, table or figure conversion, literature/novelty assessment, submission preparation, scientific recomputation, or remote Git operations.
+El estado Git vivo debe verificarse read-only antes de cualquier operación que dependa de él. No inferir que el SHA esperado es el HEAD vivo.
 
-## D019 — Handoff de arquitectura narrativa científica
+## Arquitectura narrativa congelada
 
 ```text
-D018 = FROZEN_PASS
-D019 = VIGENTE
-D019_FREEZE_ROLE = FROZEN_BY_THIS_CANONICAL_COMMIT
-SCIENTIFIC_NARRATIVE_GATE = PASS
-MANUSCRIPT_ARCHITECTURE = SYSTEM_FIRST
-PRIMARY_SCIENTIFIC_OBJECT = HYBRID_SOLAR_LPG_DRYER_OPERATIONAL_TRADEOFFS
-ROLE_OF_GAMULTIOBJ = SEARCH_INSTRUMENT
+RECOMMENDED_MANUSCRIPT_ARCHITECTURE = A
+RECOMMENDED_POSITIONING = SYSTEM_FIRST
+SYSTEM_PROTAGONIST = HYBRID_SOLAR_LPG_DRYER_AND_OPERATIONAL_TRADEOFFS
+METHOD_PROTAGONIST = NO
+GAMULTIOBJ_PRIMARY_ROLE = SEARCH_INSTRUMENT_FOR_GENERATING_MULTI_OBJECTIVE_CANDIDATES
+GAMULTIOBJ_SECONDARY_ROLE = TRACEABLE_REPRODUCIBLE_SEARCH_CONFIGURATION
+ALGORITHM_PERFORMANCE_CLAIMS_SUPPORTED = NO
+```
+
+```text
 PRIMARY_RESEARCH_QUESTION = SUPPORTED
 SECONDARY_RESEARCH_QUESTION = SUPPORTED
 PRIMARY_HYPOTHESIS = SUPPORTED
 MANUSCRIPT_THESIS = SUPPORTED
-PRIMARY_CONTRIBUTION = FINITE_SET_PHYSICAL_AND_MULTIOBJECTIVE_CHARACTERIZATION
-MULTISEED_REQUIRED_FOR_PRIMARY_THESIS = NO
-PAPER_B = NOT_CURRENTLY_JUSTIFIED
-KNOWLEDGE_GAP_STATUS = CANDIDATE_PENDING_EXTERNAL_VERIFICATION
-NOVELTY_ESTABLISHED = NO
-READY_FOR_LITERATURE_POSITIONING_GATE = YES
-FINAL_MANUSCRIPT_EDITED = NO
-NEXT = LITERATURE_POSITIONING_GATE, requiring separate authorization
+FINITE_SET_SCOPE = CONSTITUTIVE_NOT_OPTIONAL_DISCLAIMER
 ```
 
-D019 preserves the system-first narrative and its finite-set boundaries. It does not perform literature or novelty verification, edit the manuscript, execute new science, or authorize a second algorithm-performance paper.
+## Resultado H-vs-C que alimenta la narrativa
+
+```text
+H_INTERNAL_NONDOMINATED = 9/9
+C_INTERNAL_NONDOMINATED = 9/9
+C_DOMINATES_H_PAIR_COUNT = 1
+H_DOMINATES_C_PAIR_COUNT = 2
+INCOMPARABLE_PAIR_COUNT = 78/81
+EXACT_EQUAL_PAIR_COUNT = 0
+FULL_COVERAGE_C_OVER_H = 1/9
+FULL_COVERAGE_H_OVER_C = 2/9
+JOINT_RANK1_H = 8
+JOINT_RANK1_C = 7
+HV_H_R10 = 0.9749820881940048
+HV_C_R10 = 1.0099628901072748
+HV_DIRECTION = C_GT_H
+HV_DIRECTION_R5_R10_R20 = C_GT_H
+H_RETAINS_ALL_OBSERVED_MARGINAL_EXTREMA = YES
+C_ADDS_NEW_MARGINAL_EXTREMA = NO
+COMPARATIVE_TERMINAL_REGIME = COMMON_TMAX_19P9H
+```
+
+Interpretación permitida: reestructuración del trade-off finito, no sustitución uniforme del conjunto histórico.
+
+## Suficiencia y límites
+
+```text
+D016 = FROZEN_PASS
+D017 = FROZEN_PASS
+D018 = FROZEN_PASS
+D019 = FROZEN_PASS
+
+CURRENT_MANUSCRIPT_CLAIM_PACKAGE = SCIENTIFICALLY_SUFFICIENT_WITH_FROZEN_SCOPE_AND_MANDATORY_QUALIFIERS
+MANUSCRIPT_READY = CONDITIONAL
+MULTISEED_REQUIRED_FOR_PRIMARY_MANUSCRIPT_THESIS = NO
+MULTISEED_REQUIRED_FOR_ALGORITHM_PERFORMANCE_PAPER = YES
+CONVERGENCE_ESTABLISHED = NO
+BETWEEN_SEED_ROBUSTNESS_ESTABLISHED = NO
+GLOBAL_OPTIMALITY_ESTABLISHED = NO
+TRUE_PARETO_FRONT_ESTABLISHED = NO
+```
+
+## D020 — Literature positioning and novelty verification
+
+```text
+D020 = FROZEN_PASS
+LITERATURE_POSITIONING_GATE = FROZEN_PASS_WITH_NOVELTY_NARROWING
+LITERATURE_POSITIONING_AND_NOVELTY_VERIFICATION = CLOSED_PASS
+```
+
+Artefactos locales del freeze:
+
+```text
+LITERATURE_POSITIONING_GATE_v01.md
+SHA256 = 3114FDC9A6188C450D499B424D147DB4B6BC3077E424CD8D0BAEA23DA7C3F83F
+
+LITERATURE_POSITIONING_EVIDENCE_MATRIX_v01.csv
+SHA256 = E68DB197170910D17A02046830BEC0A1469181DD22AFF3B5829D51774268E5A2
+
+DOCUMENTARY_FREEZE = PASS_LOCAL_NOT_GIT_FROZEN
+```
+
+## Gaps verificados con alcance limitado
+
+```text
+CANDIDATE_KNOWLEDGE_GAP_1 = PARTIALLY_VERIFIED_GAP
+CANDIDATE_KNOWLEDGE_GAP_2 = PARTIALLY_VERIFIED_GAP
+```
+
+Gap 1 congelado: la literatura ya cubre secado solar–LPG, efectos de temperatura/flujo/recirculación y optimización multiobjetivo. El espacio defendible es la caracterización integrada, a nivel de conjuntos finitos, de cómo decisiones térmicas y de manejo de aire acopladas redistribuyen desempeño de secado, costo energético operativo específico y emisiones operacionales específicas en el sistema solar–LPG estudiado.
+
+Gap 2 congelado: no se identificó un precedente directo en la literatura de secado localizada para preservar un conjunto histórico, reevaluar exactamente sus vectores bajo una formulación costo–emisiones corregida y cuantificar qué trade-offs sobreviven frente a candidatos generados directamente bajo esa formulación.
+
+Limitación obligatoria:
+
+```text
+NO_DIRECT_PRECEDENT_IDENTIFIED != UNIVERSAL_ABSENCE_PROVED
+```
+
+## Clasificación de novedad congelada
+
+```text
+DEFENSIBLE_NOVELTY_POSITIONING = YES_WITH_LIMITATIONS
+UNIVERSAL_PRIORITY_ESTABLISHED = NO
+
+SOLAR_LPG_AS_NOVELTY = NOT_NOVEL
+GAMULTIOBJ_OR_GA_AS_NOVELTY = METHOD_APPLICATION_ONLY
+MULTIOBJECTIVE_OPTIMIZATION_AS_NOVELTY = NOT_NOVEL
+
+INTEGRATED_TRIOBJECTIVE_OPERATIONAL_FORMULATION = INCREMENTAL_NOVELTY
+COUPLED_THERMAL_AIR_MANAGEMENT_FINITE_SET_CHARACTERIZATION = INCREMENTAL_NOVELTY
+HISTORICAL_SOLUTION_SURVIVAL_AFTER_CORRECTED_REFORMULATION = STRONG_NOVELTY_CANDIDATE
+OVERALL_PAPER_A_POSITIONING = INCREMENTAL_NOVELTY_WITH_STRONG_NARROW_SUBCONTRIBUTION
+PHYSICAL_INTERPRETATION_LITERATURE_SUPPORT = PASS_WITH_CAUSALITY_LIMITATION
+UNIVERSAL_FIRST_OF_ITS_KIND_CLAIM = NOT_SUPPORTED
+```
+
+D019 `SYSTEM_FIRST` permanece vigente. `gamultiobj` continúa como instrumento de búsqueda, no como protagonista ni como claim de desempeño algorítmico.
+
+## Bibliografía núcleo congelada
+
+Introduction / positioning:
+- Pereira, Joardder & Karim (2026), *Food Engineering Reviews*, DOI `10.1007/s12393-026-09446-9`.
+- Murali et al. (2020), *Renewable Energy*, DOI `10.1016/j.renene.2019.10.002`.
+- Ortiz-Rodríguez et al. (2020), *Applied Thermal Engineering*, DOI `10.1016/j.applthermaleng.2020.115496`.
+- César-Munguía et al. (2023), *Applied Thermal Engineering*, DOI `10.1016/j.applthermaleng.2023.120171`.
+- Khater et al. (2024), *Scientific Reports*, DOI `10.1038/s41598-024-74751-4`.
+
+Multiobjective positioning:
+- Winiczenko et al. (2018), *Computers and Electronics in Agriculture*, DOI `10.1016/j.compag.2018.01.006`.
+- El Ferouali et al. (2018), IDS 2018, DOI `10.4995/IDS2018.2018.7521`.
+- Oviedo, Barán & Galeano (2021), *CLEI Electronic Journal*, DOI `10.19153/cleiej.24.2.1`.
+- Zhang et al. (2022), *Journal of Cleaner Production*, DOI `10.1016/j.jclepro.2022.133353`.
+
+Physical discussion:
+- Afzali, Darvishi & Behroozi-Khazaei (2019), *Applied Thermal Engineering*, DOI `10.1016/j.applthermaleng.2019.03.096`.
+- Zohrabi et al. (2020), *Journal of Cleaner Production*, DOI `10.1016/j.jclepro.2020.120394`.
+
+## Próxima fase
+
+```text
+CLOSED_PHASE = EDITORIAL_FREEZE_PRECOMMIT_BLOCK_C
+NEXT_PHASE = VERSION_CONTROL_FREEZE
+NEXT_PHASE_AUTHORIZED = NO
+CANONICAL_MANUSCRIPT_SOURCE = 06_manuscript/article_Q1/draft_sections/MASTER_manuscript_v01.md
+```
+
+La siguiente fase deberá incorporar el posicionamiento D020 sin alterar los límites D016–D019, sin convertir asociación descriptiva en causalidad y sin introducir claims de prioridad universal.
+
+## Autorización al cierre de este handoff
+
+```text
+MANUSCRIPT_EDITING = COMPLETED_FOR_CURRENT_AUTHORIZED_BLOCK
+MATLAB = NOT_AUTHORIZED
+gamultiobj = NOT_AUTHORIZED
+NEW_OPTIMIZATION = NOT_AUTHORIZED
+MULTISEED_CAMPAIGN = NOT_AUTHORIZED
+CODE_MODIFICATION = NOT_AUTHORIZED
+STAGING = NOT_AUTHORIZED
+COMMIT = NOT_AUTHORIZED
+REMOTE_GIT = NOT_AUTHORIZED
+VERSION_CONTROL_FREEZE_GATE = NOT_AUTHORIZED
+```
+
+Next unauthorized action: `VERSION_CONTROL_FREEZE_GATE`.

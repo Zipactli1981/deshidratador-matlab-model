@@ -51,31 +51,37 @@ No modificar objective, modelo, wrappers o funciones de costo sólo para facilit
 ## Pareto y comparación
 
 - Los 9 vectores históricos reevaluados NO son el Pareto corregido.
-- Las 9 soluciones `CORRECTED_R1` están internamente validadas, pero la interpretación comparativa está pendiente.
+- Las 9 soluciones `CORRECTED_R1` y la comparación H-vs-C están internamente validadas dentro del alcance finito congelado.
 - No declarar un frente Pareto definitivo sin revisión específica.
 - No usar `f2/f3` históricos antiguos como si pertenecieran a COST-E3D.
 - Para comparación justa, usar los vectores históricos reevaluados bajo la formulación corregida.
 
 ## Manuscrito
 
-No incorporar resultados como definitivos hasta completar:
+Los prerrequisitos comparativos siguientes quedaron completados en CR1-COMP-01...16 y D016-D020 y deben preservarse como evidencia congelada durante la reescritura:
 1. validación interna;
 2. revisión comparativa;
 3. dominancia/métricas que se determine pertinente;
 4. interpretación física/económica/ambiental;
 5. revisión de afirmaciones cuantitativas.
 
+Su cierre permite una reescritura editorial controlada, pero no autoriza nueva
+computación, no convierte los conjuntos finitos en un frente verdadero o
+global y no debilita los calificadores D016-D020.
+
 ## Contexto
 
 No reconstruir fases cerradas salvo que una decisión nueva dependa de evidencia específica. Mantener handoffs compactos.
 
-## Implementación comparativa postrun
+## Implementación comparativa postrun — estado histórico y guardrails vigentes
 
 El protocolo comparativo v1.0 está metodológicamente congelado y aprobado para implementación postrun.
 
 Esto NO implica autorización automática de ejecución.
 
-Los scripts comparativos postrun podrán autorizarse de forma separada únicamente para:
+Los scripts comparativos postrun fueron autorizados y ejecutados por bloques
+separados hasta cerrar CR1-COMP-01...16. Cualquier ejecución adicional requiere
+nueva autorización y sólo podría:
 - leer artefactos existentes;
 - construir el dataset de 18 soluciones;
 - calcular dominancia, cobertura, Pareto rank y métricas aprobadas;
@@ -87,4 +93,4 @@ No podrán:
 - iniciar nuevas optimizaciones;
 - modificar código productivo.
 
-El inicio de cada bloque operativo CR1-COMP requiere autorización explícita en la conversación vigente.
+El inicio de cualquier bloque operativo adicional requiere autorización explícita en la conversación vigente.

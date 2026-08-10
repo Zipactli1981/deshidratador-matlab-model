@@ -38,7 +38,9 @@ PASS_WITH_DOCUMENTARY_BUILD_LIMITATION
 Son muestras históricas reevaluadas bajo COST-E3D, no un frente Pareto corregido.
 
 ## D008 — CORRECTED_R1 postrun
-La corrida está internamente validada, pero la interpretación científica queda pendiente de revisión comparativa.
+La corrida quedó internamente validada y, en ese momento, la interpretación científica permanecía pendiente de revisión comparativa.
+
+**Estado:** SUPERSEDED_BY_COMPLETED_COMPARATIVE_REVIEW.
 
 ## D009 — Diseño del protocolo comparativo
 
@@ -79,586 +81,171 @@ Cada implementación operativa CR1-COMP requiere autorización separada.
 
 **Estado:** vigente.
 
-## D012 — Recuperación documental de H.f2/f3 corregidos
+## D016 — Suficiencia científica del paquete de claims
 
-**Decisión:** aceptar explícitamente bajo `CR1-COMP-01-D1` la recuperación documental de `H.f2/f3` corregidos desde la única fuente persistida validada:
-
-```text
-06_manuscript/article_Q1/review/COST_E3D_R2G_EXISTING_R1_REEVALUATION_MEMO_v96z.md
-SHA-256 = 7C025689D5832CBA9ECB8D90E9A4A5D5E911A46B0109C6D1C270E19E7E8EBFB2
-NUMERIC_REPRESENTATION = VALIDATED_17_SIGNIFICANT_DIGIT_DECIMAL_SERIALIZATION
-```
-
-La búsqueda exhaustiva determinó que no se persistió un MAT con los `double` corregidos. La excepción se limita al requisito de persistencia/precisión de `H.f2/f3`: los bits binary64 originales no están disponibles y su identidad no puede verificarse independientemente. `H.X` y `H.f1` conservan como fuente primaria el MAT histórico; la reevaluación documentó reproducción de `f1` en las nueve filas.
-
-No se autoriza replay ni nueva evaluación del objective. No cambia la definición exacta de dominancia ni ninguna otra regla del protocolo comparativo v1.0.
-
-**Estado:** VIGENTE.
-
-## D013 — Convenciones numéricas descriptivas CR1-COMP-03/04
-
-**Decisión:** adoptar las siguientes convenciones deterministas para las estadísticas descriptivas requeridas por CR1-COMP-03 y CR1-COMP-04:
+**Decisión:** el paquete actual de afirmaciones del manuscrito es científicamente suficiente para el alcance finito congelado, siempre que se mantengan los calificadores obligatorios.
 
 ```text
-STD_CONVENTION = POPULATION
-STD_DDOF = 0
-```
-
-La desviación estándar se define como:
-
-```text
-std = sqrt(sum((x_i - mean(x))^2) / n)
-```
-
-H y C se tratan en CR1-COMP como conjuntos finitos específicos de soluciones, no como muestras aleatorias para inferencia poblacional o variabilidad entre corridas. La desviación estándar tiene una función exclusivamente descriptiva.
-
-```text
-IQR_CONVENTION = HYNDMAN_FAN_TYPE_7
-h = 1 + (n - 1)p
-Q1 = quantile(p=0.25, Type 7)
-Q3 = quantile(p=0.75, Type 7)
-IQR = Q3 - Q1
-```
-
-Cuando `h` no sea entero se usará interpolación lineal entre las observaciones ordenadas adyacentes. Type 7 se adopta como convención determinista y reproducible; no se afirma que sea la única convención válida posible.
-
-Para la relación con los bounds:
-
-```text
-BOUND_PROXIMITY_RULE = DISTANCES_ONLY_NO_THRESHOLD
-distance_to_lb = x - lb
-distance_to_ub = ub - x
-normalized_distance_to_lb = (x - lb)/(ub - lb)
-normalized_distance_to_ub = (ub - x)/(ub - lb)
-```
-
-No se define ningún umbral de “near bound” ni se permite clasificar soluciones como próximas a límites mediante thresholds no congelados.
-
-```text
-APPLIES_TO = CR1-COMP-03, CR1-COMP-04
-PROTOCOL_V1_MODIFIED = NO
-RESULTS_OBSERVED_BEFORE_DECISION = NO
-DESCRIPTIVE_RESULTS_COMPUTED_BEFORE_DECISION = NO
-```
-
-D013 define sólo convenciones de implementación descriptiva. No modifica H, C, el dataset, objetivos, bounds, dominancia, near-tie, coverage, Pareto rank, hypervolume, selección de soluciones ni interpretación física, económica o ambiental. La decisión se congeló después de detectar la omisión y antes de calcular resultados dependientes de `std` o IQR.
-
-**Estado:** VIGENTE.
-
-## D014 — Terminal-horizon documentary representation convention
-
-```text
-DECISION_STATUS = VIGENTE
-CONTEXT = CR1-COMP-12
-
-RAW_VALUES_PRESERVED = YES
-H_DRY_TIME_RAW = 19.900000000000006
-C_DRY_TIME_RAW = 19.9
-RAW_FLOAT_EQUALITY = FALSE
-ABS_RAW_DIFFERENCE_H = 7.105427357601002e-15
-
-TERMINAL_HORIZON_EQUIVALENCE_BASIS =
-COMMON_TMAX_TERMINAL_REGIME_AND_SHARED_NOMINAL_HORIZON
-
-FLOAT_EQUALITY_REQUIRED_FOR_COMMON_HORIZON = NO
-NUMERICAL_TOLERANCE_INTRODUCED = NO
-ROUNDING_APPLIED_TO_RAW_VALUES = NO
-RAW_VALUES_REWRITTEN = NO
-
-NOMINAL_TERMINAL_HORIZON = 19.9 h
-H_TMAX_COUNT = 9
-C_TMAX_COUNT = 9
-
-PROTOCOL_V1_MODIFIED = NO
-PROTOCOL_DEVIATION = NO
-IMPLEMENTATION_CONVENTION = YES
-```
-
-**Fundamento:** el protocolo congelado requiere verificar un horizonte terminal común, no identidad binaria de representaciones floating-point procedentes de serializaciones documentales distintas.
-
-La equivalencia de horizonte se establece por:
-
-1. clasificación terminal común `TMAX`;
-2. mismo horizonte máximo nominal documentado de `19.9 h`;
-3. preservación íntegra de los valores raw de cada fuente.
-
-D014 no declara que `19.900000000000006 == 19.9` como valores floating-point. Declara que ambas representaciones documentan el mismo horizonte terminal nominal bajo el régimen `TMAX` común.
-
-**Alcance científico:** D014 sólo permite concluir, si CR1-COMP-12 verifica posteriormente el resto de condiciones:
-
-```text
-COMPARATIVE_TERMINAL_REGIME = COMMON_TMAX_19P9H
-TEMPORAL_COMPARABILITY = COMMON_FIXED_HORIZON
-```
-
-No permite concluir igualdad de trayectorias térmicas, energía, consumo de GLP, irradiación, agua removida, costo o CO2, ni convergencia del optimizador. No introduce `1e-12`, `eps`, `isclose`, redondeo ni ningún umbral decimal como criterio de equivalencia.
-
-**Estado:** VIGENTE.
-
-## D015 — Canonical source for CR1-COMP-15 full verdict text
-
-```text
-D015_STATUS = VIGENTE
-DECISION_SCOPE = DOCUMENTARY_CANONICALIZATION_ONLY
-TRIGGER = CR1_COMP_16_BLOCKED_VERDICT_IDENTITY_MISMATCH
-REPRESENTATION_DISCREPANCY_OBSERVED_BEFORE_D015 = YES
-
-CR1_COMP_15_SCIENTIFIC_RESULT_CHANGED = NO
-CR1_COMP_15_RECOMPUTED = NO
-CR1_COMP_15_REOPENED = NO
-
-FINAL_COMPARATIVE_VERDICT_FULL_TEXT_SOURCE = CR1_COMP_15_QUANTITATIVE_COMPARATIVE_VERDICT_v96z.json
-FINAL_COMPARATIVE_VERDICT_AUDIT_SOURCE = CR1_COMP_15_QUANTITATIVE_COMPARATIVE_VERDICT_AUDIT_v96z.md
-JSON_AUDIT_FULL_VERDICT_IDENTITY = PASS
-VERDICT_IDENTITY_NORMALIZATION = WHITESPACE_ONLY
-
-CURRENT_STATE_VERDICT_ROLE = CONDENSED_STATE_SUMMARY
-PHASE_HANDOFF_VERDICT_ROLE = CONDENSED_HANDOFF_SUMMARY
-CURRENT_STATE_FULL_VERBATIM_IDENTITY_REQUIRED = NO
-PHASE_HANDOFF_FULL_VERBATIM_IDENTITY_REQUIRED = NO
-CONDENSED_SUMMARIES_MUST_NOT_CONTRADICT_FULL_VERDICT = YES
-
-CR1_COMP_16_VERDICT_SOURCE_RULE = READ_FULL_FROZEN_VERDICT_FROM_CR1_COMP_15_JSON_AND_VERIFY_AGAINST_AUDIT
-ASSISTANT_PROMPT_PARAPHRASE_CANONICAL = NO
-
-PROTOCOL_V1_MODIFIED = NO
-PROTOCOL_DEVIATION = NO
-NEW_METRIC = NO
-NEW_INTERPRETATION = NO
-NEW_SCIENTIFIC_RESULT = NO
-```
-
-CR1-COMP-15 congela un vector cuantitativo más una narrativa. CR1-COMP-16 debe traducir esa evidencia congelada a implicaciones para el manuscrito. Una paráfrasis operativa posterior no puede reemplazar el veredicto upstream congelado. `CURRENT_STATE` y `PHASE_HANDOFF_CURRENT` pueden conservar resúmenes compactos para gestión de estado siempre que no contradigan el veredicto completo.
-
-**Estado:** VIGENTE.
-
-## D016 — Scientific sufficiency of current limited manuscript claim package
-
-```text
-D016_STATUS = VIGENTE
-DECISION_SCOPE = POST_COMPARATIVE_SCIENTIFIC_SUFFICIENCY
-SOURCE_GATE = POST_COMPARATIVE_SCIENTIFIC_SUFFICIENCY_GATE
-SOURCE_GATE_MODE = READ_ONLY_ANALYTICAL_GATE
-
-SCIENTIFIC_SUFFICIENCY_GATE = PASS_FOR_CURRENT_LIMITED_CLAIMS
+D016 = FROZEN_PASS
 CURRENT_MANUSCRIPT_CLAIM_PACKAGE = SCIENTIFICALLY_SUFFICIENT_WITH_FROZEN_SCOPE_AND_MANDATORY_QUALIFIERS
-BLOCKING_CORE_CLAIMS = NONE
-
 TOTAL_MANUSCRIPT_CANDIDATE_CLAIMS = 40
-SUFFICIENT_AS_WRITTEN_COUNT = 24
-SUFFICIENT_WITH_MANDATORY_QUALIFIER_COUNT = 16
-CLAIMS_REQUIRING_REMOVAL = 0
-CLAIMS_REQUIRING_ADDITIONAL_EVIDENCE = 0
-ADDITIONAL_EVIDENCE_REQUIRED_FOR_CURRENT_MANUSCRIPT = NO
-
-MULTISEED_REQUIRED_FOR_CURRENT_FINITE_SET_CLAIMS = NO
-MULTISEED_REQUIRED_FOR_OPTIMIZER_ROBUSTNESS_CLAIMS = YES
-MULTISEED_CAMPAIGN_STATUS = USEFUL_BUT_NOT_REQUIRED
-CONVERGENCE_EVIDENCE_REQUIRED_FOR_CURRENT_CORE_CLAIMS = NO
-CURRENT_EVIDENCE_SUFFICIENT_FOR_REPRODUCIBLE_C_REGION_ACROSS_SEEDS = NO
-CURRENT_EVIDENCE_SUFFICIENT_FOR_HV_BASED_GLOBAL_SUPERIORITY = NO
-
-FINITE_SET_SCOPE = MANDATORY
-HYPERVOLUME_SCOPE = FINITE_SETS_COMMON_FROZEN_NORMALIZATION_R5_R10_R20
-HV_TRUE_FRONT_INFERENCE = PROHIBITED
-MEDIAN_STATISTICAL_INFERENCE = PROHIBITED
-H_PROVENANCE = REEVALUATED_NOT_REOPTIMIZED_UNDER_CORRECTED_COST_E3D
-C_REGION_CLAIM = PARTIALLY_SUPPORTED_MULTIPLE_TRADEOFF_MECHANISMS
-CONVERGENCE_CLAIM = NOT_SUPPORTED
-BETWEEN_SEED_ROBUSTNESS_CLAIM = NOT_SUPPORTED
-GLOBAL_OPTIMALITY_CLAIM = NOT_SUPPORTED
-STATISTICAL_GAMULTIOBJ_SUPERIORITY_CLAIM = NOT_SUPPORTED
-
-IRRADIACION_NOT_AVAILABLE = PRESERVED
-C_CO2_COMPONENTS_NOT_PERSISTED = PRESERVED
-CO2_CO2E_EDITORIAL_RECONCILIATION = PENDING
-COMMON_TMAX_19P9H = FIXED_HORIZON_LIMITATION
-ONE_CORRECTED_R1_RUN = YES
-MAXGENERATIONS_REACHED = YES
-
-PROJECT_CHARTER_STATUS_PARAGRAPH = HISTORICALLY_STALE_NONBLOCKING
-MANUSCRIPT_READY = NOT_EVALUATED
-FINAL_MANUSCRIPT_EDITED = NO
-NEW_SCIENTIFIC_RESULT = NO
-PROTOCOL_V1_MODIFIED = NO
-CR1_COMP_01_TO_16_REOPENED = NO
-```
-
-The current manuscript thesis is limited to a traceable comparison of finite evaluated sets under corrected COST-E3D. The frozen evidence is sufficient for that limited claim package when the mandatory qualifiers established by CR1-COMP-16 and the scientific-sufficiency gate are preserved.
-
-Claims regarding optimizer convergence, between-seed robustness, expected `gamultiobj` behavior, global optimality, statistical configuration superiority, reproducibility of the C concentration across seeds, total economic cost, life-cycle environmental impact, direct quantitative `Irradiacion` attribution, and C component-level CO2 attribution remain outside the supported claim package. A multiseed campaign would be scientifically useful for optimizer-level robustness and reproducibility claims, but it is not required for the currently limited finite-set manuscript thesis.
-
-**Estado:** VIGENTE.
-
-## D017 — Editorial nomenclature and insertion-control freeze
-
-```text
-D017_STATUS = VIGENTE
-D017_FREEZE_ROLE = FROZEN_BY_THIS_CANONICAL_COMMIT
-DECISION_SCOPE = POST_SUFFICIENCY_EDITORIAL_PREPARATION
-SOURCE_GATE = POST_SUFFICIENCY_EDITORIAL_PREPARATION_GATE
-SOURCE_GATE_STATUS = PASS
-EDITORIAL_GATE_UPSTREAM_CHECK = PASS
-EDITORIAL_GATE_RESULT_IDENTITY = PASS
-
-NEW_SCIENTIFIC_RESULT = NO
-COMPUTATIONAL_VALUES_CHANGED = NO
-OBJECTIVE_FORMULATION_CHANGED = NO
-ENVIRONMENTAL_MODEL_BOUNDARY_CHANGED = NO
-PROTOCOL_V1_MODIFIED = NO
-CR1_COMP_01_TO_16_REOPENED = NO
-
-CO2_CO2E_RECONCILIATION_STATUS = PASS_OPTION_B
-LPG_EMISSION_FACTOR_NAME = EF_LPG_kgCO2_per_kg
-LPG_EMISSION_FACTOR_VALUE = 3.00
-LPG_EMISSION_FACTOR_UNIT = kg CO2/kg LPG
-LPG_EMISSION_METRIC_CLASS = DIRECT_CO2_MASS
-GRID_EMISSION_FACTOR_NAME = EF_grid_kgCO2_per_kWh
-GRID_EMISSION_FACTOR_VALUE = 0.444
-GRID_EMISSION_FACTOR_UNIT = kg CO2e/kWh
-GRID_EMISSION_METRIC_CLASS = CO2_EQUIVALENT_MASS
-TOTAL_CO2_FORMULA_STATUS = VERIFIED
-TOTAL_EMISSION_METRIC_CLASS = CO2_EQUIVALENT_MASS_UNDER_DECLARED_OPERATIONAL_REPORTING_CONVENTION
-
-IMPLEMENTED_CHAIN =
-CO2_LPG_kg = LPG_mass_kg * 3.00 kg CO2/kg LPG
-CO2_electricity_kg = E_air_impeller_kWh * 0.444 kg CO2e/kWh
-total_CO2_kg = CO2_LPG_kg + CO2_electricity_kg
-f3 = total_CO2_kg / water_removed_kg
-
-COMPUTATIONAL_F3_NAME = CO2_specific_kgCO2_per_kgwater
-COMPUTATIONAL_F3_UNIT_STATUS = LEGACY_COMPUTATIONAL_LABEL_PRESERVED
-MANUSCRIPT_F3_NAME = modeled specific operational greenhouse-gas emissions
-MANUSCRIPT_F3_UNIT = kg CO2e/kg water removed
-MANUSCRIPT_F3_SCOPE = DIRECT_LPG_COMBUSTION_CO2_PLUS_INDIRECT_GRID_ELECTRICITY_CO2E_NORMALIZED_BY_WATER_REMOVED
-MANDATORY_F3_EDITORIAL_QUALIFIER = The metric covers only the modeled operational LPG-combustion CO2 and grid-electricity CO2e included in the implementation; it is not a life-cycle carbon footprint, complete GHG inventory, or total environmental-impact metric. For C, total emissions are available, but component-level CO2 values were not persisted.
-
-NOMENCLATURE_AUDIT_STATUS = PASS
-UNIT_AUDIT_STATUS = PASS
-UNRESOLVED_UNIT_COUNT = 0
-Q_AUX_TOT_UNIT = MJ
-Q_AUX_TOT_HISTORICAL_KWH_DESCRIPTION = SUPERSEDED_BY_COST_E3D_AND_CR1_COMP_13
-
-TOTAL_MANUSCRIPT_CANDIDATE_CLAIMS = 40
-CORE_CLAIMS = 20
-SUPPORTING_CLAIMS = 20
 SUFFICIENT_AS_WRITTEN = 24
 SUFFICIENT_WITH_MANDATORY_QUALIFIER = 16
 CLAIMS_REQUIRING_REMOVAL = 0
-CLAIM_TO_SECTION_MAP_STATUS = PASS_COMPLETE_40
-CLAIM_TO_EVIDENCE_MAP_STATUS = PASS_COMPLETE_40
-
-MANDATORY_QUALIFIER_CLAIM_COUNT = 16
-MANDATORY_QUALIFIER_CLAIMS = R-02,R-03,R-04,R-08,R-09,R-10,R-11,D-01,D-02,D-04,D-05,D-06,D-07,D-08,C-02,C-04
-QUALIFIER_LOCK_STATUS = PASS_LOCKED
-QUALIFIER_INSERTION = MANDATORY
-QUALIFIER_OMISSION_CLASS = EDITORIAL_SCIENTIFIC_SCOPE_VIOLATION
-
-TABLE_FIGURE_EVIDENCE_MAP_STATUS = PASS_COMPLETE
-MINIMUM_MANUSCRIPT_EVIDENCE_PACKAGE_STATUS = PASS_DEFINED
-MANUSCRIPT_READY_TABLE_EXISTS = NO
-MANUSCRIPT_READY_FIGURE_EXISTS = NO
-CR1_COMP_09_FIGURE_F3_NOMENCLATURE = REQUIRES_EDITORIAL_RECONCILIATION_BEFORE_USE
-
-PROHIBITED_CLAIM_REGISTRY_STATUS = PASS_COMPLETE_14
-PROHIBITED_CLAIMS = TRUE_PARETO_FRONT,GLOBAL_PARETO_FRONT,GLOBAL_OPTIMALITY,CONVERGENCE_ESTABLISHED,BETWEEN_SEED_ROBUSTNESS,EXPECTED_GAMULTIOBJ_PERFORMANCE,STATISTICAL_SUPERIORITY,CORRECTED_R1_GLOBALLY_SUPERIOR,H_AS_CORRECTED_PARETO_FRONT,F2_AS_TOTAL_ECONOMIC_COST,F3_AS_LIFE_CYCLE_IMPACT,C_IRRADIACION_CAUSAL_ATTRIBUTION,C_COMPONENT_LEVEL_CO2_ATTRIBUTION,UNIQUE_C_REGION_CAUSAL_MECHANISM
-
-READY_FOR_MANUSCRIPT_READY_GATE = YES
-MANUSCRIPT_READY = NOT_EVALUATED
-FINAL_MANUSCRIPT_EDITED = NO
-LITERATURE_POSITIONING = NOT_EVALUATED_SEPARATE_GATE
-NOVELTY_POSITIONING = NOT_EVALUATED_SEPARATE_GATE
-
-ONE_CORRECTED_R1_RUN = YES
-CONVERGENCE_ESTABLISHED = NO
-BETWEEN_SEED_ROBUSTNESS_ESTABLISHED = NO
-GLOBAL_OPTIMALITY_ESTABLISHED = NO
-IRRADIACION_NOT_AVAILABLE = YES
-C_CO2_COMPONENTS_NOT_PERSISTED = YES
-COMMON_TMAX_19P9H = FIXED_HORIZON_LIMITATION
-
-D016_STALE_FREEZE_LABEL_CORRECTED = YES
-CORRECTION_TYPE = DOCUMENTARY_STATE_RECONCILIATION_ONLY
+BLOCKING_CORE_CLAIMS = NONE
+MULTISEED_REQUIRED_FOR_CURRENT_FINITE_SET_CLAIMS = NO
+MULTISEED_REQUIRED_FOR_OPTIMIZER_ROBUSTNESS_CLAIMS = YES
 ```
 
-D017 freezes the read-only editorial-preparation result without changing the objective, computational values, protocol, comparative phases, manuscript, figures, or productive code. The manuscript display basis for `f3` is operational `kg CO2e/kg water removed` with the mandatory boundary qualifier above. Readiness to open a later gate is not a finding that the manuscript itself is ready.
+**Estado:** vigente.
 
-**Estado:** VIGENTE.
+## D017 — Reconciliación CO2 / CO2e y bloqueo de calificadores
 
-## D018 — Conditional manuscript readiness and controlled editorial blueprint
+**Decisión:** adoptar la reconciliación editorial `PASS_OPTION_B`.
+
+Se conserva el nombre computacional:
 
 ```text
-D018_STATUS = VIGENTE
-D018_FREEZE_ROLE = FROZEN_BY_THIS_CANONICAL_COMMIT
-DECISION_SCOPE = MANUSCRIPT_READY_GATE
-SOURCE_GATE = MANUSCRIPT_READY_GATE
-SOURCE_GATE_STATUS = PASS
-MANUSCRIPT_READY = CONDITIONAL
-INTERNAL_MANUSCRIPT_SCIENTIFIC_READINESS = CONDITIONAL_PASS_FOR_CONTROLLED_EDITORIAL_PHASE
-CONTROLLED_EDITORIAL_PHASE_ALLOWED = YES_AFTER_SEPARATE_AUTHORIZATION
-FINAL_MANUSCRIPT_EDITED = NO
-NEW_SCIENTIFIC_RESULT = NO
-PROTOCOL_V1_MODIFIED = NO
-CR1_COMP_01_TO_16_REOPENED = NO
-SCIENTIFIC_RECOMPUTATION_REQUIRED = NO
+CO2_specific_kgCO2_per_kgwater
+```
 
-CANONICAL_MANUSCRIPT_SOURCE_STATUS = UNAMBIGUOUS
-CANONICAL_MANUSCRIPT_SOURCE = 06_manuscript/article_Q1/draft_sections/MASTER_manuscript_v01.md
-MANUSCRIPT_CANDIDATE_COUNT = 41
-MANUSCRIPT_STRUCTURE_STATUS = INCOMPLETE
+Para manuscrito se utilizará:
 
-TITLE = STALE
-ABSTRACT = REQUIRES_REWRITE
-KEYWORDS = PARTIAL_NEEDS_EDITORIAL_REVISION
-INTRODUCTION = STALE
-SYSTEM_DESCRIPTION = PARTIAL
-MATHEMATICAL_MODEL = STALE
-METHODS = PARTIAL
-RESULTS = STALE
-DISCUSSION = STALE
-LIMITATIONS = PARTIAL_STALE
-CONCLUSIONS = STALE
-NOMENCLATURE = STALE
-REFERENCES = PARTIAL
-SUPPLEMENT = PARTIAL
-INTERNAL_TRACEABILITY_LOG = STALE_NONPUBLIC_REMOVE_OR_RELOCATE
+```text
+modeled specific operational greenhouse-gas emissions
+unit = kg CO2e/kg water removed
+```
 
-METHODS_ALIGNMENT_STATUS = PASS_WITH_REQUIRED_EDITS
-METHODS_CRITICAL_CONTRADICTION_COUNT = 0
-METHODS_MANDATORY_CORRECTION_COUNT = 10
-METHODS_MISSING_ITEM_COUNT = 9
-METHODS_NEW_SCIENCE_REQUIRED = NO
-METHODS_CORRECTIONS_DETERMINISTIC_FROM_D016_D017 = YES
-METHODS_ALREADY_ALIGNED = D10_CORRECTED_RUN_CONFIGURATION;D11_MAXGENERATIONS_STOPPING_INTERPRETATION;D22_OPTIMIZER_INFERENCE_LIMITATIONS
-MANDATORY_SCIENTIFIC_CORRECTION_01 = f1 = MR_final; dimensionless; minimized
-MANDATORY_SCIENTIFIC_CORRECTION_02 = f2 = modeled specific operating-energy cost; USD/kg water removed
-MANDATORY_SCIENTIFIC_CORRECTION_03 = f3 = modeled specific operational greenhouse-gas emissions; kg CO2e/kg water removed
-MANDATORY_SCIENTIFIC_CORRECTION_04 = LPG factor = 3.00 kg CO2/kg LPG
-MANDATORY_SCIENTIFIC_CORRECTION_05 = grid factor = 0.444 kg CO2e/kWh
-MANDATORY_SCIENTIFIC_CORRECTION_06 = Q_aux_tot = MJ
-MANDATORY_SCIENTIFIC_CORRECTION_07 = design variables and units = m_max_kg_per_s;T_min_degC;r_div2_dimensionless;t_rec_ini_h
-MANDATORY_SCIENTIFIC_CORRECTION_08 = H provenance = historical solutions reevaluated, not reoptimized, under corrected COST-E3D
-MANDATORY_SCIENTIFIC_CORRECTION_09 = C provenance = finite nondominated approximation / audited finite set
-MANDATORY_SCIENTIFIC_CORRECTION_10 = exact dominance;diagnostic near-tie;ddof0/type7;asymmetric coverage;joint finite sorting;anchored HV r5/r10/r20;COMMON_TMAX_19P9H
-MANDATORY_SCIENTIFIC_CORRECTION_11 = modeled operating-energy economic boundary and modeled operational-emissions environmental boundary
-MANDATORY_SCIENTIFIC_CORRECTION_12 = Irradiacion unavailable and C component-level emissions not persisted
+Alcance: CO2 directo de combustión de GLP + CO2e indirecto de electricidad de red, normalizado por agua removida.
 
-STALE_PRE_COST_E3D_F2F3_OCCURRENCE_COUNT = 2
-STALE_ENVIRONMENTAL_FACTORS = 0.2270_kgCO2_per_kWh;0.4380_kgCO2_per_kWh
-CANONICAL_ENVIRONMENTAL_FACTORS = LPG_3.00_kg_CO2_per_kg_LPG;GRID_0.444_kg_CO2e_per_kWh
-Q_AUX_LEGACY_KWH_STATUS = STALE_REPLACE_WITH_MJ
-R1_SOLUTION_7_H2_OLD_NARRATIVE_STATUS = STALE_REPLACE_AS_MAIN_COMPARATIVE_THESIS
+Calificador obligatorio: no es huella de ciclo de vida, inventario GHG completo ni impacto ambiental total.
 
-TOTAL_CLAIMS = 40
-CONCRETE_CLAIM_INSERTION_MAP_COUNT = 40
-RESULTS_CLAIMS_MAPPED = 11
-DISCUSSION_CLAIMS_MAPPED = 11
-LIMITATIONS_MAPPED = 11
-CONCLUSIONS_CLAIMS_MAPPED = 7
-CLAIM_INSERTION_BLUEPRINT_STATUS = PASS_COMPLETE_40
-CLAIM_REGISTRY = 06_manuscript/article_Q1/review/CR1_COMP_16_MANUSCRIPT_CLAIM_REGISTRY_v96z.csv
-
+```text
+D017 = FROZEN_PASS
+CO2_CO2E_RECONCILIATION_STATUS = PASS_OPTION_B
+LPG_FACTOR = 3.00 kg CO2/kg LPG
+GRID_FACTOR = 0.444 kg CO2e/kWh
+Q_aux_tot = MJ
+NOMENCLATURE_AUDIT = PASS
+UNIT_AUDIT = PASS
 MANDATORY_QUALIFIER_CLAIM_COUNT = 16
-QUALIFIER_CONCRETE_MAP_COUNT = 16
 QUALIFIER_LOCK_STATUS = PASS_LOCKED
-QUALIFIER_PLACEMENT_BLUEPRINT_STATUS = PASS_COMPLETE_16
-MANDATORY_QUALIFIER_CLAIMS = R-02,R-03,R-04,R-08,R-09,R-10,R-11,D-01,D-02,D-04,D-05,D-06,D-07,D-08,C-02,C-04
-QUALIFIER_OMISSION = EDITORIAL_SCIENTIFIC_SCOPE_VIOLATION
+```
 
-MINIMUM_MAIN_TABLE_COUNT = 2
-MINIMUM_SUPPLEMENT_TABLE_COUNT = 4
-MAIN_TABLE_T1_SOURCES = CR1-COMP-04;CR1-COMP-09;CR1-COMP-11;CR1-COMP-14
-MAIN_TABLE_T1_ROLE = objective medians/ranges;geometry/extrema;hypervolume;representative interpretation
-MAIN_TABLE_T2_SOURCES = CR1-COMP-05;CR1-COMP-06;CR1-COMP-07;CR1-COMP-08
-MAIN_TABLE_T2_ROLE = cross-dominance;incomparability;coverage;joint Rank1;near-tie context
-SUPPLEMENT_TABLE_S1_SOURCE = CR1-COMP-03
-SUPPLEMENT_TABLE_S1_ROLE = decision-space descriptors
-SUPPLEMENT_TABLE_S2_SOURCES = CR1-COMP-05...08
-SUPPLEMENT_TABLE_S2_ROLE = full finite-set dominance and rank support
-SUPPLEMENT_TABLE_S3_SOURCE = CR1-COMP-11
-SUPPLEMENT_TABLE_S3_ROLE = HV anchors and normalized support
-SUPPLEMENT_TABLE_S4_SOURCES = CR1-COMP-12;CR1-COMP-13;CR1-COMP-14
-SUPPLEMENT_TABLE_S4_ROLE = terminal regime;objective decomposition;representative evidence
-TABLE_CONVERSION_STATUS = REQUIRED_NOT_EXECUTED
-OLD_R1_H2_ETA_TABLES_AS_PRIMARY_COMPARATIVE_EVIDENCE = PROHIBITED
+**Estado:** vigente.
 
-MINIMUM_MAIN_FIGURE_COUNT = 1
-MINIMUM_SUPPLEMENT_FIGURE_COUNT = 3
-MAIN_FIGURE = CR1_COMP_09_F1_F2_F3_3D_v96z.png
-SUPPLEMENT_FIGURES = CR1_COMP_09_F1_F2_v96z.png;CR1_COMP_09_F1_F3_v96z.png;CR1_COMP_09_F2_F3_v96z.png
-FIGURE_CONVERSION_STATUS = REQUIRED_NOT_EXECUTED
-LEGACY_F3_FIGURE_RELABELING_REQUIRED = YES
-LEGACY_F3_FIGURE_COUNT = 3
-REQUIRED_F3_DISPLAY = modeled specific operational greenhouse-gas emissions (kg CO2e/kg water removed)
+## D018 — Manuscript-ready gate
 
-MINIMUM_MANUSCRIPT_EVIDENCE_PACKAGE_STATUS = PASS_READY_AFTER_EDITORIAL_CONVERSION
-MINIMUM_EVIDENCE_COMPONENTS = decision-space description;objective-space descriptive comparison;cross-dominance and incomparability;coverage;joint Rank1;objective-space geometry;hypervolume r5/r10/r20;common terminal regime;objective decomposition and representative interpretation;quantitative comparative verdict
+**Decisión:** la evidencia científica y documental es suficiente para permitir una fase editorial controlada posterior, pero el manuscrito aún requiere reescritura determinista y esa edición necesita autorización separada.
+
+```text
+D018 = FROZEN_PASS
+MANUSCRIPT_READY_GATE_STATUS = PASS
+MANUSCRIPT_READY = CONDITIONAL
+CANONICAL_MANUSCRIPT_SOURCE = 06_manuscript/article_Q1/draft_sections/MASTER_manuscript_v01.md
+CANONICAL_MANUSCRIPT_SOURCE_STATUS = UNAMBIGUOUS
 SCIENTIFIC_SOURCE_MISSING_COUNT = 0
 CANONICAL_DISCREPANCY_COUNT = 0
 UNRESOLVED_EDITORIAL_DECISION_COUNT = 0
-OPEN_SCIENTIFIC_ISSUES = 0_WITHIN_CURRENT_FROZEN_LIMITED_SCOPE
-
-LIMITATION_PLACEMENT_COUNT = 11
-LIMITATIONS_BLUEPRINT = L-01_ONE_CORRECTED_RUN;L-02_MAXGENERATIONS_NOT_CONVERGENCE;L-03_NO_TRUE_GLOBAL_FRONT;L-04_H_C_NOT_INDEPENDENT_REPLICATES;L-05_FIXED_COMMON_TMAX_19P9H;L-06_IRRADIACION_UNAVAILABLE;L-07_C_EMISSION_COMPONENTS_NOT_PERSISTED;L-08_ECONOMIC_BOUNDARY;L-09_ENVIRONMENTAL_LCA_BOUNDARY;L-10_CO2_CO2E_RECONCILIATION;L-11_HISTORICAL_H_PROVENANCE
-
-PROHIBITED_POSITIVE_CLAIM_VIOLATION_COUNT = 0
-PROHIBITED_CLAIM_REGISTRY_STATUS = PASS_COMPLETE_14
-PROHIBITED_CLAIMS = TRUE_PARETO_FRONT;GLOBAL_PARETO_FRONT;GLOBAL_OPTIMALITY;CONVERGENCE_ESTABLISHED;BETWEEN_SEED_ROBUSTNESS;EXPECTED_GAMULTIOBJ_PERFORMANCE;STATISTICAL_SUPERIORITY;CORRECTED_R1_GLOBALLY_SUPERIOR;H_AS_CORRECTED_PARETO_FRONT;F2_AS_TOTAL_ECONOMIC_COST;F3_AS_LIFE_CYCLE_IMPACT;C_IRRADIACION_CAUSAL_ATTRIBUTION;C_COMPONENT_LEVEL_CO2_ATTRIBUTION;UNIQUE_C_REGION_CAUSAL_MECHANISM
-LEGACY_TABLE_LABEL_ISSUE_COUNT = 3
-LEGACY_FIGURE_LABEL_ISSUE_COUNT = 3
-LEGACY_CAPTION_ISSUE_COUNT = 1
-LEGACY_ISSUES_CLASS = DETERMINISTIC_EDITORIAL_CORRECTIONS
-LEGACY_ISSUES_ARE_NEW_SCIENTIFIC_BLOCKERS = NO
-
-EDIT_CLASS_1_COUNT = 12
-EDIT_CLASS_2_COUNT = 16
-EDIT_CLASS_3_COUNT = 11
-EDIT_CLASS_4_COUNT = 11
-EDIT_CLASS_5_COUNT = 11
-EDIT_CLASS_6_COUNT = 7
-EDIT_CLASS_7_COUNT = 19
-EDIT_CLASS_8_COUNT = 6
-EDIT_CLASS_9_COUNT = 4
-EDIT_CLASS_10_COUNT = 60
-EDIT_CLASS_COUNTS_MAY_OVERLAP = YES_EDITORIAL_UNITS_NOT_FILE_COUNTS
-
-MANUSCRIPT_READY_CONDITION_COUNT = 10
-MANUSCRIPT_READY_CONDITION_01 = Replace pre-COST-E3D narrative in Abstract, Introduction, Results, Discussion, Limitations and Conclusions.
-MANUSCRIPT_READY_CONDITION_02 = Complete the 19 Methods items not currently aligned.
-MANUSCRIPT_READY_CONDITION_03 = Insert all 40 claims at their mapped anchors.
-MANUSCRIPT_READY_CONDITION_04 = Insert/preserve all 16 locked qualifiers.
-MANUSCRIPT_READY_CONDITION_05 = Reconcile manuscript f3 display to modeled specific operational greenhouse-gas emissions in kg CO2e/kg water removed while preserving legacy computational naming only when technically required.
-MANUSCRIPT_READY_CONDITION_06 = Correct Q_aux_tot to MJ and environmental factors to 3.00 / 0.444 under D017.
-MANUSCRIPT_READY_CONDITION_07 = Convert the selected six tables and four figures; relabel the three f3 figures.
-MANUSCRIPT_READY_CONDITION_08 = Remove/replace R1/H2/eta-sensitivity tables, captions and results as the primary manuscript thesis.
-MANUSCRIPT_READY_CONDITION_09 = Perform structural housekeeping and remove/relocate the internal traceability log from the publishable body.
-MANUSCRIPT_READY_CONDITION_10 = Preserve finite-set, single-run, MaxGenerations, COMMON_TMAX, Irradiacion and C-emission-component limitations.
-MANUSCRIPT_READY_BLOCKERS = NONE_FOR_CONTROLLED_EDITORIAL_PHASE
-
-SUBMISSION_READY = NOT_EVALUATED
-LITERATURE_POSITIONING = NOT_EVALUATED_SEPARATE_GATE
-NOVELTY_POSITIONING = NOT_EVALUATED_SEPARATE_GATE
-JOURNAL_POSITIONING_READY = NOT_EVALUATED
+CONTROLLED_EDITORIAL_PHASE_ALLOWED = YES_AFTER_SEPARATE_AUTHORIZATION
+MANUSCRIPT_FILES_MODIFIED = NO
 ```
 
-`MASTER_manuscript_v01.md` is the current master source. Files marked `BACKUP` or `BEFORE` are historical snapshots, and files under `preliminary_review` are frozen review exports; none is to be edited as the primary source. D018 records the read-only gate result and the deterministic controlled-editorial blueprint. It does not execute the editorial phase, alter the manuscript, convert evidence, reopen scientific computation, or evaluate literature, novelty, journal positioning, or submission readiness.
+**Estado:** vigente.
 
-**Estado:** VIGENTE.
+## D019 — Arquitectura narrativa científica
 
-## D019 — Scientific narrative and manuscript positioning architecture
+**Decisión:** adoptar arquitectura `A` con posicionamiento `SYSTEM_FIRST`. El protagonista científico es el secador híbrido solar–GLP y sus compromisos operativos; `gamultiobj` actúa como instrumento de búsqueda y configuración reproducible, no como contribución de desempeño algorítmico.
 
 ```text
-D019_STATUS = VIGENTE
-D019_FREEZE_ROLE = FROZEN_BY_THIS_CANONICAL_COMMIT
-DECISION_SCOPE = INTERNAL_SCIENTIFIC_NARRATIVE_ARCHITECTURE
-SOURCE_GATE = SCIENTIFIC_NARRATIVE_GATE
-SOURCE_GATE_STATUS = PASS
-NEW_SCIENTIFIC_RESULT = NO
-NEW_OPTIMIZATION_RESULT = NO
-PROTOCOL_V1_MODIFIED = NO
-CR1_COMP_01_TO_16_REOPENED = NO
-
+D019 = FROZEN_PASS
+SCIENTIFIC_NARRATIVE_GATE_STATUS = PASS
 RECOMMENDED_MANUSCRIPT_ARCHITECTURE = A
 RECOMMENDED_POSITIONING = SYSTEM_FIRST
 SYSTEM_PROTAGONIST = HYBRID_SOLAR_LPG_DRYER_AND_OPERATIONAL_TRADEOFFS
 METHOD_PROTAGONIST = NO
-ROLE_OF_GAMULTIOBJ = SEARCH_INSTRUMENT
 GAMULTIOBJ_PRIMARY_ROLE = SEARCH_INSTRUMENT_FOR_GENERATING_MULTI_OBJECTIVE_CANDIDATES
 GAMULTIOBJ_SECONDARY_ROLE = TRACEABLE_REPRODUCIBLE_SEARCH_CONFIGURATION
 ALGORITHM_PERFORMANCE_CLAIMS_SUPPORTED = NO
-ALGORITHM_PERFORMANCE_AS_CONTRIBUTION = NO
-
-PRIMARY_RESEARCH_QUESTION = How are drying performance, modeled specific operating-energy cost, and modeled specific operational greenhouse-gas emissions traded off across the evaluated combinations of thermal and air-management decisions in a hybrid solar–LPG dryer?
 PRIMARY_RESEARCH_QUESTION_STATUS = SUPPORTED
-PRIMARY_RESEARCH_QUESTION_LANGUAGE_LOCK = TRADED_OFF;EVALUATED_COMBINATIONS;NONCAUSAL
-
-SECONDARY_RESEARCH_QUESTION = How does the observed finite-set trade-off structure change when historical solutions are reevaluated under corrected COST-E3D and compared with solutions obtained directly under that corrected formulation?
 SECONDARY_RESEARCH_QUESTION_STATUS = SUPPORTED
-H_PROVENANCE = HISTORICAL_SOLUTIONS_REEVALUATED_UNDER_CORRECTED_COST_E3D
-C_PROVENANCE = SOLUTIONS_OBTAINED_DIRECTLY_UNDER_CORRECTED_COST_E3D_FINITE_NONDOMINATED_APPROXIMATION
-H_AS_CORRECTED_PARETO_FRONT = PROHIBITED
-
-PRIMARY_HYPOTHESIS = Within the evaluated finite solution sets, coupled thermal and air-management decisions do not produce a uniform simultaneous improvement in drying performance, modeled specific operating-energy cost, and modeled specific operational greenhouse-gas emissions; direct optimization under corrected COST-E3D instead restructures the observed operational trade-offs.
-HYPOTHESIS_SUPPORT_STATUS = SUPPORTED
-HYPOTHESIS_SCOPE = EVALUATED_FINITE_SOLUTION_SETS
-GLOBAL_PROCESS_BEHAVIOR_INFERENCE = PROHIBITED
-
-MANUSCRIPT_THESIS = In the evaluated hybrid solar–LPG dryer solutions, coupled thermal and air-management decisions generate a three-objective conflict in which stronger drying is associated with moderately higher modeled specific operating-energy cost and operational greenhouse-gas emissions. Direct optimization under corrected COST-E3D restructures—but does not uniformly replace—the finite historical reevaluated trade-off set: C shows a partial anchored-hypervolume and median-f1 advantage, while H retains marginal extremes, reciprocal coverage and substantial joint Rank 1 representation.
+PRIMARY_HYPOTHESIS_SUPPORT_STATUS = SUPPORTED
 MANUSCRIPT_THESIS_STATUS = SUPPORTED
 FINITE_SET_SCOPE = CONSTITUTIVE_NOT_OPTIONAL_DISCLAIMER
-
-OBSERVED_TRADEOFF_CHARACTERIZATION = SUPPORTED
-GLOBAL_PROCESS_BEHAVIOR_MAP = UNSUPPORTED
-GLOBAL_RESPONSE_SURFACE = UNSUPPORTED
-GLOBAL_SENSITIVITY_MAP = UNSUPPORTED
-RECOMMENDED_BEHAVIOR_TERMINOLOGY = observed operational trade-off structure;finite-set multiobjective behavior;observed response patterns among the evaluated solutions;descriptive decision- and objective-space shifts;anchored finite-set hypervolume
-PROHIBITED_BEHAVIOR_TERMINOLOGY = global behavior map;global response surface;complete sensitivity characterization
-
-PHYSICAL_NARRATIVE_STATUS = SUPPORTED_WITH_QUALIFIERS
-M_MAX_PATTERN = LOWER_MEDIAN_IN_C
-T_MIN_PATTERN = HIGHER_MEDIAN_IN_C
-R_DIV2_PATTERN = LOWER_MEDIAN_IN_C
-T_REC_INI_PATTERN = LOWER_MEDIAN_IN_C
-F1_MEDIAN_SHIFT_C_MINUS_H = -33.807_PERCENT_APPROX
-F2_MEDIAN_SHIFT_C_MINUS_H = +3.200_PERCENT_APPROX
-F3_MEDIAN_SHIFT_C_MINUS_H = +3.859_PERCENT_APPROX
-PERMITTED_PHYSICAL_INTERPRETATION = LOWER_FINAL_MOISTURE_IS_DESCRIPTIVELY_ASSOCIATED_WITH_HIGHER_THERMAL_SETPOINT_AND_DIFFERENT_AIRFLOW_RECIRCULATION_MANAGEMENT_WITH_MODERATE_F2_F3_PENALTIES
-UNIQUE_CAUSAL_MECHANISM = NOT_ESTABLISHED
-C_REGION_CONCENTRATION_HYPOTHESIS = PARTIALLY_SUPPORTED
-C_REGION_CONCENTRATION_INTERPRETATION = MULTIPLE_TRADEOFF_MECHANISMS
-
-PRIMARY_SCIENTIFIC_CONTRIBUTION = FINITE_SET_PHYSICAL_AND_MULTIOBJECTIVE_CHARACTERIZATION_OF_OPERATIONAL_TRADEOFFS
-SECONDARY_SCIENTIFIC_CONTRIBUTIONS = CORRECTED_FORMULATION_H_VS_C_COMPARISON;INTEGRATED_TRIOBJECTIVE_OPERATIONAL_FORMULATION
-ROLE_OF_REPRODUCIBILITY_TRACEABILITY = SUPPORTING_METHODOLOGICAL_ELEMENT
-
-H_VS_C_PRIMARY_SCIENTIFIC_ROLE = CHARACTERIZE_TRADEOFF_RESTRUCTURING_AND_HISTORICAL_SURVIVAL_AFTER_COST_E3D_CORRECTION
-H_VS_C_INTERPRETIVE_VALUE = PREDOMINANT_INCOMPARABILITY;BIDIRECTIONAL_LOCAL_DOMINANCE;PARTIAL_C_HV_ADVANTAGE;HISTORICAL_EXTREMES_AND_RANK1_SURVIVAL
-H_VS_C_DOES_NOT_ESTABLISH = UNIFORM_REPLACEMENT;GLOBAL_SUPERIORITY;CONVERGENCE;TRUE_FRONT;STATISTICAL_SUPERIORITY
-
-CANDIDATE_KNOWLEDGE_GAP_1 = Insufficient quantitative understanding may remain regarding how coupled thermal and air-management decisions redistribute drying, operating-energy-cost and operational-emissions trade-offs in hybrid solar–LPG drying systems.
-CANDIDATE_KNOWLEDGE_GAP_1_STATUS = INTERNALLY_COHERENT_PENDING_EXTERNAL_VERIFICATION
-CANDIDATE_KNOWLEDGE_GAP_2 = It remains to be established how much design information from historical candidates survives comparison with candidates generated directly under a corrected cost–emissions formulation.
-CANDIDATE_KNOWLEDGE_GAP_2_STATUS = INTERNALLY_COHERENT_PENDING_EXTERNAL_VERIFICATION
-KNOWLEDGE_GAP_EXTERNAL_VERIFICATION = REQUIRED_LITERATURE_POSITIONING_GATE
-NOVELTY_ESTABLISHED = NO
-
-MULTISEED_REQUIRED_FOR_PRIMARY_MANUSCRIPT_THESIS = NO
-MULTISEED_REQUIRED_FOR_ALGORITHM_PERFORMANCE_PAPER = YES
-MULTISEED_CAMPAIGN_STATUS = USEFUL_BUT_NOT_REQUIRED
-FINITE_H_VS_C_DOMINANCE_COVERAGE_RANK_HV = NO_MULTISEED_REQUIRED
-OBSERVED_PHYSICAL_INTERPRETATION = NO_MULTISEED_REQUIRED_FOR_CURRENT_FINITE_SET_SCOPE
-C_REGION_REPRODUCIBILITY_ACROSS_SEEDS = MULTISEED_REQUIRED
-BETWEEN_SEED_ROBUSTNESS = MULTISEED_REQUIRED
-EXPECTED_GAMULTIOBJ_BEHAVIOR = MULTISEED_REQUIRED
-STOCHASTIC_CONVERGENCE = MULTISEED_PLUS_CONVERGENCE_DESIGN_REQUIRED
-GLOBAL_PARETO_FRONT = MULTISEED_NOT_SUFFICIENT_BY_ITSELF
-GENERAL_SUFFICIENCY_OF_50_GENERATIONS = MULTISEED_PLUS_BUDGET_DESIGN_REQUIRED
-
-PAPER_A = PHYSICAL_AND_MULTIOBJECTIVE_CHARACTERIZATION_OF_HYBRID_SOLAR_LPG_DRYER_OPERATIONAL_TRADEOFFS
-PAPER_A_CURRENT_EVIDENCE_STATUS = SUFFICIENT_WITH_FROZEN_SCOPE
-PAPER_B = GAMULTIOBJ_PERFORMANCE_AND_ROBUSTNESS_CHARACTERIZATION
-PAPER_B_CURRENT_EVIDENCE_STATUS = INSUFFICIENT
-SECOND_PAPER_CURRENTLY_JUSTIFIED = NO
-
-TITLE_SHOULD_SIGNAL = SYSTEM_FIRST_TRIOBJECTIVE_OPERATIONAL_TRADEOFFS
-TITLE_SHOULD_NOT_SIGNAL = ALGORITHM_PERFORMANCE;GLOBAL_OPTIMALITY;CONVERGENCE;ROBUSTNESS;TRUE_PARETO_FRONT
-ABSTRACT_MUST_INCLUDE = THREE_OBJECTIVES;FINITE_H_C_SCOPE;TRADEOFF_RESTRUCTURING;PARTIAL_C_ADVANTAGE;HISTORICAL_SURVIVAL;SINGLE_RUN_LIMIT
-ABSTRACT_MUST_NOT_CLAIM = GLOBAL_OR_STATISTICAL_SUPERIORITY;CONVERGENCE;ROBUSTNESS;TRUE_FRONT;UNIQUE_CAUSALITY;LCA;TOTAL_ECONOMIC_COST
-INTRODUCTION_MUST_BUILD_TOWARD = CANDIDATE_COUPLED_OPERATIONAL_TRADEOFF_GAP_AND_CORRECTED_FORMULATION_HISTORICAL_SURVIVAL_QUESTION
-DISCUSSION_MUST_EXPLAIN = PHYSICAL_PATTERN;F1_F2_F3_CONFLICT;INCOMPARABILITY;PARTIAL_C_ADVANTAGE;H_SURVIVAL;MULTIPLE_MECHANISMS
-CONCLUSIONS_MUST_PRESERVE = FINITE_SET_SCOPE_AND_ALL_INFERENTIAL_BOUNDARIES
-
-THESIS_CORE_CLAIM_COUNT = 11
-THESIS_CORE_CLAIM_IDS = R-02,R-03,R-05,R-08,R-09,D-01,D-02,D-05,D-06,D-08,C-06
-SCIENTIFIC_CLAIM_REGISTRY = 06_manuscript/article_Q1/review/CR1_COMP_16_MANUSCRIPT_CLAIM_REGISTRY_v96z.csv
-
-NARRATIVE_CANONICAL_CONSISTENCY = PASS
-OVERCLAIM_RISK = LOW
-NEW_SCIENCE_REQUIRED_FOR_NARRATIVE = NO
-READY_FOR_LITERATURE_POSITIONING_GATE = YES
-FINAL_MANUSCRIPT_EDITED = NO
 ```
 
-D019 freezes the internal scientific narrative architecture without asserting an externally verified literature gap or novelty. It does not edit the manuscript, evaluate external literature, open Paper B, execute a multiseed campaign, or change any frozen scientific result.
+Contribución primaria:
 
-**Estado:** VIGENTE.
+```text
+FINITE_SET_PHYSICAL_AND_MULTIOBJECTIVE_CHARACTERIZATION_OF_OPERATIONAL_TRADEOFFS
+```
+
+Contribuciones secundarias:
+
+```text
+CORRECTED_FORMULATION_H_VS_C_COMPARISON
+INTEGRATED_TRIOBJECTIVE_OPERATIONAL_FORMULATION
+```
+
+Los dos knowledge gaps definidos en D019 son candidatos internos y permanecen pendientes de verificación bibliográfica externa:
+
+```text
+AT_D019_CANDIDATE_KNOWLEDGE_GAPS = PENDING_EXTERNAL_VERIFICATION
+AT_D019_NOVELTY_ESTABLISHED = NO
+```
+
+La condición bibliográfica anterior fue posteriormente resuelta por D020. D019 permanece vigente para arquitectura narrativa y `SYSTEM_FIRST`; D020 prevalece para posicionamiento bibliográfico y clasificación de novedad.
+
+**Estado:** vigente, con estado de literatura supersedido por D020.
+
+### Nota de trazabilidad D012–D015
+
+Este micropaso no reconstruye ni inventa entradas D012–D015 porque sus textos canónicos individuales no forman parte del paquete de evidencia disponible en esta conversación. El handoff D019 sí registra que `CR1-COMP-01...16 = CLOSED_PASS`; esa condición se conserva en `01_CURRENT_STATE.md` y `05_PHASE_HANDOFF_CURRENT.md` sin fabricar decisiones faltantes.
+
+## D020 — Literature positioning and novelty verification
+
+**Decisión:** cerrar el gate bibliográfico con estrechamiento explícito de la novedad. La literatura externa invalida como claims de novedad independientes el uso de solar–LPG, GA/NSGA-II, optimización multiobjetivo genérica y el estudio aislado de temperatura/flujo/recirculación.
+
+Se adopta:
+
+```text
+D020 = FROZEN_PASS
+LITERATURE_POSITIONING_GATE = FROZEN_PASS_WITH_NOVELTY_NARROWING
+CANDIDATE_KNOWLEDGE_GAP_1 = PARTIALLY_VERIFIED_GAP
+CANDIDATE_KNOWLEDGE_GAP_2 = PARTIALLY_VERIFIED_GAP
+DEFENSIBLE_NOVELTY_POSITIONING = YES_WITH_LIMITATIONS
+UNIVERSAL_PRIORITY_ESTABLISHED = NO
+```
+
+Clasificación vigente:
+
+```text
+INTEGRATED_TRIOBJECTIVE_OPERATIONAL_FORMULATION = INCREMENTAL_NOVELTY
+COUPLED_THERMAL_AIR_MANAGEMENT_FINITE_SET_CHARACTERIZATION = INCREMENTAL_NOVELTY
+HISTORICAL_SOLUTION_SURVIVAL_AFTER_CORRECTED_REFORMULATION = STRONG_NOVELTY_CANDIDATE
+OVERALL_PAPER_A_POSITIONING = INCREMENTAL_NOVELTY_WITH_STRONG_NARROW_SUBCONTRIBUTION
+GAMULTIOBJ_OR_GA_AS_NOVELTY = METHOD_APPLICATION_ONLY
+SOLAR_LPG_AS_NOVELTY = NOT_NOVEL
+MULTIOBJECTIVE_OPTIMIZATION_AS_NOVELTY = NOT_NOVEL
+UNIVERSAL_FIRST_OF_ITS_KIND_CLAIM = NOT_SUPPORTED
+```
+
+Regla obligatoria para Gap 2:
+
+```text
+NO_DIRECT_PRECEDENT_IDENTIFIED != UNIVERSAL_ABSENCE_PROVED
+```
+
+D020 no modifica el protocolo H-vs-C, no cambia resultados D016–D019 y preserva `SYSTEM_FIRST` y `FINITE_SET_SCOPE = CONSTITUTIVE_NOT_OPTIONAL_DISCLAIMER`.
+
+Artefactos del freeze local:
+
+```text
+LITERATURE_POSITIONING_GATE_v01.md
+SHA256 = 3114FDC9A6188C450D499B424D147DB4B6BC3077E424CD8D0BAEA23DA7C3F83F
+
+LITERATURE_POSITIONING_EVIDENCE_MATRIX_v01.csv
+SHA256 = E68DB197170910D17A02046830BEC0A1469181DD22AFF3B5829D51774268E5A2
+```
+
+**Estado:** vigente.

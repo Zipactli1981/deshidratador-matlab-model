@@ -1,0 +1,178 @@
+{
+  "artifact_role": "BLOCK_C_LABEL_ONLY_FIGURE_REGENERATION_AUDIT",
+  "regeneration_mode": "LABEL_ONLY_MARGIN_PIXEL_REPLACEMENT",
+  "objective_data_read": false,
+  "scientific_analysis_executed": false,
+  "point_coordinates_identical": "PASS_ALL_POINT_MARKERS_OUTSIDE_EDIT_REGIONS_AND_PIXEL_IDENTICAL",
+  "H_C_membership_identical": "PASS_ALL_POINT_COLORS_AND_IDS_UNMODIFIED",
+  "rank_membership_identical": "PASS_ALL_RANK_MARKERS_UNMODIFIED",
+  "scientific_geometry_identical": "PASS",
+  "figures": {
+    "CR1_COMP_09_F1_F2_v96z.png": {
+      "source_sha256": "55B2907831EA866125E96E3D497F298F6A91CD85239EFB8C53C72898BFB3EAC2",
+      "output_sha256": "49B1395B6B19088DC0F0C009245D4DBDBA87DEA21CBC46937CF2AABBF1499599",
+      "dimensions": [
+        1800,
+        1200
+      ],
+      "preserved_pixels_source_sha256": "AFC402A286E0FFF36F42836594B37E2CBBEAE453BCCD6030C54AD8171567DC23",
+      "preserved_pixels_output_sha256": "AFC402A286E0FFF36F42836594B37E2CBBEAE453BCCD6030C54AD8171567DC23",
+      "pixels_outside_modified_regions_identity": "PASS",
+      "modified_regions": [
+        [
+          0,
+          90,
+          94,
+          1016
+        ],
+        [
+          190,
+          1050,
+          1711,
+          1200
+        ],
+        [
+          90,
+          20,
+          1500,
+          79
+        ],
+        [
+          190,
+          68,
+          1235,
+          99
+        ],
+        [
+          1300,
+          125,
+          1695,
+          177
+        ]
+      ]
+    },
+    "CR1_COMP_09_F1_F3_v96z.png": {
+      "source_sha256": "05EE6663A057F67A381485E549156CB1A0768AD928AC52CFC42C5C5B04EF63AB",
+      "output_sha256": "91C7C0D3C02774284FDB0F844A455862EC78FAF6A3CF5067B272F2AB861A9BF6",
+      "dimensions": [
+        1800,
+        1200
+      ],
+      "preserved_pixels_source_sha256": "FB29FD92AD547FBE563F1C73E741E0970EF6BB86760B25B202DB3953F09FF61A",
+      "preserved_pixels_output_sha256": "FB29FD92AD547FBE563F1C73E741E0970EF6BB86760B25B202DB3953F09FF61A",
+      "pixels_outside_modified_regions_identity": "PASS",
+      "modified_regions": [
+        [
+          0,
+          90,
+          94,
+          1016
+        ],
+        [
+          190,
+          1050,
+          1711,
+          1200
+        ],
+        [
+          90,
+          20,
+          1500,
+          79
+        ],
+        [
+          190,
+          68,
+          1235,
+          99
+        ],
+        [
+          1300,
+          125,
+          1695,
+          177
+        ]
+      ]
+    },
+    "CR1_COMP_09_F2_F3_v96z.png": {
+      "source_sha256": "572D5126ED046FF3F35B5DC771C20B8D5B814B06A0AA56864231DC0A29F04223",
+      "output_sha256": "0036B6C884AD4F82D4AF9AE924B6E47E9F6866315CEF3FB1238062BF55AAE2E9",
+      "dimensions": [
+        1800,
+        1200
+      ],
+      "preserved_pixels_source_sha256": "D94344054FFEEBB3A014D8104D848D545ACB22C5B34086DC1094CE04D632E34C",
+      "preserved_pixels_output_sha256": "D94344054FFEEBB3A014D8104D848D545ACB22C5B34086DC1094CE04D632E34C",
+      "pixels_outside_modified_regions_identity": "PASS",
+      "modified_regions": [
+        [
+          0,
+          90,
+          94,
+          1016
+        ],
+        [
+          190,
+          1050,
+          1711,
+          1200
+        ],
+        [
+          90,
+          20,
+          1500,
+          79
+        ],
+        [
+          190,
+          68,
+          1235,
+          99
+        ],
+        [
+          270,
+          320,
+          650,
+          372
+        ]
+      ]
+    },
+    "CR1_COMP_09_F1_F2_F3_3D_v96z.png": {
+      "source_sha256": "7F58A45414766818E42948B52EECCD98B18EE327BE7C6F3378234B9A176E73AF",
+      "output_sha256": "B36636B039D473520F9D06EC3D5E3C7DBB5B09ECC709164881A3E110AFA681CC",
+      "dimensions": [
+        1800,
+        1200
+      ],
+      "preserved_pixels_source_sha256": "89A69F76FF1E5EE66BDD1834912628A5943F104ECF3F341DBBBB75A14067847F",
+      "preserved_pixels_output_sha256": "89A69F76FF1E5EE66BDD1834912628A5943F104ECF3F341DBBBB75A14067847F",
+      "pixels_outside_modified_regions_identity": "PASS",
+      "modified_regions": [
+        [
+          1060,
+          985,
+          1800,
+          1170
+        ],
+        [
+          90,
+          20,
+          1500,
+          79
+        ],
+        [
+          90,
+          68,
+          1235,
+          99
+        ],
+        [
+          1300,
+          125,
+          1695,
+          177
+        ]
+      ]
+    }
+  }
+}

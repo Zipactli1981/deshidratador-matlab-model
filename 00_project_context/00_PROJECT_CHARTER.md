@@ -48,8 +48,11 @@ Las conclusiones científicas deben derivarse de código versionado, artefactos 
 
 La corrección COST-E3D y la nueva `CORRECTED_R1` están completadas y validadas internamente.
 
-La siguiente fase es la revisión comparativa científica entre:
-- las 9 soluciones nuevas de `CORRECTED_R1`;
-- los mismos 9 vectores históricos R1 reevaluados con la formulación COST-E3D corregida.
-
-La comparación científica formal aún no se ha realizado.
+La revisión comparativa científica entre las 9 soluciones de `CORRECTED_R1` y
+los mismos 9 vectores históricos R1 reevaluados con COST-E3D está cerrada y
+validada dentro de su alcance de conjuntos finitos. D019 congeló la
+arquitectura narrativa `SYSTEM_FIRST` y D020 cerró el posicionamiento
+bibliográfico con estrechamiento explícito de la novedad. La fase vigente es
+la reescritura controlada del manuscrito; esto no amplía el alcance científico
+ni autoriza nuevas ejecuciones o inferencias sobre convergencia, robustez entre
+semillas o globalidad.
