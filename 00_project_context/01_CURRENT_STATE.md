@@ -1,273 +1,257 @@
 # CURRENT STATE — Deshidratador MATLAB / Q1
 
-## Editorial freeze pre-commit — Block C
-
-```text
-BLOCK_A = PASS
-BLOCK_B = PASS
-EDITORIAL_FREEZE_PRECOMMIT_BLOCK_C = PASS
-MANUSCRIPT_SCIENTIFIC_REVIEW = PASS
-SOURCE_CHECK_ITEMS = 0
-FIGURE_REGENERATION_STATUS = PASS_LABEL_ONLY
-MANUSCRIPT_FREEZE_CANDIDATE = YES
-NEXT_GATE = VERSION_CONTROL_FREEZE
-NEXT_GATE_AUTHORIZED = NO
-```
-
-The canonical manuscript, three publish-facing tables, active captions, four label-corrected figures, D020 literature assets, figure-identity audit, and pre-commit freeze manifest form the current editorial freeze candidate. No Git commit has been created for this state.
-
-## Estado Git documentado
+## Baseline científico Git
 
 ```text
 Repository = D:\CODE\deshidratador
-Expected branch at D019 handoff = main
-D019 documented expected HEAD = 22ea73a7bf3dbfa4f594097d4612b58b5c384682
-D019 documented expected commit = docs: freeze D019 scientific narrative architecture
-D019 documented expected worktree = CLEAN
-LIVE_GIT_STATUS = NOT_VERIFIED_IN_THIS_MICROSTEP
-```
-
-El HEAD vivo, el estado del worktree y la divergencia con `origin/main` son dinámicos y deben verificarse directamente con Git antes de cualquier operación Git o cuando una decisión dependa de ese estado. El SHA anterior es un estado esperado documentado por el handoff D019, no una afirmación de HEAD vivo.
-
-Baseline científico CORRECTED_R1 postrun preservado:
-
-```text
+Branch = main
 CORRECTED_R1_POSTRUN_BASELINE_HEAD = 8a794c389edd10f9750e10a27eca0ec58c14da2d
+Worktree = clean
+git diff --check = PASS
+origin/main divergence at CORRECTED_R1 postrun freeze = 0 behind / 2 ahead
 ```
 
-## CORRECTED_R1 y comparación H-vs-C
+Los dos commits locales que cerraron CORRECTED_R1 no habían sido publicados remotamente al cierre de esa fase.
+
+El HEAD vivo, el estado del worktree y la divergencia con `origin/main` son datos dinámicos y deben consultarse directamente con Git al inicio de cada sesión. Este archivo conserva baselines científicos y documentales; no pretende fijar el HEAD vivo del repositorio.
+
+## Commits de cierre
+
+Pre-execution freeze:
+```text
+3aacb69ec5972aeb5d155c78462715bb3f1f981c
+chore: freeze CORRECTED_R1 pre-execution baseline
+```
+
+Postrun freeze:
+```text
+8a794c389edd10f9750e10a27eca0ec58c14da2d
+docs: freeze CORRECTED_R1 validated postrun
+```
+
+## Histórico R1
 
 ```text
-CORRECTED_R1 = CLOSED_PASS
+Seed = 61001
+PopulationSize = 24
+MaxGenerations = 50
+Mode = hybrid
+Reference = gasLP
+Finite solutions = 9
+Exitflag = 0 (MaxGenerations)
+Runtime ≈ 3.882 h
+```
+
+Artefacto histórico:
+```text
+SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix_20260727_185454/R1/
+SEEDAWARE_FORMAL_R1_ONLY_seed_61001_output.mat
+```
+
+SHA-256:
+```text
+A04D1ADCD769CE9D8ED858FA321D7AF6A22E42D1F8A954094084B4B5A2A2ECD0
+```
+
+Los 9 vectores históricos ya fueron reevaluados bajo COST-E3D.
+
+```text
+R1_EXISTING_POINTS_STATUS =
+REEVALUATED_SAMPLES_NOT_A_REOPTIMIZED_PARETO_FRONT
+```
+
+## CORRECTED_R1
+
+Runner:
+```text
+02_src_limpio/production/run_corrected_r1_cost_e3d_v96z.m
+```
+
+Git blob:
+```text
+075742ff72bc5b7a51e8c54b6122feea7a2fb345
+```
+
+SHA-256:
+```text
+AB481811872CA984F398D83A519C4C7A4584A2F1E401AE7F2F7CA9411EAE5B20
+```
+
+Configuración:
+```text
+seed = 61001
+RNG = twister
+PopulationSize = 24
+MaxGenerations = 50
+nvars = 4
+mode = hybrid
+referenceMode = gasLP
+
+lb = [0.0540767982118, 57.6832965028, 0.422252618341, 8.6517528081]
+ub = [0.0940767982118, 67.6832965028, 0.922252618341, 14]
+
+UseParallel = false
+FunctionTolerance = 1e-5
+ConstraintTolerance = 1e-6
+PlotFcn = []
+```
+
+## Solver
+
+```text
+MATLAB = 26.1.0.3312084 (R2026a) Update 4
+Global Optimization Toolbox = 26.1 (R2026a)
+CURRENT_ENVIRONMENT_COMPATIBILITY = PASS
+HISTORICAL_BUILD_EXACT = UNKNOWN
+HISTORICAL_BUILD_UNCERTAINTY = DOCUMENTARY_NON_MATERIAL
+FULL_SOLVER_DEFAULTS_AUDIT =
+PASS_WITH_DOCUMENTARY_BUILD_LIMITATION
+```
+
+## Ejecución
+
+```text
 CORRECTED_R1_EXECUTION = PASS
+Execution HEAD = 3aacb69ec5972aeb5d155c78462715bb3f1f981c
+Seed = 61001
+Exitflag = 0
+Generations = 50
+Funccount = 1200
+Runtime_h = 3.41749689275
+N_SOLUTIONS = 9
+N_FINITE = 9
+N_PENALIZED = 0
+MATLAB_ERROR = none
+```
+
+Motivo de parada:
+```text
+gamultiobj stopped because it exceeded options.MaxGenerations.
+```
+
+Output:
+```text
+D:\CODE\deshidratador\05_runs\triobjective_formal_ga_v96m\
+CORRECTED_R1_COST_E3D_v96z_20260808_005736
+```
+
+## Postrun
+
+```text
 CORRECTED_R1_POSTRUN_INTERNAL_AUDIT = PASS
 CORRECTED_R1_RESULTS_INTERNALLY_VALIDATED = YES
-
-CR1-COMP-01...16 = CLOSED_PASS
-COMPARATIVE_PROTOCOL_IMPLEMENTATION = COMPLETED
-COMPARATIVE_SCIENTIFIC_REVIEW = CLOSED_PASS
-SCIENTIFIC_SUFFICIENCY_GATE = PASS_FOR_CURRENT_LIMITED_CLAIMS
-ADDITIONAL_EVIDENCE_REQUIRED_FOR_CURRENT_MANUSCRIPT = NO
+DETAIL_REPLAY_EVALUATIONS = 9
+F1_REPLAY_STATUS = PASS
+F2_REPLAY_STATUS = PASS
+F3_REPLAY_STATUS = PASS
+X_BOUNDS_STATUS = PASS
+MAT_CSV_LOG_CONSISTENCY = PASS
+PENALTY_STATUS = PASS_NO_PENALTY_ROWS
+ALL_REGISTERED_HASHES_PASS = YES
 ```
 
-El protocolo H-vs-C vigente permanece:
+Replay:
+```text
+max_abs_diff_f1 = 0
+max_abs_diff_f2 = 0
+max_abs_diff_f3 = 0
+```
+
+Las diferencias MAT↔CSV son de representación decimal.
+
+Las 9 soluciones terminaron con `dry_time = 19.9 h`. `TMAX_REACHED` fue inferido de ese valor porque el objective detail no propaga directamente `termination_status`.
+
+## Estado científico
 
 ```text
-06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md
+CORRECTED_R1_PARETO_FRONT_STATUS =
+INTERNAL_RUN_VALIDATED
+```
+
+La interpretación de `CORRECTED_R1` ya no debe quedar condicionada exclusivamente a la comparación histórica R1 de 50 generaciones. La recuperación posterior de diseños de época de tesis cambia la procedencia histórica preferida para el manuscrito.
+
+## Recuperación histórica de tesis — HB200
+
+Decisión canónica vigente:
+
+```text
+PRIMARY_THESIS_LEGACY_BASELINE = HB200
+HB306_STATUS = RECOVERED_LATER_CHECKPOINT_PROVENANCE_UNRESOLVED
+HB306_EQUIVALENT_TO_THESIS_GENERATION_316 = NOT_PROVEN
+R1_50GEN_ROLE = AUXILIARY_REPRODUCIBILITY_CONTROL
+```
+
+La campaña HB200 fue reportada en la conversación activa como `THESIS_LEGACY_REEVALUATION_STATUS = PASS`, sin nueva optimización, sin `gamultiobj`, sin modificación de `C`, del manuscrito ni del código productivo. El reporte activo declara 44 diseños físicos únicos, reevaluación determinística bajo el modelo y objetivos actuales, y determinismo exacto en repeticiones centinela.
+
+Los resultados cuantitativos reportados incluyen:
+
+```text
+UNIQUE_FINITE_THESIS_DESIGNS = 44
+HISTORICALLY_ND_DESIGNS = 16
+CURRENTLY_ND_THESIS_DESIGNS = 9
+PERSISTENT_ND = 6
+LOST_ND_STATUS = 10
+GAINED_ND_STATUS = 3
+THESIS_REPORTED_COMPROMISE_ID = T025
+T_DOMINATES_C_PAIRS = 2
+C_DOMINATES_T_PAIRS = 6
+T_C_INCOMPARABLE_PAIRS = 73
+T_C_EXACT_EQUAL_PAIRS = 0
+T_CONTRIBUTION_TO_JOINT_RANK1 = 7
+C_CONTRIBUTION_TO_JOINT_RANK1 = 7
+DETERMINISM_CHECK = EXACT
+GAMULTIOBJ_EXECUTED = NO
+NEW_OPTIMIZATION_RUNS = 0
+PRODUCTIVE_CODE_CHANGED = NO
+FROZEN_C_CHANGED = NO
+MANUSCRIPT_CHANGED = NO
+```
+
+Compromiso de tesis reportado:
+
+```text
+T025_CURRENT_F = [0.0337092930359653, 0.219375216857587, 0.519403503839552]
+T025_STATUS_WITHIN_T = PERSISTENT_ND
+T025_JOINT_RANK = 2
+T025_DOMINATED_BY = C05
+```
+
+**Limitación documental actual:** los artefactos primarios de esta campaña (`THESIS_LEGACY_SCIENTIFIC_REPORT_COMPLETE.md`, manifest, auditoría de reproducibilidad, red-team, inventario SHA-256 y tablas/figuras asociadas) no están montados en el contexto activo de este Project. Por tanto, sus rutas y hashes no se inventan y los resultados anteriores se conservan explícitamente como `REPORTED_IN_ACTIVE_CONVERSATION_PENDING_ARTIFACT_REGISTRATION`.
+
+```text
+THESIS_LEGACY_ARTIFACT_REGISTRATION = PENDING
+THESIS_LEGACY_NUMERIC_EVIDENCE_CANONICALLY_VERIFIED_IN_ACTIVE_CONTEXT = NO
+```
+
+## Protocolo comparativo R1-50gen v1.0
+
+```text
 COMPARATIVE_PROTOCOL_VERSION = v1.0
-PROTOCOL_STATUS = FROZEN_APPROVED_FOR_POSTRUN_COMPARATIVE_IMPLEMENTATION
-SHA256 = 8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3
+PROTOCOL_STATUS = FROZEN_HISTORICAL_PROTOCOL
+PROTOCOL_ARTIFACT = 06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md
+PROTOCOL_SHA256 = 8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3
 ```
 
-Definiciones:
-- `H`: 9 soluciones históricas R1 reevaluadas bajo COST-E3D corregido; no constituyen un frente Pareto corregido.
-- `C`: 9 soluciones obtenidas directamente bajo COST-E3D corregido.
+El protocolo v1.0 permanece congelado como registro metodológico de la comparación `H(9)-vs-C(9)`. **No se modifica retrospectivamente** para convertirlo en el análisis HB200. La arquitectura científica posterior constituye un rediseño separado.
 
-Resultados comparativos congelados reportados por el handoff D019:
+## Arquitectura científica propuesta para manuscrito v04
 
 ```text
-H_INTERNAL_NONDOMINATED = 9/9
-C_INTERNAL_NONDOMINATED = 9/9
-C_DOMINATES_H_PAIR_COUNT = 1
-H_DOMINATES_C_PAIR_COUNT = 2
-INCOMPARABLE_PAIR_COUNT = 78/81
-EXACT_EQUAL_PAIR_COUNT = 0
-FULL_COVERAGE_C_OVER_H = 1/9
-FULL_COVERAGE_H_OVER_C = 2/9
-JOINT_RANK1_H = 8
-JOINT_RANK1_C = 7
-HV_H_R10 = 0.9749820881940048
-HV_C_R10 = 1.0099628901072748
-HV_DIRECTION = C_GT_H
-HV_SENSITIVITY_DIRECTION_R5_R10_R20 = C_GT_H
-COMPARATIVE_TERMINAL_REGIME = COMMON_TMAX_19P9H
+V04_REDESIGN_JUSTIFIED = YES
+PROPOSED_V04_SCIENTIFIC_ARCHITECTURE =
+Gas-LPG context -> thesis-era HB200 physical designs -> deterministic common-basis reevaluation -> frozen current C portfolio -> paired recirculation-timing insight
 ```
 
-Geometría observada:
+Calificaciones obligatorias:
+- comparación de conjuntos finitos, no demostración de frente Pareto verdadero/global;
+- HB200 se usa por procedencia histórica, no como garantía de convergencia;
+- el efecto de cambio de base objetiva y la ampliación del espacio de control están parcialmente confundidos para atribución directa `T-vs-C`;
+- `HB306` no se identifica retrospectivamente con la generación 316 de la tesis.
+
+## Siguiente fase
 
 ```text
-H_RETAINS_ALL_OBSERVED_MARGINAL_EXTREMA = YES
-C_OCCUPIES_NARROWER_OBSERVED_OBJECTIVE_INTERVALS = YES
-C_ADDS_NEW_MARGINAL_EXTREMA = NO
+NEXT_PHASE = THESIS_LEGACY_ARTIFACT_REGISTRATION_AND_V04_HANDOFF
 ```
 
-## Límites inferenciales vigentes
-
-```text
-MULTISEED_CAMPAIGN_STATUS = USEFUL_BUT_NOT_REQUIRED
-MULTISEED_REQUIRED_FOR_PRIMARY_MANUSCRIPT_THESIS = NO
-MULTISEED_REQUIRED_FOR_ALGORITHM_PERFORMANCE_PAPER = YES
-CONVERGENCE_ESTABLISHED = NO
-BETWEEN_SEED_ROBUSTNESS_ESTABLISHED = NO
-GLOBAL_OPTIMALITY_ESTABLISHED = NO
-TRUE_PARETO_FRONT_ESTABLISHED = NO
-```
-
-No afirmar desempeño esperado de `gamultiobj`, robustez entre semillas, convergencia estocástica, globalidad ni un frente Pareto verdadero/exacto/global a partir de la evidencia actual.
-
-## D016 — suficiencia científica del paquete de claims
-
-```text
-D016 = FROZEN_PASS
-CURRENT_MANUSCRIPT_CLAIM_PACKAGE = SCIENTIFICALLY_SUFFICIENT_WITH_FROZEN_SCOPE_AND_MANDATORY_QUALIFIERS
-TOTAL_MANUSCRIPT_CANDIDATE_CLAIMS = 40
-SUFFICIENT_AS_WRITTEN = 24
-SUFFICIENT_WITH_MANDATORY_QUALIFIER = 16
-CLAIMS_REQUIRING_REMOVAL = 0
-BLOCKING_CORE_CLAIMS = NONE
-```
-
-## D017 — reconciliación CO2 / CO2e
-
-```text
-D017 = FROZEN_PASS
-CO2_CO2E_RECONCILIATION_STATUS = PASS_OPTION_B
-NOMENCLATURE_AUDIT = PASS
-UNIT_AUDIT = PASS
-MANDATORY_QUALIFIER_CLAIM_COUNT = 16
-QUALIFIER_LOCK_STATUS = PASS_LOCKED
-```
-
-Computacionalmente se conserva:
-
-```text
-f3 = CO2_specific_kgCO2_per_kgwater
-```
-
-En manuscrito:
-
-```text
-modeled specific operational greenhouse-gas emissions
-unit = kg CO2e/kg water removed
-scope = direct LPG-combustion CO2 + indirect grid-electricity CO2e, normalized by water removed
-```
-
-Calificador obligatorio: no es huella de ciclo de vida, inventario GHG completo ni impacto ambiental total.
-
-## D018 — manuscript-ready gate
-
-```text
-D018 = FROZEN_PASS
-MANUSCRIPT_READY_GATE_STATUS = PASS
-MANUSCRIPT_READY = CONDITIONAL
-CANONICAL_MANUSCRIPT_SOURCE = 06_manuscript/article_Q1/draft_sections/MASTER_manuscript_v01.md
-CANONICAL_MANUSCRIPT_SOURCE_STATUS = UNAMBIGUOUS
-SCIENTIFIC_SOURCE_MISSING_COUNT = 0
-CANONICAL_DISCREPANCY_COUNT = 0
-UNRESOLVED_EDITORIAL_DECISION_COUNT = 0
-CONTROLLED_EDITORIAL_PHASE_ALLOWED = YES_AFTER_SEPARATE_AUTHORIZATION
-MANUSCRIPT_FILES_MODIFIED = NO
-```
-
-The controlled manuscript rewrite and scientific/editorial review are complete. The manuscript is now a pre-commit editorial freeze candidate; version-control freeze remains a separate, unauthorized gate.
-
-## D019 — arquitectura narrativa científica
-
-```text
-D019 = FROZEN_PASS
-SCIENTIFIC_NARRATIVE_GATE_STATUS = PASS
-RECOMMENDED_MANUSCRIPT_ARCHITECTURE = A
-RECOMMENDED_POSITIONING = SYSTEM_FIRST
-SYSTEM_PROTAGONIST = HYBRID_SOLAR_LPG_DRYER_AND_OPERATIONAL_TRADEOFFS
-METHOD_PROTAGONIST = NO
-GAMULTIOBJ_PRIMARY_ROLE = SEARCH_INSTRUMENT_FOR_GENERATING_MULTI_OBJECTIVE_CANDIDATES
-ALGORITHM_PERFORMANCE_CLAIMS_SUPPORTED = NO
-```
-
-```text
-PRIMARY_RESEARCH_QUESTION_STATUS = SUPPORTED
-SECONDARY_RESEARCH_QUESTION_STATUS = SUPPORTED
-PRIMARY_HYPOTHESIS_SUPPORT_STATUS = SUPPORTED
-MANUSCRIPT_THESIS_STATUS = SUPPORTED
-FINITE_SET_SCOPE = CONSTITUTIVE_NOT_OPTIONAL_DISCLAIMER
-OBSERVED_TRADEOFF_CHARACTERIZATION = SUPPORTED
-GLOBAL_PROCESS_BEHAVIOR_MAP = UNSUPPORTED
-GLOBAL_RESPONSE_SURFACE = UNSUPPORTED
-GLOBAL_SENSITIVITY_MAP = UNSUPPORTED
-```
-
-Contribución primaria vigente:
-
-```text
-PRIMARY_SCIENTIFIC_CONTRIBUTION = FINITE_SET_PHYSICAL_AND_MULTIOBJECTIVE_CHARACTERIZATION_OF_OPERATIONAL_TRADEOFFS
-```
-
-Contribuciones secundarias:
-
-```text
-CORRECTED_FORMULATION_H_VS_C_COMPARISON
-INTEGRATED_TRIOBJECTIVE_OPERATIONAL_FORMULATION
-```
-
-`gamultiobj` no se presenta como contribución de desempeño algorítmico.
-
-## D020 — literature positioning and novelty verification
-
-```text
-D020 = FROZEN_PASS
-LITERATURE_POSITIONING_GATE = FROZEN_PASS_WITH_NOVELTY_NARROWING
-CANDIDATE_KNOWLEDGE_GAP_1 = PARTIALLY_VERIFIED_GAP
-CANDIDATE_KNOWLEDGE_GAP_2 = PARTIALLY_VERIFIED_GAP
-DEFENSIBLE_NOVELTY_POSITIONING = YES_WITH_LIMITATIONS
-UNIVERSAL_PRIORITY_ESTABLISHED = NO
-ABSENCE_OF_PRECEDENT_PROVED = NO
-```
-
-Clasificación congelada de contribución:
-
-```text
-INTEGRATED_TRIOBJECTIVE_OPERATIONAL_FORMULATION = INCREMENTAL_NOVELTY
-COUPLED_THERMAL_AIR_MANAGEMENT_FINITE_SET_CHARACTERIZATION = INCREMENTAL_NOVELTY
-GAMULTIOBJ_OR_GA_AS_NOVELTY = METHOD_APPLICATION_ONLY
-SOLAR_LPG_AS_NOVELTY = NOT_NOVEL
-MULTIOBJECTIVE_OPTIMIZATION_AS_NOVELTY = NOT_NOVEL
-HISTORICAL_SOLUTION_SURVIVAL_AFTER_CORRECTED_REFORMULATION = STRONG_NOVELTY_CANDIDATE
-OVERALL_PAPER_A_POSITIONING = INCREMENTAL_NOVELTY_WITH_STRONG_NARROW_SUBCONTRIBUTION
-PHYSICAL_INTERPRETATION_LITERATURE_SUPPORT = PASS_WITH_CAUSALITY_LIMITATION
-UNIVERSAL_FIRST_OF_ITS_KIND_CLAIM = NOT_SUPPORTED
-```
-
-El alcance de Gap 1 queda restringido a la **caracterización integrada de conjuntos finitos** de trade-offs entre desempeño de secado, costo energético operativo específico y emisiones operacionales específicas bajo decisiones térmicas y de manejo de aire acopladas.
-
-Gap 2 queda como candidato fuerte de novedad estrecha: en la búsqueda dirigida no se identificó un precedente directo en secado que preserve candidatos históricos, reevalue los mismos vectores bajo una formulación costo–emisiones corregida y cuantifique su supervivencia frente a candidatos generados directamente bajo esa formulación. Esto no prueba ausencia universal.
-
-Artefactos locales congelados:
-
-```text
-LITERATURE_POSITIONING_GATE_v01.md
-SHA256 = 3114FDC9A6188C450D499B424D147DB4B6BC3077E424CD8D0BAEA23DA7C3F83F
-
-LITERATURE_POSITIONING_EVIDENCE_MATRIX_v01.csv
-SHA256 = E68DB197170910D17A02046830BEC0A1469181DD22AFF3B5829D51774268E5A2
-
-DOCUMENTARY_FREEZE = PASS_LOCAL_NOT_GIT_FROZEN
-```
-
-## Fase actual
-
-```text
-CLOSED_PHASE = EDITORIAL_FREEZE_PRECOMMIT_BLOCK_C
-CURRENT_STATE = MANUSCRIPT_FREEZE_CANDIDATE
-NEXT_PHASE = VERSION_CONTROL_FREEZE
-NEXT_PHASE_AUTHORIZED = NO
-```
-
-## Autorización operativa vigente
-
-```text
-LITERATURE_POSITIONING_GATE = COMPLETED_AND_DOCUMENTALLY_FROZEN
-EXTERNAL_WEB_SEARCH_FOR_D020 = COMPLETED
-CONTROLLED_MANUSCRIPT_REWRITE_BLOCK_A = PASS
-SCIENTIFIC_EDITORIAL_REVIEW_BLOCK_B = PASS
-EDITORIAL_FREEZE_PRECOMMIT_BLOCK_C = PASS
-MANUSCRIPT_EDITING = COMPLETED_FOR_CURRENT_AUTHORIZED_BLOCK
-MATLAB = NOT_AUTHORIZED
-gamultiobj = NOT_AUTHORIZED
-NEW_OPTIMIZATION = NOT_AUTHORIZED
-MULTISEED_CAMPAIGN = NOT_AUTHORIZED
-CODE_MODIFICATION = NOT_AUTHORIZED
-STAGING = NOT_AUTHORIZED
-COMMIT = NOT_AUTHORIZED
-REMOTE_GIT = NOT_AUTHORIZED
-VERSION_CONTROL_FREEZE_GATE = NOT_AUTHORIZED
-```
+Objetivo inmediato: registrar y verificar rutas, hashes y roles de los artefactos HB200 ya producidos. Una vez completado ese registro, podrá abrirse la edición del manuscrito v04. No se autoriza implícitamente ninguna nueva ejecución de MATLAB, `gamultiobj`, replays, optimización, cambio de código productivo, staging, commit, push, PR o merge.
