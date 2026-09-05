@@ -96,27 +96,84 @@ Rol canónico aprobado:
 ```text
 PRIMARY_THESIS_LEGACY_BASELINE = HB200
 R1_50GEN_ROLE = AUXILIARY_REPRODUCIBILITY_CONTROL
-HB306_ROLE = RECOVERED_LATER_CHECKPOINT_PROVENANCE_UNRESOLVED
+HB306_STATUS = RECOVERED_LATER_CHECKPOINT_PROVENANCE_UNRESOLVED
 ```
 
-Artefactos reportados de la campaña HB200 pendientes de registro físico en el contexto activo:
+Raíz versionable compacta:
 
-- `THESIS_LEGACY_SCIENTIFIC_REPORT_COMPLETE.md` — informe científico completo.
-- manifiesto de ejecución — nombre/ruta exactos pendientes de montaje.
-- auditoría de reproducibilidad — nombre/ruta exactos pendientes de montaje.
-- informe red-team — nombre/ruta exactos pendientes de montaje.
-- inventario SHA-256 completo — reportado con 46 artefactos y cuatro arneses.
-- tablas: congelado de entrada, resultados actuales completos, transiciones de estatus, comparación T–C, contexto gas-LPG y experimento de recirculación.
-- figuras de revisión: `FIG_T1` ... `FIG_T6`.
-- arneses no productivos: congelado de entrada, reevaluación MATLAB, posprocesado y figuras.
+```text
+06_manuscript/article_Q1/review/thesis_legacy_HB200/
+```
+
+Convenciones: `SOURCE_MATCH` significa identidad exacta de tamaño y SHA-256 con el RUN auditado; `INVENTORY_MATCH` significa además coincidencia con la fila correspondiente del inventario de 46 artefactos. Las tablas son serializaciones documentales o derivadas y no sustituyen a los MAT numéricos.
+
+### Fuentes históricas upstream fuera del conjunto versionable
+
+| Ruta | Rol | SHA-256 | Upstream / validación |
+|---|---|---|---|
+| `03_original_model/05_outputs_historicos/final_pop_HB200.mat` | `PRIMARY_NUMERIC_ARTIFACT` — población | `CA40083629C97A7851A15219F46ACF22C7C5AFE4EC09190E5BBA9618106977B9` | HB200; manifest de congelado y verificación física |
+| `03_original_model/05_outputs_historicos/scores_HB200.mat` | `PRIMARY_NUMERIC_ARTIFACT` — scores | `F1D4A1AD85A533CE41D87FEAA04651B9604607E3D3F527EA5A3FCDA11971FD9B` | HB200; manifest de congelado y verificación física |
+
+Estos MAT se preservan por checksum; no se copian ni se interpretan como generación 316 o prueba de frente Pareto global.
+
+### Arneses no productivos
+
+| Ruta | Rol | SHA-256 | Upstream / validación |
+|---|---|---|---|
+| `02_src_limpio/audit/build_thesis_legacy_input_freeze_v01.py` | `NONPRODUCTIVE_HARNESS` — congelado | `70587F5795922DBF6274605A01A5B9584A2EA4F49E31A0A3747F89EC5D76D9B9` | MAT HB200; `INVENTORY_MATCH` |
+| `02_src_limpio/audit/run_thesis_legacy_reevaluation_r1_v01.m` | `NONPRODUCTIVE_HARNESS` — reevaluación | `2F2F693F109C87BC554ED2670F8B252A913F74151867C6EE48CE196BF3931005` | Freeze y modelo actual; `INVENTORY_MATCH` |
+| `02_src_limpio/audit/postprocess_thesis_legacy_reevaluation_r1_v01.py` | `NONPRODUCTIVE_HARNESS` — posprocesado | `DC84A569D901D90AF64437530424543F4D3F137AD99BAFF2BCEC1C2F8B74EEFF` | Outputs serializados; `INVENTORY_MATCH` |
+| `02_src_limpio/audit/generate_thesis_legacy_review_figures_v01.m` | `NONPRODUCTIVE_HARNESS` — figuras | `371409FBF46E4720530AC827020CE0E70B67BE12490D052E701F291AED458033` | Tablas derivadas; `INVENTORY_MATCH` |
 
 Estado de registro:
 
 ```text
-THESIS_LEGACY_ARTIFACT_REGISTRATION = PENDING
-THESIS_LEGACY_ARTIFACT_PATHS_VERIFIED = NO
-THESIS_LEGACY_ARTIFACT_SHA256_VERIFIED = NO
-REASON = SUPPORTING_ARTIFACTS_NOT_MOUNTED_IN_ACTIVE_PROJECT_CONTEXT
+THESIS_LEGACY_ARTIFACT_REGISTRATION = LOCAL_COMPLETE_PENDING_VERSION_CONTROL
+THESIS_LEGACY_ARTIFACT_PATHS_VERIFIED = YES
+THESIS_LEGACY_ARTIFACT_SHA256_VERIFIED = YES
+COMPACT_EVIDENCE_FILE_COUNT = 21
+NONPRODUCTIVE_HARNESS_COUNT = 4
+SOURCE_INVENTORY_REGISTERED_ROWS = 46
 ```
 
-No se inventan rutas ni SHA-256. El registro deberá completarse desde los artefactos primarios de la campaña.
+### Informe y auditoría/proveniencia compacta
+
+Todas las rutas de esta sección se resuelven bajo `06_manuscript/article_Q1/review/thesis_legacy_HB200/`.
+
+| Ruta | Rol | SHA-256 | Upstream / validación |
+|---|---|---|---|
+| `THESIS_LEGACY_SCIENTIFIC_REPORT_COMPLETE.md` | `SCIENTIFIC_REPORT` | `34A8A9DA16ECF3A23500A67CCD897C3E5DCAF658078EBEB3D6BB3FF363BDBE8B` | Evidencia completa; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `audit/THESIS_LEGACY_EXECUTION_MANIFEST.json` | `EXECUTION_MANIFEST` | `EF9968BC3DAE399D8D1106EF61DEDD25F5A2E198C255A70006CA5DF05BAF74F5` | Freeze, ejecución y posproceso; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `audit/THESIS_LEGACY_EXECUTION_SUMMARY.json` | `DOCUMENTARY_SUPPORT` | `731FC7EC590B486F3281F75FE6920DF54B3C28314DF837893D33FA394506D913` | Ejecución MATLAB; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `audit/THESIS_LEGACY_INPUT_FREEZE_MANIFEST.json` | `DOCUMENTARY_SUPPORT` | `66C68CA862833A858E644DF80AA73D40EB60CE65EEF11E81DCA820A6B2B19F62` | MAT HB200; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `audit/THESIS_LEGACY_RED_TEAM_CHECKS.csv` | `RED_TEAM_AUDIT` | `FAA581C68AE4D7BFC58948302851763124B82DF3BC71C72C297E3CB017D054CC` | Evidencia posprocesada; `PASS; SOURCE_MATCH+INVENTORY_MATCH` |
+| `audit/THESIS_LEGACY_RED_TEAM_REPORT.md` | `RED_TEAM_AUDIT` | `A1D656084A32C222A4F5E779CCA22CBCFC377E89BA3A56A5885EA7D470207893` | Checks red-team; `PASS; SOURCE_MATCH+INVENTORY_MATCH` |
+| `audit/THESIS_LEGACY_REPRODUCIBILITY_AUDIT.json` | `REPRODUCIBILITY_AUDIT` | `C52206C526BD41E516BD749BB7B8A3860EC4BFAFDCEB62C7D8628A917938B85F` | Resultados, timing y gas-LPG; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `audit/THESIS_LEGACY_SOFTWARE_IDENTITY.json` | `DOCUMENTARY_SUPPORT` | `287B1B5477070DF882DD47920475D99F53502B17FF9C03540244B6A568BFF820` | Identidades de software y datos; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `audit/THESIS_LEGACY_SHA256_MANIFEST.csv` | `SHA256_INVENTORY` | `050D8197627EAE90AA756F82EB6745CDFAC08817FE39433504F43AD0453B6E27` | 42 outputs y cuatro arneses; `SOURCE_MATCH`; se excluye a sí mismo |
+
+### Tablas principales
+
+| Ruta | Rol | SHA-256 | Upstream / validación |
+|---|---|---|---|
+| `tables/TABLE_T1_complete_HB200_inputs.csv` | `FROZEN_INPUT_DATASET` | `0504E4DB733536B9DB6F602410894A5F3D153D8F4A3537E2E7669A0DDF4A4294` | Freeze HB200; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `tables/TABLE_T2_current_reevaluation.csv` | `DERIVED_NUMERIC_TABLE` | `87606CF8185219F39187754C1E3B619561F2E9563F3E7495F3F28B8219445CE8` | Reevaluación actual y ranking; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `tables/TABLE_T3_status_transitions.csv` | `DERIVED_NUMERIC_TABLE` | `C47959827149ED9554BB3510434F3EEB81BC998AB100273F8390026B584FAD86` | Rangos históricos y actuales; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `tables/TABLE_T4_T_vs_C_joint_ranks.csv` | `DERIVED_NUMERIC_TABLE` | `BF72A459D163ADC6E10B198B8F735F103CC4D62BD73AF6F96E2A949A62A501B8` | Conjuntos finitos T/C; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `tables/TABLE_T5_gasLP_context.csv` | `DERIVED_NUMERIC_TABLE` | `73120F6F1ECBD0B192264C7EF1D2A3C7F4094BA7136CFA18189C332619E751AB` | Contexto gas-LPG; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `tables/TABLE_T6_timing_experiment.csv` | `DERIVED_NUMERIC_TABLE` | `B5EDB97DA6428F58A62C4111728341683953FB09E86461C8643C953FC8A19573` | Experimento timing; `SOURCE_MATCH+INVENTORY_MATCH` |
+
+### Figuras de revisión
+
+| Ruta | Rol | SHA-256 | Upstream / validación |
+|---|---|---|---|
+| `figures/FIG_T1_status_transitions.png` | `REVIEW_FIGURE` | `22A9D7AB14FF035E58628A8B37C5532C0AB6EE5736C6E90BCF31D6E47E75FE9E` | Tabla T3; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `figures/FIG_T2_thesis_current_geometry.png` | `REVIEW_FIGURE` | `1DBBD790F2946F44C509AB29CE6DAC67E3B5F76B9166E87DB9A8FFF123444309` | Tabla T2; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `figures/FIG_T3_T_vs_C.png` | `REVIEW_FIGURE` | `297F26E16F70E31CE59DA23B4F7E8D28A7DA88F2606335E836CA83F30A169DBA` | Tabla T4 y T–C; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `figures/FIG_T4_decision_provenance.png` | `REVIEW_FIGURE` | `014E1624D6534BE87570173A83F22BD7492D85D98B746C7F7814CC3651E5BA6D` | Estatus y proveniencia; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `figures/FIG_T5_gasLP_context.png` | `REVIEW_FIGURE` | `7E63662D90F12D901F30AF68D511D5E1DF0AAE93175929ABE60732E81D6035AB` | Tabla T5; uso contextual; `SOURCE_MATCH+INVENTORY_MATCH` |
+| `figures/FIG_T6_timing_response.png` | `REVIEW_FIGURE` | `F823ED3E405A2A84469292197253E092B6C319596E4E8735904E87F9911F4381` | Tabla T6; `SOURCE_MATCH+INVENTORY_MATCH` |
+
+### Outputs preservados fuera del conjunto compacto
+
+Los MAT primarios/frozen del RUN, CSV raw o aliases redundantes, `THESIS_LEGACY_MATLAB_EXECUTION_DIARY.txt`, `THESIS_LEGACY_EXECUTION_SUMMARY.mat` y `THESIS_LEGACY_SCIENTIFIC_REPORT.md` permanecen fuera del conjunto versionable y preservados por el inventario SHA-256. No se modificó el protocolo H(9)-vs-C(9) v1.0.

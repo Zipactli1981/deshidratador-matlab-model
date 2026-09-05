@@ -1,0 +1,15 @@
+{
+  "unique_finite_thesis_designs": 44,
+  "representative_designs": 3,
+  "timing_levels_per_design": 4,
+  "baseline_evaluations": 44,
+  "sentinel_repeat_evaluations": 3,
+  "gasLP_context_evaluations": 3,
+  "timing_evaluations": 12,
+  "total_model_evaluations": 62,
+  "determinism_check": "EXACT",
+  "max_abs_repeat_difference": 0,
+  "gamultiobj_executed": false,
+  "new_random_seeds": 0,
+  "completed_at": "05-Sep-2026 01:03:42"
+}

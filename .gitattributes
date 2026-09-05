@@ -14,3 +14,29 @@
 *.pdf binary
 *.zip binary
 *.mlx binary
+
+# HB200 frozen scientific evidence — preserve audited bytes exactly
+06_manuscript/article_Q1/review/thesis_legacy_HB200/** -text
+
+# HB200 nonproductive harnesses — preserve audited bytes exactly
+02_src_limpio/audit/build_thesis_legacy_input_freeze_v01.py -text
+02_src_limpio/audit/generate_thesis_legacy_review_figures_v01.m -text
+02_src_limpio/audit/postprocess_thesis_legacy_reevaluation_r1_v01.py -text
+02_src_limpio/audit/run_thesis_legacy_reevaluation_r1_v01.m -text
+
+# HB200 hash-frozen CRLF artifacts — suppress textual diff checks by exact path
+02_src_limpio/audit/postprocess_thesis_legacy_reevaluation_r1_v01.py -text -diff
+02_src_limpio/audit/run_thesis_legacy_reevaluation_r1_v01.m -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/audit/THESIS_LEGACY_EXECUTION_MANIFEST.json -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/audit/THESIS_LEGACY_INPUT_FREEZE_MANIFEST.json -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/audit/THESIS_LEGACY_RED_TEAM_CHECKS.csv -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/audit/THESIS_LEGACY_RED_TEAM_REPORT.md -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/audit/THESIS_LEGACY_REPRODUCIBILITY_AUDIT.json -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/audit/THESIS_LEGACY_SHA256_MANIFEST.csv -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/audit/THESIS_LEGACY_SOFTWARE_IDENTITY.json -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/tables/TABLE_T1_complete_HB200_inputs.csv -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/tables/TABLE_T2_current_reevaluation.csv -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/tables/TABLE_T3_status_transitions.csv -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/tables/TABLE_T4_T_vs_C_joint_ranks.csv -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/tables/TABLE_T5_gasLP_context.csv -text -diff
+06_manuscript/article_Q1/review/thesis_legacy_HB200/tables/TABLE_T6_timing_experiment.csv -text -diff
