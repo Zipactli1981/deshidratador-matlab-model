@@ -12,7 +12,11 @@ import unittest
 from unittest import mock
 
 import numpy as np
-from scipy.io import savemat
+try:
+    from scipy.io import loadmat, savemat
+except ModuleNotFoundError:
+    loadmat = None
+    savemat = None
 
 import ror_core as core
 import ror_postrun as io
@@ -26,7 +30,10 @@ def rows(seed=61001):
             for i,(x,f) in enumerate(zip(X,F))]
 
 
-def fixture(parent, seed, cfg, case="valid", omit_meta=None):
+def fixture(parent, seed, cfg, case="valid", omit_meta=None, observed_options=None):
+    if savemat is None:
+        raise unittest.SkipTest("SciPy is not available in the existing Python runtime")
+    observed_options=copy.deepcopy(cfg["options"] if observed_options is None else observed_options)
     folder=Path(parent)/f"seed_{seed}"
     folder.mkdir()
     x=np.array(X,dtype=float)
@@ -62,10 +69,10 @@ def fixture(parent, seed, cfg, case="valid", omit_meta=None):
         end_timestamp="2026-09-05T12:00:01.000+00:00",elapsed_time_seconds=1.,
         exact_output_directory=str(folder.resolve()),exact_primary_output_paths=exact_paths,
         expected_git_head=expected_head,observed_git_head=expected_head,
-        solver_options=cfg["options"],
+        solver_options=observed_options,
         solver_output=dict(message="Synthetic MaxGenerations",generations=200,funccount=3),
         productive_dependency_hashes=io.read_json(io.HERE/"source_lock.json"),
-        observed_options=cfg["options"],rng_type="twister",rng_seed=seed,**cfg["environment"])
+        observed_options=observed_options,rng_type="twister",rng_seed=seed,**cfg["environment"])
     if omit_meta:
         meta.pop(omit_meta)
     rng=dict(Type="twister",Seed=seed,State=np.array([1.,2.,3.]))
@@ -79,7 +86,7 @@ def fixture(parent, seed, cfg, case="valid", omit_meta=None):
     savemat(folder/"EVALUATION_DETAILS.mat",dict(callX=x,callF=values,
         callObjectiveF=values,details_json=np.array(details,dtype=object)))
     io.write_json(folder/"FROZEN_CONFIG.json",dict(seed=seed,config=cfg,
-        observed_options=cfg["options"],effective_functions_expected=cfg["effective_functions"]))
+        observed_options=observed_options,effective_functions_expected=cfg["effective_functions"]))
     with (folder/"FINAL_CANDIDATES.csv").open("w",newline="") as f:
         w=csv.writer(f); w.writerow(["source","row","x1","x2","x3","x4","f1","f2","f3"])
         for label in ("returned","population"):
@@ -94,6 +101,8 @@ def fixture(parent, seed, cfg, case="valid", omit_meta=None):
 
 
 def benchmark(parent, name, corrupt=False):
+    if savemat is None:
+        raise unittest.SkipTest("SciPy is not available in the existing Python runtime")
     count=44 if name == "HB200_CURRENT" else 9
     x=np.tile(np.array(X,dtype=float),(count//3+1,1))[:count]
     f=np.tile(np.array(F,dtype=float),(count//3+1,1))[:count]
@@ -238,6 +247,67 @@ class IOTests(unittest.TestCase):
         self.assertFalse(cfg["HB200_INITIALIZATION"] or cfg["C_INITIALIZATION"])
         self.assertEqual(cfg["analysis"]["reference"],[1.1]*3)
 
+    def test_option_representation_equivalence_and_raw_preservation(self):
+        cfg=io.frozen_config()["options"]
+        raw=copy.deepcopy(cfg)
+        raw["PopulationType"]="doublevector"
+        saved=copy.deepcopy(raw)
+        self.assertTrue(io.options_equivalent(raw,cfg))
+        self.assertEqual(raw,saved)
+        canonical=copy.deepcopy(cfg)
+        canonical["PopulationType"]="doublevector"
+        self.assertTrue(io.options_equivalent(raw,canonical))
+
+    def test_unknown_population_type_fails_closed(self):
+        cfg=io.frozen_config()["options"]
+        raw=copy.deepcopy(cfg)
+        raw["PopulationType"]="customPopulation"
+        self.assertFalse(io.options_equivalent(raw,cfg))
+
+    def test_other_option_mismatches_remain_strict(self):
+        cfg=io.frozen_config()["options"]
+        for key,value in (("PopulationSize",25),("MaxGenerations",201),
+                          ("UseParallel",True),("ParetoFraction",.36),
+                          ("CrossoverFraction",.81),("Display","ITER")):
+            changed=copy.deepcopy(cfg)
+            changed[key]=value
+            self.assertFalse(io.options_equivalent(changed,cfg),key)
+
+    def test_option_serialization_shapes_are_unchanged(self):
+        cfg=io.frozen_config()["options"]
+        raw=copy.deepcopy(cfg)
+        raw["PopulationType"]="doublevector"
+        before=copy.deepcopy(raw)
+        compared=io.canonical_options(raw)
+        self.assertEqual(raw,before)
+        for key in ("DistanceMeasureFcn","SelectionFcn","MaxTime",
+                    "InitialPopulationRange","InitialPopulationMatrix",
+                    "InitialScoresMatrix"):
+            self.assertEqual(compared[key],before[key])
+
+    def test_postrun_raw_population_type_mat_fixture(self):
+        cfg=io.frozen_config()
+        raw=copy.deepcopy(cfg["options"])
+        raw["PopulationType"]="doublevector"
+        saved=copy.deepcopy(raw)
+        with tempfile.TemporaryDirectory(prefix="ror_options_raw_") as td:
+            folder=fixture(td,61001,cfg,observed_options=raw)
+            audit=io.audit_seed(folder,cfg)
+            self.assertTrue(audit["valid"])
+            primary=loadmat(folder/"PRIMARY_OUTPUT.mat",simplify_cells=True)
+            metadata=json.loads(str(primary["metadata_json"]))
+            self.assertEqual(metadata["observed_options"]["PopulationType"],"doublevector")
+            self.assertEqual(raw,saved)
+        for key,value in (("PopulationType","customPopulation"),
+                          ("PopulationSize",25),("MaxGenerations",201),
+                          ("UseParallel",True)):
+            changed=copy.deepcopy(raw)
+            changed[key]=value
+            with self.subTest(key=key), tempfile.TemporaryDirectory(prefix="ror_options_bad_") as td:
+                folder=fixture(td,61001,cfg,observed_options=changed)
+                with self.assertRaises(core.Blocked):
+                    io.audit_seed(folder,cfg)
+
     def test_static_python_syntax(self):
         for p in io.HERE.glob("*.py"):
             ast.parse(p.read_text(encoding="utf-8"),filename=str(p))
@@ -254,6 +324,8 @@ class IOTests(unittest.TestCase):
         self.assertIn("'expected_head'",text)
         self.assertIn("'start_timestamp'",text)
         self.assertIn("meta.exact_primary_output_paths",text)
+        self.assertIn("ror_options_equivalent(cfg.options,observed_options)",text)
+        self.assertNotIn("function value=ror_canonical_population_type",text)
 
     def test_hash_frozen_paths_preserve_exact_bytes(self):
         root=io.HERE.parents[2]

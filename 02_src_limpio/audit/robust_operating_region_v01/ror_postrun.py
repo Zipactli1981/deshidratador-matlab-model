@@ -1,5 +1,6 @@
 """Static preflight and explicitly gated postrun IO; never imports/starts MATLAB."""
 import argparse
+import copy
 import csv
 from datetime import datetime
 import hashlib
@@ -41,6 +42,25 @@ def frozen_config():
     if sha(HERE/"source_lock.json") != LOCK_HASH:
         raise Blocked("Source lock hash mismatch")
     return read_json(HERE/"frozen_config.json")
+
+
+def canonical_population_type(value):
+    """Canonicalize only the two equivalent MATLAB spellings."""
+    if value in ("doubleVector", "doublevector"):
+        return "doublevector"
+    return value
+
+
+def canonical_options(options):
+    """Return a comparison-only copy; preserve raw provenance dictionaries."""
+    result = copy.deepcopy(options)
+    if isinstance(result, dict) and "PopulationType" in result:
+        result["PopulationType"] = canonical_population_type(result["PopulationType"])
+    return result
+
+
+def options_equivalent(observed, expected):
+    return canonical_options(observed) == canonical_options(expected)
 
 
 def static_check(root):
@@ -113,7 +133,8 @@ def audit_seed(folder, cfg):
         if p.stat().st_size != entry["size"] or sha(p) != entry["sha256"]:
             raise Blocked("Seed file hash/size mismatch")
     conf = read_json(folder/"FROZEN_CONFIG.json")
-    if conf["seed"] != seed or conf["config"] != cfg or conf["observed_options"] != cfg["options"]:
+    if (conf["seed"] != seed or conf["config"] != cfg or
+            not options_equivalent(conf["observed_options"], cfg["options"])):
         raise Blocked("Seed config/options mismatch")
     if conf["effective_functions_expected"] != cfg["effective_functions"]:
         raise Blocked("Effective function identity mismatch")
@@ -125,9 +146,10 @@ def audit_seed(folder, cfg):
                       ",".join(sorted(REQUIRED_EXECUTION_METADATA-set(meta))))
     if (meta["seed"] != seed or meta["status"] != "COMPLETED" or meta["errors"] != [] or
         meta["config_sha256"] != CONFIG_HASH or meta["protocol_sha256"] != PROTOCOL_HASH or
-        meta["source_lock_sha256"] != LOCK_HASH or meta["observed_options"] != cfg["options"]):
+        meta["source_lock_sha256"] != LOCK_HASH or
+            not options_equivalent(meta["observed_options"], cfg["options"])):
         raise Blocked("Execution provenance mismatch")
-    if meta["solver_options"] != cfg["options"]:
+    if not options_equivalent(meta["solver_options"], cfg["options"]):
         raise Blocked("Solver option provenance mismatch")
     if meta["productive_dependency_hashes"] != read_json(HERE/"source_lock.json"):
         raise Blocked("Productive dependency provenance mismatch")

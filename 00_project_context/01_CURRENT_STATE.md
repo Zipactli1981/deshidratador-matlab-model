@@ -15,12 +15,12 @@ HB200_PUSH = PASS
 HB200_REGISTRATION_COMMIT = 0e1233041e36dc0bf01ab314def3baf9e1c8faa0
 HB200_REGISTRATION_PARENT = aae8f34aa573f53cb3ad163f5565d08ce490e4c3
 LIVE_BRANCH_OBSERVED = main
-LIVE_HEAD_OBSERVED = 0e1233041e36dc0bf01ab314def3baf9e1c8faa0
-ORIGIN_MAIN_OBSERVED = 0e1233041e36dc0bf01ab314def3baf9e1c8faa0
+LIVE_HEAD_OBSERVED = cc429c059807127063175a62ec3aa3fcff986edf
+ORIGIN_MAIN_OBSERVED = cc429c059807127063175a62ec3aa3fcff986edf
 AHEAD_BEHIND_OBSERVED = 0 / 0
 ```
 
-Publicación confirmada por consulta remota de refs/heads/main. Son observaciones de este micropaso, no requisitos para futuros HEAD. La edición documental local posterior no altera ese commit. Entrada: staging vacío, tracked clean, cuatro entradas agrupadas untracked (36 archivos individuales); se preservan.
+El HEAD vigente registra la infraestructura de la campaña robusta; main y origin/main coinciden. Son observaciones de este micropaso, no requisitos para futuros HEAD. A la entrada de este gate: staging vacío, tres archivos tracked de implementación modificados y 37 untracked individuales: 36 preexistentes ajenos preservados más el nuevo helper ROR.
 
 ## Cierre científico HB200
 
@@ -72,7 +72,7 @@ CORRECTED_R1 = CLOSED_PASS, postrun baseline `8a794c389edd10f9750e10a27eca0ec58c
 ## Fase siguiente y límites
 
 ```text
-CURRENT_PHASE = ROBUST_OPERATING_REGION_IMPLEMENTATION_VERSIONING_STAGED
+CURRENT_PHASE = ROBUST_OPERATING_REGION_OPTIONS_REPAIR_VERSIONING
 ROBUST_OPERATING_REGION_PROTOCOL_FREEZE = PASS
 ROBUST_OPERATING_REGION_IMPLEMENTATION = PASS_STATIC_AND_SYNTHETIC
 IMPLEMENTATION_INITIAL_AUDIT = BLOCKED
@@ -84,8 +84,15 @@ MATLAB_RUNTIME = R2026a_UPDATE_4_GLOBAL_OPTIMIZATION_TOOLBOX_26_1
 CREATION_FCN_EFFECTIVE = gacreationuniform
 CROSSOVER_FCN_EFFECTIVE = crossoverintermediate
 MUTATION_FCN_EFFECTIVE = mutationadaptfeasible
-CURRENT_GATE = ROBUST_OPERATING_REGION_IMPLEMENTATION_LOCAL_COMMIT
-NEXT_GATE = ROBUST_OPERATING_REGION_IMPLEMENTATION_LOCAL_COMMIT
+ROR_CAMPAIGN_EXECUTION_ATTEMPT = BLOCKED_PREEXECUTION_OPTIONS_REPRESENTATION_MISMATCH
+RUNS_STARTED = 0
+OPTIONS_MISMATCH_DIAGNOSIS = REPRESENTATION_ONLY
+OPTIONS_REPAIR = PASS
+FULL_PYTHON_REGRESSION = 34/34_PASS
+MATLAB_PREEXECUTION_DRY_RECHECK = PASS
+SCIENTIFIC_CONFIGURATION_UNCHANGED = YES
+CURRENT_GATE = ROBUST_OPERATING_REGION_OPTIONS_REPAIR_VERSIONING
+NEXT_GATE = ROBUST_OPERATING_REGION_OPTIONS_REPAIR_LOCAL_COMMIT
 MATLAB_EXECUTION_AUTHORIZED = NO
 GAMULTIOBJ_EXECUTION_AUTHORIZED = NO
 OPTIMIZATION_AUTHORIZED = NO
@@ -93,4 +100,4 @@ NEW_OPTIMIZATION_AUTHORIZED = NO
 CAMPAIGN_EXECUTION_AUTHORIZED = NO
 ```
 
-Protocolo nuevo congelado: `06_manuscript/article_Q1/review/CURRENT_FORMULATION_ROBUST_OPERATING_REGION_PROTOCOL_v01.md`, SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`. Cinco semillas 61001–61005, población 24, máximo 200 generaciones, dominio completo COST-E3D; suficiencia y políticas preespecificadas. La auditoría inicial BLOCKED se conserva como historia; reparación y reauditoría PASS. El dry validation cerró parsing/runtime, paths, hashes, lock y options sin llamar solver/modelo/objective. En R2026a, `private/validate.m` selecciona los tres defaults anteriores; el bloque crossover 139–149 aplica por `MultiObjective=true`. Paquete de 16 archivos staged y pendiente de commit local separado. La campaña científica sigue no autorizada.
+Protocolo nuevo congelado: `06_manuscript/article_Q1/review/CURRENT_FORMULATION_ROBUST_OPERATING_REGION_PROTOCOL_v01.md`, SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`. Cinco semillas 61001–61005, población 24, máximo 200 generaciones, dominio completo COST-E3D; suficiencia y políticas preespecificadas. El intento de campaña no alcanzó solver/modelo/objective: MATLAB R2026a normalizó `PopulationType` de `doubleVector` a `doublevector` y el guard literal bloqueó antes de crear outputs. La reparación canonicaliza exclusivamente esas dos representaciones para comparar, preserva provenance cruda y mantiene estrictos los otros 27 campos. Helper MATLAB directo, dry preexecution, paridad postrun, source lock 53/53 y regresión Python completa 34/34 PASS. No hubo rerun; la campaña científica requiere una nueva autorización después del versionado/publicación de esta reparación.

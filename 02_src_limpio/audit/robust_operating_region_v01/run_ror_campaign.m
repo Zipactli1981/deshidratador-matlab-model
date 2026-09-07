@@ -71,7 +71,9 @@ for j = 1:numel(names)
     opts.(key) = value;
 end
 observed_options = ror_options(opts);
-assert(isequaln(observed_options,cfg.options),'ROR:Options','Effective stored option mismatch.');
+options_match = ror_options_equivalent(cfg.options,observed_options);
+assert(options_match, ...
+    'ROR:Options','Effective stored option mismatch.');
 % Dynamic default resolution is release-specific; names are provenance expectations,
 % not an assertion that private solver validation has already executed.
 effective_functions_expected = cfg.effective_functions;
