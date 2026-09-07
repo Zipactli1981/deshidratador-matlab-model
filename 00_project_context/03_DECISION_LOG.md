@@ -113,3 +113,19 @@ Gas-LPG context
 El `R1` de 50 generaciones se conserva únicamente como control auxiliar reproducible.
 
 **Estado:** vigente.
+
+## D014 — Campaña nueva de región operativa robusta: freeze v01
+
+**Estado:** FROZEN_DOCUMENTARY_PRE_EXECUTION, 2026-09-05.
+
+Adoptar `06_manuscript/article_Q1/review/CURRENT_FORMULATION_ROBUST_OPERATING_REGION_PROTOCOL_v01.md`, SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`, como metodología vigente de una campaña NUEVA. No modifica D010/D013 ni el protocolo histórico H(9)–C(9) v1.0. Los límites documentales de D012 describían aquel momento; el paquete HB200 fue posteriormente registrado/publicado en `0e1233041e36dc0bf01ab314def3baf9e1c8faa0`, confirmado en origin/main; 25 hashes compactos/arneses coinciden con ARTIFACT_INDEX.
+
+Roles: HB200 baseline histórico principal trazable; C piloto congelado de formulación actual; campaña nueva búsqueda primaria multi-semilla. No frente global ni superioridad causal del optimizador.
+
+Congelar cinco semillas 61001–61005, twister, PopulationSize=24, MaxGenerations=200, MaxStallGenerations=100, ejecución serial y demás opciones validadas. Dominio completo de cuatro variables del objective COST-E3D: lb=[0.07,45,0,0], ub=[0.20,70,0.99,19]. Inicialización independiente normal, sin HB200/C ni scores precargados.
+
+Congelar universo final X/F + population/scores por corrida, exclusión auditada de penalizados, dominancia exacta y N_POOL sin benchmarks. Normalización común desde N_POOL; IGD+ empírico, HV común r=(1.10,1.10,1.10), coverage/contribuciones y extremos. Suficiencia conjunta: 5/5 válidas, pool finito no penalizado, IGD+ max<=0.10/mediana<=0.05, minHV/maxHV>=0.90 y extremos dentro de 0.10 en >=4/5 corridas por objetivo. Rango nulo bloquea métricas, no permite epsilon ni sustituciones silenciosas.
+
+Sólo con PASS seleccionar cuatro políticas: mínimos f1/f2/f3 y distancia ideal normalizada de pesos iguales, desempates deterministas. FAIL no autoriza ampliar presupuesto, reiniciar ni rescatar con warm start. Umbrales operativos, no prueba de convergencia global.
+
+NEXT_GATE = ROBUST_OPERATING_REGION_IMPLEMENTATION. Freeze NO autoriza MATLAB, gamultiobj, nuevas evaluaciones/replays ni optimizaciones; tampoco edición de código productivo/manuscrito, staging, commit, push, PR o merge.

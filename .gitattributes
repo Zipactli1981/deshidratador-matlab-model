@@ -40,3 +40,7 @@
 06_manuscript/article_Q1/review/thesis_legacy_HB200/tables/TABLE_T4_T_vs_C_joint_ranks.csv -text -diff
 06_manuscript/article_Q1/review/thesis_legacy_HB200/tables/TABLE_T5_gasLP_context.csv -text -diff
 06_manuscript/article_Q1/review/thesis_legacy_HB200/tables/TABLE_T6_timing_experiment.csv -text -diff
+
+# Robust operating-region frozen guard inputs — hash exact worktree bytes
+02_src_limpio/audit/robust_operating_region_v01/frozen_config.json -text
+02_src_limpio/audit/robust_operating_region_v01/source_lock.json -text

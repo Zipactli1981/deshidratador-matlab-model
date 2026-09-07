@@ -1,0 +1,14 @@
+{
+  "name": null,
+  "basis": "CURRENT_COST_E3D",
+  "objective_blob": "d7fdcb88f94ef8a766af438ad7bb40f28bcda2bc",
+  "mat_path": null,
+  "sha256": null,
+  "x_field": null,
+  "f_field": null,
+  "allowed_names": [
+    "HB200_CURRENT",
+    "C"
+  ],
+  "status": "TEMPLATE_NOT_READY_NO_INITIALIZATION"
+}

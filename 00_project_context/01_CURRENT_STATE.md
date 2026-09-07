@@ -1,257 +1,96 @@
 # CURRENT STATE — Deshidratador MATLAB / Q1
 
-## Baseline científico Git
+## Estado vigente y evidencia Git
 
-```text
-Repository = D:\CODE\deshidratador
-Branch = main
-CORRECTED_R1_POSTRUN_BASELINE_HEAD = 8a794c389edd10f9750e10a27eca0ec58c14da2d
-Worktree = clean
-git diff --check = PASS
-origin/main divergence at CORRECTED_R1 postrun freeze = 0 behind / 2 ahead
-```
-
-Los dos commits locales que cerraron CORRECTED_R1 no habían sido publicados remotamente al cierre de esa fase.
-
-El HEAD vivo, el estado del worktree y la divergencia con `origin/main` son datos dinámicos y deben consultarse directamente con Git al inicio de cada sesión. Este archivo conserva baselines científicos y documentales; no pretende fijar el HEAD vivo del repositorio.
-
-## Commits de cierre
-
-Pre-execution freeze:
-```text
-3aacb69ec5972aeb5d155c78462715bb3f1f981c
-chore: freeze CORRECTED_R1 pre-execution baseline
-```
-
-Postrun freeze:
-```text
-8a794c389edd10f9750e10a27eca0ec58c14da2d
-docs: freeze CORRECTED_R1 validated postrun
-```
-
-## Histórico R1
-
-```text
-Seed = 61001
-PopulationSize = 24
-MaxGenerations = 50
-Mode = hybrid
-Reference = gasLP
-Finite solutions = 9
-Exitflag = 0 (MaxGenerations)
-Runtime ≈ 3.882 h
-```
-
-Artefacto histórico:
-```text
-SEEDAWARE_FORMAL_R1_ONLY_v96z_rngfix_20260727_185454/R1/
-SEEDAWARE_FORMAL_R1_ONLY_seed_61001_output.mat
-```
-
-SHA-256:
-```text
-A04D1ADCD769CE9D8ED858FA321D7AF6A22E42D1F8A954094084B4B5A2A2ECD0
-```
-
-Los 9 vectores históricos ya fueron reevaluados bajo COST-E3D.
-
-```text
-R1_EXISTING_POINTS_STATUS =
-REEVALUATED_SAMPLES_NOT_A_REOPTIMIZED_PARETO_FRONT
-```
-
-## CORRECTED_R1
-
-Runner:
-```text
-02_src_limpio/production/run_corrected_r1_cost_e3d_v96z.m
-```
-
-Git blob:
-```text
-075742ff72bc5b7a51e8c54b6122feea7a2fb345
-```
-
-SHA-256:
-```text
-AB481811872CA984F398D83A519C4C7A4584A2F1E401AE7F2F7CA9411EAE5B20
-```
-
-Configuración:
-```text
-seed = 61001
-RNG = twister
-PopulationSize = 24
-MaxGenerations = 50
-nvars = 4
-mode = hybrid
-referenceMode = gasLP
-
-lb = [0.0540767982118, 57.6832965028, 0.422252618341, 8.6517528081]
-ub = [0.0940767982118, 67.6832965028, 0.922252618341, 14]
-
-UseParallel = false
-FunctionTolerance = 1e-5
-ConstraintTolerance = 1e-6
-PlotFcn = []
-```
-
-## Solver
-
-```text
-MATLAB = 26.1.0.3312084 (R2026a) Update 4
-Global Optimization Toolbox = 26.1 (R2026a)
-CURRENT_ENVIRONMENT_COMPATIBILITY = PASS
-HISTORICAL_BUILD_EXACT = UNKNOWN
-HISTORICAL_BUILD_UNCERTAINTY = DOCUMENTARY_NON_MATERIAL
-FULL_SOLVER_DEFAULTS_AUDIT =
-PASS_WITH_DOCUMENTARY_BUILD_LIMITATION
-```
-
-## Ejecución
-
-```text
-CORRECTED_R1_EXECUTION = PASS
-Execution HEAD = 3aacb69ec5972aeb5d155c78462715bb3f1f981c
-Seed = 61001
-Exitflag = 0
-Generations = 50
-Funccount = 1200
-Runtime_h = 3.41749689275
-N_SOLUTIONS = 9
-N_FINITE = 9
-N_PENALIZED = 0
-MATLAB_ERROR = none
-```
-
-Motivo de parada:
-```text
-gamultiobj stopped because it exceeded options.MaxGenerations.
-```
-
-Output:
-```text
-D:\CODE\deshidratador\05_runs\triobjective_formal_ga_v96m\
-CORRECTED_R1_COST_E3D_v96z_20260808_005736
-```
-
-## Postrun
-
-```text
-CORRECTED_R1_POSTRUN_INTERNAL_AUDIT = PASS
-CORRECTED_R1_RESULTS_INTERNALLY_VALIDATED = YES
-DETAIL_REPLAY_EVALUATIONS = 9
-F1_REPLAY_STATUS = PASS
-F2_REPLAY_STATUS = PASS
-F3_REPLAY_STATUS = PASS
-X_BOUNDS_STATUS = PASS
-MAT_CSV_LOG_CONSISTENCY = PASS
-PENALTY_STATUS = PASS_NO_PENALTY_ROWS
-ALL_REGISTERED_HASHES_PASS = YES
-```
-
-Replay:
-```text
-max_abs_diff_f1 = 0
-max_abs_diff_f2 = 0
-max_abs_diff_f3 = 0
-```
-
-Las diferencias MAT↔CSV son de representación decimal.
-
-Las 9 soluciones terminaron con `dry_time = 19.9 h`. `TMAX_REACHED` fue inferido de ese valor porque el objective detail no propaga directamente `termination_status`.
-
-## Estado científico
-
-```text
-CORRECTED_R1_PARETO_FRONT_STATUS =
-INTERNAL_RUN_VALIDATED
-```
-
-La interpretación de `CORRECTED_R1` ya no debe quedar condicionada exclusivamente a la comparación histórica R1 de 50 generaciones. La recuperación posterior de diseños de época de tesis cambia la procedencia histórica preferida para el manuscrito.
-
-## Recuperación histórica de tesis — HB200
-
-Decisión canónica vigente:
+Actualización documental: 2026-09-05. HB200 está cerrado científica y documentalmente; CORRECTED_R1/CR1-COMP no son la fase operativa actual.
 
 ```text
 PRIMARY_THESIS_LEGACY_BASELINE = HB200
+HB200_PRINCIPAL_HISTORICAL_BASELINE = SUPPORTED
 HB306_STATUS = RECOVERED_LATER_CHECKPOINT_PROVENANCE_UNRESOLVED
 HB306_EQUIVALENT_TO_THESIS_GENERATION_316 = NOT_PROVEN
 R1_50GEN_ROLE = AUXILIARY_REPRODUCIBILITY_CONTROL
+HB200_ARTIFACT_REGISTRATION_LOCAL_COMMIT = PASS
+HB200_PUSH = PASS
+HB200_REGISTRATION_COMMIT = 0e1233041e36dc0bf01ab314def3baf9e1c8faa0
+HB200_REGISTRATION_PARENT = aae8f34aa573f53cb3ad163f5565d08ce490e4c3
+LIVE_BRANCH_OBSERVED = main
+LIVE_HEAD_OBSERVED = 0e1233041e36dc0bf01ab314def3baf9e1c8faa0
+ORIGIN_MAIN_OBSERVED = 0e1233041e36dc0bf01ab314def3baf9e1c8faa0
+AHEAD_BEHIND_OBSERVED = 0 / 0
 ```
 
-La campaña HB200 fue reportada en la conversación activa como `THESIS_LEGACY_REEVALUATION_STATUS = PASS`, sin nueva optimización, sin `gamultiobj`, sin modificación de `C`, del manuscrito ni del código productivo. El reporte activo declara 44 diseños físicos únicos, reevaluación determinística bajo el modelo y objetivos actuales, y determinismo exacto en repeticiones centinela.
+Publicación confirmada por consulta remota de refs/heads/main. Son observaciones de este micropaso, no requisitos para futuros HEAD. La edición documental local posterior no altera ese commit. Entrada: staging vacío, tracked clean, cuatro entradas agrupadas untracked (36 archivos individuales); se preservan.
 
-Los resultados cuantitativos reportados incluyen:
+## Cierre científico HB200
+
+Fuentes verificables: paquete `06_manuscript/article_Q1/review/thesis_legacy_HB200/`, informe completo, auditoría de reproducibilidad, red-team, tablas T1–T6 e inventario registrado en `04_ARTIFACT_INDEX.md`. Los MAT primarios upstream/frozen permanecen fuera del paquete compacto, preservados por checksum; las tablas derivadas no los sustituyen.
 
 ```text
+THESIS_LEGACY_ARTIFACT_REGISTRATION = CLOSED_PUBLISHED
+THESIS_LEGACY_REEVALUATION_STATUS = PASS
 UNIQUE_FINITE_THESIS_DESIGNS = 44
 HISTORICALLY_ND_DESIGNS = 16
 CURRENTLY_ND_THESIS_DESIGNS = 9
 PERSISTENT_ND = 6
 LOST_ND_STATUS = 10
 GAINED_ND_STATUS = 3
-THESIS_REPORTED_COMPROMISE_ID = T025
-T_DOMINATES_C_PAIRS = 2
-C_DOMINATES_T_PAIRS = 6
-T_C_INCOMPARABLE_PAIRS = 73
-T_C_EXACT_EQUAL_PAIRS = 0
-T_CONTRIBUTION_TO_JOINT_RANK1 = 7
-C_CONTRIBUTION_TO_JOINT_RANK1 = 7
 DETERMINISM_CHECK = EXACT
-GAMULTIOBJ_EXECUTED = NO
-NEW_OPTIMIZATION_RUNS = 0
-PRODUCTIVE_CODE_CHANGED = NO
-FROZEN_C_CHANGED = NO
-MANUSCRIPT_CHANGED = NO
+TIMING_EXPERIMENT_COMPLETED = YES
+T_REC_MATERIAL_EFFECT_DETECTED = YES_ALL_3_PRESPECIFIED_DESIGNS
+T_REC_EFFECT_DIRECTION = NONMONOTONIC_AND_DESIGN_OBJECTIVE_DEPENDENT
 ```
 
-Compromiso de tesis reportado:
+La comparación de núcleos T(9)–C(9) registra 2 pares T→C, 6 C→T, 73 incomparables y contribuciones 7/7 al joint rank-1. T025 permanece ND dentro de T, pero ocupa joint rank 2 y es dominado por C05. El determinismo corresponde a las repeticiones centinela auditadas, no prueba convergencia. `t_rec=0` no significa ausencia de recirculación.
+
+## Auditoría de transformación objetiva
 
 ```text
-T025_CURRENT_F = [0.0337092930359653, 0.219375216857587, 0.519403503839552]
-T025_STATUS_WITHIN_T = PERSISTENT_ND
-T025_JOINT_RANK = 2
-T025_DOMINATED_BY = C05
+HB200_OBJECTIVE_TRANSFORMATION_AUDIT = PASS
+EVIDENCE_LEVEL = HIGH
+OBJECTIVE_ORDER_REORDERING_ALONE_PRESERVES_PARETO = YES
+COMPLETE_HISTORICAL_TO_CURRENT_TRANSFORMATION_PRESERVES_PARETO = NO
+DESIGN_DEPENDENT_DENOMINATORS_FOUND = YES
+DESIGN_DEPENDENT_TERMS_FOUND = YES
+ACCOUNTING_BASIS_CHANGE_FOUND = YES
+CAN_OBJECTIVE_TRANSFORMATION_EXPLAIN_16_TO_9 = YES
+HB200_GLOBAL_PARETO_OPTIMALITY_SUPPORTED = NO
+C_AS_OPTIMIZER_SUPERIORITY_EVIDENCE = NO
+C_AS_FORMULATION_CONTROL_SPACE_BENCHMARK = SUPPORTED_WITH_PARTIAL_CONFOUNDING
 ```
 
-**Limitación documental actual:** los artefactos primarios de esta campaña (`THESIS_LEGACY_SCIENTIFIC_REPORT_COMPLETE.md`, manifest, auditoría de reproducibilidad, red-team, inventario SHA-256 y tablas/figuras asociadas) no están montados en el contexto activo de este Project. Por tanto, sus rutas y hashes no se inventan y los resultados anteriores se conservan explícitamente como `REPORTED_IN_ACTIVE_CONVERSATION_PENDING_ARTIFACT_REGISTRATION`.
+Base documental de esta conclusión: T1 (objetivos históricos), T2 (reevaluación), T3 (transiciones), informe HB200 y código COST-E3D: `objective_productive_corrected_v96j_triobjective_CO2_fix1`, su base `v95j_endpoint_TMAX_corrected` y `calc_cost_breakdown`. No se presupone un informe independiente versionado de la auditoría.
+
+La permutación histórica [costo, MR, CO2 total] → actual [MR, costo específico, CO2 específico] por sí sola conserva dominancia. La transformación completa no: agua removida = (Mi−M_terminal(x))*md; costo y emisiones dependen de tiempo, energía auxiliar y estado terminal del diseño. Cambian la base contable y el tratamiento físico terminal. Las tablas muestran inversiones de orden entre diseños incluso tras emparejar objetivos por significado (MR: T003/T009; costo: T034/T037; emisiones: T027/T004). Por tanto no existe una simple transformación estrictamente creciente común que explique todos los valores. El 16→9 es compatible con estos mecanismos y está documentado; no se identifica una contribución causal aislada de cada término sin nuevas evaluaciones, que no están autorizadas.
+
+HB200 es el principal baseline histórico trazable y una aproximación no dominada histórica recuperada (su núcleo histórico), no un frente global/exacto. C es un piloto congelado de formulación actual. Base objetiva y espacio de control están parcialmente confundidos en T–C; no prueban superioridad del optimizador.
+
+## Antecedente y metodología histórica congelada
+
+CORRECTED_R1 = CLOSED_PASS, postrun baseline `8a794c389edd10f9750e10a27eca0ec58c14da2d`; C conserva sus nueve soluciones y su configuración piloto de 50 generaciones. No se reabre esta campaña. `06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md` v1.0 sigue congelado para H(9)–C(9), SHA-256 `8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3`; no se modifica retrospectivamente.
+
+## Fase siguiente y límites
 
 ```text
-THESIS_LEGACY_ARTIFACT_REGISTRATION = PENDING
-THESIS_LEGACY_NUMERIC_EVIDENCE_CANONICALLY_VERIFIED_IN_ACTIVE_CONTEXT = NO
+CURRENT_PHASE = ROBUST_OPERATING_REGION_IMPLEMENTATION_VERSIONING_STAGED
+ROBUST_OPERATING_REGION_PROTOCOL_FREEZE = PASS
+ROBUST_OPERATING_REGION_IMPLEMENTATION = PASS_STATIC_AND_SYNTHETIC
+IMPLEMENTATION_INITIAL_AUDIT = BLOCKED
+BLOCKING_FINDINGS = REPAIRED
+REPAIR = HASH_PORTABILITY_PROVENANCE_TRANSACTIONAL_POSTRUN_AUDIT_SEED_COVERAGE
+IMPLEMENTATION_REAUDIT = PASS
+MATLAB_DRY_VALIDATION = PASS_WITH_RUNTIME_DEFAULTS_TRACED
+MATLAB_RUNTIME = R2026a_UPDATE_4_GLOBAL_OPTIMIZATION_TOOLBOX_26_1
+CREATION_FCN_EFFECTIVE = gacreationuniform
+CROSSOVER_FCN_EFFECTIVE = crossoverintermediate
+MUTATION_FCN_EFFECTIVE = mutationadaptfeasible
+CURRENT_GATE = ROBUST_OPERATING_REGION_IMPLEMENTATION_LOCAL_COMMIT
+NEXT_GATE = ROBUST_OPERATING_REGION_IMPLEMENTATION_LOCAL_COMMIT
+MATLAB_EXECUTION_AUTHORIZED = NO
+GAMULTIOBJ_EXECUTION_AUTHORIZED = NO
+OPTIMIZATION_AUTHORIZED = NO
+NEW_OPTIMIZATION_AUTHORIZED = NO
+CAMPAIGN_EXECUTION_AUTHORIZED = NO
 ```
 
-## Protocolo comparativo R1-50gen v1.0
-
-```text
-COMPARATIVE_PROTOCOL_VERSION = v1.0
-PROTOCOL_STATUS = FROZEN_HISTORICAL_PROTOCOL
-PROTOCOL_ARTIFACT = 06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md
-PROTOCOL_SHA256 = 8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3
-```
-
-El protocolo v1.0 permanece congelado como registro metodológico de la comparación `H(9)-vs-C(9)`. **No se modifica retrospectivamente** para convertirlo en el análisis HB200. La arquitectura científica posterior constituye un rediseño separado.
-
-## Arquitectura científica propuesta para manuscrito v04
-
-```text
-V04_REDESIGN_JUSTIFIED = YES
-PROPOSED_V04_SCIENTIFIC_ARCHITECTURE =
-Gas-LPG context -> thesis-era HB200 physical designs -> deterministic common-basis reevaluation -> frozen current C portfolio -> paired recirculation-timing insight
-```
-
-Calificaciones obligatorias:
-- comparación de conjuntos finitos, no demostración de frente Pareto verdadero/global;
-- HB200 se usa por procedencia histórica, no como garantía de convergencia;
-- el efecto de cambio de base objetiva y la ampliación del espacio de control están parcialmente confundidos para atribución directa `T-vs-C`;
-- `HB306` no se identifica retrospectivamente con la generación 316 de la tesis.
-
-## Siguiente fase
-
-```text
-NEXT_PHASE = THESIS_LEGACY_ARTIFACT_REGISTRATION_AND_V04_HANDOFF
-```
-
-Objetivo inmediato: registrar y verificar rutas, hashes y roles de los artefactos HB200 ya producidos. Una vez completado ese registro, podrá abrirse la edición del manuscrito v04. No se autoriza implícitamente ninguna nueva ejecución de MATLAB, `gamultiobj`, replays, optimización, cambio de código productivo, staging, commit, push, PR o merge.
+Protocolo nuevo congelado: `06_manuscript/article_Q1/review/CURRENT_FORMULATION_ROBUST_OPERATING_REGION_PROTOCOL_v01.md`, SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`. Cinco semillas 61001–61005, población 24, máximo 200 generaciones, dominio completo COST-E3D; suficiencia y políticas preespecificadas. La auditoría inicial BLOCKED se conserva como historia; reparación y reauditoría PASS. El dry validation cerró parsing/runtime, paths, hashes, lock y options sin llamar solver/modelo/objective. En R2026a, `private/validate.m` selecciona los tres defaults anteriores; el bloque crossover 139–149 aplica por `MultiObjective=true`. Paquete de 16 archivos staged y pendiente de commit local separado. La campaña científica sigue no autorizada.

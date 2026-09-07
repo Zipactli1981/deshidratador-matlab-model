@@ -177,3 +177,30 @@ Todas las rutas de esta sección se resuelven bajo `06_manuscript/article_Q1/rev
 ### Outputs preservados fuera del conjunto compacto
 
 Los MAT primarios/frozen del RUN, CSV raw o aliases redundantes, `THESIS_LEGACY_MATLAB_EXECUTION_DIARY.txt`, `THESIS_LEGACY_EXECUTION_SUMMARY.mat` y `THESIS_LEGACY_SCIENTIFIC_REPORT.md` permanecen fuera del conjunto versionable y preservados por el inventario SHA-256. No se modificó el protocolo H(9)-vs-C(9) v1.0.
+
+## Protocolo nuevo de región operativa robusta — freeze local 2026-09-05
+
+| Ruta | Rol | SHA-256 | Upstream / validación / estado |
+|---|---|---|---|
+| `06_manuscript/article_Q1/review/CURRENT_FORMULATION_ROBUST_OPERATING_REGION_PROTOCOL_v01.md` | `METHODOLOGICAL_PROTOCOL` | `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599` | Autorización de campaña nueva; COST-E3D y opciones canónicas en Git `0e1233041e36dc0bf01ab314def3baf9e1c8faa0`; revisión estática de consistencia y hash de bytes locales; `FROZEN_DOCUMENTARY_PRE_EXECUTION` |
+
+### Implementación no productiva auditada y dry validation
+
+Raíz: `02_src_limpio/audit/robust_operating_region_v01/`.
+
+| Archivo | Rol | SHA-256 | Upstream / validación |
+|---|---|---|---|
+| `README.md` | `IMPLEMENTATION_NOTE` | `3BE88A3F6AAFB883C2B0C466EFFDA997C8256C029E566ADBF29ADFD7A4F17F05` | Protocolo v01; audit/repair/reaudit y dry validation |
+| `benchmark_manifest.template.json` | `BENCHMARK_PROVENANCE_TEMPLATE` | `A035F167A97AFB6ECF9A2791F1530AE0F96491E7077887044805605D389D70FD` | Benchmarks externos HB200/C; no inicialización |
+| `campaign_manifest.template.json` | `CAMPAIGN_PROVENANCE_TEMPLATE` | `8555568A336587CB81318CD472BC11D67712E1C7E251D7DAF7E660725C8984AD` | Campos fail-closed por run/campaña |
+| `frozen_config.json` | `FROZEN_CAMPAIGN_CONFIG` | `5131DA361C7C8688D755C724F2830C057980F7F2444DDC3B8983CCEEF4DCFE47` | Bytes exactos; `-text` path-scoped; configuración 5×24×200 |
+| `requirements.txt` | `ANALYSIS_DEPENDENCY_SPEC` | `9403738B9BD9E46261005F7D1E26BFAC7048400205C30F2275AF43700B257ABB` | Runtime sintético Python, no modelo |
+| `ror_core.py` | `NONPRODUCTIVE_ANALYSIS_HARNESS` | `4861F17E38CDF4F059AB3FB56370E0C5ECBE59C538B6F1DC23DFDA5FF20AE7CC` | Dominancia exacta, N_POOL, IGD+, HV, suficiencia, recomendaciones |
+| `ror_postrun.py` | `NONPRODUCTIVE_POSTRUN_HARNESS` | `3DE3CDDB69B5563C6C56FC9CFD65D614AAC42D51688B3B3006A2CAB396EEBE5D` | Preflight/derivación/publicación transaccional |
+| `run_ror_campaign.m` | `NONPRODUCTIVE_CAMPAIGN_RUNNER` | `06EC1FAAB6CBB0B141517EBD8A899A4E5B0604E5D036F6E7A614424B897DBB13` | Runner fail-closed; no warm start/autoretry |
+| `source_lock.json` | `PRODUCTIVE_SOURCE_LOCK` | `5F528E34A97BB279478BDD0FF5CF1D3A78EF7864D392CCC545162DAF0E2765EB` | 53 dependencias; bytes exactos; `-text` path-scoped |
+| `test_ror_synthetic.py` | `SYNTHETIC_TEST_HARNESS` | `DF1D3EA9A6391F31BD9BC1C6688B8CE098AE2097A8FF39C33E839A3C825D3E47` | 29/29 PASS; no MATLAB/modelo |
+
+El registro HB200 anterior describe el estado de preparación local de aquel micropaso: su cierre posterior fue publicado mediante `0e1233041e36dc0bf01ab314def3baf9e1c8faa0`. En esta revisión main/origin/main coinciden con ese commit y se verifican nuevamente 25/25 hashes de los artefactos compactos y arneses. No se alteran sus bytes ni roles; MAT primarios siguen fuera del paquete compacto y preservados por checksum.
+
+El protocolo nuevo conserva separado e intacto H(9)–C(9) v1.0. No existen outputs de la campaña nueva. Implementación reauditada y dry validation PASS, sin llamadas científicas. Trace runtime crossover externo no versionado: `C:\Program Files\MATLAB\R2026a\toolbox\globaloptim\globaloptim\private\validate.m`, SHA-256 `4EBF77F7E9D1D18B665C8B948AC639DD7BBD8DAB0FFAD3809AE3C013BF7214AB`, líneas 139–149. Siguiente gate: `ROBUST_OPERATING_REGION_IMPLEMENTATION_LOCAL_COMMIT`; ejecución científica NO autorizada.

@@ -1,0 +1,99 @@
+{
+  "protocol_sha256": "7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599",
+  "protocol_path": "06_manuscript/article_Q1/review/CURRENT_FORMULATION_ROBUST_OPERATING_REGION_PROTOCOL_v01.md",
+  "baseline": "0e1233041e36dc0bf01ab314def3baf9e1c8faa0",
+  "primary_run_count": 5,
+  "seeds": [
+    61001,
+    61002,
+    61003,
+    61004,
+    61005
+  ],
+  "rng": "twister",
+  "nvars": 4,
+  "lb": [
+    0.07,
+    45,
+    0,
+    0
+  ],
+  "ub": [
+    0.2,
+    70,
+    0.99,
+    19
+  ],
+  "mode": "hybrid",
+  "referenceMode": "gasLP",
+  "HB200_INITIALIZATION": false,
+  "C_INITIALIZATION": false,
+  "objective": "objective_productive_corrected_v96j_triobjective_CO2_fix1",
+  "options": {
+    "PopulationSize": 24,
+    "MaxGenerations": 200,
+    "UseParallel": false,
+    "FunctionTolerance": 0.00001,
+    "ConstraintTolerance": 0.000001,
+    "Display": "iter",
+    "PlotFcn": [],
+    "OutputFcn": [],
+    "InitialPopulationMatrix": [],
+    "InitialScoresMatrix": [],
+    "InitialPopulationRange": [
+      -10,
+      10
+    ],
+    "PopulationType": "doubleVector",
+    "ParetoFraction": 0.35,
+    "DistanceMeasureFcn": [
+      "distancecrowding",
+      "phenotype"
+    ],
+    "SelectionFcn": [
+      "selectiontournament",
+      2
+    ],
+    "CreationFcn": [],
+    "CrossoverFcn": [],
+    "MutationFcn": [],
+    "CrossoverFraction": 0.8,
+    "MigrationDirection": "forward",
+    "MigrationFraction": 0.2,
+    "MigrationInterval": 20,
+    "MaxStallGenerations": 100,
+    "HybridFcn": [],
+    "PlotInterval": 1,
+    "MaxTime": "Inf",
+    "UseVectorized": false,
+    "IntegerTolerance": 0.00001
+  },
+  "effective_functions": [
+    "gacreationuniform",
+    "crossoverintermediate",
+    "mutationadaptfeasible"
+  ],
+  "environment": {
+    "matlab": "26.1.0.3312084 (R2026a) Update 4",
+    "globaloptim": "26.1",
+    "platform": "PCWIN64"
+  },
+  "analysis": {
+    "igd_max": 0.1,
+    "igd_median": 0.05,
+    "hv_ratio": 0.9,
+    "extreme_distance": 0.1,
+    "extreme_runs": 4,
+    "reference": [
+      1.1,
+      1.1,
+      1.1
+    ],
+    "normalization": "N_POOL_MIN_MAX",
+    "dominance": "EXACT_STRICT",
+    "universe": "RETURNED_AND_FINAL_POPULATION",
+    "near_tie_diagnostic": 1e-12
+  },
+  "execution_authorized": false,
+  "next_gate": "ROBUST_OPERATING_REGION_IMPLEMENTATION_AUDIT"
+}

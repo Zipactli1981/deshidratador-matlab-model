@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "status": "TEMPLATE_NOT_EXECUTED",
+  "campaign_id": null,
+  "authorization_record": null,
+  "expected_git_head": null,
+  "observed_git_head": null,
+  "start_timestamp": null,
+  "end_timestamp": null,
+  "elapsed_time_seconds": null,
+  "exact_output_directory": null,
+  "exact_primary_output_paths": null,
+  "solver_options": null,
+  "exitflag": null,
+  "generations": null,
+  "funccount": null,
+  "solver_output": null,
+  "productive_dependency_hashes": null,
+  "protocol_sha256": "7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599",
+  "seeds": [
+    61001,
+    61002,
+    61003,
+    61004,
+    61005
+  ],
+  "source_lock_sha256": null,
+  "config_sha256": null,
+  "execution_authorized": false,
+  "output_root": "05_runs/robust_operating_region_v01/<campaign_id>/",
+  "seed_directory": "seed_<seed>",
+  "required_seed_files": [
+    "FROZEN_CONFIG.json",
+    "PRIMARY_OUTPUT.mat",
+    "EVALUATION_DETAILS.mat",
+    "SOLVER_DIARY.txt",
+    "FINAL_CANDIDATES.csv",
+    "SEED_SHA256.json"
+  ],
+  "postrun_directories": [
+    "audit",
+    "tables",
+    "numeric",
+    "figures"
+  ],
+  "next_gate": "ROBUST_OPERATING_REGION_IMPLEMENTATION_REAUDIT"
+}
