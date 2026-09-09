@@ -2,7 +2,7 @@
 
 ## Estado vigente y evidencia Git
 
-Actualización documental: 2026-09-05. HB200 está cerrado científica y documentalmente; CORRECTED_R1/CR1-COMP no son la fase operativa actual.
+Actualización documental: 2026-09-09. HB200 está cerrado científica y documentalmente; CORRECTED_R1/CR1-COMP no son la fase operativa actual.
 
 ```text
 PRIMARY_THESIS_LEGACY_BASELINE = HB200
@@ -15,12 +15,12 @@ HB200_PUSH = PASS
 HB200_REGISTRATION_COMMIT = 0e1233041e36dc0bf01ab314def3baf9e1c8faa0
 HB200_REGISTRATION_PARENT = aae8f34aa573f53cb3ad163f5565d08ce490e4c3
 LIVE_BRANCH_OBSERVED = main
-LIVE_HEAD_OBSERVED = cc429c059807127063175a62ec3aa3fcff986edf
-ORIGIN_MAIN_OBSERVED = cc429c059807127063175a62ec3aa3fcff986edf
+LIVE_HEAD_OBSERVED = 258f6ad28e98ca095aeca5e41cd255df1cda91ad
+ORIGIN_MAIN_OBSERVED = 258f6ad28e98ca095aeca5e41cd255df1cda91ad
 AHEAD_BEHIND_OBSERVED = 0 / 0
 ```
 
-El HEAD vigente registra la infraestructura de la campaña robusta; main y origin/main coinciden. Son observaciones de este micropaso, no requisitos para futuros HEAD. A la entrada de este gate: staging vacío, tres archivos tracked de implementación modificados y 37 untracked individuales: 36 preexistentes ajenos preservados más el nuevo helper ROR.
+El HEAD vigente registra la infraestructura primaria ROR; main y origin/main coinciden. Son observaciones de este micropaso, no requisitos para futuros HEAD. A la entrada del gate de versionado recovery: staging y cambios tracked vacíos, cinco archivos recovery nuevos autorizados y 36 untracked preexistentes ajenos preservados.
 
 ## Cierre científico HB200
 
@@ -69,35 +69,24 @@ HB200 es el principal baseline histórico trazable y una aproximación no domina
 
 CORRECTED_R1 = CLOSED_PASS, postrun baseline `8a794c389edd10f9750e10a27eca0ec58c14da2d`; C conserva sus nueve soluciones y su configuración piloto de 50 generaciones. No se reabre esta campaña. `06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md` v1.0 sigue congelado para H(9)–C(9), SHA-256 `8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3`; no se modifica retrospectivamente.
 
-## Fase siguiente y límites
+## Recuperación ROR tras interrupción externa
 
 ```text
-CURRENT_PHASE = ROBUST_OPERATING_REGION_OPTIONS_REPAIR_VERSIONING
-ROBUST_OPERATING_REGION_PROTOCOL_FREEZE = PASS
-ROBUST_OPERATING_REGION_IMPLEMENTATION = PASS_STATIC_AND_SYNTHETIC
-IMPLEMENTATION_INITIAL_AUDIT = BLOCKED
-BLOCKING_FINDINGS = REPAIRED
-REPAIR = HASH_PORTABILITY_PROVENANCE_TRANSACTIONAL_POSTRUN_AUDIT_SEED_COVERAGE
-IMPLEMENTATION_REAUDIT = PASS
-MATLAB_DRY_VALIDATION = PASS_WITH_RUNTIME_DEFAULTS_TRACED
-MATLAB_RUNTIME = R2026a_UPDATE_4_GLOBAL_OPTIMIZATION_TOOLBOX_26_1
-CREATION_FCN_EFFECTIVE = gacreationuniform
-CROSSOVER_FCN_EFFECTIVE = crossoverintermediate
-MUTATION_FCN_EFFECTIVE = mutationadaptfeasible
-ROR_CAMPAIGN_EXECUTION_ATTEMPT = BLOCKED_PREEXECUTION_OPTIONS_REPRESENTATION_MISMATCH
-RUNS_STARTED = 0
-OPTIONS_MISMATCH_DIAGNOSIS = REPRESENTATION_ONLY
-OPTIONS_REPAIR = PASS
-FULL_PYTHON_REGRESSION = 34/34_PASS
-MATLAB_PREEXECUTION_DRY_RECHECK = PASS
+ROR_ORIGINAL_VALID_SEEDS = 61001,61002
+ROR_INTERRUPTED_SEED = 61003
+ROR_INTERRUPTION_CAUSE = EXTERNAL_WINDOWS_UPDATE_REBOOT
+ROR_INTERRUPTED_ATTEMPT_RESUMABLE = NO
+ROR_RECOVERY_ORCHESTRATION = PASS_IMPLEMENTED_NOT_EXECUTED
+ROR_RECOVERY_CAMPAIGN_ID = ROR_PRIMARY_20260907_RECOVERY_FROM_61003_A1
+ROR_RECOVERY_SEEDS = 61003,61004,61005
+FINAL_PRIMARY_SEED_SET_IF_RECOVERY_COMPLETES = 61001,61002,61003,61004,61005
+WINDOWS_RESTART_RISK = SAFE_FOR_LONG_RUN
+RECOVERY_SYNTHETIC_TESTS = 6/6_PASS
+RECOVERY_MATLAB_DRY_VALIDATION = PASS
+RECOVERY_CHECKCODE = PASS_0_MESSAGES
 SCIENTIFIC_CONFIGURATION_UNCHANGED = YES
-CURRENT_GATE = ROBUST_OPERATING_REGION_OPTIONS_REPAIR_VERSIONING
-NEXT_GATE = ROBUST_OPERATING_REGION_OPTIONS_REPAIR_LOCAL_COMMIT
-MATLAB_EXECUTION_AUTHORIZED = NO
-GAMULTIOBJ_EXECUTION_AUTHORIZED = NO
-OPTIMIZATION_AUTHORIZED = NO
-NEW_OPTIMIZATION_AUTHORIZED = NO
-CAMPAIGN_EXECUTION_AUTHORIZED = NO
+CURRENT_GATE = ROR_RECOVERY_ORCHESTRATION_VERSIONING
+RECOVERY_EXECUTION_AUTHORIZED = NO
 ```
 
-Protocolo nuevo congelado: `06_manuscript/article_Q1/review/CURRENT_FORMULATION_ROBUST_OPERATING_REGION_PROTOCOL_v01.md`, SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`. Cinco semillas 61001–61005, población 24, máximo 200 generaciones, dominio completo COST-E3D; suficiencia y políticas preespecificadas. El intento de campaña no alcanzó solver/modelo/objective: MATLAB R2026a normalizó `PopulationType` de `doubleVector` a `doublevector` y el guard literal bloqueó antes de crear outputs. La reparación canonicaliza exclusivamente esas dos representaciones para comparar, preserva provenance cruda y mantiene estrictos los otros 27 campos. Helper MATLAB directo, dry preexecution, paridad postrun, source lock 53/53 y regresión Python completa 34/34 PASS. No hubo rerun; la campaña científica requiere una nueva autorización después del versionado/publicación de esta reparación.
+Protocolo congelado intacto: `06_manuscript/article_Q1/review/CURRENT_FORMULATION_ROBUST_OPERATING_REGION_PROTOCOL_v01.md`, SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`. La campaña original produjo salidas primarias completas y verificadas para 61001 y 61002. El intento 61003 fue interrumpido por reinicio externo de Windows, no es resumible y se conserva únicamente como `INTERRUPTED_ATTEMPT_EVIDENCE`; no integra el conjunto primario ni aporta población, scores, RNG o warm start. La infraestructura recovery separada quedó validada para ejecutar desde cero exactamente 61003–61005 bajo una autorización futura. No se ejecutó ninguna nueva optimización durante diseño o versionado.

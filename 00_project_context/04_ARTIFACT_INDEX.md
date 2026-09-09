@@ -204,4 +204,25 @@ Raíz: `02_src_limpio/audit/robust_operating_region_v01/`.
 
 El registro HB200 anterior describe el estado de preparación local de aquel micropaso: su cierre posterior fue publicado mediante `0e1233041e36dc0bf01ab314def3baf9e1c8faa0`. En esta revisión main/origin/main coinciden en `cc429c059807127063175a62ec3aa3fcff986edf`, que incorpora posteriormente la infraestructura ROR. No se alteran los bytes ni roles HB200; sus MAT primarios siguen fuera del paquete compacto y preservados por checksum.
 
-El protocolo nuevo conserva separado e intacto H(9)–C(9) v1.0. No existen outputs de la campaña nueva. El intento autorizado se bloqueó antes de solver/modelo/objective por una representación de `PopulationType`; cero seeds y cero reruns. La reparación no productiva está validada por helper MATLAB directo, dry preexecution, paridad postrun, fixture MAT y regresión completa 34/34. Trace runtime crossover externo no versionado: `C:\Program Files\MATLAB\R2026a\toolbox\globaloptim\globaloptim\private\validate.m`, SHA-256 `4EBF77F7E9D1D18B665C8B948AC639DD7BBD8DAB0FFAD3809AE3C013BF7214AB`, líneas 139–149. Siguiente gate: `ROBUST_OPERATING_REGION_OPTIONS_REPAIR_LOCAL_COMMIT`; ejecución científica NO autorizada.
+El protocolo nuevo conserva separado e intacto H(9)–C(9) v1.0. Trace runtime crossover externo no versionado: `C:\Program Files\MATLAB\R2026a\toolbox\globaloptim\globaloptim\private\validate.m`, SHA-256 `4EBF77F7E9D1D18B665C8B948AC639DD7BBD8DAB0FFAD3809AE3C013BF7214AB`, líneas 139–149.
+
+## Orquestación de recuperación ROR — implementada, no ejecutada
+
+Campaign recovery reservado para una autorización futura: `ROR_PRIMARY_20260907_RECOVERY_FROM_61003_A1`. Fuentes primarias finales previstas: 61001/61002 desde `ROR_PRIMARY_20260907_REAUTHORIZED`; 61003/61004/61005 desde recovery, con 61003 nuevamente desde cero. Base de validación común: guards positivos/negativos PASS; fixtures temporales recovery 6/6 PASS; MATLAB dry PASS; checkcode 0 mensajes; cero llamadas a `gamultiobj`, modelo u objective y cero optimizaciones.
+
+| Ruta | Rol | SHA-256 | Upstream / validación |
+|---|---|---|---|
+| `02_src_limpio/audit/robust_operating_region_v01/run_ror_recovery_campaign.m` | `NONPRODUCTIVE_RECOVERY_RUNNER` | `AED03018ADBB8055FD26C06EA38FA7D0192CBE98A23C8B4BC16EC6C85EB06226` | Subset fijo 61003–61005; fresh start; manifest y provenance recovery; fail-closed |
+| `02_src_limpio/audit/robust_operating_region_v01/ror_recovery_guards.m` | `NONPRODUCTIVE_RECOVERY_GUARD` | `9EB92F5D006128B361ACCF4411E62811184C537A5A1CFDA7CDD327F914C54ACB` | Unión final exacta, exclusiones, configuración y warm-start guards; MATLAB dry PASS |
+| `02_src_limpio/audit/robust_operating_region_v01/ror_recovery.py` | `NONPRODUCTIVE_RECOVERY_PROVENANCE_HARNESS` | `473C2CF7063FEA765FF9C8FC8F5667FBDBE2E439F4947EAF293AE05EBF303492` | Auditoría read-only de originales y construcción sintética de identidad/provenance |
+| `02_src_limpio/audit/robust_operating_region_v01/test_ror_recovery_dry.m` | `RECOVERY_DRY_TEST` | `971D60E005A9E28655F797A68016952D4349095CAC2A140EFBF4326A5B4A8563` | Guards y `optimoptions`; PASS; checkcode 0; sin ejecución científica |
+| `02_src_limpio/audit/robust_operating_region_v01/test_ror_recovery_synthetic.py` | `RECOVERY_SYNTHETIC_TEST` | `0627BB0FB5BED627284D1261CC314D54CD976D5292D8D8759588CCF238562A1E` | Fixtures temporales; 6/6 PASS; identidad final exacta y casos negativos |
+
+### Evidencia del intento interrumpido 61003 — fuera del conjunto versionable
+
+| Ruta | Rol | SHA-256 | Estado |
+|---|---|---|---|
+| `05_runs/robust_operating_region_v01/ROR_PRIMARY_20260907_REAUTHORIZED/seed_61003/FROZEN_CONFIG.json` | `INTERRUPTED_ATTEMPT_EVIDENCE` | `0B9638B4841D4C887DE8F78630FEEDE47B2D574C2399742EF0DB5FF1B9C858F7` | `NOT_PRIMARY_OPTIMIZATION_OUTPUT`; preservado, no resumible, no staged |
+| `05_runs/robust_operating_region_v01/ROR_PRIMARY_20260907_REAUTHORIZED/seed_61003/SOLVER_DIARY.txt` | `INTERRUPTED_ATTEMPT_EVIDENCE` | `4C02A0578076D52226C45EF5CC4F3536D6EF4AE59F1B15891B548C77D1E8FC9C` | `NOT_PRIMARY_OPTIMIZATION_OUTPUT`; preservado, no resumible, no staged |
+
+Las salidas completas 61001/61002 conservan integridad contra sus inventarios `SEED_SHA256.json`. El intento parcial 61003 no integra el conjunto primario, no aporta warm start/población/scores/RNG y no fue movido, renombrado ni modificado. Siguiente gate tras publicar: autorización explícita de recovery execution; ejecución científica NO autorizada en este estado.

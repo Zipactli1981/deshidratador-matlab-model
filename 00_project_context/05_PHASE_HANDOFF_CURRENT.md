@@ -11,12 +11,12 @@ HB200_REGISTRATION_COMMIT = 0e1233041e36dc0bf01ab314def3baf9e1c8faa0
 HB200_ARTIFACT_REGISTRATION_LOCAL_COMMIT = PASS
 HB200_PUSH = PASS
 LIVE_BRANCH_OBSERVED = main
-LIVE_HEAD_OBSERVED = cc429c059807127063175a62ec3aa3fcff986edf
-ORIGIN_MAIN_OBSERVED = cc429c059807127063175a62ec3aa3fcff986edf
+LIVE_HEAD_OBSERVED = 258f6ad28e98ca095aeca5e41cd255df1cda91ad
+ORIGIN_MAIN_OBSERVED = 258f6ad28e98ca095aeca5e41cd255df1cda91ad
 AHEAD_BEHIND_OBSERVED = 0 / 0
 ```
 
-Consulta local/remota: 2026-09-05. El commit de registro es un baseline, no un HEAD obligatorio futuro. Entrada sin cambios tracked/staged; cuatro preexistencias untracked agrupadas equivalen a 36 archivos. El paquete compacto HB200 está publicado; sus rutas, roles y hashes constan en ARTIFACT_INDEX.
+Consulta local/remota: 2026-09-09. El commit de registro es un baseline, no un HEAD obligatorio futuro. Al entrar al versionado recovery no había cambios tracked ni staged; se preservan 36 untracked preexistentes ajenos. El paquete compacto HB200 está publicado; sus rutas, roles y hashes constan en ARTIFACT_INDEX.
 
 ## Evidencia cerrada que no debe reconstruirse
 
@@ -28,37 +28,31 @@ Consulta local/remota: 2026-09-05. El commit de registro es un baseline, no un H
 
 CORRECTED_R1/CR1-COMP son antecedentes cerrados, no fase vigente. El protocolo H(9)–C(9) v1.0 permanece intacto; no adaptarlo retrospectivamente a HB200 ni a la campaña nueva.
 
-## Gate vigente tras reparación representacional de options
+## Gate vigente — orquestación de recuperación ROR
 
 ```text
-CURRENT_PHASE = ROBUST_OPERATING_REGION_OPTIONS_REPAIR_VERSIONING
-ROBUST_OPERATING_REGION_PROTOCOL_FREEZE = PASS
-ROBUST_OPERATING_REGION_IMPLEMENTATION = PASS_STATIC_AND_SYNTHETIC
-IMPLEMENTATION_INITIAL_AUDIT = BLOCKED
-BLOCKING_FINDINGS = REPAIRED
-REPAIR = HASH_PORTABILITY_PROVENANCE_TRANSACTIONAL_POSTRUN_AUDIT_SEED_COVERAGE
-IMPLEMENTATION_REAUDIT = PASS
-MATLAB_DRY_VALIDATION = PASS_WITH_RUNTIME_DEFAULTS_TRACED
-MATLAB_RUNTIME = R2026a_UPDATE_4_GLOBAL_OPTIMIZATION_TOOLBOX_26_1
-CREATION_FCN_EFFECTIVE = gacreationuniform
-CROSSOVER_FCN_EFFECTIVE = crossoverintermediate
-MUTATION_FCN_EFFECTIVE = mutationadaptfeasible
-ROR_CAMPAIGN_EXECUTION_ATTEMPT = BLOCKED_PREEXECUTION_OPTIONS_REPRESENTATION_MISMATCH
-RUNS_STARTED = 0
-RERUNS_EXECUTED = 0
-OPTIONS_MISMATCH_DIAGNOSIS = REPRESENTATION_ONLY
-OPTIONS_REPAIR = PASS
-FULL_PYTHON_REGRESSION = 34/34_PASS
-MATLAB_PREEXECUTION_DRY_RECHECK = PASS
-POSTRUN_DRY_INTEGRITY = PASS
+ORIGINAL_CAMPAIGN_ID = ROR_PRIMARY_20260907_REAUTHORIZED
+ORIGINAL_VALID_SEEDS = 61001,61002
+INTERRUPTED_SEED = 61003
+INTERRUPTED_ATTEMPT_CLASS = INTERRUPTED_ATTEMPT_EVIDENCE
+INTERRUPTED_ATTEMPT_INCLUDED_IN_PRIMARY_SET = NO
+INTERRUPTED_ATTEMPT_RESUMABLE = NO
+INTERRUPTION_CAUSE = EXTERNAL_WINDOWS_UPDATE_REBOOT
+RECOVERY_ORCHESTRATION = PASS_IMPLEMENTED_NOT_EXECUTED
+RECOVERY_CAMPAIGN_ID = ROR_PRIMARY_20260907_RECOVERY_FROM_61003_A1
+RECOVERY_SEEDS = 61003,61004,61005
+FINAL_PRIMARY_SEED_SET_IF_RECOVERY_COMPLETES = 61001,61002,61003,61004,61005
+SYNTHETIC_TESTS = 6/6_PASS
+MATLAB_DRY_VALIDATION = PASS
+CHECKCODE = PASS_0_MESSAGES
+GAMULTIOBJ_CALL_COUNT = 0
+MODEL_CALL_COUNT = 0
+OBJECTIVE_CALL_COUNT = 0
+OPTIMIZATION_RUNS = 0
 SCIENTIFIC_CONFIGURATION_UNCHANGED = YES
-CURRENT_GATE = ROBUST_OPERATING_REGION_OPTIONS_REPAIR_VERSIONING
-NEXT_GATE = ROBUST_OPERATING_REGION_OPTIONS_REPAIR_LOCAL_COMMIT
-MATLAB_EXECUTION_AUTHORIZED = NO
-GAMULTIOBJ_EXECUTION_AUTHORIZED = NO
-OPTIMIZATION_AUTHORIZED = NO
-NEW_OPTIMIZATION_AUTHORIZED = NO
-CAMPAIGN_EXECUTION_AUTHORIZED = NO
+CURRENT_GATE = ROR_RECOVERY_ORCHESTRATION_VERSIONING
+NEXT_GATE = ROR_RECOVERY_ORCHESTRATION_LOCAL_COMMIT
+RECOVERY_EXECUTION_AUTHORIZED = NO
 ```
 
-Protocolo congelado: `06_manuscript/article_Q1/review/CURRENT_FORMULATION_ROBUST_OPERATING_REGION_PROTOCOL_v01.md`, SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`; D014 permanece intacta. La campaña aún no se inició científicamente: cero seeds, cero llamadas a `gamultiobj`, modelo u objective y ningún output. El único bloqueo fue la normalización representacional `doubleVector`→`doublevector` de MATLAB R2026a. Runner y postrun ahora usan la misma equivalencia restringida a `PopulationType`, conservan el valor crudo y mantienen igualdad estricta del resto. Helper directo, dry preexecution, fixture MAT/postrun, source lock 53/53 y suite completa 34/34 PASS. No se realizó rerun. Tras versionado y publicación, el siguiente gate requiere una nueva autorización explícita de campaña.
+Protocolo congelado intacto: `06_manuscript/article_Q1/review/CURRENT_FORMULATION_ROBUST_OPERATING_REGION_PROTOCOL_v01.md`, SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`. Las seeds 61001 y 61002 están completas, persistidas y verificadas en la campaña original. El intento original de 61003 se conserva sin cambios, queda excluido de toda identidad primaria y no puede alimentar una continuación. La recuperación no es resume: 61003 se ejecutará desde cero junto con 61004 y 61005 mediante infraestructura fail-closed ya validada. Durante este gate no hubo optimizaciones, evaluaciones de modelo/objective ni outputs nuevos. Después de publicar la infraestructura se requiere autorización explícita separada para `ROR_RECOVERY_EXECUTION`.
