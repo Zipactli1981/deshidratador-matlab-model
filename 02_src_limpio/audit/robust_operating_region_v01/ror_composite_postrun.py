@@ -220,8 +220,21 @@ def validated_files(folder):
 
 def composite_audits(manifest_path):
     cfg = postrun.frozen_config()
-    return [postrun.audit_seed(Path(item["source_path"]), cfg)
+    return [_audit_composite_seed(item, cfg)
             for item in validate_composite_source_map(manifest_path)]
+
+
+def _audit_composite_seed(source, cfg):
+    families = {
+        "ORIGINAL_VALID_PRIMARY": "legacy",
+        "RECOVERY_PRIMARY": "recovery",
+    }
+    try:
+        family = families[source["role"]]
+    except (KeyError, TypeError) as exc:
+        raise Blocked("COMPOSITE_SOURCE_MAP: unknown source role for log provenance") from exc
+    return postrun.audit_seed(Path(source["source_path"]), cfg,
+                              expected_log_family=family)
 
 
 def analyze_composite(manifest_path, acknowledge=False):
@@ -440,7 +453,7 @@ def run_and_publish_composite(manifest_path, acknowledge=False, output_root=None
         raise Blocked("Composite scientific postrun publication requires explicit acknowledgement")
     sources = validate_composite_source_map(manifest_path)
     cfg = postrun.frozen_config()
-    audits = [postrun.audit_seed(Path(item["source_path"]), cfg) for item in sources]
+    audits = [_audit_composite_seed(item, cfg) for item in sources]
     result = analyze(audits)
     return publish_composite(manifest_path, result, audits, sources, output_root)
 

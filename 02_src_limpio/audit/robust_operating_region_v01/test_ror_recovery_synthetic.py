@@ -22,7 +22,7 @@ def original_seed_fixture(root, seed, cfg):
         "PRIMARY_OUTPUT.mat": b"synthetic primary",
         "EVALUATION_DETAILS.mat": b"synthetic details",
         "FINAL_CANDIDATES.csv": b"source,row,x1,x2,x3,x4,f1,f2,f3\n",
-        "SOLVER_DIARY.txt": f"ROR_SEED_COMPLETE {seed}\n".encode(),
+        "SOLVER_DIARY.txt": f"ROR_SEED_START {seed}\nROR_SEED_COMPLETE {seed}\n".encode(),
     }
     for name, payload in payloads.items():
         (folder / name).write_bytes(payload)
@@ -121,6 +121,9 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(runner.count("]=gamultiobj("), 1)
         self.assertIn("recoverySeeds=[61003 61004 61005]", runner)
         self.assertNotIn("load(", runner)
+        for marker in ("ROR_RECOVERY_SEED_START", "ROR_RECOVERY_SEED_COMPLETE",
+                       "ROR_RECOVERY_SEED_FAILED"):
+            self.assertIn(marker, runner)
         for invariant in ("rng(seed,'twister')", "cfg.nvars", "cfg.lb(:)'", "cfg.ub(:)'",
                           "objective_productive_corrected_v96j_triobjective_CO2_fix1(x,'hybrid')"):
             self.assertIn(invariant, primary)

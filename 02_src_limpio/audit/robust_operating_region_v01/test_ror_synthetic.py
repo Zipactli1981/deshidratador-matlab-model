@@ -30,7 +30,8 @@ def rows(seed=61001):
             for i,(x,f) in enumerate(zip(X,F))]
 
 
-def fixture(parent, seed, cfg, case="valid", omit_meta=None, observed_options=None):
+def fixture(parent, seed, cfg, case="valid", omit_meta=None, observed_options=None,
+            log_family="legacy"):
     if savemat is None:
         raise unittest.SkipTest("SciPy is not available in the existing Python runtime")
     observed_options=copy.deepcopy(cfg["options"] if observed_options is None else observed_options)
@@ -92,12 +93,26 @@ def fixture(parent, seed, cfg, case="valid", omit_meta=None, observed_options=No
         for label in ("returned","population"):
             for i,(candidate,v) in enumerate(zip(x,values),1):
                 w.writerow([label,i,*candidate,*v])
-    (folder/"SOLVER_DIARY.txt").write_text(f"ROR_SEED_START {seed}\nROR_SEED_COMPLETE {seed}\n")
+    prefixes={"legacy":"ROR_SEED","recovery":"ROR_RECOVERY_SEED"}
+    prefix=prefixes[log_family]
+    (folder/"SOLVER_DIARY.txt").write_text(
+        f"{prefix}_START {seed}\n{prefix}_COMPLETE {seed}\n")
     inventory={}
     for p in folder.iterdir():
         inventory[p.name.replace(".","_")]=dict(path=p.name,size=p.stat().st_size,sha256=io.sha(p))
     io.write_json(folder/"SEED_SHA256.json",inventory)
     return folder
+
+
+def rewrite_diary(folder, text):
+    path=Path(folder)/"SOLVER_DIARY.txt"
+    path.write_text(text,encoding="utf-8")
+    inventory=io.read_json(Path(folder)/"SEED_SHA256.json")
+    inventory["SOLVER_DIARY_txt"].update(
+        size=path.stat().st_size,sha256=io.sha(path))
+    (Path(folder)/"SEED_SHA256.json").write_text(
+        json.dumps(inventory,ensure_ascii=False,sort_keys=True,separators=(",",":"))+"\n",
+        encoding="utf-8",newline="\n")
 
 
 def benchmark(parent, name, corrupt=False):
@@ -231,6 +246,38 @@ class CoreTests(unittest.TestCase):
 
 
 class IOTests(unittest.TestCase):
+    def test_solver_diary_provenance_contract(self):
+        cfg=io.frozen_config()
+        cases=(
+            ("legacy_valid","legacy","ROR_SEED_START 61001\nROR_SEED_COMPLETE 61001\n",True),
+            ("recovery_valid","recovery","ROR_RECOVERY_SEED_START 61001\nROR_RECOVERY_SEED_COMPLETE 61001\n",True),
+            ("legacy_failed","legacy","ROR_SEED_START 61001\nROR_SEED_FAILED 61001 failure\n",False),
+            ("recovery_failed","recovery","ROR_RECOVERY_SEED_START 61001\nROR_RECOVERY_SEED_FAILED 61001 failure\n",False),
+            ("legacy_with_recovery","legacy","ROR_RECOVERY_SEED_START 61001\nROR_RECOVERY_SEED_COMPLETE 61001\n",False),
+            ("recovery_with_legacy","recovery","ROR_SEED_START 61001\nROR_SEED_COMPLETE 61001\n",False),
+            ("mixed_families","recovery","ROR_RECOVERY_SEED_START 61001\nROR_SEED_COMPLETE 61001\n",False),
+            ("missing_start","legacy","ROR_SEED_COMPLETE 61001\n",False),
+            ("missing_complete","legacy","ROR_SEED_START 61001\n",False),
+            ("wrong_start_seed","legacy","ROR_SEED_START 61002\nROR_SEED_COMPLETE 61001\n",False),
+            ("wrong_complete_seed","legacy","ROR_SEED_START 61001\nROR_SEED_COMPLETE 61002\n",False),
+            ("complete_and_failed","legacy","ROR_SEED_START 61001\nROR_SEED_COMPLETE 61001\nROR_SEED_FAILED 61001 late\n",False),
+        )
+        for name,family,text,accepted in cases:
+            with self.subTest(case=name), tempfile.TemporaryDirectory(prefix="ror_log_contract_") as td:
+                folder=fixture(td,61001,cfg)
+                rewrite_diary(folder,text)
+                if accepted:
+                    self.assertTrue(io.audit_seed(
+                        folder,cfg,expected_log_family=family)["valid"])
+                else:
+                    with self.assertRaises(core.Blocked):
+                        io.audit_seed(folder,cfg,expected_log_family=family)
+
+    def test_audit_seed_default_log_family_remains_legacy(self):
+        cfg=io.frozen_config()
+        with tempfile.TemporaryDirectory(prefix="ror_log_default_") as td:
+            self.assertTrue(io.audit_seed(fixture(td,61001,cfg),cfg)["valid"])
+
     def test_mat_requires_double_not_integer_or_single(self):
         for a in (np.array([[1,2,3]],dtype=np.int64),np.array([[1,2,3]],dtype=np.float32)):
             with self.assertRaises(core.Blocked):

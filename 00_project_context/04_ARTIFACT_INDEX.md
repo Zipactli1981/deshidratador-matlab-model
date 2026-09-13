@@ -196,11 +196,11 @@ Raíz: `02_src_limpio/audit/robust_operating_region_v01/`.
 | `frozen_config.json` | `FROZEN_CAMPAIGN_CONFIG` | `5131DA361C7C8688D755C724F2830C057980F7F2444DDC3B8983CCEEF4DCFE47` | Bytes exactos; `-text` path-scoped; configuración 5×24×200 |
 | `requirements.txt` | `ANALYSIS_DEPENDENCY_SPEC` | `9403738B9BD9E46261005F7D1E26BFAC7048400205C30F2275AF43700B257ABB` | Runtime sintético Python, no modelo |
 | `ror_core.py` | `NONPRODUCTIVE_ANALYSIS_HARNESS` | `4861F17E38CDF4F059AB3FB56370E0C5ECBE59C538B6F1DC23DFDA5FF20AE7CC` | Dominancia exacta, N_POOL, IGD+, HV, suficiencia, recomendaciones |
-| `ror_postrun.py` | `NONPRODUCTIVE_POSTRUN_HARNESS` | `4F2410043C6096D3AEE6D898BFD2FA4AF1ED0380CAA9C1C9789A1FCFAFAD8FCE` | Comparación canonicalizada sólo para `PopulationType`; provenance cruda; fixture MAT/postrun PASS |
+| `ror_postrun.py` | `ROR_POSTRUN_AND_PROVENANCE_AUDITOR` | `140CC26752F4BC2EC364D77FE31B997A6804D83D1F6F9B69F594AC2FAEA0925C` | Legacy 36/36 PASS; lifecycle markers estrictos y provenance-aware; default legacy preservado; real audit dry ACCEPT 5/5; protocolo intacto; sin métricas reales |
 | `run_ror_campaign.m` | `NONPRODUCTIVE_CAMPAIGN_RUNNER` | `5B6A7A93A62C57B202324DF4A693D340DA4B29C33579E67EE33F68A8C687A9E8` | Guard usa helper compartido; runner fail-closed; dry preexecution PASS; cero llamadas científicas |
 | `ror_options_equivalent.m` | `NONPRODUCTIVE_OPTIONS_GUARD_HELPER` | `69C999DA52D236C5196CD4D3401658B4A8292DD47C9EF56457A1E5F9189B9648` | Canonicalización exclusiva `doubleVector`/`doublevector`; mismatches reales fail-closed; checkcode 0 issues |
 | `source_lock.json` | `PRODUCTIVE_SOURCE_LOCK` | `5F528E34A97BB279478BDD0FF5CF1D3A78EF7864D392CCC545162DAF0E2765EB` | 53 dependencias; bytes exactos; `-text` path-scoped |
-| `test_ror_synthetic.py` | `SYNTHETIC_TEST_HARNESS` | `D3BB0BAAE917869A643956EF70F1765BFC755C6F0595FBC6380D6D1085DF7B96` | 34/34 PASS con NumPy 2.5.1/SciPy 1.18.0; incluye provenance cruda y casos negativos de options |
+| `test_ror_synthetic.py` | `ROR_LEGACY_POSTRUN_REGRESSION_TEST` | `0C5F30A4F591843081C2159E3F700965F5A3CBB81301D8593CC8D72048A180F2` | Legacy 36/36 PASS; contratos legacy/recovery, FAILED, mixed family, markers faltantes y seed incorrecta; default legacy preservado |
 
 El registro HB200 anterior describe el estado de preparación local de aquel micropaso: su cierre posterior fue publicado mediante `0e1233041e36dc0bf01ab314def3baf9e1c8faa0`. En esta revisión main/origin/main coinciden en `cc429c059807127063175a62ec3aa3fcff986edf`, que incorpora posteriormente la infraestructura ROR. No se alteran los bytes ni roles HB200; sus MAT primarios siguen fuera del paquete compacto y preservados por checksum.
 
@@ -216,7 +216,7 @@ Campaign recovery reservado para una autorización futura: `ROR_PRIMARY_20260907
 | `02_src_limpio/audit/robust_operating_region_v01/ror_recovery_guards.m` | `NONPRODUCTIVE_RECOVERY_GUARD` | `9EB92F5D006128B361ACCF4411E62811184C537A5A1CFDA7CDD327F914C54ACB` | Unión final exacta, exclusiones, configuración y warm-start guards; MATLAB dry PASS |
 | `02_src_limpio/audit/robust_operating_region_v01/ror_recovery.py` | `NONPRODUCTIVE_RECOVERY_PROVENANCE_HARNESS` | `473C2CF7063FEA765FF9C8FC8F5667FBDBE2E439F4947EAF293AE05EBF303492` | Auditoría read-only de originales y construcción sintética de identidad/provenance |
 | `02_src_limpio/audit/robust_operating_region_v01/test_ror_recovery_dry.m` | `RECOVERY_DRY_TEST` | `971D60E005A9E28655F797A68016952D4349095CAC2A140EFBF4326A5B4A8563` | Guards y `optimoptions`; PASS; checkcode 0; sin ejecución científica |
-| `02_src_limpio/audit/robust_operating_region_v01/test_ror_recovery_synthetic.py` | `RECOVERY_SYNTHETIC_TEST` | `0627BB0FB5BED627284D1261CC314D54CD976D5292D8D8759588CCF238562A1E` | Fixtures temporales; 6/6 PASS; identidad final exacta y casos negativos |
+| `02_src_limpio/audit/robust_operating_region_v01/test_ror_recovery_synthetic.py` | `ROR_RECOVERY_PROVENANCE_SYNTHETIC_TEST` | `0536C60C029233CA31B06B0A7E7CAA1ED1F8344D3237E8CACAE083B1D02A0A17` | Recovery 6/6 PASS; fixture legacy completo y lifecycle recovery real verificado; protocolo intacto; sin métricas reales |
 
 ### Evidencia del intento interrumpido 61003 — fuera del conjunto versionable
 
@@ -231,7 +231,7 @@ Las salidas completas 61001/61002 conservan integridad contra sus inventarios `S
 
 | Ruta | Rol | SHA-256 | Base de validación |
 |---|---|---|---|
-| `02_src_limpio/audit/robust_operating_region_v01/ror_composite_postrun.py` | `COMPOSITE_POSTRUN_ADAPTER_AND_ARTIFACT_PUBLICATION_LAYER` | `A5561C5FFF6FB8FD4A5C53E40DBA97D54FB5CBEAD14FD8BE16557AE231AD42E9` | Composite 10/10 + publication 5/5; manifest/hash/collision/partial-publication/input-preservation PASS; métricas reales no ejecutadas |
-| `02_src_limpio/audit/robust_operating_region_v01/test_ror_composite_synthetic.py` | `COMPOSITE_POSTRUN_SYNTHETIC_AND_PUBLICATION_TEST` | `1EF76F591398E738A758757CB8F79DEF3F7825BAFA5DC7570FE1D1F78CB43325` | Composite 10/10 + publication 5/5; manifest/hash/collision/partial-publication/input-preservation PASS; equivalencia numérica single-root/composite preservada |
+| `02_src_limpio/audit/robust_operating_region_v01/ror_composite_postrun.py` | `COMPOSITE_POSTRUN_ADAPTER_AND_ARTIFACT_PUBLICATION_LAYER` | `BC0F84078B06899473B27287A3DCB5374AFB37A5D787B25AE77B91611E387871` | Composite 10/10 PASS; familia legacy/recovery derivada del role validado; real audit dry ACCEPT 5/5; protocolo intacto; sin métricas reales |
+| `02_src_limpio/audit/robust_operating_region_v01/test_ror_composite_synthetic.py` | `COMPOSITE_POSTRUN_SYNTHETIC_AND_PUBLICATION_TEST` | `BB5615E348B827720B1EBAC83E19522175BE233A5D45E31E8E7DC0C65D9D2B34` | Composite 10/10 PASS; fixtures recovery con lifecycle real; publicación transaccional y preservación de inputs; sin métricas reales |
 
 El entorno Python aislado usado para validación no es artefacto científico ni forma parte del repositorio. El source map real validado contiene exactamente 61001–61005, con 61003–61005 desde recovery y el intento parcial original 61003 excluido. Siguiente gate después de publicación: `ROR_COMPOSITE_PRIMARY_POSTRUN_AUTHORIZATION`.

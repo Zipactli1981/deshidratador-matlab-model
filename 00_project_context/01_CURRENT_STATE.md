@@ -69,25 +69,28 @@ HB200 es el principal baseline histórico trazable y una aproximación no domina
 
 CORRECTED_R1 = CLOSED_PASS, postrun baseline `8a794c389edd10f9750e10a27eca0ec58c14da2d`; C conserva sus nueve soluciones y su configuración piloto de 50 generaciones. No se reabre esta campaña. `06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md` v1.0 sigue congelado para H(9)–C(9), SHA-256 `8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3`; no se modifica retrospectivamente.
 
-## ROR primario recuperado e infraestructura composite-postrun
+## ROR primario recuperado y remediación del contrato de log composite-postrun
 
 ```text
 ROR_PRIMARY_SET_INTEGRITY = PASS
 ROR_PRIMARY_VALID_RUNS = 5/5
 ROR_COMPOSITE_POSTRUN_PREFLIGHT = PASS_SOURCE_MAP_VALIDATED
 ROR_COMPOSITE_POSTRUN_INFRASTRUCTURE = PASS_PUBLISHED_AT_c9f60468833430f12315d1ebefb42ce42681653c
-ROR_COMPOSITE_POSTRUN_ARTIFACT_PUBLICATION = PASS_IMPLEMENTED_NOT_VERSIONED
+ROR_COMPOSITE_POSTRUN_ARTIFACT_PUBLICATION = PASS_PUBLISHED_AT_9e47078e963a7bbd0a27680f03feff4759fd110d
 COMPOSITE_SOURCE_MAP_VALID = YES
 COMPOSITE_ADAPTER = ror_composite_postrun.py
 COMPOSITE_PUBLICATION_OUTPUT_ROOT = 05_runs/robust_operating_region_v01/ROR_PRIMARY_20260907_COMPOSITE_POSTRUN
 SCIPY_ENVIRONMENT = Python 3.12.14 / SciPy 1.18.0 / NumPy 2.5.3
 INTERRUPTED_ORIGINAL_61003 = EXCLUDED_INTERRUPTED_ATTEMPT_EVIDENCE
-REAL_POSTRUN_EXECUTED = NO
-REAL_N_POOL_COMPUTED = NO
-REAL_IGD_PLUS_COMPUTED = NO
-REAL_HV_COMPUTED = NO
-REAL_SUFFICIENCY_COMPUTED = NO
-CURRENT_GATE = ROR_COMPOSITE_POSTRUN_ARTIFACT_PUBLICATION_VERSIONING
+ROR_COMPOSITE_PRIMARY_POSTRUN_ATTEMPT = BLOCKED_BEFORE_ANALYZE_BY_LOG_CONTRACT_MISMATCH
+ROR_LOG_CONTRACT_DIAGNOSIS = PASS_HIGH_CONFIDENCE
+ROR_LOG_CONTRACT_REMEDIATION = PASS_IMPLEMENTED_NOT_VERSIONED
+LOG_FAMILY_MAPPING = 61001 LEGACY; 61002 LEGACY; 61003 RECOVERY; 61004 RECOVERY; 61005 RECOVERY
+REAL_AUDIT_ACCEPT_COUNT = 5/5
+REAL_POSTRUN_EXECUTION_ATTEMPTS = 1
+REAL_METRICS_COMPUTED = NO
+REAL_POSTRUN_OUTPUT_ROOT_EXISTS = NO
+CURRENT_GATE = ROR_COMPOSITE_POSTRUN_LOG_CONTRACT_REMEDIATION_VERSIONING
 ```
 
-El source map compuesto validado toma 61001/61002 de `ROR_PRIMARY_20260907_REAUTHORIZED` y 61003/61004/61005 de `ROR_PRIMARY_20260907_RECOVERY_FROM_61003_A1`. La capa de publicación fail-closed conserva el schema postrun, publica desde resultados ya calculados mediante staging temporal y promoción atómica, y deja recomendaciones sólo para suficiencia PASS. Validación cerrada: composite 10/10 y publication 5/5, incluidos manifiesto, hashes, colisión, publicación parcial y preservación exacta de inputs. La raíz real aún no existe; no se ejecutó el postrun científico ni se calcularon métricas reales.
+El primer intento real de postrun se bloqueó en `audit_seed(...)`, antes de `analyze(...)` y de la publicación, porque el lector sólo reconocía el lifecycle legacy. La remediación selecciona explícitamente la familia desde el role del source map ya validado, exige START/COMPLETE exactos y rechaza FAILED, familias mezcladas y seed incorrecta. Regresión cerrada: legacy 36/36, recovery 6/6, composite 10/10, sintaxis/import PASS y auditoría real read-only ACCEPT 5/5. El protocolo, los outputs primarios y la metodología científica permanecen intactos; no existen métricas ni raíz de publicación reales.

@@ -31,7 +31,7 @@ def make_composite(parent, cfg):
     for seed in recovery.ORIGINAL_SEEDS:
         fixture(original, seed, cfg)
     for seed in recovery.RECOVERY_SEEDS:
-        fixture(recovered, seed, cfg)
+        fixture(recovered, seed, cfg, log_family="recovery")
     partial = original / "seed_61003"
     partial.mkdir()
     write(partial / "FROZEN_CONFIG.json", {"seed": 61003, "config": cfg})

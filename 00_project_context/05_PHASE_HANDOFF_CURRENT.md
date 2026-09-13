@@ -28,20 +28,22 @@ Consulta local/remota: 2026-09-09. El commit de registro es un baseline, no un H
 
 CORRECTED_R1/CR1-COMP son antecedentes cerrados, no fase vigente. El protocolo H(9)–C(9) v1.0 permanece intacto; no adaptarlo retrospectivamente a HB200 ni a la campaña nueva.
 
-## Gate vigente — versionado de publicación composite-postrun
+## Gate vigente — versionado de remediación del contrato de log composite-postrun
 
 ```text
 ROR_PRIMARY_SET_INTEGRITY = PASS
 VALID_RUNS = 5/5
-COMPOSITE_SOURCE_RESOLUTION = PASS_PUBLISHED
-COMPOSITE_POSTRUN_ARTIFACT_PUBLICATION = PASS_VALIDATED_NOT_VERSIONED
-COMPOSITE_SOURCE_MAP_VALID = YES
+REAL_POSTRUN_EXECUTION_ATTEMPTS = 1
+FIRST_POSTRUN_ATTEMPT = BLOCKED_BEFORE_ANALYZE
+ROOT_CAUSE = LEGACY_ONLY_LOG_LIFECYCLE_PARSER
+LOG_CONTRACT_REMEDIATION = PASS_PROVENANCE_AWARE
+LEGACY_BEHAVIOR_PRESERVED = YES
+REAL_AUDIT_SEED = ACCEPT_5_OF_5
 INTERRUPTED_ORIGINAL_61003_INCLUDED = NO
-COMPOSITE_PUBLICATION_OUTPUT_ROOT = 05_runs/robust_operating_region_v01/ROR_PRIMARY_20260907_COMPOSITE_POSTRUN
 REAL_POSTRUN_OUTPUT_ROOT_CREATED = NO
 REAL_SCIENTIFIC_METRICS_COMPUTED = NO
-CURRENT_GATE = ROR_COMPOSITE_POSTRUN_ARTIFACT_PUBLICATION_VERSIONING
-NEXT_GATE_AFTER_PUBLICATION = ROR_COMPOSITE_PRIMARY_POSTRUN_AUTHORIZATION
+CURRENT_GATE = ROR_COMPOSITE_POSTRUN_LOG_CONTRACT_REMEDIATION_VERSIONING
+NEXT_GATE_AFTER_PUBLICATION = ROR_COMPOSITE_PRIMARY_POSTRUN_REEXECUTION_AUTHORIZATION
 ```
 
-El conjunto primario 5/5 íntegro combina 61001/61002 de la campaña original con 61003/61004/61005 de recovery, exactamente una fuente por seed; la resolución composite ya está publicada y el intento parcial original 61003 permanece excluido. La capa de publicación está validada, pero su raíz real aún no existe y no se calcularon N_POOL, IGD+, HV, suficiencia ni recomendaciones reales. Después de publicar estos cambios en Git se requiere el gate separado `ROR_COMPOSITE_PRIMARY_POSTRUN_AUTHORIZATION`.
+El conjunto primario 5/5 permanece íntegro: 61001/61002 son legacy y 61003/61004/61005 recovery; el intento parcial original 61003 sigue excluido. El primer postrun se detuvo antes de `analyze(...)` porque `audit_seed(...)` sólo aceptaba lifecycle legacy. La corrección provenance-aware está validada, conserva el comportamiento legacy y acepta read-only las cinco fuentes reales. No se calcularon N_POOL, IGD+, HV, suficiencia ni recomendaciones. Tras publicar la remediación en Git se requiere autorización separada para una reejecución real.

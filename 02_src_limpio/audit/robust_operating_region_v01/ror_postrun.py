@@ -115,7 +115,21 @@ def absolute_timestamp(value):
     return parsed
 
 
-def audit_seed(folder, cfg):
+def validate_solver_diary(log, seed, expected_log_family="legacy"):
+    """Require the exact provenance-selected marker family, seed and lifecycle."""
+    prefixes = {"legacy": "ROR_SEED", "recovery": "ROR_RECOVERY_SEED"}
+    if expected_log_family not in prefixes:
+        raise Blocked("Unknown solver diary provenance family")
+    prefix = prefixes[expected_log_family]
+    expected = [f"{prefix}_START {seed}", f"{prefix}_COMPLETE {seed}"]
+    marker_prefixes = ("ROR_SEED_", "ROR_RECOVERY_SEED_")
+    markers = [line.strip() for line in log.splitlines()
+               if line.strip().startswith(marker_prefixes)]
+    if markers != expected:
+        raise Blocked("Incomplete/error/provenance-mismatched log")
+
+
+def audit_seed(folder, cfg, expected_log_family="legacy"):
     """Only persisted doubles/details; no replay. Raises rather than fixing evidence."""
     import numpy as np
     from scipy.io import loadmat
@@ -196,8 +210,7 @@ def audit_seed(folder, cfg):
         raw["output"]["funccount"] != meta["funccount"]):
         raise Blocked("Output/metadata inconsistency")
     log = (folder/"SOLVER_DIARY.txt").read_text(encoding="utf-8", errors="replace")
-    if f"ROR_SEED_COMPLETE {seed}" not in log or "ROR_SEED_FAILED" in log:
-        raise Blocked("Incomplete/error log")
+    validate_solver_diary(log, seed, expected_log_family)
     cx, cf = matrix(detail["callX"], 4), matrix(detail["callF"], 3)
     df = matrix(detail["callObjectiveF"], 3)
     dj = np.asarray(detail["details_json"], dtype=object).reshape(-1)
