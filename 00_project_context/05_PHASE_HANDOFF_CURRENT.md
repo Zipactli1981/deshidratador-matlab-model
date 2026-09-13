@@ -28,17 +28,20 @@ Consulta local/remota: 2026-09-09. El commit de registro es un baseline, no un H
 
 CORRECTED_R1/CR1-COMP son antecedentes cerrados, no fase vigente. El protocolo H(9)–C(9) v1.0 permanece intacto; no adaptarlo retrospectivamente a HB200 ni a la campaña nueva.
 
-## Gate vigente — infraestructura composite-postrun
+## Gate vigente — versionado de publicación composite-postrun
 
 ```text
 ROR_PRIMARY_SET_INTEGRITY = PASS
 VALID_RUNS = 5/5
-COMPOSITE_POSTRUN_ADAPTER = PASS_VALIDATED
+COMPOSITE_SOURCE_RESOLUTION = PASS_PUBLISHED
+COMPOSITE_POSTRUN_ARTIFACT_PUBLICATION = PASS_VALIDATED_NOT_VERSIONED
 COMPOSITE_SOURCE_MAP_VALID = YES
 INTERRUPTED_ORIGINAL_61003_INCLUDED = NO
+COMPOSITE_PUBLICATION_OUTPUT_ROOT = 05_runs/robust_operating_region_v01/ROR_PRIMARY_20260907_COMPOSITE_POSTRUN
+REAL_POSTRUN_OUTPUT_ROOT_CREATED = NO
 REAL_SCIENTIFIC_METRICS_COMPUTED = NO
-CURRENT_GATE = ROR_COMPOSITE_POSTRUN_INFRASTRUCTURE_VERSIONING
+CURRENT_GATE = ROR_COMPOSITE_POSTRUN_ARTIFACT_PUBLICATION_VERSIONING
 NEXT_GATE_AFTER_PUBLICATION = ROR_COMPOSITE_PRIMARY_POSTRUN_AUTHORIZATION
 ```
 
-El conjunto primario íntegro combina 61001/61002 de la campaña original con 61003/61004/61005 de recovery, exactamente una fuente por seed. `ror_composite_postrun.py` valida manifiesto, campañas, roles, rutas, hashes, configuración, provenance y estructura MAT; el intento parcial original 61003 permanece excluido. La validación sintética y la equivalencia con single-root están cerradas. No se calcularon N_POOL, IGD+, HV, suficiencia ni recomendaciones reales. Tras publicar esta infraestructura se requiere autorización separada para el postrun científico compuesto.
+El conjunto primario 5/5 íntegro combina 61001/61002 de la campaña original con 61003/61004/61005 de recovery, exactamente una fuente por seed; la resolución composite ya está publicada y el intento parcial original 61003 permanece excluido. La capa de publicación está validada, pero su raíz real aún no existe y no se calcularon N_POOL, IGD+, HV, suficiencia ni recomendaciones reales. Después de publicar estos cambios en Git se requiere el gate separado `ROR_COMPOSITE_PRIMARY_POSTRUN_AUTHORIZATION`.

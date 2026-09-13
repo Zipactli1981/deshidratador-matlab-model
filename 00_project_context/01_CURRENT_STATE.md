@@ -2,7 +2,7 @@
 
 ## Estado vigente y evidencia Git
 
-Actualización documental: 2026-09-09. HB200 está cerrado científica y documentalmente; CORRECTED_R1/CR1-COMP no son la fase operativa actual.
+Actualización documental: 2026-09-13. HB200 está cerrado científica y documentalmente; CORRECTED_R1/CR1-COMP no son la fase operativa actual.
 
 ```text
 PRIMARY_THESIS_LEGACY_BASELINE = HB200
@@ -74,17 +74,20 @@ CORRECTED_R1 = CLOSED_PASS, postrun baseline `8a794c389edd10f9750e10a27eca0ec58c
 ```text
 ROR_PRIMARY_SET_INTEGRITY = PASS
 ROR_PRIMARY_VALID_RUNS = 5/5
-ROR_COMPOSITE_POSTRUN_PREFLIGHT = BLOCKED_BY_MONOLITHIC_POSTRUN_AND_MISSING_SCIPY
-ROR_COMPOSITE_POSTRUN_INFRASTRUCTURE = PASS_IMPLEMENTED_NOT_EXECUTED
+ROR_COMPOSITE_POSTRUN_PREFLIGHT = PASS_SOURCE_MAP_VALIDATED
+ROR_COMPOSITE_POSTRUN_INFRASTRUCTURE = PASS_PUBLISHED_AT_c9f60468833430f12315d1ebefb42ce42681653c
+ROR_COMPOSITE_POSTRUN_ARTIFACT_PUBLICATION = PASS_IMPLEMENTED_NOT_VERSIONED
 COMPOSITE_SOURCE_MAP_VALID = YES
 COMPOSITE_ADAPTER = ror_composite_postrun.py
+COMPOSITE_PUBLICATION_OUTPUT_ROOT = 05_runs/robust_operating_region_v01/ROR_PRIMARY_20260907_COMPOSITE_POSTRUN
 SCIPY_ENVIRONMENT = Python 3.12.14 / SciPy 1.18.0 / NumPy 2.5.3
 INTERRUPTED_ORIGINAL_61003 = EXCLUDED_INTERRUPTED_ATTEMPT_EVIDENCE
+REAL_POSTRUN_EXECUTED = NO
 REAL_N_POOL_COMPUTED = NO
 REAL_IGD_PLUS_COMPUTED = NO
 REAL_HV_COMPUTED = NO
 REAL_SUFFICIENCY_COMPUTED = NO
-CURRENT_GATE = ROR_COMPOSITE_POSTRUN_INFRASTRUCTURE_VERSIONING
+CURRENT_GATE = ROR_COMPOSITE_POSTRUN_ARTIFACT_PUBLICATION_VERSIONING
 ```
 
-El source map compuesto validado toma 61001/61002 de `ROR_PRIMARY_20260907_REAUTHORIZED` y 61003/61004/61005 de `ROR_PRIMARY_20260907_RECOVERY_FROM_61003_A1`. El adaptador fail-closed consume explícitamente `RECOVERY_MANIFEST.json`, reutiliza `ror_postrun.audit_seed` y `ror_core.analyze`, y mantiene bloqueado el análisis científico sin reconocimiento explícito. Validación cerrada: legacy 34/34, recovery 6/6, composite 5/5 con diez escenarios requeridos y equivalencia single-root/composite PASS. El protocolo conserva SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`; no se calcularon métricas reales ni se modificaron outputs primarios.
+El source map compuesto validado toma 61001/61002 de `ROR_PRIMARY_20260907_REAUTHORIZED` y 61003/61004/61005 de `ROR_PRIMARY_20260907_RECOVERY_FROM_61003_A1`. La capa de publicación fail-closed conserva el schema postrun, publica desde resultados ya calculados mediante staging temporal y promoción atómica, y deja recomendaciones sólo para suficiencia PASS. Validación cerrada: composite 10/10 y publication 5/5, incluidos manifiesto, hashes, colisión, publicación parcial y preservación exacta de inputs. La raíz real aún no existe; no se ejecutó el postrun científico ni se calcularon métricas reales.

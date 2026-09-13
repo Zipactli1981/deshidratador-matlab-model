@@ -5,10 +5,19 @@ Scientific analysis remains separately opt-in and reuses ror_postrun.audit_seed
 and ror_core.analyze without changing their mathematics.
 """
 import argparse
+from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
+import platform
+import shutil
+import subprocess
+import sys
+import tempfile
 
-from scipy.io import loadmat
+import numpy as np
+import scipy
+from scipy.io import loadmat, savemat
 
 import ror_postrun as postrun
 import ror_recovery as recovery
@@ -27,6 +36,19 @@ PRIMARY_MAT_FIELDS = {
     "rng_initial", "rng_final",
 }
 DETAIL_MAT_FIELDS = {"callX", "callF", "callObjectiveF", "details_json"}
+COMPOSITE_POSTRUN_ID = "ROR_PRIMARY_20260907_COMPOSITE_POSTRUN"
+FINAL_MANIFEST = "COMPOSITE_POSTRUN_MANIFEST.json"
+BASE_ARTIFACTS = (
+    "audit/POSTRUN_INTEGRITY.json",
+    "audit/DOMINANCE_AUDIT.json",
+    "audit/PRIMARY_SUFFICIENCY.json",
+    "tables/ALL_RUNS.csv",
+    "tables/N_R.csv",
+    "tables/N_POOL.csv",
+    "tables/INTER_RUN_METRICS.csv",
+    "numeric/N_POOL.mat",
+    "SHA256_MANIFEST.csv",
+)
 
 
 def _blocked(message):
@@ -208,20 +230,243 @@ def analyze_composite(manifest_path, acknowledge=False):
     return analyze(composite_audits(manifest_path))
 
 
+def composite_output_root(manifest_path):
+    """Deterministic sibling root, separate from both source campaigns."""
+    return Path(manifest_path).resolve().parent.parent / COMPOSITE_POSTRUN_ID
+
+
+def _validate_publication_inputs(result, audits, sources):
+    """Validate shape/completeness only; never recompute scientific results."""
+    if result.get("PRIMARY_SUFFICIENCY") not in ("PASS", "FAIL"):
+        _blocked("publication requires resolved PRIMARY_SUFFICIENCY")
+    required = {"conditions", "metrics", "normalization", "max_igd", "median_igd",
+                "hv_ratio", "extreme_runs", "pool", "nr", "union",
+                "N_POOL_objective_count", "coverage", "recommendations"}
+    if not required.issubset(result):
+        _blocked("publication result is incomplete")
+    if ([a.get("seed") for a in audits] != list(SEEDS) or
+            [s.get("seed") for s in sources] != list(SEEDS)):
+        _blocked("publication provenance is not the exact ordered five-seed set")
+    if set(result["nr"]) != set(SEEDS):
+        _blocked("N_R does not contain the exact five seeds")
+    pairs = [(row.get("source"), row.get("target")) for row in result["coverage"]]
+    expected_pairs = [(source, target) for source in SEEDS for target in SEEDS
+                      if source != target]
+    if pairs != expected_pairs:
+        _blocked("coverage matrix is incomplete or out of canonical order")
+    if [row.get("seed") for row in result["metrics"]] != list(SEEDS):
+        _blocked("inter-run metrics are incomplete or out of canonical order")
+    policies = result["recommendations"]
+    expected_policies = {"MOISTURE_PRIORITY", "COST_PRIORITY",
+                         "EMISSIONS_PRIORITY", "BALANCED_COMPROMISE"}
+    if result["PRIMARY_SUFFICIENCY"] == "PASS":
+        if set(policies) != expected_policies:
+            _blocked("PASS publication requires exactly four policy selections")
+    elif policies:
+        _blocked("FAIL publication must not contain policy selections")
+
+
+def _git_head():
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=postrun.HERE, text=True).strip()
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise Blocked("COMPOSITE_SOURCE_MAP: Git HEAD unavailable") from exc
+
+
+def _publication_sources(sources, audits):
+    audit_by_seed = {item["seed"]: item for item in audits}
+    records = []
+    for source in sources:
+        seed = source["seed"]
+        folder = Path(source["source_path"])
+        metadata = audit_by_seed[seed]["metadata"]
+        records.append(dict(
+            seed=seed,
+            source_campaign_id=source["source_campaign_id"],
+            role=source["role"],
+            source_path=str(folder.resolve()),
+            seed_sha256=postrun.sha(folder / "SEED_SHA256.json"),
+            input_hashes=validated_files(folder),
+            input_git_head=metadata["observed_git_head"],
+            validation_status="PASS",
+        ))
+    return records
+
+
+def _policy_rows(result):
+    descriptions = {
+        "MOISTURE_PRIORITY": "MIN_F1_WITH_F_X_SEED_ROW_TIE_BREAK",
+        "COST_PRIORITY": "MIN_F2_WITH_F_X_SEED_ROW_TIE_BREAK",
+        "EMISSIONS_PRIORITY": "MIN_F3_WITH_F_X_SEED_ROW_TIE_BREAK",
+        "BALANCED_COMPROMISE": "MIN_EQUAL_WEIGHT_NORMALIZED_EUCLIDEAN_DISTANCE_WITH_F_X_SEED_ROW_TIE_BREAK",
+    }
+    rows = []
+    for name in ("MOISTURE_PRIORITY", "COST_PRIORITY", "EMISSIONS_PRIORITY",
+                 "BALANCED_COMPROMISE"):
+        row = result["recommendations"][name]
+        rows.append(dict(policy=name, source_seed=row["seed"], source_row=row["row"],
+                         x=row["x"], f=row["f"], origins=row["origins"],
+                         selection_provenance=dict(
+                             implementation="ror_core.recommendations",
+                             rule=descriptions[name],
+                             primary_sufficiency="PASS")))
+    return rows
+
+
+def publish_composite(manifest_path, result, audits, sources, output_root=None):
+    """Persist an already calculated result via isolated build + atomic promotion."""
+    manifest_path = Path(manifest_path).resolve()
+    prescribed_root = composite_output_root(manifest_path)
+    output_root = prescribed_root if output_root is None else Path(output_root).resolve()
+    expected_parent = manifest_path.parent.parent.resolve()
+    if output_root != prescribed_root or output_root.parent != expected_parent:
+        _blocked("composite output root differs from the deterministic dedicated root")
+    if output_root.exists():
+        _blocked("composite postrun output root exists: no overwrite or resume")
+    _validate_publication_inputs(result, audits, sources)
+    source_records = _publication_sources(sources, audits)
+    interrupted_path = Path(postrun.read_json(manifest_path)["INTERRUPTED_ATTEMPT_PATH"]).resolve()
+    if any(Path(item["source_path"]) == interrupted_path for item in source_records):
+        _blocked("interrupted original 61003 cannot be a primary source")
+
+    staging = Path(tempfile.mkdtemp(prefix=f".{COMPOSITE_POSTRUN_ID}_", dir=expected_parent))
+    try:
+        for name in ("audit", "tables", "numeric"):
+            (staging / name).mkdir()
+        postrun.write_json(staging / "audit/POSTRUN_INTEGRITY.json",
+            [{k: v for k, v in audit.items() if k not in ("rows", "all_rows")}
+             for audit in audits])
+        postrun.write_json(staging / "audit/DOMINANCE_AUDIT.json", dict(
+            definition="EXACT_LE_ALL_LT_ANY", U=result["union"],
+            normalization=result["normalization"], coverage=result["coverage"],
+            U_count=len(result["union"]), N_POOL_count=len(result["pool"]),
+            N_POOL_objective_count=result["N_POOL_objective_count"]))
+        campaign_status = ("COMPLETED_SUFFICIENT" if result["PRIMARY_SUFFICIENCY"] == "PASS"
+                           else "COMPLETED_BUT_INSUFFICIENT")
+        selection_status = {
+            f"{name}_SELECTED": ("YES" if result["PRIMARY_SUFFICIENCY"] == "PASS" else "NO")
+            for name in ("MOISTURE_PRIORITY", "COST_PRIORITY", "EMISSIONS_PRIORITY",
+                         "BALANCED_COMPROMISE")
+        }
+        failed = [name for name, passed in result["conditions"].items() if not passed]
+        postrun.write_json(staging / "audit/PRIMARY_SUFFICIENCY.json",
+            {**{k: v for k, v in result.items()
+                if k not in ("pool", "nr", "union", "recommendations")},
+             "CAMPAIGN_STATUS": campaign_status, "failed_conditions": failed,
+             "policy_selections_persisted": result["PRIMARY_SUFFICIENCY"] == "PASS",
+             **selection_status})
+        fields = ["seed", "row", "source", "x", "f", "penalized", "origins"]
+        postrun.write_csv(staging / "tables/ALL_RUNS.csv",
+            [row for audit in audits for row in audit["all_rows"]],
+            ["seed", "row", "source", "x", "f", "inclusion", "reason"])
+        postrun.write_csv(staging / "tables/N_R.csv",
+            [row for seed in SEEDS for row in result["nr"][seed]], fields)
+        postrun.write_csv(staging / "tables/N_POOL.csv", result["pool"], fields)
+        postrun.write_csv(staging / "tables/INTER_RUN_METRICS.csv",
+                          result["metrics"], list(result["metrics"][0]))
+        pool = result["pool"]
+        savemat(staging / "numeric/N_POOL.mat", dict(
+            X=np.array([row["x"] for row in pool]),
+            F=np.array([row["f"] for row in pool]),
+            lo=result["normalization"]["lo"], hi=result["normalization"]["hi"],
+            provenance_json=postrun.encode(pool)), do_compression=True)
+        relative = list(BASE_ARTIFACTS)
+        if result["PRIMARY_SUFFICIENCY"] == "PASS":
+            policies = _policy_rows(result)
+            postrun.write_csv(staging / "tables/OPERATING_RECOMMENDATIONS.csv", policies,
+                              list(policies[0]))
+            relative.insert(-1, "tables/OPERATING_RECOMMENDATIONS.csv")
+
+        inventory = []
+        for rel in relative:
+            if rel == "SHA256_MANIFEST.csv":
+                continue
+            path = staging / rel
+            if not path.is_file() or path.stat().st_size == 0:
+                _blocked("required publication artifact missing or empty: " + rel)
+            inventory.append(dict(path=rel, size=path.stat().st_size,
+                                  sha256=postrun.sha(path), role="DERIVED_POSTRUN_ARTIFACT"))
+        postrun.write_csv(staging / "SHA256_MANIFEST.csv", inventory,
+                          ["path", "size", "sha256", "role"])
+        manifest_inventory = inventory + [dict(
+            path="SHA256_MANIFEST.csv", size=(staging / "SHA256_MANIFEST.csv").stat().st_size,
+            sha256=postrun.sha(staging / "SHA256_MANIFEST.csv"),
+            role="DERIVED_ARTIFACT_HASH_INVENTORY")]
+        recovery_manifest = postrun.read_json(manifest_path)
+        manifest = dict(
+            status="COMPLETE_TRANSACTIONAL", CAMPAIGN_STATUS=campaign_status,
+            PRIMARY_SUFFICIENCY=result["PRIMARY_SUFFICIENCY"],
+            **selection_status,
+            composite_postrun_id=COMPOSITE_POSTRUN_ID,
+            exact_output_directory=str(output_root),
+            source_map=source_records,
+            **{f"PRIMARY_SEED_{item['seed']}_SOURCE": item for item in source_records},
+            INTERRUPTED_ORIGINAL_61003="EXCLUDED",
+            interrupted_attempt=dict(path=str(interrupted_path), seed=61003,
+                classification=recovery_manifest["INTERRUPTED_ATTEMPT_CLASS"],
+                hashes=recovery_manifest["INTERRUPTED_ATTEMPT_HASHES"]),
+            recovery_manifest_path=str(manifest_path),
+            recovery_manifest_sha256=postrun.sha(manifest_path),
+            protocol_sha256=postrun.PROTOCOL_HASH,
+            config_sha256=postrun.CONFIG_HASH, source_lock_sha256=postrun.LOCK_HASH,
+            git_head=_git_head(),
+            code_provenance=dict(
+                composite_adapter_path=str(Path(__file__).resolve()),
+                composite_adapter_sha256=postrun.sha(Path(__file__)),
+                ror_postrun_sha256=postrun.sha(postrun.HERE / "ror_postrun.py"),
+                ror_core_sha256=postrun.sha(postrun.HERE / "ror_core.py")),
+            python_environment=dict(python=platform.python_version(),
+                                    numpy=np.__version__, scipy=scipy.__version__,
+                                    executable=sys.executable),
+            timestamp_utc=datetime.now(timezone.utc).isoformat(),
+            validation_status="PASS",
+            artifacts=manifest_inventory,
+            outputs_role="DERIVED_POSTRUN_ARTIFACTS_NOT_PRIMARY_OUTPUTS")
+        postrun.write_json(staging / FINAL_MANIFEST, manifest)
+        if not (staging / FINAL_MANIFEST).is_file():
+            _blocked("final manifest was not completed")
+        os.replace(staging, output_root)
+    except BaseException:
+        shutil.rmtree(staging, ignore_errors=True)
+        raise
+    return dict(status=result["PRIMARY_SUFFICIENCY"], campaign_status=campaign_status,
+                output_root=str(output_root), manifest_sha256=postrun.sha(output_root / FINAL_MANIFEST),
+                publish_status="COMPLETE_TRANSACTIONAL")
+
+
+def run_and_publish_composite(manifest_path, acknowledge=False, output_root=None):
+    if acknowledge is not True:
+        raise Blocked("Composite scientific postrun publication requires explicit acknowledgement")
+    sources = validate_composite_source_map(manifest_path)
+    cfg = postrun.frozen_config()
+    audits = [postrun.audit_seed(Path(item["source_path"]), cfg) for item in sources]
+    result = analyze(audits)
+    return publish_composite(manifest_path, result, audits, sources, output_root)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--dry-validate", action="store_true")
     parser.add_argument("--run-analysis", action="store_true")
+    parser.add_argument("--publish", action="store_true")
+    parser.add_argument("--output-root", type=Path)
     parser.add_argument("--acknowledge-scientific-postrun", action="store_true")
     args = parser.parse_args()
-    if args.dry_validate and not args.run_analysis and not args.acknowledge_scientific_postrun:
+    if (args.dry_validate and not args.run_analysis and not args.publish and
+            not args.acknowledge_scientific_postrun and args.output_root is None):
         records = validate_composite_source_map(args.manifest)
         print(json.dumps(dict(status="PASS", sources=records,
                               scientific_metrics_computed=False), separators=(",", ":")))
-    elif args.run_analysis and args.acknowledge_scientific_postrun and not args.dry_validate:
+    elif (args.run_analysis and args.acknowledge_scientific_postrun and
+          not args.dry_validate and not args.publish and args.output_root is None):
         result = analyze_composite(args.manifest, True)
         print(json.dumps(dict(status=result["PRIMARY_SUFFICIENCY"],
                               scientific_metrics_computed=True), separators=(",", ":")))
+    elif (args.publish and args.acknowledge_scientific_postrun and
+          not args.dry_validate and not args.run_analysis):
+        published = run_and_publish_composite(args.manifest, True, args.output_root)
+        print(json.dumps(published, separators=(",", ":")))
     else:
-        parser.error("Choose dry validation or explicitly acknowledged scientific analysis")
+        parser.error("Choose dry validation, analysis, or explicitly acknowledged publication")

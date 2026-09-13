@@ -4,6 +4,10 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest import mock
+
+import numpy as np
+from scipy.io import loadmat
 
 import ror_composite_postrun as composite
 import ror_postrun as io
@@ -153,6 +157,141 @@ class CompositeTests(unittest.TestCase):
     def test_scientific_analysis_is_explicitly_locked(self):
         with self.assertRaises(Blocked):
             composite.analyze_composite("unused", acknowledge=False)
+
+    def publication_fixture(self, td, fail=False):
+        path, manifest, original, recovered = make_composite(td, self.cfg)
+        sources = composite.validate_composite_source_map(path)
+        audits = composite.composite_audits(path)
+        if fail:
+            audits[0]["rows"] = audits[0]["rows"][:1]
+        result = analyze(audits)
+        output = Path(td) / composite.COMPOSITE_POSTRUN_ID
+        primary = {str(path): io.sha(path) for root in (original, recovered)
+                   for path in root.rglob("*") if path.is_file()}
+        return path, manifest, original, recovered, sources, audits, result, output, primary
+
+    def assert_inventory(self, output):
+        with (output / "SHA256_MANIFEST.csv").open(newline="", encoding="utf-8") as handle:
+            rows = list(__import__("csv").DictReader(handle))
+        self.assertTrue(rows)
+        for row in rows:
+            artifact = output / row["path"]
+            self.assertTrue(artifact.is_file())
+            self.assertGreater(artifact.stat().st_size, 0)
+            self.assertEqual(io.sha(artifact), row["sha256"])
+
+    def test_publication_pass_artifacts_manifest_values_and_input_preservation(self):
+        with tempfile.TemporaryDirectory(prefix="ror_composite_publish_pass_") as td:
+            (path, _, original, _, sources, audits, result, output,
+             before) = self.publication_fixture(td)
+            published = composite.publish_composite(path, result, audits, sources, output)
+            self.assertEqual(published["campaign_status"], "COMPLETED_SUFFICIENT")
+            required = [output / rel for rel in composite.BASE_ARTIFACTS]
+            required += [output / "tables/OPERATING_RECOMMENDATIONS.csv",
+                         output / composite.FINAL_MANIFEST]
+            self.assertTrue(all(path.is_file() and path.stat().st_size > 0 for path in required))
+            manifest = io.read_json(output / composite.FINAL_MANIFEST)
+            self.assertEqual([item["seed"] for item in manifest["source_map"]], list(SEEDS))
+            self.assertEqual([item["source_campaign_id"] for item in manifest["source_map"]],
+                [recovery.ORIGINAL_CAMPAIGN_ID, recovery.ORIGINAL_CAMPAIGN_ID,
+                 recovery.RECOVERY_CAMPAIGN_ID, recovery.RECOVERY_CAMPAIGN_ID,
+                 recovery.RECOVERY_CAMPAIGN_ID])
+            self.assertEqual(manifest["INTERRUPTED_ORIGINAL_61003"], "EXCLUDED")
+            self.assertNotIn(str((original / "seed_61003").resolve()),
+                             [item["source_path"] for item in manifest["source_map"]])
+            for seed, source in zip(SEEDS, sources):
+                self.assertEqual(manifest[f"PRIMARY_SEED_{seed}_SOURCE"]["source_path"],
+                                 source["source_path"])
+            sufficiency = io.read_json(output / "audit/PRIMARY_SUFFICIENCY.json")
+            for key in ("PRIMARY_SUFFICIENCY", "conditions", "metrics", "max_igd",
+                        "median_igd", "hv_ratio", "extreme_runs", "coverage"):
+                self.assertEqual(sufficiency[key], result[key])
+            dominance = io.read_json(output / "audit/DOMINANCE_AUDIT.json")
+            self.assertEqual(dominance["U"], result["union"])
+            self.assertEqual(dominance["coverage"], result["coverage"])
+            self.assertEqual(dominance["N_POOL_count"], len(result["pool"]))
+            self.assertEqual(len(dominance["coverage"]), 20)
+            mat = loadmat(output / "numeric/N_POOL.mat", simplify_cells=True)
+            np.testing.assert_array_equal(np.atleast_2d(mat["X"]),
+                                          np.array([row["x"] for row in result["pool"]]))
+            np.testing.assert_array_equal(np.atleast_2d(mat["F"]),
+                                          np.array([row["f"] for row in result["pool"]]))
+            with (output / "tables/N_R.csv").open(newline="", encoding="utf-8") as handle:
+                nr_rows = list(__import__("csv").DictReader(handle))
+            expected_nr = [row for seed in SEEDS for row in result["nr"][seed]]
+            self.assertEqual([(int(row["seed"]), int(row["row"]), json.loads(row["x"]),
+                               json.loads(row["f"]), json.loads(row["origins"]))
+                              for row in nr_rows],
+                             [(row["seed"], row["row"], row["x"], row["f"], row["origins"])
+                              for row in expected_nr])
+            with (output / "tables/OPERATING_RECOMMENDATIONS.csv").open(
+                    newline="", encoding="utf-8") as handle:
+                policies = list(__import__("csv").DictReader(handle))
+            self.assertEqual([row["policy"] for row in policies],
+                ["MOISTURE_PRIORITY", "COST_PRIORITY", "EMISSIONS_PRIORITY",
+                 "BALANCED_COMPROMISE"])
+            self.assertTrue(all(row["source_seed"] and row["x"] and row["f"] and
+                                row["selection_provenance"] for row in policies))
+            self.assert_inventory(output)
+            for item in manifest["artifacts"]:
+                artifact = output / item["path"]
+                self.assertEqual(artifact.stat().st_size, item["size"])
+                self.assertEqual(io.sha(artifact), item["sha256"])
+            after = {name: io.sha(name) for name in before}
+            self.assertEqual(after, before)
+
+    def test_publication_fail_persists_metrics_without_recommendations(self):
+        with tempfile.TemporaryDirectory(prefix="ror_composite_publish_fail_") as td:
+            path, _, _, _, sources, audits, result, output, _ = self.publication_fixture(td, True)
+            self.assertEqual(result["PRIMARY_SUFFICIENCY"], "FAIL")
+            composite.publish_composite(path, result, audits, sources, output)
+            sufficiency = io.read_json(output / "audit/PRIMARY_SUFFICIENCY.json")
+            self.assertEqual(sufficiency["CAMPAIGN_STATUS"], "COMPLETED_BUT_INSUFFICIENT")
+            self.assertTrue(sufficiency["failed_conditions"])
+            self.assertFalse(sufficiency["policy_selections_persisted"])
+            for name in ("MOISTURE_PRIORITY", "COST_PRIORITY", "EMISSIONS_PRIORITY",
+                         "BALANCED_COMPROMISE"):
+                self.assertEqual(sufficiency[f"{name}_SELECTED"], "NO")
+            self.assertFalse((output / "tables/OPERATING_RECOMMENDATIONS.csv").exists())
+            self.assertEqual(io.read_json(output / composite.FINAL_MANIFEST)["CAMPAIGN_STATUS"],
+                             "COMPLETED_BUT_INSUFFICIENT")
+            self.assert_inventory(output)
+
+    def test_publication_collision_is_fail_closed_without_overwrite(self):
+        with tempfile.TemporaryDirectory(prefix="ror_composite_collision_") as td:
+            path, _, _, _, sources, audits, result, output, _ = self.publication_fixture(td)
+            output.mkdir()
+            marker = output / "keep.txt"
+            marker.write_text("unchanged", encoding="utf-8")
+            with self.assertRaises(Blocked):
+                composite.publish_composite(path, result, audits, sources, output)
+            self.assertEqual(marker.read_text(encoding="utf-8"), "unchanged")
+            self.assertFalse((output / composite.FINAL_MANIFEST).exists())
+
+    def test_exception_before_completion_leaves_no_publication(self):
+        with tempfile.TemporaryDirectory(prefix="ror_composite_partial_") as td:
+            path, _, _, _, sources, audits, result, output, _ = self.publication_fixture(td)
+            original = io.write_json
+            def fail_final(target, value):
+                if Path(target).name == composite.FINAL_MANIFEST:
+                    raise RuntimeError("synthetic pre-completion failure")
+                return original(target, value)
+            with mock.patch.object(composite.postrun, "write_json", side_effect=fail_final):
+                with self.assertRaises(RuntimeError):
+                    composite.publish_composite(path, result, audits, sources, output)
+            self.assertFalse(output.exists())
+            self.assertFalse(any(Path(td).glob(f".{composite.COMPOSITE_POSTRUN_ID}_*")))
+
+    def test_end_to_end_publication_entrypoint_and_acknowledgement_gate(self):
+        with tempfile.TemporaryDirectory(prefix="ror_composite_entrypoint_") as td:
+            path, _, _, _ = make_composite(td, self.cfg)
+            output = composite.composite_output_root(path)
+            with self.assertRaises(Blocked):
+                composite.run_and_publish_composite(path, acknowledge=False)
+            self.assertFalse(output.exists())
+            published = composite.run_and_publish_composite(path, acknowledge=True)
+            self.assertEqual(published["publish_status"], "COMPLETE_TRANSACTIONAL")
+            self.assertTrue((output / composite.FINAL_MANIFEST).is_file())
 
 
 if __name__ == "__main__":

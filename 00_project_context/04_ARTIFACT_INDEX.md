@@ -231,7 +231,7 @@ Las salidas completas 61001/61002 conservan integridad contra sus inventarios `S
 
 | Ruta | Rol | SHA-256 | Base de validación |
 |---|---|---|---|
-| `02_src_limpio/audit/robust_operating_region_v01/ror_composite_postrun.py` | `COMPOSITE_POSTRUN_ADAPTER` | `FB47D784022F764349E56E6EE04A8214D4A2F06A8F40CB8D377F2B562EEC0693` | Source map fail-closed desde `RECOVERY_MANIFEST.json`; dry validation real PASS; reutiliza `audit_seed`/`analyze`; métricas reales no ejecutadas |
-| `02_src_limpio/audit/robust_operating_region_v01/test_ror_composite_synthetic.py` | `COMPOSITE_POSTRUN_SYNTHETIC_TEST` | `04B05E92CDBFD71548EC8439051645EFC1AB4C6AAD5D6CC61C118F9C98FE7C8D` | 5/5 PASS; diez escenarios requeridos; equivalencia numérica single-root/composite PASS |
+| `02_src_limpio/audit/robust_operating_region_v01/ror_composite_postrun.py` | `COMPOSITE_POSTRUN_ADAPTER_AND_ARTIFACT_PUBLICATION_LAYER` | `A5561C5FFF6FB8FD4A5C53E40DBA97D54FB5CBEAD14FD8BE16557AE231AD42E9` | Composite 10/10 + publication 5/5; manifest/hash/collision/partial-publication/input-preservation PASS; métricas reales no ejecutadas |
+| `02_src_limpio/audit/robust_operating_region_v01/test_ror_composite_synthetic.py` | `COMPOSITE_POSTRUN_SYNTHETIC_AND_PUBLICATION_TEST` | `1EF76F591398E738A758757CB8F79DEF3F7825BAFA5DC7570FE1D1F78CB43325` | Composite 10/10 + publication 5/5; manifest/hash/collision/partial-publication/input-preservation PASS; equivalencia numérica single-root/composite preservada |
 
 El entorno Python aislado usado para validación no es artefacto científico ni forma parte del repositorio. El source map real validado contiene exactamente 61001–61005, con 61003–61005 desde recovery y el intento parcial original 61003 excluido. Siguiente gate después de publicación: `ROR_COMPOSITE_PRIMARY_POSTRUN_AUTHORIZATION`.
