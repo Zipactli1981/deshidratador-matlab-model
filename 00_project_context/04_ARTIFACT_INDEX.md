@@ -226,3 +226,12 @@ Campaign recovery reservado para una autorización futura: `ROR_PRIMARY_20260907
 | `05_runs/robust_operating_region_v01/ROR_PRIMARY_20260907_REAUTHORIZED/seed_61003/SOLVER_DIARY.txt` | `INTERRUPTED_ATTEMPT_EVIDENCE` | `4C02A0578076D52226C45EF5CC4F3536D6EF4AE59F1B15891B548C77D1E8FC9C` | `NOT_PRIMARY_OPTIMIZATION_OUTPUT`; preservado, no resumible, no staged |
 
 Las salidas completas 61001/61002 conservan integridad contra sus inventarios `SEED_SHA256.json`. El intento parcial 61003 no integra el conjunto primario, no aporta warm start/población/scores/RNG y no fue movido, renombrado ni modificado. Siguiente gate tras publicar: autorización explícita de recovery execution; ejecución científica NO autorizada en este estado.
+
+## Infraestructura composite-postrun ROR — validada, no ejecutada científicamente
+
+| Ruta | Rol | SHA-256 | Base de validación |
+|---|---|---|---|
+| `02_src_limpio/audit/robust_operating_region_v01/ror_composite_postrun.py` | `COMPOSITE_POSTRUN_ADAPTER` | `FB47D784022F764349E56E6EE04A8214D4A2F06A8F40CB8D377F2B562EEC0693` | Source map fail-closed desde `RECOVERY_MANIFEST.json`; dry validation real PASS; reutiliza `audit_seed`/`analyze`; métricas reales no ejecutadas |
+| `02_src_limpio/audit/robust_operating_region_v01/test_ror_composite_synthetic.py` | `COMPOSITE_POSTRUN_SYNTHETIC_TEST` | `04B05E92CDBFD71548EC8439051645EFC1AB4C6AAD5D6CC61C118F9C98FE7C8D` | 5/5 PASS; diez escenarios requeridos; equivalencia numérica single-root/composite PASS |
+
+El entorno Python aislado usado para validación no es artefacto científico ni forma parte del repositorio. El source map real validado contiene exactamente 61001–61005, con 61003–61005 desde recovery y el intento parcial original 61003 excluido. Siguiente gate después de publicación: `ROR_COMPOSITE_PRIMARY_POSTRUN_AUTHORIZATION`.

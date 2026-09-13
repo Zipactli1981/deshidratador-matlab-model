@@ -69,24 +69,22 @@ HB200 es el principal baseline histórico trazable y una aproximación no domina
 
 CORRECTED_R1 = CLOSED_PASS, postrun baseline `8a794c389edd10f9750e10a27eca0ec58c14da2d`; C conserva sus nueve soluciones y su configuración piloto de 50 generaciones. No se reabre esta campaña. `06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md` v1.0 sigue congelado para H(9)–C(9), SHA-256 `8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3`; no se modifica retrospectivamente.
 
-## Recuperación ROR tras interrupción externa
+## ROR primario recuperado e infraestructura composite-postrun
 
 ```text
-ROR_ORIGINAL_VALID_SEEDS = 61001,61002
-ROR_INTERRUPTED_SEED = 61003
-ROR_INTERRUPTION_CAUSE = EXTERNAL_WINDOWS_UPDATE_REBOOT
-ROR_INTERRUPTED_ATTEMPT_RESUMABLE = NO
-ROR_RECOVERY_ORCHESTRATION = PASS_IMPLEMENTED_NOT_EXECUTED
-ROR_RECOVERY_CAMPAIGN_ID = ROR_PRIMARY_20260907_RECOVERY_FROM_61003_A1
-ROR_RECOVERY_SEEDS = 61003,61004,61005
-FINAL_PRIMARY_SEED_SET_IF_RECOVERY_COMPLETES = 61001,61002,61003,61004,61005
-WINDOWS_RESTART_RISK = SAFE_FOR_LONG_RUN
-RECOVERY_SYNTHETIC_TESTS = 6/6_PASS
-RECOVERY_MATLAB_DRY_VALIDATION = PASS
-RECOVERY_CHECKCODE = PASS_0_MESSAGES
-SCIENTIFIC_CONFIGURATION_UNCHANGED = YES
-CURRENT_GATE = ROR_RECOVERY_ORCHESTRATION_VERSIONING
-RECOVERY_EXECUTION_AUTHORIZED = NO
+ROR_PRIMARY_SET_INTEGRITY = PASS
+ROR_PRIMARY_VALID_RUNS = 5/5
+ROR_COMPOSITE_POSTRUN_PREFLIGHT = BLOCKED_BY_MONOLITHIC_POSTRUN_AND_MISSING_SCIPY
+ROR_COMPOSITE_POSTRUN_INFRASTRUCTURE = PASS_IMPLEMENTED_NOT_EXECUTED
+COMPOSITE_SOURCE_MAP_VALID = YES
+COMPOSITE_ADAPTER = ror_composite_postrun.py
+SCIPY_ENVIRONMENT = Python 3.12.14 / SciPy 1.18.0 / NumPy 2.5.3
+INTERRUPTED_ORIGINAL_61003 = EXCLUDED_INTERRUPTED_ATTEMPT_EVIDENCE
+REAL_N_POOL_COMPUTED = NO
+REAL_IGD_PLUS_COMPUTED = NO
+REAL_HV_COMPUTED = NO
+REAL_SUFFICIENCY_COMPUTED = NO
+CURRENT_GATE = ROR_COMPOSITE_POSTRUN_INFRASTRUCTURE_VERSIONING
 ```
 
-Protocolo congelado intacto: `06_manuscript/article_Q1/review/CURRENT_FORMULATION_ROBUST_OPERATING_REGION_PROTOCOL_v01.md`, SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`. La campaña original produjo salidas primarias completas y verificadas para 61001 y 61002. El intento 61003 fue interrumpido por reinicio externo de Windows, no es resumible y se conserva únicamente como `INTERRUPTED_ATTEMPT_EVIDENCE`; no integra el conjunto primario ni aporta población, scores, RNG o warm start. La infraestructura recovery separada quedó validada para ejecutar desde cero exactamente 61003–61005 bajo una autorización futura. No se ejecutó ninguna nueva optimización durante diseño o versionado.
+El source map compuesto validado toma 61001/61002 de `ROR_PRIMARY_20260907_REAUTHORIZED` y 61003/61004/61005 de `ROR_PRIMARY_20260907_RECOVERY_FROM_61003_A1`. El adaptador fail-closed consume explícitamente `RECOVERY_MANIFEST.json`, reutiliza `ror_postrun.audit_seed` y `ror_core.analyze`, y mantiene bloqueado el análisis científico sin reconocimiento explícito. Validación cerrada: legacy 34/34, recovery 6/6, composite 5/5 con diez escenarios requeridos y equivalencia single-root/composite PASS. El protocolo conserva SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`; no se calcularon métricas reales ni se modificaron outputs primarios.

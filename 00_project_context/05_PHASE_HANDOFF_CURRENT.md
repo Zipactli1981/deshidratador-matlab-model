@@ -28,31 +28,17 @@ Consulta local/remota: 2026-09-09. El commit de registro es un baseline, no un H
 
 CORRECTED_R1/CR1-COMP son antecedentes cerrados, no fase vigente. El protocolo H(9)–C(9) v1.0 permanece intacto; no adaptarlo retrospectivamente a HB200 ni a la campaña nueva.
 
-## Gate vigente — orquestación de recuperación ROR
+## Gate vigente — infraestructura composite-postrun
 
 ```text
-ORIGINAL_CAMPAIGN_ID = ROR_PRIMARY_20260907_REAUTHORIZED
-ORIGINAL_VALID_SEEDS = 61001,61002
-INTERRUPTED_SEED = 61003
-INTERRUPTED_ATTEMPT_CLASS = INTERRUPTED_ATTEMPT_EVIDENCE
-INTERRUPTED_ATTEMPT_INCLUDED_IN_PRIMARY_SET = NO
-INTERRUPTED_ATTEMPT_RESUMABLE = NO
-INTERRUPTION_CAUSE = EXTERNAL_WINDOWS_UPDATE_REBOOT
-RECOVERY_ORCHESTRATION = PASS_IMPLEMENTED_NOT_EXECUTED
-RECOVERY_CAMPAIGN_ID = ROR_PRIMARY_20260907_RECOVERY_FROM_61003_A1
-RECOVERY_SEEDS = 61003,61004,61005
-FINAL_PRIMARY_SEED_SET_IF_RECOVERY_COMPLETES = 61001,61002,61003,61004,61005
-SYNTHETIC_TESTS = 6/6_PASS
-MATLAB_DRY_VALIDATION = PASS
-CHECKCODE = PASS_0_MESSAGES
-GAMULTIOBJ_CALL_COUNT = 0
-MODEL_CALL_COUNT = 0
-OBJECTIVE_CALL_COUNT = 0
-OPTIMIZATION_RUNS = 0
-SCIENTIFIC_CONFIGURATION_UNCHANGED = YES
-CURRENT_GATE = ROR_RECOVERY_ORCHESTRATION_VERSIONING
-NEXT_GATE = ROR_RECOVERY_ORCHESTRATION_LOCAL_COMMIT
-RECOVERY_EXECUTION_AUTHORIZED = NO
+ROR_PRIMARY_SET_INTEGRITY = PASS
+VALID_RUNS = 5/5
+COMPOSITE_POSTRUN_ADAPTER = PASS_VALIDATED
+COMPOSITE_SOURCE_MAP_VALID = YES
+INTERRUPTED_ORIGINAL_61003_INCLUDED = NO
+REAL_SCIENTIFIC_METRICS_COMPUTED = NO
+CURRENT_GATE = ROR_COMPOSITE_POSTRUN_INFRASTRUCTURE_VERSIONING
+NEXT_GATE_AFTER_PUBLICATION = ROR_COMPOSITE_PRIMARY_POSTRUN_AUTHORIZATION
 ```
 
-Protocolo congelado intacto: `06_manuscript/article_Q1/review/CURRENT_FORMULATION_ROBUST_OPERATING_REGION_PROTOCOL_v01.md`, SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`. Las seeds 61001 y 61002 están completas, persistidas y verificadas en la campaña original. El intento original de 61003 se conserva sin cambios, queda excluido de toda identidad primaria y no puede alimentar una continuación. La recuperación no es resume: 61003 se ejecutará desde cero junto con 61004 y 61005 mediante infraestructura fail-closed ya validada. Durante este gate no hubo optimizaciones, evaluaciones de modelo/objective ni outputs nuevos. Después de publicar la infraestructura se requiere autorización explícita separada para `ROR_RECOVERY_EXECUTION`.
+El conjunto primario íntegro combina 61001/61002 de la campaña original con 61003/61004/61005 de recovery, exactamente una fuente por seed. `ror_composite_postrun.py` valida manifiesto, campañas, roles, rutas, hashes, configuración, provenance y estructura MAT; el intento parcial original 61003 permanece excluido. La validación sintética y la equivalencia con single-root están cerradas. No se calcularon N_POOL, IGD+, HV, suficiencia ni recomendaciones reales. Tras publicar esta infraestructura se requiere autorización separada para el postrun científico compuesto.
