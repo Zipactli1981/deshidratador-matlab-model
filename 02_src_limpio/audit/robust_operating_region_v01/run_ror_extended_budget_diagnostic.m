@@ -59,8 +59,7 @@ for j=1:numel(solverNames)
     solverIdentity.(solverNames{j})=struct('path',resolved,'sha256',file_hash(resolved));
 end
 
-reservation=java.io.File(executionRoot);
-assert(reservation.mkdir(),'ROR:DiagnosticRootExists','Cannot exclusively reserve execution root.');
+ror_extended_root_guard(executionRoot,'reserve');
 snapshotDir=fullfile(executionRoot,'snapshots'); mkdir(snapshotDir);
 diaryPath=fullfile(executionRoot,'SOLVER_DIARY.txt');
 context=struct('output_dir',snapshotDir,'seed',cfg.seed,'campaign_id',cfg.campaign_id, ...

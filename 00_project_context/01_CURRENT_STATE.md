@@ -94,22 +94,32 @@ CURRENT_GATE = ROR_PRIMARY_POSTRUN_RESULTS_INTERPRETATION_AND_VERSIONING
 
 El postrun composite publicó transaccionalmente diez derivados hash-valid. IGD+ y reproducibilidad de extremos satisfacen sus umbrales, pero la razón min/max de HV `0.8013138164000172` incumple el mínimo congelado `0.90`; ésta es la única causa del FAIL. La seed 61005 presenta simultáneamente el menor HV y el mayor IGD+, sin que ello constituya fallo de corrida. Las cinco alcanzaron MaxGenerations: un presupuesto de 200 puede ser una explicación plausible de la variabilidad, pero no está demostrado; no se afirma convergencia u optimalidad global ni se autoriza automáticamente una campaña extendida. N_POOL es una aproximación no dominada multi-seed: sus 22 decisiones contienen 21 vectores objetivo únicos porque dos decisiones distintas de 61001 comparten exactamente el mismo vector objetivo y, bajo dominancia exacta, ninguna domina a la otra.
 
-## Diagnóstico secundario de presupuesto extendido — infraestructura validada, no ejecutada
+## Diagnóstico secundario de presupuesto extendido — reparación de reserva validada, no reejecutado
 
 ```text
 PRIMARY_ROR_CAMPAIGN = COMPLETED_BUT_INSUFFICIENT
 PRIMARY_SUFFICIENCY = FAIL
 PRIMARY_FAILED_CONDITION = HV_RATIO
 EXTENDED_BUDGET_DIAGNOSTIC_ROLE = SECONDARY_EXTENDED_BUDGET_DIAGNOSTIC
-EXTENDED_BUDGET_DIAGNOSTIC_STATUS = PROTOCOL_AND_INFRASTRUCTURE_PASS_NOT_EXECUTED
+EXTENDED_BUDGET_DIAGNOSTIC_STATUS = ROOT_RESERVATION_FIX_PASS_NOT_REEXECUTED
 EXTENDED_BUDGET_CAMPAIGN_ID = ROR_BUDGET_DIAGNOSTIC_61001_G400_V01
 DIAGNOSTIC_SEED = 61001
 DIAGNOSTIC_MAX_GENERATIONS = 400
 DIAGNOSTIC_INITIALIZATION = FROM_SCRATCH
 DIAGNOSTIC_PROTOCOL_SHA256 = 4081B46D21D2EA4D7B4587A8AA40763F8BB718ECE20719C979CB5ABA7B6FBB5D
+ROOT_RESERVATION_FIX = PASS
+ROOT_RESERVATION_FIX_CLASS = INFRASTRUCTURE_ROOT_RESERVATION_FIX
+SOURCE_LOCK_SHA256 = 358DDE5EE0077B4D0DDA618E2787C8213442681A41090F056F2603C4950482FB
+DIAGNOSTIC_PROTOCOL_UNCHANGED = YES
+DIAGNOSTIC_CONFIG_UNCHANGED = YES
+SCIENTIFIC_EXECUTION_COMPLETED = NO
+GAMULTIOBJ_EXECUTED = NO
 MODEL_EVALUATIONS_EXECUTED = 0
 NEW_DIAGNOSTIC_OPTIMIZATIONS_EXECUTED = 0
-CURRENT_GATE = ROR_EXTENDED_BUDGET_DIAGNOSTIC_INFRASTRUCTURE_VERSIONING
+REAL_EXECUTION_ROOT = ABSENT
+CURRENT_GATE = ROR_EXTENDED_BUDGET_DIAGNOSTIC_ROOT_RESERVATION_FIX_VERSIONING
 ```
 
-El diagnóstico conserva `PopulationSize=24`, `UseParallel=false`, población/scores iniciales vacíos y ausencia total de warm start. Su única diferencia científica autorizada respecto de la configuración primaria es `MaxGenerations: 200 -> 400`; la OutputFcn pasiva constituye una diferencia observacional. La campaña primaria, su suficiencia, su HV ratio y su N_POOL permanecen sin cambios. La infraestructura PASS no autoriza ejecutar el diagnóstico.
+El primer intento autorizado inició MATLAB pero se bloqueó antes de `gamultiobj`, con cero evaluaciones de modelo/objective y sin crear el execution root: la reserva usaba `java.io.File.mkdir()` sobre la raíz de campaña cuando faltaba su directorio padre fijo. La reparación mínima separa la creación idempotente del padre de la reserva exclusiva de la raíz; soporta parent ausente y conserva colisión fail-closed. Los seis casos sintéticos y MATLAB dry pasan, y el source lock actualizado valida 16/16. No se ha reejecutado la campaña.
+
+El diagnóstico conserva `PopulationSize=24`, `UseParallel=false`, población/scores iniciales vacíos y ausencia total de warm start. Su única diferencia científica autorizada respecto de la configuración primaria es `MaxGenerations: 200 -> 400`; la OutputFcn pasiva constituye una diferencia observacional. La campaña primaria, su suficiencia, su HV ratio y su N_POOL permanecen sin cambios.

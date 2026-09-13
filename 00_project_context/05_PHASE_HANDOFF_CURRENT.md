@@ -52,7 +52,7 @@ NEXT_SCIENTIFIC_DECISION = EXTENDED_BUDGET_DIAGNOSTIC_DESIGN
 
 La campaña primaria 5×200 y el postrun están completos con integridad PASS. La suficiencia falla exclusivamente por variabilidad inter-run de HV; IGD+ y extremos pasan. No existen políticas operativas finales y no se abre automáticamente otra campaña. El hecho de que las cinco corridas alcanzaran MaxGenerations permite considerar el presupuesto como hipótesis, no como causa demostrada ni garantía de que 400 generaciones resuelvan el problema. La siguiente decisión científica es diseñar —sin ejecutar todavía— un diagnóstico de presupuesto extendido.
 
-## Handoff vigente — diagnóstico secundario 61001×400 listo para publicación Git
+## Handoff vigente — reparación de reserva del diagnóstico lista para publicación Git
 
 Este bloque supersede el gate operativo anterior sin reabrir la evidencia científica cerrada.
 
@@ -67,18 +67,30 @@ EXTENDED_BUDGET_CAMPAIGN_ID = ROR_BUDGET_DIAGNOSTIC_61001_G400_V01
 DIAGNOSTIC_SEED = 61001
 DIAGNOSTIC_MAX_GENERATIONS = 400
 DIAGNOSTIC_INITIALIZATION = FROM_SCRATCH
-DIAGNOSTIC_PROTOCOL_AND_INFRASTRUCTURE = PASS_NOT_EXECUTED
+DIAGNOSTIC_PROTOCOL_AND_INFRASTRUCTURE = ROOT_RESERVATION_FIX_PASS_NOT_REEXECUTED
 DIAGNOSTIC_PROTOCOL_SHA256 = 4081B46D21D2EA4D7B4587A8AA40763F8BB718ECE20719C979CB5ABA7B6FBB5D
 CALLBACK_PASSIVE_AUDIT = PASS
 DIAGNOSTIC_SOURCE_LOCK = PASS_16_OF_16
-DIAGNOSTIC_SOURCE_LOCK_SHA256 = 608EB3BDB8016BA181A1798A7E16B10847CCB9D115993CF35259A992667DE735
-DIAGNOSTIC_OPTIMIZATIONS_EXECUTED = 0
+DIAGNOSTIC_SOURCE_LOCK_SHA256 = 358DDE5EE0077B4D0DDA618E2787C8213442681A41090F056F2603C4950482FB
+EXECUTION_ATTEMPT = BLOCKED_BEFORE_SOLVER
+MATLAB_STARTED_IN_BLOCKED_ATTEMPT = YES
+GAMULTIOBJ_EXECUTED = NO
 MODEL_EVALUATIONS_EXECUTED = 0
+ROOT_CAUSE = PARENT_ABSENT_PLUS_SINGLE_LEVEL_MKDIR
+ROOT_RESERVATION_FIX = PASS
+ROOT_PARENT_ABSENT_SUPPORTED = YES
+ROOT_EXCLUSIVE_RESERVATION_PRESERVED = YES
+ROOT_COLLISION_FAIL_CLOSED = YES
+ROOT_RESERVATION_FIX_VALIDATION = PASS_6_OF_6_PLUS_MATLAB_DRY
+REAL_EXECUTION_ROOT = ABSENT
+DIAGNOSTIC_OPTIMIZATIONS_EXECUTED = 0
 PRIMARY_CAMPAIGN_REPLACED = NO
 PRIMARY_N_POOL_MODIFIED = NO
 MULTISEED_CONCLUSION_SUPPORTED = NO
-CURRENT_GATE = ROR_EXTENDED_BUDGET_DIAGNOSTIC_INFRASTRUCTURE_VERSIONING
-NEXT_GATE_AFTER_GIT_PUBLICATION = ROR_EXTENDED_BUDGET_DIAGNOSTIC_EXECUTION_AUTHORIZATION
+CURRENT_GATE = ROR_EXTENDED_BUDGET_DIAGNOSTIC_ROOT_RESERVATION_FIX_VERSIONING
+NEXT_GATE_AFTER_GIT_PUBLICATION = ROR_EXTENDED_BUDGET_DIAGNOSTIC_EXECUTION_PREFLIGHT_AFTER_ROOT_FIX
 ```
 
-El diseño mantiene `PopulationSize=24`, `UseParallel=false`, matrices iniciales vacías y ningún warm start. La infraestructura no constituye autorización de ejecución: no se ha creado execution root, no se han producido snapshots reales y no se ha ejecutado MATLAB científico, `gamultiobj`, modelo, objective ni postrun diagnóstico real.
+El intento autorizado inició MATLAB, pero la ausencia del parent fijo combinada con `java.io.File.mkdir()` de un solo nivel bloqueó antes del solver. No hubo `gamultiobj`, evaluaciones de modelo/objective, snapshots ni execution root real. La reparación mínima crea el parent idempotentemente y conserva la reserva exclusiva de la raíz de campaña; parent ausente, colisión, fallos y doble reserva pasan 6/6 en filesystem temporal, con MATLAB dry PASS. No existe una nueva corrida todavía.
+
+El diseño mantiene `PopulationSize=24`, `UseParallel=false`, matrices iniciales vacías y ningún warm start. Protocolo y configuración científica permanecen intactos; el siguiente gate sólo se abre después de publicación Git.

@@ -30,6 +30,40 @@ must_fail(@()ror_extended_diagnostic_guards(bad,primary,repoRoot,executionRoot,[
 collision=tempname; mkdir(collision); cleanupCollision=onCleanup(@()rmdir(collision));
 must_fail(@()ror_extended_root_guard(collision),'ROR:DiagnosticRootExists');
 
+% Root reservation semantics: parent creation is separate from the atomic
+% campaign-root mkdir. All paths below are disposable and outside real output.
+absentBase=tempname; absentParent=fullfile(absentBase,'fixed_parent');
+absentRoot=fullfile(absentParent,'campaign');
+cleanupAbsent=onCleanup(@()remove_tree_if_present(absentBase));
+assert(~isfolder(absentParent) && ~isfolder(absentRoot));
+ror_extended_root_guard(absentRoot,'reserve');
+assert(isfolder(absentParent) && isfolder(absentRoot));
+
+presentBase=tempname; mkdir(presentBase); cleanupPresent=onCleanup(@()rmdir(presentBase,'s'));
+presentParent=fullfile(presentBase,'fixed_parent'); mkdir(presentParent);
+presentRoot=fullfile(presentParent,'campaign');
+ror_extended_root_guard(presentRoot,'reserve');
+assert(isfolder(presentRoot));
+
+must_fail(@()ror_extended_root_guard(presentRoot,'reserve'), ...
+    'ROR:DiagnosticRootExists');
+
+blockedBase=tempname; mkdir(blockedBase); cleanupBlocked=onCleanup(@()rmdir(blockedBase,'s'));
+blockedParent=fullfile(blockedBase,'parent_is_file');
+fid=fopen(blockedParent,'w'); assert(fid>=0); fclose(fid);
+must_fail(@()ror_extended_root_guard(fullfile(blockedParent,'campaign'),'reserve'), ...
+    'ROR:DiagnosticParentCreate');
+
+invalidBase=tempname; mkdir(invalidBase); cleanupInvalid=onCleanup(@()rmdir(invalidBase,'s'));
+must_fail(@()ror_extended_root_guard(fullfile(invalidBase,'invalid:name'),'reserve'), ...
+    'ROR:DiagnosticRootReservation');
+
+doubleBase=tempname; mkdir(doubleBase); cleanupDouble=onCleanup(@()rmdir(doubleBase,'s'));
+doubleRoot=fullfile(doubleBase,'campaign');
+ror_extended_root_guard(doubleRoot,'reserve');
+must_fail(@()ror_extended_root_guard(doubleRoot,'reserve'), ...
+    'ROR:DiagnosticRootExists');
+
 snapshotRoot=tempname; mkdir(snapshotRoot); cleanupSnapshots=onCleanup(@()rmdir(snapshotRoot,'s'));
 context=struct('output_dir',snapshotRoot,'seed',61001, ...
     'campaign_id','ROR_BUDGET_DIAGNOSTIC_61001_G400_V01', ...
@@ -84,8 +118,17 @@ report=struct('status','PASS','callback_state_unchanged',true, ...
     'callback_options_unchanged',true,'callback_optchanged_false',true, ...
     'callback_stopflag_untouched',true,'snapshot_generations',50:50:400, ...
     'final_snapshot',true,'early_G200','NOT_REACHED', ...
+    'root_parent_absent','PASS','root_parent_present','PASS', ...
+    'root_collision','PASS','root_parent_creation_failure','PASS', ...
+    'root_exclusive_reservation_failure','PASS','root_double_reservation','PASS', ...
     'GAMULTIOBJ_CALL_COUNT',0,'MODEL_CALL_COUNT',0,'OBJECTIVE_CALL_COUNT',0, ...
     'OPTIMIZATION_RUNS',0);
+end
+
+function remove_tree_if_present(path)
+if isfolder(path)
+    rmdir(path,'s');
+end
 end
 
 function state=synthetic_state(generation)
