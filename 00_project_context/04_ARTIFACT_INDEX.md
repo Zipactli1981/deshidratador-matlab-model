@@ -227,11 +227,30 @@ Campaign recovery reservado para una autorización futura: `ROR_PRIMARY_20260907
 
 Las salidas completas 61001/61002 conservan integridad contra sus inventarios `SEED_SHA256.json`. El intento parcial 61003 no integra el conjunto primario, no aporta warm start/población/scores/RNG y no fue movido, renombrado ni modificado. Siguiente gate tras publicar: autorización explícita de recovery execution; ejecución científica NO autorizada en este estado.
 
-## Infraestructura composite-postrun ROR — validada, no ejecutada científicamente
+## Infraestructura composite-postrun ROR
 
 | Ruta | Rol | SHA-256 | Base de validación |
 |---|---|---|---|
 | `02_src_limpio/audit/robust_operating_region_v01/ror_composite_postrun.py` | `COMPOSITE_POSTRUN_ADAPTER_AND_ARTIFACT_PUBLICATION_LAYER` | `BC0F84078B06899473B27287A3DCB5374AFB37A5D787B25AE77B91611E387871` | Composite 10/10 PASS; familia legacy/recovery derivada del role validado; real audit dry ACCEPT 5/5; protocolo intacto; sin métricas reales |
 | `02_src_limpio/audit/robust_operating_region_v01/test_ror_composite_synthetic.py` | `COMPOSITE_POSTRUN_SYNTHETIC_AND_PUBLICATION_TEST` | `BB5615E348B827720B1EBAC83E19522175BE233A5D45E31E8E7DC0C65D9D2B34` | Composite 10/10 PASS; fixtures recovery con lifecycle real; publicación transaccional y preservación de inputs; sin métricas reales |
 
-El entorno Python aislado usado para validación no es artefacto científico ni forma parte del repositorio. El source map real validado contiene exactamente 61001–61005, con 61003–61005 desde recovery y el intento parcial original 61003 excluido. Siguiente gate después de publicación: `ROR_COMPOSITE_PRIMARY_POSTRUN_AUTHORIZATION`.
+El entorno Python aislado usado para validación no es artefacto científico ni forma parte del repositorio. El source map real validado contiene exactamente 61001–61005, con 61003–61005 desde recovery y el intento parcial original 61003 excluido.
+
+## Postrun composite primario — derivados publicados, suficiencia FAIL
+
+Upstream común: cinco fuentes primarias hash-exact del source map congelado; protocolo SHA-256 `7259B0855CF2F835851EE46FF8B8845FCAA0A1E07852419C76731F7F82A82599`; ejecución con Git HEAD `bb464a050accb0151756eedb79990c05ca85a579`; publicación `COMPLETE_TRANSACTIONAL`. Los derivados no sustituyen outputs primarios.
+
+Raíz: `05_runs/robust_operating_region_v01/ROR_PRIMARY_20260907_COMPOSITE_POSTRUN/`.
+
+| Ruta relativa | Rol | SHA-256 | Upstream / validación |
+|---|---|---|---|
+| `audit/POSTRUN_INTEGRITY.json` | `DERIVED_POSTRUN_ARTIFACT` | `5F100BA44F4272CE43DFED804BFBB2723EE52933EA03605D8AFE8C8B85CA40BA` | Auditoría 5/5; manifest/hash PASS |
+| `audit/DOMINANCE_AUDIT.json` | `DERIVED_POSTRUN_ARTIFACT` | `D692CBB71F45150AA25A7ECEE2447F17EED3382A3BD78632BFFBF2B8E2489A1D` | U=112; N_POOL=22; cobertura dirigida 20/20; dominancia exacta |
+| `audit/PRIMARY_SUFFICIENCY.json` | `DERIVED_POSTRUN_ARTIFACT` | `AC004B2D9B00473BA065F4A7021C3071F906F82E9782013E7B6238A86E8C8E9C` | FAIL sólo por HV ratio; sin políticas |
+| `tables/ALL_RUNS.csv` | `DERIVED_POSTRUN_ARTIFACT` | `3B114A8A8CEAC06ED8F176A46892F788E7D291F5E71300DC133ACD3650F8B419` | Filas auditadas consolidadas; manifest/hash PASS |
+| `tables/N_R.csv` | `DERIVED_POSTRUN_ARTIFACT` | `25789CAC80514BB16628B4E5BDB6A75CB4183E5178BE8AABF575ECE9CCF1C5CF` | N_r por seed 11/11/9/10/8; manifest/hash PASS |
+| `tables/N_POOL.csv` | `DERIVED_POSTRUN_ARTIFACT` | `85EE646DA477C064D50CC8AC808BD6A1FC38F419169150ECC6993244D5DCE2D8` | 22 decisiones, 21 objetivos únicos; duplicado válido de objetivo en 61001 |
+| `tables/INTER_RUN_METRICS.csv` | `DERIVED_POSTRUN_ARTIFACT` | `4028030A221CB7E2D155AB0D5AC347F190639B5384DCFA77148EEBEB82F60EE2` | IGD+, HV, contribuciones y extremos publicados |
+| `numeric/N_POOL.mat` | `DERIVED_POSTRUN_ARTIFACT` | `C1D95216B9446F7B15E177702658D0B57929B3D2A4EAD4D5D9FD9BE36CADAD25` | Representación numérica derivada de N_POOL; manifest/hash PASS |
+| `SHA256_MANIFEST.csv` | `DERIVED_ARTIFACT_HASH_INVENTORY` | `60B11805D7B601829A30B82C38F6267054A88311B67585844CB4CAA77DBC6F69` | Inventario de ocho derivados; validación 8/8 PASS |
+| `COMPOSITE_POSTRUN_MANIFEST.json` | `COMPOSITE_POSTRUN_FINAL_MANIFEST` | `842BA68BD766AED30A309118BF1E5BECEEE07AB48A5DC7B59C0C2E793323FF0A` | Manifiesto final; inventario 9/9 PASS; `COMPLETED_BUT_INSUFFICIENT` |

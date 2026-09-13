@@ -69,28 +69,27 @@ HB200 es el principal baseline histórico trazable y una aproximación no domina
 
 CORRECTED_R1 = CLOSED_PASS, postrun baseline `8a794c389edd10f9750e10a27eca0ec58c14da2d`; C conserva sus nueve soluciones y su configuración piloto de 50 generaciones. No se reabre esta campaña. `06_manuscript/article_Q1/review/CORRECTED_R1_COMPARATIVE_PROTOCOL_v96z.md` v1.0 sigue congelado para H(9)–C(9), SHA-256 `8A8C91DE2B9498A725B544D50E9BA32CD1A159D46E06814F6B9885C01EE062C3`; no se modifica retrospectivamente.
 
-## ROR primario recuperado y remediación del contrato de log composite-postrun
+## ROR primario — postrun composite completado pero insuficiente
 
 ```text
 ROR_PRIMARY_SET_INTEGRITY = PASS
 ROR_PRIMARY_VALID_RUNS = 5/5
-ROR_COMPOSITE_POSTRUN_PREFLIGHT = PASS_SOURCE_MAP_VALIDATED
-ROR_COMPOSITE_POSTRUN_INFRASTRUCTURE = PASS_PUBLISHED_AT_c9f60468833430f12315d1ebefb42ce42681653c
-ROR_COMPOSITE_POSTRUN_ARTIFACT_PUBLICATION = PASS_PUBLISHED_AT_9e47078e963a7bbd0a27680f03feff4759fd110d
-COMPOSITE_SOURCE_MAP_VALID = YES
-COMPOSITE_ADAPTER = ror_composite_postrun.py
-COMPOSITE_PUBLICATION_OUTPUT_ROOT = 05_runs/robust_operating_region_v01/ROR_PRIMARY_20260907_COMPOSITE_POSTRUN
-SCIPY_ENVIRONMENT = Python 3.12.14 / SciPy 1.18.0 / NumPy 2.5.3
-INTERRUPTED_ORIGINAL_61003 = EXCLUDED_INTERRUPTED_ATTEMPT_EVIDENCE
-ROR_COMPOSITE_PRIMARY_POSTRUN_ATTEMPT = BLOCKED_BEFORE_ANALYZE_BY_LOG_CONTRACT_MISMATCH
-ROR_LOG_CONTRACT_DIAGNOSIS = PASS_HIGH_CONFIDENCE
-ROR_LOG_CONTRACT_REMEDIATION = PASS_IMPLEMENTED_NOT_VERSIONED
-LOG_FAMILY_MAPPING = 61001 LEGACY; 61002 LEGACY; 61003 RECOVERY; 61004 RECOVERY; 61005 RECOVERY
-REAL_AUDIT_ACCEPT_COUNT = 5/5
-REAL_POSTRUN_EXECUTION_ATTEMPTS = 1
-REAL_METRICS_COMPUTED = NO
-REAL_POSTRUN_OUTPUT_ROOT_EXISTS = NO
-CURRENT_GATE = ROR_COMPOSITE_POSTRUN_LOG_CONTRACT_REMEDIATION_VERSIONING
+ROR_PRIMARY_CAMPAIGN = COMPLETED_5x200
+ROR_PRIMARY_POSTRUN = COMPLETED_BUT_INSUFFICIENT
+POSTRUN_EXECUTION_ATTEMPT = 2
+POSTRUN_ARTIFACT_INTEGRITY = PASS_10_OF_10
+PRIMARY_SUFFICIENCY = FAIL
+FAILED_CONDITION = HV_RATIO
+HV_RATIO = 0.8013138164000172
+MAX_IGD_PLUS = 0.07675334831002154
+MEDIAN_IGD_PLUS = 0.02968353427953785
+OBJECTIVE_EXTREMES = 5/5, 5/5, 5/5
+N_POOL_SIZE = 22
+N_POOL_OBJECTIVE_COUNT = 21
+N_POOL_DUPLICATE_CLASS = VALID_DECISION_DUPLICATE_OBJECTIVE_VECTOR
+NO_OPERATIONAL_RECOMMENDATIONS = YES
+EXTENDED_BUDGET_CAMPAIGN = NOT_AUTHORIZED
+CURRENT_GATE = ROR_PRIMARY_POSTRUN_RESULTS_INTERPRETATION_AND_VERSIONING
 ```
 
-El primer intento real de postrun se bloqueó en `audit_seed(...)`, antes de `analyze(...)` y de la publicación, porque el lector sólo reconocía el lifecycle legacy. La remediación selecciona explícitamente la familia desde el role del source map ya validado, exige START/COMPLETE exactos y rechaza FAILED, familias mezcladas y seed incorrecta. Regresión cerrada: legacy 36/36, recovery 6/6, composite 10/10, sintaxis/import PASS y auditoría real read-only ACCEPT 5/5. El protocolo, los outputs primarios y la metodología científica permanecen intactos; no existen métricas ni raíz de publicación reales.
+El postrun composite publicó transaccionalmente diez derivados hash-valid. IGD+ y reproducibilidad de extremos satisfacen sus umbrales, pero la razón min/max de HV `0.8013138164000172` incumple el mínimo congelado `0.90`; ésta es la única causa del FAIL. La seed 61005 presenta simultáneamente el menor HV y el mayor IGD+, sin que ello constituya fallo de corrida. Las cinco alcanzaron MaxGenerations: un presupuesto de 200 puede ser una explicación plausible de la variabilidad, pero no está demostrado; no se afirma convergencia u optimalidad global ni se autoriza automáticamente una campaña extendida. N_POOL es una aproximación no dominada multi-seed: sus 22 decisiones contienen 21 vectores objetivo únicos porque dos decisiones distintas de 61001 comparten exactamente el mismo vector objetivo y, bajo dominancia exacta, ninguna domina a la otra.

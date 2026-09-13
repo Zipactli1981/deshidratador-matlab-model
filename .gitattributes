@@ -44,3 +44,6 @@
 # Robust operating-region frozen guard inputs — hash exact worktree bytes
 02_src_limpio/audit/robust_operating_region_v01/frozen_config.json -text
 02_src_limpio/audit/robust_operating_region_v01/source_lock.json -text
+
+# ROR composite postrun publication — preserve manifest-audited bytes exactly
+05_runs/robust_operating_region_v01/ROR_PRIMARY_20260907_COMPOSITE_POSTRUN/** -text -diff
