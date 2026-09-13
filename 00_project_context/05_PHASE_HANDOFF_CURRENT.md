@@ -51,3 +51,34 @@ NEXT_SCIENTIFIC_DECISION = EXTENDED_BUDGET_DIAGNOSTIC_DESIGN
 ```
 
 La campaña primaria 5×200 y el postrun están completos con integridad PASS. La suficiencia falla exclusivamente por variabilidad inter-run de HV; IGD+ y extremos pasan. No existen políticas operativas finales y no se abre automáticamente otra campaña. El hecho de que las cinco corridas alcanzaran MaxGenerations permite considerar el presupuesto como hipótesis, no como causa demostrada ni garantía de que 400 generaciones resuelvan el problema. La siguiente decisión científica es diseñar —sin ejecutar todavía— un diagnóstico de presupuesto extendido.
+
+## Handoff vigente — diagnóstico secundario 61001×400 listo para publicación Git
+
+Este bloque supersede el gate operativo anterior sin reabrir la evidencia científica cerrada.
+
+```text
+PRIMARY_CAMPAIGN = COMPLETED_5x200_PUBLISHED
+PRIMARY_SUFFICIENCY = FAIL
+FAILED_CONDITIONS = HV_RATIO_ONLY
+PRIMARY_SCIENTIFIC_REVIEW = COMPLETED
+EXTENDED_BUDGET_DESIGN = FROZEN
+EXTENDED_BUDGET_DIAGNOSTIC_ROLE = SECONDARY_EXTENDED_BUDGET_DIAGNOSTIC
+EXTENDED_BUDGET_CAMPAIGN_ID = ROR_BUDGET_DIAGNOSTIC_61001_G400_V01
+DIAGNOSTIC_SEED = 61001
+DIAGNOSTIC_MAX_GENERATIONS = 400
+DIAGNOSTIC_INITIALIZATION = FROM_SCRATCH
+DIAGNOSTIC_PROTOCOL_AND_INFRASTRUCTURE = PASS_NOT_EXECUTED
+DIAGNOSTIC_PROTOCOL_SHA256 = 4081B46D21D2EA4D7B4587A8AA40763F8BB718ECE20719C979CB5ABA7B6FBB5D
+CALLBACK_PASSIVE_AUDIT = PASS
+DIAGNOSTIC_SOURCE_LOCK = PASS_16_OF_16
+DIAGNOSTIC_SOURCE_LOCK_SHA256 = 608EB3BDB8016BA181A1798A7E16B10847CCB9D115993CF35259A992667DE735
+DIAGNOSTIC_OPTIMIZATIONS_EXECUTED = 0
+MODEL_EVALUATIONS_EXECUTED = 0
+PRIMARY_CAMPAIGN_REPLACED = NO
+PRIMARY_N_POOL_MODIFIED = NO
+MULTISEED_CONCLUSION_SUPPORTED = NO
+CURRENT_GATE = ROR_EXTENDED_BUDGET_DIAGNOSTIC_INFRASTRUCTURE_VERSIONING
+NEXT_GATE_AFTER_GIT_PUBLICATION = ROR_EXTENDED_BUDGET_DIAGNOSTIC_EXECUTION_AUTHORIZATION
+```
+
+El diseño mantiene `PopulationSize=24`, `UseParallel=false`, matrices iniciales vacías y ningún warm start. La infraestructura no constituye autorización de ejecución: no se ha creado execution root, no se han producido snapshots reales y no se ha ejecutado MATLAB científico, `gamultiobj`, modelo, objective ni postrun diagnóstico real.

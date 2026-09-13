@@ -129,3 +129,21 @@ Congelar universo final X/F + population/scores por corrida, exclusión auditada
 Sólo con PASS seleccionar cuatro políticas: mínimos f1/f2/f3 y distancia ideal normalizada de pesos iguales, desempates deterministas. FAIL no autoriza ampliar presupuesto, reiniciar ni rescatar con warm start. Umbrales operativos, no prueba de convergencia global.
 
 NEXT_GATE = ROBUST_OPERATING_REGION_IMPLEMENTATION. Freeze NO autoriza MATLAB, gamultiobj, nuevas evaluaciones/replays ni optimizaciones; tampoco edición de código productivo/manuscrito, staging, commit, push, PR o merge.
+
+## D015 — Diagnóstico secundario de presupuesto extendido 61001×400
+
+**Decisión:** adoptar un diagnóstico secundario de presupuesto extendido con seed `61001`, `PopulationSize=24`, `MaxGenerations=400`, `UseParallel=false`, inicialización `FROM_SCRATCH` y snapshots pasivos por generación. Protocolo: `06_manuscript/article_Q1/review/ROR_EXTENDED_BUDGET_DIAGNOSTIC_PROTOCOL_v01.md`, SHA-256 `4081B46D21D2EA4D7B4587A8AA40763F8BB718ECE20719C979CB5ABA7B6FBB5D`.
+
+**Justificación:** la campaña primaria 5×200 terminó completa pero fue insuficiente únicamente bajo el criterio congelado de razón de HV. La limitación de presupuesto sigue siendo una explicación plausible, no demostrada. La seed 61001 fue preseleccionada antes de identificar la corrida primaria más débil, evitando selección post-hoc de seed para este diagnóstico principal de presupuesto.
+
+**Alcance:** diagnóstico secundario exclusivamente. No autoriza afirmar que la suficiencia primaria fue reparada, convergencia global, robustez multisemilla ni suficiencia general de 400 generaciones.
+
+```text
+PRIMARY_CAMPAIGN = UNCHANGED
+PRIMARY_N_POOL = UNCHANGED
+POST_HOC_61005_DIAGNOSTIC = NOT_AUTHORIZED_SEPARATE_FUTURE_DECISION_IF_EVER_PURSUED
+```
+
+La adopción metodológica y su infraestructura validada no autorizan la ejecución. Cualquier corrida requiere un gate posterior explícito.
+
+**Estado:** vigente.
