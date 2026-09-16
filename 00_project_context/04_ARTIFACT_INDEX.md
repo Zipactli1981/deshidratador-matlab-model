@@ -291,7 +291,7 @@ Veredicto postrun congelado: `MIXED_OR_AMBIGUOUS_POST_200_CHANGE`. Se observó e
 
 ## Infraestructura PE_07 — sensibilidad local controlada OFAT v1.1
 
-Raíz: `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/`. Estado: `FROZEN_PASS`; ejecución científica no autorizada. Upstream común: PRIMARY `N_POOL.mat` hash-valid, source lock productivo 53/53 y diseño PE_07 v1.1 previamente congelado. La validación dry/sintética no llamó modelo, objective ni `gamultiobj` y no creó la raíz real de ejecución.
+Raíz de infraestructura: `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/`. Estado: infraestructura `FROZEN_PASS`, ejecución científica completada una sola vez e integridad PASS. Upstream común: PRIMARY `N_POOL.mat` hash-valid, source lock productivo 53/53 y diseño PE_07 v1.1 previamente congelado. La reparación posterior afecta sólo implementación/resultados derivados de postrun; no altera protocolo, config, runner, guard, ejecución primaria ni PRIMARY.
 
 | Path | Role | SHA-256 | Upstream | Validation basis |
 |---|---|---|---|---|
@@ -299,9 +299,29 @@ Raíz: `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitiv
 | `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_controlled_sensitivity_config.json` | `PE07_FROZEN_EXECUTABLE_CONFIG` | `05FED2509F630588E539C189126DE1D374D435FC9FEEBA2894C56F3112826814` | Protocolo PE07; N_POOL `C1D952...`; outputs/details PRIMARY 61003/61004 | Anchors full-precision verificados; 48 condiciones, 1 OOB, 47 válidas; presupuesto 3+47=50; IDs/orden determinísticos PASS |
 | `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/run_pe07_controlled_sensitivity.m` | `PE07_NONPRODUCTIVE_EXECUTION_RUNNER` | `C815A2B3124FBAB48CC8C4D9CE468C82B9CDEDACB6F13A0B522C7925E30BD61F` | Config, protocolo, guard, objective productivo existente y source locks | Baseline-first; igualdad exacta 3/3; fail-closed; 47 perturbaciones máximo; no retry/adaptación; dry lock PASS; cero ejecución real |
 | `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_execution_guard.m` | `PE07_EXECUTION_AND_ROOT_GUARD` | `6D43F04BC497043C4A3776EC0B4442573B99B5ADA6037B56C7AF58CF1E969BE5` | Config, hashes PRIMARY, source locks y política de raíz separada | Config/anchor/hash/budget guards PASS; reserva exclusiva, colisión/doble reserva/no-overwrite PASS; inválidos retenidos/excluidos |
-| `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_controlled_sensitivity_postrun.py` | `PE07_PERSISTED_OUTPUT_ONLY_POSTRUN` | `AB52C1CB614FC4983E16C5C3DE1C0B5D8813641F3B9847629B74EDB77C9B5121` | Outputs futuros del runner y reglas estructurales PE07 congeladas | Self-test sintético PASS: secantes, signos, recurrencia, inválidos y no-overwrite; cero llamadas científicas |
+| `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_controlled_sensitivity_postrun.py` | `PE07_REPAIRED_PERSISTED_OUTPUT_ONLY_POSTRUN` | `E211D726890242E8F5FDD9771ABDA06FC5DAE85B599CC7AE74B27649822415B7` | Outputs persistidos del runner, baseline exacto y reglas PE07 congeladas | Reparación contractual: comparación PE06/PE07 elegible, par simétrico no evaluable y tabla anchor-relative 47/47; self-test enfocado PASS; cero llamadas científicas |
 | `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/test_pe07_controlled_sensitivity_dry.m` | `PE07_MATLAB_DRY_TEST` | `2C853C9A953CAB8D09416593176990725CE22DC22F3E31501490986ED1614262` | Config, guard, runner bloqueado, N_POOL almacenado y filesystem temporal | PASS A–O; anchors full-precision; matriz 48/1/47; baseline pass/fail; root/no-overwrite; 0 model/objective/gamultiobj |
-| `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_execution_source_lock.json` | `PE07_EXECUTION_SOURCE_LOCK` | `90C18C5BA6D516F0C1C8F78E20259C363CE9536BF51DDA50F05A149C147067C3` | Seis artefactos PE07, source lock productivo y referencias PRIMARY N_POOL/61003/61004 | 12/12 hashes físicos PASS; sin self-hash recursivo; source lock productivo independiente 53/53 PASS |
+| `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_execution_source_lock.json` | `PE07_REPAIRED_SOURCE_LOCK` | `9CDC4AD373256DE5DD1A76E6AECD9E1946861C1DFA443F74345617D09AFE2636` | Seis artefactos PE07, postrun reparado, source lock productivo y referencias PRIMARY N_POOL/61003/61004 | 12/12 hashes físicos PASS; source lock de ejecución original `90C18C...` permanece registrado en la provenance execution-primary; productivo 53/53 PASS |
+
+### Ejecución y postrun PE_07 — registro por hash, fuera de Git
+
+Política viva: `05_runs/` está excluido por `.gitignore`; estos outputs se preservan físicamente y se registran por ruta/hash, sin `force-add`. La corrección V02 supersede sólo el postrun derivado discrepante. No supersede ni modifica la evidencia `EXECUTION_PRIMARY`.
+
+| Path | Role | SHA-256 | Upstream | Validation basis |
+|---|---|---|---|---|
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/` | `PE07_EXECUTION_PRIMARY_ROOT` | `N/A — DIRECTORY` | Runner/config/protocolo PE07 sobre HEAD `5112d433...` | Campaña única; baseline exacto 3/3; 47/47 perturbaciones válidas; 50 evaluaciones; sin retry |
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/SHA256_MANIFEST_EXECUTION.json` | `PE07_EXECUTION_PRIMARY_HASH_INVENTORY` | `7C2C3E0B2F841990D460D320AD2BD8726845251CC3833EBAF5D1078C584C1528` | Diez artefactos execution-primary | Verificación física 10/10 PASS; execution-primary inmutable tras postrun y reparación |
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/postrun/` | `PE07_SUPERSEDED_DERIVED_POSTRUN_ROOT` | `N/A — DIRECTORY` | Execution-primary PE07 | Preservado 4/4; `COMPLETED_WITH_OUTPUT_CONTRACT_DISCREPANCIES`; superseded sólo como evidencia derivada por V02 |
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/postrun/FINITE_DIFFERENCE_TABLE.csv` | `SUPERSEDED_DERIVED_POSTRUN` | `23197EACB26AE4C3427A88C2DBF292068F64C1DF227BB895AED350EA0D6E09B3` | 47 perturbaciones persistidas | Cálculos centrales válidos 23/24; preservado, pero el conjunto derivado original queda superseded por contrato incompleto |
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/postrun/DOMAIN_FEASIBILITY_AUDIT.json` | `SUPERSEDED_DERIVED_POSTRUN` | `7D79AA3C9247AF829F72568FD0064EE4FD068BA44C2B58BDE309FA4161DA95EA` | Inventario de inválidos/OOB | PASS; 0 inválidos, 1 OOB, sin reemplazo; bytes preservados |
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/postrun/PE07_REPORT.json` | `SUPERSEDED_DISCREPANT_DERIVED_REPORT` | `254C1ECF2BF5541C2D814B52B29DDBDC0671D5CBC02DDDE1E22AF0257D215722` | Finite differences y config PE07 | Preservado; contiene las tres discrepancias contractuales cerradas por V02; no usar para síntesis |
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/postrun/SHA256_MANIFEST.json` | `SUPERSEDED_DERIVED_POSTRUN_MANIFEST` | `C6868695DB24332191D038313841B2F5BAD3BB6EA9F5EDC3D86815F1AE90E511` | Postrun original | Hashes originales preservados 4/4; evidencia histórica, no manifest vigente de síntesis |
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/POSTRUN_CORRECTED_V02/` | `PE07_CORRECTED_DERIVED_POSTRUN_ROOT` | `N/A — DIRECTORY` | Execution-primary 10/10 y postrun reparado `E211D726...` | `PASS`; versión derivada vigente para síntesis; manifiesto corregido 18/18 |
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/POSTRUN_CORRECTED_V02/FINITE_DIFFERENCE_TABLE.csv` | `PE07_CORRECTED_DERIVED_FINITE_DIFFERENCES` | `23197EACB26AE4C3427A88C2DBF292068F64C1DF227BB895AED350EA0D6E09B3` | 47 resultados y pares simétricos congelados | 23 pares centrales evaluables; N21/m_max/LARGE no evaluable; sin sustitución |
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/POSTRUN_CORRECTED_V02/ANCHOR_RELATIVE_RESPONSE_TABLE.csv` | `PE07_CORRECTED_DERIVED_ANCHOR_RELATIVE_RESPONSES` | `983778C80148CC30D0F6C339FA1DA0221B543834EB9A254B59F55C1EC02234FA` | Perturbaciones menos baseline exacto por anchor | 47/47 filas e IDs únicos; deltas X/W/LPG/MR/f1/f2/f3 verificados, 0 discrepancias |
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/POSTRUN_CORRECTED_V02/DOMAIN_FEASIBILITY_AUDIT.json` | `PE07_CORRECTED_DERIVED_DOMAIN_AUDIT` | `7D79AA3C9247AF829F72568FD0064EE4FD068BA44C2B58BDE309FA4161DA95EA` | Inventario persistido y política de dominio | PASS; 0 inválidos, 1 OOB predefinido, clipping no usado, 0 reemplazos |
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/POSTRUN_CORRECTED_V02/PE07_REPORT.json` | `PE07_CORRECTED_DERIVED_REPORT` | `B4F32BD28D6CBC9F757EC812D449C6B3FD9FFB015F7E08B0A30E742A3D24884D` | Execution-primary, finite differences y reglas PE07 congeladas | PASS; comparaciones PE06/PE07 y par faltante corregidos; recurrencia/levels congelados; sin claims causales |
+| `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/POSTRUN_CORRECTED_V02/SHA256_MANIFEST.json` | `PE07_CORRECTED_DERIVED_POSTRUN_MANIFEST` | `2BC2FB6BE89CA406815326E00CB5F9E422805AF731432814B082ED2DFBEA690B` | Execution-primary, postrun original preservado y V02 | Verificación física 18/18 PASS; provenance enlaza root, manifest execution-primary y source lock reparado |
 
 ```text
 PE07_DESIGN_VERSION = v1.1
@@ -309,9 +329,17 @@ PE07_DESIGN_STATUS = FROZEN_PASS
 PE07_EXECUTION_INFRASTRUCTURE = FROZEN_PASS
 PE07_INFRASTRUCTURE_VERSIONING = COMPLETE
 PE07_INFRASTRUCTURE_DRY_VALIDATION = PASS
-REAL_MODEL_EVALUATIONS = 0
-PE07_EXECUTION = NOT_AUTHORIZED
-PE07_BASELINE_REPLAY = NOT_AUTHORIZED
-PE07_PERTURBATIONS = NOT_AUTHORIZED
-NEXT_GATE = ROR_PE_07_FINAL_EXECUTION_READINESS_PREFLIGHT
+PE07_EXECUTION = COMPLETED
+PE07_BASELINE_REPLAY = EXACT_PASS_3_OF_3
+PE07_PERTURBATIONS = 47_OF_47_EXECUTED_VALID
+PE07_EXECUTION_INTEGRITY = PASS
+PE07_POSTRUN_ORIGINAL = COMPLETED_WITH_OUTPUT_CONTRACT_DISCREPANCIES
+PE07_POSTRUN_CORRECTED = PASS
+PE07_CORRECTED_POSTRUN_VERSION = V02
+PE07_POSTRUN_REPAIR_CLASS = DERIVED_OUTPUT_CONTRACT_IMPLEMENTATION_FIX
+PE07_CORRECTED_HASH_VALIDATION = 18_OF_18
+PE07_SCIENTIFIC_INTERPRETATION = PENDING
+PRIMARY_SUFFICIENCY = FAIL
+PRIMARY_N_POOL_MODIFIED = NO
+NEXT_GATE = ROR_PE_07_SCIENTIFIC_INTERPRETATION_AND_MANUSCRIPT_SYNTHESIS
 ```

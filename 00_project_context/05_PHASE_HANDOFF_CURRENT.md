@@ -115,18 +115,35 @@ PE07_INFRASTRUCTURE_VERSIONING = COMPLETE
 PE07_EXECUTABLE_CONFIG_EXISTS = YES
 PE07_RUNNER_EXISTS = YES
 PE07_INFRASTRUCTURE_DRY_VALIDATION = PASS
-REAL_MODEL_EVALUATIONS = 0
-PE07_EXECUTION_PREFLIGHT = COMPLETED_READ_ONLY
-CURRENT_NEXT_GATE = ROR_PE_07_FINAL_EXECUTION_READINESS_PREFLIGHT
-PE07_EXECUTION = NOT_AUTHORIZED
-PE07_BASELINE_REPLAY = NOT_AUTHORIZED
-PE07_PERTURBATIONS = NOT_AUTHORIZED
-PE07_BASELINE_REPLAY_EXECUTION = NOT_AUTHORIZED
-PE07_PERTURBATION_EXECUTION = NOT_AUTHORIZED
+PE07_EXECUTION = COMPLETED
+PE07_BASELINE_REPLAY = EXACT_PASS_3_OF_3
+PE07_PERTURBATIONS = 47_OF_47_EXECUTED_VALID
+PE07_TOTAL_MODEL_EVALUATIONS = 50
+PE07_EXECUTION_INTEGRITY = PASS
+PE07_POSTRUN_ORIGINAL = COMPLETED_WITH_OUTPUT_CONTRACT_DISCREPANCIES
+PE07_POSTRUN_CORRECTED = PASS
+PE07_CORRECTED_POSTRUN_VERSION = V02
+PE07_POSTRUN_REPAIR_CLASS = DERIVED_OUTPUT_CONTRACT_IMPLEMENTATION_FIX
+PE07_CORRECTED_HASH_VALIDATION = 18_OF_18
+PE07_CENTRAL_PAIR_COUNT_EVALUABLE = 23
+PE07_INVALID_PERTURBATION_COUNT = 0
+PE07_PREDEFINED_OOB_COUNT = 1
+PE07_LOCAL_MAGNITUDE_NONMONOTONICITY_COUNT = 0
+PE07_CROSS_CONTEXT_DIRECTION_CHANGE_COUNT = 0
+PE07_ALL_W_RECURRENCE_CLASSES = STRONG_LOCAL_MODEL_RECURRENCE
+PE07_ALL_LPG_RECURRENCE_CLASSES = STRONG_LOCAL_MODEL_RECURRENCE
+PE07_ALL_W_LEVELS = PE07_LEVEL_A
+PE07_ALL_LPG_LEVELS = PE07_LEVEL_A
+PE07_M_MAX_T_MIN_PE06_PE07 = OBSERVATIONAL_AND_CONTROLLED_DIRECTION_CONSISTENT
+PE07_R_DIV2_T_REC_INI_PE06_PE07 = OBSERVATIONAL_RESULT_TOO_AMBIGUOUS_FOR_DIRECTIONAL_COMPARISON
+PE07_N21_M_MAX_LARGE = MAGNITUDE_COMPARISON_NOT_EVALUABLE
+PE07_SCIENTIFIC_INTERPRETATION = PENDING
+PRIMARY_N_POOL_MODIFIED = NO
+CURRENT_NEXT_GATE = ROR_PE_07_SCIENTIFIC_INTERPRETATION_AND_MANUSCRIPT_SYNTHESIS
 ```
 
-Cerrado: reconciliación canónica completada y publicada; `main` local y `origin/main` coinciden en `004685b7c6a347558877da1af85db183b3757e5b`; diseño PE_07 v1.1 congelado; preflight de ejecución completado read-only.
+Cerrado: reconciliación canónica completada y publicada; diseño PE_07 v1.1 e infraestructura congelados; ejecución única completada con baseline exacto 3/3, 47 perturbaciones válidas y auditoría de integridad PASS.
 
-Cerrado adicional: protocolo/config/runner/guard/postrun/test/source-lock PE_07 materializados; hashes 7/7; productive source lock 53/53; PE07 source lock 12/12; MATLAB dry y postrun sintético PASS; cero llamadas reales a modelo/objective y raíz real no creada.
+Cerrado adicional: postrun original preservado como evidencia derivada superseded; reparación contractual implementada y validada sintéticamente; `POSTRUN_CORRECTED_V02` PASS, manifiesto 18/18 y tabla anchor-relative 47/47. La evidencia execution-primary permanece 10/10 y no fue superseded.
 
-Secuencia futura: (1) preflight final de readiness sobre el HEAD publicado de infraestructura; (2) autorización separada del baseline replay; y (3) perturbaciones sólo si el replay exacto pasa 3/3. Este handoff no autoriza MATLAB científico, objective/model replay, `gamultiobj`, baseline replay ni perturbaciones PE_07.
+Siguiente gate: `ROR_PE_07_SCIENTIFIC_INTERPRETATION_AND_MANUSCRIPT_SYNTHESIS`. La síntesis debe usar la evidencia corregida V02, mantener `PRIMARY_SUFFICIENCY = FAIL` y respetar la frontera entre respuesta local del modelo y causalidad física.

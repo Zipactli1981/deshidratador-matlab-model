@@ -144,17 +144,33 @@ PE07_INFRASTRUCTURE_VERSIONING = COMPLETE
 PE07_EXECUTABLE_CONFIG_EXISTS = YES
 PE07_RUNNER_EXISTS = YES
 PE07_INFRASTRUCTURE_DRY_VALIDATION = PASS
-REAL_MODEL_EVALUATIONS = 0
-PE_07_EXECUTION = NOT_AUTHORIZED
-PE07_EXECUTION_STATUS = NOT_AUTHORIZED
-PE07_BASELINE_REPLAY = NOT_AUTHORIZED
-PE07_PERTURBATIONS = NOT_AUTHORIZED
+PE07_EXECUTION = COMPLETED
+PE07_BASELINE_REPLAY = EXACT_PASS_3_OF_3
+PE07_PERTURBATIONS = 47_OF_47_EXECUTED_VALID
+PE07_TOTAL_MODEL_EVALUATIONS = 50
+PE07_EXECUTION_INTEGRITY = PASS
+PE07_POSTRUN_ORIGINAL = COMPLETED_WITH_OUTPUT_CONTRACT_DISCREPANCIES
+PE07_POSTRUN_CORRECTED = PASS
+PE07_CORRECTED_POSTRUN_VERSION = V02
+PE07_POSTRUN_REPAIR_CLASS = DERIVED_OUTPUT_CONTRACT_IMPLEMENTATION_FIX
+PE07_CORRECTED_HASH_VALIDATION = 18_OF_18
+PE07_CENTRAL_PAIR_COUNT_EVALUABLE = 23
+PE07_INVALID_PERTURBATION_COUNT = 0
+PE07_PREDEFINED_OOB_COUNT = 1
+PE07_LOCAL_MAGNITUDE_NONMONOTONICITY_COUNT = 0
+PE07_CROSS_CONTEXT_DIRECTION_CHANGE_COUNT = 0
+PE07_ALL_W_RECURRENCE_CLASSES = STRONG_LOCAL_MODEL_RECURRENCE
+PE07_ALL_LPG_RECURRENCE_CLASSES = STRONG_LOCAL_MODEL_RECURRENCE
+PE07_ALL_W_LEVELS = PE07_LEVEL_A
+PE07_ALL_LPG_LEVELS = PE07_LEVEL_A
+PE07_M_MAX_T_MIN_PE06_PE07 = OBSERVATIONAL_AND_CONTROLLED_DIRECTION_CONSISTENT
+PE07_R_DIV2_T_REC_INI_PE06_PE07 = OBSERVATIONAL_RESULT_TOO_AMBIGUOUS_FOR_DIRECTIONAL_COMPARISON
+PE07_N21_M_MAX_LARGE = MAGNITUDE_COMPARISON_NOT_EVALUABLE
+PE07_SCIENTIFIC_INTERPRETATION = PENDING
+PRIMARY_N_POOL_MODIFIED = NO
 CANONICAL_RECONCILIATION_VERSIONING = COMPLETE
 CANONICAL_EXECUTION_PREREQUISITE = SATISFIED_AND_VERSIONED
-PE07_EXECUTION_PREFLIGHT = COMPLETED_READ_ONLY
-NEXT_GATE = ROR_PE_07_FINAL_EXECUTION_READINESS_PREFLIGHT
-PE07_BASELINE_REPLAY_EXECUTION = NOT_AUTHORIZED
-PE07_PERTURBATION_EXECUTION = NOT_AUTHORIZED
+NEXT_GATE = ROR_PE_07_SCIENTIFIC_INTERPRETATION_AND_MANUSCRIPT_SYNTHESIS
 ```
 
-PE_04 identificó al GLP como driver contable común principal del costo y CO2 operacionales. PE_05 encontró un patrón descriptivo compatible con requerimiento marginal creciente de GLP, limitado por secantes entre soluciones discretas. PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por co-movimiento de controles, sensibilidad a selección y/o confusión residual por intensidad de secado. La infraestructura PE_07 v1.1 quedó congelada y validada dry/sintéticamente con 48 condiciones estructurales, una condición preclasificada fuera de dominio, 47 perturbaciones válidas y máximo ejecutable 50. La validación realizó cero evaluaciones reales. No existen resultados PE_07 ni autorización de baseline replay o perturbaciones; el siguiente gate es un preflight final de readiness.
+PE_04 identificó al GLP como driver contable común principal del costo y CO2 operacionales. PE_05 encontró un patrón descriptivo compatible con requerimiento marginal creciente de GLP, limitado por secantes entre soluciones discretas. PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por co-movimiento de controles, sensibilidad a selección y/o confusión residual por intensidad de secado. PE_07 ejecutó una única campaña controlada: baseline exacto 3/3, 47 perturbaciones válidas y 50 evaluaciones totales; la integridad de ejecución pasó 10/10. El postrun original queda preservado como evidencia derivada superseded por discrepancias contractuales; `POSTRUN_CORRECTED_V02` pasó 18/18 y constituye la base derivada vigente. No reemplaza evidencia execution-primary ni repara la suficiencia PRIMARY. La interpretación científica permanece pendiente.

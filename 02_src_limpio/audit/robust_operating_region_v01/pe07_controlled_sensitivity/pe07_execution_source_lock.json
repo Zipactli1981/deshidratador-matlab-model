@@ -3,7 +3,7 @@
   {"role":"PE07_CONFIG","path":"02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_controlled_sensitivity_config.json","sha256":"05FED2509F630588E539C189126DE1D374D435FC9FEEBA2894C56F3112826814"},
   {"role":"PE07_RUNNER","path":"02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/run_pe07_controlled_sensitivity.m","sha256":"C815A2B3124FBAB48CC8C4D9CE468C82B9CDEDACB6F13A0B522C7925E30BD61F"},
   {"role":"PE07_GUARD","path":"02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_execution_guard.m","sha256":"6D43F04BC497043C4A3776EC0B4442573B99B5ADA6037B56C7AF58CF1E969BE5"},
-  {"role":"PE07_POSTRUN","path":"02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_controlled_sensitivity_postrun.py","sha256":"AB52C1CB614FC4983E16C5C3DE1C0B5D8813641F3B9847629B74EDB77C9B5121"},
+  {"role":"PE07_POSTRUN","path":"02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_controlled_sensitivity_postrun.py","sha256":"E211D726890242E8F5FDD9771ABDA06FC5DAE85B599CC7AE74B27649822415B7"},
   {"role":"PE07_DRY_TEST","path":"02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/test_pe07_controlled_sensitivity_dry.m","sha256":"2C853C9A953CAB8D09416593176990725CE22DC22F3E31501490986ED1614262"},
   {"role":"PRODUCTIVE_DEPENDENCY_LOCK","path":"02_src_limpio/audit/robust_operating_region_v01/source_lock.json","sha256":"5F528E34A97BB279478BDD0FF5CF1D3A78EF7864D392CCC545162DAF0E2765EB"},
   {"role":"PRIMARY_N_POOL","path":"05_runs/robust_operating_region_v01/ROR_PRIMARY_20260907_COMPOSITE_POSTRUN/numeric/N_POOL.mat","sha256":"C1D95216B9446F7B15E177702658D0B57929B3D2A4EAD4D5D9FD9BE36CADAD25"},
