@@ -323,6 +323,15 @@ Política viva: `05_runs/` está excluido por `.gitignore`; estos outputs se pre
 | `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/POSTRUN_CORRECTED_V02/PE07_REPORT.json` | `PE07_CORRECTED_DERIVED_REPORT` | `B4F32BD28D6CBC9F757EC812D449C6B3FD9FFB015F7E08B0A30E742A3D24884D` | Execution-primary, finite differences y reglas PE07 congeladas | PASS; comparaciones PE06/PE07 y par faltante corregidos; recurrencia/levels congelados; sin claims causales |
 | `05_runs/robust_operating_region_v01/controlled_operational_sensitivity/ROR_PE07_CONTROLLED_SENSITIVITY_V01/POSTRUN_CORRECTED_V02/SHA256_MANIFEST.json` | `PE07_CORRECTED_DERIVED_POSTRUN_MANIFEST` | `2BC2FB6BE89CA406815326E00CB5F9E422805AF731432814B082ED2DFBEA690B` | Execution-primary, postrun original preservado y V02 | Verificación física 18/18 PASS; provenance enlaza root, manifest execution-primary y source lock reparado |
 
+## Integración PE_08 — fuente viva del manuscrito y trazabilidad
+
+Estos documentos son productos editoriales derivados. No sustituyen artefactos científicos PRIMARY, execution-primary ni postrun PE_07.
+
+| Path | Role | SHA-256 | Upstream / basis | Validation status |
+|---|---|---|---|---|
+| `06_manuscript/article_Q1/draft_sections/MASTER_manuscript_v01.md` | `CANONICAL_PUBLISH_FACING_MANUSCRIPT_SOURCE` | `4D40FF3DE99DB7C88B16AD96CD24A6C0F23284BD0429D010B7287CB4E3F9D154` | Manuscrito H/C vigente; resultados cerrados PE_04–PE_07; postrun PE07 corregido V02; síntesis científica PASS | Integración Results 4.7–4.10, Methods 3.7, Discussion 6.1–6.4 y limitaciones auditada; 18 claims trazables, 0 unsupported; no es evidencia científica raw |
+| `06_manuscript/article_Q1/traceability/ROR_PE_08_RESULTS_DISCUSSION_CLAIM_TRACEABILITY.md` | `PE08_CLAIM_TO_EVIDENCE_TRACEABILITY` | `F0CC44320DD4D753DFE8355889A3F03AD0EBCE8DD899F43BD94E20748A7AFB5D` | Artefactos PRIMARY almacenados; PE07 execution-primary; `POSTRUN_CORRECTED_V02`; reglas de síntesis cerradas | PASS; 18 claims, 5 supported, 13 supported with qualification, 0 unsupported; contratos F1–F4 y T1–T4 listos |
+
 ```text
 PE07_DESIGN_VERSION = v1.1
 PE07_DESIGN_STATUS = FROZEN_PASS
@@ -338,8 +347,11 @@ PE07_POSTRUN_CORRECTED = PASS
 PE07_CORRECTED_POSTRUN_VERSION = V02
 PE07_POSTRUN_REPAIR_CLASS = DERIVED_OUTPUT_CONTRACT_IMPLEMENTATION_FIX
 PE07_CORRECTED_HASH_VALIDATION = 18_OF_18
-PE07_SCIENTIFIC_INTERPRETATION = PENDING
+PE07_SCIENTIFIC_INTERPRETATION = PASS
+PE08_RESULTS_DISCUSSION_INTEGRATION = PASS
+PE08_CLAIM_AND_ARTIFACT_REVIEW = PASS
+MANUSCRIPT_INTEGRATION_VERSIONING = COMPLETE
 PRIMARY_SUFFICIENCY = FAIL
 PRIMARY_N_POOL_MODIFIED = NO
-NEXT_GATE = ROR_PE_07_SCIENTIFIC_INTERPRETATION_AND_MANUSCRIPT_SYNTHESIS
+NEXT_GATE = ROR_PE_09_FIGURE_TABLE_PRODUCTION_FROM_FROZEN_EVIDENCE
 ```

@@ -86,7 +86,7 @@ MULTISEED_CONCLUSION_SUPPORTED = NO
 
 G200 de la trayectoria extendida no reproduce exactamente población, scores ni conjunto ND objetivo de PRIMARY 61001×200. Entre G200 y G400 mejoraron los extremos individuales, pero el HV común disminuyó y la cobertura fue mixta. La categoría D no prueba mejoría multiobjetivo neta, convergencia, insuficiencia de 200 generaciones ni suficiencia de 400 generaciones. La corrida no es una sexta seed ni repara PRIMARY.
 
-## Ingeniería de procesos cerrada hasta PE_06
+## Ingeniería de procesos cerrada hasta PE_07
 
 ```text
 CURRENT_SCIENTIFIC_PHASE = PRIMARY_RESULTS_PROCESS_ENGINEERING_INTERPRETATION
@@ -95,12 +95,14 @@ PE_05 = PASS_WITH_LIMITATION
 PE_06 = PASS_WITH_LIMITATION
 PE07_DESIGN_VERSION = v1.1
 PE07_DESIGN_STATUS = FROZEN_PASS
-PE07_EXECUTION_STATUS = NOT_AUTHORIZED
+PE07_EXECUTION_STATUS = COMPLETED
+PE07_POSTRUN_CORRECTED = PASS
+PE07_SCIENTIFIC_SYNTHESIS = PASS
 ```
 
-PE_04 cerró el acoplamiento energía-costo-carbono; PE_05 cerró la caracterización descriptiva de intensificación frente a GLP con limitaciones de secantes discretas; PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por confounding/selección. PE_07 aún no tiene resultados.
+PE_04 cerró el acoplamiento energía-costo-carbono; PE_05 cerró la caracterización descriptiva de intensificación frente a GLP con limitaciones de secantes discretas; PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por confounding/selección. Esta descripción histórica queda superseded por la ejecución PE_07 completada, su postrun corregido V02 y la síntesis científica cerrada que constan en el bloque vigente siguiente.
 
-## Bloque vigente — preflight final de readiness PE_07
+## Bloque vigente — integración Results/Discussion PE_08
 
 ```text
 CANONICAL_RECONCILIATION = COMPLETE
@@ -137,13 +139,22 @@ PE07_ALL_LPG_LEVELS = PE07_LEVEL_A
 PE07_M_MAX_T_MIN_PE06_PE07 = OBSERVATIONAL_AND_CONTROLLED_DIRECTION_CONSISTENT
 PE07_R_DIV2_T_REC_INI_PE06_PE07 = OBSERVATIONAL_RESULT_TOO_AMBIGUOUS_FOR_DIRECTIONAL_COMPARISON
 PE07_N21_M_MAX_LARGE = MAGNITUDE_COMPARISON_NOT_EVALUABLE
-PE07_SCIENTIFIC_INTERPRETATION = PENDING
+PE07_SCIENTIFIC_INTERPRETATION = PASS
+PE07_SCIENTIFIC_SYNTHESIS = PASS
+PE08_MANUSCRIPT_INTEGRATION = PASS
+PE08_CLAIM_AND_ARTIFACT_REVIEW = PASS
+MANUSCRIPT_INTEGRATION_READY_FOR_VERSIONING = YES
+MANUSCRIPT_INTEGRATION_VERSIONING = COMPLETE
 PRIMARY_N_POOL_MODIFIED = NO
-CURRENT_NEXT_GATE = ROR_PE_07_SCIENTIFIC_INTERPRETATION_AND_MANUSCRIPT_SYNTHESIS
+CURRENT_NEXT_GATE = ROR_PE_09_FIGURE_TABLE_PRODUCTION_FROM_FROZEN_EVIDENCE
 ```
 
 Cerrado: reconciliación canónica completada y publicada; diseño PE_07 v1.1 e infraestructura congelados; ejecución única completada con baseline exacto 3/3, 47 perturbaciones válidas y auditoría de integridad PASS.
 
 Cerrado adicional: postrun original preservado como evidencia derivada superseded; reparación contractual implementada y validada sintéticamente; `POSTRUN_CORRECTED_V02` PASS, manifiesto 18/18 y tabla anchor-relative 47/47. La evidencia execution-primary permanece 10/10 y no fue superseded.
 
-Siguiente gate: `ROR_PE_07_SCIENTIFIC_INTERPRETATION_AND_MANUSCRIPT_SYNTHESIS`. La síntesis debe usar la evidencia corregida V02, mantener `PRIMARY_SUFFICIENCY = FAIL` y respetar la frontera entre respuesta local del modelo y causalidad física.
+Síntesis PE_07 cerrada PASS e integración local Results/Discussion PE_08 completada sobre la evidencia corregida V02, manteniendo `PRIMARY_SUFFICIENCY = FAIL` y la frontera entre respuesta local del modelo y causalidad física.
+
+Auditoría claim-by-claim y de contratos de figuras/tablas PE_08 cerrada; integración y trazabilidad listas para publicación en este gate, sin nuevos cálculos ni renderizado.
+
+Siguiente gate: `ROR_PE_09_FIGURE_TABLE_PRODUCTION_FROM_FROZEN_EVIDENCE`.

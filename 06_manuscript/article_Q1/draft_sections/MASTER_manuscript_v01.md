@@ -2,11 +2,11 @@
 
 ## Abstract
 
-Hybrid solar–LPG drying couples thermal supply with airflow and recirculation decisions, creating operational conflicts that cannot be represented by moisture removal alone. This computational study characterizes the finite-set trade-offs among final moisture ratio (`f1`), modeled specific operating-energy cost (`f2`, USD/kg water removed), and modeled specific operational greenhouse-gas emissions (`f3`, kg CO2e/kg water removed) for red chilli in a forced-convection dryer. Four operating variables were considered: the base air mass-flow parameter, minimum process-air temperature, recirculation fraction, and recirculation start time. Two nine-solution sets were evaluated under the same corrected COST-E3D formulation: historical R1 decision vectors reevaluated under the corrected formulation (H) and solutions generated directly under it (C).
+Hybrid solar–LPG drying couples thermal supply with airflow and recirculation decisions, creating operational conflicts that cannot be represented by moisture removal alone. This computational study characterizes the finite-set trade-offs among final moisture ratio (`f1`), modeled specific operating-energy cost (`f2`, USD/kg water removed), and modeled specific operational greenhouse-gas emissions (`f3`, kg CO2e/kg water removed) for red chilli in a forced-convection dryer. Four operating variables were considered: the base air mass-flow parameter, minimum process-air temperature, recirculation fraction, and recirculation start time. Two nine-solution sets were evaluated under the same corrected COST-E3D formulation: historical R1 decision vectors reevaluated under the corrected formulation (H) and solutions generated directly under it (C). A separate postrun process-engineering analysis examined a 22-design pooled PRIMARY nondominated approximation and a controlled one-factor-at-a-time model experiment around three PRIMARY operating contexts.
 
 All nine members of each set were internally nondominated. Of the 81 cross-set comparisons, 78 were incomparable, C dominated H in one pair, H dominated C in two pairs, and no objective vectors were exactly equal. Set coverage was 1/9 for C over H and 2/9 for H over C. Joint nondominated sorting retained eight H and seven C solutions in Rank 1. Relative to H, C had a 33.807% lower median `f1`, accompanied by 3.200% and 3.859% higher median `f2` and `f3`, respectively. C occupied narrower observed marginal intervals and introduced no new marginal extrema, whereas H retained all observed marginal extrema. At the primary normalized reference point, anchored hypervolume was 0.974982 for H and 1.009963 for C; the direction C > H was unchanged at the two additional prespecified reference points.
 
-The results indicate trade-off restructuring rather than uniform replacement of the historical set. Lower final moisture in C was descriptively associated with a higher thermal setpoint and different airflow and recirculation management, with moderate penalties in modeled specific operating-energy cost and operational greenhouse-gas emissions. These conclusions apply only to the 18 evaluated solutions from one corrected run and a historical reevaluated set at a common fixed 19.9 h horizon. The emissions indicator includes direct LPG-combustion CO2 and indirect grid-electricity CO2e normalized by water removed; it is not a life-cycle carbon footprint, a complete greenhouse-gas inventory, or total environmental impact.
+The results indicate trade-off restructuring rather than uniform replacement of the historical set. Lower final moisture in C was descriptively associated with a higher thermal setpoint and different airflow and recirculation management, with moderate penalties in modeled specific operating-energy cost and operational greenhouse-gas emissions. In the separate PRIMARY analysis, LPG was the dominant common accounting contributor to cost and operational CO2 variation, water removal and LPG input had identical rank ordering, and controlled local perturbations produced recurrent response directions across the evaluated contexts. The H/C comparison applies only to its 18 evaluated solutions at a common fixed 19.9 h horizon; the PRIMARY interpretation applies only to its finite pooled approximation and three local controlled contexts, and the PRIMARY campaign did not pass its frozen inter-run hypervolume-ratio sufficiency criterion. The emissions indicator includes direct LPG-combustion CO2 and indirect grid-electricity CO2e normalized by water removed; it is not a life-cycle carbon footprint, a complete greenhouse-gas inventory, or total environmental impact.
 
 **Keywords:** hybrid solar–LPG dryer; operational trade-offs; finite solution sets; multiobjective optimization; air recirculation; operating-energy cost; operational greenhouse-gas emissions; historical-solution reevaluation
 
@@ -20,12 +20,13 @@ Multiobjective optimization is likewise established in drying. Previous work has
 
 A second, more distinctive question arises from correction of an objective formulation after historical candidates have already been generated. Within the drying literature identified by the targeted positioning search, no direct precedent was located for preserving historical decision vectors, reevaluating those same vectors under a corrected cost–emissions formulation, generating candidates directly under that corrected formulation, and quantifying the survival and restructuring of the historical trade-offs. This is a bounded literature finding, not proof that no precedent exists outside the targeted search.
 
-The study addresses two questions:
+The study addresses three questions:
 
 1. How are drying performance, modeled specific operating-energy cost, and modeled specific operational greenhouse-gas emissions traded off across the evaluated combinations of thermal and air-management decisions in the hybrid solar–LPG dryer?
 2. How does the observed finite-set trade-off structure change when historical solutions are reevaluated under corrected COST-E3D and compared with solutions obtained directly under that corrected formulation?
+3. Within the separate PRIMARY approximation, which stored energy component accounts for the coupled cost and operational-CO2 variation, and which local response directions does the deterministic model produce when each operating control is perturbed around low-, intermediate-, and high-drying contexts?
 
-The working hypothesis is that stronger drying within the evaluated solutions is associated with moderately higher modeled specific operating-energy cost and operational greenhouse-gas emissions, and that direct corrected optimization restructures rather than uniformly replaces the historical reevaluated trade-offs. The finite-set scope is constitutive: the manuscript characterizes 18 evaluated solutions and does not generalize their geometry to the full decision space.
+The working hypothesis is that stronger drying within the evaluated solutions is associated with higher modeled specific operating-energy cost and operational greenhouse-gas emissions, and that direct corrected optimization restructures rather than uniformly replaces the historical reevaluated trade-offs. The finite-set scope is constitutive: the H/C comparison characterizes 18 evaluated solutions, while the separate PRIMARY analysis characterizes a 22-design pooled nondominated approximation and local controlled responses around three anchors. Neither analysis generalizes its geometry or response directions to the full decision space.
 
 ## 2. System description and model basis
 
@@ -45,7 +46,7 @@ $$
 
 Here, `m_max` is the base air mass-flow parameter (kg/s), `T_min` is the minimum process-air temperature before the final operating stage (°C), `r_div2` is the recirculated fraction of the outlet stream, and `t_rec_ini` is the recirculation start time (h). Because recirculation changes flows within the circuit, `m_max` is not interpreted as a constant effective flow everywhere in the simulation.
 
-The frozen lower and upper bounds were
+For the H/C comparative run, the frozen lower and upper bounds were
 
 $$
 \mathbf{l}=[0.0540767982118,57.6832965028,0.422252618341,8.6517528081]
@@ -135,6 +136,14 @@ All 18 evaluations reached the common nominal maximum horizon of 19.9 h. Histori
 
 Validated decomposition evidence was available for all 18 solutions for useful auxiliary heat, LPG input energy and mass, LPG cost, solar cost, air-impeller electricity, electricity cost, water removed, total modeled cost, and total modeled emissions. Physical irradiance was not unambiguously persisted. Separate LPG and electricity emissions components were persisted for H but not for C; environmental comparison of C is therefore limited to total modeled operational emissions and the persisted energy inputs.
 
+### 3.7 PRIMARY postrun and controlled local-response analyses
+
+The separate PRIMARY campaign comprised five stored solver runs with population size 24 and a maximum of 200 generations. Its pooled nondominated approximation contained 22 decision vectors and 21 unique objective vectors. This set was used as a finite competitive approximation rather than a true or global Pareto front because the frozen inter-run hypervolume-ratio sufficiency condition failed. The PRIMARY decision bounds were `m_max` in [0.07, 0.20] kg/s, `T_min` in [45, 70] °C, `r_div2` in [0, 0.99], and `t_rec_ini` in [0, 19] h; these bounds are distinct from those of the earlier H/C comparative run.
+
+Stored decomposition fields were used to audit cost and operational-CO2 accounting and to attribute pairwise numerator reductions to LPG, solar, and electricity components. The association between drying intensity and LPG demand was assessed descriptively through rank ordering and adjacent secants after sorting the 22 designs by water removed. Observational control associations were evaluated in the pooled approximation and separately across the five solver-reported sets, with control-control dependence retained as an attribution limitation. No significance testing was applied.
+
+The PE_07 follow-up selected three existing PRIMARY anchors representing low-, intermediate-, and high-drying contexts. One control was perturbed at a time at two predefined magnitudes while the other three coordinates were held fixed. Exact reproduction of all three stored anchor baselines was required before perturbations. Central finite differences were classified by response direction and recurrence across anchors; they were used as local deterministic-model evidence, not as experimental derivatives, global sensitivity indices, or physical causal effects.
+
 ## 4. Results
 
 ### 4.1 Decision-space shifts
@@ -175,6 +184,30 @@ For both sets, `f2` and `f3` share water removed as their denominator. Interpret
 
 Table 2 consolidates the principal H-vs-C results.
 
+### 4.7 Primary-set cost and operational-carbon structure
+
+The postrun process-engineering analysis used the 22 designs in the finite pooled PRIMARY nondominated approximation. LPG represented a median share of 0.864877090576 of modeled operating-energy cost and 0.934992870940 of modeled operational CO2. Across the relevant oriented pairwise comparisons, the LPG component was the largest positive contributor to all 229 cost reductions and all 230 operational-CO2 reductions. Lower total cost and lower total operational CO2 also had concordant ordering in all 230 comparable pairs. Thus, within the evaluated PRIMARY set, LPG fuel input was the principal common accounting contributor to variation in the two numerators; this decomposition does not by itself establish physical causality.
+
+Solar energy was 487.28052 MJ for all 22 designs, whereas the electricity component was minor and weakly varying relative to LPG. The constant solar input prevents attribution of the observed between-design variation to solar displacement within this finite set.
+
+### 4.8 Drying intensity and LPG demand
+
+Water removal (`W`) and LPG fuel input had identical rank ordering in the PRIMARY approximation (`Spearman(W,LPG)=1`; 230/230 pairwise concordance), while final moisture ratio had the opposite rank ordering with LPG (`Spearman(MR,LPG)=-1`). After ordering the designs by `W`, the median adjacent LPG secants were 17.2990173, 554.300065, and 23637.0426 MJ per kg of water removed in the low-, middle-, and high-intensity interval groups, respectively. The association between interval midpoint and the adjacent LPG secant was positive (`Spearman=0.942857142857`), yielding the prespecified `INCREASING_MARGINAL_LPG_PATTERN` classification.
+
+These quantities are discrete secants between irregularly spaced finite-set solutions, not local or thermodynamic derivatives. In particular, the largest high-intensity values can be amplified by very small differences in `W`.
+
+### 4.9 Observational control associations
+
+In the PRIMARY approximation, `m_max` and `T_min` showed recurrent positive observational associations with both `W` and LPG demand. These associations had the same positive direction in all five solver-reported runs. However, `m_max` and `T_min` also exhibited strong control-control co-movement. The associations for `r_div2` and `t_rec_ini` were sensitive to nondominance selection, and those controls were themselves strongly associated. Consequently, all eight observational control-response relations were retained as `PE06_LEVEL_4: AMBIGUOUS_OR_CONFOUNDED`; the optimizer-selected geometry alone did not identify independent control responses.
+
+### 4.10 Controlled local model responses
+
+The controlled PE_07 experiment used low-, intermediate-, and high-drying PRIMARY anchors and varied one control at a time while holding the other three fixed. The three anchor baselines were reproduced exactly, 47 predefined in-domain perturbations were executed without invalid results, and 23 of 24 structural central pairs were evaluable. The unavailable pair was the large-magnitude `m_max` comparison at the low-drying anchor because its negative-side condition was predefined as out of bounds.
+
+Increasing `m_max` or `T_min` produced positive local modeled responses in both `W` and LPG demand across the evaluated contexts. Increasing `r_div2` produced negative local modeled responses in both quantities, whereas increasing `t_rec_ini` produced positive local modeled responses in both. All eight control-response relations were classified as `STRONG_LOCAL_MODEL_RECURRENCE` and `PE07_LEVEL_A`. No local magnitude sign reversal and no cross-context direction change were observed among the evaluable comparisons.
+
+The positive observational directions for `m_max` and `T_min` were classified as `OBSERVATIONAL_AND_CONTROLLED_DIRECTION_CONSISTENT` for both responses. The PE_06 evidence for `r_div2` and `t_rec_ini` remained `OBSERVATIONAL_RESULT_TOO_AMBIGUOUS_FOR_DIRECTIONAL_COMPARISON`; PE_07 did not retrospectively change those observational classifications.
+
 ## 5. Physical, economic, and environmental interpretation
 
 ### 5.1 Physical interpretation
@@ -199,14 +232,34 @@ The predominance of incomparability is central. With 78 of 81 cross-set pairs in
 
 The system-first interpretation is consistent with the literature positioning. Solar–LPG drying, airflow control, recirculation, and multiobjective dryer optimization have direct precedents (Murali et al., 2020; Ortiz-Rodríguez et al., 2020; César-Munguía et al., 2023; Khater et al., 2024; Winiczenko et al., 2018; El Ferouali et al., 2018; Oviedo et al., 2021; Zhang et al., 2022). The incremental contribution lies in integrating the three corrected operational objectives with coupled thermal and air-management decisions for this system. The narrower distinctive contribution is the traceable survival analysis of historical candidates after reevaluation under a corrected cost–emissions formulation. The targeted search found no direct drying precedent for that complete workflow, but universal priority is not claimed.
 
-The common TMAX regime strengthens comparability by removing unequal nominal horizon as a trivial explanation. It also narrows interpretation: the study characterizes fixed-horizon operating outcomes rather than free normal termination. Similarly, the single corrected run provides a reproducible candidate set but no evidence about the distribution of outcomes over random seeds or the expected performance of `gamultiobj`.
+The common TMAX regime strengthens comparability by removing unequal nominal horizon as a trivial explanation. It also narrows interpretation: the H/C comparison characterizes fixed-horizon operating outcomes rather than free normal termination. Its single corrected run provides a reproducible candidate set but no evidence about the distribution of H/C outcomes over random seeds or the expected performance of `gamultiobj`. The separate five-run PRIMARY campaign supplies descriptive recurrence evidence for its own postrun analyses, but it failed the frozen inter-run hypervolume-ratio sufficiency condition and therefore does not establish multiseed sufficiency or convergence.
+
+### 6.1 Dominant modeled drying-energy trade-off
+
+The PRIMARY process-engineering evidence connects stronger modeled drying with greater auxiliary/LPG demand and, through the stored accounting structure, with greater operating cost and operational CO2. LPG dominated the variation of both numerators, whereas solar input was constant and electricity was a smaller, weakly varying component. The dominant competitive trade-off can therefore be interpreted as stronger drying versus greater fossil-energy demand, operating cost, and operational CO2 within the modeled system, the evaluated operating contexts, and the finite PRIMARY nondominated approximation. It is not a universal process law.
+
+The increasing adjacent LPG secants are compatible with a growing incremental fossil-energy requirement near the highest evaluated drying intensities. Their magnitude does not identify a physical saturation threshold: the estimates connect discrete solutions, use irregular spacing, and can become very large when `Delta W` is very small. They must not be interpreted as thermodynamic derivatives.
+
+### 6.2 Interpretation of controlled `m_max` and `T_min` responses
+
+PE_07 strengthens the observational PE_06 result for `m_max` and `T_min` because their positive directions were reproduced after fixing the other three controls. Controlled perturbation of either variable produced recurrent local modeled increases in water removal and LPG demand across the evaluated operating contexts. This agreement supports the direction of the local model response but provides neither a normalized comparison of their importance nor evidence that one control is preferable to the other.
+
+### 6.3 Interpretation of recirculation controls
+
+Increasing `r_div2` locally shifted the model toward both lower water removal and lower LPG demand. This joint reduction does not demonstrate improved fuel efficiency because drying intensity was not held constant. In particular, the result must not be reduced to a claim that increasing recirculation fraction saves fuel.
+
+The model defines `t_rec_ini` as recirculation start time; increasing it therefore delays recirculation onset. Around the evaluated anchors, that delay produced recurrent local modeled increases in water removal and LPG demand. This direction is not an operating recommendation, and it does not establish that delayed recirculation is physically preferable.
+
+### 6.4 Observational versus controlled evidence
+
+PE_06 describes the geometry selected jointly by the optimizer, in which controls co-vary and drying intensity is strongly coupled to LPG demand. PE_07 instead isolates local one-factor responses while preserving the other three anchor coordinates. It therefore resolves local modeled response directions that could not be attributed independently from the observational approximation. The controlled experiment does not resolve physical causality, control interactions, global sensitivity, uncertainty, relative control importance, or responses outside the evaluated neighborhoods.
 
 ## 7. Limitations
 
 The conclusions are subject to the following constitutive limitations:
 
 1. H and C are finite evaluated sets. Their geometry does not establish global optimality or an independently verified reference trade-off surface.
-2. Only one corrected run was performed, using seed 61001. Between-seed variability, expected solver performance, statistical robustness, and configuration superiority are not established.
+2. The H/C comparison used only one corrected run, with seed 61001. Between-seed variability for that comparison, expected solver performance, statistical robustness, and configuration superiority are not established. The separate five-run PRIMARY campaign does not repair this limitation and failed its own frozen hypervolume-ratio sufficiency condition.
 3. The corrected run stopped at `MaxGenerations=50`; this stop condition does not establish convergence or the general sufficiency of 50 generations.
 4. The nine H and nine C points are not independent experimental or optimizer replicates. Descriptive medians, ranges, and percentages do not support population inference or significance testing.
 5. All 18 solutions share a fixed nominal TMAX horizon of 19.9 h. The result does not characterize free normal termination or identical temporal trajectories.
@@ -216,6 +269,13 @@ The conclusions are subject to the following constitutive limitations:
 9. Physical irradiance was not unambiguously available in the persisted comparative evidence, preventing direct irradiance attribution.
 10. Separate LPG and electricity emissions components were not persisted for C, preventing component-level emissions attribution for that set.
 11. The lumped model does not resolve all spatial gradients, and the electrical scope is limited to the implemented air-impeller representation. The upstream model validation used pineapple data; the present red-chilli application uses literature kinetics and has not been experimentally validated as an integrated plant simulation. Equipment-level extrapolation requires product-specific physical validation and uncertainty analysis.
+12. The PRIMARY campaign failed its frozen sufficiency criterion because the inter-run hypervolume ratio was below its threshold. Its 22-point pooled set is a finite multi-seed nondominated approximation, not a true, exact, or global Pareto front.
+13. PE_07 sampled only three operating contexts and two local perturbation magnitudes. One structural central pair was unavailable because a predefined condition was outside the decision bounds.
+14. The one-factor-at-a-time design does not identify interactions among `m_max`, `T_min`, `r_div2`, and `t_rec_ini`, and its response directions do not provide normalized control-importance rankings.
+15. Exact deterministic model responses do not establish experimental or physical causality and must not be extrapolated beyond the evaluated contexts without validation.
+16. `MR` and `W` are deterministically related representations of the same terminal drying state and therefore are not independent corroborating responses. Similarly, useful auxiliary heat and LPG fuel input are accounting-related and do not constitute independent energy evidence.
+17. The PE_05 marginal quantities are secants between irregularly spaced solutions. High values can be amplified by small `Delta W` and do not represent local thermodynamic derivatives or an identified saturation threshold.
+18. The environmental boundary includes operational LPG-combustion and grid-electricity emissions as implemented. Solar input was constant across N_POOL, so solar displacement cannot be inferred from this finite set.
 
 ## 8. Conclusions
 
@@ -224,6 +284,8 @@ The evaluated hybrid solar–LPG dryer solutions exhibit a three-objective opera
 Direct corrected optimization restructured rather than uniformly replaced the historical reevaluated set. Both H and C were internally nondominated, 78 of 81 cross-set pairs were incomparable, dominance was sparse and bidirectional, and both sources contributed substantially to joint Rank 1. C had greater anchored hypervolume at all three frozen reference points, whereas H retained all observed marginal extrema and greater reciprocal coverage.
 
 The scientific contribution is therefore a finite-set physical and multiobjective characterization of operational trade-offs in the dryer, together with a traceable assessment of which historical trade-offs survive corrected reformulation. The evidence supports incremental system-specific novelty and a strong narrow historical-survival contribution, not universal priority. These conclusions do not establish convergence, between-seed robustness, statistical superiority, or global optimality, and they do not identify a unique recommended operating solution.
+
+The separate PRIMARY postrun analysis identifies LPG as the principal common accounting link between auxiliary demand, operating cost, and operational CO2. Its finite-set geometry is compatible with increasing incremental LPG requirements toward the highest evaluated drying intensities. Controlled local perturbations predicted positive water-removal and LPG responses to increases in `m_max`, `T_min`, and `t_rec_ini`, and negative responses to increases in `r_div2`, without direction changes across the evaluated contexts. These results establish local modeled response directions only; they do not demonstrate physical causality, global sensitivity, control importance, or an operating recommendation.
 
 ## 9. Nomenclature
 
@@ -234,13 +296,16 @@ The scientific contribution is therefore a finite-set physical and multiobjectiv
 | `f2` | Modeled specific operating-energy cost | USD/kg water removed |
 | `f3` | Modeled specific operational greenhouse-gas emissions | kg CO2e/kg water removed |
 | `H` | Nine historical R1 solutions reevaluated under corrected COST-E3D | finite evaluated set |
+| `LPG` | Liquefied petroleum gas fuel input | MJ unless otherwise stated |
 | `m_max` | Base air mass-flow parameter | kg/s |
 | `MR` | Moisture ratio | dimensionless |
+| `N_POOL` | Pooled PRIMARY multi-seed nondominated approximation | 22 decision vectors; 21 unique objective vectors |
 | `Q_aux_tot` | Useful supplementary heat assigned to LPG heating | MJ |
 | `r_div2` | Fraction of outlet flow recirculated through branch D2 | dimensionless |
 | `T_min` | Minimum process-air temperature before the final operating stage | °C |
 | `t_rec_ini` | Recirculation start time | h |
 | `TMAX` | Fixed nominal maximum simulation horizon | 19.9 h |
+| `W` | Water removed from the product batch | kg water |
 | `C(A,B)` | Fraction of set B dominated by at least one member of set A | dimensionless |
 | `HV` | Commonly normalized, reference-point-anchored hypervolume | normalized volume |
 | Rank 1 | Joint nondominated set of the 18 evaluated solutions | finite-set rank |

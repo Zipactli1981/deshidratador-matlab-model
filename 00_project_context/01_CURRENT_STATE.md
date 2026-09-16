@@ -166,11 +166,21 @@ PE07_ALL_LPG_LEVELS = PE07_LEVEL_A
 PE07_M_MAX_T_MIN_PE06_PE07 = OBSERVATIONAL_AND_CONTROLLED_DIRECTION_CONSISTENT
 PE07_R_DIV2_T_REC_INI_PE06_PE07 = OBSERVATIONAL_RESULT_TOO_AMBIGUOUS_FOR_DIRECTIONAL_COMPARISON
 PE07_N21_M_MAX_LARGE = MAGNITUDE_COMPARISON_NOT_EVALUABLE
-PE07_SCIENTIFIC_INTERPRETATION = PENDING
+PE07_SCIENTIFIC_INTERPRETATION = PASS
+PE08_RESULTS_DISCUSSION_INTEGRATION = PASS
+PE08_CLAIM_AND_ARTIFACT_REVIEW = PASS
+MANUSCRIPT_SOURCE = 06_manuscript/article_Q1/draft_sections/MASTER_manuscript_v01.md
+MANUSCRIPT_INTEGRATION_STATUS = READY_FOR_VERSIONING
+MANUSCRIPT_INTEGRATION_VERSIONING = COMPLETE
+CLAIM_TRACEABILITY_STATUS = PASS
+CLAIM_COUNT = 18
+UNSUPPORTED_CLAIM_COUNT = 0
+FIGURE_CONTRACT_STATUS = F1_F4_READY_FROM_FROZEN_EVIDENCE
+TABLE_CONTRACT_STATUS = T1_T4_READY_FOR_FORMATTING
 PRIMARY_N_POOL_MODIFIED = NO
 CANONICAL_RECONCILIATION_VERSIONING = COMPLETE
 CANONICAL_EXECUTION_PREREQUISITE = SATISFIED_AND_VERSIONED
-NEXT_GATE = ROR_PE_07_SCIENTIFIC_INTERPRETATION_AND_MANUSCRIPT_SYNTHESIS
+NEXT_GATE = ROR_PE_09_FIGURE_TABLE_PRODUCTION_FROM_FROZEN_EVIDENCE
 ```
 
-PE_04 identificó al GLP como driver contable común principal del costo y CO2 operacionales. PE_05 encontró un patrón descriptivo compatible con requerimiento marginal creciente de GLP, limitado por secantes entre soluciones discretas. PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por co-movimiento de controles, sensibilidad a selección y/o confusión residual por intensidad de secado. PE_07 ejecutó una única campaña controlada: baseline exacto 3/3, 47 perturbaciones válidas y 50 evaluaciones totales; la integridad de ejecución pasó 10/10. El postrun original queda preservado como evidencia derivada superseded por discrepancias contractuales; `POSTRUN_CORRECTED_V02` pasó 18/18 y constituye la base derivada vigente. No reemplaza evidencia execution-primary ni repara la suficiencia PRIMARY. La interpretación científica permanece pendiente.
+PE_04 identificó al GLP como driver contable común principal del costo y CO2 operacionales. PE_05 encontró un patrón descriptivo compatible con requerimiento marginal creciente de GLP, limitado por secantes entre soluciones discretas. PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por co-movimiento de controles, sensibilidad a selección y/o confusión residual por intensidad de secado. PE_07 ejecutó una única campaña controlada: baseline exacto 3/3, 47 perturbaciones válidas y 50 evaluaciones totales; la integridad de ejecución pasó 10/10. El postrun original queda preservado como evidencia derivada superseded por discrepancias contractuales; `POSTRUN_CORRECTED_V02` pasó 18/18 y constituye la base derivada vigente. No reemplaza evidencia execution-primary ni repara la suficiencia PRIMARY. La síntesis PE_07 y la integración PE_08 en Results/Discussion quedaron cerradas con 18 claims trazados y cero claims sin soporte; PRIMARY permanece insuficiente.
