@@ -100,14 +100,26 @@ PE07_EXECUTION_STATUS = NOT_AUTHORIZED
 
 PE_04 cerró el acoplamiento energía-costo-carbono; PE_05 cerró la caracterización descriptiva de intensificación frente a GLP con limitaciones de secantes discretas; PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por confounding/selección. PE_07 aún no tiene resultados.
 
-## Bloque vigente — versionado canónico y preflight ejecutable PE_07
+## Bloque vigente — infraestructura ejecutable PE_07
 
 ```text
-CANONICAL_EXECUTION_PREREQUISITE = SATISFIED
-CANONICAL_RECONCILIATION_VERSIONING = PENDING_AUTHORIZATION
-CURRENT_GATE = ROR_CANONICAL_RECONCILIATION_VERSIONING
-NEXT_PHASE = ROR_PE_07_CONTROLLED_OPERATIONAL_VARIABLE_SENSITIVITY_EXPERIMENT_EXECUTION_PREFLIGHT
-NEXT_GATE = ROR_PE_07_CONTROLLED_OPERATIONAL_VARIABLE_SENSITIVITY_EXPERIMENT_EXECUTION_PREFLIGHT
+CANONICAL_RECONCILIATION = COMPLETE
+CANONICAL_RECONCILIATION_COMMIT = 004685b7c6a347558877da1af85db183b3757e5b
+CANONICAL_RECONCILIATION_VERSIONING = COMPLETE
+CANONICAL_EXECUTION_PREREQUISITE = SATISFIED_AND_VERSIONED
+LOCAL_MAIN_EQUALS_ORIGIN_MAIN = YES
+PE07_DESIGN_VERSION = v1.1
+PE07_DESIGN_STATUS = FROZEN_PASS
+PE07_EXECUTION_PREFLIGHT = COMPLETED_READ_ONLY
+CURRENT_PREFLIGHT_RESULT = BLOCKED_REQUIRES_PE07_EXECUTION_INFRASTRUCTURE_FREEZE
+CURRENT_OPERATIONAL_BLOCK = PE07_EXECUTION_INFRASTRUCTURE_NOT_FROZEN
+PE07_EXECUTABLE_CONFIG_EXISTS = NO
+PE07_RUNNER_EXISTS = NO
+CURRENT_NEXT_GATE = ROR_PE_07_EXECUTION_INFRASTRUCTURE_FREEZE
+PE07_BASELINE_REPLAY_EXECUTION = NOT_AUTHORIZED
+PE07_PERTURBATION_EXECUTION = NOT_AUTHORIZED
 ```
 
-La ejecución PE_07 requiere todavía: (1) versionar esta reconciliación mediante autorización separada; (2) auditar y congelar una configuración ejecutable PE_07; (3) autorización explícita separada; y (4) replay baseline exacto 3/3 antes de cualquier perturbación. Este handoff no autoriza MATLAB, objective/model replay, `gamultiobj` ni PE_07.
+Cerrado: reconciliación canónica completada y publicada; `main` local y `origin/main` coinciden en `004685b7c6a347558877da1af85db183b3757e5b`; diseño PE_07 v1.1 congelado; preflight de ejecución completado read-only.
+
+Secuencia futura: (1) congelar y auditar la infraestructura ejecutable PE_07; (2) versionarla mediante gates Git separados; (3) repetir el preflight de readiness si así lo exige la infraestructura congelada; (4) autorizar separadamente el baseline replay; y (5) evaluar perturbaciones sólo si el replay exacto pasa 3/3. Este handoff no autoriza MATLAB, objective/model replay, `gamultiobj`, baseline replay ni perturbaciones PE_07.

@@ -141,10 +141,15 @@ PE_07_DESIGN = PASS
 PE07_DESIGN_STATUS = FROZEN_PASS
 PE_07_EXECUTION = NOT_AUTHORIZED
 PE07_EXECUTION_STATUS = NOT_AUTHORIZED
-CANONICAL_EXECUTION_PREREQUISITE = SATISFIED
-CANONICAL_RECONCILIATION_VERSIONING = PENDING_AUTHORIZATION
-NEXT_GATE = ROR_CANONICAL_RECONCILIATION_VERSIONING
-PE07_EXECUTION_NEXT_SCIENTIFIC_GATE = ROR_PE_07_CONTROLLED_OPERATIONAL_VARIABLE_SENSITIVITY_EXPERIMENT_EXECUTION_PREFLIGHT
+CANONICAL_RECONCILIATION_VERSIONING = COMPLETE
+CANONICAL_EXECUTION_PREREQUISITE = SATISFIED_AND_VERSIONED
+PE07_EXECUTION_PREFLIGHT = BLOCKED
+PE07_PREFLIGHT_BLOCKERS = PE07_EXECUTABLE_CONFIG_NOT_FOUND; PE07_RUNNER_NOT_FOUND
+CURRENT_OPERATIONAL_BLOCK = PE07_EXECUTION_INFRASTRUCTURE_NOT_FROZEN
+CURRENT_PREFLIGHT_RESULT = BLOCKED_REQUIRES_PE07_EXECUTION_INFRASTRUCTURE_FREEZE
+NEXT_GATE = ROR_PE_07_EXECUTION_INFRASTRUCTURE_FREEZE
+PE07_BASELINE_REPLAY_EXECUTION = NOT_AUTHORIZED
+PE07_PERTURBATION_EXECUTION = NOT_AUTHORIZED
 ```
 
-PE_04 identificó al GLP como driver contable común principal del costo y CO2 operacionales. PE_05 encontró un patrón descriptivo compatible con requerimiento marginal creciente de GLP, limitado por secantes entre soluciones discretas. PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por co-movimiento de controles, sensibilidad a selección y/o confusión residual por intensidad de secado. PE_07 sólo está diseñado; no existen resultados PE_07 ni autorización de ejecución.
+PE_04 identificó al GLP como driver contable común principal del costo y CO2 operacionales. PE_05 encontró un patrón descriptivo compatible con requerimiento marginal creciente de GLP, limitado por secantes entre soluciones discretas. PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por co-movimiento de controles, sensibilidad a selección y/o confusión residual por intensidad de secado. La reconciliación canónica quedó publicada en `004685b7c6a347558877da1af85db183b3757e5b`. El preflight PE_07 se completó read-only y quedó bloqueado porque no existen configuración ejecutable ni runner PE_07. PE_07 sólo está diseñado; no existen resultados ni autorización de baseline replay o perturbaciones.
