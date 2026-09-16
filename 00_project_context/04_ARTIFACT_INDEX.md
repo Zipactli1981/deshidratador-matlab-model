@@ -288,3 +288,29 @@ Raíz física: `05_runs/robust_operating_region_v01/extended_budget_diagnostic/R
 | `05_runs/robust_operating_region_v01/extended_budget_diagnostic/ROR_BUDGET_DIAGNOSTIC_61001_G400_V01/postrun/EXTENDED_DIAGNOSTIC_REPORT.json` | `DERIVED_EXTENDED_BUDGET_POSTRUN_REPORT` | `32DEAAD1356960C266633B4BF396823063FBCA83A21DFC1E1B33429155AF4EDE` | G200, FINAL_G400, PRIMARY 61001 y normalización PRIMARY literal congelada | Postrun `PASS`; categoría D; sensibilidad de presupuesto ambigua; hash físico verificado; no es output numérico original del solver |
 
 Veredicto postrun congelado: `MIXED_OR_AMBIGUOUS_POST_200_CHANGE`. Se observó evolución después de G200, pero no mejora multiobjetivo neta: los extremos individuales mejoraron y el HV común disminuyó. No sustenta convergencia, insuficiencia general de 200 generaciones, suficiencia de 400 generaciones ni reparación de PRIMARY.
+
+## Infraestructura PE_07 — sensibilidad local controlada OFAT v1.1
+
+Raíz: `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/`. Estado: `FROZEN_PASS`; ejecución científica no autorizada. Upstream común: PRIMARY `N_POOL.mat` hash-valid, source lock productivo 53/53 y diseño PE_07 v1.1 previamente congelado. La validación dry/sintética no llamó modelo, objective ni `gamultiobj` y no creó la raíz real de ejecución.
+
+| Path | Role | SHA-256 | Upstream | Validation basis |
+|---|---|---|---|---|
+| `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/PE07_CONTROLLED_SENSITIVITY_PROTOCOL_v11.md` | `PE07_STANDALONE_FROZEN_PROTOCOL` | `28E911C3AB4ACCBE96C0859A4FDD0949B36961B081664859DE4F72720FF112CC` | Diseño PE_07 v1.1; PE_04–PE_06 cerrados; PRIMARY N_POOL | Transcripción metodológica standalone; OFAT, anchors, matriz, gate 3/3, claims y presupuesto congelados; sin rediseño |
+| `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_controlled_sensitivity_config.json` | `PE07_FROZEN_EXECUTABLE_CONFIG` | `05FED2509F630588E539C189126DE1D374D435FC9FEEBA2894C56F3112826814` | Protocolo PE07; N_POOL `C1D952...`; outputs/details PRIMARY 61003/61004 | Anchors full-precision verificados; 48 condiciones, 1 OOB, 47 válidas; presupuesto 3+47=50; IDs/orden determinísticos PASS |
+| `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/run_pe07_controlled_sensitivity.m` | `PE07_NONPRODUCTIVE_EXECUTION_RUNNER` | `C815A2B3124FBAB48CC8C4D9CE468C82B9CDEDACB6F13A0B522C7925E30BD61F` | Config, protocolo, guard, objective productivo existente y source locks | Baseline-first; igualdad exacta 3/3; fail-closed; 47 perturbaciones máximo; no retry/adaptación; dry lock PASS; cero ejecución real |
+| `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_execution_guard.m` | `PE07_EXECUTION_AND_ROOT_GUARD` | `6D43F04BC497043C4A3776EC0B4442573B99B5ADA6037B56C7AF58CF1E969BE5` | Config, hashes PRIMARY, source locks y política de raíz separada | Config/anchor/hash/budget guards PASS; reserva exclusiva, colisión/doble reserva/no-overwrite PASS; inválidos retenidos/excluidos |
+| `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_controlled_sensitivity_postrun.py` | `PE07_PERSISTED_OUTPUT_ONLY_POSTRUN` | `AB52C1CB614FC4983E16C5C3DE1C0B5D8813641F3B9847629B74EDB77C9B5121` | Outputs futuros del runner y reglas estructurales PE07 congeladas | Self-test sintético PASS: secantes, signos, recurrencia, inválidos y no-overwrite; cero llamadas científicas |
+| `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/test_pe07_controlled_sensitivity_dry.m` | `PE07_MATLAB_DRY_TEST` | `2C853C9A953CAB8D09416593176990725CE22DC22F3E31501490986ED1614262` | Config, guard, runner bloqueado, N_POOL almacenado y filesystem temporal | PASS A–O; anchors full-precision; matriz 48/1/47; baseline pass/fail; root/no-overwrite; 0 model/objective/gamultiobj |
+| `02_src_limpio/audit/robust_operating_region_v01/pe07_controlled_sensitivity/pe07_execution_source_lock.json` | `PE07_EXECUTION_SOURCE_LOCK` | `90C18C5BA6D516F0C1C8F78E20259C363CE9536BF51DDA50F05A149C147067C3` | Seis artefactos PE07, source lock productivo y referencias PRIMARY N_POOL/61003/61004 | 12/12 hashes físicos PASS; sin self-hash recursivo; source lock productivo independiente 53/53 PASS |
+
+```text
+PE07_DESIGN_VERSION = v1.1
+PE07_DESIGN_STATUS = FROZEN_PASS
+PE07_EXECUTION_INFRASTRUCTURE = FROZEN_PASS
+PE07_INFRASTRUCTURE_DRY_VALIDATION = PASS
+REAL_MODEL_EVALUATIONS = 0
+PE07_EXECUTION = NOT_AUTHORIZED
+PE07_BASELINE_REPLAY = NOT_AUTHORIZED
+PE07_PERTURBATIONS = NOT_AUTHORIZED
+NEXT_GATE = ROR_PE_07_FINAL_EXECUTION_READINESS_PREFLIGHT
+```

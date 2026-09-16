@@ -100,7 +100,7 @@ PE07_EXECUTION_STATUS = NOT_AUTHORIZED
 
 PE_04 cerró el acoplamiento energía-costo-carbono; PE_05 cerró la caracterización descriptiva de intensificación frente a GLP con limitaciones de secantes discretas; PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por confounding/selección. PE_07 aún no tiene resultados.
 
-## Bloque vigente — infraestructura ejecutable PE_07
+## Bloque vigente — preflight final de readiness PE_07
 
 ```text
 CANONICAL_RECONCILIATION = COMPLETE
@@ -110,16 +110,22 @@ CANONICAL_EXECUTION_PREREQUISITE = SATISFIED_AND_VERSIONED
 LOCAL_MAIN_EQUALS_ORIGIN_MAIN = YES
 PE07_DESIGN_VERSION = v1.1
 PE07_DESIGN_STATUS = FROZEN_PASS
+PE07_EXECUTION_INFRASTRUCTURE = FROZEN_PASS
+PE07_EXECUTABLE_CONFIG_EXISTS = YES
+PE07_RUNNER_EXISTS = YES
+PE07_INFRASTRUCTURE_DRY_VALIDATION = PASS
+REAL_MODEL_EVALUATIONS = 0
 PE07_EXECUTION_PREFLIGHT = COMPLETED_READ_ONLY
-CURRENT_PREFLIGHT_RESULT = BLOCKED_REQUIRES_PE07_EXECUTION_INFRASTRUCTURE_FREEZE
-CURRENT_OPERATIONAL_BLOCK = PE07_EXECUTION_INFRASTRUCTURE_NOT_FROZEN
-PE07_EXECUTABLE_CONFIG_EXISTS = NO
-PE07_RUNNER_EXISTS = NO
-CURRENT_NEXT_GATE = ROR_PE_07_EXECUTION_INFRASTRUCTURE_FREEZE
+CURRENT_NEXT_GATE = ROR_PE_07_FINAL_EXECUTION_READINESS_PREFLIGHT
+PE07_EXECUTION = NOT_AUTHORIZED
+PE07_BASELINE_REPLAY = NOT_AUTHORIZED
+PE07_PERTURBATIONS = NOT_AUTHORIZED
 PE07_BASELINE_REPLAY_EXECUTION = NOT_AUTHORIZED
 PE07_PERTURBATION_EXECUTION = NOT_AUTHORIZED
 ```
 
 Cerrado: reconciliación canónica completada y publicada; `main` local y `origin/main` coinciden en `004685b7c6a347558877da1af85db183b3757e5b`; diseño PE_07 v1.1 congelado; preflight de ejecución completado read-only.
 
-Secuencia futura: (1) congelar y auditar la infraestructura ejecutable PE_07; (2) versionarla mediante gates Git separados; (3) repetir el preflight de readiness si así lo exige la infraestructura congelada; (4) autorizar separadamente el baseline replay; y (5) evaluar perturbaciones sólo si el replay exacto pasa 3/3. Este handoff no autoriza MATLAB, objective/model replay, `gamultiobj`, baseline replay ni perturbaciones PE_07.
+Cerrado adicional: protocolo/config/runner/guard/postrun/test/source-lock PE_07 materializados; hashes 7/7; productive source lock 53/53; PE07 source lock 12/12; MATLAB dry y postrun sintético PASS; cero llamadas reales a modelo/objective y raíz real no creada.
+
+Secuencia futura: (1) preflight final de readiness sobre el HEAD publicado de infraestructura; (2) autorización separada del baseline replay; y (3) perturbaciones sólo si el replay exacto pasa 3/3. Este handoff no autoriza MATLAB científico, objective/model replay, `gamultiobj`, baseline replay ni perturbaciones PE_07.

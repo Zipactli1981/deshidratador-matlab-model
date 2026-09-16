@@ -139,17 +139,21 @@ PE_06 = PASS_WITH_LIMITATION
 PE07_DESIGN_VERSION = v1.1
 PE_07_DESIGN = PASS
 PE07_DESIGN_STATUS = FROZEN_PASS
+PE07_EXECUTION_INFRASTRUCTURE = FROZEN_PASS
+PE07_EXECUTABLE_CONFIG_EXISTS = YES
+PE07_RUNNER_EXISTS = YES
+PE07_INFRASTRUCTURE_DRY_VALIDATION = PASS
+REAL_MODEL_EVALUATIONS = 0
 PE_07_EXECUTION = NOT_AUTHORIZED
 PE07_EXECUTION_STATUS = NOT_AUTHORIZED
+PE07_BASELINE_REPLAY = NOT_AUTHORIZED
+PE07_PERTURBATIONS = NOT_AUTHORIZED
 CANONICAL_RECONCILIATION_VERSIONING = COMPLETE
 CANONICAL_EXECUTION_PREREQUISITE = SATISFIED_AND_VERSIONED
-PE07_EXECUTION_PREFLIGHT = BLOCKED
-PE07_PREFLIGHT_BLOCKERS = PE07_EXECUTABLE_CONFIG_NOT_FOUND; PE07_RUNNER_NOT_FOUND
-CURRENT_OPERATIONAL_BLOCK = PE07_EXECUTION_INFRASTRUCTURE_NOT_FROZEN
-CURRENT_PREFLIGHT_RESULT = BLOCKED_REQUIRES_PE07_EXECUTION_INFRASTRUCTURE_FREEZE
-NEXT_GATE = ROR_PE_07_EXECUTION_INFRASTRUCTURE_FREEZE
+PE07_EXECUTION_PREFLIGHT = COMPLETED_READ_ONLY
+NEXT_GATE = ROR_PE_07_FINAL_EXECUTION_READINESS_PREFLIGHT
 PE07_BASELINE_REPLAY_EXECUTION = NOT_AUTHORIZED
 PE07_PERTURBATION_EXECUTION = NOT_AUTHORIZED
 ```
 
-PE_04 identificó al GLP como driver contable común principal del costo y CO2 operacionales. PE_05 encontró un patrón descriptivo compatible con requerimiento marginal creciente de GLP, limitado por secantes entre soluciones discretas. PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por co-movimiento de controles, sensibilidad a selección y/o confusión residual por intensidad de secado. La reconciliación canónica quedó publicada en `004685b7c6a347558877da1af85db183b3757e5b`. El preflight PE_07 se completó read-only y quedó bloqueado porque no existen configuración ejecutable ni runner PE_07. PE_07 sólo está diseñado; no existen resultados ni autorización de baseline replay o perturbaciones.
+PE_04 identificó al GLP como driver contable común principal del costo y CO2 operacionales. PE_05 encontró un patrón descriptivo compatible con requerimiento marginal creciente de GLP, limitado por secantes entre soluciones discretas. PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por co-movimiento de controles, sensibilidad a selección y/o confusión residual por intensidad de secado. La infraestructura PE_07 v1.1 quedó congelada y validada dry/sintéticamente con 48 condiciones estructurales, una condición preclasificada fuera de dominio, 47 perturbaciones válidas y máximo ejecutable 50. La validación realizó cero evaluaciones reales. No existen resultados PE_07 ni autorización de baseline replay o perturbaciones; el siguiente gate es un preflight final de readiness.
