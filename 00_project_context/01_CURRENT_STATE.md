@@ -2,7 +2,7 @@
 
 ## Estado vigente y evidencia Git
 
-Actualización documental: 2026-09-13. HB200 está cerrado científica y documentalmente; CORRECTED_R1/CR1-COMP no son la fase operativa actual.
+Actualización documental: 2026-09-15. HB200 está cerrado científica y documentalmente; CORRECTED_R1/CR1-COMP no son la fase operativa actual.
 
 ```text
 PRIMARY_THESIS_LEGACY_BASELINE = HB200
@@ -15,12 +15,12 @@ HB200_PUSH = PASS
 HB200_REGISTRATION_COMMIT = 0e1233041e36dc0bf01ab314def3baf9e1c8faa0
 HB200_REGISTRATION_PARENT = aae8f34aa573f53cb3ad163f5565d08ce490e4c3
 LIVE_BRANCH_OBSERVED = main
-LIVE_HEAD_OBSERVED = 258f6ad28e98ca095aeca5e41cd255df1cda91ad
-ORIGIN_MAIN_OBSERVED = 258f6ad28e98ca095aeca5e41cd255df1cda91ad
+LIVE_HEAD_OBSERVED = 4e2ad869c6bb66e2f9339360a18e21beaf4e2603
+ORIGIN_MAIN_OBSERVED = 4e2ad869c6bb66e2f9339360a18e21beaf4e2603
 AHEAD_BEHIND_OBSERVED = 0 / 0
 ```
 
-El HEAD vigente registra la infraestructura primaria ROR; main y origin/main coinciden. Son observaciones de este micropaso, no requisitos para futuros HEAD. A la entrada del gate de versionado recovery: staging y cambios tracked vacíos, cinco archivos recovery nuevos autorizados y 36 untracked preexistentes ajenos preservados.
+El HEAD vivo incorpora la reparación publicada de reserva de raíz del diagnóstico extendido; `main` y `origin/main` coinciden. Son observaciones de este micropaso, no requisitos para futuros HEAD. A la entrada de la reconciliación canónica, staging y cambios tracked estaban vacíos; los untracked preexistentes ajenos se preservaron.
 
 ## Cierre científico HB200
 
@@ -88,38 +88,63 @@ N_POOL_SIZE = 22
 N_POOL_OBJECTIVE_COUNT = 21
 N_POOL_DUPLICATE_CLASS = VALID_DECISION_DUPLICATE_OBJECTIVE_VECTOR
 NO_OPERATIONAL_RECOMMENDATIONS = YES
-EXTENDED_BUDGET_CAMPAIGN = NOT_AUTHORIZED
-CURRENT_GATE = ROR_PRIMARY_POSTRUN_RESULTS_INTERPRETATION_AND_VERSIONING
+PRIMARY_N_POOL_MODIFIED = NO
+MULTISEED_CONCLUSION_SUPPORTED = NO
+CURRENT_SCIENTIFIC_PHASE = PRIMARY_RESULTS_PROCESS_ENGINEERING_INTERPRETATION
 ```
 
 El postrun composite publicó transaccionalmente diez derivados hash-valid. IGD+ y reproducibilidad de extremos satisfacen sus umbrales, pero la razón min/max de HV `0.8013138164000172` incumple el mínimo congelado `0.90`; ésta es la única causa del FAIL. La seed 61005 presenta simultáneamente el menor HV y el mayor IGD+, sin que ello constituya fallo de corrida. Las cinco alcanzaron MaxGenerations: un presupuesto de 200 puede ser una explicación plausible de la variabilidad, pero no está demostrado; no se afirma convergencia u optimalidad global ni se autoriza automáticamente una campaña extendida. N_POOL es una aproximación no dominada multi-seed: sus 22 decisiones contienen 21 vectores objetivo únicos porque dos decisiones distintas de 61001 comparten exactamente el mismo vector objetivo y, bajo dominancia exacta, ninguna domina a la otra.
 
-## Diagnóstico secundario de presupuesto extendido — reparación de reserva validada, no reejecutado
+## Diagnóstico secundario de presupuesto extendido — ejecución y postrun cerrados
 
 ```text
 PRIMARY_ROR_CAMPAIGN = COMPLETED_BUT_INSUFFICIENT
 PRIMARY_SUFFICIENCY = FAIL
 PRIMARY_FAILED_CONDITION = HV_RATIO
 EXTENDED_BUDGET_DIAGNOSTIC_ROLE = SECONDARY_EXTENDED_BUDGET_DIAGNOSTIC
-EXTENDED_BUDGET_DIAGNOSTIC_STATUS = ROOT_RESERVATION_FIX_PASS_NOT_REEXECUTED
+EXTENDED_BUDGET_DIAGNOSTIC = COMPLETED_POSTRUN
 EXTENDED_BUDGET_CAMPAIGN_ID = ROR_BUDGET_DIAGNOSTIC_61001_G400_V01
 DIAGNOSTIC_SEED = 61001
 DIAGNOSTIC_MAX_GENERATIONS = 400
 DIAGNOSTIC_INITIALIZATION = FROM_SCRATCH
-DIAGNOSTIC_PROTOCOL_SHA256 = 4081B46D21D2EA4D7B4587A8AA40763F8BB718ECE20719C979CB5ABA7B6FBB5D
-ROOT_RESERVATION_FIX = PASS
-ROOT_RESERVATION_FIX_CLASS = INFRASTRUCTURE_ROOT_RESERVATION_FIX
-SOURCE_LOCK_SHA256 = 358DDE5EE0077B4D0DDA618E2787C8213442681A41090F056F2603C4950482FB
-DIAGNOSTIC_PROTOCOL_UNCHANGED = YES
-DIAGNOSTIC_CONFIG_UNCHANGED = YES
-SCIENTIFIC_EXECUTION_COMPLETED = NO
-GAMULTIOBJ_EXECUTED = NO
-MODEL_EVALUATIONS_EXECUTED = 0
-NEW_DIAGNOSTIC_OPTIMIZATIONS_EXECUTED = 0
-REAL_EXECUTION_ROOT = ABSENT
-CURRENT_GATE = ROR_EXTENDED_BUDGET_DIAGNOSTIC_ROOT_RESERVATION_FIX_VERSIONING
+DIAGNOSTIC_WARM_START = NO
+EXTENDED_BUDGET_EXECUTION_INTEGRITY = PASS
+EXTENDED_BUDGET_POSTRUN = PASS
+EXECUTION_EXITFLAG = 0
+EXECUTION_GENERATIONS = 400
+EXECUTION_FUNCCOUNT = 9600
+SOLVER_TERMINATION = MAX_GENERATIONS_REACHED
+SNAPSHOT_INTEGRITY = PASS_8_OF_8
+EXECUTION_HASH_INVENTORY = PASS_21_OF_21
+EXTENDED_G200_RELATION_TO_PRIMARY = ALTERNATIVE_400GEN_BUDGET_TRAJECTORY
+EXTENDED_DIAGNOSTIC_CATEGORY = D — MIXED_OR_AMBIGUOUS_POST_200_CHANGE
+BUDGET_SENSITIVITY_FOR_SEED_61001 = AMBIGUOUS
+POST_200_EVOLUTION = OBSERVED
+POST_200_NET_IMPROVEMENT = NOT_SUPPORTED
+PRIMARY_N_POOL_MODIFIED = NO
+MULTISEED_CONCLUSION_SUPPORTED = NO
 ```
 
-El primer intento autorizado inició MATLAB pero se bloqueó antes de `gamultiobj`, con cero evaluaciones de modelo/objective y sin crear el execution root: la reserva usaba `java.io.File.mkdir()` sobre la raíz de campaña cuando faltaba su directorio padre fijo. La reparación mínima separa la creación idempotente del padre de la reserva exclusiva de la raíz; soporta parent ausente y conserva colisión fail-closed. Los seis casos sintéticos y MATLAB dry pasan, y el source lock actualizado valida 16/16. No se ha reejecutado la campaña.
+La reparación de reserva de raíz, publicada en `4e2ad869c6bb66e2f9339360a18e21beaf4e2603`, fue exclusivamente de infraestructura: no cambió protocolo, configuración científica, código productivo ni código científico compartido. Sobre ese HEAD se completó una sola trayectoria desde cero de la seed 61001 con `PopulationSize=24`, `UseParallel=false` y `MaxGenerations=400`. El manifest de ejecución conserva el estado histórico `COMPLETED_PENDING_POSTRUN`; el postrun posterior está cerrado y hash-valid.
 
-El diagnóstico conserva `PopulationSize=24`, `UseParallel=false`, población/scores iniciales vacíos y ausencia total de warm start. Su única diferencia científica autorizada respecto de la configuración primaria es `MaxGenerations: 200 -> 400`; la OutputFcn pasiva constituye una diferencia observacional. La campaña primaria, su suficiencia, su HV ratio y su N_POOL permanecen sin cambios.
+La población, scores y conjunto ND observados en G200 de esta trayectoria no son exactamente iguales a la corrida primaria 61001×200: se clasifica como `ALTERNATIVE_400GEN_BUDGET_TRAJECTORY`. De G200 a G400 hubo evolución, pero los cambios fueron mixtos: mejoraron los tres extremos individuales, mientras el HV común disminuyó 5.6337% y la cobertura fue bidireccional. El veredicto congelado es categoría D y sensibilidad de presupuesto ambigua. No prueba convergencia, insuficiencia de 200 generaciones ni suficiencia de 400; no repara el FAIL primario ni aporta evidencia multisemilla.
+
+## Fase científica vigente — interpretación de ingeniería de procesos
+
+```text
+CURRENT_SCIENTIFIC_PHASE = PRIMARY_RESULTS_PROCESS_ENGINEERING_INTERPRETATION
+PE_04 = PASS
+PE_05 = PASS_WITH_LIMITATION
+PE_06 = PASS_WITH_LIMITATION
+PE07_DESIGN_VERSION = v1.1
+PE_07_DESIGN = PASS
+PE07_DESIGN_STATUS = FROZEN_PASS
+PE_07_EXECUTION = NOT_AUTHORIZED
+PE07_EXECUTION_STATUS = NOT_AUTHORIZED
+CANONICAL_EXECUTION_PREREQUISITE = SATISFIED
+CANONICAL_RECONCILIATION_VERSIONING = PENDING_AUTHORIZATION
+NEXT_GATE = ROR_CANONICAL_RECONCILIATION_VERSIONING
+PE07_EXECUTION_NEXT_SCIENTIFIC_GATE = ROR_PE_07_CONTROLLED_OPERATIONAL_VARIABLE_SENSITIVITY_EXPERIMENT_EXECUTION_PREFLIGHT
+```
+
+PE_04 identificó al GLP como driver contable común principal del costo y CO2 operacionales. PE_05 encontró un patrón descriptivo compatible con requerimiento marginal creciente de GLP, limitado por secantes entre soluciones discretas. PE_06 mantuvo todas las asociaciones control-respuesta en nivel 4 por co-movimiento de controles, sensibilidad a selección y/o confusión residual por intensidad de secado. PE_07 sólo está diseñado; no existen resultados PE_07 ni autorización de ejecución.
